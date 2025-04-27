@@ -2,25 +2,72 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --black-1: #111111;
+  --gray: #cbcbcb;
+  --primary: #215CFF;
+  --font-display: var(--font-display)
+  --font-body: var(--font-body);
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-black-1: var(--black-1);
+  --color-gray: var(--gray);
+  --color-primary: var(--primary);
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+  --color-gray-100: #D2D2D2;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black-1);
+  font-family: var(--font-body);
+  font-size: 1.25vw;
+  line-height: 1.4;
+}
+
+/* Swiper Css */
+.swiper-pagination {
+  padding: 0 5vw !important;
+  text-align: right !important;
+}
+.swiper-pagination-bullet{
+  background-color: white !important;
+  opacity: 1 !important;
+  position: relative !important;
+  margin: 0 6px !important;
+}
+.swiper-pagination-bullet-active::after{
+  content: "";
+  height: 13px;
+  width: 13px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+
+/* Section Break Background */
+.text-break .single-line {
+  background: linear-gradient(90deg,#111111 50%,#1a1a1a2e 0);
+  background-clip: text;
+  background-size: 200% 100%;
+  background-position-x: 100%;
+}
+
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.8%); }
+}
+
+.marquee {
+  /* length should match the total width of one loop of items */
+  animation: marquee 5s linear infinite;
 }
