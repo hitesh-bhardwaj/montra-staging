@@ -1,3 +1,5 @@
+import { LinkButton } from "@/components/Buttons";
+import Blogs from "@/components/Homepage/Blogs";
 import FAQs from "@/components/Homepage/FAQs";
 import FeatureSection from "@/components/Homepage/FeaturesSection";
 import FeaturesText from "@/components/Homepage/FeaturesText";
@@ -13,8 +15,11 @@ export default function Home() {
       <FeaturesText />
       <SectionBreak />
       <Testimonials />
+      <Blogs />
       <FAQs />
     </>
   );
 }
+
+
 

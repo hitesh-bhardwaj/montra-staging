@@ -1,4 +1,5 @@
-import { AppleIcon, GooglePlay } from "./icons"
+import Link from "next/link"
+import { AppleIcon, ArrowRight, GooglePlay } from "./icons"
 
 export const AppleStoreButton = () => {
     return (
@@ -25,5 +26,16 @@ export const PlayStoreButton = () => {
                 <p className="text-[1.5vw] leading-8">Google Play</p>
             </div>
         </button>
+    )
+}
+
+export const LinkButton = ({ text, href, className = "", ...props }) => {
+    return (
+        <Link className={`group w-fit hover:text-primary duration-300 ${className}`} href={href}>
+            <div className="flex items-center justify-start gap-2">
+                <span>{text}</span>
+                <ArrowRight className="group-hover:-rotate-45 transition-transform duration-300"/>
+            </div>
+        </Link>
     )
 }
