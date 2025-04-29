@@ -7,28 +7,28 @@ const icons = [
         src: "/assets/images/homepage/image-1.png",
         alt: "Receive",
         style: { top: "20%", left: "15%" },
-        xOffset: -200,
-        yOffset: -80,
+        xOffset: -300,
+        yOffset: -100,
     },
     {
         src: "/assets/images/homepage/image-2.png",
         alt: "Pay",
         style: { top: "20%", right: "15%" },
-        xOffset: +300,
+        xOffset: +400,
         yOffset: -50,
     },
     {
         src: "/assets/images/homepage/image-3.png",
         alt: "Currency",
         style: { bottom: "20%", left: "20%" },
-        xOffset: -350,
+        xOffset: -450,
         yOffset: +50,
     },
     {
         src: "/assets/images/homepage/image-4.png",
         alt: "Scan",
         style: { bottom: "30%", right: "20%" },
-        xOffset: +280,
+        xOffset: +380,
         yOffset: +100,
     },
 ];
@@ -46,7 +46,7 @@ const item = {
         x: xOffset,
         y: yOffset,
         transition: {
-            duration: 2,
+            duration: 3,
             ease: easeOut,
         },
     }),
@@ -59,7 +59,7 @@ const FeatureSection = () => {
             className="w-full h-full flex items-end justify-center relative overflow-hidden bg-white pt-[5vw]"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.5 }}
             variants={container}
         >
             <div

@@ -1,54 +1,3 @@
-// 'use client'
-
-// import { useEffect, useRef } from 'react'
-// import { initSplitLines } from '@/utils/splitText'
-// import gsap from 'gsap'
-// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-
-// if (typeof window !== 'undefined') {
-//     gsap.registerPlugin(ScrollTrigger)
-// }
-
-// export default function SectionBreak() {
-//     const sectionRef = useRef(null)
-
-//     useEffect(() => {
-//         initSplitLines()
-
-//         const lines = sectionRef.current.querySelectorAll('.single-line')
-
-//         gsap.timeline({
-//             scrollTrigger: {
-//                 trigger: sectionRef.current,
-//                 start: 'top center', 
-//                 end: 'center center',    
-//                 scrub: 0.25,   
-//             }
-//         })
-//             .to(lines, {
-//                 backgroundPositionX: 0,
-//                 stagger: 0.5,  
-//                 ease: 'none'         
-//             })
-//     }, [])
-
-//     return (
-//         <section
-//             ref={sectionRef}
-//             className="h-screen w-screen overflow-hidden px-[4vw]"
-//         >
-//             <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto">
-//                 <h2
-//                     data-split="lines"
-//                     className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-transparent"
-//                 >
-//                     Montra helps users shift from cash to digital payments besides making credit, insurance, and investments easily accessible.
-//                 </h2>
-//             </div>
-//         </section>
-//     )
-// }
-
 'use client'
 
 import { useEffect, useRef } from 'react'
@@ -65,20 +14,19 @@ export default function SectionBreak() {
     const iconsContainer = useRef(null)
 
     useEffect(() => {
-        // — your existing split-lines + scrollTrigger fade
-        initSplitLines()
+        initSplitLines();
         const lines = sectionRef.current.querySelectorAll('.single-line')
         gsap.timeline({
             scrollTrigger: {
                 trigger: sectionRef.current,
                 start: 'top center',
-                end: 'center center',
+                end: 'center 20%',
                 scrub: 0.25,
             }
         })
             .to(lines, {
-                backgroundPositionX: 0,
-                stagger: 0.5,
+                maskPosition: "0% 100%",
+                stagger: 0.05,
                 ease: 'none'
             })
 
@@ -154,7 +102,7 @@ export default function SectionBreak() {
             <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto">
                 <h2
                     data-split="lines"
-                    className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-transparent"
+                    className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1"
                 >
                     Montra helps users shift from cash to digital payments besides making credit,
                     insurance, and investments easily accessible.

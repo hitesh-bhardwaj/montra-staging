@@ -1,15 +1,16 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'motion/react';
 import InfoCarouselSwiper from './InfoCarouselSwiper'
 
 const items = [
-    { icon: '/assets/images/homepage/pay.svg', label: 'PAY', color: 'text-[#FF8100]' },
-    { icon: '/assets/images/homepage/receive.svg', label: 'RECEIVE', color: 'text-primary' },
-    { icon: '/assets/images/homepage/sell.svg', label: 'SELL', color: 'text-[#35C771]' },
-    { icon: '/assets/images/homepage/invest.svg', label: 'INVEST', color: 'text-[#FB2F55]' },
-    { icon: '/assets/images/homepage/borrow.svg', label: 'BORROW', color: 'text-black-1]' },
+    { icon: '/assets/images/homepage/pay.svg', label: 'BANKING', color: 'text-[#FF8100]' },
+    { icon: '/assets/images/homepage/receive.svg', label: 'PAYMENTS', color: 'text-primary' },
+    { icon: '/assets/images/homepage/sell.svg', label: 'MARKETPLACE', color: 'text-[#35C771]' },
+    { icon: '/assets/images/homepage/borrow.svg', label: 'LOANS', color: 'text-black-1]' },
+    { icon: '/assets/images/homepage/insaurance.svg', label: 'INSAURANCE', color: 'text-[#7A78FF]' },
+    { icon: '/assets/images/homepage/invest.svg', label: 'INVESTMENTS', color: 'text-[#FB2F55]' },
 ]
 
 export default function PinnedRevealSection() {
@@ -20,10 +21,11 @@ export default function PinnedRevealSection() {
     })
 
     const thresholds = [
-        [0.00, 0.15],  // RECEIVE
-        [0.15, 0.30],  // SELL
-        [0.30, 0.45],  // INVEST
-        [0.45, 0.60],  // BORROW
+        [0.00, 0.10],
+        [0.10, 0.20], 
+        [0.20, 0.30], 
+        [0.30, 0.40], 
+        [0.40, 0.50],
     ]
 
     const transforms = thresholds.map(([from, to]) => ({
@@ -31,38 +33,30 @@ export default function PinnedRevealSection() {
         y: useTransform(scrollYProgress, [from, to], [500, 0]),
     }))
 
-    // const textDivTransforms = useTransform(scrollYProgress, [0.60, 0.80], ['0', '-100%']);
+    const arrowTranslateX = useTransform(scrollYProgress, [0.45, 0.65], ['-100%', '0%'])
+    const arrowScale = useTransform(scrollYProgress, [0.55, 0.75], [0.5, 3])
 
-    //
-    //  2) arrow only begins once BORROW is fully in
-    //
-
-    const arrowTranslateX = useTransform(scrollYProgress, [0.6, 0.7], ['-100%', '0%'])
-    const arrowScale = useTransform(scrollYProgress, [0.7, 0.75], [0.5, 3])
-
-    //
-    //  3) and finally your cards, staggered just after the arrow
-    //
     const cardTransforms = ({
-        opacity: useTransform(scrollYProgress, [0.75, 0.8], [0, 1]),
+        opacity: useTransform(scrollYProgress, [0.75, 0.85], [0, 1]),
     })
 
     return (
         <section ref={ref} className="relative h-[700vh]">
             <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-white">
-                {/* 1) YOUR FIVE HEADINGS */}
-                <motion.div
-                    // style={{
-                    //     translateY: textDivTransforms,
-                    // }}
-                    className='flex flex-col justify-center items-center'
-                >
-                    <div className="flex items-center space-x-[2vw]">
-                        <img src={items[0].icon} alt={items[0].label} className="w-[5vw] h-[5vw]" />
-                        <h2 className={`text-[5.7vw] font-bold font-display ${items[0].color}`}>
+                {/* 1) Six HEADINGS */}
+                <div className='flex flex-col justify-center items-center'>
+                    <motion.div 
+                        initial={{opacity: 0, y: 100}}
+                        whileInView={{opacity: 1, y: 0}}
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{duration: 1, ease: 'easeOut'}}
+                        className="flex items-center space-x-[2vw]"
+                        >
+                        <img src={items[0].icon} alt={items[0].label} className="w-[4.5vw] h-[4.5vw]" />
+                        <h2 className={`text-[5vw] font-bold font-display ${items[0].color}`}>
                             {items[0].label}
                         </h2>
-                    </div>
+                    </motion.div>
                     {items.slice(1).map((it, i) => (
                         <motion.div
                             key={it.label}
@@ -72,19 +66,20 @@ export default function PinnedRevealSection() {
                             }}
                             className="flex items-center space-x-[2vw]"
                         >
-                            <img src={it.icon} alt={it.label} className="w-[5vw] h-[5vw]" />
-                            <h2 className={`text-[5.7vw] font-bold font-display ${it.color}`}>
+                            <img src={it.icon} alt={it.label} className="w-[4.5vw] h-[4.5vw]" />
+                            <h2 className={`text-[5vw] font-bold font-display ${it.color}`}>
                                 {it.label}
                             </h2>
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
 
-                {/* 2) ARROW SVG (behind everything) */}
+                {/* 2) ARROW SVG */}
                 <motion.svg
                     style={{
                         scale: arrowScale,
                         translateX: arrowTranslateX,
+                        translateY: -100,
                         transformOrigin: '0% 50%',
                     }}
                     className="absolute inset-0 w-auto h-full"

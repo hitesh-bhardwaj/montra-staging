@@ -4,36 +4,36 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const faqContent = [
-    {
-        question: 'What is Montra?',
-        answer:
-            "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
-    {
-        question: 'Is Montra licensed?',
-        answer:
-            "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
-    {
-        question: 'What is unique about Montra?',
-        answer:
-            "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
-    {
-        question: 'How do we Sign-Up on Montra?',
-        answer:
-            "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
-    },
-    {
-        question: 'How do we Sign-In on Montra?',
-        answer:
-            "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
-    {
-        question: 'Is enabling Face / Touch / Fingerprint ID safe?',
-        answer:
-            "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
+  {
+    question: 'What is Montra?',
+    answer:
+      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+  },
+  {
+    question: 'Is Montra licensed?',
+    answer:
+      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+  },
+  {
+    question: 'What is unique about Montra?',
+    answer:
+      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+  },
+  {
+    question: 'How do we Sign-Up on Montra?',
+    answer:
+      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
+  },
+  {
+    question: 'How do we Sign-In on Montra?',
+    answer:
+      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+  },
+  {
+    question: 'Is enabling Face / Touch / Fingerprint ID safe?',
+    answer:
+      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+  },
 ]
 
 export default function FAQs({ allowMultiple = false }) {
