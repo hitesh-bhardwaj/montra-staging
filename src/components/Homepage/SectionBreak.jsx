@@ -37,6 +37,7 @@ export default function SectionBreak() {
             '/assets/images/homepage/borrow.svg',
             '/assets/images/homepage/receive.svg',
             '/assets/images/homepage/sell.svg',
+            '/assets/images/homepage/insaurance.svg',
         ]
 
         let spawnTimeout
@@ -47,6 +48,7 @@ export default function SectionBreak() {
             const src = iconPaths[Math.floor(Math.random() * iconPaths.length)]
             const img = document.createElement('img')
             img.src = src
+            img.alt = 'image'
             img.className = 'floating-icon absolute bottom-0'
             // random horizontal position
             img.style.left = `${Math.random() * 100}%`

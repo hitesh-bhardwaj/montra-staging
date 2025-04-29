@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '../../../public/montra-white-logo.svg' // adjust path as needed
+import logo from '../../../public/montra-white-logo.svg';
 import { Facebook, Instagram, Linkedin, Twitter } from '../Buttons/icons'
 import React from 'react'
 import FooterCta from './FooterCta'
@@ -37,7 +37,7 @@ export default function Footer() {
                             </p>
                             <div className='flex justify-start gap-[8vw]'>
                                 <ul className="space-y-[0.5vw]">
-                                    <li className="uppercase">Personal</li>
+                                    <li className="uppercase"><Link href="#">Personal</Link></li>
                                     <li><Link href="#">Banking</Link></li>
                                     <li><Link href="#">Payments</Link></li>
                                     <li><Link href="#">Finance</Link></li>
@@ -46,7 +46,7 @@ export default function Footer() {
                                     <li><Link href="#">Lend</Link></li>
                                 </ul>
                                 <ul className="space-y-[0.5vw]">
-                                    <li className="uppercase">Business</li>
+                                    <li className="uppercase"><Link href="#">Business</Link></li>
                                     <li><Link href="#">Banking</Link></li>
                                     <li><Link href="#">Payments</Link></li>
                                     <li><Link href="#">Finance</Link></li>
@@ -61,22 +61,22 @@ export default function Footer() {
                             </div>
                             {/* Social Media Links */}
                             <div className="flex space-x-[1vw]">
-                                <a href="#">
+                                <a href="#" aria-label='Facebook'>
                                     <div className='border rounded-full'>
                                         <Facebook />
                                     </div>
                                 </a>
-                                <a href="#">
+                                <a href="#" aria-label='Linkedin'>
                                     <div className='border rounded-full'>
                                         <Linkedin />
                                     </div>
                                 </a>
-                                <a href="#">
+                                <a href="#" aria-label='Twitter'>
                                     <div className='border rounded-full'>
                                         <Twitter />
                                     </div>
                                 </a>
-                                <a href="#">
+                                <a href="#" aria-label='Instagram'>
                                     <div className='border rounded-full'>
                                         <Instagram />
                                     </div>
@@ -88,7 +88,7 @@ export default function Footer() {
                     {/* Divider + Bottom Bar */}
                     <div className="mx-auto py-4 flex font-display items-center justify-between">
                         <span className="text-[1vw]">Copyright © Montra 2025</span>
-                        <span className="text-[1vw]">By: Enigma Digital</span>
+                        <span className="text-[1vw]">By: <a href='https://weareenigma.com/'>Enigma Digital</a></span>
                     </div>
                 </div>
 

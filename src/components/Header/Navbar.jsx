@@ -49,7 +49,7 @@ export default function Navbar() {
       className="bg-black rounded-full h-[4.1vw] px-1.5 py-1.5">
       <div 
         ref={navRef}
-        className="relative w-full inline-flex h-full items-center"
+        className="relative w-full inline-flex h-full items-center overflow-hidden"
         onMouseLeave={() => {
         const active = navRef.current.querySelector('a[data-active="true"]');
         movePill(active);
@@ -71,6 +71,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               data-active={isActive ? "true" : undefined}
+              aria-label={link.name}
               className="relative z-10 flex text-[1.05vw] min-w-[5vw] h-full items-center px-5 justify-center text-white whitespace-nowrap font-display"
               onMouseEnter={(e) => movePill(e.currentTarget)}
             >
