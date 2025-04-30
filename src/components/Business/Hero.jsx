@@ -47,6 +47,7 @@ export default function Trial() {
     const mainCardContainer = useRef(null);
     const content1 = useRef(null);
     const content2 = useRef(null);
+    const mainCard2 = useRef(null);
 
     const setCardRef = (el, index) => {
         cardRefs.current[index] = el;
@@ -81,7 +82,7 @@ export default function Trial() {
             duration: 3,
             ease: "power2.out",
         }, 0);
-        gsap.to(mainCard.current, {
+        gsap.to(".mainCard", {
             scale: 1.1,
             duration: 1,
             ease: "power2.out",
@@ -111,7 +112,7 @@ export default function Trial() {
 
         const tl2 = gsap.timeline({
             scrollTrigger: {
-                trigger: mainCard.current,
+                trigger: ".mainCard",
                 start: "top 20%",
                 end: "+=2500 10%",
                 scrub: true,
@@ -120,19 +121,30 @@ export default function Trial() {
             },
         })
 
-        tl2.to(mainCard.current, {
+        tl2.to(".mainCard", {
             left:"2%",
             delay:0.15,
             ease: "none",
-            scrub:true,
+           
         });
-        tl2.to(mainCard.current,{
+        tl2.to(".mainCard",{
             // xPercent:25,
             delay:1,
             left:"52%",
             ease: "none",
-            scrub:true,
+           
         });
+        tl2.to(".card1",{
+        opacity:0,
+          ease: "none",
+          delay:"-0.3"
+         
+      });
+      tl2.to(".card2",{
+        opacity:1,
+          ease: "none",
+          delay:"-0.55"         
+      });
         gsap.to("body", {
             backgroundColor: "#215CFF",
             ease: "none",
@@ -200,9 +212,15 @@ export default function Trial() {
                 <div className="w-full relative z-[51]" ref={mainCardContainer}>
                     <Card
                         ref={mainCard}
-                        className="absolute left-[25%] translate-y-[30%] z-[50]"
+                        className="absolute left-[25%] translate-y-[30%] z-[50] mainCard card1"
                         active={true}
                         img={"/assets/images/business/hero-img1.png"}
+                    />
+                    <Card
+                        ref={mainCard}
+                        className="absolute left-[25%] translate-y-[30%] z-[50] mainCard opacity-0 card2"
+                        active={true}
+                        img={"/assets/images/business/hero-img2.png"}
                     />
                 </div>
                 <div
