@@ -46,7 +46,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="bg-black rounded-full h-[4.1vw] px-1.5 py-1.5">
+      className="bg-black rounded-full h-[4.1vw] px-1.5 py-1.5 max-sm:hidden">
       <div 
         ref={navRef}
         className="relative w-full inline-flex h-full items-center overflow-hidden"

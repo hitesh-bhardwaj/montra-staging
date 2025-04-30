@@ -1,9 +1,12 @@
+
 import { Work_Sans } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
 import LenisSmoothScroll from "@/components/LenisSmoothScroll";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -46,13 +49,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
+ 
   return (
     <>
       <LenisSmoothScroll />
       <html lang="en">
         <body className={`${workSans.variable} ${standerd.variable} antialiased`}>
-          <Header />
+          {/* <Header /> */}
           {children}
           <Footer />
         </body>

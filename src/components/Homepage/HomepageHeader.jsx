@@ -2,12 +2,13 @@
 import Link from 'next/link';
 import montraLogo from '../../../public/montra-logo.png';
 import Image from 'next/image';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
+import Navbar from '../Header/Navbar';
 
-export default function Header() {
+export default function HomepageHeader() {
     const [hidden, setHidden] = useState(false);
     const [lastY, setLastY] = useState(0);
     const pathname = usePathname();
@@ -30,7 +31,7 @@ export default function Header() {
     }, [lastY]);
 
     useEffect(() => {
-        const delay = pathname === '/' ? 4.5 : 0;
+        // const delay = pathname === '/' ? 5 : 0;
    
         const ctx = gsap.context(() => {
           
@@ -38,25 +39,20 @@ export default function Header() {
                 yPercent: -50,
                 opacity: 0,
                 duration: 1,
-                delay: delay,
+                delay: 5,
             });
         });
         return () => ctx.revert();
-    }, [pathname]);
+    }, []);
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-[100] transform transition-transform duration-300 w-screen  overflow-hidden ${hidden ? '-translate-y-full' : 'translate-y-0'}`}>
-            <div className='px-[4vw] py-[1vw] header  w-full max-sm:pt-[5vw] max-sm:px-[5.5vw]'>
-                <div className='flex justify-between items-center w-full'>
+        <header className={`fixed top-0 left-0 right-0 z-[100] transform transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}>
+            <div className='px-[4vw] py-[1vw] header'>
+                <div className='flex justify-between items-center'>
                     <Link href="/" className='block'>
-                        <Image src={montraLogo} alt='montra logo' className='w-[10vw] max-sm:w-[30vw]' />
+                        <Image src={montraLogo} alt='montra logo' className='w-[10vw]' />
                     </Link>
                     <Navbar />
-                    <div className='hidden  max-sm:flex max-sm:flex-col gap-[2vw] w-[10vw]'>
-                        <div className='w-full h-[2px] bg-primary'/>
-                        <div className='w-full h-[2px] bg-primary'/>
-                        <div className='w-full h-[2px] bg-primary'/>
-                    </div>
                 </div>
             </div>
         </header>
