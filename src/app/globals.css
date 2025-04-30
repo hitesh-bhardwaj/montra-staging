@@ -76,11 +76,29 @@ body {
   mask-position: 100% 100%;
 }
 
+@keyframes fadeInDelayed {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-delay {
+  animation: fadeInDelayed 1s ease forwards;
+  animation-delay: 6s;
+}
+
 
 /* Marquee */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-33.8%); }
+}
+.marquee {
+  /* length should match the total width of one loop of items */
+  animation: marquee 5s linear infinite;
 }
 
 .heroAnim .single-line {

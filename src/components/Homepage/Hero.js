@@ -24,7 +24,7 @@ export default function Hero() {
           gsap.from(".heroFadeUp",{
             yPercent:70,
             opacity:0,
-            delay:4.5,
+            delay:5,
             duration:1,
             stagger:0.15
           })

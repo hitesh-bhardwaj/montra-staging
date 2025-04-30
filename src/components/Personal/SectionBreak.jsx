@@ -55,7 +55,7 @@ export default function SectionBreak() {
       ref={sectionRef}
       className="relative h-screen mt-[-10vw] w-screen  px-[4vw] overflow-hidden"
     >
-      <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white"></div>
+      <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white"/>
 
       <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto">
         <h2

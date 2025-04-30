@@ -63,7 +63,7 @@ const FeatureSection = () => {
             variants={container}
         >
             <div
-                className="relative inline-block z-10 w-[35vw] max-w-xs sm:max-w-md md:max-w-lg"
+                className="relative inline-block z-10 w-[35vw] max-w-xs sm:max-w-md md:max-w-lg fade-in-delay opacity-0"
             >
                 <img
                     src="/assets/images/homepage/phone-mockup.png"
