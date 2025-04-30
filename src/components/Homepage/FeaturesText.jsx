@@ -9,7 +9,7 @@ const items = [
     { icon: '/assets/images/homepage/receive.svg', label: 'PAYMENTS', color: 'text-primary' },
     { icon: '/assets/images/homepage/sell.svg', label: 'MARKETPLACE', color: 'text-[#35C771]' },
     { icon: '/assets/images/homepage/borrow.svg', label: 'LOANS', color: 'text-black-1]' },
-    { icon: '/assets/images/homepage/insaurance.svg', label: 'INSAURANCE', color: 'text-[#7A78FF]' },
+    { icon: '/assets/images/homepage/insaurance.svg', label: 'INSURANCE', color: 'text-[#7A78FF]' },
     { icon: '/assets/images/homepage/invest.svg', label: 'INVESTMENTS', color: 'text-[#FB2F55]' },
 ]
 

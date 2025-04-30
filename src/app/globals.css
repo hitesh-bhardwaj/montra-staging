@@ -26,8 +26,19 @@ body {
   font-size: 1.25vw;
   line-height: 1.4;
 }
+.perspective-box{
+  transform: perspective(1204.82px) translate3d(0px, 0px, 0px) rotateY(30deg);
+}
+.perspective-box-2{
+  transform: perspective(904.82px) translate3d(0px, 0px, 0px) rotateY(20deg);
+}
+.perspective-box-4{
+  transform: perspective(1204.82px) translate3d(0px, 0px, 0px) rotateY(-30deg);
+}
+.perspective-box-3{
+  transform: perspective(904.82px) translate3d(0px, 0px, 0px) rotateY(-20deg);
+}
 
-/* Swiper Css */
 .swiper-pagination {
   padding: 0 5vw !important;
   text-align: right !important;
