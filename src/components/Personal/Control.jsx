@@ -34,13 +34,13 @@ useEffect(() => {
   const tl = gsap.timeline();
 
   tl.to(prev, {
-    yPercent: -30,
+    yPercent: -5,
     opacity: 0,
     duration: 0.7,
     ease: "power1.inOut",
   })
-    .set(prev, { yPercent: 30 }) // Reset offscreen for next time
-    .set(next, { yPercent: 30, opacity: 0 })
+    .set(prev, { yPercent: -5 }) // Reset offscreen for next time
+    .set(next, { yPercent: 5, opacity: 0 })
     .to(next, {
       yPercent: 0,
       opacity: 1,
@@ -370,16 +370,16 @@ useEffect(() => {
         </div>
       </div>
 
-      <div className="w-[75vw] h-[40vw] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4%] right-0 ">
-        <div className="w-full h-full relative">
-          <div className="w-full h-[5vw] top-0 left-0 bg-gradient-to-b from-white to-transparent z-[25] absolute" />
-          <div className="w-full h-[5vw] bottom-0 left-0 bg-gradient-to-t from-white to-transparent z-[25] absolute" />
-          <div className="w-full h-[40vw] relative bottom-content opacity-0">
+      <div className="w-screen h-[40vw] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4%] right-0 ">
+        <div className="w-full h-full relative flex justify-end ">
+          {/* <div className="w-screen h-[5vw] top-0 left-0 bg-gradient-to-b from-white to-transparent z-[25] absolute" />
+          <div className="w-screen h-[5vw] bottom-0 left-0 bg-gradient-to-t from-white to-transparent z-[25] absolute" /> */}
+          <div className="w-[75%] h-[40vw] relative bottom-content opacity-0 flex justify-end pr-[4vw]">
             {sections.map((sectionKey) => (
               <div
                 key={sectionKey}
                 ref={(el) => (sectionRefs.current[sectionKey] = el)}
-                className={`w-full h-[40vw] flex justify-between absolute top-0 left-0 ${
+                className={`w-full h-[40vw] flex justify-between absolute top-0 left-0 pr-[4vw] ${
                   active === sectionKey ? "z-20" : "z-10"
                 }`}
               >

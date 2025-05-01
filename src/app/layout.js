@@ -5,6 +5,7 @@ import "./globals.css";
 import LenisSmoothScroll from "@/components/LenisSmoothScroll";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import InteractiveBackground from "@/components/Background";
 
 
 
@@ -56,6 +57,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={`${workSans.variable} ${standerd.variable} antialiased`}>
           <Header />
+          <InteractiveBackground/>
           {children}
           <Footer />
         </body>

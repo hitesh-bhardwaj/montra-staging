@@ -44,16 +44,16 @@ export default function PinnedRevealSection() {
         <section ref={ref} className="relative h-[700vh]">
             <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-white">
                 {/* 1) Six HEADINGS */}
-                <div className='flex flex-col justify-center items-center'>
+                <div className='flex flex-col justify-center items-center max-sm:gap-[4vw]'>
                     <motion.div 
                         initial={{opacity: 0, y: 100}}
                         whileInView={{opacity: 1, y: 0}}
                         viewport={{ once: true, amount: 0.5 }}
                         transition={{duration: 1, ease: 'easeOut'}}
-                        className="flex items-center space-x-[2vw]"
+                        className="flex items-center space-x-[2vw] max-sm:space-x-[4vw]"
                         >
-                        <img src={items[0].icon} alt={items[0].label} className="w-[4.5vw] h-[4.5vw]" />
-                        <h2 className={`text-[5vw] font-bold font-display ${items[0].color}`}>
+                        <img src={items[0].icon} alt={items[0].label} className="w-[4.5vw] h-[4.5vw] max-sm:w-[12vw] max-sm:h-[12vw]" />
+                        <h2 className={`text-[5vw] font-bold font-display max-sm:text-[10.5vw] ${items[0].color}`}>
                             {items[0].label}
                         </h2>
                     </motion.div>
@@ -64,10 +64,10 @@ export default function PinnedRevealSection() {
                                 opacity: transforms[i].opacity,
                                 y: transforms[i].y,
                             }}
-                            className="flex items-center space-x-[2vw]"
+                            className="flex items-center space-x-[2vw] max-sm:space-x-[4vw]"
                         >
-                            <img src={it.icon} alt={it.label} className="w-[4.5vw] h-[4.5vw]" />
-                            <h2 className={`text-[5vw] font-bold font-display ${it.color}`}>
+                            <img src={it.icon} alt={it.label} className="w-[4.5vw] h-[4.5vw] max-sm:w-[12vw] max-sm:h-[12vw]" />
+                            <h2 className={`text-[5vw] font-bold font-display max-sm:text-[10.5vw] ${it.color}`}>
                                 {it.label}
                             </h2>
                         </motion.div>
@@ -95,7 +95,7 @@ export default function PinnedRevealSection() {
                 {/* 3) INFO CARDS */}
                 <motion.div
                     style={cardTransforms}
-                    className="absolute inset-0 z-10">
+                    className="absolute inset-0 z-10 max-sm:top-[10%]">
                     <InfoCarouselSwiper />
                 </motion.div>
             </div>

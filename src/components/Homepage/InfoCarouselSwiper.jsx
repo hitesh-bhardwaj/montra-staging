@@ -17,7 +17,7 @@ const content = [
 export default function InfoCarouselSwiper() {
     return (
         <div className="bg-[#215CFF] text-white py-[3vw]">
-                <h3 className='ml-[5vw] text-white font-display font-medium text-[2.85vw] w-1/3 capitalize leading-[1.3] pb-[3vw]'>All your payments and cash flow needs, sorted</h3>
+                <h3 className='ml-[5vw] text-white font-display font-medium text-[2.85vw] w-1/3 capitalize leading-[1.3] pb-[3vw] max-sm:text-[7vw] max-sm:w-[75%] max-sm:pb-[10vw]'>Sort All Your Payments And Cash Flow Needs</h3>
                 <Swiper
                     modules={[Autoplay, Pagination]}
                     slidesPerView={1}
@@ -45,8 +45,8 @@ export default function InfoCarouselSwiper() {
 
 const Card = ({ img, bgColor, text }) => {
     return (
-        <div style={{ background: bgColor }} className="overflow-hidden group rounded-[3vw] hover:scale-[0.99] duration-500 transition-transform">
-            <div className='relative h-[27vw] w-full rounded-b-[3vw] overflow-hidden'>
+        <div style={{ background: bgColor }} className="overflow-hidden group rounded-[3vw] hover:scale-[0.99] duration-500 transition-transform max-sm:rounded-[9vw]">
+            <div className='relative h-[27vw] w-full rounded-b-[3vw] overflow-hidden max-sm:h-[110vw] max-sm:rounded-[9vw]'>
                 <Image src={img} alt='feature image' fill className='object-cover group-hover:scale-[1.05] duration-500' />
             </div>
             <p className='text-black-1 py-7 px-6'>{text}</p>

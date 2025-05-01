@@ -16,29 +16,60 @@ export default function SectionBreak() {
     useEffect(() => {
         initSplitLines();
         const lines = sectionRef.current.querySelectorAll('.single-line')
-        gsap.to(".gradient", {
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              pin: ".gradient",
-              start: "top 70%",
-              end: "bottom bottom",
-              scrub: true,
-              // markers: true,
-            },
-          });
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: 'top center',
-                end: 'center 20%',
-                scrub: 0.25,
-            }
-        })
-            .to(lines, {
-                maskPosition: "0% 100%",
-                stagger: 0.05,
-                ease: 'none'
+        if(globalThis.innerWidth>1024){
+
+            gsap.to(".gradient", {
+                scrollTrigger: {
+                  trigger: sectionRef.current,
+                  pin: ".gradient",
+                  start: "top 70%",
+                  end: "bottom bottom",
+                  scrub: true,
+                  // markers: true,
+                },
+              });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top center',
+                    end: 'center 20%',
+                    scrub: 0.25,
+                }
             })
+                .to(lines, {
+                    maskPosition: "0% 100%",
+                    stagger: 0.05,
+                    ease: 'none'
+                })
+
+        }
+        else{
+            gsap.to(".gradient", {
+                scrollTrigger: {
+                  trigger: sectionRef.current,
+                  pin: ".gradient",
+                  start: "top 85%",
+                  end: "bottom bottom",
+                  scrub: true,
+                  // markers: true,
+                },
+              });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 40%',
+                    end: 'center 20%',
+                    scrub: 0.25,
+                }
+            })
+                .to(lines, {
+                    maskPosition: "0% 100%",
+                    stagger: 0.05,
+                    ease: 'none'
+                })
+
+
+        }
 
         // — now the floating icons logic
         const iconPaths = [
@@ -107,15 +138,15 @@ export default function SectionBreak() {
             ref={sectionRef}
             className="relative h-screen w-screen overflow-hidden px-[4vw]"
         >
-               <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white"/>
+               <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:h-[40vw]"/>
             <div
                 ref={iconsContainer}
                 className="absolute inset-0 pointer-events-none overflow-hidden"
             />
-            <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto">
+            <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto max-sm:w-[95%]">
                 <h2
                     data-split="lines"
-                    className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1"
+                    className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[11vw]"
                 >
                     Montra helps users shift from cash to digital payments besides making credit,
                     insurance, and investments easily accessible.

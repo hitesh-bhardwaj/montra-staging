@@ -57,7 +57,7 @@ export default function FAQs({ allowMultiple = false }) {
   return (
     <section className="px-[4vw] py-[6vw] w-full max-sm:px-[7vw]">
       <div className="flex flex-col items-center gap-[4vw] max-sm:gap-[10vw]">
-        <h2 className="font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[9.5vw] max-sm:text-left">
+        <h2 className="font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10.5vw] max-sm:text-left">
           Frequently Asked Questions
         </h2>
         <div className="w-4/5 space-y-[2vw] max-sm:w-full max-sm:space-y-[5vw]">
@@ -91,7 +91,7 @@ function Accordion({ question, answer, isOpen, onToggle }) {
           <div
             className={`
               bg-primary absolute h-full right-0 duration-400 transition-transform max-sm:bg-transparent max-sm:border max-sm:border-primary max-sm:justify-center max-sm:w-[12vw] max-sm:static max-sm:h-[10vw]
-              -z-10 w-[15vw] flex items-center justify-end rounded-3xl top-0 max-sm:z-[10] max-sm:rounded-[2vw]
+              z-[-1] w-[15vw] flex items-center justify-end rounded-3xl top-0 max-sm:z-[10] max-sm:rounded-[2vw]
               ${isOpen ? 'translate-x-[10vw] max-sm:translate-x-0' : 'group-hover:translate-x-[10vw]'}
             `}
           >

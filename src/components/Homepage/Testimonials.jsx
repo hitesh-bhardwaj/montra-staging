@@ -72,10 +72,10 @@ export default function Testimonials() {
                 placeholder="blur"
                 alt="testimonial background"
                 fill
-                className="-z-10 object-cover object-top"
+                className="z-0 object-cover object-top"
             />
 
-            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw]">
+            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2]">
                 <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2]">
                     Better Reviews, Happier Choices
                 </h3>
