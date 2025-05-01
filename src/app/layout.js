@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
       <LenisSmoothScroll />
       <html lang="en">
         <body className={`${workSans.variable} ${standerd.variable} antialiased`}>
-          {/* <Header /> */}
+          <Header />
           {children}
           <Footer />
         </body>

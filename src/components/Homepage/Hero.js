@@ -20,6 +20,13 @@ export default function Hero() {
               delay:4.2,
               ease: 'none'
           })
+          gsap.from(".header",{
+            yPercent:-70,
+            opacity:0,
+            delay:5,
+            duration:1,
+
+          })
 
           gsap.from(".heroFadeUp",{
             yPercent:70,

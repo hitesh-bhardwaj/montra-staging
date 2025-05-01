@@ -1,7 +1,6 @@
 "use client";
-import Header from "@/components/Header";
+
 import FAQs from "@/components/Homepage/FAQs";
-// import SectionBreak from "@/components/Homepage/SectionBreak";
 import Control from "@/components/Personal/Control";
 import ControlMobile from "@/components/Personal/ControlMobile";
 import Hero from "@/components/Personal/Hero";
@@ -19,10 +18,8 @@ export default function Personal() {
   }, []);
   return (
     <>
-      <Header />
       <Hero />
       {!mobileWidth ? <Control /> : <ControlMobile />}
-
       <SectionBreak />
       <FAQs />
     </>
