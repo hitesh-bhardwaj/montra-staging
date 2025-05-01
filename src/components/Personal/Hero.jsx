@@ -14,9 +14,9 @@ const Hero = () => {
           scrollTrigger: {
             trigger: "#hero",
             pin: ".hero-image-container",
-            start: "16% top",
-            end: "+1300 top",
-          //   markers: true,
+            start: "17% top",
+            end: "60% top",
+            // markers: true,
             scrub: 0.5,
           },
         });
@@ -33,10 +33,10 @@ const Hero = () => {
         })
           .to(".hero-image-anim", {
             width: "105vw",
-            height: "102vh",
+            height: "108vh",
             ease:"none",
             left: "-2.5%",
-            top: "-54%",
+            top: "-15vw",
             delay: -0.4,
             borderRadius: "0vw",
           })
@@ -67,7 +67,7 @@ const Hero = () => {
             pin: ".hero-image-container",
             start: "12% top",
             end: "+1300 top",
-            markers: true,
+            // markers: true,
             scrub: 0.5,
           },
         });
@@ -84,10 +84,10 @@ const Hero = () => {
         })
           .to(".hero-image-anim", {
             width: "105vw",
-            height: "102vh",
+            height: "220vw",
             ease:"none",
             left: "-2.5%",
-            top: "-52%",
+            top: "-54%",
             delay: -0.4,
             borderRadius: "0vw",
           })
@@ -116,7 +116,7 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className="w-screen h-[270vh] overflow-hidden max-sm:h-[248vh] " id="hero">
+    <section className="w-screen h-[270vh] max-sm:h-[560vw] " id="hero">
       <div className="w-full h-full flex flex-col gap-[2vw] max-sm:gap-[12vw]">
         <div className="w-full mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] text-center px-[4vw] max-sm:pt-[35vw] max-sm:space-y-[7vw]">
           <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw]">

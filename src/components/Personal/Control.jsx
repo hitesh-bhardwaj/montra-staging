@@ -127,8 +127,8 @@ useEffect(() => {
         stagger: 0.1,
         scrollTrigger: {
           trigger: "#control",
-          start: "10% 70%",
-          end: "35% 70%",
+          start: "5% 90%",
+          end: "20% 90%",
           // markers:true,
           scrub: true,
         },
@@ -138,8 +138,9 @@ useEffect(() => {
         scrollTrigger: {
           trigger: "#control",
           pin: ".icon-container",
-          start: "5% top",
-          end: "+1950 bottom",
+          start: "+150 top",
+          // end: "+3750 top",
+          end: "80% top",
           // markers:true,
           scrub: true,
         },
@@ -150,7 +151,7 @@ useEffect(() => {
         .to(".icon-5", {
           left: "70%",
           top: "20%",
-          delay: -0.45,
+          delay: -0.5,
         })
         .to(".icon-1", {
           left: "70%",
@@ -172,54 +173,71 @@ useEffect(() => {
           top: "110%",
           delay: -0.51,
         })
+        .to(".icon-1", {
+          left: "-65%",
+          delay:0,
+        })
         .to(".icon-5", {
           left: "-65%",
-          top: "40%",
+          delay:-0.45,
+
+        })
+        .to(".icon-2", {
+          left: "-65%",
+          delay: -0.44,
+        })
+        .to(".icon-4", {
+          left: "-65%",
+          delay: -0.435,
+        })
+        .to(".icon-3", {
+          left: "-65%",
+          delay: -0.43,
+        })
+        .to(".icon-1", {
+          top: "-10%",
+          scale: active == "Banking" ? 0.65 : 0.5,
+          opacity: active == "Banking" ? 1 : 0.3,
+          delay: 0,
+        })
+        .to(".icon-5", {
+          top: "60%",
+          delay:-0.5,
           // duration: 0.8,
           scale: active == "Payments" ? 0.65 : 0.5,
           opacity: active == "Payments" ? 1 : 0.3,
         })
-        .to(".icon-1", {
-          left: "-65%",
-          top: "-30%",
-          scale: active == "Banking" ? 0.65 : 0.5,
-          opacity: active == "Banking" ? 1 : 0.3,
-          delay: -0.5,
-        })
-        .to(".icon-3", {
-          left: "-65%",
-          top: "220%",
-          scale: active == "Shop" ? 0.65 : 0.5,
-          opacity: active == "Shop" ? 1 : 0.3,
+        .to(".icon-2", {
+          top: "120%",
+          scale: active == "Finance" ? 0.65 : 0.5,
+          opacity: active == "Finance" ? 1 : 0.3,
           delay: -0.5,
         })
         .to(".icon-4", {
-          left: "-65%",
-          top: "160%",
+          top: "180%",
           scale: active == "Chat" ? 0.65 : 0.5,
           opacity: active == "Chat" ? 1 : 0.3,
           delay: -0.5,
         })
-        .to(".icon-2", {
-          left: "-65%",
-          top: "100%",
-          scale: active == "Finance" ? 0.65 : 0.5,
-          opacity: active == "Finance" ? 1 : 0.3,
+        .to(".icon-3", {
+          top: "240%",
+          scale: active == "Shop" ? 0.65 : 0.5,
+          opacity: active == "Shop" ? 1 : 0.3,
           delay: -0.5,
         })
         .to(".icon-content", {
           opacity: 1,
           duration: 0.2,
-          delay: -0.65,
+          delay: -1.35,
         })
         .to(".control-content", {
           opacity: 1,
-          delay: -1,
+          delay: -1.7,
         
         })
         .to(".control-content", {
           opacity: 0,
-          delay: -0.5,
+          delay: -1.2,
           duration: 0.2,
         })
         .to(".bottom-content", {
@@ -236,7 +254,7 @@ useEffect(() => {
     return () => ctx.revert();
   }, [active]);
   return (
-    <div className="w-screen h-[140vw] px-[4vw] py-[5%] relative" id="control">
+    <div className="w-screen h-[310vw] px-[4vw] py-[5%] relative overflow-hidden" id="control">
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">
         <h2 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-center">
           Take Control of Your Money. Effortlessly.
@@ -352,7 +370,7 @@ useEffect(() => {
         </div>
       </div>
 
-      <div className="w-[75vw] h-[40vw] flex flex-col flex-nowrap overflow-hidden absolute bottom-[10%] right-0 ">
+      <div className="w-[75vw] h-[40vw] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4%] right-0 ">
         <div className="w-full h-full relative">
           <div className="w-full h-[5vw] top-0 left-0 bg-gradient-to-b from-white to-transparent z-[25] absolute" />
           <div className="w-full h-[5vw] bottom-0 left-0 bg-gradient-to-t from-white to-transparent z-[25] absolute" />
