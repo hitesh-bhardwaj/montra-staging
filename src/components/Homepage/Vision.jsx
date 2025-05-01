@@ -45,11 +45,11 @@ export default function Vision() {
                     Building future of an Inclusive Financial Ecosystem
                 </h3>
 
-                <div className="absolute -top-[200%] inset-0 z-10 flex items-center justify-center gap-[2vw] max-sm:static max-sm:flex-col max-sm:items-start">
+                <div className="absolute -top-[200%] inset-0 z-10 flex items-center justify-center gap-[2vw] max-sm:static max-sm:flex-col max-sm:items-start max-sm:gap-[6vw]">
                     {/* white = slower */}
                     <motion.div
                         style={{ y: isMobile?0:yWhite }}
-                        className="border border-gray-100 bg-white w-[28vw] max-sm:w-[90vw] max-sm:px-[5vw]  max-sm:py-[10vw]
+                        className="border border-gray-100 bg-white w-[28vw] max-sm:w-[90vw] max-sm:px-[7vw]  max-sm:py-[10vw]
                        px-[2.5vw] pt-[5.5vw] pb-[4vw] rounded-[3vw] z-10 max-sm:rounded-[7vw]"
                     >
                         <Image src={"/assets/icons/vision.svg"} alt="vision" width={100} height={100} className="mb-[3vw] max-sm:mb-[12vw] max-sm:w-[16vw] max-sm:h-[16vw]" />
@@ -60,11 +60,11 @@ export default function Vision() {
                     {/* blue = faster */}
                     <motion.div
                         style={{ y: isMobile?0:yBlue }}
-                        className="border border-gray-100 bg-primary text-white w-[28vw] max-sm:w-[90vw] max-sm:px-[5vw] max-sm:rounded-[7vw]
+                        className="border border-gray-100 bg-primary text-white w-[28vw] max-sm:w-[90vw] max-sm:px-[7vw] max-sm:rounded-[7vw] max-sm:py-[10vw]
                        px-[2.5vw] pt-[5.5vw] pb-[4vw] rounded-[3vw] z-0"
                     >
-                        <Image src={"/assets/icons/mission.svg"} alt="vision" width={100} height={100} className="mb-[3vw] max-sm:w-[16vw] max-sm:h-[16vw]" />
-                        <h4 className="font-display font-medium text-[3.4vw] mb-[2vw] max-sm:text-[8.5vw]">Our Mission</h4>
+                        <Image src={"/assets/icons/mission.svg"} alt="vision" width={100} height={100} className="mb-[3vw] max-sm:mb-[12vw] max-sm:w-[16vw] max-sm:h-[16vw]" />
+                        <h4 className="font-display font-medium text-[3.4vw] mb-[2vw] max-sm:text-[8vw] max-sm:mb-[6vw]">Our Mission</h4>
                         <p>To make financial services simple, accessible, and inclusive—empowering individuals and businesses in emerging economies to thrive in a digital world</p>
                     </motion.div>
                 </div>

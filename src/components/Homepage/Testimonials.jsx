@@ -1,16 +1,34 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import bgImage from '../../../public/assets/images/homepage/testimonial-image.png'
+// import Swiper from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger)
 }
+const useIsMobile = (breakpoint = 541) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < breakpoint);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, [breakpoint]);
+
+    return isMobile;
+};
 
 export default function Testimonials() {
+    const isMobile = useIsMobile();
     const sectionRef = useRef(null)
     const cardsRef = useRef(null)
 
@@ -65,7 +83,7 @@ export default function Testimonials() {
     return (
         <section
             ref={sectionRef}
-            className="w-screen h-full relative overflow-hidden py-[4vw]"
+            className="w-screen h-full relative overflow-hidden py-[4vw] max-sm:py-[15%]"
         >
             <Image
                 src={bgImage}
@@ -75,12 +93,13 @@ export default function Testimonials() {
                 className="z-0 object-cover object-top"
             />
 
-            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2]">
-                <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2]">
+            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2] max-sm:px-[7vw] max-sm:gap-[25vw]">
+                <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10vw] max-sm:text-left">
                     Better Reviews, Happier Choices
                 </h3>
 
                 {/* Wrap all cards here */}
+                {!isMobile?
                 <div
                     ref={cardsRef}
                     className="flex flex-col h-full gap-[1vw]"
@@ -95,7 +114,40 @@ export default function Testimonials() {
                             className="testimonial-card"
                         />
                     ))}
+                </div>:
+                
+                <div className='w-full h-fit'>
+
+                <Swiper
+                    modules={[Autoplay, Pagination]}
+                    slidesPerView={1}
+                    spaceBetween={60}
+                    speed={1000}
+                    pagination={{ clickable: true }}
+                    // autoplay={{
+                    //     delay: 5000,
+                    //     disableOnInteraction: false
+                    // }}
+                    // breakpoints={{
+                    //     768: { slidesPerView: 3 }
+                    // }}
+                    className=""
+                >
+                    {content.map((c, index) => (
+                        <SwiperSlide className='pb-16' key={index}>
+                             <Card
+                            img={c.img}
+                            text={c.text}
+                            name={c.name}
+                            rating={+c.rating}
+                            className="testimonial-card"
+                        />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
                 </div>
+            
+            }
             </div>
         </section>
     )
@@ -107,7 +159,7 @@ const Card = ({ img, text, name, rating, className = "" }) => {
             className={
                 `${className} border text-white font-display border-[#939393] 
          rounded-[1vw] overflow-hidden backdrop-blur-2xl bg-[#99999940] 
-         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw]`
+         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw] max-sm:w-[85vw] max-sm:h-[110vw] max-sm:rounded-[4vw] max-sm:py-[10vw] max-sm:px-[7vw] max-sm:flex max-sm:flex-col max-sm:justify-between`
             }
         >
             {/* stars */}
@@ -115,7 +167,7 @@ const Card = ({ img, text, name, rating, className = "" }) => {
                 {Array.from({ length: rating }).map((_, i) => (
                     <svg
                         key={i}
-                        className="w-[1.5vw] h-[1.5vw]"
+                        className="w-[1.5vw] h-[1.5vw] max-sm:w-[6vw] max-sm:h-[6vw]"
                         viewBox="0 0 23 20"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -135,17 +187,17 @@ const Card = ({ img, text, name, rating, className = "" }) => {
                 ))}
             </div>
 
-            <p className='h-[7vw]'>{text}</p>
+            <p className='h-[7vw] max-sm:h-fit max-sm:text-[4.5vw]'>{text}</p>
 
-            <div className="flex items-center gap-[1vw]">
+            <div className="flex items-center gap-[1vw] max-sm:gap-[4vw]">
                 <Image
                     src={img}
                     alt={name}
                     width={64}
                     height={64}
-                    className="w-[3.3vw] h-[3.3vw] rounded-full"
+                    className="w-[3.3vw] h-[3.3vw] rounded-full max-sm:w-[15vw] max-sm:h-[15vw]"
                 />
-                <p className="text-[1.05vw]">{name}</p>
+                <p className="text-[1.05vw] max-sm:text-[6.5vw]">{name}</p>
             </div>
         </div>
     )
