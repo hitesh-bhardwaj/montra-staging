@@ -155,7 +155,7 @@ export default function Payments() {
     const translateY = useTransform(scrollYProgress, [0, 1], ['0', '-80%']);
 
     return (
-        <section ref={sectionRef} className="h-[600vh]">
+        <section ref={sectionRef} className="h-[600vh] bg-white">
             <div className="sticky top-0 px-[4vw] h-screen flex items-center justify-between">
 
                 {/* ─── CONTROLS ─── */}

@@ -58,9 +58,9 @@ function Accordion({ question, answer, isOpen, onToggle }) {
           </h4>
           <div
             className={`
-              bg-primary absolute h-full right-0 duration-400 transition-transform max-sm:bg-transparent max-sm:border max-sm:border-primary max-sm:justify-center max-sm:w-[12vw] max-sm:static max-sm:h-[10vw]
+              bg-primary absolute h-full right-0 duration-400 transition-all max-sm:bg-transparent max-sm:border max-sm:border-primary max-sm:justify-center max-sm:w-[12vw] max-sm:static max-sm:h-[10vw]
               z-[-1] w-[15vw] flex items-center justify-end rounded-3xl top-0 max-sm:z-[10] max-sm:rounded-[2vw]
-              ${isOpen ? 'translate-x-[10vw] max-sm:translate-x-0' : 'group-hover:translate-x-[10vw]'}
+              ${isOpen ? 'translate-x-[10vw] max-sm:translate-x-0 max-sm:!bg-primary' : 'group-hover:translate-x-[10vw]'}
             `}
           >
             <span
@@ -69,8 +69,8 @@ function Accordion({ question, answer, isOpen, onToggle }) {
                 duration-400 ${isOpen ? 'rotate-45' : ''}
               `}
             >
-              <span className="bg-white absolute block h-[2vw] w-[1.5px] max-sm:bg-primary max-sm:h-[5.5vw]" />
-              <span className="bg-white absolute block h-[2vw] w-[1.5px] rotate-90 max-sm:bg-primary max-sm:h-[5.5vw]" />
+              <span className={`bg-white absolute block h-[2vw] w-[1.5px]  max-sm:h-[5.5vw] duration-400 transition-all ${isOpen?"max-sm:bg-white":"max-sm:bg-primary"}`}/>
+              <span className={`bg-white absolute block h-[2vw] w-[1.5px] rotate-90 max-sm:bg-primary max-sm:h-[5.5vw] duration-400 transition-all ${isOpen?"max-sm:bg-white":"max-sm:bg-primary"}`} />
             </span>
           </div>
         </button>

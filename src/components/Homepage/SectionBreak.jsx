@@ -136,7 +136,7 @@ export default function SectionBreak() {
     return (
         <section
             ref={sectionRef}
-            className="relative h-screen w-screen overflow-hidden px-[4vw]"
+            className="relative h-screen w-screen overflow-hidden px-[4vw] bg-white"
         >
                <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:h-[40vw]"/>
             <div
