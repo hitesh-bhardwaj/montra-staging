@@ -40,7 +40,7 @@ const Card = React.forwardRef(({ className, active, img }, ref) => {
 });
 Card.displayName = 'Card';
 
-export default function Trial() {
+export default function Hero() {
     const cardContainer = useRef(null);
     const mainCard = useRef(null);
     const cardRefs = useRef([]);
@@ -54,6 +54,7 @@ export default function Trial() {
     };
 
     useEffect(() => {
+        if(globalThis.innerWidth>1024){
         const [firstCard, secondCard, thirdCard, fourthCard] = cardRefs.current;
 
         const tl = gsap.timeline({
@@ -114,7 +115,7 @@ export default function Trial() {
             scrollTrigger: {
                 trigger: ".mainCard",
                 start: "top 20%",
-                end: "+=2500 10%",
+                end: "550% 10%",
                 scrub: true,
                 // markers: true,
                 pin: mainCardContainer.current
@@ -189,16 +190,17 @@ export default function Trial() {
             scrollTrigger: {
                 trigger: "#hero",
                 start: "80% 60%",
-                end: "+=300 70%",
+                end: "100% 70%",
                 scrub: true,
                 // markers:true,
             },
         })
+    };
     }, []);
 
     return (
         <section id="hero" className="relative h-[500vh] overflow-hidden">
-            <div className="flex flex-col items-start justify-start text-center px-[4vw]">
+            <div className="flex flex-col items-start justify-start text-center px-[4vw] ">
                 <div className="w-full mx-auto space-y-[1.2vw] pt-[14vw] ">
                     <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15]">
                         <span className="text-primary">Montra Business Account: </span> Go
@@ -216,12 +218,34 @@ export default function Trial() {
                         active={true}
                         img={"/assets/images/business/hero-img1.png"}
                     />
-                    <Card
-                        ref={mainCard}
-                        className="absolute left-[25%] translate-y-[30%] z-[50] mainCard opacity-0 card2"
-                        active={true}
-                        img={"/assets/images/business/hero-img2.png"}
-                    />
+                    <div ref={mainCard} className={`h-[30vw] w-[43vw] absolute left-[25%] translate-y-[30%] z-[50] mainCard  card2 opacity-0 card2 brightness-100 drop-shadow-2xl `} >
+            <div className="h-full w-full rounded-[2.2vw] overflow-hidden">
+                <Image
+                    src="/assets/images/business/hero-card2.png"
+                    height={593}
+                    width={779}
+                    alt="hero-img1"
+                    className="object-cover h-[35vw]"
+                />
+            </div>
+            <span className={`bg-primary text-white rounded-[2vw] py-[0.5vw] px-[1vw] absolute top-5 right-5 block`}>
+                Business
+            </span>
+            <div className={`bg-white absolute bottom-5 left-5 flex items-center justify-start gap-[2vw] rounded-[1.5vw] py-[1vw] px-[1vw] w-fit h-fit }`}>
+                <span className="bg-primary rounded-full h-[3vw] w-[3vw] absolute block" />
+                <div className="pl-[4vw] text-left">
+                    <p>No. of Payments Received</p>
+                    <p className="text-[1vw] font-display">10</p>
+                </div>
+            </div>
+            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block}`}>
+                <p className="font-bold font-display text-[3.4vw] text-white">
+                    <span className="line-through">N</span> 20,000
+                </p>
+            </div>
+            <div className={`frame absolute z-[-1] top-[-3%] left-[-2.5%] bg-[#111111] rounded-[3vw] w-[45vw] h-[32vw] flex items-center justify-center scale-0 }`} >
+            </div>
+        </div>
                 </div>
                 <div
                     className="relative flex items-center justify-center w-full ml-[-2vw] h-[5vw] mt-[7vw]"
@@ -242,7 +266,7 @@ export default function Trial() {
                 </div>
                 </div>
                 <div className="px-[4vw] mt-[70vw] !h-[250vh] justify-between flex flex-col relative z-[-1]">
-                    <div ref={content1} className="flex flex-col  translate-x-[110%] text-white w-1/2 py-[4vw] relative z-0 ">
+                    <div ref={content1} className="flex flex-col  translate-x-[110%] text-white w-1/2 py-[4vw] relative z-0 pl-[2vw]">
                         <h2 className="text-[3.4vw] py-[2vw] font-display w-[80%] text-left font-medium">
                             Boost Growth With Smart Payments & Tools
                         </h2>
@@ -254,13 +278,13 @@ export default function Trial() {
                                 <li>POS – get a POS issued from Montra to start accepting card payments</li>
                             </ul>
                             <div className="space-y-[2vw]">
-                                <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-white text-black w-full">
+                                <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-white text-black w-[78%]">
                                     Accept cashless payments with ease
                                 </div>
-                                <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-[#FFEAEE] text-black w-full">
+                                <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-[#FFEAEE] text-black w-[78%]">
                                     Access working capital and credit
                                 </div>
-                                <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-[#EAF1FF] text-black w-full">
+                                <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-[#EAF1FF] text-black w-[78%]">
                                     Get business insights in real-time
                                 </div>
                             </div>
@@ -268,8 +292,8 @@ export default function Trial() {
                     </div>
 
 
-                    <div ref={content2} className="flex flex-col  text-white w-1/2 py-[4vw]">
-                        <h2 className="text-[3.4vw] py-[2vw] font-display font-medium w-[70%]">
+                    <div ref={content2} className="flex flex-col  text-white w-1/2 py-[4vw] pl-[2vw]">
+                        <h2 className="text-[3.4vw] py-[2vw] font-display font-medium w-[75%]">
                             Smart Business Management Tools For Smarter Businesses
                         </h2>
                         <div className="pb-[2vw] w-[80%]">
@@ -277,13 +301,13 @@ export default function Trial() {
 
                         </div>
                         <div className="space-y-[2vw]">
-                            <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-white text-black w-[80%]">
+                            <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-white text-black w-[85%]">
                                 Track payment collections & Settlements
                             </div>
-                            <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-[#FFEAEE] text-black w-[80%]">
+                            <div className="rounded-[2vw] px-[2vw] py-[1vw] bg-[#FFEAEE] text-black w-[85%]">
                                 Voice & Text notifications for payment confirmation
                             </div>
-                            <div className="rounded-[3vw] px-[2vw] py-[1vw] bg-[#EAF1FF] text-black w-[80%]">
+                            <div className="rounded-[3vw] px-[2vw] py-[1.2vw] bg-[#EAF1FF] text-black w-[85%]">
                                 Set up a Montra Store on Montra App & start selling your products & services virtually
                             </div>
                         </div>

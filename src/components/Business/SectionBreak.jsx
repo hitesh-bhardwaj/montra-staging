@@ -10,19 +10,19 @@ if (typeof window !== "undefined") {
 }
 
 export default function SectionBreak() {
-  const sectionRef = useRef(null);
+  const sectionNewRef = useRef(null);
   // const iconsContainer = useRef(null)
 
   useEffect(() => {
     initSplitLines();
     
-    const lines = sectionRef.current.querySelectorAll(".single-line");
+    const lines = sectionNewRef.current.querySelectorAll(".single-line");
 
     if(globalThis.innerWidth>1024){
 
       gsap.to(".gradient", {
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: sectionNewRef.current,
           pin: ".gradient",
           start: "top 70%",
           end: "bottom bottom",
@@ -34,11 +34,11 @@ export default function SectionBreak() {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: sectionRef.current,
+            trigger: sectionNewRef.current,
             start: "top center",
             end: "center 20%",
             scrub: 0.25,
-            //   markers:true,
+              // markers:true,
           },
         })
         .to(lines, {
@@ -50,7 +50,7 @@ export default function SectionBreak() {
     else{
       gsap.to(".gradient", {
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: sectionNewRef.current,
           pin: ".gradient",
           start: "top 90%",
           end: "bottom bottom",
@@ -62,11 +62,11 @@ export default function SectionBreak() {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: sectionRef.current,
+            trigger: sectionNewRef.current,
             start: "top center",
             end: "center 20%",
             scrub: 0.25,
-              markers:true,
+              // markers:true,
           },
         })
         .to(lines, {
@@ -87,8 +87,8 @@ export default function SectionBreak() {
 
   return (
     <section
-      ref={sectionRef}
-      className="relative h-screen mt-[-10vw] w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:mt-[15vw] max-sm:bg-[#FBFBFB]"
+      ref={sectionNewRef}
+      className="relative h-screen mt-[-10vw] w-screen  px-[4vw] overflow-hidden max-sm:h-screen max-sm:py-[25%] max-sm:mt-[15vw] max-sm:bg-[#FBFBFB]"
     >
       <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden"/>
 

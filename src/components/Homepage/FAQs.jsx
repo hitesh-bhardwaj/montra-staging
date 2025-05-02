@@ -3,40 +3,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const faqContent = [
-  {
-    question: 'What is Montra?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-  {
-    question: 'Is Montra licensed?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-  {
-    question: 'What is unique about Montra?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-  {
-    question: 'How do we Sign-Up on Montra?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
-  },
-  {
-    question: 'How do we Sign-In on Montra?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-  {
-    question: 'Is enabling Face / Touch / Fingerprint ID safe?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-]
 
-export default function FAQs({ allowMultiple = false }) {
+export default function FAQs({ allowMultiple = false , content}) {
   // keep track of which indexes are open
   const [openIndexes, setOpenIndexes] = useState([])
 
@@ -61,7 +29,7 @@ export default function FAQs({ allowMultiple = false }) {
           Frequently Asked Questions
         </h2>
         <div className="w-4/5 space-y-[2vw] max-sm:w-full max-sm:space-y-[5vw]">
-          {faqContent.map((f, i) => (
+          {content.map((f, i) => (
             <Accordion
               key={i}
               question={f.question}

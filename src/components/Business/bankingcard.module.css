@@ -1,0 +1,47 @@
+.sliderSection {
+    height: 100vh;
+    /* top: 65vw; */
+    position: absolute;
+    width: 100%;
+}
+  .wheel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    width: 100vw;
+    height: 100vw;
+    max-width: 4000px;
+    max-height: 2000px;
+    left: -15%;
+    top: -5%;
+    transform: translateX(-50%);
+  }
+  .wheelCard {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  @media screen  and (max-width:1380px){
+    .sliderSection {
+      height: 100%;
+      top: 67vw ;
+      left: 20vw;
+      position: absolute;
+      width: 100%;
+    }
+    
+  }
+  @media screen and (max-width: 1550px) {
+    .sliderSection {
+      height: 100vh;
+      top:65vw;
+      left: 20vw;
+
+      position: absolute;
+      width: 100%;
+  }
+ 
+  }

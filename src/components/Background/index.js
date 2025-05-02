@@ -337,11 +337,11 @@ export default function InteractiveBackground() {
     <>
       <canvas
         ref={canvasRef}
-        style={{ position:'fixed', top:0, left:0, zIndex:-1 }}
+        style={{ position:'fixed', top:0, left:0, zIndex:-5 }}
       />
       <div
         ref={threeContainerRef}
-        style={{ position:'fixed', top:0, left:0, width:'100%', height:'100%', zIndex:-2 }}
+        style={{ position:'fixed', top:0, left:0, width:'100%', height:'100%', zIndex:-6 }}
       />
     </>
   );
