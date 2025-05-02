@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={`${workSans.variable} ${standerd.variable} antialiased`}>
           <Header />
-          {/* <InteractiveBackground/> */}
+          <InteractiveBackground/>
           {children}
           <Footer />
         </body>
