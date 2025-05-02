@@ -9,8 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 const Control = () => {
   const [active, setActive] = useState("Banking");
   const [pointer, setPointer] = useState(false);
-  const [enter, setEnter] = useState(false);
-  const [tick, setTick] = useState(false);
+  // const [enter, setEnter] = useState(false);
+  // const [tick, setTick] = useState(false);
   const prevActiveRef = useRef(active);
   const sectionRefs = useRef({});
 
@@ -249,12 +249,15 @@ useEffect(() => {
           onReverseComplete: () => {
             setPointer(false);
           },
-        });
+        }).to(".bottom-content",{
+          opacity:0,
+          duration:0.2
+        })
     });
     return () => ctx.revert();
   }, [active]);
   return (
-    <div className="w-screen h-[310vw] px-[4vw] py-[5%] relative overflow-hidden" id="control">
+    <div className="w-screen h-[310vw] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb]" id="control">
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">
         <h2 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-center">
           Take Control of Your Money. Effortlessly.
@@ -370,7 +373,7 @@ useEffect(() => {
         </div>
       </div>
 
-      <div className="w-screen h-[40vw] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4%] right-0 ">
+      <div className="w-screen h-[40vw] flex flex-col flex-nowrap overflow-hidden fixed bottom-[10%] right-0 ">
         <div className="w-full h-full relative flex justify-end ">
           {/* <div className="w-screen h-[5vw] top-0 left-0 bg-gradient-to-b from-white to-transparent z-[25] absolute" />
           <div className="w-screen h-[5vw] bottom-0 left-0 bg-gradient-to-t from-white to-transparent z-[25] absolute" /> */}

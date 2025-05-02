@@ -175,8 +175,8 @@ export default function InteractiveBackground() {
         for (let i=1; i<mouseHistory.length; i++) {
           const age = i/(mouseHistory.length-1);
           const alpha = idle
-            ? (0.6 * age)         // stronger when idle
-            : (0.6 * age);
+            ? (0.4* age)         // stronger when idle
+            : (0.4 * age);
           ctx.lineWidth = Math.max(1, trailBaseWidth * age);
           ctx.strokeStyle = `rgba(67,202,255,${alpha.toFixed(2)})`;
           ctx.lineTo(mouseHistory[i].x, mouseHistory[i].y);

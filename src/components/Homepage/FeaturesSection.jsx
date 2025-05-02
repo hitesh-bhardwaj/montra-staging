@@ -21,7 +21,7 @@ const icons = [
     {
         src: "/assets/images/homepage/image-1.png",
         alt: "Receive",
-        style: { top: "20%", left: "15%" },
+        style: { top: "30%", left: "15%" },
         mobileStyle: { top: "20%", left: "10%" },
         mobilexOffset:0,
         mobileyOffset:-200,
@@ -31,7 +31,7 @@ const icons = [
     {
         src: "/assets/images/homepage/image-2.png",
         alt: "Pay",
-        style: { top: "20%", right: "15%" },
+        style: { top: "30%", right: "15%" },
         mobileStyle: { top: "20%", right: "10%" },
         mobilexOffset:+10,
         mobileyOffset:-140,
@@ -84,14 +84,14 @@ const FeatureSection = () => {
 
     return (
         <motion.section
-            className="w-full h-full flex items-end justify-center relative overflow-hidden  pt-[2vw] max-sm:pt-[50vw]"
+            className="w-full h-full flex items-end justify-center relative overflow-hidden bg-white  pt-[2vw] max-sm:pt-[50vw] "
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={container}
         >
             <div
-                className="relative inline-block z-10 w-[55vw] h-[52vw]  max-sm:w-[100vw] max-sm:h-[120vw]"
+                className="relative inline-block z-10 w-[55vw] h-[52vw] translate-y-[-15%] max-sm:translate-y-0  max-sm:w-[100vw] max-sm:h-[120vw]"
             >
                 <img
                     src="/assets/images/homepage/phone-mockup.png"

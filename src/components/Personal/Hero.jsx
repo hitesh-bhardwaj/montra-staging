@@ -21,8 +21,9 @@ const Hero = () => {
           },
         });
         tl.to(".hero-left-card", {
-          left: "5%",
+          left: "-3%",
           opacity: 0,
+          
           duration: 0.5,
         });
         tl.to(".hero-right-card", {

@@ -97,7 +97,7 @@ export default function SectionBreak() {
             const size = gsap.utils.random(40, 80)
             img.style.width = `${size}px`
             // random starting opacity
-            img.style.opacity = `${gsap.utils.random(0.6, 1)}`
+            img.style.opacity = `${gsap.utils.random(0.8, 1)}`
             // allow transforms
             img.style.willChange = 'transform, opacity'
 
@@ -136,7 +136,7 @@ export default function SectionBreak() {
     return (
         <section
             ref={sectionRef}
-            className="relative h-screen w-screen overflow-hidden px-[4vw] bg-white"
+            className="relative h-screen w-screen overflow-hidden px-[4vw] bg-[#FBFBFB]"
         >
                <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:h-[40vw]"/>
             <div
