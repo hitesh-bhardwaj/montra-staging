@@ -54,6 +54,7 @@ export default function Hero() {
     };
 
     useEffect(() => {
+         const ctx = gsap.context(() => {
         if(globalThis.innerWidth>1024){
         const [firstCard, secondCard, thirdCard, fourthCard] = cardRefs.current;
 
@@ -174,7 +175,9 @@ export default function Hero() {
             },
         })
     };
-    }, []);
+         });
+         return () => ctx.revert();    
+}, []);
 
     return (
         <section id="hero" className="relative h-[480vh] overflow-hidden">

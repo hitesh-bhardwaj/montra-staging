@@ -9,20 +9,18 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function SectionBreak() {
-  const sectionNewRef = useRef(null);
-  // const iconsContainer = useRef(null)
+export default function SectionBreak({content}) {
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     initSplitLines();
     
-    const lines = sectionNewRef.current.querySelectorAll(".single-line");
+    const lines = sectionRef.current.querySelectorAll(".single-line");
 
     if(globalThis.innerWidth>1024){
-
       gsap.to(".gradient", {
         scrollTrigger: {
-          trigger: sectionNewRef.current,
+          trigger: sectionRef.current,
           pin: ".gradient",
           start: "top 70%",
           end: "bottom bottom",
@@ -34,11 +32,11 @@ export default function SectionBreak() {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: sectionNewRef.current,
+            trigger: sectionRef.current,
             start: "top center",
             end: "center 20%",
             scrub: 0.25,
-              // markers:true,
+            //   markers:true,
           },
         })
         .to(lines, {
@@ -50,7 +48,7 @@ export default function SectionBreak() {
     else{
       gsap.to(".gradient", {
         scrollTrigger: {
-          trigger: sectionNewRef.current,
+          trigger: sectionRef.current,
           pin: ".gradient",
           start: "top 90%",
           end: "bottom bottom",
@@ -62,11 +60,11 @@ export default function SectionBreak() {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: sectionNewRef.current,
-            start: "top center",
-            end: "center 20%",
+            trigger: sectionRef.current,
+            start: "top 10%",
+            end: "center 10%",
             scrub: 0.25,
-              // markers:true,
+              markers:true,
           },
         })
         .to(lines, {
@@ -76,19 +74,15 @@ export default function SectionBreak() {
         });
 
     }
-
-    // — now the floating icons logic
-
     return () => {
-      // clearTimeout(spawnTimeout)
       gsap.killTweensOf("*");
     };
   }, []);
 
   return (
     <section
-      ref={sectionNewRef}
-      className="relative h-screen  w-screen  px-[4vw] overflow-hidden max-sm:h-[170vw]  max-sm:bg-[#FBFBFB] bg-white"
+      ref={sectionRef}
+      className="relative h-screen w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB]"
     >
       <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden"/>
 
@@ -97,8 +91,7 @@ export default function SectionBreak() {
           data-split="lines"
           className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw]"
         >
-          With Montra for Personal, you're in charge—track spending, send money,
-          save, and access financial tools without the bank hassle.
+          {content}
         </h2>
       </div>
     </section>

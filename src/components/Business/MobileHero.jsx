@@ -9,8 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function MobileHero() {
     const mainCardContainer = useRef(null);
     const frame  = useRef(null);
-    const image1 = useRef(null);
-    const image2 =-  useRef(null);
 useEffect(()=>{
     gsap.to(mainCardContainer.current,{
         yPercent:128,
@@ -35,21 +33,19 @@ useEffect(()=>{
             // markers:true
         }
     })
-    // gsap.to(image1.current,{
-    //     yPercent:-30,
-    //     opacity:0,
-    //     duration:1,
-    //     ease:"none",
-    //     scrollTrigger:{
-    //         trigger:"#hero",
-    //         start:"5% top",
-    //         end:"38% 30%",
-    //         scrub:true,
-    //         // markers:true
-    //     }
-    // })
-       
-    
+    gsap.to(".imageContainer",{
+        yPercent:-10,
+        opacity:0,
+        duration:1,
+        ease:"none",
+        scrollTrigger:{
+            trigger:"#hero",
+            start:"5% top",
+            end:"15% top",
+            scrub:true,
+            // markers:true
+        }
+    }) 
 })
 
     return (
@@ -70,11 +66,11 @@ useEffect(()=>{
                         <Image src={"/assets/images/business/hero-img1.png"} height={352} width={266} alt="hero-image" className=" h-[70vw] w-[85vw] relative  rounded-[6vw]"/>
                         <div ref={frame} className="bg-black rounded-[6vw] h-[75vw] w-[90vw] absolute top-[-3%] left-[-3%] scale-0 z-[-1] "></div>
                     </div>
-                    <div className="h-[70vw] w-[85vw] rounded-[6vw] overflow-hidden absolute top-[16%] left-[10%]">
+                    <div  className="h-[70vw] w-[85vw] rounded-[6vw] overflow-hidden absolute top-[16.5%] imageContainer left-[10%]">
                         <Image src={"/assets/images/business/hero-img2.png"} height={352} width={266} alt="hero-image" className="object-cover h-[70vw] w-[85vw] scale-[0.8] z-[-1] relative brightness-75 rounded-[6vw]"/>
                     </div>
-                    <div  className="h-[70vw] w-[85vw] rounded-[6vw] overflow-hidden absolute top-[15%] left-[10%]">
-                        <Image src={"/assets/images/business/hero-img3.png"} height={352} width={266} alt="hero-image" className="object-cover h-[70vw] w-[85vw] scale-[0.7] z-[-2] relative brightness-75 rounded-[6vw]"/>
+                    <div   className="h-[70vw] w-[85vw] imageContainer rounded-[6vw] overflow-hidden absolute top-[15%] left-[10%] z-[-5]">
+                        <Image src={"/assets/images/business/hero-img3.png"} height={352} width={266} alt="hero-image" className="object-cover h-[70vw] w-[85vw] scale-[0.7] z-[-5] relative brightness-75 rounded-[6vw]"/>
                     </div>
                 </div>
                 <div className="bg-[#215CFF] py-[15vw] h-[255vh] w-screen !px-[8vw] flex flex-col items-center z-[-1]  ">
