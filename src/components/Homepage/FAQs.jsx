@@ -60,7 +60,7 @@ function Accordion({ question, answer, isOpen, onToggle }) {
           </h4>
           <div
             className={`
-              bg-primary absolute h-[6.5vw] right-0 duration-400 transition-all max-sm:bg-transparent max-sm:border max-sm:border-primary max-sm:justify-center max-sm:w-[12vw] max-sm:static max-sm:h-[10vw]
+              bg-primary absolute h-[6.5vw] right-0 duration-400 transition-all max-sm:bg-transparent max-sm:border max-sm:border-primary max-sm:justify-center max-sm:w-[12vw] max-sm:static max-sm:h-[11vw]
               z-[-1] w-[15vw] flex items-center justify-end rounded-3xl top-0 max-sm:z-[10] max-sm:rounded-[2vw] -translate-x-[10vw] max-sm:translate-x-0
               ${isOpen ? 'translate-x-0 max-sm:translate-x-0 max-sm:!bg-primary' : 'group-hover:translate-x-0'}
             `}

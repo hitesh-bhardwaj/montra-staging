@@ -42,7 +42,7 @@ body {
   transform: perspective(904.82px) translate3d(0px, 0px, 0px) rotateY(-20deg);
 }
 .font-display{
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 .swiper-pagination {
   padding: 0 5vw !important;

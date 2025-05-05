@@ -57,9 +57,10 @@ export default function SectionBreak() {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: 'top 40%',
-                    end: 'center 20%',
+                    start: 'top 70%',
+                    end: '80% 70%',
                     scrub: 0.25,
+                    // markers:true
                 }
             })
                 .to(lines, {
@@ -138,7 +139,7 @@ export default function SectionBreak() {
             ref={sectionRef}
             className="relative h-screen w-screen overflow-hidden px-[4vw] bg-[#FBFBFB]"
         >
-               <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:h-[40vw]"/>
+               <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:h-[40vw] max-sm:hidden"/>
             <div
                 ref={iconsContainer}
                 className="absolute inset-0 pointer-events-none overflow-hidden"

@@ -78,7 +78,7 @@ export default function Hero() {
   return (
     <section id="hero" ref={heroRef} className="w-screen overflow-hidden">
       <div className="h-full flex items-center justify-center text-center px-[4vw]">
-        <div className="w-3/4 mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw]">
+        <div className="w-[90%] mx-auto space-y-[1.5vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw]">
           <h1
             data-split="lines"
             className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11.5vw] max-sm:leading-[1.2]"
@@ -91,7 +91,7 @@ export default function Hero() {
           </h1>
           <p
             data-split="lines"
-            className="font-body w-[70%] mx-auto heroAnim max-sm:w-[95%]"
+            className="font-body w-[55%] mx-auto heroAnim max-sm:w-[95%]"
           >
             Simply download Montra app to set-up your Montra Personal Account to
             access Marketplaces for multi-party payments & Lending Products.
