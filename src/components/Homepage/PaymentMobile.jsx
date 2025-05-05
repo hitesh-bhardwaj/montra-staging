@@ -70,7 +70,7 @@ const controlContent = [
 
 export default function PaymentMobile({ allowMultiple = false }) {
   // keep track of which indexes are open
-  const [openIndexes, setOpenIndexes] = useState([]);
+  const [openIndexes, setOpenIndexes] = useState([0]);
      const sectionRef = useRef(null);
      const [mode, setMode] = useState('personal');
   const swapMode = (newMode) => {

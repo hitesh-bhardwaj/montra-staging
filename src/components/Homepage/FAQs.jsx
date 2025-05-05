@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function FAQs({ allowMultiple = false , content}) {
   // keep track of which indexes are open
-  const [openIndexes, setOpenIndexes] = useState([])
+  const [openIndexes, setOpenIndexes] = useState([0])
 
   function toggleIndex(i) {
     if (allowMultiple) {
@@ -45,6 +45,8 @@ export default function FAQs({ allowMultiple = false , content}) {
 }
 
 function Accordion({ question, answer, isOpen, onToggle }) {
+  
+
   return (
     <div className="w-full group overflow-hidden relative z-[10]">
       <div className="w-[90%] mr-auto bg-white  overflow-hidden border border-gray rounded-3xl px-[3vw] max-sm:w-full max-sm:pl-[6vw] max-sm:py-[2vw] max-sm:rounded-[4.2vw]">
@@ -59,7 +61,7 @@ function Accordion({ question, answer, isOpen, onToggle }) {
           <div
             className={`
               bg-primary absolute h-[6.5vw] right-0 duration-400 transition-all max-sm:bg-transparent max-sm:border max-sm:border-primary max-sm:justify-center max-sm:w-[12vw] max-sm:static max-sm:h-[10vw]
-              z-[-1] w-[15vw] flex items-center justify-end rounded-3xl top-0 max-sm:z-[10] max-sm:rounded-[2vw] -translate-x-[10vw]
+              z-[-1] w-[15vw] flex items-center justify-end rounded-3xl top-0 max-sm:z-[10] max-sm:rounded-[2vw] -translate-x-[10vw] max-sm:translate-x-0
               ${isOpen ? 'translate-x-0 max-sm:translate-x-0 max-sm:!bg-primary' : 'group-hover:translate-x-0'}
             `}
           >

@@ -155,7 +155,7 @@ export default function Payments() {
     const translateY = useTransform(scrollYProgress, [0, 1], ['0', '-80%']);
 
     return (
-        <section ref={sectionRef} className="h-[600vh] bg-white">
+        <section ref={sectionRef} className="h-[600vh] bg-white " id='payment'>
             <div className="sticky top-0 px-[4vw] h-screen flex items-center justify-between">
 
                 {/* ─── CONTROLS ─── */}
@@ -260,7 +260,7 @@ export default function Payments() {
                 {/* ─── TEXT BLOCK ─── */}
                 <div className="h-[100vh] overflow-clip w-[40%] relative">
                     {/* fade masks */}
-                    <span className="absolute top-0 inset-x-0 h-[20vw] bg-gradient-to-b from-white via-[#fff] to-transparent z-10" />
+                    <span className="absolute top-0 inset-x-0 h-[23vw] bg-gradient-to-b from-white via-[#fff] to-transparent z-10" />
                     <span className="absolute bottom-0 inset-x-0 h-[14vw] bg-gradient-to-t from-white via-[#fff] to-transparent z-10" />
 
                     <motion.div
@@ -269,9 +269,9 @@ export default function Payments() {
                     >
                         {stepsData[mode].map((step, i) => (
                             <div key={i} className="step-block">
-                                <p className="text-[3.4vw] font-display font-medium leading-[1.2]">
+                                <h3 className="text-[3.4vw] font-display capitalize font-medium leading-[1.2]">
                                     {step.title}
-                                </p>
+                                </h3>
                                 <p className="w-[80%] py-8">{step.desc}</p>
                                 <LinkButton text="Learn More" href={step.link} />
                             </div>

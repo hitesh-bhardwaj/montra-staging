@@ -41,7 +41,7 @@ export default function PinnedRevealSection() {
     })
 
     return (
-        <section ref={ref} className="relative h-[700vh]">
+        <section ref={ref} className="relative h-[600vh]" id='feature-text'>
             <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB]">
                 {/* 1) Six HEADINGS */}
                 <div className='flex flex-col justify-center items-center max-sm:gap-[4vw]'>

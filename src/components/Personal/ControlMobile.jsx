@@ -79,7 +79,7 @@ const controlContent = [
 
 export default function Control({ allowMultiple = false }) {
   // keep track of which indexes are open
-  const [openIndexes, setOpenIndexes] = useState([]);
+  const [openIndexes, setOpenIndexes] = useState([0]);
 
   function toggleIndex(i) {
     if (allowMultiple) {

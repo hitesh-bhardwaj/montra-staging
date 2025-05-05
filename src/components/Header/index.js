@@ -12,6 +12,8 @@ export default function Header() {
 
   const [hidden, setHidden] = useState(false);
   const [lastY, setLastY] = useState(0);
+  const [isInverted, setIsInverted] = useState(false);
+
   const [openMenu, setopenMenu] = useState(false);
 
   useEffect(() => {
@@ -27,9 +29,19 @@ export default function Header() {
       setLastY(currentY);
     };
 
+      // const darkSections = document.querySelectorAll(".dark");
+      // let found = false;
+      // darkSections.forEach((section) => {
+      //   const rect = section.getBoundingClientRect();
+      //   if (rect.top <= 0 && rect.bottom > 0) {
+      //     found = true;
+      //   }
+      // });
+      // setIsInverted(found);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastY]);
+
 
 //   useEffect(() => {
 //     const ctx = gsap.context(() => {
@@ -90,7 +102,7 @@ export default function Header() {
             <Image
               src={montraLogo}
               alt="montra logo"
-              className="w-[10vw] max-sm:w-[30vw]"
+              className={`w-[10vw] max-sm:w-[30vw] logo`}
             />
           </Link>
           <Navbar />

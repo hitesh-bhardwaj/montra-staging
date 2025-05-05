@@ -63,8 +63,8 @@ export default function SectionBreak() {
         .timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top center",
-            end: "center 20%",
+            start: "top 10%",
+            end: "center 10%",
             scrub: 0.25,
               markers:true,
           },

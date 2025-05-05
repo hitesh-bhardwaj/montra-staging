@@ -1,55 +1,56 @@
 "use client";
 import gsap from "gsap";
 import Image from "next/image";
-import React, {  useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { LinkButton } from "../Buttons";
 gsap.registerPlugin(ScrollTrigger);
 
 const Control = () => {
   const [active, setActive] = useState("Banking");
-  const [pointer, setPointer] = useState(false);
+  const [pointer, setPointer] = useState(true);
+  const [pointerevent, setPointerEvent] = useState(false);
   // const [enter, setEnter] = useState(false);
   // const [tick, setTick] = useState(false);
   const prevActiveRef = useRef(active);
   const sectionRefs = useRef({});
 
-const sections = ["Banking", "Payments", "Finance", "Chat", "Shop"];
+  const sections = ["Banking", "Payments", "Finance", "Chat", "Shop"];
 
-useEffect(() => {
-  // Initialize hidden
-  sections.forEach((sec) => {
-    gsap.set(sectionRefs.current[sec], { opacity: 0, yPercent: 30 });
-  });
-
-  gsap.set(sectionRefs.current[active], { opacity: 1, yPercent: 0 });
-}, []);
-
-useEffect(() => {
-  if (prevActiveRef.current === active) return;
-
-  const prev = sectionRefs.current[prevActiveRef.current];
-  const next = sectionRefs.current[active];
-
-  const tl = gsap.timeline();
-
-  tl.to(prev, {
-    yPercent: -5,
-    opacity: 0,
-    duration: 0.7,
-    ease: "power1.inOut",
-  })
-    .set(prev, { yPercent: -5 }) // Reset offscreen for next time
-    .set(next, { yPercent: 5, opacity: 0 })
-    .to(next, {
-      yPercent: 0,
-      opacity: 1,
-      duration: 0.7,
-      ease: "power1.inOut",
+  useEffect(() => {
+    // Initialize hidden
+    sections.forEach((sec) => {
+      gsap.set(sectionRefs.current[sec], { opacity: 0, yPercent: 30 });
     });
 
-  prevActiveRef.current = active;
-}, [active]);
+    gsap.set(sectionRefs.current[active], { opacity: 1, yPercent: 0 });
+  }, []);
+
+  useEffect(() => {
+    if (prevActiveRef.current === active) return;
+
+    const prev = sectionRefs.current[prevActiveRef.current];
+    const next = sectionRefs.current[active];
+
+    const tl = gsap.timeline();
+
+    tl.to(prev, {
+      yPercent: -5,
+      opacity: 0,
+      duration: 0.7,
+      ease: "power1.inOut",
+    })
+      .set(prev, { yPercent: -5 }) // Reset offscreen for next time
+      .set(next, { yPercent: 5, opacity: 0 })
+      .to(next, {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.7,
+        ease: "power1.inOut",
+      });
+
+    prevActiveRef.current = active;
+  }, [active]);
 
   // useEffect(() => {
   //   if (!enter) {
@@ -175,12 +176,11 @@ useEffect(() => {
         })
         .to(".icon-1", {
           left: "-65%",
-          delay:0,
+          delay: 0,
         })
         .to(".icon-5", {
           left: "-65%",
-          delay:-0.45,
-
+          delay: -0.45,
         })
         .to(".icon-2", {
           left: "-65%",
@@ -202,8 +202,7 @@ useEffect(() => {
         })
         .to(".icon-5", {
           top: "60%",
-          delay:-0.5,
-          // duration: 0.8,
+          delay: -0.5,
           scale: active == "Payments" ? 0.65 : 0.5,
           opacity: active == "Payments" ? 1 : 0.3,
         })
@@ -233,43 +232,58 @@ useEffect(() => {
         .to(".control-content", {
           opacity: 1,
           delay: -1.7,
-        
         })
         .to(".control-content", {
           opacity: 0,
           delay: -1.2,
           duration: 0.2,
-        })
-        .to(".bottom-content", {
-          opacity: 1,
-          delay: -0.3,
           onStart: () => {
-            setPointer(true);
+            setPointerEvent(true);
           },
           onReverseComplete: () => {
-            setPointer(false);
+            setPointerEvent(false);
           },
-        }).to(".bottom-content",{
-          opacity:0,
-          duration:0.2
-        })
+        });
+      const bl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#control",
+          start: "61% top",
+          end: "85% top",
+          scrub: true,
+        },
+      });
+      bl.to(".bottom-content", {
+        opacity: 1,
+        duration: 0.7,
+      });
+      bl.to(".bottom-content", {
+        opacity: 0,
+      });
     });
     return () => ctx.revert();
   }, [active]);
+  // console.log(pointer)
   return (
-    <div className="w-screen h-[310vw] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb]" id="control">
+    <div
+      className="w-screen h-[310vw] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb]"
+      id="control"
+    >
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">
         <h2 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-center">
           Take Control of Your Money. Effortlessly.
         </h2>
         <div className="w-full flex justify-between px-[6.5vw] h-[30vw]">
-          <div className="icon-container w-full h-full">
+          <div className={`icon-container w-full h-full ${pointerevent?"pointer-events-auto":"pointer-events-none"}`}>
             <div className="w-[15vw] h-[15vw] control-icon icon-1 absolute top-[65%] z-[10]">
               <div
                 className={`relative w-full h-full ${
-                  pointer ? "cursor-pointer" : ""
+                  pointer ? "cursor-pointer" : "pointer-events-none"
                 } `}
                 onClick={() => {
+                  setPointer(false); // disable pointer
+                     setTimeout(() => {
+                   setPointer(true); // re-enable after 2 seconds
+                  }, 1000);
                   setActive("Banking");
                 }}
               >
@@ -288,9 +302,13 @@ useEffect(() => {
             <div className="w-[15vw] h-[15vw] control-icon icon-2 absolute top-[65%] left-[21%] z-[10]">
               <div
                 className={`relative w-full h-full ${
-                  pointer ? "cursor-pointer" : ""
+                  pointer ? "cursor-pointer" : "pointer-events-none"
                 }`}
                 onClick={() => {
+                  setPointer(false); // disable pointer
+                     setTimeout(() => {
+                   setPointer(true); // re-enable after 2 seconds
+                  }, 1000);
                   setActive("Finance");
                 }}
               >
@@ -309,9 +327,13 @@ useEffect(() => {
             <div className="w-[15vw] h-[15vw] control-icon icon-3 absolute top-[65%] left-[42%] z-[10]">
               <div
                 className={`relative w-full h-full ${
-                  pointer ? "cursor-pointer" : ""
+                  pointer ? "cursor-pointer" : "pointer-events-none"
                 }`}
                 onClick={() => {
+                  setPointer(false); // disable pointer
+                     setTimeout(() => {
+                   setPointer(true); // re-enable after 2 seconds
+                  }, 1000);
                   setActive("Shop");
                 }}
               >
@@ -330,9 +352,13 @@ useEffect(() => {
             <div className="w-[15vw] h-[15vw] control-icon icon-4 absolute top-[65%] left-[63%] z-[10]">
               <div
                 className={`relative w-full h-full ${
-                  pointer ? "cursor-pointer" : ""
+                  pointer ? "cursor-pointer" : "pointer-events-none"
                 }`}
                 onClick={() => {
+                  setPointer(false); // disable pointer
+                     setTimeout(() => {
+                   setPointer(true); // re-enable after 2 seconds
+                  }, 1000);
                   setActive("Chat");
                 }}
               >
@@ -351,9 +377,13 @@ useEffect(() => {
             <div className="w-[15vw] h-[15vw] control-icon icon-5 absolute top-[65%] left-[84%] z-[10]">
               <div
                 className={`relative w-full h-full ${
-                  pointer ? "cursor-pointer" : ""
+                  pointer ? "cursor-pointer" : "pointer-events-none"
                 }`}
                 onClick={() => {
+                  setPointer(false); // disable pointer
+                     setTimeout(() => {
+                   setPointer(true); // re-enable after 2 seconds
+                  }, 1000);
                   setActive("Payments");
                 }}
               >
@@ -375,8 +405,6 @@ useEffect(() => {
 
       <div className="w-screen h-[40vw] flex flex-col flex-nowrap overflow-hidden fixed bottom-[10%] right-0 ">
         <div className="w-full h-full relative flex justify-end ">
-          {/* <div className="w-screen h-[5vw] top-0 left-0 bg-gradient-to-b from-white to-transparent z-[25] absolute" />
-          <div className="w-screen h-[5vw] bottom-0 left-0 bg-gradient-to-t from-white to-transparent z-[25] absolute" /> */}
           <div className="w-[75%] h-[40vw] relative bottom-content opacity-0 flex justify-end pr-[4vw]">
             {sections.map((sectionKey) => (
               <div
@@ -418,8 +446,6 @@ useEffect(() => {
               </div>
             ))}
           </div>
-
-          
         </div>
       </div>
 

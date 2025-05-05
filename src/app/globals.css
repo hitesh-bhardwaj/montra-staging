@@ -41,7 +41,9 @@ body {
 .perspective-box-3{
   transform: perspective(904.82px) translate3d(0px, 0px, 0px) rotateY(-20deg);
 }
-
+.font-display{
+  letter-spacing: 1px;
+}
 .swiper-pagination {
   padding: 0 5vw !important;
   text-align: right !important;
@@ -110,6 +112,7 @@ body {
   mask-position: 100% 100%;
 }
 
+
 @media screen and (max-width: 541px) {
 
   body{
@@ -117,3 +120,4 @@ body {
 
   }
 }
+

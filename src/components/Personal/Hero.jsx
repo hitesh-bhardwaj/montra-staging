@@ -38,7 +38,7 @@ const Hero = () => {
             ease:"none",
             left: "-2.5%",
             top: "-15vw",
-            delay: -0.4,
+            delay: -0.5,
             borderRadius: "0vw",
           })
           .to(".hero-main-card", {
@@ -72,24 +72,14 @@ const Hero = () => {
             scrub: 0.5,
           },
         });
-        tl.to(".hero-left-card", {
-          left: "5%",
-          opacity: 0,
-          duration: 0.5,
-        });
-        tl.to(".hero-right-card", {
-          left: "80%",
-          opacity: 0,
-          delay: -0.5,
-          duration: 0.5,
-        })
-          .to(".hero-image-anim", {
+       
+          tl.to(".hero-image-anim", {
             width: "105vw",
             height: "220vw",
             ease:"none",
             left: "-2.5%",
             top: "-54%",
-            delay: -0.4,
+            delay: -0.5,
             borderRadius: "0vw",
           })
           .to(".hero-main-card", {
@@ -139,7 +129,7 @@ const Hero = () => {
               <Image
                 src={"/assets/images/personal/personal-hero-1.png"}
                 alt="personal-hero-1"
-                className="object-cover h-full w-full brightness-90"
+                className="object-cover h-full w-full brightness-80"
                 width={1920}
                 height={1080}
               />
@@ -193,7 +183,7 @@ const Hero = () => {
             <Image
               src={"/assets/images/personal/personal-hero-2.png"}
               alt="personal-hero-1"
-              className="object-cover h-full w-full brightness-80"
+              className="object-cover h-full w-full brightness-75"
               width={1920}
               height={1080}
             />
@@ -207,7 +197,7 @@ const Hero = () => {
             <Image
               src={"/assets/images/personal/personal-hero-3.png"}
               alt="personal-hero-1"
-              className="object-cover h-full w-full brightness-90"
+              className="object-cover h-full w-full brightness-75"
               width={1920}
               height={1080}
             />
@@ -235,13 +225,13 @@ const Hero = () => {
               Empower your financial journey with Montra
             </div>
             <div className="flex flex-col gap-[1vw] absolute right-[5%] bottom-[35%] z-[10] max-sm:text-[4.1vw] max-sm:gap-[4vw]">
-              <div className="w-[21vw] rounded-full border border-white/40 backdrop-blur-lg bg-white/10 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw]">
+              <div className="w-[21vw] rounded-full border border-white/40 backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw]">
                 Go cashless with ease
               </div>
-              <div className="w-[21vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/10 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw]">
+              <div className="w-[21vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw]">
                 Save smarter, spend better
               </div>
-              <div className="w-[21vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/10 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw]">
+              <div className="w-[21vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw]">
                 Get credit, insurance & more
               </div>
             </div>

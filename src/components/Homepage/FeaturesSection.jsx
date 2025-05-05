@@ -1,6 +1,7 @@
 'use client'
 
 import { easeOut, motion } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const useIsMobile = (breakpoint = 541) => {
@@ -93,9 +94,11 @@ const FeatureSection = () => {
             <div
                 className="relative inline-block z-10 w-[55vw] h-[52vw] translate-y-[-15%] max-sm:translate-y-0  max-sm:w-[100vw] max-sm:h-[120vw]"
             >
-                <img
+                <Image
                     src="/assets/images/homepage/phone-mockup.png"
                     alt="App mockup"
+                    width={600}
+                    height={900}
                     className="w-full h-auto block max-sm:translate-x-0 max-sm:object-cover max-sm:w-[120vw] max-sm:h-[130vw]"
                 />
                 {icons.map((icon, i) => (
