@@ -7,6 +7,10 @@ import SectionBreak from "@/components/Business/SectionBreak";
 import Header from "@/components/Header";
 import FAQs from "@/components/Homepage/FAQs";
 import { useEffect, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Business() {
   const [mobileWidth, setMobileWidth] = useState(false);
@@ -17,11 +21,50 @@ export default function Business() {
         setMobileWidth(true);
       }
     }, []);
+
+    useEffect(() => {
+      if (globalThis.innerWidth > 1024) {
+      const trigger = gsap.to(".primary-container", {
+        backgroundColor: "#215CFF",
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#primaryContainer",
+          start: "25% top",
+          end: "90% top",
+          // scrub: true,
+          // markers: true,
+          onEnter: () => {
+            gsap.to(".primary-container", { backgroundColor: "#215CFF", duration: 0.3 });
+          },
+          onEnterBack: () => {
+            gsap.to(".primary-container", { backgroundColor: "#215CFF", duration: 0.3 });
+          },
+          onLeaveBack: () => {
+            gsap.to(".primary-container", { backgroundColor: "white", duration: 0.3 });
+          },
+          onLeave: () => {
+            gsap.to(".primary-container", { backgroundColor: "white", duration: 0.3 });
+          }
+        }
+      });
+    }else {
+      
+    }
+    
+      return () => {
+        if (trigger.scrollTrigger) {
+          trigger.scrollTrigger.kill();
+        }
+      };
+    }, []);
+    
   return (
     <>
     <Header/>
+    <div className="primary-container z-[-1]" id="primaryContainer">
     {!mobileWidth ? <Hero /> : <MobileHero />}
-     {mobileWidth ? <MobileBanking/> : <MobileBanking />}
+    </div>
+     {!mobileWidth ? <BankingSection/> : <MobileBanking />}
     <SectionBreak/>
     <FAQs content={faqContent}/>  
     </>

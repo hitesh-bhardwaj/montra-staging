@@ -43,10 +43,10 @@ const MobileBanking = () => {
     }
   };
   return (
-    <section  className="h-full w-screen px-[7vw] relative">
+    <section  className="h-full w-screen px-[7vw] relative bg-white">
       <div className='space-y-[5vw]'>
     <div className='w-full text-left flex items-center justify-center '>
-  <h2 className='text-[11vw] font-display font-medium  capitalize leading-[1.15]'>Smart Business Management Tools For Smarter Businesses</h2>
+  <h2 className='text-[11vw] font-display font-medium  capitalize leading-[1.15] mb-[7vw]'>Smart Business Management Tools For Smarter Businesses</h2>
 </div>
 <div className=' '>
 <Swiper onSwiper={(swiper) => (swiperRef.current = swiper)} spaceBetween={30}

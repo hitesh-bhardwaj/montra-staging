@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import styles from './bankingcard.module.css'
 import Image from "next/image";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Banking = () => {
@@ -17,13 +16,11 @@ const Banking = () => {
             const ctx = gsap.context(() => {
                 const wheel = wheelRef.current;
                 const images = gsap.utils.toArray(`.${styles.wheelCard}`);
-
                 const setup = () => {
                     const radius = wheel.offsetWidth / 1.1;
                     const center = wheel.offsetWidth / 2;
                     const total = images.length;
                     const slice = (0.8 * Math.PI) / total;
-
                     images.forEach((item, i) => {
                         const angle = i * slice;
                         const x = center + radius * Math.sin(angle);
@@ -38,12 +35,10 @@ const Banking = () => {
                         });
                     });
                 };
-
                 setup();
                 window.addEventListener("resize", setup);
-
                 gsap.from(`.${styles.wheel}`, {
-                    rotate: () => -120,
+                    rotate: () => -125,
                     ease: "none",
                     duration: images.length,
                     scrollTrigger: {
@@ -69,7 +64,6 @@ const Banking = () => {
             ref={sliderContainer}
             className={`relative h-[100vh]  ${styles.sliderContainer} overflow-x-hidden mobile:h-full tablet:h-full pb-[5%] mobile:py-[15%]`}
         >
-
             <div className="flex flex-col w-[45vw] h-full items-center justify-end pb-[4%] -rotate-90 ">
                 <div className={`${styles.sliderSection} `}>
                     <div className={styles.wheel} ref={wheelRef}>
@@ -91,7 +85,6 @@ const Banking = () => {
                                     <p className="text-[3.2vw] w-[40%] flex items-start font-display font-medium text-white">
                                         {item.field}
                                     </p>
-
                                         </div>
                                 </div>
                         ))}

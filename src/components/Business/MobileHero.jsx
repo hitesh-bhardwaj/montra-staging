@@ -7,8 +7,38 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function MobileHero() {
+    const mainCardContainer = useRef(null);
+    const frame  = useRef(null);
+useEffect(()=>{
+    gsap.to(mainCardContainer.current,{
+        yPercent:128,
+        duration:1,
+        ease:"none",
+        scrollTrigger:{
+            trigger:"#hero",
+            start:"5% top",
+            end:"38% 30%",
+            scrub:true,
+            // markers:true
+        }
+    })
+    gsap.to(frame.current,{
+        scale:1,
+        ease:"none",
+        scrollTrigger:{
+            trigger:mainCardContainer.current,
+            start:"5% top",
+            end:"30% top",
+            scrub:true,
+            // markers:true
+        }
+    })
+       
+    
+})
+
     return (
-        <section id="hero" className="relative h-[385vh] overflow-hidden ">
+        <section id="hero" className="relative h-[370vh] overflow-hidden ">
             <div className="flex flex-col items-start justify-start text-center  max-sm:gap-[12vw] ">
                 <div className="w-full mx-auto space-y-[1.2vw] pt-[14vw] max-sm:pt-[35vw] px-[4vw] max-sm:space-y-[7vw]">
                     <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw] ">
@@ -21,8 +51,9 @@ export default function MobileHero() {
                     </p>
                 </div>
                 <div className=" mx-auto mt-[15vw]">
-                    <div className="h-[70vw] w-[85vw] rounded-[6vw] overflow-hidden relative z-[5]">
-                        <Image src={"/assets/images/business/hero-img1.png"} height={352} width={266} alt="hero-image" className="object-cover h-[70vw] w-[85vw]"/>
+                    <div className="h-[75vw] w-[85vw] rounded-[6vw] relative z-[5] " ref={mainCardContainer}>
+                        <Image src={"/assets/images/business/hero-img1.png"} height={352} width={266} alt="hero-image" className=" h-[70vw] w-[85vw] relative  rounded-[6vw]"/>
+                        <div ref={frame} className="bg-black rounded-[6vw] h-[75vw] w-[90vw] absolute top-[-3%] left-[-3%] scale-0 z-[-1] "></div>
                     </div>
                     <div className="h-[70vw] w-[85vw] rounded-[6vw] overflow-hidden absolute top-[16%] left-[10%]">
                         <Image src={"/assets/images/business/hero-img2.png"} height={352} width={266} alt="hero-image" className="object-cover h-[70vw] w-[85vw] scale-[0.8] z-[-1] relative brightness-75 rounded-[6vw]"/>
@@ -31,13 +62,10 @@ export default function MobileHero() {
                         <Image src={"/assets/images/business/hero-img3.png"} height={352} width={266} alt="hero-image" className="object-cover h-[70vw] w-[85vw] scale-[0.7] z-[-2] relative brightness-75 rounded-[6vw]"/>
                     </div>
                 </div>
-                <div className="bg-[#215CFF] py-[15vw] h-[270vh] w-screen !px-[8vw] flex flex-col items-center z-[-1]  ">
+                <div className="bg-[#215CFF] py-[15vw] h-[255vh] w-screen !px-[8vw] flex flex-col items-center z-[-1]  ">
                     <div className="text-white text-left">
-                    <div className="h-[85vw] w-[85vw] rounded-[6vw] overflow-hidden relative z-[5] pb-[5vw]">
-                        <Image src={"/assets/images/business/hero-img1.png"} height={352} width={266} alt="hero-image" className="object-cover z-[5] h-[75vw] w-[75vw] mt-[5vw] ml-[5vw] rounded-[6vw] "/>
-                        <div className="bg-black rounded-[6vw]  h-[90vw] w-[90vw] absolute top-0 left-0  z-[-1] "></div>
-                    </div>
-                    <h2 className="text-[10.5vw] py-[2vw] font-display w-[95%] text-left font-medium mt-[5vw]">
+                        
+                    <h2 className="text-[10.5vw] py-[2vw] font-display w-[95%] text-left font-medium mt-[70vw]">
                             Boost Growth With Smart Payments & Tools
                         </h2>
                        <div className="space-y-[6vw]">
@@ -60,11 +88,11 @@ export default function MobileHero() {
                             </div>
                        </div>
 
-                       <div className="h-[85vw] w-[85vw] rounded-[6vw] overflow-hidden relative z-[5] mt-[15vw]">
-                        <Image src={"/assets/images/business/hero-card2.png"} height={352} width={266} alt="hero-image" className="object-cover z-[5]  h-[75vw] w-[75vw] mt-[5vw] ml-[5vw] rounded-[6vw]"/>
-                        <div className="bg-black rounded-[6vw]  h-[85vw] w-[85vw] absolute top-0 left-0  z-[-1]"></div>
+                       <div className="h-[75vw] w-[85vw] rounded-[6vw] relative z-[5] mt-[10vw] " >
+                        <Image src={"/assets/images/business/hero-card2.png"} height={352} width={266} alt="hero-image" className=" h-[70vw] w-[85vw] relative  rounded-[6vw]"/>
+                        <div  className="bg-black rounded-[6vw] h-[75vw] w-[90vw] absolute top-[-3%] left-[-3%]  z-[-1] "></div>
                     </div>
-                    <h2 className="text-[10.5vw] py-[2vw] font-display w-[95%] text-left font-medium mt-[5vw]">
+                    <h2 className="text-[10.5vw] py-[2vw] font-display w-[95%] text-left font-medium ">
                     Smart Financial Tools for Smarter Businesses
                         </h2>
                        <div className="space-y-[6vw]">

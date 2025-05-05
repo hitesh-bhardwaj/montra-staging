@@ -115,7 +115,7 @@ export default function Hero() {
             scrollTrigger: {
                 trigger: ".mainCard",
                 start: "top 20%",
-                end: "550% 10%",
+                end: "580% 10%",
                 scrub: true,
                 // markers: true,
                 pin: mainCardContainer.current
@@ -130,7 +130,7 @@ export default function Hero() {
         });
         tl2.to(".mainCard",{
             // xPercent:25,
-            delay:1,
+            delay:1.2,
             left:"52%",
             ease: "none",
            
@@ -146,29 +146,7 @@ export default function Hero() {
           ease: "none",
           delay:"-0.55"         
       });
-        gsap.to("body", {
-            backgroundColor: "#215CFF",
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#hero",
-                start: "25% top",
-                end: "82% top",
-                // scrub: true,
-                // markers: true,
-                onEnter: () => {
-                    gsap.to("body", { backgroundColor: "#215CFF", duration: 0.3 });
-                },
-                onEnterBack: () => {
-                    gsap.to("body", { backgroundColor: "#215CFF", duration: 0.3 });
-                },
-                onLeaveBack: () => {
-                    gsap.to("body", { backgroundColor: "white", duration: 0.3 });
-                },
-                onLeave: () => {
-                    gsap.to("body", { backgroundColor: "white", duration: 0.3 });
-                }
-            }
-        });
+        
         gsap.fromTo(content1.current, {
             opacity: 0,
         }, {
@@ -199,7 +177,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section id="hero" className="relative h-[500vh] overflow-hidden">
+        <section id="hero" className="relative h-[480vh] overflow-hidden">
             <div className="flex flex-col items-start justify-start text-center px-[4vw] ">
                 <div className="w-full mx-auto space-y-[1.2vw] pt-[14vw] ">
                     <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15]">
@@ -211,10 +189,10 @@ export default function Hero() {
                         management tools and our signature money management features.
                     </p>
                 </div>
-                <div className="w-full relative z-[51]" ref={mainCardContainer}>
+                <div className="w-full relative z-[1]" ref={mainCardContainer}>
                     <Card
                         ref={mainCard}
-                        className="absolute left-[25%] translate-y-[30%] z-[50] mainCard card1"
+                        className="absolute left-[25%] translate-y-[30%] z-[0] mainCard card1"
                         active={true}
                         img={"/assets/images/business/hero-img1.png"}
                     />
@@ -265,8 +243,8 @@ export default function Hero() {
                     </div>
                 </div>
                 </div>
-                <div className="px-[4vw] mt-[70vw] !h-[250vh] justify-between flex flex-col relative z-[-1]">
-                    <div ref={content1} className="flex flex-col  translate-x-[110%] text-white w-1/2 py-[4vw] relative z-0 pl-[2vw]">
+                <div className="px-[4vw] mt-[70vw] !h-[250vh] justify-between flex flex-col relative">
+                    <div ref={content1} className="flex flex-col  translate-x-[110%] text-white w-1/2 py-[4vw] relative z-[5] pl-[2vw]">
                         <h2 className="text-[3.4vw] py-[2vw] font-display w-[80%] text-left font-medium">
                             Boost Growth With Smart Payments & Tools
                         </h2>
