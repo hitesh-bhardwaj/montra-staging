@@ -77,7 +77,7 @@ useEffect(() => {
 <circle cx="6.95801" cy="320.5" r="5.5" fill="white" stroke="#EEEEEE" strokeWidth="2" className='svg-circle'/>
 <circle cx="6.95801" cy="383.5" r="5.5" fill="white" stroke="#EEEEEE" strokeWidth="2" className='svg-circle'/>
 </svg>
-  <div className="flex flex-col w-[10vw] justify-between text-[#D2D2D2] font-display text-[1vw] leading-[0.5] ">
+  <div className="flex flex-col w-[12vw] justify-between text-[#D2D2D2] font-display text-[1vw] leading-[1.2] ">
     <span className='indicator-label'>Banking</span>
     <span className='indicator-label'>Payments</span>
     <span className='indicator-label'>Agency Banking</span>
@@ -89,7 +89,7 @@ useEffect(() => {
 </div>
 
             <div ref={containerRef} className="relative h-[700vh]">
-  <div className="sticky top-0 h-screen w-[40vw] flex items-center justify-start text-left ml-[5vw]">
+  <div className="sticky top-0 h-screen w-[40vw] flex items-center justify-start text-left ml-[1vw]">
     {data.map((item, index) => (
       <div
         key={index}
