@@ -50,12 +50,6 @@ export default function Business() {
     }else {
       
     }
-    
-      return () => {
-        if (trigger.scrollTrigger) {
-          trigger.scrollTrigger.kill();
-        }
-      };
     }, []);
     
   return (
