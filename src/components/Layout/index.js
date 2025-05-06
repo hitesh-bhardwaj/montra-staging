@@ -7,7 +7,7 @@ import usePageVisibilityTitle from "../userPageVisibilityTitle";
 const Layout = ({ children }) => {
     usePageVisibilityTitle({
         activeTitle: 'Montra for Personal: Your All-in-One Digital Wallet',
-        inactiveTitle: 'Come back please 🙏',
+        inactiveTitle: 'Seriously?..',
       });
     
   return (
