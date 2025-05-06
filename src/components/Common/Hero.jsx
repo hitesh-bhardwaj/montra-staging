@@ -3,10 +3,18 @@ import { initSplitLines } from "@/utils/splitText";
 import { AppleStoreButton, PlayStoreButton } from "../Buttons";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { usePathname } from 'next/navigation'
+import Link from "next/link";
+
 
 
 export default function Hero({primaryHeading, heading, content}) {
     const heroRef = useRef(null);
+    const pathname = usePathname()
+  const pathArray = pathname.split('/').filter(Boolean)
+
+  const createBreadcrumbName = (segment) =>
+    segment.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())
     useEffect(() => {
         initSplitLines();
         const ctx = gsap.context(() => {
@@ -61,6 +69,27 @@ export default function Hero({primaryHeading, heading, content}) {
           </div>
         </div>
       </div>
+      <div className="breadcrumbs px-[4vw] pb-[4vw] text-[1.45vw] text-[#D2D2D2] font-display">
+      <div className="flex gap-2 items-center flex-wrap">
+        <Link href="/" className="">Home</Link>
+        {pathArray.map((segment, index) => {
+          const href = '/' + pathArray.slice(0, index + 1).join('/')
+          const isLast = index === pathArray.length - 1
+          return (
+            <div key={index} className="flex items-center gap-2 ">
+              <span>&gt;</span>
+              {isLast ? (
+                <span className="text-primary">{createBreadcrumbName(segment)}</span>
+              ) : (
+                <Link href={href} className="">
+                  {createBreadcrumbName(segment)}
+                </Link>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </div>
     </section>
   );
 }
