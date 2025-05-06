@@ -3,6 +3,7 @@ import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
 import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
+import Benefits from '@/components/PersonalPayments/Benefits'
 import Discover from '@/components/PersonalPayments/Discover'
 import Track from '@/components/PersonalPayments/Track'
 import Ways from '@/components/PersonalPayments/Ways'
@@ -14,10 +15,11 @@ const personalPayments = () => {
    <Header/>
    <Hero primaryHeading={"Montra Personal Account:"} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."}/>
    <Overview icon1={overviewContent.icon1} icon2={overviewContent.icon2} mainImg={overviewContent.mainImg} bgImg={overviewContent.bgImg} title={overviewContent.title} content={overviewContent.content} subcontent1={overviewContent.subcontent1} subcontent2={overviewContent.subcontent2}/>
+   <Benefits/>
    <Ways/>
    <Track/>
    <Discover/>
-   {/* <SectionBreak content={"Whether you're paying bills, sending money, or shopping online—do it all in one place, with complete peace of mind."}/> */}
+   <SectionBreak content={"Whether you're paying bills, sending money, or shopping online—do it all in one place, with complete peace of mind."}/>
    <FAQs content={faqContent}/>
    </>
   )

@@ -84,7 +84,7 @@ export default function SectionBreak({content}) {
       ref={sectionRef}
       className="relative h-screen w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB]"
     >
-      <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden"/>
+      {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden"/> */}
 
       <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto">
         <h2

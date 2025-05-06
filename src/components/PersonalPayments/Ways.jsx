@@ -36,22 +36,22 @@ const Ways = () => {
       });
   
       moveTimeline
-        .to(card1Ref.current, { x: "-36vw",  ease: "none" }, 0)
-        .to(card2Ref.current, { x: "-12vw",  ease: "none" }, 0)
-        .to(card3Ref.current, { x: "12vw",  ease: "none" }, 0)
-        .to(card4Ref.current, { x: "36vw",  ease: "none" }, 0);
+        .to(card1Ref.current, { x: "-36vw",rotate:0,  ease: "none" }, 0)
+        .to(card2Ref.current, { x: "-12vw", rotate:0, ease: "none" }, 0)
+        .to(card3Ref.current, { x: "12vw",rotate:0,  ease: "none" }, 0)
+        .to(card4Ref.current, { x: "36vw",rotate:0,  ease: "none" }, 0);
 
-        moveTimeline
-        .fromTo(card1Ref.current, {  rotate: -10, ease: "none" },{rotate:0}, 0)
-        .fromTo(card2Ref.current, {rotate: -10, ease: "none" },{rotate:0} ,0)
-        .fromTo(card3Ref.current, {  rotate: -10, ease: "none" },{rotate:0}, 0)
-        .fromTo(card4Ref.current, { rotate: -10, ease: "none" },{rotate:0}, 0);
+        // moveTimeline
+        // .fromTo(card1Ref.current, {  rotate: -10, ease: "none" },{rotate:0}, 0)
+        // .fromTo(card2Ref.current, {rotate: -10, ease: "none" },{rotate:0} ,0)
+        // .fromTo(card3Ref.current, {  rotate: -10, ease: "none" },{rotate:0}, 0)
+        // .fromTo(card4Ref.current, { rotate: -10, ease: "none" },{rotate:0}, 0);
 
   
       const flipTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "50% top",
+          start: "40% top",
           end: "+=30% center",
           scrub: true,
         }
