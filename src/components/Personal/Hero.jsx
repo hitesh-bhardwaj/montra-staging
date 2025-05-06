@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if(globalThis.innerWidth>1024){
+      if (globalThis.innerWidth > 1024) {
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -23,7 +23,7 @@ const Hero = () => {
         tl.to(".hero-left-card", {
           left: "-3%",
           opacity: 0,
-          
+
           duration: 0.5,
         });
         tl.to(".hero-right-card", {
@@ -35,7 +35,7 @@ const Hero = () => {
           .to(".hero-image-anim", {
             width: "105vw",
             height: "108vh",
-            ease:"none",
+            ease: "none",
             left: "-2.5%",
             top: "-15vw",
             delay: -0.5,
@@ -52,16 +52,16 @@ const Hero = () => {
             delay: -0.6,
             opacity: 1,
           })
-          .to(".hero-main-content",{
-              opacity:1,
-              duration:0.3,
-              delay:-0.3,
-              ease:"none",
-  
+          .to(".hero-main-content", {
+            opacity: 1,
+            duration: 0.3,
+            delay: -0.3,
+            ease: "none",
+
           })
 
       }
-      else{
+      else {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#hero",
@@ -76,7 +76,7 @@ const Hero = () => {
           tl.to(".hero-image-anim", {
             width: "105vw",
             height: "220vw",
-            ease:"none",
+            ease: "none",
             left: "-2.5%",
             top: "-54%",
             delay: -0.5,
@@ -93,15 +93,12 @@ const Hero = () => {
             delay: -0.5,
             opacity: 1,
           })
-          .to(".hero-main-content",{
-              opacity:1,
-              duration:0.3,
-              delay:-0.3,
-              ease:"none",
-  
-          })
-
-
+          .to(".hero-main-content", {
+            opacity: 1,
+            duration: 0.3,
+            delay: -0.3,
+            ease: "none",
+          });
       }
     });
     return () => ctx.revert();

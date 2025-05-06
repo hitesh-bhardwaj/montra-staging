@@ -1,0 +1,52 @@
+import Hero from "@/components/Company/Hero";
+import Impact from "@/components/Company/Impact";
+import Network from "@/components/Company/Network";
+import VisionMission from "@/components/Company/VisionMission";
+import FAQs from "@/components/Homepage/FAQs";
+import SectionBreak from "@/components/Homepage/SectionBreak";
+
+export default function CompanyPage() {
+    return (
+        <>
+            <Hero />
+            <Impact />
+            <Network />
+            <VisionMission />
+            {/* <SectionBreak /> */}
+            <FAQs content={faqContent} />
+        </>
+    )
+}
+
+const faqContent = [
+    {
+      question: 'What is the scheduled payments feature?',
+      answer:
+        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+    },
+    {
+      question: 'How sending a bank transfer?',
+      answer:
+        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+    },
+    {
+      question: 'What is unique about Montra?',
+      answer:
+        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+    },
+    {
+      question: 'How do we Sign-Up on Montra?',
+      answer:
+        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
+    },
+    {
+      question: 'How do we Sign-In on Montra?',
+      answer:
+        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+    },
+    {
+      question: 'Is enabling Face / Touch / Fingerprint ID safe?',
+      answer:
+        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+    },
+  ]

@@ -7,8 +7,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/Background";
 
-
-
 const workSans = Work_Sans({
   subsets: ["latin"],
   variable: "--font-body",
@@ -50,16 +48,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
- 
+
   return (
     <>
       <LenisSmoothScroll />
       <html lang="en">
         <body className={`${workSans.variable} ${standerd.variable} antialiased`}>
           <Header />
-          <InteractiveBackground/>
           {children}
           <Footer />
+          <InteractiveBackground />
         </body>
       </html>
     </>

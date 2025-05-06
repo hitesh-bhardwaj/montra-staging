@@ -17,15 +17,14 @@ const useIsMobile = (breakpoint = 541) => {
     return isMobile;
 };
 
-
 const icons = [
     {
         src: "/assets/images/homepage/image-1.png",
         alt: "Receive",
         style: { top: "30%", left: "15%" },
         mobileStyle: { top: "20%", left: "10%" },
-        mobilexOffset:0,
-        mobileyOffset:-200,
+        mobilexOffset: 0,
+        mobileyOffset: -200,
         xOffset: -300,
         yOffset: -100,
     },
@@ -34,8 +33,8 @@ const icons = [
         alt: "Pay",
         style: { top: "30%", right: "15%" },
         mobileStyle: { top: "20%", right: "10%" },
-        mobilexOffset:+10,
-        mobileyOffset:-140,
+        mobilexOffset: +10,
+        mobileyOffset: -140,
         xOffset: +400,
         yOffset: -50,
     },
@@ -44,8 +43,8 @@ const icons = [
         alt: "Currency",
         style: { bottom: "20%", left: "20%" },
         mobileStyle: { bottom: "40%", left: "10%" },
-        mobilexOffset:-20,
-        mobileyOffset:+180,
+        mobilexOffset: -20,
+        mobileyOffset: +180,
         xOffset: -450,
         yOffset: +50,
     },
@@ -54,8 +53,8 @@ const icons = [
         alt: "Scan",
         style: { bottom: "30%", right: "20%" },
         mobileStyle: { bottom: "40%", right: "10%" },
-        mobilexOffset:+40,
-        mobileyOffset:+140,
+        mobilexOffset: +40,
+        mobileyOffset: +140,
         xOffset: +380,
         yOffset: +100,
     },
@@ -81,7 +80,7 @@ const item = {
 }
 
 const FeatureSection = () => {
-      const isMobile = useIsMobile();
+    const isMobile = useIsMobile();
 
     return (
         <motion.section
@@ -102,24 +101,24 @@ const FeatureSection = () => {
                     className="w-full h-auto block max-sm:translate-x-0 max-sm:object-cover max-sm:w-[120vw] max-sm:h-[130vw]"
                 />
                 {icons.map((icon, i) => (
-                    isMobile? <motion.img
-                    key={i}
-                    src={icon.src}
-                    alt={icon.alt}
-                    className="absolute w-[10vw] h-[10vw] object-contain max-sm:w-[25vw] max-sm:h-[25vw]"
-                    style={icon.mobileStyle}
-                    custom={{ xOffset: icon.mobilexOffset, yOffset: icon.mobileyOffset }}
-                    variants={item}
-                />:
-                    <motion.img
+                    isMobile ? <motion.img
                         key={i}
                         src={icon.src}
                         alt={icon.alt}
                         className="absolute w-[10vw] h-[10vw] object-contain max-sm:w-[25vw] max-sm:h-[25vw]"
-                        style={icon.style}
-                        custom={{ xOffset: icon.xOffset, yOffset: icon.yOffset }}
+                        style={icon.mobileStyle}
+                        custom={{ xOffset: icon.mobilexOffset, yOffset: icon.mobileyOffset }}
                         variants={item}
-                    />
+                    /> :
+                        <motion.img
+                            key={i}
+                            src={icon.src}
+                            alt={icon.alt}
+                            className="absolute w-[10vw] h-[10vw] object-contain max-sm:w-[25vw] max-sm:h-[25vw]"
+                            style={icon.style}
+                            custom={{ xOffset: icon.xOffset, yOffset: icon.yOffset }}
+                            variants={item}
+                        />
                 ))}
             </div>
         </motion.section>

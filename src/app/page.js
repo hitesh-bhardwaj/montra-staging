@@ -13,21 +13,21 @@ import Loader from "@/components/Loader";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-   const [mobileWidth, setMobileWidth] = useState(false);
-    useEffect(() => {
-      if (globalThis.innerWidth > 1024) {
-        setMobileWidth(false);
-      } else {
-        setMobileWidth(true);
-      }
-    }, []);
+  const [mobileWidth, setMobileWidth] = useState(false);
+  useEffect(() => {
+    if (globalThis.innerWidth > 1024) {
+      setMobileWidth(false);
+    } else {
+      setMobileWidth(true);
+    }
+  }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
-  
+
     const handleBeforeUnload = () => {
       window.scrollTo(0, 0);
     };
-  
+
     window.addEventListener("beforeunload", handleBeforeUnload);
     return () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
@@ -35,17 +35,17 @@ export default function Home() {
   }, []);
   return (
     <>
-    {/* <Loader/> */}
-    {/* <HomepageHeader/> */}
+      {/* <Loader/> */}
+      {/* <HomepageHeader/> */}
       <Hero />
       <FeatureSection />
       <FeaturesText />
-      {mobileWidth?<PaymentMobile/>:<Payments />}
+      {mobileWidth ? <PaymentMobile /> : <Payments />}
       <SectionBreak />
       <Vision />
       <Testimonials />
       <Blogs />
-      <FAQs content={faqContent}/>
+      <FAQs content={faqContent} />
     </>
   );
 }

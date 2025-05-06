@@ -46,7 +46,7 @@ export default function PinnedRevealSection() {
                 {/* 1) Six HEADINGS */}
                 <div className='flex flex-col justify-center items-center max-sm:gap-[4vw]'>
                     <motion.div 
-                        initial={{opacity: 0, y: 100}}
+                        initial={{opacity: 0, y: 50}}
                         whileInView={{opacity: 1, y: 0}}
                         viewport={{ once: true, amount: 0.5 }}
                         transition={{duration: 1, ease: 'easeOut'}}
