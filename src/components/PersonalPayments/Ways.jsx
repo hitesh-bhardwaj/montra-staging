@@ -29,8 +29,9 @@ const Ways = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top center",
-          end: "70% center",
+          end: "50% center",
           scrub: true,
+          // markers:true,
           stagger:0.1
         }
       });
@@ -51,9 +52,10 @@ const Ways = () => {
       const flipTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "40% top",
-          end: "+=30% center",
+          start: "40% center",
+          end: "60% center",
           scrub: true,
+          // markers:true
         }
       });
   

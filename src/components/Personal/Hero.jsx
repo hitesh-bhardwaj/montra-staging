@@ -167,10 +167,10 @@ const Hero = () => {
                       <div className="w-[2.5vw] h-[2.5vw] rounded-full bg-primary max-sm:w-[10vw] max-sm:h-[10vw]" />
                       <div className="flex flex-col">
                         <p className="text-[1.2vw] leading-[1] max-sm:text-[4.7vw]">House Bill</p>
-                        <p className="text-[1vw] font-light max-sm:text-[3.5vw]">Due Today</p>
+                        <p className="text-[1vw] font-light max-sm:text-[3.4vw]">Due Today</p>
                       </div>
                     </div>
-                    <p className="text-[1vw] font-light max-sm:text-[3.5vw]">-N 500</p>
+                    <p className="text-[1vw] font-light max-sm:text-[3.4vw]">-N 500</p>
                   </div>
                 </div>
               </div>

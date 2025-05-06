@@ -26,7 +26,7 @@ export default function Blogs() {
                             <div className="px-[1.5vw] py-[2vw] w-[45%] flex flex-col justify-between max-sm:w-full max-sm:py-[4vw] max-sm:px-[4vw]">
                                 <div>
                                     <h5 className="mb-[1vw] max-sm:text-[4.5vw] max-sm:mb-[3vw]">Beyond Faster Payments: A Guide to Complex International Pension Transfers</h5>
-                                    <span className="text-[1vw] mb-[4vw] block max-sm:text-[3.5vw]">19, June 2024</span>
+                                    <span className="text-[1vw] mb-[4vw] block max-sm:text-[3.4vw]">19, June 2024</span>
                                 </div>
                                 <LinkButton text={"Read More"} href="#" className={`text-black-1 group-hover:text-white hover:text-white ${active==0?" !text-white":""} `}/>
                             </div>
@@ -41,7 +41,7 @@ export default function Blogs() {
                             <div className="px-[1.5vw] py-[1.5vw] flex flex-col justify-between max-sm:w-full max-sm:py-[4vw] max-sm:px-[4vw]">
                                 <div>
                                     <h5 className="mb-[1vw] max-sm:text-[4.5vw] max-sm:mb-[3vw]">A Guide to Complex International Pension Transfers</h5>
-                                    <span className="text-[1vw] mb-[2vw] block font-display max-sm:text-[3.5vw]">19, June 2024</span>
+                                    <span className="text-[1vw] mb-[2vw] block font-display max-sm:text-[3.4vw]">19, June 2024</span>
                                 </div>
                                 <LinkButton text={"Read More"} href="#" className={`text-black-1 group-hover:text-white hover:text-white ${active==1?" !text-white":""}`} />
                             </div>
@@ -56,7 +56,7 @@ export default function Blogs() {
                             <div className="px-[1.5vw] py-[1.5vw] flex flex-col justify-between max-sm:w-full max-sm:py-[4vw] max-sm:px-[4vw]">
                                 <div>
                                     <h5 className="mb-[1vw] max-sm:text-[4.5vw] max-sm:mb-[3vw]">A Guide to Complex International Pension Transfers</h5>
-                                    <span className="text-[1vw] mb-[2vw] block max-sm:text-[3.5vw]">19, June 2024</span>
+                                    <span className="text-[1vw] mb-[2vw] block max-sm:text-[3.4vw]">19, June 2024</span>
                                 </div>
                                 <LinkButton text={"Read More"} href="#" className={`text-black-1 group-hover:text-white hover:text-white ${active==2?" !text-white":""}`}/>
                             </div>

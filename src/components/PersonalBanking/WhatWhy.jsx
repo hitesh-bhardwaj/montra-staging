@@ -19,14 +19,30 @@ const WhatWhy = () => {
   
       gsap.to(line, {
         strokeDashoffset: 0,
+        ease:"none",
         scrollTrigger: {
           trigger: svgRef.current,
-          start: "top 90%",
-          end: "bottom 90%",
+          start: "top 70%",
+          end: "bottom 70%",
           scrub: true,
-          markers:true
+        //   markers:true
         },
       });
+      const colors = document.querySelectorAll(".color")
+      colors.forEach((color)=>{
+        gsap.to(color,{
+            color:"#215CFF",
+            scrollTrigger:{
+                trigger:color,
+                start:"top 70%",
+                end:"bottom 70%",
+                scrub:true,
+                // markers:true
+            }
+        })
+
+      })
+     
     }, []);
   return (
     <section
@@ -39,11 +55,11 @@ const WhatWhy = () => {
         </h2>
         <div className="w-full h-full flex flex-col gap-[9vw] items-center">
           <div className="w-[70%] flex justify-between">
-            <div className="w-[2.5vw] h-[2.5vw] flex justify-center items-center border rounded-full font-display mt-[1.5vw] ">
+            <div className="w-[2.5vw] h-[2.5vw] flex justify-center items-center border rounded-full font-display mt-[1.5vw] color">
               01
             </div>
             <div className="flex flex-col gap-[1.5vw] w-[70%]">
-              <h3 className="text-[3.5vw] font-display font-medium">
+              <h3 className="text-[3.4vw] font-display font-medium color">
                 Choose Your Bank Account
               </h3>
               <p className="w-[80%]">
@@ -54,11 +70,11 @@ const WhatWhy = () => {
             </div>
           </div>
           <div className="w-[70%] flex justify-between">
-            <div className="w-[2.5vw] h-[2.5vw] flex justify-center items-center border rounded-full font-display mt-[1.5vw] ">
+            <div className="w-[2.5vw] h-[2.5vw] flex justify-center items-center border rounded-full font-display mt-[1.5vw] color">
               02
             </div>
             <div className="flex flex-col gap-[1.5vw] w-[70%]">
-              <h3 className="text-[3.5vw] font-display font-medium">
+              <h3 className="text-[3.4vw] font-display font-medium color">
                 Verify Ownership with a Refundable Payment
               </h3>
               <p className="w-[80%]">
@@ -69,11 +85,11 @@ const WhatWhy = () => {
             </div>
           </div>
           <div className="w-[70%] flex justify-between">
-            <div className="w-[2.5vw] h-[2.5vw] flex justify-center items-center border rounded-full font-display mt-[1.5vw] ">
+            <div className="w-[2.5vw] h-[2.5vw] flex justify-center items-center border rounded-full font-display mt-[1.5vw] color">
               03
             </div>
             <div className="flex flex-col gap-[1.5vw] w-[70%]">
-              <h3 className="text-[3.5vw] font-display font-medium">
+              <h3 className="text-[3.4vw] font-display font-medium color">
                 Fund Your Montra Account
               </h3>
               <p className="w-[80%]">
@@ -84,7 +100,7 @@ const WhatWhy = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-[35%] left-[30%] h-[55vw]">
+        <div className="absolute top-[34%] left-[28%] h-[55vw]">
           <svg
             width="5"
             height="992"
@@ -106,7 +122,7 @@ const WhatWhy = () => {
               x1="2.82227"
               y1="3.68164"
               x2="2.82226"
-              y2="132.333"
+              y2="1032.333"
               stroke="#215CFF"
               strokeWidth="4"
               strokeLinecap="round"

@@ -13,7 +13,7 @@ const personalPayments = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra Personal Account:"} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."}/>
+   <Hero primaryHeading={"Montra Personal Account: "} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."}/>
    <Overview icon1={overviewContent.icon1} icon2={overviewContent.icon2} mainImg={overviewContent.mainImg} bgImg={overviewContent.bgImg} title={overviewContent.title} content={overviewContent.content} subcontent1={overviewContent.subcontent1} subcontent2={overviewContent.subcontent2}/>
    <Benefits/>
    <Ways/>

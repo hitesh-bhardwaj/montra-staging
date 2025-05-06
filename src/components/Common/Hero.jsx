@@ -8,7 +8,7 @@ import Link from "next/link";
 
 
 
-export default function Hero({primaryHeading, heading, content}) {
+export default function Hero({primaryHeading, heading, content,titleWidth,paraWidth}) {
     const heroRef = useRef(null);
     const pathname = usePathname()
   const pathArray = pathname.split('/').filter(Boolean)
@@ -45,7 +45,7 @@ export default function Hero({primaryHeading, heading, content}) {
   return (
     <section id="hero" ref={heroRef} className="w-screen overflow-hidden">
       <div className="h-full flex items-center justify-center text-center px-[4vw]">
-        <div className="w-4/5 mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw]">
+        <div className={` mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw] ${titleWidth?titleWidth:"w-[90%]"} `}>
           <h1
            data-split="lines"
             className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11.5vw] max-sm:leading-[1.2]"
@@ -55,7 +55,7 @@ export default function Hero({primaryHeading, heading, content}) {
           </h1>
           <p
            data-split="lines"
-            className="font-body w-[85%] mx-auto heroAnim max-sm:w-[95%]"
+            className={`font-body mx-auto heroAnim max-sm:w-[95%] ${paraWidth?paraWidth:"w-[75%]"}`}
           >
             {content}
           </p>

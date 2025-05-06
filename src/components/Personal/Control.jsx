@@ -424,7 +424,7 @@ const Control = () => {
                   />
                 </div>
                 <div className="w-[55%] flex flex-col gap-[3vw] h-full justify-center">
-                  <h3 className="text-[3.5vw] leading-[1.3] font-display capitalize font-medium">
+                  <h3 className="text-[3.4vw] leading-[1.3] font-display capitalize font-medium">
                     Do More with your money. Spend & earn rewards
                   </h3>
                   <ul className="list-disc ml-[1vw] w-[60%]">
