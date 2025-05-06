@@ -107,7 +107,7 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className="w-screen h-[270vh] max-sm:h-[560vw] " id="hero">
+    <section className="w-screen h-[270vh] max-sm:h-[560vw] overflow-hidden " id="hero">
       <div className="w-full h-full flex flex-col gap-[2vw] max-sm:gap-[12vw]">
         <div className="w-full mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] text-center px-[4vw] max-sm:pt-[35vw] max-sm:space-y-[7vw]">
           <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw]">
