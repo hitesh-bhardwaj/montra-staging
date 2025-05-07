@@ -78,7 +78,7 @@ const MontraAnim = () => {
 
   return (
     <section
-      className="w-screen h-[400vh] bg-[#fbfbfb] relative"
+      className="w-screen h-[400vh] !bg-[#fbfbfb] relative"
       id="montraAnim"
     >
       <div className="w-full flex justify-center items-center h-[50vw] sticky top-[15%]">

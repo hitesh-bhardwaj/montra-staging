@@ -29,7 +29,7 @@ const Ways = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top center",
-          end: "50% center",
+          end: "80% center",
           scrub: true,
           // markers:true,
           stagger:0.1
@@ -75,7 +75,7 @@ const Ways = () => {
   return (
     <section ref={containerRef} className="h-[300vh] w-screen pb-[15%] bg-white relative">
      
-        <div className="w-full text-center flex flex-col gap-[2vw] pb-[5%] items-center justify-center">
+        <div className="w-full text-center flex flex-col gap-[2vw] pb-[10%] items-center justify-center">
           <h2 className="text-[5.7vw] font-display font-medium w-[70%] capitalize leading-[1.15]">
             Send Money Your Way—Fast, Easy & Secure
           </h2>
@@ -87,7 +87,7 @@ const Ways = () => {
         <div className=" h-fit w-full sticky top-[20%] pb-[10%] pt-[20%]">
         <div
   ref={card1Ref}
-  className="card w-[22.5vw] h-[35vw] absolute"
+  className="card w-[22.5vw] h-[35vw] absolute -rotate-[20deg]"
 >
   <div className="card-inner">
     <div className="card-front bg-primary text-white border-[1.5px] border-white">
@@ -106,17 +106,17 @@ const Ways = () => {
 </div>
 <div
   ref={card2Ref}
-  className="card w-[22.5vw] h-[35vw] absolute"
+  className="card w-[22.5vw] h-[35vw] absolute -rotate-[15deg]"
 >
   <div className="card-inner">
     <div className="card-front bg-primary text-white border-[1.5px] border-white">
       <Image src="/assets/images/personal-payments/montra-account.svg"  height={50}
               width={50}
               alt="montra-account" />
-      <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Montra Account</h3>
+      <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Linked Bank Accounts</h3>
     </div>
     <div className="card-back bg-white text-black border border-[#D2D2D2] shadow-lg ">
-    <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Montra Account</h3>
+    <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Linked Bank Accounts</h3>
     <p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>
 
       
@@ -125,17 +125,17 @@ const Ways = () => {
 </div>
 <div
   ref={card3Ref}
-  className="card w-[22.5vw] h-[35vw] absolute"
+  className="card w-[22.5vw] h-[35vw] absolute -rotate-[10deg]"
 >
   <div className="card-inner">
     <div className="card-front bg-primary text-white border-[1.5px] border-white">
       <Image src="/assets/images/personal-payments/montra-account.svg"  height={50}
               width={50}
               alt="montra-account" />
-      <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Montra Account</h3>
+      <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Linked Cards</h3>
     </div>
     <div className="card-back bg-white text-black border border-[#D2D2D2] shadow-lg ">
-    <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Montra Account</h3>
+    <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Linked Cards</h3>
     <p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>
 
       
@@ -151,10 +151,10 @@ const Ways = () => {
       <Image src="/assets/images/personal-payments/montra-account.svg"  height={50}
               width={50}
               alt="montra-account" />
-      <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Montra Account</h3>
+      <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Installments</h3>
     </div>
     <div className="card-back bg-white text-black border border-[#D2D2D2] shadow-lg">
-    <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Montra Account</h3>
+    <h3 className="text-[2.4vw] leading-[1] font-display font-medium" >Installments</h3>
     <p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>
 
       
