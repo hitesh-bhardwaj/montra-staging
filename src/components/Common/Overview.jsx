@@ -48,15 +48,15 @@ const Overview = ({icon1,icon2,mainImg,bgImg,title,content,subcontent1,subconten
             <div className='absolute top-[12%] left-[10%] w-full h-full'>
                 <Image src={bgImg} alt='overview-banking-image' className='w-full h-[35vw] object-cover' width={400} height={800}/>
             </div>
-            <div ref={block1} className='w-[15vw] h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#F1FFE8] absolute top-[60%] left-[70%] z-[7] flex gap-[1vw]'>
+            <div ref={block1} className='w-fit h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#F1FFE8] absolute top-[60%] left-[70%] z-[7] flex gap-[1vw]'>
               <div className='w-[2vw] h-[2vw]'>
                 <Image src={icon2} width={100} height={100} className='w-full h-full object-cover' alt='overview-icon'/>
               </div>
-              <div className="capitalize">
+              <div className="capitalize w-[16vw]">
                {subcontent1}
               </div>
             </div>
-            <div ref={block2} className='w-[15vw] h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#FFEAEE] absolute top-[30%] left-[10%] z-[7] flex gap-[1vw]'>
+            <div ref={block2} className='w-fit h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] pr-[2vw] bg-[#FFEAEE] absolute top-[30%] left-[10%] z-[7] flex gap-[1vw]'>
               <div className='w-[2vw] h-[2vw]'>
                 <Image src={icon1} width={100} height={100} className='w-full h-full object-cover' alt='overview-icon'/>
               </div>
