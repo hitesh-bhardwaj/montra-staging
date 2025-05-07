@@ -1,7 +1,7 @@
 'use client'
 import { AppleStoreButton, PlayStoreButton } from "../Buttons";
 import Image from "next/image";
-import bgImage from "../../../public/assets/images/Company/company-bg.png";
+import bgImage from "../../../public/assets/images/company/company-bg.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef, useEffect } from "react";
