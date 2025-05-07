@@ -5,16 +5,16 @@ import Footer from "../Footer";
 import usePageVisibilityTitle from "../userPageVisibilityTitle";
 
 const Layout = ({ children }) => {
-    usePageVisibilityTitle({
-        activeTitle: 'Montra for Personal: Your All-in-One Digital Wallet',
-        inactiveTitle: 'Seriously?..',
-      });
-    
+  usePageVisibilityTitle({
+    activeTitle: 'Montra for Personal: Your All-in-One Digital Wallet',
+    inactiveTitle: 'Seriously...? 😤',
+  });
+
   return (
     <>
       <Header />
       {children}
-      <Footer/>
+      <Footer />
     </>
   );
 };

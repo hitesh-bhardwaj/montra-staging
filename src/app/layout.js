@@ -2,8 +2,6 @@ import { Work_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import LenisSmoothScroll from "@/components/LenisSmoothScroll";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/Background";
 import Layout from "@/components/Layout";
 
@@ -57,7 +55,6 @@ export default function RootLayout({ children }) {
           className={`${workSans.variable} ${standerd.variable} antialiased`}
         >
           <Layout>{children}</Layout>
-
           <InteractiveBackground />
         </body>
       </html>
