@@ -1,16 +1,17 @@
-import React, { act, useEffect, useRef, useState } from "react";
+'use client'
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const letters = [
-    { letter: "M", classPrefix: "m" ,left:"left-[32%]",top:"top-[28.9%]",color:"bg-[#D9F7C5]", content:"",title:"make things easier" ,z:"z-[5]" },
-    { letter: "O", classPrefix: "o" ,left:"left-[37%]",top:"top-[28.9%]",color:"bg-[#FFEAEE]", content:"",title:"Operational Excellence "},
-    { letter: "N", classPrefix: "n",left:"left-[43%]",top:"top-[28.9%]",color:"bg-[#EAF1FF]",content:"",title:"Never Settle" ,z:"z-[5]"},
-    { letter: "T", classPrefix: "t" ,left:"left-[48%]",top:"top-[28.9%]",color:"bg-[#CAC5F7]", content:"",title:"Trustworthiness",z:"z-[4]"},
-    { letter: "R", classPrefix: "r" ,left:"left-[52%]",top:"top-[28.9%]",color:"bg-[#FFD7CB]", content:"" ,title:"Respect"},
-    { letter: "A", classPrefix: "a" ,left:"left-[57%]",top:"top-[28.9%]",color:"bg-[#FEFFA7]", content:"",title:"Accountability"},
-  ];
+  { letter: "M", classPrefix: "m", left: "left-[32%]", top: "top-[28.9%]", color: "bg-[#D9F7C5]", content: "", title: "make things easier", z: "z-[5]" },
+  { letter: "O", classPrefix: "o", left: "left-[37%]", top: "top-[28.9%]", color: "bg-[#FFEAEE]", content: "", title: "Operational Excellence " },
+  { letter: "N", classPrefix: "n", left: "left-[43%]", top: "top-[28.9%]", color: "bg-[#EAF1FF]", content: "", title: "Never Settle", z: "z-[5]" },
+  { letter: "T", classPrefix: "t", left: "left-[48%]", top: "top-[28.9%]", color: "bg-[#CAC5F7]", content: "", title: "Trustworthiness", z: "z-[4]" },
+  { letter: "R", classPrefix: "r", left: "left-[52%]", top: "top-[28.9%]", color: "bg-[#FFD7CB]", content: "", title: "Respect" },
+  { letter: "A", classPrefix: "a", left: "left-[57%]", top: "top-[28.9%]", color: "bg-[#FEFFA7]", content: "", title: "Accountability" },
+];
 const MontraAnim = () => {
 
   const [pointer, setPointer] = useState(false);
@@ -21,7 +22,7 @@ const MontraAnim = () => {
           trigger: "#montraAnim",
           start: "top top",
           end: "70% top",
-        //   markers: true,
+          //   markers: true,
           scrub: true,
         },
       });
@@ -66,7 +67,7 @@ const MontraAnim = () => {
           opacity: 1,
           delay: -0.3,
           duration: 0.2,
-         
+
           onReverseComplete: () => {
             setPointer(false);
           },
@@ -82,13 +83,12 @@ const MontraAnim = () => {
     >
       <div className="w-full flex justify-center items-center h-[50vw] sticky top-[15%]">
         <div
-          className={`flex w-full h-full relative text-[6vw] font-display font-medium ${
-            pointer ? "pointer-events-auto" : "pointer-events-none"
-          }`}
+          className={`flex w-full h-full relative text-[6vw] font-display font-medium ${pointer ? "pointer-events-auto" : "pointer-events-none"
+            }`}
         >
-          {letters.map(({ letter, classPrefix,left,top,color,title ,z}) => (
-        <AnimatedLetter key={classPrefix} letter={letter} classPrefix={classPrefix} left={left} top={top} color={color} title={title} z={z}/>
-      ))}
+          {letters.map(({ letter, classPrefix, left, top, color, title, z }) => (
+            <AnimatedLetter key={classPrefix} letter={letter} classPrefix={classPrefix} left={left} top={top} color={color} title={title} z={z} />
+          ))}
         </div>
       </div>
     </section>
@@ -99,7 +99,7 @@ export default MontraAnim;
 
 
 
-const AnimatedLetter = ({ letter, classPrefix ,left,top,color,title,z}) => {
+const AnimatedLetter = ({ letter, classPrefix, left, top, color, title, z }) => {
   const tlRef = useRef(null);
 
   useEffect(() => {
@@ -108,23 +108,23 @@ const AnimatedLetter = ({ letter, classPrefix ,left,top,color,title,z}) => {
 
       tl.to(`.${classPrefix}-container`, {
         x: "-10vw",
-        ease:"power3.inOut"
+        ease: "power3.inOut"
       })
-      .to(`.${classPrefix}-alpha`, {
-        x: "-10vw",
-        delay: -0.5,
-        ease:"power3.inOut"
-      })
-      .to(`.${classPrefix}-circle`, {
-        height: "50vw",
-        ease:"power3.inOut",
-        delay:-0.4,
-      })
-      .from(`.${classPrefix}-content`,{
-        opacity:0,
-        delay:-0.3,
-        ease:"power3.inOut"
-      })
+        .to(`.${classPrefix}-alpha`, {
+          x: "-10vw",
+          delay: -0.5,
+          ease: "power3.inOut"
+        })
+        .to(`.${classPrefix}-circle`, {
+          height: "50vw",
+          ease: "power3.inOut",
+          delay: -0.4,
+        })
+        .from(`.${classPrefix}-content`, {
+          opacity: 0,
+          delay: -0.3,
+          ease: "power3.inOut"
+        })
 
       tlRef.current = tl;
     });
