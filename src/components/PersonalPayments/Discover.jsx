@@ -20,13 +20,11 @@ const Discover = () => {
           const elCenter = rect.top + rect.height / 2;
           const dist = Math.abs(centerY - elCenter);
           const maxDist = containerRect.height / 2;
-          const scale = gsap.utils.mapRange(0, maxDist, 1.3, 1)(dist);
+          const scale = gsap.utils.mapRange(0, maxDist, 1.1, 0.7)(dist);
           el.style.transform = `scale(${scale})`;
         });
-
         requestAnimationFrame(animate);
       };
-
       requestAnimationFrame(animate);
     });
 

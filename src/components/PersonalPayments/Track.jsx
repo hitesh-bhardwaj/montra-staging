@@ -17,33 +17,37 @@ const Track = () => {
       const cards = [card1Ref.current, card2Ref.current, card3Ref.current, card4Ref.current];
       const lines = sectionRef.current.querySelectorAll('.lineDraw');
     
-      gsap.set(cards, { opacity: 0, y: 50 });
+     
+      gsap.set(cards, { opacity: 0, x: -150 });
       gsap.set(lines, { scaleX: 0, transformOrigin: 'left center' });
     
-      gsap.to(cards, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.5,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
+      cards.forEach((card, i) => {
+        gsap.to(card, {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: i * 0.3, 
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+          },
+        });
+        card.style.zIndex = cards.length - i;
       });
-    
       gsap.to(lines, {
         scaleX: 1,
         duration: 1,
         ease: "power3.out",
         stagger: 0.5,
-        delay:0.3,
+        delay: 0.3,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
         },
       });
     }, []);
+    
     
 
   return (
@@ -54,13 +58,16 @@ const Track = () => {
           Track Your & Rewards—All in One Place
           </h2>
          <div className='px-[4vw] py-[4vw] flex items-center justify-between'>
-            <div ref={card1Ref} className='flex flex-col w-[20%] items-start gap-[1.5vw]'>
-                <Image src={"/assets/images/personal-payments/montra-account-statement.svg"} height={50} width={50} alt='montra-account-statement'/>
-                <p className='font-medium text-start'>Montra Account Statement</p>
-                <p className='text-start'>View all your payments in real-time with your Montra  Account Statement—clarity made simple.</p>
-                <div className='h-[1px] bg-[#CBCBCB] w-full mt-[5vw] lineDraw'></div>
-
-            </div>
+         <div ref={card1Ref} className="flex flex-col w-[20%] items-start gap-[1.5vw] group">
+  <Image src="/assets/images/personal-payments/montra-account-statement.svg" height={50} width={50} alt="montra-account-statement" />
+  <p className="font-medium text-start">Montra Account Statement</p>
+  <p className="text-start">
+    View all your payments in real-time with your Montra Account Statement—clarity made simple.
+  </p>
+  <div className="relative w-full h-[1px] bg-[#CBCBCB] mt-[5vw] overflow-hidden">
+    <span className="absolute left-0 top-0 h-full w-full bg-blue-500 origin-left scale-x-0  transition-transform duration-500 group-hover:scale-x-100"></span>
+  </div>
+</div>
             <div ref={card2Ref} className='flex flex-col w-[20%] items-start gap-[1.5vw]'>
                 <Image src={"/assets/images/personal-payments/instant-alerts.svg"} height={50} width={50} alt='montra-account-statement'/>
                 <p className='font-medium text-start'>Instant Alerts</p>

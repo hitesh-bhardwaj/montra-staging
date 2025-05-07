@@ -53,7 +53,7 @@ const Steps = () => {
     <section className="w-screen h-screen bg-primary px-[4vw] py-[5%]">
       <div className="w-full h-full flex justify-between text-white">
         <div className="w-[40%]">
-          <h2 className="text-[5vw] leading-[1.1]">Get started in minutes</h2>
+          <h2 className="text-[5vw] leading-[1.1] font-display">Get started in minutes</h2>
         </div>
         <div className="w-[40%] relative h-[60vw] mt-[-5vw]">
           {images.map((src, i) => (
@@ -69,9 +69,9 @@ const Steps = () => {
             />
           ))}
         </div>
-        <div className="w-[50%] flex flex-col justify-end h-full items-start gap-[10vw] pl-[5vw]">
+        <div className="w-[60%] flex flex-col justify-end h-full items-start gap-[10vw] pl-[5vw]">
           <div className="w-full flex flex-col gap-[1vw] h-fit ">
-            <h3 className="text-[3.4vw] capitalize "> download montra app</h3>
+            <h3 className="text-[3.4vw] capitalize  font-display"> download montra app</h3>
             <p className="w-[70%]">
               You can download Montra App from Google & IOS App stores.
             </p>

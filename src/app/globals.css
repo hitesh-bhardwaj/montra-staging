@@ -122,10 +122,10 @@ body {
 
 @keyframes marqueeVertical {
   from { transform: translateY(0); }
-  to   { transform: translateY(-51vw); }
+  to   { transform: translateY(-50vw); }
 }
 .marquee-vertical {
-  animation: marqueeVertical 6s linear infinite;
+  animation: marqueeVertical 8s linear infinite;
 }
 .card {
   perspective: 1000px;

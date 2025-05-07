@@ -2,23 +2,17 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react'
 
-const letters = [
-  { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "", title: "No Fees, No Hassle", z: "z-[5]" },
-  { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "", title: "Safe & Sound ", z: "z-[4]" },
-  { classPrefix: "c", left: "!left-[53%]", top: "!top-[15%]", color: "bg-[#EAF1FF]", content: "", title: "Instant Virtual Debit Card", z: "z-[5]" },
-  { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "", title: "Locked with Extra Security", z: "z-[4]" },
-];
-const Benefits = () => {
+const Benefits = ({data}) => {
   return (
     <section className='w-screen h-[120vh] px-[4vw] py-[7%] bg-white' id='benefits'>
       <div className='w-full h-full flex flex-col gap-[1.2vw] text-center'>
-        <h2 className='text-[5.7vw] font-display font-medium'>Banking That’s Built for You</h2>
-        <p>Open your free Montra digital account in minutes.</p>
+        <h2 className='text-[5.7vw] font-display font-medium'>{data.heading}</h2>
+        <p>{data.para}</p>
         <div
           className={`flex w-full h-full relative text-[1.2vw] font-medium `}
         >
-          {letters.map(({ letter, classPrefix, left, top, color, title, z }) => (
-            <AnimatedOpeners key={classPrefix} letter={letter} classPrefix={classPrefix} left={left} top={top} color={color} title={title} z={z} />
+          {data.cards.map((item) => (
+            <AnimatedOpeners key={item.classPrefix} classPrefix={item.classPrefix} left={item.left} top={item.top} color={item.color} title={item.title} z={item.z}  width={item.width} content={item.content} height={item.height}/>
           ))}
         </div>
 
@@ -30,7 +24,7 @@ const Benefits = () => {
 
 export default Benefits
 
-const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z }) => {
+const AnimatedOpeners = ({ classPrefix, left, top, color, title, z, width,content,height }) => {
   const tlRef = useRef(null);
 
   useEffect(() => {
@@ -47,7 +41,7 @@ const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z }) =>
           ease: "power3.inOut"
         })
         .to(`.${classPrefix}-circle`, {
-          height: "25vw",
+          height: height,
           ease: "power3.inOut",
           delay: -0.3,
         })
@@ -74,14 +68,14 @@ const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z }) =>
   return (
     <span className={`absolute ${left} ${top} ${classPrefix} ${z} `}>
       <div
-        className={`w-[27vw] rounded-[3vw] absolute overflow-hidden`}
+        className={`${width} rounded-[3vw] absolute overflow-hidden`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className={`w-[27vw] h-[4.2vw] border-[2px] relative border-black overflow-hidden rounded-[3vw]  circle ${classPrefix}-circle`}>
+        <div className={`${width} h-[4.2vw] border-[1.5px] relative border-black overflow-hidden rounded-[3vw]  circle ${classPrefix}-circle`}>
           <div className={`w-fit bg-black rounded-[3vw] flex h-full z-[-1] ${classPrefix}-container`}>
             <span className={` h-[4vw] w-[4vw] rounded-full flex justify-center items-center ${color}`}></span>
-            <div className={`h-full rounded-[3vw] w-[27vw] px-[2vw] flex flex-col items-start py-[1vw] capitalize relative gap-[2vw] ${color}`}>
+            <div className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative gap-[2vw] ${color}`}>
               <div className="h-[4vw] ">
                 {title}
               </div>
@@ -89,7 +83,7 @@ const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z }) =>
                 <Image className='w-[2vw] h-[2vw] object-contain invert' alt='cross' src="/assets/icons/cross-icon.svg" width={50} height={50} onClick={handleMouseLeave} />
               </div>
               <div className={`text-[1.2vw] ${classPrefix}-content font-normal`}>
-                We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence
+               {content}
               </div>
             </div>
           </div>
