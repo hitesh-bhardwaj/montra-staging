@@ -5,7 +5,6 @@ import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/personalChat/Benefits'
 import Investors from '@/components/personalChat/Investors'
-import Discover from '@/components/PersonalPayments/Discover'
 import React from 'react'
 
 const personalChat = () => {
@@ -13,7 +12,7 @@ const personalChat = () => {
    <>
    <Header/>
    <Hero primaryHeading={"Montra Chat:"} heading={" Send Money Like a Message"} content={"Chat, send money, split bills, and stay connected—without ever leaving the conversation."} titleWidth={"w-[65%]"} paraWidth={"w-full"} />
-   <Overview icon1={overviewContent.icon1} icon2={overviewContent.icon2} mainImg={overviewContent.mainImg} bgImg={overviewContent.bgImg} title={overviewContent.title} content={overviewContent.content} subcontent1={overviewContent.subcontent1} subcontent2={overviewContent.subcontent2}/>
+   <Overview content={overviewContent}/>
    <Benefits/>
    <Investors/>
    <SectionBreak content={"Your Conversations, Now Smarter with Montra Chat. It's where talking meets transacting—secure, seamless, and instant."}/>

@@ -8,7 +8,7 @@ import Steps from "@/components/PersonalBanking/Steps";
 import WhatWhy from "@/components/PersonalBanking/WhatWhy";
 import React from "react";
 
-const page = () => {
+const personalBanking = () => {
   return (
     <>
       <Hero
@@ -21,14 +21,7 @@ const page = () => {
         }
       />
       <Overview
-        icon1={overviewContent.icon1}
-        icon2={overviewContent.icon2}
-        mainImg={overviewContent.mainImg}
-        bgImg={overviewContent.bgImg}
-        title={overviewContent.title}
-        content={overviewContent.content}
-        subcontent1={overviewContent.subcontent1}
-        subcontent2={overviewContent.subcontent2}
+       content={overviewContent}
       />
       <Steps />
       {/* <MontraAnim/> */}
@@ -39,6 +32,8 @@ const page = () => {
     </>
   );
 };
+
+export default personalBanking;
 const faqContent = [
   {
     question: "What is the scheduled payments feature?",
@@ -83,4 +78,3 @@ const overviewContent = {
   subcontent1: "safe payments",
   subcontent2: "smart savings",
 };
-export default page;

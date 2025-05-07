@@ -3,29 +3,33 @@ import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
 import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
-import Benefits from '@/components/PersonalPayments/Benefits'
-import Discover from '@/components/PersonalPayments/Discover'
-import Track from '@/components/PersonalPayments/Track'
-import Ways from '@/components/PersonalPayments/Ways'
+import BorrowSteps from '@/components/PersonalFinance/BorrowSteps'
+import GetInsured from '@/components/PersonalFinance/GetInsured'
+import InsuranceOffers from '@/components/PersonalFinance/InsuranceOffers'
+import InsurancePlans from '@/components/PersonalFinance/InsurancePlans'
+import Investors from '@/components/PersonalFinance/Investors'
+import LoanOffers from '@/components/PersonalFinance/LoanOffers'
 import React from 'react'
 
-const personalPayments = () => {
+const personalFinance = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra Personal Account: "} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."}/>
+   <Hero primaryHeading={"Montra Personal Account:"} heading={"Take Charge of Your Financial Future"} content={"Managing your finances shouldn’t be complicated. With Montra, you get powerful yet simple tools to save, borrow, insure, and invest—right from your phone."}/>
    <Overview content={overviewContent}/>
-   <Benefits/>
-   <Ways/>
-   <Track/>
-   <Discover/>
-   <SectionBreak content={"Whether you're paying bills, sending money, or shopping online—do it all in one place, with complete peace of mind."}/>
+  <LoanOffers/>
+  <BorrowSteps/>
+  <InsuranceOffers/>
+  <InsurancePlans/>
+  <Investors/>
+  <GetInsured/>
+   <SectionBreak content={"Whether you're borrowing, insuring, or investing, our app brings everything together in one seamless experience."}/>
    <FAQs content={faqContent}/>
    </>
   )
 }
 
-export default personalPayments
+export default personalFinance
 
 const faqContent = [
     {
@@ -64,11 +68,28 @@ const overviewContent = {
   icon2:"/assets/images/personal-banking/overview-icon-2.svg",
   mainImg:"/assets/images/personal-banking/overview-phone.png",
   bgImg:"/assets/images/personal-payments/overview-bg-icon.svg",
-  title:"Fast, Easy Payments—Right from Your Phone",
+  title:"Finance That Fits Your Life",
   content:[
-    "Montra gives you a smarter way to manage your money—no cash, no complications. From sending money to friends and family, to paying bills, shopping, and more, Montra puts secure, fast, and reliable payments in your hands.",
-    "Whether you're buying airtime, paying rent, or splitting the tab, Montra keeps it simple—with just a few taps."
+    "Montra makes personal finance easy, accessible, and stress-free. Whether you're saving for something big, need quick credit, or want to protect your future with insurance, it’s all right here—in one powerful app. ",
+    "No banks, no paperwork, no complicated steps. Just the tools you need to build, manage, and grow your money—with full control and total confidence."
   ],
-  subcontent1:"safe payments",
-  subcontent2:"smart savings"
+  subcontent1:"Save with Purpose",
+  subcontent2:"Access Credit Instantly",
+  cards:[
+    {
+        color:"bg-[#7A78FF]",
+        icon:"/assets/images/personal-finance/loans.svg",
+        text:"Loans"
+    },
+    {
+        color:"bg-[#FF8100]",
+        icon:"/assets/images/personal-finance/insurance.svg",
+        text:"Insurance"
+    },
+    {
+        color:"bg-[#35C771]",
+        icon:"/assets/images/personal-finance/investments.svg",
+        text:"Investments"
+    }
+  ]
 }
