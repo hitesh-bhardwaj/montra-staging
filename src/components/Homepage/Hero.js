@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { AppleStoreButton, PlayStoreButton } from "../Buttons";
 import gsap from "gsap";
-// import { SplitInLine } from "../splitTextUtils";
 import { initSplitLines } from "@/utils/splitText";
 import { useLenis } from "lenis/react";
 
@@ -25,7 +24,6 @@ export default function Hero() {
             gsap.to(textRef.current, {
               opacity: 1,
               duration: 1,
-
               delay: 0.5,
               onComplete: fadeInOut,
             });
@@ -34,9 +32,9 @@ export default function Hero() {
       };
       fadeInOut();
     });
-
     return () => ctx.revert();
   }, []);
+
   useEffect(() => {
     initSplitLines();
     const ctx = gsap.context(() => {
@@ -45,7 +43,7 @@ export default function Hero() {
         maskPosition: "0% 100%",
         stagger: 0.2,
         duration: 2,
-        // delay:4.2,
+        delay:4.2,
         ease: "none",
       });
       gsap.from(".header", {
@@ -65,15 +63,15 @@ export default function Hero() {
     });
     return () => ctx.revert();
   }, []);
-  // useEffect(() => {
-  //   lenis && lenis.stop();
+  useEffect(() => {
+    lenis && lenis.stop();
 
-  //   const timeout = setTimeout(() => {
-  //     lenis && lenis.start();
-  //   }, 5000);
+    const timeout = setTimeout(() => {
+      lenis && lenis.start();
+    }, 5000);
 
-  //   return()=>clearTimeout(timeout)
-  // }, [lenis]);
+    return()=>clearTimeout(timeout)
+  }, [lenis]);
 
   return (
     <section id="hero" ref={heroRef} className="w-screen overflow-hidden">

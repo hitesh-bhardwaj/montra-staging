@@ -35,8 +35,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      {/* <Loader/> */}
-      {/* <HomepageHeader/> */}
+      <Loader/>
       <Hero />
       <FeatureSection />
       <FeaturesText />
