@@ -5,9 +5,9 @@ import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import Discover from '@/components/PersonalPayments/Discover'
-import Track from '@/components/PersonalPayments/Track'
 import Ways from '@/components/PersonalPayments/Ways'
 import React from 'react'
+import Rewards from '@/components/Common/Rewards'
 
 const personalPayments = () => {
   return (
@@ -17,7 +17,7 @@ const personalPayments = () => {
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
    <Ways/>
-   <Track/>
+   <Rewards rewardsData={rewardsData}/>
    <Discover/>
    <SectionBreak content={"Whether you're paying bills, sending money, or shopping online—do it all in one place, with complete peace of mind."} width={"w-[85%]"}/>
    <FAQs content={faqContent}/>
@@ -82,5 +82,31 @@ const  benefitsData = {
     { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: " Advanced 2FA Protection", z: "z-[4]", width:"w-[24vw]", height:"17vw" },
     { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Built-In Payment Checks", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
     { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Your Privacy, Always", z: "z-[4]",  width:"w-[20vw]", height:"17vw" },
+  ]
+}
+const rewardsData={
+  heading:"Track Your & Rewards—All in One Place",
+  headingWidth:"w-[70%]",
+  cards:[
+      {
+          icon:"/assets/images/personal-payments/montra-account-statement.svg",
+          title:"Montra Account Statement",
+          para:"View all your payments in real-time with your Montra  Account Statement—clarity made simple."
+      },
+      {
+          icon:"/assets/images/personal-payments/instant-alerts.svg",
+          title:"Instant Alerts",
+          para:"Get voice and text notifications on your Montra App every time you receive a payment—so you’re always in the loop."
+      },
+      {
+          icon:"/assets/images/personal-payments/reward-points.svg",
+          title:"Reward Points Tracker",
+          para:"Keep tabs on every reward point earned with a dedicated Reward Point Account Statement—no surprises, just benefits."
+      },
+      {
+          icon:"/assets/images/personal-payments/easy-reward.svg",
+          title:"Easy Reward Redemption",
+          para:"Redeem your points anytime and monitor it all through your Reward Point Redemption Account—track your perks with ease."
+      },
   ]
 }
