@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BenefitCards = () => {
+const BenefitCards = ({cardData}) => {
   const containerRef = useRef(null);
   const card1Ref = useRef(null);
   const card2Ref = useRef(null);
@@ -122,11 +122,10 @@ const BenefitCards = () => {
     >
       <div className="w-full text-center flex flex-col gap-[2vw] pb-[10%] items-center justify-center">
         <h2 className="text-[5.7vw] font-display font-medium w-[70%] capitalize leading-[1.15]">
-          Send Money Your Way—Fast, Easy & Secure
+          {cardData.heading}
         </h2>
         <p className="w-[45%]">
-          The Montra App gives you multiple simple and reliable ways to send
-          money—anytime, anywhere.
+        {cardData.subHeading}
         </p>
       </div>
 
@@ -135,23 +134,22 @@ const BenefitCards = () => {
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
               <Image
-                src="/assets/images/personal-payments/montra-account.svg"
+                src={cardData.icon1}
                 height={50}
                 width={50}
                 alt="montra-account"
               />
               <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
-                Montra Account
+                {cardData.cardTitle1}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2] h-full w-full flex  ">
               <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
-                Montra Account
+              {cardData.cardTitle1}
               </h3>
-              <p>
-                Use your saved debit or credit cards for quick, hassle-free
-                transactions.
-              </p>
+              <div dangerouslySetInnerHTML={{__html:cardData.cardContent1}}/>
+               
+            
             </div>
           </div>
         </div>
@@ -159,23 +157,20 @@ const BenefitCards = () => {
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
               <Image
-                src="/assets/images/personal-payments/montra-account.svg"
+                src={cardData.icon2}
                 height={50}
                 width={50}
                 alt="montra-account"
               />
               <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
-                Linked Bank Accounts
+              {cardData.cardTitle2}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2]  ">
               <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
-                Linked Bank Accounts
+              {cardData.cardTitle2}
               </h3>
-              <p>
-                Use your saved debit or credit cards for quick, hassle-free
-                transactions.
-              </p>
+              <div dangerouslySetInnerHTML={{__html:cardData.cardContent2}}/>
             </div>
           </div>
         </div>
@@ -183,23 +178,20 @@ const BenefitCards = () => {
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
               <Image
-                src="/assets/images/personal-payments/montra-account.svg"
+                src={cardData.icon3}
                 height={50}
                 width={50}
                 alt="montra-account"
               />
               <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
-                Linked Cards
+              {cardData.cardTitle3}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2]  ">
               <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
-                Linked Cards
+              {cardData.cardTitle3}
               </h3>
-              <p>
-                Use your saved debit or credit cards for quick, hassle-free
-                transactions.
-              </p>
+              <div dangerouslySetInnerHTML={{__html:cardData.cardContent3}}/>
             </div>
           </div>
         </div>
@@ -207,23 +199,20 @@ const BenefitCards = () => {
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
               <Image
-                src="/assets/images/personal-payments/montra-account.svg"
+               src={cardData.icon4}
                 height={50}
                 width={50}
                 alt="montra-account"
               />
               <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
-                Installments
+              {cardData.cardTitle4}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2] ">
               <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
-                Installments
+              {cardData.cardTitle4}
               </h3>
-              <p>
-                Use your saved debit or credit cards for quick, hassle-free
-                transactions.
-              </p>
+              <div dangerouslySetInnerHTML={{__html:cardData.cardContent4}}/>
             </div>
           </div>
         </div>
@@ -232,4 +221,4 @@ const BenefitCards = () => {
   );
 };
 
-export default Ways;
+export default BenefitCards;

@@ -1,3 +1,4 @@
+import BenefitCards from '@/components/Common/BenefitCards'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
@@ -16,7 +17,8 @@ const personalPayments = () => {
    <Hero primaryHeading={"Montra Personal Account: "} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
-   <Ways/>
+   {/* <Ways/> */}
+   <BenefitCards cardData={cardData}/>
    <Rewards rewardsData={rewardsData}/>
    <Discover/>
    <SectionBreak content={"Whether you're paying bills, sending money, or shopping online—do it all in one place, with complete peace of mind."} width={"w-[85%]"}/>
@@ -109,4 +111,21 @@ const rewardsData={
           para:"Redeem your points anytime and monitor it all through your Reward Point Redemption Account—track your perks with ease."
       },
   ]
+}
+const cardData ={
+  heading:"Send Money Your Way—Fast, Easy & Secure",
+  subHeading:"The Montra App gives you multiple simple and reliable ways to send money—anytime, anywhere.",
+  icon1:"/assets/images/personal-payments/montra-account.svg",
+  icon2:"/assets/images/personal-payments/montra-account.svg",
+  icon3:"/assets/images/personal-payments/montra-account.svg",
+  icon4:"/assets/images/personal-payments/montra-account.svg",
+  cardTitle1:"Montra Account",
+  cardTitle2:"Linked Bank Accounts",
+  cardTitle3:"Linked Cards",
+  cardTitle4:"Installments",
+  cardContent1:"<p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>",
+  cardContent2:"<p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>",
+  cardContent3:"<p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>",
+  cardContent4:"<p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>",
+  
 }

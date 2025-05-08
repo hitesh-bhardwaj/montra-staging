@@ -69,8 +69,8 @@ export default function Hero({primaryHeading, heading, content,titleWidth,paraWi
           </div>
         </div>
       </div>
-      <div className="breadcrumbs px-[4vw] pb-[4vw] text-[1.45vw] text-[#D2D2D2] font-display">
-      <div className="flex gap-2 items-center flex-wrap">
+      <div className="breadcrumbs px-[4vw] pb-[4vw] text-[1.15vw] text-[#D2D2D2] !tracking-normal font-display">
+      <div className="flex gap-3 items-center flex-wrap">
         <Link href="/" className="">Home</Link>
         {pathArray.map((segment, index) => {
           const href = '/' + pathArray.slice(0, index + 1).join('/')
