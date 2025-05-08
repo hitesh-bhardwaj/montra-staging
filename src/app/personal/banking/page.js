@@ -25,9 +25,9 @@ const personalBanking = () => {
       />
       
       <Benefits data={benefitsData} />
-      <Steps data={stepData}/>
+      <Steps/>
       <WhatWhy height={"h-[55vw]"} data={whatWhyData}/>
-      <SectionBreak content={"From seamless payments to accessible credit options, Montra empowers you to take control of your financial future."}/>
+      <SectionBreak content={"From seamless payments to accessible credit options, Montra empowers you to take control of your financial future."} width={"w-[88%]"}/>
       <FAQs content={faqContent} />
     </>
   );
@@ -81,6 +81,7 @@ const overviewContent = {
 
 const whatWhyData = {
   heading:"Connect your bank accounts—everything in one Montra move.",
+  para:"",
   content:[
   {
     number:"01",
@@ -102,6 +103,8 @@ const whatWhyData = {
 const  benefitsData = {
   heading:"Banking That’s Built for You",
   para:"Open your free Montra digital account in minutes.",
+  headingWidth:"w-full",
+  paraWidth:"w-full",
   cards:[
     { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Your deposits stay risk-free and untouched—no conversions, no surprises.", title: "No Fees, No Hassle", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
     { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Your deposits stay risk-free and untouched—no conversions, no surprises.", title: "Safe & Sound ", z: "z-[4]", width:"w-[18vw]", height:"17vw" },

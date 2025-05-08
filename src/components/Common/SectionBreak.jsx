@@ -9,7 +9,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function SectionBreak({content}) {
+export default function SectionBreak({content, width}) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -86,7 +86,7 @@ export default function SectionBreak({content}) {
     >
       {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden"/> */}
 
-      <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto">
+      <div className={`h-full flex items-center justify-center relative text-center mx-auto ${width}`}>
         <h2
           data-split="lines"
           className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw]"

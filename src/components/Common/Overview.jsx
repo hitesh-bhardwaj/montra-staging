@@ -65,7 +65,7 @@ const Overview = ({content}) => {
             <div className='absolute top-[12%] left-[10%] w-full h-full'>
                 <Image src={content.bgImg} alt='overview-banking-image' className='w-full h-[35vw] object-cover' width={400} height={800}/>
             </div>
-            <div ref={block1} className='!w-fit  h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#F1FFE8] absolute top-[55%] left-[50%] z-[7] flex gap-[1vw]'>
+            <div ref={block1} className='!w-fit  h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#F1FFE8] absolute top-[55%] left-[45%] z-[7] flex gap-[1vw]'>
               <div className='w-[2vw] h-[2vw]'>
                 <Image src={content.icon2} width={100} height={100} className='w-full h-full object-cover' alt='overview-icon'/>
               </div>

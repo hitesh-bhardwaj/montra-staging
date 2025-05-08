@@ -1,3 +1,4 @@
+"use client"
 import gsap from 'gsap';
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react'
@@ -6,8 +7,14 @@ const Benefits = ({data}) => {
   return (
     <section className='w-screen h-[120vh] px-[4vw] py-[7%] bg-white' id='benefits'>
       <div className='w-full h-full flex flex-col gap-[1.2vw] text-center'>
-        <h2 className='text-[5.7vw] font-display font-medium'>{data.heading}</h2>
-        <p>{data.para}</p>
+        <div className='w-full flex flex-col items-center'>
+        <h2
+  className={`text-[5.7vw] font-display font-medium ${data.headingWidth}`}
+  dangerouslySetInnerHTML={{ __html: data.heading }}
+/>
+
+        <p className={`${data.paraWidth}`}>{data.para}</p>
+        </div>
         <div
           className={`flex w-full h-full relative text-[1.2vw] font-medium `}
         >

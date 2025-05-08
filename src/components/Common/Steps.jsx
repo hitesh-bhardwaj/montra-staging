@@ -1,3 +1,4 @@
+"use client"
 import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
@@ -111,3 +112,37 @@ const Steps = () => {
 };
 
 export default Steps;
+
+const stepData = {
+  heading:"Get started in minutes",
+  steps:[
+    {
+      number:"01",
+      title:"Download Montra App",
+      para:"You can download Montra App from Google & IOS App stores.",
+      tag:"Download App",
+      img:"/assets/images/personal-banking/steps-img-1.png"
+    },
+    {
+      number:"02",
+      title:"Download Montra App",
+      para:"You can download Montra App from Google & IOS App stores.",
+      tag:"Download App",
+      img:"/assets/images/personal-banking/steps-img-1.png"
+    },
+    {
+      number:"03",
+      title:"Download Montra App",
+      para:"You can download Montra App from Google & IOS App stores.",
+      tag:"Download App",
+      img:"/assets/images/personal-banking/steps-img-1.png"
+    },
+    {
+      number:"04",
+      title:"Download Montra App",
+      para:"You can download Montra App from Google & IOS App stores.",
+      tag:"Download App",
+      img:"/assets/images/personal-banking/steps-img-1.png"
+    },
+  ]
+}

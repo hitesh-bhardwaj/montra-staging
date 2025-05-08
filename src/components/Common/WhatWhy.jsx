@@ -1,3 +1,4 @@
+"use client"
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -50,9 +51,12 @@ const WhatWhy = ({data,height}) => {
       id="whatwhy"
     >
       <div className="w-full h-full flex flex-col gap-[10vw] items-center justify-center">
-        <h2 className="text-[5.7vw] font-display font-medium w-[85%]">
+        <div className="w-full flex flex-col items-center gap-[1.5vw] text-center">
+        <h2 className="text-[5.7vw] font-display font-medium w-[85%] leading-[1.2]">
          {data.heading}
         </h2>
+        <p>{data.para}</p>
+        </div>
         <div className="w-full h-full flex flex-col gap-[9vw] items-center">
           {data.content.map((item,index)=>(
    <div key={index} className="w-[70%] flex justify-between">
