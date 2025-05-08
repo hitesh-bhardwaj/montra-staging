@@ -18,7 +18,6 @@ const businessAgencyBanking = () => {
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>
    <Rewards rewardsData={rewardsData}/>
-   
    <SectionBreak content={"Whether you're starting out or looking to scale, Montra gives you the tools to succeed—backed by technology, support, and rewards."} width={"w-[95%]"}/>
    <FAQs content={faqContent}/>
    </>
@@ -75,7 +74,7 @@ const overviewContent = {
 const  benefitsData = {
   heading:"Become a Montra Agent. Serve More. Earn More.",
   para:"Open your free Montra digital account in minutes.",
-  headingWidth:"w-full",
+  headingWidth:"w-[70%]",
   paraWidth:"w-full",
   cards:[
     { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Rest easy knowing your funds are secure. Your deposits are never converted into risky assets.", title: "No Account Fees", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
@@ -113,6 +112,7 @@ const rewardsData={
 const cardData ={
     heading:"Empower Your Community with Montra Services",
     subHeading:"Offer everyday banking services to your community—all from your shop.",
+    headingWidth:"w-[70%]",
     icon1:"/assets/images/business-agency-banking/cash-deposit.svg",
     icon2:"/assets/images/business-agency-banking/bills.svg",
     icon3:"/assets/images/business-agency-banking/bills.svg",
@@ -127,24 +127,4 @@ const cardData ={
     cardContent4:"<p>Enable Montra users or any bank customer to withdraw cash securely right from your outlet.</p>",
     
   }
-  const whatWhyData = {
-    heading:"Send Invoices. Get Paid. Fast.",
-    para:"Create and send professional invoices in multiple currencies—and let your customers pay you online, instantly. With Montra, improving your cash flow has never been easier.",
-    content:[
-    {
-      number:"01",
-      title:"Sign In or Get Started",
-      para:"New to Montra? Download the app and open a Business account in minutes. Already onboard? Log in through the Montra App or Merchant Portal."
-    },
-    {
-      number:"02",
-      title:"Create & Send Invoices in Seconds",
-      para:"Go to the Invoices tab and fill in your product or service details. Add your customer info, choose the currency, and send—done!"
-    },
-    {
-      number:"03",
-      title:"Get Paid, Hassle-Free",
-      para:"Your customers can pay online using a variety of payment methods—from anywhere in the world. No delays. No friction."
-    }
-  ],
-  }
+  

@@ -62,7 +62,7 @@ const Rewards = ({rewardsData}) => {
               className="w-[3vw] h-[3vw] object-contain"
               alt="montra-account-statement"
             />
-            <p className="font-medium text-start">{item.title}</p>
+            <p className="font-medium text-start w-[80%]">{item.title}</p>
             <p className="text-start">
              {item.para}
             </p>

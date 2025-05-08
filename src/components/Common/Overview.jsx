@@ -84,7 +84,7 @@ const Overview = ({content}) => {
         </div>
         <div className='w-[45%] h-full flex flex-col items-center space-y-[3vw] mt-[-7vw]'>
         <div className='w-full flex flex-col gap-[2vw] mt-[14vw] pr-[3vw]'>
-            <h2 className='text-[3.2vw] leading-[1.2] font-display font-medium'>{content.title}</h2>
+            <h2 className='text-[3.2vw] leading-[1.2] font-display font-medium capitalize'>{content.title}</h2>
             {content.content.map((item,index)=>(
                 <p key={index} className='text-[1.2vw] w-[90%]'>{item}</p>
             ))}

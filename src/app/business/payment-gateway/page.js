@@ -132,6 +132,7 @@ const rewardsData={
 const cardData ={
     heading:"Simplify Payment Acceptance with Flexible Methods",
     subHeading:"MontraPay offers a variety of payment acceptance methods for seamless transactions",
+    headingWidth:"w-[80%]",
     icon1:"/assets/images/business-payments/qr.svg",
     icon2:"/assets/images/business-payments/tap-n-pay.svg",
     icon3:"/assets/images/business-payments/qr.svg",
@@ -148,6 +149,8 @@ const cardData ={
   }
   const whatWhyData = {
     heading:"Get Paid Instantly with Montra Payment Links",
+    headingWidth:"w-[85%]",
+    top:"top-[34%]",
     para:"Start selling online without the need for a website or app. Just create and share a payment link in minutes—no technical setup required.",
     content:[
     {

@@ -67,7 +67,7 @@ const overviewContent = {
   icon2:"/assets/images/business-payments/scalable-infrastructure.svg",
   mainImg:"/assets/images/personal-banking/overview-phone.png",
   bgImg:"/assets/images/personal-payments/overview-bg-icon.svg",
-  title:"Empowering Your Business with Seamless Digital Transactions'",
+  title:"Empowering Your Business with Seamless Digital Transactions",
   content:[
     "Montra offers a robust payment ecosystem tailored for businesses seeking efficient, secure, and scalable digital payment solutions. Our platform connects businesses with banks, merchants, dealers, sellers, lending institutions, and insurance companies, serving as a one-stop solution for all financial needs."
   ],
@@ -115,6 +115,7 @@ const rewardsData={
 const cardData ={
     heading:"Accept & Collect Payments Your Way",
     subHeading:"Montra gives your business the flexibility to get paid quickly, securely, and however your customers prefer. Here’s how you can start accepting & collecting payments with ease:",
+    headingWidth:"w-[60%]",
     icon1:"/assets/images/business-payments/qr.svg",
     icon2:"/assets/images/business-payments/tap-n-pay.svg",
     icon3:"/assets/images/business-payments/qr.svg",
@@ -131,6 +132,8 @@ const cardData ={
   }
   const whatWhyData = {
     heading:"Send Invoices. Get Paid. Fast.",
+    headingWidth:"w-[85%]",
+    top:"top-[32%]",
     para:"Create and send professional invoices in multiple currencies—and let your customers pay you online, instantly. With Montra, improving your cash flow has never been easier.",
     content:[
     {

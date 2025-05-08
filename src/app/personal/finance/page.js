@@ -120,6 +120,8 @@ const benefitsData2 ={
 }
 const whatWhyData = {
   heading:"Get Insured in Minutes on the Montra App",
+  headingWidth:"w-[85%]",
+  top:"top-[34%]",
   para:"Secure the right coverage quickly and easily—just follow these simple steps:",
   content:[
   {

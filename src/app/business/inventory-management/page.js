@@ -112,6 +112,7 @@ const rewardsData={
 const cardData ={
     heading:"Smarter Inventory Management on Montra App",
     subHeading:"Smarter Inventory Management on Montra App.",
+    headingWidth:"w-[75%]",
     icon1:"/assets/images/business-inventory/buy-inventory.svg",
     icon2:"/assets/images/business-inventory/manage-your-stock.svg",
     icon3:"/assets/images/business-inventory/buy-inventory.svg",

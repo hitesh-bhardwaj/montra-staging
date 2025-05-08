@@ -81,6 +81,8 @@ const overviewContent = {
 
 const whatWhyData = {
   heading:"Connect your bank accounts—everything in one Montra move.",
+  headingWidth:"w-[85%]",
+  top:"top-[34%]",
   para:"",
   content:[
   {

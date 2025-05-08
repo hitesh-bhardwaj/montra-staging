@@ -52,7 +52,7 @@ const WhatWhy = ({data,height}) => {
     >
       <div className="w-full h-full flex flex-col gap-[10vw] items-center justify-center">
         <div className="w-full flex flex-col items-center gap-[1.5vw] text-center">
-        <h2 className="text-[5.7vw] font-display font-medium w-[85%] leading-[1.2]">
+        <h2 className={`text-[5.7vw] font-display font-medium leading-[1.2] ${data.headingWidth}`}>
          {data.heading}
         </h2>
         <p>{data.para}</p>
@@ -76,7 +76,7 @@ const WhatWhy = ({data,height}) => {
        
           
         </div>
-        <div className={`absolute top-[34%] left-[28%] ${height}`}>
+        <div className={`absolute  left-[28%] ${height} ${data.top}`}>
           <svg
             width="5"
             height="992"
