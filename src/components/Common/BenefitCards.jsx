@@ -121,7 +121,7 @@ const BenefitCards = ({cardData}) => {
       className="h-[500vh] w-screen pb-[15%] bg-white relative"
     >
       <div className="w-full text-center flex flex-col gap-[2vw] pb-[10%] items-center justify-center">
-        <h2 className="text-[5.7vw] font-display font-medium w-[70%] capitalize leading-[1.15]">
+        <h2 className={`text-[5.7vw] font-display font-medium  capitalize leading-[1.3] ${cardData.headingWidth}`}>
           {cardData.heading}
         </h2>
         <p className="w-[45%]">

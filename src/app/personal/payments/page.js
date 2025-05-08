@@ -113,10 +113,11 @@ const rewardsData={
 const cardData ={
   heading:"Send Money Your Way—Fast, Easy & Secure",
   subHeading:"The Montra App gives you multiple simple and reliable ways to send money—anytime, anywhere.",
+  headingWidth:"w-[70%]",
   icon1:"/assets/images/personal-payments/montra-account.svg",
-  icon2:"/assets/images/personal-payments/montra-account.svg",
+  icon2:"/assets/images/personal-payments/card-icon-2.svg",
   icon3:"/assets/images/personal-payments/montra-account.svg",
-  icon4:"/assets/images/personal-payments/montra-account.svg",
+  icon4:"/assets/images/personal-payments/card-icon-4.svg",
   cardTitle1:"Montra Account",
   cardTitle2:"Linked Bank Accounts",
   cardTitle3:"Linked Cards",
