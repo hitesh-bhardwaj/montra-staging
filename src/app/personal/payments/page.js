@@ -6,7 +6,6 @@ import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import Discover from '@/components/PersonalPayments/Discover'
-import Ways from '@/components/PersonalPayments/Ways'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
 
@@ -17,7 +16,6 @@ const personalPayments = () => {
    <Hero primaryHeading={"Montra Personal Account: "} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
-   {/* <Ways/> */}
    <BenefitCards cardData={cardData}/>
    <Rewards rewardsData={rewardsData}/>
    <Discover/>
@@ -129,3 +127,4 @@ const cardData ={
   cardContent4:"<p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>",
   
 }
+
