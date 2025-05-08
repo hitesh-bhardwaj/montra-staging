@@ -84,7 +84,7 @@ function initVisionMissionAnimations({ container, section, cardRefs }) {
 
 const Card = forwardRef(({ title, description, children, id, className = "" }, ref) => {
     return (
-        <div className={`card absolute w-[32vw] h-[75vh] perspective-distant left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${className}`} id={id} ref={ref}>
+        <div className={`card absolute w-[32vw] h-[75vh] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${className}`} id={id} ref={ref}>
             <div className="card-wrapper h-full w-full absolute left-1/2 -translate-x-1/2">
                 <div className="flip-card-inner w-full h-full relative">
                     <div className="flip-card-front absolute w-full h-full backface-hidden rounded-4xl border border-gray-100 overflow-hidden bg-primary text-white p-[3vw] flex flex-col justify-between">

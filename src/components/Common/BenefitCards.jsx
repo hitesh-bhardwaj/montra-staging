@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Ways = () => {
+const BenefitCards = () => {
   const containerRef = useRef(null);
   const card1Ref = useRef(null);
   const card2Ref = useRef(null);
