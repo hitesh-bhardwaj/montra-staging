@@ -43,8 +43,8 @@ export default function Hero({primaryHeading, heading, content,titleWidth,paraWi
       }, []);
 
   return (
-    <section id="hero" ref={heroRef} className="w-screen overflow-hidden">
-      <div className="h-full flex items-center justify-center text-center px-[4vw]">
+    <section id="hero" ref={heroRef} className="w-screen h-screen  overflow-hidden">
+      <div className="h-full flex flex-col items-center justify-center text-center px-[4vw]">
         <div className={` mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw] ${titleWidth?titleWidth:"w-[90%]"} `}>
           <h1
            data-split="lines"
@@ -68,9 +68,8 @@ export default function Hero({primaryHeading, heading, content,titleWidth,paraWi
             </div>
           </div>
         </div>
-      </div>
-      <div className="breadcrumbs px-[4vw] pb-[4vw] text-[1.15vw] text-[#D2D2D2] !tracking-normal font-display">
-      <div className="flex gap-3 items-center flex-wrap">
+        <div className="breadcrumbs px-[4vw]  w-full flex items-start justify-start pt-[-10vw] text-[1.15vw] text-[#D2D2D2] !tracking-normal font-display">
+      <div className="flex gap-3  ">
         <Link href="/" className="">Home</Link>
         {pathArray.map((segment, index) => {
           const href = '/' + pathArray.slice(0, index + 1).join('/')
@@ -90,6 +89,8 @@ export default function Hero({primaryHeading, heading, content,titleWidth,paraWi
         })}
       </div>
     </div>
+      </div>
+      
     </section>
   );
 }

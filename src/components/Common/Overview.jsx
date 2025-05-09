@@ -58,11 +58,11 @@ const Overview = ({content}) => {
   
   return (
     <> 
-    <section  className='w-screen h-screen bg-[#fbfbfb] py-[5%] overflow-hidden' id='overview'>
-        <div className='w-full flex items-start justify-between px-[4vw] '>
+    <section  className='w-screen h-full bg-[#fbfbfb] overflow-hidden' id='overview'>
+        <div className='w-full h-full flex items-start justify-between px-[4vw] '>
         <div  ref={containerRef} className='w-[40%] relative'>
-            <Image src={content.mainImg} alt='overview-phone-image' className='object-cover w-full h-[60vw] mt-[-7vw] z-[2] relative' width={700} height={1080}/>
-            <div className='absolute top-[12%] left-[10%] w-full h-full'>
+            <Image src={content.mainImg} alt='overview-phone-image' className='object-cover w-full h-[60vw]  z-[2] relative' width={700} height={1080}/>
+            <div className='absolute top-[25%] left-[10%] w-full h-full'>
                 <Image src={content.bgImg} alt='overview-banking-image' className='w-full h-[35vw] object-cover' width={400} height={800}/>
             </div>
             <div ref={block1} className='!w-fit  h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#F1FFE8] absolute top-[55%] left-[45%] z-[7] flex gap-[1vw]'>
@@ -82,7 +82,7 @@ const Overview = ({content}) => {
               </div>
             </div>
         </div>
-        <div className='w-[45%] h-full flex flex-col items-center space-y-[3vw] mt-[-7vw]'>
+        <div className='w-[45%] h-full flex flex-col items-center space-y-[3vw]'>
         <div className='w-full flex flex-col gap-[2vw] mt-[14vw] pr-[3vw]'>
             <h2 className='text-[3.2vw] leading-[1.2] font-display font-medium capitalize'>{content.title}</h2>
             {content.content.map((item,index)=>(
