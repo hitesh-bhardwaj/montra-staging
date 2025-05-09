@@ -23,7 +23,7 @@ export default function FAQs({ allowMultiple = false , content}) {
   }
 
   return (
-    <section className="px-[4vw] py-[6vw] w-full max-sm:px-[7vw] bg-[#FBFBFB]">
+    <section className="px-[4vw] py-[6vw] w-full max-sm:px-[7vw] bg-[#FBFBFB] relative">
       <div className="flex flex-col items-center gap-[4vw] max-sm:gap-[10vw]">
         <h2 className="font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10.5vw] max-sm:text-left">
           Frequently Asked Questions

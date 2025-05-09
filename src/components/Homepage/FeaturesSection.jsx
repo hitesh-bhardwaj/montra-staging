@@ -1,8 +1,8 @@
 'use client'
 
-import { easeOut, motion } from "framer-motion";
+import { useScroll, useTransform, motion, easeOut } from "motion/react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const useIsMobile = (breakpoint = 541) => {
     const [isMobile, setIsMobile] = useState(false);
@@ -19,44 +19,70 @@ const useIsMobile = (breakpoint = 541) => {
 
 const icons = [
     {
-        src: "/assets/images/homepage/image-1.png",
+        poster: '/assets/images/homepage/image-1.png',
+        src: "/assets/images/homepage/video-1.mp4",
         alt: "Receive",
-        style: { top: "30%", left: "15%" },
+        style: { top: "20%", left: "30%" },
         mobileStyle: { top: "20%", left: "10%" },
         mobilexOffset: 0,
         mobileyOffset: -200,
-        xOffset: -300,
+        xOffset: -500,
         yOffset: -100,
     },
     {
-        src: "/assets/images/homepage/image-2.png",
+        poster: '/assets/images/homepage/image-2.png',
+        src: "/assets/images/homepage/video-2.mp4",
         alt: "Pay",
-        style: { top: "30%", right: "15%" },
-        mobileStyle: { top: "20%", right: "10%" },
+        style: { top: "15%", left: "10%" },
+        mobileStyle: { top: "10%", left: "10%" },
         mobilexOffset: +10,
         mobileyOffset: -140,
-        xOffset: +400,
-        yOffset: -50,
+        xOffset: -300,
+        yOffset: 150,
     },
     {
-        src: "/assets/images/homepage/image-3.png",
+        poster: '/assets/images/homepage/image-3.png',
+        src: "/assets/images/homepage/video-3.mp4",
         alt: "Currency",
-        style: { bottom: "20%", left: "20%" },
+        style: { bottom: "40%", left: "30%" },
         mobileStyle: { bottom: "40%", left: "10%" },
         mobilexOffset: -20,
         mobileyOffset: +180,
-        xOffset: -450,
-        yOffset: +50,
+        xOffset: -350,
+        yOffset: 150,
     },
     {
-        src: "/assets/images/homepage/image-4.png",
+        poster: '/assets/images/homepage/image-4.png',
+        src: "/assets/images/homepage/video-4.mp4",
         alt: "Scan",
-        style: { bottom: "30%", right: "20%" },
-        mobileStyle: { bottom: "40%", right: "10%" },
+        style: { top: "10%", right: "30%" },
+        mobileStyle: { top: "40%", right: "10%" },
         mobilexOffset: +40,
         mobileyOffset: +140,
-        xOffset: +380,
-        yOffset: +100,
+        xOffset: +400,
+        yOffset: 0,
+    },
+    {
+        poster: '/assets/images/homepage/image-6.png',
+        src: "/assets/images/homepage/video-6.mp4",
+        alt: "Receive",
+        style: { top: "30%", right: "25%" },
+        mobileStyle: { top: "20%", right: "10%" },
+        mobilexOffset: 0,
+        mobileyOffset: -200,
+        xOffset: +300,
+        yOffset: 50,
+    },
+    {
+        poster: '/assets/images/homepage/image-5.png',
+        src: "/assets/images/homepage/video-5.mp4",
+        alt: "Pay",
+        style: { bottom: "35%", right: "35%" },
+        mobileStyle: { bottom: "20%", right: "10%" },
+        mobilexOffset: +10,
+        mobileyOffset: -140,
+        xOffset: 500,
+        yOffset: 150,
     },
 ];
 
@@ -73,52 +99,71 @@ const item = {
         x: xOffset,
         y: yOffset,
         transition: {
-            duration: 3,
+            duration: 2,
             ease: easeOut,
         },
     }),
 }
 
 const FeatureSection = () => {
+
+    const sectionRef = useRef(null);
     const isMobile = useIsMobile();
+
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 0.7], ["-30%", "-10%"]);
 
     return (
         <motion.section
-            className="w-full h-full flex items-end justify-center relative overflow-hidden bg-white  pt-[2vw] max-sm:pt-[50vw] "
+            ref={sectionRef}
+            className="w-full h-full flex items-end justify-center relative bg-[#fbfbfb] max-sm:pt-[50vw] "
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={container}
         >
             <div
-                className="relative inline-block z-10 w-[55vw] h-[52vw] translate-y-[-15%] max-sm:translate-y-0  max-sm:w-[100vw] max-sm:h-[120vw]"
+                className="relative inline-block z-10 w-[55vw] h-[52vw] max-sm:translate-y-0  max-sm:w-[100vw] max-sm:h-[120vw]"
             >
-                <Image
-                    src="/assets/images/homepage/phone-mockup.png"
-                    alt="App mockup"
-                    width={600}
-                    height={900}
-                    className="w-full h-auto block max-sm:translate-x-0 max-sm:object-cover max-sm:w-[120vw] max-sm:h-[130vw]"
-                />
+                <motion.div
+                    className="overflow-hidden h-[110%]"
+                    style={{ y }}
+                >
+                    <Image
+                        id="hero-phone-image"
+                        src="/assets/images/homepage/phone-mockup.png"
+                        alt="App mockup"
+                        width={1200}
+                        height={1400}
+                        className="w-full h-auto block max-sm:translate-x-0 max-sm:object-cover max-sm:w-[120vw] max-sm:h-[130vw]"
+                    />
+                </motion.div>
                 {icons.map((icon, i) => (
-                    isMobile ? <motion.img
+                    <motion.div
                         key={i}
-                        src={icon.src}
-                        alt={icon.alt}
-                        className="absolute w-[10vw] h-[10vw] object-contain max-sm:w-[25vw] max-sm:h-[25vw]"
-                        style={icon.mobileStyle}
-                        custom={{ xOffset: icon.mobilexOffset, yOffset: icon.mobileyOffset }}
+                        className="absolute w-[10vw] h-[10vw] rounded-[3vw] overflow-hidden max-sm:w-[25vw] max-sm:h-[25vw]"
+                        style={isMobile ? icon.mobileStyle : icon.style}
                         variants={item}
-                    /> :
-                        <motion.img
-                            key={i}
+                        custom={isMobile
+                            ? { xOffset: icon.mobilexOffset, yOffset: icon.mobileyOffset }
+                            : { xOffset: icon.xOffset, yOffset: icon.yOffset }
+                        }
+                    >
+                        <video
+                            poster={icon.poster}
                             src={icon.src}
                             alt={icon.alt}
-                            className="absolute w-[10vw] h-[10vw] object-contain max-sm:w-[25vw] max-sm:h-[25vw]"
-                            style={icon.style}
-                            custom={{ xOffset: icon.xOffset, yOffset: icon.yOffset }}
-                            variants={item}
+                            muted
+                            loop
+                            autoPlay
+                            playsInline
+                            className="h-full w-full object-cover"
                         />
+                    </motion.div>
                 ))}
             </div>
         </motion.section>

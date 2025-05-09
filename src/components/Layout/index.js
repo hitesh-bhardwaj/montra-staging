@@ -1,10 +1,11 @@
 "use client"
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../Header";
-import Footer from "../Footer";
 import usePageVisibilityTitle from "../userPageVisibilityTitle";
+import FooterCta from "../Footer/FooterCta";
 
 const Layout = ({ children }) => {
+
   usePageVisibilityTitle({
     activeTitle: 'Montra for Personal: Your All-in-One Digital Wallet',
     inactiveTitle: 'Seriously...? 😤',
@@ -14,7 +15,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       {children}
-      <Footer />
+      <FooterCta />
     </>
   );
 };

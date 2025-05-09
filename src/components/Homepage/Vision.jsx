@@ -34,7 +34,7 @@ export default function Vision() {
     return (
         <section
             ref={sectionRef}
-            className="w-screen max-sm:!h-full max-sm:py-[15%] bg-[#FBFBFB]"
+            className="w-screen max-sm:!h-full max-sm:py-[15%] bg-[#FBFBFB] relative"
             style={{ height: `calc(100vh + ${TRAVEL}px)` }}
         >
             <div

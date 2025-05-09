@@ -1,109 +1,181 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import logo from '../../../public/montra-white-logo.svg';
-import { Facebook, Instagram, Linkedin, NftIcon, Twitter } from '../Buttons/icons'
+import { ArrowRight, NftIcon } from '../Buttons/icons'
 import React from 'react'
-import FooterCta from './FooterCta'
 
 export default function Footer() {
     return (
         <>
-            <FooterCta />
-            <footer className="w-screen overflow-hidden">
+            <footer 
+                className="w-screen h-[45vw]"
+                style={{clipPath: 'rect(0px 100% 100% 0px)'}}
+                >
 
-                <div className='text-white bg-primary rounded-[4vw] w-[92vw] mx-auto px-[3vw] pt-[4vw] pb-[2vw] max-sm:w-screen max-sm:pt-[15vw] max-sm:rounded-bl-none max-sm:rounded-br-none max-sm:rounded-[10vw] max-sm:px-[7vw]'>
+                <div className='text-white fixed bottom-0 bg-primary w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1vw] max-sm:text-[20px] z-0'>
                     {/* Top Content */}
-                    <div className="flex flex-row justify-between max-sm:flex-col">
+                    <div className="flex flex-row mb-[5vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw]">
                         {/* Logo */}
-                        <div className="w-[45%] max-sm:w-full max-sm:flex max-sm:justify-center">
-                            <Image className='w-1/2 max-sm:w-[85%]' src={logo} alt="Montra Logo" width={200} height={60} />
-                        </div>
-
-                        {/* Intro + Link Columns */}
-                        <div className="w-[55%] space-y-[2.5vw] max-sm:w-full max-sm:text-center max-sm:mt-[10vw] max-sm:space-y-[7vw]">
-                            <p>
+                        <div className="w-fit max-sm:w-full max-sm:flex max-sm:justify-center">
+                            <Image className='w-[30vw] max-sm:w-[85%] mb-[2vw]' src={logo} alt="Montra Logo" width={600} height={126} />
+                            <p className="w-[30vw] mb-[2vw]">
+                                Montra delivers innovative products and solutions that drive
+                                financial inclusion in emerging economies - enabling a smooth shift
+                                from cash to digital payments and making credit more accessible
+                                for all.
+                            </p>
+                            <p className='font-semibold'>
                                 Connect with us:{' '}
                                 <a href="mailto:info@montra.org" className="">
                                     info@montra.org
                                 </a>
                             </p>
-                            <p className="">
-                                Montra delivers innovative products and solutions that drive
-                                financial inclusion in emerging economies—enabling a smooth shift
-                                from cash to digital payments and making credit more accessible
-                                for all.
-                            </p>
+                        </div>
+
+                        {/* Intro + Link Columns */}
+                        <div className="w-fit space-y-[2.5vw] max-sm:w-full max-sm:text-center max-sm:mt-[10vw] max-sm:space-y-[7vw]">
+
                             <div className='flex justify-start gap-[8vw] max-sm:flex-col'>
+
+                                {/* Personal Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
-                                    <li className="uppercase max-sm:text-[4.5vw] max-sm:mb-[4vw]"><Link href="#">Personal</Link></li>
-                                    <li><Link href="#">Banking</Link></li>
-                                    <li><Link href="#">Payments</Link></li>
-                                    <li><Link href="#">Finance</Link></li>
-                                    <li><Link href="#">Chat</Link></li>
-                                    <li><Link href="#">Shop</Link></li>
-                                    <li><Link href="#">Lend</Link></li>
+                                    {personalLinks.map((link, index) => (
+                                        <li key={index} className='first:uppercase'><Link href={link.href}>{link.name}</Link></li>
+                                    ))}
                                 </ul>
+
+                                {/* Business Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
-                                    <li className="uppercase max-sm:text-[4.5vw] max-sm:mb-[4vw]"><Link href="#">Business</Link></li>
-                                    <li><Link href="#">Banking</Link></li>
-                                    <li><Link href="#">Payments</Link></li>
-                                    <li><Link href="#">Finance</Link></li>
-                                    <li><Link href="#">Chat</Link></li>
-                                    <li><Link href="#">Shop</Link></li>
-                                    <li><Link href="#">Lend</Link></li>
+                                    {businessLinks.map((link, index) => (
+                                        <li key={index} className='first:uppercase'><Link href={link.href}>{link.name}</Link></li>
+                                    ))}
                                 </ul>
-                                <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
-                                    <li className="uppercase">Platform</li>
-                                    <li><Link href="#" className="uppercase">Company</Link></li>
-                                </ul>
-                            </div>
-                            {/* Social Media Links */}
-                            <div className="flex space-x-[1vw] max-sm:w-full max-sm:justify-center max-sm:gap-[3vw] max-sm:pt-[7vw]">
-                                <a href="#" aria-label='Facebook'>
-                                    <div className='border rounded-full'>
-                                        <Facebook />
+
+                                <div className="flex flex-col justify-between items-start">
+                                    <div className='space-y-[0.5vw] max-sm:space-y-[2vw]'>
+                                        <Link href="/platform" className="uppercase block w-fit">Platform</Link>
+                                        <Link href="/company" className="uppercase block w-fit">Company</Link>
                                     </div>
-                                </a>
-                                <a href="#" aria-label='Linkedin'>
-                                    <div className='border rounded-full'>
-                                        <Linkedin />
+
+                                    {/* Social Media Links */}
+                                    <div className='space-y-[0.5vw] max-sm:space-y-[2vw]'>
+                                        {socialLinks.map((link, index) => (
+                                            <a key={index} href={link.href} aria-label='Facebook' className='flex items-center gap-1 group'>
+                                                <span>{link.name}</span>
+                                                <div className='h-[0.8vw] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end'>
+                                                    <span className='inline-flex w-[200%] h-full duration-300 group-hover:translate-x-1/2'>
+                                                        <ArrowRight className='h-[0.8vw] w-[1vw] inline-block scale-0 group-hover:scale-100 duration-300' />
+                                                        <ArrowRight className='h-[0.8vw] w-[1vw] inline-block group-hover:scale-0 duration-300' />
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        ))}
                                     </div>
-                                </a>
-                                <a href="#" aria-label='Twitter'>
-                                    <div className='border rounded-full'>
-                                        <Twitter />
-                                    </div>
-                                </a>
-                                <a href="#" aria-label='Instagram'>
-                                    <div className='border rounded-full'>
-                                        <Instagram />
-                                    </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Divider + Bottom Bar */}
-                    <div className="mx-auto py-4 flex font-display items-center justify-between max-sm:py-[8vw]">
+                    {/* Marquee */}
+                    <div className="overflow-hidden whitespace-nowrap text-nowrap max-sm:h-[20vw] bg-primary">
+                        <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[10vw] leading-0 font-bold text-white gap-[5vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
+                            {['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL'].map((word, i) => (
+                                <React.Fragment key={i}>
+                                    <span>{word}</span>
+                                    <NftIcon className='w-[8vw] h-[8vw] mt-2' />
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Copyright Statement */}
+                    <div className="px-[4vw] py-4 flex items-center justify-between max-sm:py-[8vw]">
                         <span className="text-[1vw] max-sm:text-[3.8vw]">Copyright © Montra 2025</span>
                         <span className="text-[1vw] max-sm:text-[3.8vw]">By: <a href='https://weareenigma.com/'>Enigma Digital</a></span>
-                    </div>
-                </div>
-
-                {/* Marquee */}
-                <div className="overflow-hidden whitespace-nowrap text-nowrap max-sm:h-[20vw]">
-                    <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[3.45vw] font-display font-bold text-primary gap-[2vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
-                        {['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL'].map((word, i) => (
-                            <React.Fragment key={i}>
-                                <span>{word}</span>
-                                <NftIcon className='w-[3vw] h-[3vw]' />
-                            </React.Fragment>
-                        ))}
                     </div>
                 </div>
             </footer>
         </>
     )
 }
+
+const socialLinks = [
+    {
+        name: "Facebook",
+        href: "#",
+    },
+    {
+        name: "Twitter",
+        href: "#",
+    },
+    {
+        name: "Instagram",
+        href: "#",
+    },
+    {
+        name: "Youtube",
+        href: "#"
+    }
+]
+
+const personalLinks = [
+    {
+        name: "Personal",
+        href: "/personal"
+    },
+    {
+        name: "Banking",
+        href: "/personal/banking",
+    },
+    {
+        name: "Payments",
+        href: "/personal/payments",
+    },
+    {
+        name: "Finance",
+        href: "/personal/finance",
+    },
+    {
+        name: "Chat",
+        href: "/personal/chat",
+    },
+    {
+        name: "Shop",
+        href: "/personal/shop",
+    },
+]
+
+const businessLinks = [
+    {
+        name: "Business",
+        href: "/business"
+    },
+    {
+        name: "Banking",
+        href: "/business/banking",
+    },
+    {
+        name: "Payments",
+        href: "/business/payments",
+    },
+    {
+        name: "Agency Banking",
+        href: "/business/agency-banking",
+    },
+    {
+        name: "Inventory Management",
+        href: "/business/inventory-management",
+    },
+    {
+        name: "Montra Store",
+        href: "/business/montra-store",
+    },
+    {
+        name: "Payment Gateway",
+        href: "/business/payment-gateway",
+    },
+    {
+        name: "Tap & Pay",
+        href: "/business/tap-and-pay",
+    },
+]

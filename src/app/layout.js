@@ -4,6 +4,7 @@ import "./globals.css";
 import LenisSmoothScroll from "@/components/LenisSmoothScroll";
 import InteractiveBackground from "@/components/Background";
 import Layout from "@/components/Layout";
+import Footer from "@/components/Footer";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -52,10 +53,17 @@ export default function RootLayout({ children }) {
       <LenisSmoothScroll />
       <html lang="en">
         <body
-          className={`${workSans.variable} ${standerd.variable} antialiased`}
+          className={`${workSans.variable} ${standerd.variable} antialiased bg-primary`}
         >
-          <Layout>{children}</Layout>
-          <InteractiveBackground />
+          <main className="relative z-[1] rounded-b-[10vw]">
+            <Layout>
+              <InteractiveBackground />
+              <div style={{position: "relative"}}>
+                {children}
+              </div>
+            </Layout>
+          </main>
+          <Footer />
         </body>
       </html>
     </>

@@ -96,7 +96,7 @@ export default function Header() {
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="px-[4vw] py-[1vw] header  w-full max-sm:pt-[5vw] max-sm:px-[7vw]">
+      <div id="header-container" className="px-[4vw] py-[1vw] header w-full max-sm:pt-[5vw] max-sm:px-[7vw]">
         <div className="flex justify-between items-center w-full ">
           <Link href="/" className="block relative z-[150]">
             <Image

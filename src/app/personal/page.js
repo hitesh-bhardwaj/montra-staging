@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 export default function Personal() {
   const [mobileWidth, setMobileWidth] = useState(false);
+
   useEffect(() => {
     if (globalThis.innerWidth > 1024) {
       setMobileWidth(false);
@@ -16,6 +17,7 @@ export default function Personal() {
       setMobileWidth(true);
     }
   }, []);
+  
   return (
     <>
       <Hero />
@@ -25,6 +27,7 @@ export default function Personal() {
     </>
   );
 }
+
 const faqContent = [
   {
     question: 'What is the scheduled payments feature?',

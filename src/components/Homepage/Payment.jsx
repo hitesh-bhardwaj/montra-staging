@@ -155,7 +155,7 @@ export default function Payments() {
     const translateY = useTransform(scrollYProgress, [0, 1], ['0', '-80%']);
 
     return (
-        <section ref={sectionRef} className="h-[600vh] bg-white " id='payment'>
+        <section ref={sectionRef} className="h-[600vh] bg-white relative" id='payment'>
             <div className="sticky top-0 px-[4vw] h-screen flex items-center justify-between">
 
                 {/* ─── CONTROLS ─── */}
@@ -258,7 +258,7 @@ export default function Payments() {
                 </div>
 
                 {/* ─── TEXT BLOCK ─── */}
-                <div className="h-[100vh] overflow-clip w-[40%] relative">
+                <div className="h-[100vh] overflow-clip w-[40%] relative bg-white">
                     {/* fade masks */}
                     <span className="absolute top-0 inset-x-0 h-[23vw] bg-gradient-to-b from-white via-[#fff] to-transparent z-10" />
                     <span className="absolute bottom-0 inset-x-0 h-[14vw] bg-gradient-to-t from-white via-[#fff] to-transparent z-10" />

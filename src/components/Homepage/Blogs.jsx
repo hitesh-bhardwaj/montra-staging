@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function Blogs() {
     const [active,setActive] = useState(0)
     return (
-        <section className="p-[4vw] max-sm:py-[15%] max-sm:px-[7vw] bg-[#FBFBFB]">
+        <section className="p-[4vw] max-sm:py-[15%] max-sm:px-[7vw] bg-[#FBFBFB] relative">
             <div className="flex flex-col items-center justify-center max-sm:gap-[8vw] max-sm:items-start">
                 <h2 className="text-[5.7vw] font-display font-medium leading-relaxed mb-[2vw] max-sm:text-[10.5vw]">Recent Articles</h2>
                 <div className="w-full flex justify-end max-sm:flex max-sm:order-1 max-sm:justify-center">
