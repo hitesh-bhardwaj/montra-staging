@@ -18,7 +18,6 @@ const tapPay = () => {
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>
    <About/>
-   {/* <Discover/> */}
    <SectionBreak content={"Our secure Tap & Pay service uses state-of-the-art encryption to protect your financial details. Each transaction is tokenized, ensuring your card information is never shared."} width={"w-[95%]"}/>
    <FAQs content={faqContent}/>
    </>
