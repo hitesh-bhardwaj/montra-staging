@@ -89,6 +89,7 @@ const  benefitsData = {
 const rewardsData={
   heading:"Track Your Earnings & Rewards—All in One Place",
   headingWidth:"w-[70%]",
+  gridCols:"grid-cols-4",
   cards:[
       {
           icon:"/assets/images/personal-payments/montra-account-statement.svg",
@@ -130,7 +131,7 @@ const cardData ={
     cardContent4:"<p>Start taking <span class='text-primary'>debit and credit card</span> payments instantly with <span class='text-primary'>Montra POS</span> —fast, secure, and perfect for any business.</p>",
     
   }
-  const whatWhyData = {
+const whatWhyData = {
     heading:"Send Invoices. Get Paid. Fast.",
     headingWidth:"w-[85%]",
     top:"top-[32%]",

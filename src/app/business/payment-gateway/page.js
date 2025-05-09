@@ -110,6 +110,7 @@ const  benefitsData = {
 const rewardsData={
   heading:"Flexible Payment Methods for Seamless Transactions",
   headingWidth:"w-[80%]",
+  gridCols:"grid-cols-3",
   cards:[
       {
           icon:"/assets/images/payment-gateway/pay-on-delivery.svg",

@@ -86,6 +86,7 @@ const  benefitsData = {
 const rewardsData={
   heading:"Seamlessly Track Payments & Inventory on Montra",
   headingWidth:"w-[80%]",
+  gridCols:"grid-cols-4",
   cards:[
       {
           icon:"/assets/images/business-inventory/instant-payments.svg",

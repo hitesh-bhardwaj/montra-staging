@@ -86,6 +86,7 @@ const  benefitsData = {
 const rewardsData={
   heading:"Stay on Top of Your Earnings & Rewards with Montra",
   headingWidth:"w-[80%]",
+  gridCols:"grid-cols-4",
   cards:[
       {
           icon:"/assets/images/personal-payments/montra-account-statement.svg",

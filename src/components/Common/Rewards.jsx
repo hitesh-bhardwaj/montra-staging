@@ -45,35 +45,40 @@ const Rewards = ({rewardsData}) => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-full w-screen  bg-white relative">
-      <div className="w-full text-center flex flex-col gap-[2vw] pb-[5%] items-center justify-center">
-        <h2 className={`text-[5.7vw] font-display font-medium  capitalize leading-[1.15] ${rewardsData.headingWidth}`}>{rewardsData.heading}
-        </h2>
-        <div className="px-[4vw] py-[4vw] flex items-center justify-between">
-            {rewardsData.cards.map((item,index)=>(
-                <div key={index}
-                ref={(el) => (cards.current[index] = el)}
-            className="flex flex-col w-[20%] items-start gap-[1.5vw] group"
-          >
-            <Image
-              src={item.icon}
-              height={40}
-              width={40}
-              className="w-[3vw] h-[3vw] object-contain"
-              alt="montra-account-statement"
-            />
-            <p className="font-medium text-start w-[80%]">{item.title}</p>
-            <p className="text-start">
-             {item.para}
-            </p>
-            <div className="relative w-full h-[1px] bg-[#CBCBCB] mt-[5vw] overflow-hidden">
-              <span className="absolute left-0 top-0 h-full w-full bg-primary origin-left scale-x-0  transition-transform duration-500 group-hover:scale-x-100"></span>
-            </div>
+<section ref={sectionRef} className="h-full w-screen bg-white relative">
+  <div className="w-full text-center flex flex-col gap-[2vw] pb-[5%] items-center justify-center">
+    <h2
+      className={`text-[5.7vw] font-display font-medium capitalize leading-[1.15] ${rewardsData.headingWidth}`}
+    >
+      {rewardsData.heading}
+    </h2>
+    <div className={`px-[4vw] py-[4vw] grid  gap-[5vw] w-full ${rewardsData.gridCols}`}>
+      {rewardsData.cards.map((item, index) => (
+        <div
+          key={index}
+          ref={(el) => (cards.current[index] = el)}
+          className="flex flex-col gap-[7vw]  group"
+        >
+          <div className="flex flex-col gap-[1.5vw] h-[15vw]">
+          <Image
+            src={item.icon}
+            height={40}
+            width={40}
+            className="w-[3vw] h-[3vw] object-contain"
+            alt="montra-account-statement"
+          />
+          <p className="font-medium text-start w-[80%]">{item.title}</p>
+          <p className="text-start">{item.para}</p>
           </div>
-            ))}
+          <div className="relative w-full h-[1px] bg-[#CBCBCB] overflow-hidden">
+            <span className="absolute left-0 top-0 h-full w-full bg-primary origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
+
   );
 };
 

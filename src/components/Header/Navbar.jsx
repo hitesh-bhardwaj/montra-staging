@@ -19,7 +19,7 @@ const navLinks = [
   { name: "Personal", href: "/personal" },
   { name: "Business", href: "/business" },
   { name: "Platform", href: "/platform" },
-  { name: "Company", href: "/company" },
+  { name: "Company", href: "/company"},
 ];
 
 export default function Navbar() {
@@ -65,7 +65,10 @@ export default function Navbar() {
         </span>
 
         {navLinks.map((link) => {
-          const isActive = pathname === link.href;
+          const isActive =
+          link.href === '/'
+            ? pathname === '/'
+            : pathname === link.href || pathname.startsWith(`${link.href}/`);
           return (
             <Link
               key={link.href}

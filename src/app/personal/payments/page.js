@@ -87,6 +87,8 @@ const  benefitsData = {
 const rewardsData={
   heading:"Track Your & Rewards—All in One Place",
   headingWidth:"w-[70%]",
+  gridCols:"grid-cols-4",
+
   cards:[
       {
           icon:"/assets/images/personal-payments/montra-account-statement.svg",
