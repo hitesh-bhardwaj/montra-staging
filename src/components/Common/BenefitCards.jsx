@@ -42,44 +42,45 @@ const BenefitCards = ({cardData}) => {
       });
 
       moveTimeline
-        .to(card1Ref.current, { rotateZ: -7, ease: "none" })
-        .to(card2Ref.current, { rotateZ: -2, ease: "none", delay: -0.5 })
-        .to(card3Ref.current, { rotateZ: 2, ease: "none", delay: -0.5 })
-        .to(card4Ref.current, { rotateZ: 7, ease: "none", delay: -0.5 })
+        .to(card1Ref.current, { rotateZ: -7, ease: "none",duration:0.2 })
+        .to(card2Ref.current, { rotateZ: -2, ease: "none", delay: -0.2 ,duration:0.2})
+        .to(card3Ref.current, { rotateZ: 2, ease: "none", delay: -0.2 ,duration:0.2})
+        .to(card4Ref.current, { rotateZ: 7, ease: "none", delay: -0.2 ,duration:0.2})
         .to(card1Ref.current, {
-          x: "-36vw",
-          y: "2vw",
+          x: "-32vw",
+          y: "5vw",
           rotateZ: -20,
-          duration:1,
+          duration:0.5,
           ease: "none",
         })
         .to(card2Ref.current, {
-          x: "-12vw",
+          x: "-10vw",
           ease: "none",
           rotateZ: -10,
-          duration:1,
-          delay: -1,
+          duration:0.5,
+          delay: -0.5,
         })
         .to(card3Ref.current, {
-          x: "12vw",
+          x: "10vw",
           ease: "none",
           rotateZ: 10,
-          duration:1,
-          delay: -1,
+          duration:0.5,
+          delay: -0.5,
         })
         .to(card4Ref.current, {
-          x: "36vw",
-          y: "2vw",
+          x: "32vw",
+          y: "5vw",
           ease: "none",
-          duration:1,
+          duration:0.5,
           rotateZ: 20,
-          delay: -1,
+          delay: -0.5,
         })
-        .to(card1Ref.current, { y: "0vw", rotateZ: 0, ease: "none" ,delay:0})
-        .to(card2Ref.current, { ease: "none", rotateZ: 0, delay: -0.5 })
-        .to(card3Ref.current, { ease: "none", rotateZ: 0, delay: -0.5 })
+        .to(card1Ref.current, { y: "0vw", rotateZ: 0, ease: "none" ,delay:0,x:"-36vw"})
+        .to(card2Ref.current, { ease: "none", rotateZ: 0, x:"-12vw", delay: -0.5 })
+        .to(card3Ref.current, { ease: "none", rotateZ: 0, x:"12vw", delay: -0.5 })
         .to(card4Ref.current, {
           y: "0vw",
+          x:"36vw",
           ease: "none",
           rotateZ: 0,
           delay: -0.5,
@@ -143,7 +144,7 @@ const BenefitCards = ({cardData}) => {
                 {cardData.cardTitle1}
               </h3>
             </div>
-            <div className="card-back bg-white text-black border border-[#D2D2D2] h-full w-full flex  ">
+            <div className="card-back bg-white text-black border border-[#D2D2D2] h-full w-full flex ">
               <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
               {cardData.cardTitle1}
               </h3>

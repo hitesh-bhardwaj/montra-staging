@@ -1,6 +1,5 @@
 import Hero from "@/components/Company/Hero";
 import Impact from "@/components/Company/Impact";
-import MontraAnim from "@/components/Company/MontraAnim";
 import MontraAnimation from "@/components/Company/MontraAnimation";
 import Network from "@/components/Company/Network";
 import Timeline from "@/components/Company/Timeline";
@@ -15,7 +14,6 @@ export default function CompanyPage() {
             <Impact />
             <Network />
             <VisionMission />
-            {/* <MontraAnim /> */}
             <MontraAnimation/>
             <Timeline />
             <SectionBreak />

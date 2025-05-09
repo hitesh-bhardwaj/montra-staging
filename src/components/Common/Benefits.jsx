@@ -52,8 +52,8 @@ const AnimatedOpeners = ({ classPrefix, left, top, color, title, z, width,conten
           ease: "power3.inOut",
           delay: -0.3,
         })
-        .from(`.${classPrefix}-content`, {
-          opacity: 0,
+        .to(`.${classPrefix}-content`, {
+          opacity: 1,
           delay: -0.3,
           ease: "power3.inOut"
         })
@@ -81,21 +81,21 @@ const AnimatedOpeners = ({ classPrefix, left, top, color, title, z, width,conten
       >
         <div className={`${width} h-[4.2vw] border-[1.5px] relative border-black overflow-hidden rounded-[3vw]  circle ${classPrefix}-circle`}>
           <div className={`w-fit bg-black rounded-[3vw] flex h-full z-[-1] ${classPrefix}-container`}>
-            <span className={` h-[4vw] w-[4vw] rounded-full flex justify-center items-center ${color}`}></span>
-            <div className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative gap-[2vw] ${color}`}>
-              <div className="h-[4vw] ">
+            <span className={` h-[4vw] w-[4vw] rounded-full flex justify-center items-center ${color}`}><Image width={100} height={100} src={"/assets/icons/arrow-right.svg"} alt='arrow' className='w-[1.5vw] h-[1.5vw] object-contain' /></span>
+            <div className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative  ${color}`}>
+              <div className="h-[4vw] mt-[0.1vw] ">
                 {title}
               </div>
               <div className='absolute right-[8%] cursor-pointer' >
                 <Image className='w-[2vw] h-[2vw] object-contain invert' alt='cross' src="/assets/icons/cross-icon.svg" width={50} height={50} onClick={handleMouseLeave} />
               </div>
-              <div className={`text-[1.2vw] ${classPrefix}-content font-normal`}>
+              <div className={`text-[1.2vw] ${classPrefix}-content font-normal text-left opacity-0`}>
                {content}
               </div>
             </div>
           </div>
         </div>
-        <div className={`absolute top-[30%] left-[5%] ${classPrefix}-alpha`}><Image width={100} height={100} src={"/assets/icons/arrow-right.svg"} alt='arrow' className='w-[1.5vw] h-[1.5vw] object-contain' /></div>
+        {/* <div className={`absolute top-[30%] left-[5%] ${classPrefix}-alpha`}></div> */}
       </div>
     </span>
   );

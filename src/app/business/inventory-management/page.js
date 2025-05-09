@@ -13,7 +13,7 @@ const businessInventory = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra for Business:"} heading={"Smarter Inventory Management"} content={"Montra’s Inventory Management tool helps you stay in control of your stock, reduce losses, and improve your bottom line."}/>
+   <Hero primaryHeading={"Montra for Business: "} heading={"Smarter Inventory Management"} content={"Montra’s Inventory Management tool helps you stay in control of your stock, reduce losses, and improve your bottom line."}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>

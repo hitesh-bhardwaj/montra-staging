@@ -13,7 +13,7 @@ const businessAgencyBanking = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra for Business:"} heading={"Earn with Montra Agency Banking"} content={"Empowering Your Business with Seamless Digital Transactions"}/>
+   <Hero primaryHeading={"Montra for Business: "} heading={"Earn with Montra Agency Banking"} content={"Empowering Your Business with Seamless Digital Transactions"}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>

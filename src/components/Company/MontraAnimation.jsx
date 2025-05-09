@@ -215,7 +215,7 @@ const MontraAnimation = () => {
                   className={`w-fit bg-black rounded-[3vw] flex h-full z-[-1] ${key}-container`}
                 >
                   <span
-                    className={`h-[4vw] w-[4vw] rounded-full flex justify-center items-center ${color}`}
+                    className={`h-[3.8vw] w-[3.8vw] rounded-full flex justify-center items-center ${color}`}
                   />
                   <div
                     className={`h-full rounded-[3vw] ${innerWidth} px-[3vw] flex flex-col justify-start py-[1vw] capitalize text-[1.4vw] font-medium gap-[2vw] ${color}`}

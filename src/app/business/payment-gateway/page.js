@@ -16,10 +16,10 @@ const businessPaymentGateway = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra for Business:"} heading={"Boost Your Sales with our Payment Gateway"} content={"Whether you're selling on a website, app, or social media, Montra makes it easy to get paid with just a few clicks."}/>
+   <Hero primaryHeading={"Montra for Business: "} heading={"Boost Your Sales with our Payment Gateway"} content={"Whether you're selling on a website, app, or social media, Montra makes it easy to get paid with just a few clicks."} paraWidth={"w-[55%]"} />
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
-   <Steps/>
+   <Steps steps={steps}/>
    <Features featuresData={featuresData}/>
    <Rewards rewardsData={rewardsData}/>
    <BenefitCards cardData={cardData}/>
@@ -151,7 +151,7 @@ const cardData ={
   const whatWhyData = {
     heading:"Get Paid Instantly with Montra Payment Links",
     headingWidth:"w-[85%]",
-    top:"top-[34%]",
+    top:"top-[37.5%]",
     para:"Start selling online without the need for a website or app. Just create and share a payment link in minutes—no technical setup required.",
     content:[
     {
@@ -172,3 +172,29 @@ const cardData ={
   ],
   }
   
+  const steps= [
+    {
+      number: "01",
+      title: "Download Montra App",
+      para: "You can download Montra App from Google & iOS App stores.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+    },
+    {
+      number: "02",
+      title: "Register",
+      para: "Quickly register with your email or phone number.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+    },
+    {
+      number: "03",
+      title: "Approve KYC",
+      para: "Submit your documents for KYC approval.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+    },
+    {
+      number: "04",
+      title: "Ready to use",
+      para: "You’re all set—start managing your money!",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+    },
+  ]

@@ -13,7 +13,7 @@ const tapPay = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra for Business:"} heading={"Tap. Pay. Go. It’s That Simple."} content={"Experience next-gen payment convenience. Our contactless Tap & Pay system is designed for speed, security, and simplicity—so you can pay in seconds, without the hassle."}/>
+   <Hero primaryHeading={"Montra for Business: "} heading={"Tap. Pay. Go. It’s That Simple."} content={"Experience next-gen payment convenience. Our contactless Tap & Pay system is designed for speed, security, and simplicity—so you can pay in seconds, without the hassle."}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>

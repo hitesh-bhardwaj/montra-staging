@@ -1,89 +1,186 @@
-"use client"
+"use client";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+
+const stepData = {
+  heading: "Get started in minutes",
+  steps: [
+    {
+      number: "01",
+      title: "Download Montra App",
+      para: "You can download Montra App from Google & iOS App stores.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+    },
+    {
+      number: "02",
+      title: "Register",
+      para: "Quickly register with your email or phone number.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+    },
+    {
+      number: "03",
+      title: "Approve KYC",
+      para: "Submit your documents for KYC approval.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+    },
+    {
+      number: "04",
+      title: "Ready to use",
+      para: "You’re all set—start managing your money!",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+    },
+  ],
+};
 
 const Steps = () => {
+  const circleRefs = useRef([]);
+  const tagRefs = useRef([]);
   const imageRefs = useRef([]);
-  const images = [
-    "/assets/images/personal-banking/steps-img-1.png",
-    "/assets/images/personal-banking/steps-img-1.png",
-    "/assets/images/personal-banking/steps-img-1.png",
-    "/assets/images/personal-banking/steps-img-1.png",
-  ];
+  const titleRef = useRef(null);
+  const paraRef = useRef(null);
+  const tlRef = useRef(null);
+  const restartRef = useRef(null);
 
-  useEffect(() => {
-    imageRefs.current.forEach((img, i) => {
-      gsap.set(img, { opacity: i === 0 ? 1 : 0 });
+  const len = stepData.steps.length;
+
+  const playStep = (idx) => {
+    if (tlRef.current) tlRef.current.kill();
+    gsap.set(restartRef.current, { autoAlpha: 0 }); // Hide restart button initially
+
+    const step = stepData.steps[idx];
+
+    const tl = gsap.timeline();
+
+    // a) Fade out everything
+    tl.to(
+      [titleRef.current, paraRef.current, ...imageRefs.current],
+      {
+        autoAlpha: 0,
+        duration: 0.4,
+        onStart: () => {
+          // Reset tags, circles
+          tagRefs.current.forEach((el) => gsap.set(el, { width: 0, autoAlpha: 0 }));
+          circleRefs.current.forEach((c) => gsap.set(c, { strokeDashoffset: 126 }));
+          imageRefs.current.forEach((img) => gsap.set(img, { zIndex: 0 }));
+        },
+      }
+    );
+
+    // b) Set new content
+    tl.call(() => {
+      titleRef.current.textContent = step.title;
+      paraRef.current.textContent = step.para;
+      gsap.to(tagRefs.current,{width:0,duration:0.5,delay:6.2})
+      gsap.set(imageRefs.current[idx], { zIndex: 1 });
     });
 
-    let index = 0;
-    const interval = setInterval(() => {
-      const current = imageRefs.current[index];
-      const nextIndex = (index + 1) % images.length;
-      const next = imageRefs.current[nextIndex];
+    // c) Expand tag
+    tl.to(tagRefs.current[idx], {
+      width: "auto",
+      autoAlpha: 1,
+      duration: 0.4,
+    });
 
-      gsap.to(current, { opacity: 0, duration: 1 });
-      gsap.to(next, { opacity: 1, duration: 2, delay: 1 });
+    // d) Fade in new text and image
+    tl.to(
+      [titleRef.current, paraRef.current],
+      {
+        autoAlpha: 1,
+        duration: 1,
+      },
+      "-=0.2"
+    )
+    .to(imageRefs.current[idx],{
+      autoAlpha:1,
+      duration:1,
+      // ease:"power4.out",
+      // delay:1,
+    },
+    ""
+  )
 
-      index = nextIndex;
-    }, 5800);
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
-
-  useEffect(() => {
-    const circles = document.querySelectorAll(".step-circle svg circle");
-    
-
-    gsap.fromTo(
-      circles,
-      { strokeDashoffset: 126 },
+    // e) Fill the circle
+    tl.to(
+      circleRefs.current[idx],
       {
         strokeDashoffset: 0,
         duration: 6,
-        stagger: 6,
-        repeat: -1,
-       
         ease: "none",
-      }
+        onComplete: () => {
+          if (idx + 1 < len) {
+            playStep(idx + 1); // Continue to next step
+          } else {
+            // Last step: show restart
+            gsap.to(restartRef.current, { autoAlpha: 1, duration: 0.5 });
+          }
+        },
+      },
+      "-=0.5"
     );
+
+    tlRef.current = tl;
+  };
+
+  useEffect(() => {
+    playStep(0);
   }, []);
 
   return (
-    <section className="w-screen h-screen bg-primary px-[4vw] py-[5%]">
-      <div className="w-full h-full flex justify-between text-white">
-        <div className="w-[40%]">
-          <h2 className="text-[5vw] leading-[1.1] font-display">Get started in minutes</h2>
+    <section className="w-screen h-screen bg-primary px-[4vw] py-[5%] text-white">
+      <div className="flex h-full items-start">
+        {/* Left: Heading */}
+        <div className="w-2/5 flex items-center">
+          <h2 className="text-[5vw] font-display leading-[1.1]">
+            {stepData.heading}
+          </h2>
         </div>
-        <div className="w-[40%] relative h-[60vw] mt-[-5vw]">
-          {images.map((src, i) => (
-            <Image
+
+        {/* Center: Images */}
+        <div className="w-2/5 relative h-[60vw] mt-[-5vw]">
+          {stepData.steps.map((step, i) => (
+            <div
               key={i}
               ref={(el) => (imageRefs.current[i] = el)}
-              src={src}
-              alt={`steps-img-${i + 1}`}
-              className="w-full h-full object-cover absolute top-0 left-0 "
-              width={800}
-              height={1200}
+              className="absolute inset-0 transition-opacity duration-500"
               style={{ opacity: i === 0 ? 1 : 0 }}
-            />
+            >
+              <Image
+                src={step.img}
+                alt={step.title}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
           ))}
         </div>
-        <div className="w-[60%] flex flex-col justify-end h-full items-start gap-[10vw] pl-[5vw]">
-          <div className="w-full flex flex-col gap-[1vw] h-fit ">
-            <h3 className="text-[3.4vw] capitalize  font-display"> download montra app</h3>
-            <p className="w-[70%]">
-              You can download Montra App from Google & IOS App stores.
-            </p>
+
+        {/* Right: Text + Circles + Tags */}
+        <div className="w-3/5 flex flex-col h-full justify-end items-start gap-[10vw] pl-[5vw] pb-[3vw]">
+          {/* Title & Paragraph */}
+          <div>
+            <h3 ref={titleRef} className="text-[3.4vw] font-display mb-2" />
+            <p ref={paraRef} className="w-[70%]" />
           </div>
-          <div className="flex gap-[0.5vw]">
-            {[1, 2, 3, 4].map((num) => (
-              <div key={num} className="w-fit flex gap-[1vw] items-center">
-                <div className="step-circle w-[2.5vw] h-[2.5vw] rounded-full border border-white font-display flex justify-center items-center relative">
-                  {`0${num}`}
-                  <svg className="absolute top-0 left-0 w-full h-full -rotate-[90deg]" viewBox="0 0 40 40">
+
+          {/* Steps + Restart */}
+          <div className="flex items-center gap-[1vw]">
+            {stepData.steps.map((step, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-[1vw] cursor-pointer"
+                onClick={() => playStep(i)}
+              >
+                <div className="relative w-[2.5vw] h-[2.5vw] border border-white rounded-full">
+                  <span className="absolute inset-0 flex justify-center items-center font-display">
+                    {step.number}
+                  </span>
+                  <svg
+                    className="absolute inset-0 -rotate-[90deg]"
+                    viewBox="0 0 40 40"
+                  >
                     <circle
+                      ref={(el) => (circleRefs.current[i] = el)}
                       cx="20"
                       cy="20"
                       r="20"
@@ -95,15 +192,24 @@ const Steps = () => {
                     />
                   </svg>
                 </div>
-                <p
-                  className={`${
-                    num === 1 ? "mr-[2vw] text-[1vw]" : "w-0 overflow-hidden"
-                  } font-display`}
+                <div
+                  ref={(el) => (tagRefs.current[i] = el)}
+                  className="inline-block overflow-hidden whitespace-nowrap font-display"
+                  style={{ width: 0, opacity: 0 }}
                 >
-                  Download App
-                </p>
+                  {step.title}
+                </div>
               </div>
             ))}
+
+            {/* Restart Button (Initially Hidden) */}
+            <div
+              ref={restartRef}
+              className="ml-4 font-display cursor-pointer opacity-0"
+              onClick={() => playStep(0)}
+            >
+              restart
+            </div>
           </div>
         </div>
       </div>
@@ -112,37 +218,3 @@ const Steps = () => {
 };
 
 export default Steps;
-
-const stepData = {
-  heading:"Get started in minutes",
-  steps:[
-    {
-      number:"01",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-    {
-      number:"02",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-    {
-      number:"03",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-    {
-      number:"04",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-  ]
-}

@@ -14,7 +14,7 @@ const personalFinance = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra Personal Account:"} heading={"Take Charge of Your Financial Future"} content={"Managing your finances shouldn’t be complicated. With Montra, you get powerful yet simple tools to save, borrow, insure, and invest—right from your phone."}/>
+   <Hero primaryHeading={"Montra Personal Account: "} heading={"Take Charge of Your Financial Future"} content={"Managing your finances shouldn’t be complicated. With Montra, you get powerful yet simple tools to save, borrow, insure, and invest—right from your phone."}/>
    <Overview content={overviewContent}/>
  <Benefits data={benefitsData}/>
   <Steps/>

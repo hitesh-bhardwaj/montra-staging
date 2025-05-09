@@ -151,7 +151,7 @@ body {
   backface-visibility: hidden;
   border-radius: 3vw;
   padding: 2vw;
-  padding-bottom: 4vw;
+  padding-bottom: 2.5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

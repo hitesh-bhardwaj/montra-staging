@@ -83,7 +83,7 @@ const overviewContent = {
 const whatWhyData = {
   heading:"Link Your Bank Account to Montra for Seamless Transactions",
   headingWidth:"w-[90%]",
-  top:"top-[30%]",
+  top:"top-[31%]",
   para:"",
   content:[
   {
@@ -121,36 +121,36 @@ const  benefitsData = {
     { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Rest easy knowing your funds are secure. Your deposits are never converted into risky assets.", title: "Unmatched Security", z: "z-[4]",  width:"w-[21vw]", height:"17vw" },
   ]
 }
-const stepData = {
-  heading:"Get started in minutes",
-  steps:[
-    {
-      number:"01",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-    {
-      number:"02",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-    {
-      number:"03",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-    {
-      number:"04",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-  ]
-}
+// const stepData = {
+//   heading:"Get started in minutes",
+//   steps:[
+//     {
+//       number:"01",
+//       title:"Download Montra App",
+//       para:"You can download Montra App from Google & IOS App stores.",
+//       tag:"Download App",
+//       img:"/assets/images/personal-banking/steps-img-1.png"
+//     },
+//     {
+//       number:"02",
+//       title:"Download Montra App",
+//       para:"You can download Montra App from Google & IOS App stores.",
+//       tag:"Download App",
+//       img:"/assets/images/personal-banking/steps-img-1.png"
+//     },
+//     {
+//       number:"03",
+//       title:"Download Montra App",
+//       para:"You can download Montra App from Google & IOS App stores.",
+//       tag:"Download App",
+//       img:"/assets/images/personal-banking/steps-img-1.png"
+//     },
+//     {
+//       number:"04",
+//       title:"Download Montra App",
+//       para:"You can download Montra App from Google & IOS App stores.",
+//       tag:"Download App",
+//       img:"/assets/images/personal-banking/steps-img-1.png"
+//     },
+//   ]
+// }
