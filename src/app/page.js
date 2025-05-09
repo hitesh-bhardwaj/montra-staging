@@ -4,6 +4,7 @@ import FAQs from "@/components/Homepage/FAQs";
 import FeatureSection from "@/components/Homepage/FeaturesSection";
 import FeaturesText from "@/components/Homepage/FeaturesText";
 import Hero from "@/components/Homepage/Hero";
+import InfoCarouselSwiper from "@/components/Homepage/InfoCarouselSwiper";
 import Payments from "@/components/Homepage/Payment";
 import PaymentMobile from "@/components/Homepage/PaymentMobile";
 import SectionBreak from "@/components/Homepage/SectionBreak";
@@ -39,6 +40,7 @@ export default function Home() {
       <Hero />
       <FeatureSection />
       <FeaturesText />
+      {/* <InfoCarouselSwiper /> */}
       {mobileWidth ? <PaymentMobile /> : <Payments />}
       <SectionBreak />
       <Vision />

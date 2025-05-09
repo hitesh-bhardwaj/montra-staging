@@ -118,7 +118,7 @@ body {
   animation: marqueeCompany 15s linear infinite;
 }
 
-.heroAnim .single-line {
+.single-line {
   mask-image: linear-gradient(150deg,#111111 33.3%,#1a1a1a00 66.6%);
   mask-size: 500% 100%;
   mask-position: 100% 100%;
@@ -138,7 +138,6 @@ body {
 .card-inner {
   width: 100%;
   height: 100%;
-  /* transition: transform 0.8s; */
   transform-style: preserve-3d;
   position: relative;
 }

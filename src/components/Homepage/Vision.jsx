@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
+import Heading from '../Heading';
 
 const useIsMobile = (breakpoint = 541) => {
     const [isMobile, setIsMobile] = useState(false);
@@ -15,7 +16,6 @@ const useIsMobile = (breakpoint = 541) => {
 
     return isMobile;
 };
-
 
 export default function Vision() {
     const isMobile = useIsMobile();
@@ -41,9 +41,11 @@ export default function Vision() {
                 ref={stickyRef}
                 className="sticky top-0 h-screen w-screen flex items-center justify-center overflow-hidden px-[4vw] py-[4vw] max-sm:h-full max-sm:flex-col max-sm:gap-[10vw]" 
             >
-                <h3 className="relative text-[5.7vw] font-display font-medium leading-[1.2] text-center w-[90%]  max-sm:text-left max-sm:text-[10.5vw] max-sm:w-[95%]">
-                    Building future of an Inclusive Financial Ecosystem
-                </h3>
+                <Heading>
+                    <h3 className="relative text-[5.7vw] font-display font-medium leading-[1.2] text-center w-[90%]  max-sm:text-left max-sm:text-[10.5vw] max-sm:w-[95%]">
+                        Building future of an Inclusive Financial Ecosystem
+                    </h3>
+                </Heading>
 
                 <div className="absolute -top-[200%] inset-0 z-10 flex items-center justify-center gap-[2vw] max-sm:static max-sm:flex-col max-sm:items-start max-sm:gap-[6vw]">
                     {/* white = slower */}

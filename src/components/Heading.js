@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,7 +9,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
+export default function Heading({ children, animateOnScroll = true, delay = 0 }) {
   const containerRef = useRef(null);
   const elementRefs = useRef([]);
   const splitRefs = useRef([]);
@@ -34,8 +35,7 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
 
         const split = SplitText.create(element, {
           type: "lines",
-          mask: "lines",
-          linesClass: "line++",
+          linesClass: "single-line",
           lineThreshold: 0.1,
         });
 
@@ -54,13 +54,11 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
         lines.current.push(...split.lines);
       });
 
-      gsap.set(lines.current, { y: "100%" });
-
       const animationProps = {
-        y: "0%",
-        duration: 1.4,
+        maskPosition: "0% 100%",
+        duration: 1.5,
         stagger: 0.15,
-        ease: "power4.out",
+        ease: "none",
         delay: delay,
       };
 
@@ -93,7 +91,7 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
   }
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div ref={containerRef} data-copy-wrapper="true" id="heading-anim">
       {children}
     </div>
   );
