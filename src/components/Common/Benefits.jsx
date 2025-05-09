@@ -9,7 +9,7 @@ const Benefits = ({data}) => {
       <div className='w-full h-full flex flex-col gap-[1.2vw] text-center'>
         <div className='w-full flex flex-col items-center gap-[1.5vw]'>
         <h2
-  className={`text-[5.7vw] font-display font-medium leading-[1.3] ${data.headingWidth}`}
+  className={`text-[5.7vw] font-display font-medium leading-[1.3] capitalize ${data.headingWidth}`}
   dangerouslySetInnerHTML={{ __html: data.heading }}
 />
 
