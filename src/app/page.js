@@ -14,6 +14,7 @@ import VisionMission from "@/components/Homepage/VisionMission";
 import Loader from "@/components/Loader";
 import { useEffect, useState } from "react";
 
+
 export default function Home() {
   const [mobileWidth, setMobileWidth] = useState(false);
   useEffect(() => {
