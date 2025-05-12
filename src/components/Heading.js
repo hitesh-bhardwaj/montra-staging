@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useRef } from "react";
-
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -15,8 +13,7 @@ export default function Heading({ children, animateOnScroll = true, delay = 0 })
   const splitRefs = useRef([]);
   const lines = useRef([]);
 
-  useGSAP(
-    () => {
+  useEffect(() => {
       if (!containerRef.current) return;
 
       splitRefs.current = [];
@@ -82,9 +79,7 @@ export default function Heading({ children, animateOnScroll = true, delay = 0 })
           }
         });
       };
-    },
-    { scope: containerRef, dependencies: [animateOnScroll, delay] }
-  );
+    }, [animateOnScroll, delay] );
 
   if (React.Children.count(children) === 1) {
     return React.cloneElement(children, { ref: containerRef });

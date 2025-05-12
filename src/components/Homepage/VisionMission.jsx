@@ -1,8 +1,7 @@
 'use client';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { forwardRef, useRef } from "react";
-import { useGSAP } from "@gsap/react";
+import { forwardRef, useEffect, useRef } from "react";
 import Heading from "../Heading";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,12 +11,15 @@ const VisionMission = () => {
     const section = useRef(null);
     const cardRefs = useRef([]);
 
-    useGSAP(() => {
-        initVisionMissionAnimations({
-            container: container.current,
-            section: section.current,
-            cardRefs: cardRefs.current,
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            initVisionMissionAnimations({
+                container: container.current,
+                section: section.current,
+                cardRefs: cardRefs.current,
+            });
         });
+        return () => ctx.revert();
     }, []);
 
     return (

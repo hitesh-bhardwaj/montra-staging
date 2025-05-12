@@ -9,7 +9,7 @@ import Cursor from '../Cursor'
 import Copy from '../Copy'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
+import { useEffect } from 'react'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,39 +24,42 @@ const content = [
 
 export default function InfoCarouselSwiper() {
 
-    useGSAP(() => {
-        gsap.fromTo(".featureSwipeSlide", {
-            opacity: 0, y: 50
-        }, {
-            opacity: 1, y: 0, duration: 1.5, stagger: 0.1, scrollTrigger: {trigger: "#infocarousel", start: 'top 80%', markers: false}
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.fromTo(".featureSwipeSlide", {
+                opacity: 0, y: 50
+            }, {
+                opacity: 1, y: 0, duration: 1.5, stagger: 0.1, scrollTrigger: { trigger: "#infocarousel", start: 'top 80%', markers: false }
+            })
         })
+        return () => ctx.revert();
     });
 
     return (
-            <div className="text-white py-[3vw] bg-primary" id='infocarousel'>
-                <Copy>
-                    <h3 className='ml-[5vw] text-white font-display font-medium text-[3vw] w-[40%] capitalize leading-[1.3] pb-[3vw] max-sm:text-[7.5vw] max-sm:w-[85%] max-sm:pb-[10vw]'>Sort All Your Payments And Cash Flow Needs</h3>
-                </Copy>
-                <Swiper
-                    modules={[Pagination, FreeMode]}
-                    slidesPerView={1}
-                    spaceBetween={70}
-                    speed={1000}
-                    freeMode={true}
-                    pagination={{ clickable: true }}
-                    breakpoints={{
-                        768: { slidesPerView: 3 }
-                    }}
-                    className="!px-[5vw] swipe"
-                >
-                    {content.map((c, index) => (
-                        <SwiperSlide className='pb-16 featureSwipeSlide' key={index}>
-                            <Card img={c.img} text={c.text} bgColor={c.bgColor} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-                <Cursor />
-            </div>
+        <div className="text-white py-[3vw] bg-primary" id='infocarousel'>
+            <Copy>
+                <h3 className='ml-[5vw] text-white font-display font-medium text-[3vw] w-[40%] capitalize leading-[1.3] pb-[3vw] max-sm:text-[7.5vw] max-sm:w-[85%] max-sm:pb-[10vw]'>Sort All Your Payments And Cash Flow Needs</h3>
+            </Copy>
+            <Swiper
+                modules={[Pagination, FreeMode]}
+                slidesPerView={1}
+                spaceBetween={70}
+                speed={1000}
+                freeMode={true}
+                pagination={{ clickable: true }}
+                breakpoints={{
+                    768: { slidesPerView: 3 }
+                }}
+                className="!px-[5vw] swipe"
+            >
+                {content.map((c, index) => (
+                    <SwiperSlide className='pb-16 featureSwipeSlide' key={index}>
+                        <Card img={c.img} text={c.text} bgColor={c.bgColor} />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+            <Cursor />
+        </div>
     )
 }
 

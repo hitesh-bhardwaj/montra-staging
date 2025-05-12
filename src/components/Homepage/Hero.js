@@ -3,7 +3,6 @@ import { AppleStoreButton, PlayStoreButton } from "../Buttons";
 import gsap from "gsap";
 import { useLenis } from "lenis/react";
 import Copy from "../Copy";
-import { useGSAP } from "@gsap/react";
 import Heading from "../Heading";
 
 export default function Hero() {
@@ -11,53 +10,58 @@ export default function Hero() {
   const lenis = useLenis();
   const textRef = useRef(null);
 
-  useGSAP(() => {
-    const tl = gsap.timeline();
-    tl.from('#header-container', {
-      yPercent: -100,
-      duration: 1,
-      ease: 'power2.out',
-      delay: 4.8,
-    })
-      .from("#hero-btn-container", {
-        y: 50,
-        opacity: 0,
-        ease: 'power2.out',
-        duration: 1,
-      }, "<")
-      .from("#hero-phone-image", {
-        duration: 1.5,
-        y: 20,
-        opacity: 0,
-      }, "<")
-  })
-  
-  useGSAP(() => {
-    const phrases = ["personal", "business"];
-    let current = 0;
-  
-    const fadeInOut = () => {
+  useEffect(() => {
+    const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      tl.to(textRef.current, {
-        duration: 0.5,
-        yPercent: 100,
-        delay: 3,
-        onComplete: () => {
-          current = (current + 1) % phrases.length;
-          textRef.current.innerText = phrases[current];
-        }
-      });
-      tl.to(textRef.current, {
-        duration: 0.5,
-        yPercent: 0,
-        opacity: 1,
-        onComplete: fadeInOut,
-      });
-    };
-  
-    fadeInOut();
+      tl.from('#header-container', {
+        yPercent: -100,
+        duration: 1,
+        ease: 'power2.out',
+        delay: 4.8,
+      })
+        .from("#hero-btn-container", {
+          y: 50,
+          opacity: 0,
+          ease: 'power2.out',
+          duration: 1,
+        }, "<")
+        .from("#hero-phone-image", {
+          duration: 1.5,
+          y: 20,
+          opacity: 0,
+        }, "<")
+    })
+    return () => ctx.revert();
   }, []);
-  
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const phrases = ["personal", "business"];
+      let current = 0;
+
+      const fadeInOut = () => {
+        const tl = gsap.timeline();
+        tl.to(textRef.current, {
+          duration: 0.5,
+          yPercent: 100,
+          delay: 3,
+          onComplete: () => {
+            current = (current + 1) % phrases.length;
+            textRef.current.innerText = phrases[current];
+          }
+        });
+        tl.to(textRef.current, {
+          duration: 0.5,
+          yPercent: 0,
+          opacity: 1,
+          onComplete: fadeInOut,
+        });
+      };
+      fadeInOut();
+    })
+    return () => ctx.revert();
+  }, []);
+
 
   useEffect(() => {
     lenis && lenis.stop();
@@ -79,7 +83,7 @@ export default function Hero() {
             >
               <span className="text-primary">One app</span> to manage all your{" "}
               <span className="text-primary leading-[1] w-[22vw] max-sm:w-[44.5vw] max-sm:mb-[-1.2vw] h-full mb-[-0.75vw] inline-block overflow-hidden">
-                <span style={{display: "inline-block"}} ref={textRef}>Personal</span>
+                <span style={{ display: "inline-block" }} ref={textRef}>Personal</span>
               </span>{" "}
               finances
             </h1>

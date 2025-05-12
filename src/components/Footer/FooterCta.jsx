@@ -4,31 +4,35 @@ import mockupImage from "../../../public/assets/images/footer-cta-mockup.png";
 import { AppleStoreButton, PlayStoreButton } from "../Buttons";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import Heading from "../Heading";
+import { useEffect } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const FooterCta = () => {
 
-    useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.fromTo("#canvas-18971", {
-            borderBottomLeftRadius: "0vw",
-            borderBottomRightRadius: "0vw",
-            width: "100%",
-        }, {
-            borderBottomLeftRadius: "5vw",
-            borderBottomRightRadius: "5vw",
-            width: "96%",
-            duration: 1,
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#footer-cta",
-                start: "bottom bottom",
-                end: "bottom 10%",
-                scrub: true,
-            }
-        })
-    })
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.fromTo("#canvas-18971", {
+                borderBottomLeftRadius: "0vw",
+                borderBottomRightRadius: "0vw",
+                width: "100%",
+            }, {
+                borderBottomLeftRadius: "5vw",
+                borderBottomRightRadius: "5vw",
+                width: "96%",
+                duration: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#footer-cta",
+                    start: "bottom bottom",
+                    end: "bottom 10%",
+                    scrub: true,
+                }
+            })
+        });
+        return () => ctx.revert();
+    }, []);
 
     return (
         <>

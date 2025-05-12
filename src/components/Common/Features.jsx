@@ -3,43 +3,40 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const Features = ({ featuresData }) => {
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#investors",
-        start: "top 40%",
-      },
-    });
-    tl.to(".icon ", {
-      scale: 1,
-      borderRadius: "3vw",
-      ease: "elastic.inOut",
-      duration: 1,
-      stagger: {
-        amount: 0.5,
-        from: "random",
-      },
-      // onComplete: () => {
-      //   tl.to(".icon .icon-content", {
-      //     opacity: 1,
-      //     duration: 1,
-      //   });
-      // },
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#investors",
+          start: "top 40%",
+        },
+      });
+      tl.to(".icon ", {
+        scale: 1,
+        borderRadius: "3vw",
+        ease: "elastic.inOut",
+        duration: 1,
+        stagger: {
+          amount: 0.5,
+          from: "random",
+        },
+      })
+        .to(".icon-content", {
+          duration: 1,
+          opacity: 1,
+          delay: 0.3,
+          stagger: {
+            amount: 0.5,
+            from: "random",
+          },
+        }, "<");
     })
-    .to(".icon-content", {
-      duration: 1,
-      opacity: 1,
-      delay: 0.3,
-      stagger: {
-        amount: 0.5,
-        from: "random",
-      },
-    }, "<");
-  });
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section

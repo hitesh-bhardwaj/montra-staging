@@ -1,8 +1,7 @@
 'use client';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { forwardRef, useRef } from "react";
-import { useGSAP } from "@gsap/react";
+import { forwardRef, useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +10,7 @@ const VisionMission = () => {
     const section = useRef(null);
     const cardRefs = useRef([]);
 
-    useGSAP(() => {
+    useEffect(() => {
         initVisionMissionAnimations({
             container: container.current,
             section: section.current,
