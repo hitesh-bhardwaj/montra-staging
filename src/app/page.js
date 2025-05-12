@@ -14,9 +14,10 @@ import VisionMission from "@/components/Homepage/VisionMission";
 import Loader from "@/components/Loader";
 import { useEffect, useState } from "react";
 
-
 export default function Home() {
+
   const [mobileWidth, setMobileWidth] = useState(false);
+
   useEffect(() => {
     if (globalThis.innerWidth > 1024) {
       setMobileWidth(false);
@@ -24,6 +25,7 @@ export default function Home() {
       setMobileWidth(true);
     }
   }, []);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
 
