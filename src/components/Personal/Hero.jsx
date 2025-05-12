@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Heading from "../Heading";
+import Copy from "../Copy";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
@@ -16,7 +18,6 @@ const Hero = () => {
             pin: ".hero-image-container",
             start: "17% top",
             end: "60% top",
-            // markers: true,
             scrub: 0.5,
           },
         });
@@ -107,18 +108,23 @@ const Hero = () => {
     <section className="w-screen h-[270vh] max-sm:h-[560vw] overflow-hidden " id="hero">
       <div className="w-full h-full flex flex-col gap-[2vw] max-sm:gap-[12vw]">
         <div className="w-full mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] text-center px-[4vw] max-sm:pt-[35vw] max-sm:space-y-[7vw]">
-          <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw]">
-            <span className="text-primary">Montra Personal Account:</span>{" "}
-            <br />
-            Your All-in-One Digital Account
-          </h1>
-          <p className="font-body w-3/6 mx-auto  max-sm:w-[90%] ">
-            Get your Montra Personal Account to start saving & spending in
-            minutes, right from your phone
-          </p>
+          <Heading delay={0.5}>
+            <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw]">
+              <span className="text-primary">Montra Personal Account:</span>{" "}
+              <br />
+              Your All-in-One Digital Account
+            </h1>
+          </Heading>
+          <Copy delay={1}>
+            <p className="font-body w-3/6 mx-auto  max-sm:w-[90%] ">
+              Get your Montra Personal Account to start saving & spending in
+              minutes, right from your phone
+            </p>
+          </Copy>
         </div>
         <div className="w-full flex px-[10vw] h-[30vw] items-center justify-between text-white hero-image-container relative max-sm:h-[120vw]">
-          <div className="w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[12%] top-[10%] hero-left-card max-sm:hidden">
+          
+          <div className="fadeupanim w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[12%] top-[10%] hero-left-card max-sm:hidden">
             <div className="relative w-full h-full">
               <div className="absolute top-[5%] right-[5%] w-fit px-[1.2vw] py-[0.5vw] bg-primary rounded-full z-[2]">
                 Account
@@ -151,7 +157,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="w-[27vw] h-[31vw] absolute rounded-[3vw] left-[36%] top-0 z-[5] hero-main-card max-sm:w-[80vw] max-sm:h-[110vw] max-sm:left-[10%] max-sm:rounded-[7vw] ">
+          <div className="fadeupanim w-[27vw] h-[31vw] absolute rounded-[3vw] left-[36%] top-0 z-[5] hero-main-card max-sm:w-[80vw] max-sm:h-[110vw] max-sm:left-[10%] max-sm:rounded-[7vw] ">
             <div className="w-[27vw] h-[31vw] absolute bg-white/10 rounded-[3vw] left-0 top-0 z-[5] border opacity-0 border-white hero-main-border max-sm:w-[80vw] max-sm:h-[110vw] max-sm:rounded-[7vw]"></div>
             <div className="relative w-full h-full  ">
               <div className="absolute top-[5%] right-[5%] w-fit px-[1.2vw] py-[0.5vw] bg-primary rounded-full max-sm:px-[4.5vw] max-sm:py-[1.5vw] max-sm:text-[4.1vw] ">
@@ -176,7 +182,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="w-[27vw] h-[31vw] overflow-hidden rounded-[3vw] absolute z-[4] left-[36%] hero-image-anim top-0 max-sm:w-[80vw] max-sm:h-[110vw] max-sm:left-[10%] max-sm:rounded-[7vw]">
+          <div className="fadeupanim w-[27vw] h-[31vw] overflow-hidden rounded-[3vw] absolute z-[4] left-[36%] hero-image-anim top-0 max-sm:w-[80vw] max-sm:h-[110vw] max-sm:left-[10%] max-sm:rounded-[7vw]">
             <Image
               src={"/assets/images/personal/personal-hero-2.png"}
               alt="personal-hero-1"
@@ -186,7 +192,7 @@ const Hero = () => {
             />
           </div>
 
-          <div className="w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[64%] top-[10%] hero-right-card max-sm:hidden">
+          <div className="fadeupanim w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[64%] top-[10%] hero-right-card max-sm:hidden">
             <div className="absolute top-[5%] right-[5%] w-fit px-[1.2vw] py-[0.5vw] bg-primary rounded-full z-[2]">
               Account
             </div>

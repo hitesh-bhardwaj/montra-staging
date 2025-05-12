@@ -27,7 +27,7 @@ export default function InteractiveBackground() {
     let idleTarget = { x: 0, y: 0 };
 
     // trail params
-    const maxTrailLength = 60;
+    const maxTrailLength = 30;
     const trailBaseWidth = 140;
     const trailBlur = 70;
     const mouseLerpFactor = 0.05;

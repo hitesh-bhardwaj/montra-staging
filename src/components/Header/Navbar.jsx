@@ -18,11 +18,11 @@ const navLinks = [
   },
   { name: "Personal", href: "/personal" },
   { name: "Business", href: "/business" },
-  { name: "Platform", href: "/platform" },
-  { name: "Company", href: "/company"},
+  { name: "Platform", href: "#" },
+  { name: "Company", href: "/company" },
 ];
 
-export default function Navbar() {
+export default function Navbar({navigateTo}) {
   const pathname = usePathname();
   const navRef = useRef(null);
   const [highlight, setHighlight] = useState({ left: 0, width: 0 });
@@ -47,14 +47,14 @@ export default function Navbar() {
   return (
     <nav
       className="bg-black rounded-full h-[4.1vw] px-1.5 py-1.5 max-sm:hidden">
-      <div 
+      <div
         ref={navRef}
         className="relative w-full inline-flex h-full items-center overflow-hidden"
         onMouseLeave={() => {
-        const active = navRef.current.querySelector('a[data-active="true"]');
-        movePill(active);
-      }}
-        >
+          const active = navRef.current.querySelector('a[data-active="true"]');
+          movePill(active);
+        }}
+      >
         <span
           className="absolute bg-primary rounded-full h-full w-full transition-all duration-500"
           style={{
@@ -66,11 +66,15 @@ export default function Navbar() {
 
         {navLinks.map((link) => {
           const isActive =
-          link.href === '/'
-            ? pathname === '/'
-            : pathname === link.href || pathname.startsWith(`${link.href}/`);
+            link.href === '/'
+              ? pathname === '/'
+              : pathname === link.href || pathname.startsWith(`${link.href}/`);
           return (
-            <Link
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo(link.href);
+              }}
               key={link.href}
               href={link.href}
               data-active={isActive ? "true" : undefined}
@@ -79,7 +83,7 @@ export default function Navbar() {
               onMouseEnter={(e) => movePill(e.currentTarget)}
             >
               {link.icon || link.name}
-            </Link>
+            </a>
           );
         })}
       </div>

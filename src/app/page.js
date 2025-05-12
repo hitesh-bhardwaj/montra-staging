@@ -1,6 +1,6 @@
 "use client"
 
-import { fadeUp, fadeUpAnim, lineAnim } from "@/components/gsapAnimations";
+import { fadeUpAnim, lineAnim } from "@/components/gsapAnimations";
 import Blogs from "@/components/Homepage/Blogs";
 import FAQs from "@/components/Homepage/FAQs";
 import FeatureSection from "@/components/Homepage/FeaturesSection";

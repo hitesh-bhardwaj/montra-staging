@@ -3,9 +3,9 @@ import Impact from "@/components/Company/Impact";
 import MontraAnimation from "@/components/Company/MontraAnimation";
 import Network from "@/components/Company/Network";
 import Timeline from "@/components/Company/Timeline";
-import VisionMission from "@/components/Company/VisionMission";
 import FAQs from "@/components/Homepage/FAQs";
 import SectionBreak from "@/components/Homepage/SectionBreak";
+import VisionMission from "@/components/Homepage/VisionMission";
 
 export default function CompanyPage() {
     return (
@@ -13,8 +13,8 @@ export default function CompanyPage() {
             <Hero />
             <Impact />
             <Network />
-            <VisionMission />
             <MontraAnimation />
+            <VisionMission />
             <Timeline />
             <SectionBreak />
             <FAQs content={faqContent} />

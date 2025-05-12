@@ -4,15 +4,14 @@ import montraLogo from "../../../public/montra-logo.png";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-// import {useLenis} from 
+import { useTransitionRouter } from "next-view-transitions";
 
 export default function Header() {
-  const tlRef = useRef();
-
+  const router = useTransitionRouter();
   const [hidden, setHidden] = useState(false);
   const [lastY, setLastY] = useState(0);
   const [isInverted, setIsInverted] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const [openMenu, setopenMenu] = useState(false);
 
@@ -29,83 +28,81 @@ export default function Header() {
       setLastY(currentY);
     };
 
-      // const darkSections = document.querySelectorAll(".dark");
-      // let found = false;
-      // darkSections.forEach((section) => {
-      //   const rect = section.getBoundingClientRect();
-      //   if (rect.top <= 0 && rect.bottom > 0) {
-      //     found = true;
-      //   }
-      // });
-      // setIsInverted(found);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastY]);
 
+  function slideInOut() {
+    document.documentElement.animate(
+      [
+        {
+          opacity: 1,
+          transform: "translateY(0)",
+        },
+        {
+          opacity: 0.2,
+          transform: "translateY(-35%)",
+        },
+      ],
+      {
+        duration: 1200,
+        easing: "cubic-bezier(0.87, 0, 0.13, 1)",
+        fill: "forwards",
+        pseudoElement: "::view-transition-old(root)",
+      }
+    );
 
-//   useEffect(() => {
-//     const ctx = gsap.context(() => {
-//       const tl = gsap.timeline({ paused: true });
-//       tl.to(".line-1", {
-//         yPercent: 340,
-//         duration: 0.2,
-//         ease: "none",
-//       })
-//         .to(".line-3", {
-//           yPercent: -340,
-//           delay: -0.2,
-//           duration: 0.2,
-//           ease: "none",
-//         })
-//         .to(".line-2", {
-//           opacity: 0,
-//           duration: 0.5,
-//           delay: -0.2,
-//         })
-//         .to(".line-1", {
-//           rotateZ: 45,
-//           delay: -0.3,
-//           duration: 0.2,
-//           ease: "none",
-//         })
-//         .to(".line-3", {
-//           rotateZ: -45,
-//           delay: -0.3,
-//           duration: 0.2,
-//           ease: "none",
-//         });
-//       tlRef.current = tl;
-//     });
+    document.documentElement.animate(
+      [
+        {
+          clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+        },
+        {
+          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+        },
+      ],
+      {
+        duration: 1200,
+        easing: "cubic-bezier(0.87, 0, 0.13, 1)",
+        fill: "forwards",
+        pseudoElement: "::view-transition-new(root)",
+      }
+    );
+  }
 
-//     return () => ctx.revert();
-//   }, []);
+  const navigateTo = (path) => {
+    if (isAnimating) return;
 
-//   useEffect(() => {
-//     if (tlRef.current) {
-//       if (openMenu) {
-//         tlRef.current.play();
-//       } else {
-//         tlRef.current.reverse();
-//       }
-//     }
-//   }, [openMenu]);
+    setIsAnimating(true);
+
+    router.push(path, {
+      onTransitionReady: slideInOut,
+    });
+
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1500);
+  };
+
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] transform transition-transform duration-300 w-screen   ${
-        hidden ? "-translate-y-full" : "translate-y-0"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-[100] transform transition-transform duration-300 w-screen   ${hidden ? "-translate-y-full" : "translate-y-0"
+        }`}
     >
       <div id="header-container" className="px-[4vw] py-[1vw] header w-full max-sm:pt-[5vw] max-sm:px-[7vw]">
         <div className="flex justify-between items-center w-full ">
-          <Link href="/" className="block relative z-[150]">
+          <a onClick={(e) => {
+            e.preventDefault();
+            navigateTo("/");
+          }} className="block relative z-[150]">
             <Image
               src={montraLogo}
               alt="montra logo"
               className={`w-[10vw] max-sm:w-[30vw] logo`}
             />
-          </Link>
-          <Navbar />
+          </a>
+          <Navbar navigateTo={navigateTo}/>
           <div
             className="hidden  max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150]"
             onClick={() => {
@@ -117,16 +114,14 @@ export default function Header() {
             <div className="w-full h-[2.5px] bg-primary rounded-full line-3" />
           </div>
           <div
-            className={`w-screen h-screen fixed top-0 left-0  bg-black/20 transition-all duration-300 ${
-              openMenu
-                ? "opacity-100 backdrop-blur-sm"
-                : " opacity-0 pointer-events-none"
-            }`}
+            className={`w-screen h-screen fixed top-0 left-0  bg-black/20 transition-all duration-300 ${openMenu
+              ? "opacity-100 backdrop-blur-sm"
+              : " opacity-0 pointer-events-none"
+              }`}
           >
             <div
-              className={` w-[70vw] h-[110vw] py-[10%] overflow-hidden rounded-[7vw] bg-primary text-white flex flex-col gap-[3vw] px-[7vw] font-display font-medium text-[5.5vw] absolute top-[8%] z-[160] right-[10%] transition-all duration-300 origin-top-right ${
-                openMenu ? "scale-100 opacity-100" : "scale-0 opacity-0"
-              }`}
+              className={` w-[70vw] h-[110vw] py-[10%] overflow-hidden rounded-[7vw] bg-primary text-white flex flex-col gap-[3vw] px-[7vw] font-display font-medium text-[5.5vw] absolute top-[8%] z-[160] right-[10%] transition-all duration-300 origin-top-right ${openMenu ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                }`}
             >
               <Link
                 href={"/"}

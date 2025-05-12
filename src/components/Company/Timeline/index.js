@@ -58,7 +58,7 @@ export default function Timeline() {
                                 {shouldShowPill && (
                                     <motion.div
                                         layoutId="pill"
-                                        className="absolute inset-0 bg-primary rounded-full z-0"
+                                        className="absolute inset-0.5 bg-primary rounded-full z-0"
                                         transition={{ type: 'ease', stiffness: 500, damping: 30 }}
                                     />
                                 )}

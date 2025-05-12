@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { LinkButton } from "../Buttons";
+import Heading from "../Heading";
 gsap.registerPlugin(ScrollTrigger);
 
 const Control = () => {
@@ -52,75 +53,6 @@ const Control = () => {
     prevActiveRef.current = active;
   }, [active]);
 
-  // useEffect(() => {
-  //   if (!enter) {
-  //     const interval = setInterval(() => {
-  //       setTick((prev) => !prev); // flip true <-> false
-  //     }, 2700); // every 2 seconds
-
-  //     return () => clearInterval(interval); // cleanup on unmount
-  //   }
-  // }, [enter]);
-
-  // useEffect(()=>{
-  //   const ctx = gsap.context(()=>{
-
-  //     gsap.to(".icon-container",{
-  //       scrollTrigger:{
-  //         trigger:".icon-container",
-  //         start:"top 30%",
-  //         end:"90% 30%",
-  //         markers:true,
-  //       },
-  //       onComplete:()=>{
-  //       setEnter(true)
-  //       },
-  //       onReverseComplete:()=>{
-  //         setEnter(false)
-  //       }
-  //     })
-
-  //   })
-  //   return()=>ctx.revert()
-
-  // },[])
-  // useEffect(()=>{
-  //   if(!enter){
-  //     const ctx = gsap.context(()=>{
-  //       gsap.to(".control-icon", {
-  //         scale:0,
-  //       //  repeatDelay:2,
-  //        stagger: {
-  //         amount: 0.5, // total time
-  //         from: "random"
-  //       },
-  //        ease: "power1.out",
-  //        onComplete:()=>{
-  //          gsap.from(".control-icon",{
-  //            scale:0,
-  //            delay:0.5,
-  //            stagger: {
-  //             amount: 0.5, // total time
-  //             from: "random"
-  //           },
-  //            ease: "power1.out",
-  //            scrollTrigger: {
-  //              trigger: "#control",
-  //              start: "10% bottom",
-  //              end: "35% bottom",
-
-  //            },
-  //          })
-
-  //        }
-
-  //      });
-
-  //     })
-  //     return()=>ctx.revert()
-
-  //   }
-  // },[tick])
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".control-icon", {
@@ -261,7 +193,7 @@ const Control = () => {
     });
     return () => ctx.revert();
   }, [active]);
-  // console.log(pointer)
+
   return (
     <div
       className="w-screen h-[310vw] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb]"
@@ -269,9 +201,11 @@ const Control = () => {
     >
       
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">
-        <h2 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-center">
-          Take Control of Your Money. Effortlessly.
-        </h2>
+        <Heading>
+          <h2 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-center">
+            Take Control of Your Money. Effortlessly.
+          </h2>
+        </Heading>
         <div className="w-full flex justify-between px-[6.5vw] h-[30vw]">
           <div className={`icon-container w-full h-full ${pointerevent?"pointer-events-auto":"pointer-events-none"}`}>
             <div className="w-[15vw] h-[15vw] control-icon icon-1 absolute top-[65%] z-[10]">

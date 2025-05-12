@@ -5,6 +5,8 @@ import LenisSmoothScroll from "@/components/LenisSmoothScroll";
 import InteractiveBackground from "@/components/Background";
 import Layout from "@/components/Layout";
 import Footer from "@/components/Footer";
+import { ViewTransitions } from "next-view-transitions";
+import Header from "@/components/Header";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -55,15 +57,17 @@ export default function RootLayout({ children }) {
         <body
           className={`${workSans.variable} ${standerd.variable} antialiased bg-primary`}
         >
-          <main className="relative z-[1] rounded-b-[10vw]">
-            <Layout>
-              <InteractiveBackground />
-              <div style={{position: "relative"}}>
-                {children}
-              </div>
-            </Layout>
-          </main>
-          <Footer />
+          <ViewTransitions>
+            <main className="relative z-[1] rounded-b-[10vw]">
+              <Layout>
+                <InteractiveBackground />
+                <div style={{ position: "relative" }}>
+                  {children}
+                </div>
+              </Layout>
+            </main>
+            <Footer />
+          </ViewTransitions>
         </body>
       </html>
     </>

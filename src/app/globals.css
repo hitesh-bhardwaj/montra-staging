@@ -9,6 +9,10 @@
   --font-body: var(--font-body);
 }
 
+html{
+  background-color: var(--black-1);
+}
+
 @theme inline {
   --breakpoint-*: initial;
   --breakpoint-sm: 640px;
@@ -20,9 +24,6 @@
   --font-body: var(--font-body);
   --font-display: var(--font-display);
   --color-gray-100: #D2D2D2;
-  --breakpoint-*: initial;
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 1024px;
 }
 
 body {
@@ -30,6 +31,32 @@ body {
   font-family: var(--font-body);
   font-size: 1.25vw;
   line-height: 1.4;
+  background-color: #ffffff;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: transform, opacity, clip-path;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 10000;
+  animation: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: none !important;
 }
 
 #hero{
