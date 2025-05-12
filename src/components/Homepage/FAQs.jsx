@@ -2,11 +2,12 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Heading from '../Heading'
 
 
 export default function FAQs({ allowMultiple = false , content}) {
   // keep track of which indexes are open
-  const [openIndexes, setOpenIndexes] = useState([0])
+  const [openIndexes, setOpenIndexes] = useState([])
 
   function toggleIndex(i) {
     if (allowMultiple) {
@@ -25,9 +26,11 @@ export default function FAQs({ allowMultiple = false , content}) {
   return (
     <section className="px-[4vw] py-[6vw] w-full max-sm:px-[7vw] bg-[#FBFBFB] relative">
       <div className="flex flex-col items-center gap-[4vw] max-sm:gap-[10vw]">
-        <h2 className="font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10.5vw] max-sm:text-left">
-          Frequently Asked Questions
-        </h2>
+        <Heading>
+          <h2 className="font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10.5vw] max-sm:text-left">
+            Frequently Asked Questions
+          </h2>
+        </Heading>
         <div className="w-4/5 space-y-[2vw] max-sm:w-full max-sm:space-y-[5vw]">
           {content.map((f, i) => (
             <Accordion
@@ -48,7 +51,7 @@ function Accordion({ question, answer, isOpen, onToggle }) {
   
 
   return (
-    <div className="w-full group overflow-hidden relative z-[10]">
+    <div className="w-full group overflow-hidden relative z-[10] fadeupanim">
       <div className="w-[90%] mr-auto bg-white  overflow-hidden border border-gray rounded-3xl px-[3vw] max-sm:w-full max-sm:pl-[6vw] max-sm:py-[2vw] max-sm:rounded-[4.2vw]">
         <button
           onClick={onToggle}

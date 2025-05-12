@@ -120,7 +120,7 @@ const FeatureSection = () => {
     return (
         <motion.section
             ref={sectionRef}
-            className="w-full h-full flex items-end justify-center relative bg-[#fbfbfb] max-sm:pt-[50vw] "
+            className="w-full h-full flex items-end justify-center relative max-sm:pt-[50vw] "
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}

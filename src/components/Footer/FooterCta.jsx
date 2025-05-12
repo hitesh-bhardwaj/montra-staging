@@ -5,6 +5,7 @@ import { AppleStoreButton, PlayStoreButton } from "../Buttons";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Heading from "../Heading";
 
 const FooterCta = () => {
 
@@ -38,9 +39,11 @@ const FooterCta = () => {
                             <Image src={mockupImage} alt="phone mockup" className="w-full h-full object-contain" />
                         </div>
                         <div className="w-[65%] flex flex-col items-center text-center max-sm:w-full">
-                            <h6 className="text-[5.7vw] font-medium leading-[1.2] font-display max-sm:text-[11.5vw] capitalize">Take charge of your financial future</h6>
-                            <p className="mt-[2vw] max-sm:mt-[4vw]">It only takes few seconds to get started.</p>
-                            <div className=" flex gap-10 justify-center mt-[3vw] max-sm:flex-col max-sm:gap-4 max-sm:mt-[10vw]">
+                            <Heading>
+                                <h6 className="text-[5.7vw] font-medium leading-[1.2] font-display max-sm:text-[11.5vw] capitalize">Take charge of your financial future</h6>
+                                <p className="mt-[2vw] max-sm:mt-[4vw]">It only takes few seconds to get started.</p>
+                            </Heading>
+                            <div className="fadeupanim flex gap-10 justify-center mt-[3vw] max-sm:flex-col max-sm:gap-4 max-sm:mt-[10vw]">
                                 <AppleStoreButton />
                                 <PlayStoreButton />
                             </div>

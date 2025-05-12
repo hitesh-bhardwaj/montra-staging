@@ -14,7 +14,7 @@ export default function CompanyPage() {
             <Impact />
             <Network />
             <VisionMission />
-            <MontraAnimation/>
+            <MontraAnimation />
             <Timeline />
             <SectionBreak />
             <FAQs content={faqContent} />

@@ -8,17 +8,17 @@ export default function Footer() {
     return (
         <>
             <footer 
-                className="w-screen h-[45vw]"
+                className="w-screen h-[43vw]"
                 style={{clipPath: 'rect(0px 100% 100% 0px)'}}
                 >
 
-                <div className='text-white fixed bottom-0 bg-primary w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1vw] max-sm:text-[20px] z-0'>
+                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-[22px] z-0'>
                     {/* Top Content */}
                     <div className="flex flex-row mb-[5vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw]">
                         {/* Logo */}
                         <div className="w-fit max-sm:w-full max-sm:flex max-sm:justify-center">
                             <Image className='w-[30vw] max-sm:w-[85%] mb-[2vw]' src={logo} alt="Montra Logo" width={600} height={126} />
-                            <p className="w-[30vw] mb-[2vw]">
+                            <p className="w-[30vw] mb-[2vw] text-[1vw] max-sm:text-[20px]">
                                 Montra delivers innovative products and solutions that drive
                                 financial inclusion in emerging economies - enabling a smooth shift
                                 from cash to digital payments and making credit more accessible
@@ -78,7 +78,7 @@ export default function Footer() {
 
                     {/* Marquee */}
                     <div className="overflow-hidden whitespace-nowrap text-nowrap max-sm:h-[20vw] bg-primary">
-                        <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[10vw] leading-0 font-bold text-white gap-[5vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
+                        <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[10vw] leading-0 font-semibold text-white gap-[5vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
                             {['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL'].map((word, i) => (
                                 <React.Fragment key={i}>
                                     <span>{word}</span>

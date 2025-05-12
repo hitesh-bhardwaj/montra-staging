@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import Heading from '../Heading'
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger)
@@ -94,9 +95,11 @@ export default function Testimonials() {
             />
 
             <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2] max-sm:px-[7vw] max-sm:gap-[25vw]">
-                <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10vw] max-sm:text-left">
-                    Better Reviews, Happier Choices
-                </h3>
+                <Heading>
+                    <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10vw] max-sm:text-left">
+                        Better Reviews, Happier Choices
+                    </h3>
+                </Heading>
 
                 {/* Wrap all cards here */}
                 {!isMobile?
@@ -124,13 +127,6 @@ export default function Testimonials() {
                     spaceBetween={60}
                     speed={1000}
                     pagination={{ clickable: true }}
-                    // autoplay={{
-                    //     delay: 5000,
-                    //     disableOnInteraction: false
-                    // }}
-                    // breakpoints={{
-                    //     768: { slidesPerView: 3 }
-                    // }}
                     className=""
                 >
                     {content.map((c, index) => (

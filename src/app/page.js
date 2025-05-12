@@ -1,15 +1,16 @@
 "use client"
+
+import { fadeUp, fadeUpAnim, lineAnim } from "@/components/gsapAnimations";
 import Blogs from "@/components/Homepage/Blogs";
 import FAQs from "@/components/Homepage/FAQs";
 import FeatureSection from "@/components/Homepage/FeaturesSection";
 import FeaturesText from "@/components/Homepage/FeaturesText";
 import Hero from "@/components/Homepage/Hero";
-import InfoCarouselSwiper from "@/components/Homepage/InfoCarouselSwiper";
 import Payments from "@/components/Homepage/Payment";
 import PaymentMobile from "@/components/Homepage/PaymentMobile";
 import SectionBreak from "@/components/Homepage/SectionBreak";
 import Testimonials from "@/components/Homepage/Testimonials";
-import Vision from "@/components/Homepage/Vision";
+import VisionMission from "@/components/Homepage/VisionMission";
 import Loader from "@/components/Loader";
 import { useEffect, useState } from "react";
 
@@ -34,16 +35,19 @@ export default function Home() {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
+
+  lineAnim();
+  fadeUpAnim();
+
   return (
     <>
       <Loader />
       <Hero />
       <FeatureSection />
       <FeaturesText />
-      {/* <InfoCarouselSwiper /> */}
       {mobileWidth ? <PaymentMobile /> : <Payments />}
       <SectionBreak />
-      <Vision />
+      <VisionMission />
       <Testimonials />
       <Blogs />
       <FAQs content={faqContent} />
