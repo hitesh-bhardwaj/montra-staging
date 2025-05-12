@@ -12,7 +12,7 @@ const Benefits = ({ data }) => {
       <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw]">
         <div className="w-full flex flex-col items-center gap-[1.5vw] max-sm:gap-[4vw] max-sm:items-start">
           <h2
-            className={`text-[5.7vw] font-display font-medium leading-[1.3] capitalize max-sm:text-[11vw] ${data.headingWidth}`}
+            className={`text-[5.7vw] font-display font-medium leading-[1.3] capitalize max-sm:text-[11vw] max-sm:w-full max-sm:leading-[1.2] ${data.headingWidth}`}
             dangerouslySetInnerHTML={{ __html: data.heading }}
           />
 
@@ -149,7 +149,7 @@ const AnimatedOpeners = ({
             <div
               className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[4vw] max-sm:gap-[10vw]  ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] `}
             >
-              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4.5vw] max-sm:h-fit ">
+              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4vw] max-sm:h-fit ">
                 {title}
               </div>
               <div className="absolute right-[8%] cursor-pointer">

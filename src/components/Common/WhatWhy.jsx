@@ -36,9 +36,9 @@ const WhatWhy = ({ data, height }) => {
       id="whatwhy"
     >
       <div className="w-full h-full flex flex-col gap-[10vw] items-center justify-center max-sm:items-start max-sm:justify-start">
-        <div className="w-full flex flex-col items-center gap-[1.5vw] text-center max-sm:text-left max-sm:items-start">
+        <div className="w-full flex flex-col items-center gap-[1.5vw] text-center max-sm:text-left max-sm:items-start max-sm:gap-[4vw]">
           <h2
-            className={`text-[5.7vw] font-display font-medium leading-[1.2] max-sm:text-[11vw] capitalize ${data.headingWidth}`}
+            className={`text-[5.7vw] font-display font-medium leading-[1.2] max-sm:text-[11vw] capitalize max-sm:w-full ${data.headingWidth}`}
           >
             {data.heading}
           </h2>

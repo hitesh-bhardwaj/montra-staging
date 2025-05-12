@@ -8,34 +8,68 @@ const Loader = () => {
   const [hidden, setIsHidden] = useState(false)
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-      const steps = 5; // Number of animation steps (and iterations)
-
-      for (let i = 1; i <= steps; i++) {
-        tl.to(".sequence-container", {
-          xPercent: i * 100,
-          ease: "power3.inOut",
-          duration: 0.9,
-        }).to(
-          ".number-container",
-          {
-            xPercent: i * 20,
-            duration: 0.9,
+      if(globalThis.innerWidth>1024){
+        const tl = gsap.timeline();
+        const steps = 5; // Number of animation steps (and iterations)
+  
+        for (let i = 1; i <= steps; i++) {
+          tl.to(".sequence-container", {
+            xPercent: i * 100,
             ease: "power3.inOut",
-          },
-          "<"
-        );
-      }
-      tl.to("#loader", {
-        opacity: 0,
-
-        filter: "blur(20px)",
-        // duration:4,
-
-        onComplete: () => {
-          setIsHidden(true)
+            duration: 0.9,
+          }).to(
+            ".number-container",
+            {
+              xPercent: i * 20,
+              duration: 0.9,
+              ease: "power3.inOut",
+            },
+            "<"
+          );
         }
-      })
+        tl.to("#loader", {
+          opacity: 0,
+  
+          filter: "blur(20px)",
+          // duration:4,
+  
+          onComplete: () => {
+            setIsHidden(true)
+          }
+        })
+
+      }
+      else{
+        const tl = gsap.timeline();
+        const steps = 5; // Number of animation steps (and iterations)
+  
+        for (let i = 1; i <= steps; i++) {
+          tl.to(".sequence-container", {
+            xPercent: i * 57,
+            ease: "power3.inOut",
+            duration: 0.9,
+          }).to(
+            ".number-container",
+            {
+              xPercent: i * 20,
+              duration: 0.9,
+              ease: "power3.inOut",
+            },
+            "<"
+          );
+        }
+        tl.to("#loader", {
+          opacity: 0,
+  
+          filter: "blur(20px)",
+          // duration:4,
+  
+          onComplete: () => {
+            setIsHidden(true)
+          }
+        })
+      }
+
 
     });
 
@@ -44,12 +78,12 @@ const Loader = () => {
  
   return (
     <div
-      className={`w-screen h-screen fixed top-0 left-0 flex items-end z-[9999] bg-white text-[17vw] overflow-hidden ${hidden ? "hidden" : ""}`}
+      className={`w-screen h-screen fixed top-0 left-0 flex items-end z-[9999] bg-white text-[17vw] overflow-hidden max-sm:text-[25vw] max-sm:h-dvh ${hidden ? "hidden" : ""}`}
       id="loader"
     >
 
       <div className="w-fit h-fit flex sequence-container relative z-[2] text-primary ">
-        <div className="flex w-[10vw] overflow-hidden ">
+        <div className="flex w-[10vw] overflow-hidden max-sm:w-[15vw] ">
           <div className="flex w-fit translate-x-[-80%] number-container">
             <span>9</span>
             <span>7</span>
@@ -59,7 +93,7 @@ const Loader = () => {
           </div>
         </div>
 
-        <div className="flex w-[10vw] overflow-hidden">
+        <div className="flex w-[10vw] overflow-hidden max-sm:w-[15vw]">
           <div className="flex w-fit translate-x-[-80%] number-container">
             <span>9</span>
             <span>7</span>

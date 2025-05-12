@@ -15,7 +15,7 @@ const personalChat = () => {
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
   <Features featuresData={featuresData}/>
-   <SectionBreak content={"Your Conversations, Now Smarter with Montra Chat. It's where talking meets transacting—secure, seamless, and instant."} width={"w-[92%]"}/>
+   <SectionBreak content={"Your Conversations, Now Smarter with Montra Chat. It's where talking meets transacting — secure, seamless, and instant."} width={"w-[92%]"}/>
    <FAQs content={faqContent}/>
    </>
   )

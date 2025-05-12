@@ -80,7 +80,7 @@ export default function PinnedRevealSection() {
             </div>
 
             {/* 3) Carousel cards */}
-            <motion.div className="absolute bottom-0 w-screen z-10 max-sm:top-[10%] h-screen">
+            <motion.div className="absolute bottom-0 w-screen z-10 h-screen">
                 <InfoCarouselSwiper />
             </motion.div>
         </section>

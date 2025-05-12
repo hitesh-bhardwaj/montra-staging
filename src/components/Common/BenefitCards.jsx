@@ -113,6 +113,22 @@ const BenefitCards = ({cardData}) => {
           })
      
       }
+      else{
+        const cards = document.querySelectorAll(".card-inner")
+        cards.forEach((card)=>{
+            gsap.to(card,{
+              rotateY:-180,
+              ease:"none",
+              scrollTrigger:{
+                trigger:card,
+                start:"top 70%",
+                end:"bottom 60%",
+                scrub:true,
+                // markers:true
+              }
+            })
+        })
+      }
     }, containerRef);
 
     return () => ctx.revert();
@@ -121,9 +137,9 @@ const BenefitCards = ({cardData}) => {
   return (
     <section
       ref={containerRef}
-      className="h-[500vh] w-screen pb-[15%] bg-white relative max-sm:px-[7vw]"
+      className="h-[500vh] w-screen pb-[15%] bg-white relative max-sm:px-[7vw] max-sm:h-full max-sm:py-[10%]"
     >
-      <div className="w-full text-center flex flex-col gap-[2vw] pb-[10%] items-center justify-center max-sm:items-start max-sm:text-left">
+      <div className="w-full text-center flex flex-col gap-[2vw] pb-[10%] items-center justify-center max-sm:items-start max-sm:text-left max-sm:gap-[4vw] max-sm:pb-0">
         <h2 className={`text-[5.7vw] font-display font-medium  capitalize leading-[1.3] max-sm:text-[11vw] max-sm:w-full ${cardData.headingWidth}`}>
           {cardData.heading}
         </h2>
@@ -132,22 +148,23 @@ const BenefitCards = ({cardData}) => {
         </p>
       </div>
 
-      <div className=" h-fit w-full sticky top-[20%] pb-[10%] pt-[20%] max-sm:static">
-        <div ref={card1Ref} className="card w-[22.5vw] h-[35vw] absolute">
+      <div className=" h-fit w-full sticky top-[20%] pb-[10%] pt-[20%] max-sm:static max-sm:flex max-sm:flex-col max-sm:gap-[7vw] max-sm:pb-0">
+        <div ref={card1Ref} className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw]">
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
               <Image
                 src={cardData.icon1}
                 height={50}
                 width={50}
+                className="max-sm:w-[15vw] max-sm:h-[15vw]"
                 alt="montra-account"
               />
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
+              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw]">
                 {cardData.cardTitle1}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2] h-full w-full flex ">
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
+              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw]">
               {cardData.cardTitle1}
               </h3>
               <div dangerouslySetInnerHTML={{__html:cardData.cardContent1}}/>
@@ -156,63 +173,66 @@ const BenefitCards = ({cardData}) => {
             </div>
           </div>
         </div>
-        <div ref={card2Ref} className="card w-[22.5vw] h-[35vw] absolute ">
+        <div ref={card2Ref} className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw]">
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
               <Image
                 src={cardData.icon2}
                 height={50}
                 width={50}
+                className="max-sm:w-[15vw] max-sm:h-[15vw]"
                 alt="montra-account"
               />
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
+              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw]">
               {cardData.cardTitle2}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2]  ">
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
+              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw]">
               {cardData.cardTitle2}
               </h3>
               <div dangerouslySetInnerHTML={{__html:cardData.cardContent2}}/>
             </div>
           </div>
         </div>
-        <div ref={card3Ref} className="card w-[22.5vw] h-[35vw] absolute ">
+        <div ref={card3Ref} className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw]">
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
               <Image
                 src={cardData.icon3}
                 height={50}
                 width={50}
+                className="max-sm:w-[15vw] max-sm:h-[15vw]"
                 alt="montra-account"
               />
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
+              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw]">
               {cardData.cardTitle3}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2]  ">
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
+              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw]">
               {cardData.cardTitle3}
               </h3>
               <div dangerouslySetInnerHTML={{__html:cardData.cardContent3}}/>
             </div>
           </div>
         </div>
-        <div ref={card4Ref} className="card w-[22.5vw] h-[35vw] absolute">
+        <div ref={card4Ref} className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw]">
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
               <Image
                src={cardData.icon4}
                 height={50}
                 width={50}
+                className="max-sm:w-[15vw] max-sm:h-[15vw]"
                 alt="montra-account"
               />
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
+              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw]">
               {cardData.cardTitle4}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2] ">
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium">
+              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw]">
               {cardData.cardTitle4}
               </h3>
               <div dangerouslySetInnerHTML={{__html:cardData.cardContent4}}/>

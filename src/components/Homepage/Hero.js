@@ -74,9 +74,9 @@ export default function Hero() {
   }, [lenis]);
 
   return (
-    <section id="hero" ref={heroRef} className="w-screen overflow-hidden h-screen">
-      <div className="h-full flex items-start justify-center text-center px-[4vw]">
-        <div className="w-[70%] mx-auto space-y-[1.5vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw]">
+    <section id="hero" ref={heroRef} className="w-screen overflow-hidden h-screen max-sm:h-dvh">
+      <div className="h-full flex items-start justify-center text-center px-[4vw] max-sm:pt-[30vw]">
+        <div className="w-[70%] mx-auto space-y-[1.5vw] pt-[14vw] py-[5vw] max-sm:w-full  max-sm:space-y-[7vw] max-sm:pt-0">
           <Heading delay={4}>
             <h1
               className="text-[5.7vw] font-display font-medium capitalize leading-[1.2] heroAnim max-sm:text-[11.5vw] max-sm:leading-[1.2]"
