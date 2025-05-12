@@ -64,7 +64,7 @@ export default function SectionBreak({content, width}) {
             start: "top 10%",
             end: "center 10%",
             scrub: 0.25,
-              markers:true,
+              // markers:true,
           },
         })
         .to(lines, {
@@ -82,7 +82,7 @@ export default function SectionBreak({content, width}) {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB]"
+      className="relative h-screen w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] bg-[#FBFBFB]"
     >
       {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden"/> */}
 

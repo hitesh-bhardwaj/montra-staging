@@ -20,7 +20,7 @@ export default function Game() {
                     start: "top 80%",
                     end: "80% 80%",
                     scrub: 0.25,
-                    markers: true,
+                    // markers: true,
                 }
             });
 

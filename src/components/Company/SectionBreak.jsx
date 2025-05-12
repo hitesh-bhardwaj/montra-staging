@@ -66,7 +66,7 @@ export default function SectionBreak() {
             start: "top center",
             end: "center 20%",
             scrub: 0.25,
-            markers: true,
+            // markers: true,
           },
         })
         .to(lines, {

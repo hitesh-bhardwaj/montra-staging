@@ -8,17 +8,17 @@ export default function Footer() {
     return (
         <>
             <footer 
-                className="w-screen h-[43vw]"
+                className="w-screen h-[43vw] max-sm:h-full"
                 style={{clipPath: 'rect(0px 100% 100% 0px)'}}
                 >
 
-                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-[22px] z-0'>
+                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-[22px] z-0 max-sm:h-full max-sm:static max-sm:pb-[10vw]'>
                     {/* Top Content */}
-                    <div className="flex flex-row mb-[5vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw]">
+                    <div className="flex flex-row mb-[5vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw] ">
                         {/* Logo */}
-                        <div className="w-fit max-sm:w-full max-sm:flex max-sm:justify-center">
+                        <div className="w-fit max-sm:w-full max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-sm:gap-[7vw]">
                             <Image className='w-[30vw] max-sm:w-[85%] mb-[2vw]' src={logo} alt="Montra Logo" width={600} height={126} />
-                            <p className="w-[30vw] mb-[2vw] text-[1vw] max-sm:text-[20px]">
+                            <p className="w-[30vw] mb-[2vw] text-[1vw] max-sm:text-[20px] max-sm:w-full max-sm:text-center max-sm:order-1">
                                 Montra delivers innovative products and solutions that drive
                                 financial inclusion in emerging economies - enabling a smooth shift
                                 from cash to digital payments and making credit more accessible
@@ -35,7 +35,7 @@ export default function Footer() {
                         {/* Intro + Link Columns */}
                         <div className="w-fit space-y-[2.5vw] max-sm:w-full max-sm:text-center max-sm:mt-[10vw] max-sm:space-y-[7vw]">
 
-                            <div className='flex justify-start gap-[8vw] max-sm:flex-col'>
+                            <div className='flex justify-start gap-[8vw] max-sm:flex-col max-sm:items-center'>
 
                                 {/* Personal Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
@@ -51,21 +51,21 @@ export default function Footer() {
                                     ))}
                                 </ul>
 
-                                <div className="flex flex-col justify-between items-start">
+                                <div className="flex flex-col justify-between items-center">
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw]'>
                                         <Link href="/platform" className="uppercase block w-fit">Platform</Link>
                                         <Link href="/company" className="uppercase block w-fit">Company</Link>
                                     </div>
 
                                     {/* Social Media Links */}
-                                    <div className='space-y-[0.5vw] max-sm:space-y-[2vw]'>
+                                    <div className='space-y-[0.5vw] max-sm:space-y-[2vw] max-sm:mt-[10vw]'>
                                         {socialLinks.map((link, index) => (
-                                            <a key={index} href={link.href} aria-label='Facebook' className='flex items-center gap-1 group'>
+                                            <a key={index} href={link.href} aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3'>
                                                 <span>{link.name}</span>
-                                                <div className='h-[0.8vw] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end'>
+                                                <div className='h-[0.8vw] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw]'>
                                                     <span className='inline-flex w-[200%] h-full duration-300 group-hover:translate-x-1/2'>
-                                                        <ArrowRight className='h-[0.8vw] w-[1vw] inline-block scale-0 group-hover:scale-100 duration-300' />
-                                                        <ArrowRight className='h-[0.8vw] w-[1vw] inline-block group-hover:scale-0 duration-300' />
+                                                        <ArrowRight className='h-[0.8vw] w-[1vw] inline-block scale-0 group-hover:scale-100 duration-300 max-sm:!w-[3.5vw] max-sm:!h-[3.5vw]' />
+                                                        <ArrowRight className='h-[0.8vw] w-[1vw] inline-block group-hover:scale-0 duration-300  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw]' />
                                                     </span>
                                                 </div>
                                             </a>
@@ -77,8 +77,8 @@ export default function Footer() {
                     </div>
 
                     {/* Marquee */}
-                    <div className="overflow-hidden whitespace-nowrap text-nowrap max-sm:h-[20vw] bg-primary">
-                        <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[10vw] leading-0 font-semibold text-white gap-[5vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
+                    <div className="overflow-hidden whitespace-nowrap text-nowrap max-sm:h-[20vw] bg-primary max-sm:hidden">
+                        <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[10vw] leading-0 font-bold text-white gap-[5vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
                             {['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL'].map((word, i) => (
                                 <React.Fragment key={i}>
                                     <span>{word}</span>
