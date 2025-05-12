@@ -55,6 +55,7 @@ body {
 }
 
 ::view-transition-old(root) {
+  overflow: hidden;
   z-index: 1;
   animation: none !important;
 }

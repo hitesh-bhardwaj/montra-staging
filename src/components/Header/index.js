@@ -37,11 +37,13 @@ export default function Header() {
       [
         {
           opacity: 1,
-          transform: "translateY(0)",
+          transform: "scale(1)",
+          borderRadius: "0"
         },
         {
           opacity: 0.2,
-          transform: "translateY(-35%)",
+          transform: "scale(0.95)",
+          borderRadius: "20px",
         },
       ],
       {
@@ -70,10 +72,24 @@ export default function Header() {
     );
   }
 
+  const getExactPath = () => {
+    if (typeof window !== "undefined") {
+      return window.location.pathname;
+    }
+    return currentPath;
+  };
+
+  const isExactPath = (path) => {
+    const exactCurrentPath = getExactPath();
+    return exactCurrentPath === path;
+  };
+
   const navigateTo = (path) => {
     if (isAnimating) return;
 
-    setIsAnimating(true);
+    if (isExactPath(path)) {
+      return;
+    }
 
     router.push(path, {
       onTransitionReady: slideInOut,
@@ -83,7 +99,6 @@ export default function Header() {
       setIsAnimating(false);
     }, 1500);
   };
-
 
   return (
     <header
@@ -102,7 +117,7 @@ export default function Header() {
               className={`w-[10vw] max-sm:w-[30vw] logo`}
             />
           </a>
-          <Navbar navigateTo={navigateTo}/>
+          <Navbar navigateTo={navigateTo} />
           <div
             className="hidden  max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150]"
             onClick={() => {
