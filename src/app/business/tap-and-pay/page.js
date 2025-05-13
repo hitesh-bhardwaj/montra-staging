@@ -1,3 +1,4 @@
+"use client"
 import BenefitCards from '@/components/Common/BenefitCards'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
@@ -7,9 +8,11 @@ import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import About from '@/components/BusinessTapnPay/About'
+import { fadeUpAnim } from '@/components/gsapAnimations'
 
 
 const tapPay = () => {
+  fadeUpAnim();
   return (
    <>
    <Header/>

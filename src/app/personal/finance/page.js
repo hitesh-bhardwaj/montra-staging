@@ -1,3 +1,4 @@
+"use client"
 import Benefits from '@/components/Common/Benefits'
 import Features from '@/components/Common/Features'
 import Hero from '@/components/Common/Hero'
@@ -5,12 +6,14 @@ import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
 import Steps from '@/components/Common/Steps'
 import WhatWhy from '@/components/Common/WhatWhy'
+import { fadeUpAnim } from '@/components/gsapAnimations'
 import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import InvestmentPlans from '@/components/PersonalFinance/InvestmentPlans'
 import React from 'react'
 
 const personalFinance = () => {
+  fadeUpAnim();
   return (
    <>
    <Header/>

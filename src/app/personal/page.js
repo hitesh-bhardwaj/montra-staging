@@ -1,5 +1,4 @@
 "use client";
-
 import { fadeUpAnim } from "@/components/gsapAnimations";
 import FAQs from "@/components/Homepage/FAQs";
 import Control from "@/components/Personal/Control";

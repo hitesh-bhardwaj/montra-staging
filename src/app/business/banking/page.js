@@ -7,8 +7,10 @@ import Benefits from "@/components/Common/Benefits";
 import Steps from "@/components/Common/Steps";
 import WhatWhy from "@/components/Common/WhatWhy";
 import React from "react";
+import { fadeUpAnim } from "@/components/gsapAnimations";
 
 const businessBanking = () => {
+  fadeUpAnim();
   return (
     <>
       <Hero

@@ -7,8 +7,11 @@ import Benefits from "@/components/Common/Benefits";
 import Steps from "@/components/Common/Steps";
 import WhatWhy from "@/components/Common/WhatWhy";
 import React from "react";
+import { fadeUpAnim } from "@/components/gsapAnimations";
 
 const personalBanking = () => {
+ 
+    fadeUpAnim();
   return (
     <>
       <Hero
@@ -80,8 +83,8 @@ const overviewContent = {
 };
 
 const whatWhyData = {
-  heading:"Connect your bank accounts—everything in one Montra move.",
-  headingWidth:"w-[85%]",
+  heading:"Connect your bank accounts— everything in one Montra move.",
+  headingWidth:"w-[95%]",
   top:"top-[34%]",
   para:"",
   content:[

@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import React from "react";
+import Heading from "../Heading";
 
 const Discover = () => {
   const marqueeRef = useRef(null);
@@ -34,11 +35,13 @@ const Discover = () => {
   }, []);
   return (
     <section className="px-[6vw] py-[4vw] h-full w-screen bg-white max-sm:px-0 max-sm:py-0">
-      <div className="flex items-center relative  justify-between  overflow-hidden bg-primary rounded-[4vw] py-[4vw] px-[2vw] pl-[4vw] max-sm:flex-col max-sm:px-0 max-sm:py-0 max-sm:pl-0 max-sm:rounded-none max-sm:gap-[12vw] max-sm:pt-[10%]">
+      <div className="flex items-center relative  justify-between  overflow-hidden bg-primary rounded-[4vw] py-[4vw] px-[2vw] pl-[4vw] max-sm:flex-col max-sm:px-0 max-sm:py-0 max-sm:pl-0 max-sm:rounded-none max-sm:gap-[12vw] max-sm:pt-[10%] fadeupanim">
         <div className="w-[70%] max-sm:py-[4vw] max-sm:w-full max-sm:px-[7vw]">
-          <h2 className="text-[5.7vw] font-display font-medium  w-[80%] capitalize leading-[1.15] text-white max-sm:text-[11vw] max-sm:leading-[1.2]">
-            Discover More on Montra Marketplace
-          </h2>
+          <Heading>
+            <h2 className="text-[5.7vw] font-display font-medium  w-[80%] capitalize leading-[1.15] text-white max-sm:text-[11vw] max-sm:leading-[1.2]">
+              Discover More on Montra Marketplace
+            </h2>
+          </Heading>
         </div>
         <div className="w-screen h-[8vw] absolute  left-0 top-0 z-[10] bg-gradient-to-t from-transparent via-primary/50 to-primary max-sm:top-[35%] max-sm:h-[25vw] " />
         <div className="w-screen h-[8vw] absolute  left-0 bottom-0 z-[10] bg-gradient-to-b from-transparent via-primary/50 to-primary max-sm:h-[25vw] max-sm:via-primary/50" />

@@ -72,7 +72,7 @@ export function fadeUpAnim() {
           gsap.from(content, {
             scrollTrigger: {
               trigger: content,
-              start: "top 90%",
+              start: "top 70%",
             },
             opacity: 0,
             y: 50,

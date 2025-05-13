@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
+import Heading from "../Heading";
+import Copy from "../Copy";
 
 const Overview = ({ content }) => {
   const block1 = useRef(null);
@@ -64,7 +66,7 @@ const Overview = ({ content }) => {
         id="overview"
       >
         <div className="w-full h-full flex items-start justify-between px-[4vw] max-sm:flex-col max-sm:px-[7vw] ">
-          <div ref={containerRef} className="w-[40%] relative max-sm:w-full">
+          <div ref={containerRef} className="w-[40%] relative max-sm:w-full fadeupanim">
             <Image
               src={content.mainImg}
               alt="overview-phone-image"
@@ -112,22 +114,26 @@ const Overview = ({ content }) => {
               <div className="capitalize">{content.subcontent2}</div>
             </div>
           </div>
-          <div className="w-[45%] h-[60vw] justify-center flex flex-col items-center space-y-[3vw] max-sm:w-full max-sm:h-full max-sm:gap-[10vw] max-sm:items-start">
+          <div className="w-[45%] h-[60vw] justify-center flex flex-col  space-y-[3vw] max-sm:w-full max-sm:h-full max-sm:gap-[10vw] max-sm:items-start">
             <div className="w-full flex flex-col gap-[2vw] pr-[3vw] max-sm:gap-[7vw]">
-              <h2 className="text-[3.2vw] leading-[1.2] font-display font-medium capitalize max-sm:text-[7.5vw] max-sm:leading-[1.4]">
-                {content.title}
-              </h2>
+              <Heading>
+                <h2 className="text-[3.2vw] leading-[1.2] font-display font-medium capitalize max-sm:text-[7.5vw] max-sm:leading-[1.4]">
+                  {content.title}
+                </h2>
+              </Heading>
               {content.content.map((item, index) => (
-                <p
-                  key={index}
-                  className="text-[1.2vw] w-[90%] max-sm:text-[4.1vw] max-sm:w-full"
-                >
-                  {item}
-                </p>
+                <Copy  key={index}>
+                  <p
+                   
+                    className="text-[1.2vw] w-[90%] max-sm:text-[4.1vw] max-sm:w-full"
+                  >
+                    {item}
+                  </p>
+                </Copy>
               ))}
             </div>
             {content.cards?.length > 0 && (
-              <div className="flex items-center gap-[1vw] max-sm:flex-wrap max-sm:justify-between max-sm:gap-y-[6vw] max-sm:gap-0 max-sm:items-start max-sm:w-full">
+              <div className="flex items-start gap-[1vw] max-sm:flex-wrap max-sm:justify-between max-sm:gap-y-[6vw] max-sm:gap-0  max-sm:w-full fadeupanim">
                 {content.cards.map((item, index) => (
                   <div
                     key={index}

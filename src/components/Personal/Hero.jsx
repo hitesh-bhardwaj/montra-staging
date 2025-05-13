@@ -11,7 +11,12 @@ const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (globalThis.innerWidth > 1024) {
-
+        gsap.from(".fadeUpHero",{
+          opacity:0,
+          duration:0.7,
+          y:30,
+          delay:1.2,
+        })
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#hero",
@@ -124,7 +129,7 @@ const Hero = () => {
         </div>
         <div className="w-full flex px-[10vw] h-[30vw] items-center justify-between text-white hero-image-container relative max-sm:h-[120vw]">
           
-          <div className="fadeupanim w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[12%] top-[10%] hero-left-card max-sm:hidden">
+          <div className="fadeUpHero w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[12%] top-[10%] hero-left-card max-sm:hidden">
             <div className="relative w-full h-full">
               <div className="absolute top-[5%] right-[5%] w-fit px-[1.2vw] py-[0.5vw] bg-primary rounded-full z-[2]">
                 Account
@@ -157,7 +162,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="fadeupanim w-[27vw] h-[31vw] absolute rounded-[3vw] left-[36%] top-0 z-[5] hero-main-card max-sm:w-[80vw] max-sm:h-[110vw] max-sm:left-[10%] max-sm:rounded-[7vw] ">
+          <div className="fadeUpHero w-[27vw] h-[31vw] absolute rounded-[3vw] left-[36%] top-0 z-[5] hero-main-card max-sm:w-[80vw] max-sm:h-[110vw] max-sm:left-[10%] max-sm:rounded-[7vw] ">
             <div className="w-[27vw] h-[31vw] absolute bg-white/10 rounded-[3vw] left-0 top-0 z-[5] border opacity-0 border-white hero-main-border max-sm:w-[80vw] max-sm:h-[110vw] max-sm:rounded-[7vw]"></div>
             <div className="relative w-full h-full  ">
               <div className="absolute top-[5%] right-[5%] w-fit px-[1.2vw] py-[0.5vw] bg-primary rounded-full max-sm:px-[4.5vw] max-sm:py-[1.5vw] max-sm:text-[4.1vw] ">
@@ -182,7 +187,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="fadeupanim w-[27vw] h-[31vw] overflow-hidden rounded-[3vw] absolute z-[4] left-[36%] hero-image-anim top-0 max-sm:w-[80vw] max-sm:h-[110vw] max-sm:left-[10%] max-sm:rounded-[7vw]">
+          <div className="fadeUpHero w-[27vw] h-[31vw] overflow-hidden rounded-[3vw] absolute z-[4] left-[36%] hero-image-anim top-0 max-sm:w-[80vw] max-sm:h-[110vw] max-sm:left-[10%] max-sm:rounded-[7vw]">
             <Image
               src={"/assets/images/personal/personal-hero-2.png"}
               alt="personal-hero-1"
@@ -192,7 +197,7 @@ const Hero = () => {
             />
           </div>
 
-          <div className="fadeupanim w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[64%] top-[10%] hero-right-card max-sm:hidden">
+          <div className="fadeUpHero w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[64%] top-[10%] hero-right-card max-sm:hidden">
             <div className="absolute top-[5%] right-[5%] w-fit px-[1.2vw] py-[0.5vw] bg-primary rounded-full z-[2]">
               Account
             </div>

@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import Heading from "../Heading";
 
 const stepData = {
   heading: "Get started in minutes",
@@ -53,25 +54,26 @@ const Steps = () => {
     const tl = gsap.timeline();
 
     // a) Fade out everything
-    tl.to(
-      [titleRef.current, paraRef.current, ...imageRefs.current],
-      {
-        autoAlpha: 0,
-        duration: 0.4,
-        onStart: () => {
-          // Reset tags, circles
-          tagRefs.current.forEach((el) => gsap.set(el, { width: 0, autoAlpha: 0 }));
-          circleRefs.current.forEach((c) => gsap.set(c, { strokeDashoffset: 126 }));
-          imageRefs.current.forEach((img) => gsap.set(img, { zIndex: 0 }));
-        },
-      }
-    );
+    tl.to([titleRef.current, paraRef.current, ...imageRefs.current], {
+      autoAlpha: 0,
+      duration: 0.4,
+      onStart: () => {
+        // Reset tags, circles
+        tagRefs.current.forEach((el) =>
+          gsap.set(el, { width: 0, autoAlpha: 0 })
+        );
+        circleRefs.current.forEach((c) =>
+          gsap.set(c, { strokeDashoffset: 126 })
+        );
+        imageRefs.current.forEach((img) => gsap.set(img, { zIndex: 0 }));
+      },
+    });
 
     // b) Set new content
     tl.call(() => {
       titleRef.current.textContent = step.title;
       paraRef.current.textContent = step.para;
-      gsap.to(tagRefs.current,{width:0,duration:0.5,delay:6.2})
+      gsap.to(tagRefs.current, { width: 0, duration: 0.5, delay: 6.2 });
       gsap.set(imageRefs.current[idx], { zIndex: 1 });
     });
 
@@ -90,15 +92,16 @@ const Steps = () => {
         duration: 1,
       },
       "-=0.2"
-    )
-    .to(imageRefs.current[idx],{
-      autoAlpha:1,
-      duration:1,
-      // ease:"power4.out",
-      // delay:1,
-    },
-    ""
-  )
+    ).to(
+      imageRefs.current[idx],
+      {
+        autoAlpha: 1,
+        duration: 1,
+        // ease:"power4.out",
+        // delay:1,
+      },
+      ""
+    );
 
     // e) Fill the circle
     tl.to(
@@ -131,13 +134,15 @@ const Steps = () => {
       <div className="flex h-full items-start max-sm:flex-col">
         {/* Left: Heading */}
         <div className="w-2/5 flex items-center max-sm:w-[70%]">
-          <h2 className="text-[5vw] font-display leading-[1.1] max-sm:text-[11vw] max-sm:font-medium">
-            {stepData.heading}
-          </h2>
+          <Heading>
+            <h2 className="text-[5vw] font-display leading-[1.1] max-sm:text-[11vw] max-sm:font-medium">
+              {stepData.heading}
+            </h2>
+          </Heading>
         </div>
 
         {/* Center: Images */}
-        <div className="w-2/5 relative h-[60vw] mt-[-5vw] max-sm:w-[120vw] max-sm:h-[150vw] max-sm:left-[-25%] max-sm:mt-[10vw]">
+        <div className="w-2/5 relative h-[60vw] mt-[-5vw] max-sm:w-[120vw] max-sm:h-[150vw] max-sm:left-[-25%] max-sm:mt-[10vw] fadeupanim">
           {stepData.steps.map((step, i) => (
             <div
               key={i}
@@ -157,10 +162,14 @@ const Steps = () => {
         </div>
 
         {/* Right: Text + Circles + Tags */}
-        <div className="w-3/5 flex flex-col h-full justify-end items-start gap-[10vw] pl-[5vw] pb-[3vw] max-sm:w-full max-sm:pl-0 max-sm:justify-center max-sm:h-fit">
+        <div className="w-3/5 flex flex-col h-full justify-end items-start gap-[10vw] pl-[5vw] pb-[3vw] max-sm:w-full max-sm:pl-0 max-sm:justify-center max-sm:h-fit fadeupanim">
           {/* Title & Paragraph */}
           <div>
-            <h3 ref={titleRef} className="text-[3.4vw] font-display mb-2 max-sm:text-[8.5vw] max-sm:font-medium" />
+            
+            <h3
+              ref={titleRef}
+              className="text-[3.4vw] font-display mb-2 max-sm:text-[8.5vw] max-sm:font-medium"
+            />
             <p ref={paraRef} className="w-[70%] max-sm:w-[90%]" />
           </div>
 

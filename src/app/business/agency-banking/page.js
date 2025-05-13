@@ -1,3 +1,4 @@
+"use client"
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
@@ -7,9 +8,11 @@ import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
 import BenefitCards from '@/components/Common/BenefitCards'
+import { fadeUpAnim } from '@/components/gsapAnimations'
 
 
 const businessAgencyBanking = () => {
+  fadeUpAnim();
   return (
    <>
    <Header/>

@@ -1,13 +1,16 @@
+"use client"
 import Benefits from '@/components/Common/Benefits'
 import Features from '@/components/Common/Features'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
+import { fadeUpAnim } from '@/components/gsapAnimations'
 import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import React from 'react'
 
 const personalChat = () => {
+  fadeUpAnim();
   return (
    <>
    <Header/>

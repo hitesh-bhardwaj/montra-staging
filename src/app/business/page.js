@@ -9,6 +9,7 @@ import FAQs from "@/components/Homepage/FAQs";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { fadeUpAnim } from "@/components/gsapAnimations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,7 @@ export default function Business() {
         setMobileWidth(true);
       }
     }, []);
+    fadeUpAnim();
 
     useEffect(() => {
       if (globalThis.innerWidth > 1024) {

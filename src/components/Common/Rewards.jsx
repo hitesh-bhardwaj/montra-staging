@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Heading from "../Heading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,11 +48,14 @@ const Rewards = ({rewardsData}) => {
   return (
 <section ref={sectionRef} className="h-full w-screen bg-white relative max-sm:px-[7vw] max-sm:py-[10%]">
   <div className="w-full text-center flex flex-col gap-[2vw] pb-[5%] items-center justify-center max-sm:items-start max-sm:text-left max-sm:gap-[4vw]">
+    <Heading>
     <h2
       className={`text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:leading-[1.2] max-sm:text-[11vw] max-sm:w-full ${rewardsData.headingWidth}`}
     >
       {rewardsData.heading}
     </h2>
+
+    </Heading>
     <div className={`px-[4vw] py-[4vw] grid  gap-[5vw] w-full max-sm:flex max-sm:flex-col max-sm:px-0 max-sm:gap-[10vw] max-sm:mt-[10vw] ${rewardsData.gridCols}`}>
       {rewardsData.cards.map((item, index) => (
         <div

@@ -3,12 +3,13 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Heading from "../Heading";
 gsap.registerPlugin(ScrollTrigger);
 
 const Features = ({ featuresData }) => {
   useEffect(() => {
-    const ctx = gsap.context(()=>{
-      if (globalThis.innerwidth > 1024) {
+    const ctx = gsap.context(() => {
+      if (globalThis.innerWidth > 1024) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#investors",
@@ -53,7 +54,6 @@ const Features = ({ featuresData }) => {
             amount: 0.5,
             from: "random",
           },
-         
         }).to(
           ".icon-content",
           {
@@ -68,10 +68,9 @@ const Features = ({ featuresData }) => {
           "<"
         );
       }
-
-    })
-    return()=>ctx.revert()
-  },[]);
+    });
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
@@ -79,11 +78,13 @@ const Features = ({ featuresData }) => {
       id="investors"
     >
       <div className="w-full h-full flex flex-col items-center gap-[8vw] max-sm:gap-[12vw]">
-        <h3
-          className={` font-display capitalize font-medium max-sm:text-[11vw] ${featuresData.headingSize}`}
-        >
-          {featuresData.heading}
-        </h3>
+        <Heading>
+          <h3
+            className={` font-display capitalize font-medium max-sm:text-[11vw] ${featuresData.headingSize}`}
+          >
+            {featuresData.heading}
+          </h3>
+        </Heading>
         <div className="w-full flex items-center justify-center gap-[1.5vw] px-[4vw] text-white max-sm:flex-wrap max-sm:px-0 max-sm:justify-between max-sm:gap-y-[5vw]">
           {featuresData.features.map((item, index) => (
             <div
