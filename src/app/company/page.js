@@ -1,22 +1,41 @@
+"use client"
 import Hero from "@/components/Company/Hero";
 import Impact from "@/components/Company/Impact";
 import MontraAnimation from "@/components/Company/MontraAnimation";
+import MontraAnimationMobile from "@/components/Company/MontraAnimationMobile";
 import Network from "@/components/Company/Network";
+import TextBreak from "@/components/Company/TextBreak";
 import Timeline from "@/components/Company/Timeline";
 import { fadeUpAnim } from "@/components/gsapAnimations";
 import FAQs from "@/components/Homepage/FAQs";
 import SectionBreak from "@/components/Homepage/SectionBreak";
 import VisionMission from "@/components/Homepage/VisionMission";
+import { useEffect, useState } from "react";
 
 export default function CompanyPage() {
   fadeUpAnim();
+   const useIsMobile = (breakpoint = 541) => {
+       const [isMobile, setIsMobile] = useState(false);
+   
+       useEffect(() => {
+           const checkMobile = () => setIsMobile(window.innerWidth < breakpoint);
+           checkMobile();
+           window.addEventListener("resize", checkMobile);
+           return () => window.removeEventListener("resize", checkMobile);
+       }, [breakpoint]);
+   
+       return isMobile;
+   };
+
+   const isMobile = useIsMobile();
     return (
         <>
             <Hero />
             <Impact />
             <Network />
-            <MontraAnimation />
             <VisionMission />
+            {isMobile? <MontraAnimationMobile/> : <MontraAnimation/>}
+            <TextBreak/>
             <Timeline />
             <SectionBreak />
             <FAQs content={faqContent} />
@@ -56,3 +75,4 @@ const faqContent = [
         "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
     },
   ]
+ 

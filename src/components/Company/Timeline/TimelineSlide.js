@@ -17,10 +17,11 @@ export default function TimelineSlide({ year, direction, data }) {
         }),
         exit: { scale: 0, opacity: 0 }
     };
+    
 
     return (
         <motion.div
-            className="absolute w-full h-full flex flex-col items-center justify-center px-4"
+            className="absolute w-full h-full flex flex-col items-center justify-center px-4 max-sm:flex max-sm:flex-col"
             custom={direction}
             variants={slideVariants}
             initial="enter"
@@ -28,7 +29,7 @@ export default function TimelineSlide({ year, direction, data }) {
             exit="exit"
         >
             {/* Content Cards */}
-            <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 relative w-full h-full">
+            <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 relative w-full h-full max-sm:flex max-sm:flex-col  max-sm:mt-[70vw]">
                 <AnimatePresence mode="popLayout">
                     {data.cards.map((card, i) => (
                         <motion.div
@@ -38,7 +39,7 @@ export default function TimelineSlide({ year, direction, data }) {
                             initial="enter"
                             animate="visible"
                             exit="exit"
-                            className={`absolute ${card.left} ${card.top} ${card.z}`}
+                            className={`absolute ${card.left} ${card.top} ${card.z} max-sm:static max-sm:h-[15vw] max-sm:w-[85vw]`}
                         >
                             <AnimatedOpeners
                                 letter={card.letter}
@@ -58,7 +59,7 @@ export default function TimelineSlide({ year, direction, data }) {
                             initial="enter"
                             animate="visible"
                             exit="exit"
-                            className='absolute h-[15vw] w-[15vw] overflow-clip border-2 border-black-1 rounded-3xl'
+                            className='absolute h-[15vw] w-[15vw] overflow-clip border-2 border-black-1 rounded-3xl max-sm:hidden'
                         >
                             <Image className='w-full h-full object-cover' src={img.src} alt='image' width={400} height={500} />
                         </motion.div>

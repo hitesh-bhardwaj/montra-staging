@@ -54,10 +54,10 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className="h-[120vh] flex items-end px-[4vw] py-[5vw] relative z-10">
-                <div className="w-full text-white flex h-auto items-center justify-between">
-                    <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[26%] font-display">How We&apos;re Changing the Game</h2>
-                    <p className="w-1/2">Montra offers a comprehensive suite of digital products and platforms that serve both individuals and businesses. From easy-to-use apps for payments & account management to powerful tools for accessing credit, making investment, and buying insurance, we help users benefit the transition they make from Cash to instant & secure Digital Payments</p>
+            <div className="h-[120vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw]">
+                <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw]">
+                    <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[26%] font-display max-sm:w-full max-sm:text-[10vw]">How We&apos;re Changing the Game</h2>
+                    <p className="w-1/2 max-sm:w-full ">Montra offers a comprehensive suite of digital products and platforms that serve both individuals and businesses. From easy-to-use apps for payments & account management to powerful tools for accessing credit, making investment, and buying insurance, we help users benefit the transition they make from Cash to instant & secure Digital Payments</p>
                 </div>
             </div>
 

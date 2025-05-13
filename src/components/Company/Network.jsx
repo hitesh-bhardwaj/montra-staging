@@ -4,10 +4,10 @@ const Network = () => {
     return (
         <section className="px-[4vw] py-[6vw] w-full max-sm:px-[7vw] bg-[#FBFBFB]">
             <div className="flex flex-col items-center gap-[10vw] max-sm:gap-[10vw]">
-                <h2 className="font-display w-[65%] font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10.5vw] max-sm:text-left">
-                    Simple Tools. Real Impact. Lasting Change.
+                <h2 className="font-display w-[65%] font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10.5vw] max-sm:text-left max-sm:w-full">
+                Stronger Together: Join the Montra Network
                 </h2>
-                <div className="grid grid-cols-5 gap-[1vw] max-sm:grid-cols-2 max-sm:gap-[5vw]">
+                <div className="grid grid-cols-5 gap-[1vw] max-sm:flex max-sm:flex-wrap">
                     {logos.map((logo, index) => (
                         <div
                             style={{ '--hover-color': logo.color }}
