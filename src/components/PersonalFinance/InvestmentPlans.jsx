@@ -72,7 +72,7 @@ const InvestmentPlans = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className="w-screen h-full bg-white p-[4vw] max-sm:px-[7vw]" id="investmentplan">
+    <section className="w-screen h-full bg-white p-[4vw] max-sm:px-[7vw] max-sm:py-[15%]" id="investmentplan">
       <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw]">
         <div className="w-full flex flex-col gap-[1.5vw] items-center max-sm:items-start max-sm:gap-[7vw]">
           <Heading>
@@ -93,7 +93,7 @@ const InvestmentPlans = () => {
 
         <div className="w-full flex items-center justify-center gap-[2vw] pt-[4vw] px-[4vw] text-white max-sm:px-0 max-sm:justify-between">
           <div
-            className={`w-[13vw] h-[13vw]  rounded-[7vw] flex flex-col justify-center items-center  icon-1 scale-[0.3] icon-plan bg-[#35C771] max-sm:w-[40vw] max-sm:h-[40vw]`}
+            className={`w-[13vw] h-[13vw]  rounded-[7vw] flex flex-col justify-center items-center  icon-1 scale-[0.3] icon-plan bg-[#35C771] max-sm:rounded-[20vw] max-sm:w-[40vw] max-sm:h-[40vw]`}
           >
             <div className="opacity-0 icon-content-plan flex flex-col justify-center  gap-[0.5vw] items-center w-full  max-sm:gap-[3vw]">
               <div className="w-[6vw] h-[6vw] max-sm:w-[15vw] max-sm:h-[15vw] ">
@@ -111,7 +111,7 @@ const InvestmentPlans = () => {
             </div>
           </div>
           <div
-            className={`w-[13vw] h-[13vw]  rounded-[7vw] flex flex-col justify-center items-center  icon-1 scale-[0.3] icon-plan bg-[#FB2F55] max-sm:w-[40vw] max-sm:h-[40vw]`}
+            className={`w-[13vw] h-[13vw]  rounded-[7vw] flex flex-col justify-center items-center  icon-1 scale-[0.3] icon-plan bg-[#FB2F55] max-sm:w-[40vw] max-sm:rounded-[20vw] max-sm:h-[40vw]`}
           >
             <div className="opacity-0 icon-content-plan flex flex-col justify-center  gap-[0.5vw] items-center w-full max-sm:gap-[3vw]">
               <div className="w-[6vw] h-[6vw] max-sm:w-[20vw] max-sm:h-[20vw]">

@@ -142,7 +142,7 @@ const Steps = () => {
         </div>
 
         {/* Center: Images */}
-        <div className="w-2/5 relative h-[60vw] mt-[-5vw] max-sm:w-[120vw] max-sm:h-[150vw] max-sm:left-[-25%] max-sm:mt-[10vw] fadeupanim">
+        <div className="w-2/5 relative h-[60vw] mt-[-5vw] max-sm:w-[120vw] max-sm:h-[150vw] max-sm:left-[-25%] max-sm:mt-[-5vw] fadeupanim">
           {stepData.steps.map((step, i) => (
             <div
               key={i}
@@ -174,7 +174,7 @@ const Steps = () => {
           </div>
 
           {/* Steps + Restart */}
-          <div className="flex items-center gap-[1vw] max-sm:absolute max-sm:top-[22%] max-sm:z-[10]">
+          <div className="flex items-center gap-[1vw]  max-sm:z-[10]">
             {stepData.steps.map((step, i) => (
               <div
                 key={i}

@@ -47,7 +47,7 @@ const WhatWhy = ({ data, height }) => {
             </h2>
           </Heading>
           <Copy>
-            <p>{data.para}</p>
+            <p className={`${data.paraWidth}`}>{data.para}</p>
           </Copy>
         </div>
         <div className="w-full h-full flex flex-col gap-[9vw] items-center">

@@ -139,6 +139,7 @@ const whatWhyData = {
     headingWidth:"w-[85%]",
     height:"h-[90%]",
     top:"top-[33%]",
+    paraWidth:"w-[70%]",
     para:"Create and send professional invoices in multiple currencies—and let your customers pay you online, instantly. With Montra, improving your cash flow has never been easier.",
     content:[
     {

@@ -157,7 +157,7 @@ const AnimatedOpeners = ({
       className={`absolute ${left} ${top} ${classPrefix} ${z} max-sm:static ${classPrefix}-circle max-sm:h-[15vw]`}
     >
       <div
-        className={`${width} rounded-[3vw] absolute overflow-hidden max-sm:w-[90vw] `}
+        className={`${width} rounded-[3vw] absolute overflow-hidden max-sm:w-[90vw] fadeupanim `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

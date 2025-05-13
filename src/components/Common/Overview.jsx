@@ -92,7 +92,7 @@ const Overview = ({ content }) => {
                   src={content.icon2}
                   width={100}
                   height={100}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   alt="overview-icon"
                 />
               </div>
@@ -107,7 +107,7 @@ const Overview = ({ content }) => {
                   src={content.icon1}
                   width={100}
                   height={100}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   alt="overview-icon"
                 />
               </div>

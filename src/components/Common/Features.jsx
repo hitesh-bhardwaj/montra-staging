@@ -89,7 +89,7 @@ const Features = ({ featuresData }) => {
           {featuresData.features.map((item, index) => (
             <div
               key={index}
-              className={`w-[13vw] h-[13vw]  rounded-[7vw] flex flex-col justify-center items-center  icon-1 scale-[0.3] icon max-sm:w-[40vw] max-sm:h-[40vw] max-sm:rounded-[10vw]  ${item.color}`}
+              className={`w-[13vw] h-[13vw]  rounded-[7vw] flex flex-col justify-center items-center  icon-1 scale-[0.3] icon max-sm:w-[40vw] max-sm:h-[40vw] max-sm:rounded-[20vw]  ${item.color}`}
             >
               <div className="opacity-0 icon-content flex flex-col justify-center  gap-[0.5vw] items-center w-full max-sm:gap-[2.5vw]">
                 <div className="w-[6vw] h-[6vw] max-sm:w-[15vw] max-sm:h-[15vw]">

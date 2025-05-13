@@ -40,28 +40,28 @@ export default function Footer() {
                                 {/* Personal Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
                                     {personalLinks.map((link, index) => (
-                                        <li key={index} className='first:uppercase'><Link href={link.href}>{link.name}</Link></li>
+                                        <li key={index} className='first:uppercase'><Link href={link.href} className='link-line'>{link.name}</Link></li>
                                     ))}
                                 </ul>
 
                                 {/* Business Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
                                     {businessLinks.map((link, index) => (
-                                        <li key={index} className='first:uppercase'><Link href={link.href}>{link.name}</Link></li>
+                                        <li key={index} className='first:uppercase'><Link href={link.href} className='link-line'>{link.name}</Link></li>
                                     ))}
                                 </ul>
 
                                 <div className="flex flex-col justify-between items-center">
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw]'>
-                                        <Link href="/platform" className="uppercase block w-fit">Platform</Link>
-                                        <Link href="/company" className="uppercase block w-fit">Company</Link>
+                                        <Link href="/platform" className="uppercase block w-fit link-line" >Platform</Link>
+                                        <Link href="/company" className="uppercase block w-fit link-line">Company</Link>
                                     </div>
 
                                     {/* Social Media Links */}
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw] max-sm:mt-[10vw]'>
                                         {socialLinks.map((link, index) => (
-                                            <a key={index} href={link.href} aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3'>
-                                                <span>{link.name}</span>
+                                            <a key={index} href={link.href} aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3 '>
+                                                <span className='link-line'>{link.name}</span>
                                                 <div className='h-[0.8vw] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw]'>
                                                     <span className='inline-flex w-[200%] h-full duration-300 group-hover:translate-x-1/2'>
                                                         <ArrowRight className='h-[0.8vw] w-[1vw] inline-block scale-0 group-hover:scale-100 duration-300 max-sm:!w-[3.5vw] max-sm:!h-[3.5vw]' />

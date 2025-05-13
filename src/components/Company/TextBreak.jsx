@@ -17,8 +17,8 @@ export default function TextBreak() {
     offset: ['start end', 'end start'],
 })
 
-const arrowTranslateX = useTransform(scrollYProgress, [0.48, 0.70], ['-100%', '0%'])
-const arrowScale = useTransform(scrollYProgress, [0.48, 0.70], [1, 4])
+const arrowTranslateX = useTransform(scrollYProgress, [0.38, 0.70], ['-100%', '0%'])
+const arrowScale = useTransform(scrollYProgress, [0.38, 0.60], [1, 4])
 
   useEffect(() => {
     initSplitLines();
@@ -94,11 +94,11 @@ const arrowScale = useTransform(scrollYProgress, [0.48, 0.70], [1, 4])
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen mt-[-10vw] w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center"
+      className="relative h-[130vh] w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center"
     >
       {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden" /> */}
 
-      <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto ">
+      <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto mt-[-10vw]">
         <h2
           data-split="lines"
           className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw]"
