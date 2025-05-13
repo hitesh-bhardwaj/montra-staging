@@ -4,11 +4,11 @@ import Impact from "@/components/Company/Impact";
 import MontraAnimation from "@/components/Company/MontraAnimation";
 import MontraAnimationMobile from "@/components/Company/MontraAnimationMobile";
 import Network from "@/components/Company/Network";
+import SectionBreak from "@/components/Company/SectionBreak";
 import TextBreak from "@/components/Company/TextBreak";
 import Timeline from "@/components/Company/Timeline";
 import { fadeUpAnim } from "@/components/gsapAnimations";
 import FAQs from "@/components/Homepage/FAQs";
-import SectionBreak from "@/components/Homepage/SectionBreak";
 import VisionMission from "@/components/Homepage/VisionMission";
 import { useEffect, useState } from "react";
 
