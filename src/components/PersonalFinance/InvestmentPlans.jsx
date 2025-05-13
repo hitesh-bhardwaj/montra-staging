@@ -42,7 +42,7 @@ const InvestmentPlans = () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#investmentplan",
-            start: "top 10%",
+            start: "top 80%",
           },
         });
         tl.to(".icon-plan ", {

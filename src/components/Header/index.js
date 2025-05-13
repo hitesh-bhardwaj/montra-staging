@@ -159,7 +159,7 @@ export default function Header() {
               </Link>
               <span className="bg-white h-[1px] w-full"></span>
               <Link
-                href={"/Business"}
+                href={"/business"}
                 className="link-text"
                 onClick={() => {
                   setopenMenu(false);
@@ -179,7 +179,7 @@ export default function Header() {
               </Link>
               <span className="bg-white h-[1px] w-full"></span>
               <Link
-                href={"/"}
+                href={"/company"}
                 className="link-text"
                 onClick={() => {
                   setopenMenu(false);

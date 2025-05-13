@@ -49,7 +49,7 @@ export default function SectionBreak() {
                     start: '100% 50%',
                     end: '150% 20%',
                     scrub: 0.25,
-                    markers:true
+                    // markers:true
                 }
             })
                 .to(lines, {

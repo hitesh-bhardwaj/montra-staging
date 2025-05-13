@@ -31,7 +31,7 @@ const VisionMission = () => {
     }, []);
 
     return (
-        <section ref={section} className="relative h-[600vh] bg-[#fbfbfb] max-sm:h-full max-sm:px-[7vw]">
+        <section ref={section} className="relative h-[600vh] bg-[#fbfbfb] max-sm:h-full max-sm:px-[7vw] max-sm:py-[15%]">
             <div className="w-full h-screen sticky top-0 flex items-center justify-center max-sm:h-fit max-sm:static max-sm:items-start max-sm:justify-start">
                 <Heading>
                     <h2 className="text-[5.7vw] text-center font-display font-medium w-[80%] max-sm:text-[11vw] max-sm:text-left max-sm:leading-[1.2]">
@@ -144,7 +144,7 @@ function initVisionMissionMobileAnimations({ container, section }) {
                 trigger: inner,
                 start: "top 85%",
                 toggleActions: "play none none reverse",
-                markers: false,
+                // markers: false,
             },
         });
     };
