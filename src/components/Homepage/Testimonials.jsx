@@ -7,9 +7,10 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import bgImage from '../../../public/assets/images/homepage/testimonial-image.png'
 // import Swiper from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper/modules'
+import { FreeMode, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import 'swiper/css/free-mode'
 import Heading from '../Heading'
 
 if (typeof window !== 'undefined') {
@@ -59,22 +60,22 @@ export default function Testimonials() {
             yPercent: 0,
             scale: 1,
         })
-        .to(cards[2], {
-            yPercent: -100,
-            scale: 0.95,
-        }, '=-')
-        .to(cards[3], {
-            yPercent: -200,
-            scale: 0.9,
-        }, '=-')
+            .to(cards[2], {
+                yPercent: -100,
+                scale: 0.95,
+            }, '=-')
+            .to(cards[3], {
+                yPercent: -200,
+                scale: 0.9,
+            }, '=-')
         tl.to(cards[2], {
             yPercent: 0,
             scale: 1,
         }, '0.5')
-        .to(cards[3], {
-            yPercent: -100,
-            scale: 0.95,
-        }, '0.5')
+            .to(cards[3], {
+                yPercent: -100,
+                scale: 0.95,
+            }, '0.5')
         tl.to(cards[3], {
             yPercent: 0,
             scale: 1,
@@ -94,56 +95,57 @@ export default function Testimonials() {
                 className="z-0 object-cover object-top"
             />
 
-            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2] max-sm:px-[7vw] max-sm:gap-[25vw]">
+            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2] max-sm:px-[0vw] max-sm:gap-[25vw]">
                 <Heading>
-                    <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10vw] max-sm:text-left">
+                    <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10vw] max-sm:px-[7vw] max-sm:text-left">
                         Better Reviews, Happier Choices
                     </h3>
                 </Heading>
 
                 {/* Wrap all cards here */}
-                {!isMobile?
-                <div
-                    ref={cardsRef}
-                    className="flex flex-col h-full gap-[1vw]"
-                >
-                    {content.map((c, i) => (
-                        <Card
-                            key={i}
-                            img={c.img}
-                            text={c.text}
-                            name={c.name}
-                            rating={+c.rating}
-                            className="testimonial-card"
-                        />
-                    ))}
-                </div>:
-                
-                <div className='w-full h-fit'>
+                {!isMobile ?
+                    <div
+                        ref={cardsRef}
+                        className="flex flex-col h-full gap-[1vw]"
+                    >
+                        {content.map((c, i) => (
+                            <Card
+                                key={i}
+                                img={c.img}
+                                text={c.text}
+                                name={c.name}
+                                rating={+c.rating}
+                                className="testimonial-card"
+                            />
+                        ))}
+                    </div> :
 
-                <Swiper
-                    modules={[Autoplay, Pagination]}
-                    slidesPerView={1}
-                    spaceBetween={60}
-                    speed={1000}
-                    pagination={{ clickable: true }}
-                    className=""
-                >
-                    {content.map((c, index) => (
-                        <SwiperSlide className='pb-16' key={index}>
-                             <Card
-                            img={c.img}
-                            text={c.text}
-                            name={c.name}
-                            rating={+c.rating}
-                            className="testimonial-card"
-                        />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-                </div>
-            
-            }
+                    <div className='w-full h-fit'>
+
+                        <Swiper
+                            modules={[Pagination, FreeMode]}
+                            slidesPerView={1.05}
+                            spaceBetween={20}
+                            freeMode={true}
+                            speed={500}
+                            pagination={{ clickable: true }}
+                            className="max-sm:!px-[7vw]"
+                        >
+                            {content.map((c, index) => (
+                                <SwiperSlide className='pb-16' key={index}>
+                                    <Card
+                                        img={c.img}
+                                        text={c.text}
+                                        name={c.name}
+                                        rating={+c.rating}
+                                        className="testimonial-card"
+                                    />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+
+                }
             </div>
         </section>
     )
@@ -155,7 +157,7 @@ const Card = ({ img, text, name, rating, className = "" }) => {
             className={
                 `${className} border text-white font-display border-[#939393] 
          rounded-[1vw] overflow-hidden backdrop-blur-2xl bg-[#99999940] 
-         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw] max-sm:w-[85vw] max-sm:h-[110vw] max-sm:rounded-[4vw] max-sm:py-[10vw] max-sm:px-[7vw] max-sm:flex max-sm:flex-col max-sm:justify-between`
+         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw] max-sm:w-full  max-sm:h-[110vw] max-sm:rounded-[4vw] max-sm:py-[10vw] max-sm:px-[7vw] max-sm:flex max-sm:flex-col max-sm:justify-between`
             }
         >
             {/* stars */}

@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
           className={`${workSans.variable} ${standerd.variable} antialiased bg-primary`}
         >
           <ViewTransitions>
-            <main className="relative z-[1] rounded-b-[10vw]">
+            <main className="relative z-[1] bg-primary max-sm:rounded-b-[10vw] max-sm:bg-white">
               <Layout>
                 <InteractiveBackground />
                 <div style={{ position: "relative" }}>

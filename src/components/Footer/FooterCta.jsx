@@ -28,6 +28,7 @@ const FooterCta = () => {
                     start: "bottom bottom",
                     end: "bottom 10%",
                     scrub: true,
+                    invalidateOnRefresh: true,
                 }
             })
         });

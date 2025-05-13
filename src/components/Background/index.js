@@ -225,7 +225,7 @@ export default function InteractiveBackground() {
 
   return (
     <>
-      <div id='canvas-18971' style={{ position: 'sticky', top: 0, left: 0, zIndex: 0, overflow: 'hidden', marginLeft: 'auto', marginRight: 'auto'}}>
+      <div id='canvas-18971' className='max-sm:hidden' style={{ position: 'sticky', top: 0, left: 0, zIndex: 0, overflow: 'hidden', marginLeft: 'auto', marginRight: 'auto', height: '100vh'}}>
         <canvas
           ref={canvasRef}
         />

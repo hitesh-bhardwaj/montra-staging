@@ -2,43 +2,37 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { forwardRef, useEffect, useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
 import Heading from "../Heading";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useIsMobile = (breakpoint = 541) => {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < breakpoint);
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
-    }, [breakpoint]);
-
-    return isMobile;
-};
 const VisionMission = () => {
     const container = useRef(null);
     const section = useRef(null);
     const cardRefs = useRef([]);
-    const isMobile = useIsMobile();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            initVisionMissionAnimations({
-                container: container.current,
-                section: section.current,
-                cardRefs: cardRefs.current,
-            });
+            if (globalThis.innerWidth > 541) {
+                initVisionMissionAnimations({
+                    container: container.current,
+                    section: section.current,
+                    cardRefs: cardRefs.current,
+                });
+            } else {
+                initVisionMissionMobileAnimations({
+                    container: container.current,
+                    section: section.current,
+                    cardRefs: cardRefs.current,
+                });
+            }
         });
         return () => ctx.revert();
     }, []);
 
     return (
         <section ref={section} className="relative h-[600vh] bg-[#fbfbfb] max-sm:h-full max-sm:px-[7vw]">
-            <div className="w-screen h-screen sticky top-0 flex items-center justify-center max-sm:h-fit max-sm:static max-sm:items-start max-sm:justify-start">
+            <div className="w-full h-screen sticky top-0 flex items-center justify-center max-sm:h-fit max-sm:static max-sm:items-start max-sm:justify-start">
                 <Heading>
                     <h2 className="text-[5.7vw] text-center font-display font-medium w-[80%] max-sm:text-[11vw] max-sm:text-left max-sm:leading-[1.2]">
                         Building future of an Inclusive Financial Ecosystem
@@ -46,7 +40,7 @@ const VisionMission = () => {
                 </Heading>
             </div>
             <div ref={container} className="sticky top-0 z-10 h-screen w-full max-sm:static max-sm:flex max-sm:flex-col max-sm:gap-[7vw] max-sm:h-full max-sm:py-[15%]">
-                {!isMobile&&content.map((item, index) => (
+                {content.map((item, index) => (
                     <Card
                         key={index}
                         id={`card-${index + 1}`}
@@ -56,18 +50,6 @@ const VisionMission = () => {
                         children={item.children}
                     />
                 ))}
-                {
-                    isMobile&&content.map((item,index)=>(
-                          <MobileCard
-                          key={index}
-                          id={`card-${index + 1}`}
-                          ref={(el) => (cardRefs.current[index] = el)}
-                          title={item.title}
-                          description={item.description}
-                          children={item.children}
-                          />
-                    ))
-                }
             </div>
         </section>
     );
@@ -75,57 +57,115 @@ const VisionMission = () => {
 
 export default VisionMission;
 
-// Extracted animation setup function
-function initVisionMissionAnimations({ container, section, cardRefs }) {
+// // Extracted animation setup function
+// function initVisionMissionAnimations({ container, section }) {
+//     if (!container || !section) return;
+
+//     const getCardElements = (id) => {
+//         const card = container.querySelector(`#${id}`);
+//         return {
+//             front: card?.querySelector(".flip-card-front"),
+//             back: card?.querySelector(".flip-card-back"),
+//             cardEl: card,
+//         };
+//     };
+
+//     const c1 = getCardElements("card-1");
+//     const c2 = getCardElements("card-2");
+
+//     const tl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: section,
+//             start: "20% center",
+//             end: "80% center",
+//             scrub: 0.25,
+//         },
+//         defaults: { ease: "none" },
+//     });
+
+//     tl.to(c1.cardEl, { rotation: -4, duration: 0.5 })
+//         .to(c2.cardEl, { rotation: 4, duration: 0.5 }, "<")
+//         .to(c1.cardEl, { left: "34%", duration: 1.5 })
+//         .to(c2.cardEl, { left: "67%", duration: 1.5 }, "<")
+//         .to(c1.front, { rotateY: 180, duration: 5, ease: "back.inOut(2.5)" })
+//         .fromTo(c1.back, { rotateY: -180 }, { rotateY: 0, duration: 5, ease: "back.inOut(2.5)" }, "<")
+//         .to(c1.cardEl, { rotation: 0, duration: 5 }, "<")
+//         .to(c2.front, { rotateY: 180, duration: 5, delay: -3, ease: "back.out(2.5)" })
+//         .fromTo(c2.back, { rotateY: -180 }, { rotateY: 0, duration: 5, ease: "back.out(2.5)" }, "<")
+//         .to(c2.cardEl, { rotation: 0, duration: 5 }, "<");
+// }
+
+function initVisionMissionAnimations({ container, section }) {
     if (!container || !section) return;
 
-    const getCardElements = (id) => {
+    const flipCard = (id, delay = 0) => {
+        const inner = container.querySelector(`#${id} .flip-card-inner`);
         const card = container.querySelector(`#${id}`);
-        return {
-            front: card?.querySelector(".flip-card-front"),
-            back: card?.querySelector(".flip-card-back"),
-            cardEl: card,
-        };
-    };
+        if (!inner || !card) return;
 
-    const c1 = getCardElements("card-1");
-    const c2 = getCardElements("card-2");
+        const tl = gsap.timeline();
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
+        tl.to(card, { rotation: id === "card-1" ? -4 : 4, duration: 0.5 })
+          .to(card, { left: id === "card-1" ? "34%" : "67%", duration: 1.5 })
+          .to(inner, {
+              rotateY: 180,
+              duration: 1.5,
+              ease: "back.inOut(2.5)",
+              delay,
+          })
+          .to(card, { rotation: 0, duration: 0.5 }, "<");
+
+        ScrollTrigger.create({
+            animation: tl,
             trigger: section,
             start: "20% center",
             end: "80% center",
             scrub: 0.25,
-        },
-        defaults: { ease: "none" },
-    });
+        });
+    };
 
-    tl.to(c1.cardEl, { rotation: -4, duration: 0.5 })
-        .to(c2.cardEl, { rotation: 4, duration: 0.5 }, "<")
-        .to(c1.cardEl, { left: "34%", duration: 1.5 })
-        .to(c2.cardEl, { left: "67%", duration: 1.5 }, "<")
-        .to(c1.front, { rotateY: 180, duration: 5, ease: "back.inOut(2.5)" })
-        .to(c1.back, { rotateY: 0, duration: 5, ease: "back.inOut(2.5)" }, "<")
-        .to(c1.cardEl, { rotation: 0, duration: 5 }, "<")
-        .to(c2.front, { rotateY: 180, duration: 5, delay: -3, ease: "back.out(2.5)" })
-        .to(c2.back, { rotateY: 0, duration: 5, ease: "back.out(2.5)" }, "<")
-        .to(c2.cardEl, { rotation: 0, duration: 5 }, "<");
+    flipCard("card-1");
+    flipCard("card-2", 0.2);
+}
+
+function initVisionMissionMobileAnimations({ container, section }) {
+    if (!container || !section) return;
+
+    const flipCard = (id, delay = 0) => {
+        const inner = container.querySelector(`#${id} .flip-card-inner`);
+        if (!inner) return;
+
+        gsap.to(inner, {
+            rotateY: 180,
+            duration: 1.2,
+            delay,
+            ease: "power2.inOut",
+            scrollTrigger: {
+                trigger: inner,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+                markers: false,
+            },
+        });
+    };
+
+    flipCard("card-1");
+    flipCard("card-2", 0.2);
 }
 
 const Card = forwardRef(({ title, description, children, id, className = "" }, ref) => {
     return (
-        <div className={`card absolute w-[32vw] h-[75vh] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 perspective-distant ${className}`} id={id} ref={ref}>
-            <div className="card-wrapper h-full w-full absolute left-1/2 -translate-x-1/2 perspective-distant">
-                <div className="flip-card-inner w-full h-full relative perspective-distant">
-                    <div className="flip-card-front absolute perspective-distant w-full h-full backface-hidden rounded-4xl border border-gray-100 overflow-hidden bg-primary text-white p-[3vw] flex flex-col justify-between">
+        <div className={`card absolute w-[32vw] h-[75vh] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 perspective-distant max-sm:w-[85vw] max-sm:h-[100vw] max-sm:relative max-sm:translate-y-0 max-sm:translate-x-0 max-sm:left-0 max-sm:top-0 ${className}`} id={id} ref={ref}>
+            <div className="card-wrapper h-full w-full absolute left-1/2 -translate-x-1/2 perspective-distant max-sm:relative max-sm:left-0 max-sm:translate-x-0">
+                <div style={{transformStyle: "preserve-3d"}} className="flip-card-inner w-full h-full relative perspective-distant">
+                    <div className="flip-card-front absolute perspective-distant w-full h-full backface-hidden rounded-4xl border border-gray-100 overflow-hidden bg-primary text-white p-[3vw] flex flex-col justify-between max-sm:p-[7vw] max-sm:pb-[10vw]">
                         {children}
-                        <h3 className="w-[50%] font-display font-medium leading-[1.2] text-[5.7vw] text-white">{title}</h3>
+                        <h3 className="w-[50%] font-display font-medium leading-[1.2] text-[5.7vw] text-white max-sm:text-[7.5vw]">{title}</h3>
                     </div>
-                    <div className="flip-card-back absolute perspective-distant w-full h-full backface-hidden rounded-4xl border border-gray-100 overflow-hidden bg-white text-black-1 p-[3vw] flex flex-col justify-between items-start text-left rotate-y-180">
+                    <div className="flip-card-back absolute perspective-distant w-full h-full backface-hidden rounded-4xl border border-gray-100 overflow-hidden bg-white text-black-1 p-[3vw] flex flex-col justify-between items-start text-left -rotate-y-180">
                         {children}
                         <div className="space-y-[2vw] text-black-1">
-                            <h3 className="font-display font-medium leading-[1.2] text-[2.4vw] ">{title}</h3>
+                            <h3 className="font-display font-medium leading-[1.2] text-[2.4vw] max-sm:text-[7.5vw]">{title}</h3>
                             <p className="">{description}</p>
                         </div>
                     </div>
@@ -134,27 +174,7 @@ const Card = forwardRef(({ title, description, children, id, className = "" }, r
         </div>
     );
 });
-const MobileCard = forwardRef(({ title, description, children, id, className = "" }, ref) => {
-    return (
-        <div className={`card  w-[85vw] h-[100vw] perspective-distant `} id={id} ref={ref}>
-            <div className="card-wrapper h-full w-full perspective-distant ">
-                <div className="flip-card-inner w-full h-full relative perspective-distant ">
-                    <div className="flip-card-front absolute perspective-distant w-full h-full backface-hidden rounded-[7vw] border border-gray-100 overflow-hidden bg-primary text-white p-[7vw] flex flex-col justify-between pb-[10vw]">
-                        {children}
-                        <h3 className="w-[50%] font-display font-medium leading-[1.2] text-[7.5vw] text-white">{title}</h3>
-                    </div>
-                    <div className="flip-card-back absolute perspective-distant w-full h-full backface-hidden rounded-4xl border border-gray-100 overflow-hidden bg-white text-black-1 p-[3vw] flex flex-col justify-between items-start text-left rotate-y-180">
-                        {children}
-                        <div className="space-y-[2vw] text-black-1">
-                            <h3 className="font-display font-medium leading-[1.2] text-[7.5vw] ">{title}</h3>
-                            <p className="">{description}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-});
+
 const content = [
     {
         title: 'Our Vision',

@@ -8,23 +8,23 @@ export default function Footer() {
     return (
         <>
             <footer 
-                className="w-screen h-[43vw] max-sm:h-full"
+                className="w-screen h-[43vw] max-sm:h-full max-sm:rounded-t-4xl max-sm:overflow-hidden"
                 style={{clipPath: 'rect(0px 100% 100% 0px)'}}
                 >
 
-                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-[22px] z-0 max-sm:h-full max-sm:static max-sm:pb-[10vw]'>
+                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-lg z-0 max-sm:h-full max-sm:static max-sm:pb-[0vw]'>
                     {/* Top Content */}
                     <div className="flex flex-row mb-[5vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw] ">
                         {/* Logo */}
                         <div className="w-fit max-sm:w-full max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-sm:gap-[7vw]">
                             <Image className='w-[30vw] max-sm:w-[85%] mb-[2vw]' src={logo} alt="Montra Logo" width={600} height={126} />
-                            <p className="w-[30vw] mb-[2vw] text-[1vw] max-sm:text-[20px] max-sm:w-full max-sm:text-center max-sm:order-1">
+                            <p className="w-[30vw] mb-[2vw] text-[1vw] max-sm:text-lg max-sm:w-full max-sm:text-center">
                                 Montra delivers innovative products and solutions that drive
                                 financial inclusion in emerging economies - enabling a smooth shift
                                 from cash to digital payments and making credit more accessible
                                 for all.
                             </p>
-                            <p className='font-semibold'>
+                            <p className='font-semibold max-sm:font-medium'>
                                 Connect with us:{' '}
                                 <a href="mailto:info@montra.org" className="">
                                     info@montra.org

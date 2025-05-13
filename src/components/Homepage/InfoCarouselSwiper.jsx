@@ -42,13 +42,13 @@ export default function InfoCarouselSwiper() {
             </Copy>
             <Swiper
                 modules={[Pagination, FreeMode]}
-                slidesPerView={1}
-                spaceBetween={70}
+                slidesPerView={1.05}
+                spaceBetween={20}
                 speed={1000}
                 freeMode={true}
                 pagination={{ clickable: true }}
                 breakpoints={{
-                    768: { slidesPerView: 3 }
+                    768: { slidesPerView: 3, spaceBetween: 70 }
                 }}
                 className="!px-[5vw] swipe"
             >
@@ -66,7 +66,7 @@ export default function InfoCarouselSwiper() {
 const Card = ({ img, bgColor, text }) => {
     return (
         <div style={{ background: bgColor }} className="overflow-hidden group rounded-[3vw] hover:scale-[0.99] duration-500 transition-transform max-sm:rounded-[9vw]">
-            <div className='relative h-[27vw] w-full rounded-b-[3vw] overflow-hidden max-sm:h-[110vw] max-sm:rounded-[9vw]'>
+            <div className='relative h-[27vw] w-full rounded-b-[3vw] overflow-hidden max-sm:h-[100vw] max-sm:rounded-[9vw]'>
                 <Image src={img} alt='feature image' fill className='object-cover group-hover:scale-[1.05] duration-500' />
             </div>
             <p className='text-black-1 py-7 px-6'>{text}</p>

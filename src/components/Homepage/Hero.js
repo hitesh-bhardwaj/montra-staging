@@ -74,7 +74,7 @@ export default function Hero() {
   }, [lenis]);
 
   return (
-    <section id="hero" ref={heroRef} className="w-screen overflow-hidden h-screen max-sm:h-dvh">
+    <section id="hero" ref={heroRef} className="w-screen overflow-hidden h-screen">
       <div className="h-full flex items-start justify-center text-center px-[4vw] max-sm:pt-[30vw]">
         <div className="w-[70%] mx-auto space-y-[1.5vw] pt-[14vw] py-[5vw] max-sm:w-full  max-sm:space-y-[7vw] max-sm:pt-0">
           <Heading delay={4}>
