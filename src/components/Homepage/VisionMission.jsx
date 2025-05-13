@@ -45,7 +45,7 @@ const VisionMission = () => {
                     </h2>
                 </Heading>
             </div>
-            <div ref={container} className="sticky top-0 z-10 h-screen w-full max-sm:static max-sm:flex max-sm:flex-col max-sm:gap-[10vw] max-sm:h-full">
+            <div ref={container} className="sticky top-0 z-10 h-screen w-full max-sm:static max-sm:flex max-sm:flex-col max-sm:gap-[7vw] max-sm:h-full max-sm:py-[15%]">
                 {!isMobile&&content.map((item, index) => (
                     <Card
                         key={index}
@@ -136,17 +136,17 @@ const Card = forwardRef(({ title, description, children, id, className = "" }, r
 });
 const MobileCard = forwardRef(({ title, description, children, id, className = "" }, ref) => {
     return (
-        <div className={`card  w-[85vw] h-[100vw] perspective-distant  ${className}`} id={id} ref={ref}>
-            <div className="card-wrapper h-full w-full perspective-distant">
-                <div className="flip-card-inner w-full h-full relative perspective-distant">
-                    <div className="flip-card-front absolute perspective-distant w-full h-full backface-hidden rounded-4xl border border-gray-100 overflow-hidden bg-primary text-white p-[7vw] flex flex-col justify-between">
+        <div className={`card  w-[85vw] h-[100vw] perspective-distant `} id={id} ref={ref}>
+            <div className="card-wrapper h-full w-full perspective-distant ">
+                <div className="flip-card-inner w-full h-full relative perspective-distant ">
+                    <div className="flip-card-front absolute perspective-distant w-full h-full backface-hidden rounded-[7vw] border border-gray-100 overflow-hidden bg-primary text-white p-[7vw] flex flex-col justify-between pb-[10vw]">
                         {children}
-                        <h3 className="w-[50%] font-display font-medium leading-[1.2] text-[5.7vw] text-white">{title}</h3>
+                        <h3 className="w-[50%] font-display font-medium leading-[1.2] text-[7.5vw] text-white">{title}</h3>
                     </div>
                     <div className="flip-card-back absolute perspective-distant w-full h-full backface-hidden rounded-4xl border border-gray-100 overflow-hidden bg-white text-black-1 p-[3vw] flex flex-col justify-between items-start text-left rotate-y-180">
                         {children}
                         <div className="space-y-[2vw] text-black-1">
-                            <h3 className="font-display font-medium leading-[1.2] text-[2.4vw] ">{title}</h3>
+                            <h3 className="font-display font-medium leading-[1.2] text-[7.5vw] ">{title}</h3>
                             <p className="">{description}</p>
                         </div>
                     </div>
