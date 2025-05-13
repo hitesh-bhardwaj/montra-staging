@@ -6,7 +6,7 @@ import React, { useEffect, useRef } from "react";
 const MontraAnimationMobile = () => {
   return (
     <section
-      className="w-screen h-[120vh] px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full "
+      className="w-screen h-full px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full "
       id="benefits"
     >
       <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw]">

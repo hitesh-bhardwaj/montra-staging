@@ -59,8 +59,8 @@ const arrowScale = useTransform(scrollYProgress, [0.38, 0.60], [1, 4])
         .timeline({
           scrollTrigger: {
             trigger: "#text-break",
-            start: "top 70%",
-            end: "center 50%",
+            start: "60% 90%",
+            end: "bottom 50%",
             scrub: 0.25,
             // markers: true,
           },

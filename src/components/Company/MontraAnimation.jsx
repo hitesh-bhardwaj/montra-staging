@@ -180,7 +180,7 @@ const MontraAnimation = () => {
   };
 
   return (
-    <section className="w-screen h-[400vh] bg-[#fbfbfb]" id="montraanimation">
+    <section className="w-screen h-[400vh] bg-[#fbfbfb] max-sm:hidden" id="montraanimation">
       <div className="w-full h-screen px-[4vw] sticky top-0">
         <div className="w-full flex justify-center pt-[5%]">
           <h2 className="text-[5.7vw] font-display font-medium capitalize value-heading">

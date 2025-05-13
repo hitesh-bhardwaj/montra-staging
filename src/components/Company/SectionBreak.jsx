@@ -43,23 +43,13 @@ export default function SectionBreak() {
 
         }
         else {
-            gsap.to(".gradient", {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    pin: ".gradient",
-                    start: "top 85%",
-                    end: "bottom bottom",
-                    scrub: true,
-                    // markers: true,
-                },
-            });
             gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: 'top 70%',
-                    end: '80% 70%',
+                    start: '100% 50%',
+                    end: '150% 20%',
                     scrub: 0.25,
-                    // markers:true
+                    markers:true
                 }
             })
                 .to(lines, {
