@@ -15,39 +15,53 @@ const Hero = () => {
   const bgRef = useRef(null);
   const imgRef = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: bgRef.current,
-          start: "top 80%",
-          end: "70% 80%",
-          scrub: 0.25,
-        },
-      });
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            if(globalThis.innerWidth>1024){
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: bgRef.current,
+                    start: "top 80%",
+                    end: "70% 80%",
+                    scrub: 0.25,
+                }
+            });
 
-      tl.to(bgRef.current, {
-        clipPath: "ellipse(70vw 90vh at 50% 80%)",
-        duration: 2,
-        ease: "none",
-      }).to(bgRef.current, {
-        clipPath: "ellipse(100vw 100vh at 50% 80%)",
-        duration: 1,
-        ease: "none",
-      });
-    }, sectionRef);
-    return () => ctx.revert();
-  }, []);
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".fadeup", {
-        opacity: 0,
-        y: 30,
-        delay: 1,
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+            tl.to(bgRef.current, {
+                clipPath: 'ellipse(70vw 90vh at 50% 80%)',
+                duration: 2,
+                ease: "none",
+            })
+                .to(bgRef.current, {
+                    clipPath: 'ellipse(100vw 100vh at 50% 80%)',
+                    duration: 1,
+                    ease: "none",
+                })
+            } else{
+            //     const tl = gsap.timeline({
+            //         scrollTrigger: {
+            //             trigger: bgRef.current,
+            //             start: "top 60%",
+            //             end: "40% 60%",
+            //             scrub: 0.25,
+            //             // markers:true
+            //         }
+            //     });
+    
+            //     tl.to(bgRef.current, {
+            //         clipPath: 'ellipse(50vw 50vw at 50% 25%)',
+            //         ease: "none",
+            //     })
+            //         tl.to(bgRef.current, {
+            //             clipPath: 'ellipse(100vw 100vh at 50% 55%)',
+            //             duration: 1,
+            //             ease: "none",
+            //         })
+            }
+        }, sectionRef);
+    
+        return () => ctx.revert();
+    }, []);
 
   return (
     <section id="hero" className="w-screen overflow-hidden relative">
@@ -78,7 +92,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="h-[120vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw]">
-        <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw]">
+        <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw] ">
           <Heading>
             <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[26%] font-display max-sm:w-full max-sm:text-[10vw]">
               How We&apos;re Changing the Game
@@ -97,22 +111,33 @@ const Hero = () => {
         </div>
       </div>
 
-      <div
-        ref={bgRef}
-        style={{ clipPath: "ellipse(20vw 20vw at 50% 35%)" }}
-        className="w-screen h-[120vh] absolute bottom-0 left-0"
-      >
-        <Image
-          ref={imgRef}
-          src={bgImage}
-          alt="background-image"
-          placeholder="blur"
-          quality={90}
-          className="w-full h-full object-cover absolute"
-        />
-      </div>
-    </section>
-  );
-};
+            <div
+                ref={bgRef}
+                style={{ clipPath: 'ellipse(20vw 20vw at 50% 35%)' }}
+                // style={{ clipPath: 'ellipse(50vw 50vw at 50% 25%)' }}
+
+                className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden">
+                <Image
+                    ref={imgRef}
+                    src={bgImage}
+                    alt="background-image"
+                    placeholder="blur"
+                    quality={90}
+                    className="w-full h-full object-cover absolute"
+                />
+            </div>
+            <div
+                className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block">
+                <Image
+                    src={bgImage}
+                    alt="background-image"
+                    placeholder="blur"
+                    quality={90}
+                    className="w-full h-full object-cover absolute"
+                />
+            </div>
+        </section>
+    );
+}
 
 export default Hero;

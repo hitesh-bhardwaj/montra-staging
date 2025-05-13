@@ -17,7 +17,6 @@ export default function SectionBreak() {
         initSplitLines();
         const lines = sectionRef.current.querySelectorAll('.single-line')
         if (globalThis.innerWidth > 1024) {
-
             gsap.to(".gradient", {
                 scrollTrigger: {
                     trigger: sectionRef.current,

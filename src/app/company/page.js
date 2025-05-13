@@ -31,10 +31,10 @@ export default function CompanyPage() {
     return (
         <>
             <Hero />
-            <Impact />
-            <Network />
-            <VisionMission />
-            {isMobile? <MontraAnimationMobile/> : <MontraAnimation/>}
+             <Impact />
+           <Network />
+           <VisionMission />
+             {/* {isMobile ? <MontraAnimationMobile/> : <MontraAnimation/>} */}
             <TextBreak/>
             <Timeline />
             <SectionBreak />
