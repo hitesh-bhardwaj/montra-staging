@@ -12,14 +12,14 @@ const Benefits = ({ data }) => {
  
   return (
     <section
-      className="w-screen h-[120vh] px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full "
+      className="w-screen h-[120vh] px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-s "
       id="benefits"
     >
       <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw] ">
         <div className="w-full flex flex-col items-center gap-[1.5vw] max-sm:gap-[4vw] max-sm:items-start">
           <Heading>
             <h2
-              className={`text-[5.7vw] font-display font-medium leading-[1.3] capitalize max-sm:text-[11vw] max-sm:w-full max-sm:leading-[1.2] ${data.headingWidth}`}
+              className={`text-[5.7vw] font-display font-medium leading-[1.2] capitalize max-sm:text-[11vw] max-sm:w-full max-sm:leading-[1.2] ${data.headingWidth}`}
               dangerouslySetInnerHTML={{ __html: data.heading }}
             />
           </Heading>

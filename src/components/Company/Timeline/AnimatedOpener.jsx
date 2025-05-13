@@ -69,20 +69,20 @@ const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, cont
   };
 
   return (
-    <span className={`relative ${left} ${top} ${classPrefix} ${z}  max-sm:static max-sm:h-[15vw]`}>
+    <div className={`relative ${left} ${top} ${classPrefix} ${z}  max-sm:static max-sm:h-[15vw] max-sm:w-full ${classPrefix}-circle `}>
       <div
-        className={`w-[20vw] rounded-[3vw] absolute overflow-hidden max-sm:w-[90vw]`}
+        className={`w-[20vw] rounded-[3vw] absolute overflow-hidden max-sm:w-[90vw] `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className={`w-[20vw] h-[4.2vw] border-[2px] relative border-black overflow-hidden rounded-[3vw]  circle ${classPrefix}-circle max-sm:w-[85vw] max-sm:h-[15vw] max-sm:rounded-[9vw]`}>
+        <div className={`w-[20vw] h-[4.2vw] border-[2px] relative border-black overflow-hidden rounded-[3vw]  circle ${classPrefix}-circle max-sm:w-[85vw] max-sm:h-[15.5vw] max-sm:rounded-[9vw]`}>
           <div className={`w-fit bg-black rounded-[3vw] flex h-full z-[-1] ${classPrefix}-container`}>
             <span
               style={{ backgroundColor: color }}
-              className={` h-[4vw] w-[4vw] rounded-full flex justify-center items-center max-sm:w-[14.5vw] max-sm:h-[14.5vw]`} />
+              className={` h-[4vw] w-[4vw] rounded-full flex justify-center items-center max-sm:w-[14.5vw] max-sm:h-[14.5vw]`} ><Image width={100} height={100} src={"/assets/icons/arrow-right.svg"} alt='arrow' className='w-[1.5vw] h-[1.5vw] object-contain max-sm:w-[4.5vw] max-sm:h-[4.5vw]' /></span>
             <div
               style={{ backgroundColor: color }}
-              className={`h-full rounded-[3vw] w-[20vw] text-black-1 px-[2vw] flex flex-col items-start py-[1vw] capitalize relative gap-[1vw] max-sm:w-[85vw] max-sm:rounded-[6vw]`}>
+              className={`h-full rounded-[3vw] w-[20vw] text-black-1 px-[2vw] flex flex-col items-start py-[1vw] capitalize relative gap-[1vw] max-sm:w-[85vw] max-sm:rounded-[9vw]`}>
               <div className="h-[3vw] max-sm:text-[4.5vw] max-sm:h-fit max-sm:pt-[3.5vw] max-sm:pl-[3vw]">
                 {title}
               </div> 
@@ -99,9 +99,9 @@ const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, cont
             </div>
           </div>
         </div>
-        <div className={`absolute top-[30%] left-[5%] max-sm:w-[7vw] max-sm:h-[7vw] ${classPrefix}-alpha`}><Image width={100} height={100} src={"/assets/icons/arrow-right.svg"} alt='arrow' className='w-[1.5vw] h-[1.5vw] object-contain max-sm:w-[4.5vw] max-sm:h-[4.5vw]' /></div>
+      
       </div>
-    </span>
+    </div>
   );
 };
 

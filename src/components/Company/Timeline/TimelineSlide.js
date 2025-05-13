@@ -21,7 +21,7 @@ export default function TimelineSlide({ year, direction, data }) {
 
     return (
         <motion.div
-            className="absolute w-full h-full flex flex-col items-center justify-center px-4 max-sm:flex max-sm:flex-col"
+            className="absolute w-full h-full flex flex-col items-center justify-center px-4 max-sm:flex max-sm:flex-col max-sm:static max-sm:px-0"
             custom={direction}
             variants={slideVariants}
             initial="enter"
@@ -29,7 +29,7 @@ export default function TimelineSlide({ year, direction, data }) {
             exit="exit"
         >
             {/* Content Cards */}
-            <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 relative w-full h-full max-sm:flex max-sm:flex-col  max-sm:mt-[70vw]">
+            <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 relative w-full h-full max-sm:flex max-sm:flex-col  max-sm:mt-[10vw]">
                 <AnimatePresence mode="popLayout">
                     {data.cards.map((card, i) => (
                         <motion.div
@@ -39,7 +39,7 @@ export default function TimelineSlide({ year, direction, data }) {
                             initial="enter"
                             animate="visible"
                             exit="exit"
-                            className={`absolute ${card.left} ${card.top} ${card.z} max-sm:static max-sm:h-[15vw] max-sm:w-[85vw]`}
+                            className={`absolute ${card.left} ${card.top} ${card.z} max-sm:static max-sm:h-fit max-sm:w-[85vw]`}
                         >
                             <AnimatedOpeners
                                 letter={card.letter}

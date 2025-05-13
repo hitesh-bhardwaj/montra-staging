@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Heading from "../Heading";
 
 const About = () => {
   return (
@@ -8,10 +9,12 @@ const About = () => {
       id="about"
     >
       <div className="flex w-full flex-col items-center gap-[5vw] max-sm:items-start max-sm:gap-[7vw]">
+        <Heading>
         <h2 className="text-[5.7vw] font-display font-medium w-[55%] leading-[1.3] text-center max-sm:w-[90%] max-sm:text-left max-sm:text-[11vw]">
           Simple, Transparent & Fair Pricing
         </h2>
-        <div className="w-[68vw] h-[28vw] relative max-sm:h-[200vw] max-sm:w-[200vw] max-sm:left-[-50%] max-sm:absolute max-sm:top-[22%]">
+        </Heading>
+        <div className="w-[68vw] h-[28vw] relative max-sm:h-[200vw] max-sm:w-[200vw] max-sm:left-[-50%] max-sm:absolute max-sm:top-[22%] fadeupanim">
           <Image
             src={"/assets/images/business-tapnpay/about-ticket.png"}
             alt=""

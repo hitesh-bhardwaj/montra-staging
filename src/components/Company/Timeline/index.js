@@ -60,15 +60,15 @@ export default function Timeline() {
 
   return (
     <section
-      className="relative w-full h-screen overflow-hidden bg-primary text-white timeline-section"
+      className="relative w-full h-screen overflow-hidden bg-primary text-white timeline-section max-sm:h-full max-sm:px-[7vw]"
       id="timeline"
     >
-      <div className="absolute top-[5%] text-center left-1/2 -translate-x-1/2 w-full max-sm:w-[80%]">
+      <div className="absolute top-[5%] text-center left-1/2 -translate-x-1/2 w-full max-sm:w-[80%] max-sm:static max-sm:translate-x-0 max-sm:text-left">
         <h3 className="leading-[1.2] font-medium font-display text-[5.7vw] max-sm:text-[10.5vw]">
           Our Story from Vision to Impact
         </h3>
       </div>
-      <div className="absolute z-[100] bottom-[7%] left-1/2 -translate-x-1/2 flex space-x-[2vw] max-sm:top-[20%] max-sm:bottom-auto max-sm:items-center">
+      <div className="absolute z-[100] bottom-[7%] left-1/2 -translate-x-1/2 flex space-x-[2vw] max-sm:static max-sm:translate-x-0 max-sm:items-center max-sm:justify-center max-sm:pt-[15%]">
         <button
           onClick={prevSlide}
           className="border w-[3.2vw] h-[3.2vw] flex items-center justify-center border-white hover:bg-white hover:text-primary text-white duration-300 rounded-full max-sm:w-[12vw] max-sm:h-[12vw] "
@@ -78,7 +78,7 @@ export default function Timeline() {
         </button>
         {/* Year Selector */}
         <div
-          className="transform flex gap-2 bg-white/20 rounded-full  "
+          className="transform flex gap-2 bg-white/20 rounded-full "
           onMouseLeave={() => setHoveredIndex(null)}
         >
           {years.map((year, index) => {
@@ -122,6 +122,7 @@ export default function Timeline() {
       </div>
 
       {/* Slide Content */}
+      <div className="max-sm:pb-[15%]">
       <MarqueeBackground year={years[activeIndex]} />
       <AnimatePresence custom={direction} mode="wait">
         <TimelineSlide
@@ -131,6 +132,8 @@ export default function Timeline() {
           data={timelineData[activeIndex]}
         />
       </AnimatePresence>
+
+      </div>
     </section>
   );
 }
