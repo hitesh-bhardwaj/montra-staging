@@ -59,8 +59,8 @@ const arrowScale = useTransform(scrollYProgress, [0.38, 0.60], [1, 4])
         .timeline({
           scrollTrigger: {
             trigger: "#text-break",
-            start: "top center",
-            end: "center 20%",
+            start: "top 70%",
+            end: "center 50%",
             scrub: 0.25,
             // markers: true,
           },
@@ -82,7 +82,7 @@ const arrowScale = useTransform(scrollYProgress, [0.38, 0.60], [1, 4])
   return (
     <section
       ref={sectionRef}
-      className="relative h-[130vh] w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center" id="text-break"
+      className="relative h-[130vh] w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%]  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center" id="text-break"
     >
       {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden" /> */}
 

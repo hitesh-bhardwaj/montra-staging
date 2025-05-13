@@ -39,7 +39,7 @@ const VisionMission = () => {
                     </h2>
                 </Heading>
             </div>
-            <div ref={container} className="sticky top-0 z-10 h-screen w-full max-sm:static max-sm:flex max-sm:flex-col max-sm:gap-[7vw] max-sm:h-full max-sm:py-[15%]">
+            <div ref={container} className="sticky top-0 z-10 h-screen w-full max-sm:static max-sm:flex max-sm:flex-col max-sm:gap-[7vw] max-sm:h-full max-sm:pt-[5%] max-sm:pb-[15%]">
                 {content.map((item, index) => (
                     <Card
                         key={index}
