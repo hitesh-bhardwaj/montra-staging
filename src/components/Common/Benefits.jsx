@@ -15,8 +15,8 @@ const Benefits = ({ data }) => {
       className="w-screen h-[120vh] px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-md:h-full max-md:pb-[15%]  "
       id="benefits"
     >
-      <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw] max-md:gap-[7vw] ">
-        <div className="w-full flex flex-col items-center gap-[1.5vw] max-sm:gap-[4vw] max-sm:items-start max-md:gap-[3vw]">
+      <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw] max-md:gap-[7vw]  ">
+        <div className="w-full flex flex-col items-center gap-[1.5vw] max-sm:gap-[4vw] max-sm:items-start max-md:gap-[3vw] ">
           <Heading>
             <h2
               className={`text-[5.7vw] font-display font-medium leading-[1.2] capitalize max-sm:text-[11vw] max-sm:w-full max-sm:leading-[1.2] max-md:text-[7.5vw] max-md:w-full ${data.headingWidth}`}
@@ -24,12 +24,12 @@ const Benefits = ({ data }) => {
             />
           </Heading>
           <Copy>
-          <p className={`${data.paraWidth} max-sm:w-[80%]`}>{data.para}</p>
+          <p className={`${data.paraWidth} max-sm:w-[80%] max-md:w-[90%]`}>{data.para}</p>
 
           </Copy>
         </div>
         <div
-          className={`flex w-full h-full relative text-[1.2vw] font-medium max-sm:flex-col max-sm:gap-[6vw] max-md:flex-col max-md:gap-[4vw] max-md:pl-[3vw]  `}
+          className={`flex w-full h-full relative text-[1.2vw] font-medium max-sm:flex-col max-sm:gap-[6vw] max-md:flex-col max-md:gap-[4vw] max-md:pl-[12vw] max-sm:pl-0  `}
         >
           {data.cards.map((item) => (
             <AnimatedOpeners
@@ -114,7 +114,7 @@ const AnimatedOpeners = ({
 
         tlRef.current = tl;
       } 
-      if(globalThis.innerWidth>541){
+      if(globalThis.innerWidth>541&&globalThis.innerWidth<1024){
         const tl = gsap.timeline({ paused: true });
 
         tl.to(`.${classPrefix}-container`, {
@@ -140,7 +140,7 @@ const AnimatedOpeners = ({
         tlRef.current = tl;
 
       }
-      else {
+      if(globalThis.innerWidth<541) {
         const tl = gsap.timeline({ paused: true });
 
         tl.to(`.${classPrefix}-container`, {
@@ -208,10 +208,10 @@ const AnimatedOpeners = ({
             <div
               className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[4vw] max-sm:gap-[10vw] max-md:gap-[7vw]  max-md:px-[5vw] ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] max-md:w-[70vw] max-md:rounded-[5vw] `}
             >
-              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4vw] max-sm:h-fit max-md:text-[3.2vw] max-md:mt-[1.2vw] ">
+              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4vw] max-sm:h-fit max-md:text-[3.2vw] max-sm:mt-[0.5vw] max-md:mt-[1.2vw] ">
                 {title}
               </div>
-              <div className="absolute right-[8%] cursor-pointer max-md:pt-[1.5vw]">
+              <div className="absolute right-[8%] cursor-pointer max-md:pt-[1.5vw] max-sm:pt-0">
                 <Image
                   className="w-[2vw] h-[2vw] object-contain invert max-sm:w-[7vw] max-sm:h-[7vw] max-md:w-[4.5vw] max-md:h-[4.5vw]"
                   alt="cross"

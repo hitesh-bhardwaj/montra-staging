@@ -46,7 +46,7 @@ const Rewards = ({rewardsData}) => {
   }, []);
 
   return (
-<section ref={sectionRef} className="h-full w-screen bg-white relative max-sm:px-[7vw] max-sm:py-[10%]">
+<section ref={sectionRef} className="h-full w-screen bg-white relative max-sm:px-[7vw] max-sm:py-[10%] max-md:py-[7%]">
   <div className="w-full text-center flex flex-col gap-[2vw] pb-[5%] items-center justify-center max-sm:items-start max-sm:text-left max-sm:gap-[4vw] max-md:gap-[7vw]">
     <Heading>
     <h2
@@ -61,7 +61,7 @@ const Rewards = ({rewardsData}) => {
         <div
           key={index}
           ref={(el) => (cards.current[index] = el)}
-          className="flex flex-col gap-[10vw]  group max-md:w-[45%] max-md:gap-[6vw]"
+          className="flex flex-col gap-[10vw]  group max-md:w-[45%] max-md:gap-[6vw] max-sm:w-full"
         >
           <div className="flex flex-col gap-[1.5vw] h-[15vw] max-sm:h-fit max-sm:gap-[6vw] max-md:h-full max-md:gap-[3vw]">
           <Image

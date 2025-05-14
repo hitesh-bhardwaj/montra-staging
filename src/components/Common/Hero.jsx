@@ -57,7 +57,7 @@ export default function Hero({
     >
       <div className="h-full flex flex-col items-center justify-center text-center px-[4vw]">
         <div
-          className={` mx-auto space-y-[1.5vw] py-[5vw] max-sm:w-full  max-sm:space-y-[7vw] max-md:space-y-[5vw] ${
+          className={` mx-auto space-y-[1.5vw] py-[5vw] max-sm:w-full  max-sm:space-y-[7vw] max-md:space-y-[5vw] max-md:w-[90%] ${
             titleWidth ? titleWidth : "w-[90%]"
           } `}
         >

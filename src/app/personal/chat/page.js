@@ -72,7 +72,7 @@ const overviewContent = {
   subcontent2:"Real-time updates"
 }
 const  benefitsData = {
-  heading:"Send & Receive Money—Right Inside Your Chat",
+  heading:"Send & Receive Money— Right Inside Your Chat",
   para:"No need to switch screens or apps. With Montra Chat, payments happen as naturally as conversations.",
   headingWidth:"w-[80%]",
   paraWidth:"w-[40%]",

@@ -131,18 +131,18 @@ const Steps = () => {
 
   return (
     <section className="w-screen h-screen bg-primary px-[4vw] py-[5%] text-white max-sm:py-[15%] max-sm:px-[7vw] relative max-sm:h-fit overflow-hidden">
-      <div className="flex h-full items-start max-sm:flex-col">
+      <div className="flex h-full items-start max-sm:flex-col max-md:flex-col">
         {/* Left: Heading */}
-        <div className="w-2/5 flex items-center max-sm:w-[70%]">
+        <div className="w-2/5 flex items-center max-sm:w-[70%] max-md:w-[45%]">
           <Heading>
-            <h2 className="text-[5vw] font-display leading-[1.1] max-sm:text-[11vw] max-sm:font-medium">
+            <h2 className="text-[5vw] font-display leading-[1.1] max-sm:text-[11vw] max-sm:font-medium max-md:text-[7.5vw] max-md:leading-[1.2] max-md:font-medium">
               {stepData.heading}
             </h2>
           </Heading>
         </div>
 
         {/* Center: Images */}
-        <div className="w-2/5 relative h-[60vw] mt-[-5vw] max-sm:w-[120vw] max-sm:h-[150vw] max-sm:left-[-25%] max-sm:mt-[-5vw] fadeupanim">
+        <div className="w-2/5 relative h-[60vw] mt-[-5vw] max-sm:w-[120vw] max-sm:h-[150vw] max-sm:left-[-25%] max-sm:mt-[-5vw] fadeupanim max-md:h-[190vw] max-md:w-[150vw] max-md:left-[-30%] max-md:mt-0">
           {stepData.steps.map((step, i) => (
             <div
               key={i}
@@ -154,7 +154,7 @@ const Steps = () => {
                 src={step.img}
                 alt={step.title}
                 layout="fill"
-                className="max-sm:w-full max-sm:h-full max-sm:object-cover"
+                className="max-sm:w-full max-sm:h-full max-sm:object-cover max-md:object-cover"
                 objectFit="cover"
               />
             </div>
@@ -162,15 +162,15 @@ const Steps = () => {
         </div>
 
         {/* Right: Text + Circles + Tags */}
-        <div className="w-3/5 flex flex-col h-full justify-end items-start gap-[10vw] pl-[5vw] pb-[3vw] max-sm:w-full max-sm:pl-0 max-sm:justify-center max-sm:h-fit fadeupanim">
+        <div className="w-3/5 flex flex-col h-full justify-end items-start gap-[10vw] pl-[5vw] pb-[3vw] max-sm:w-full max-sm:pl-0 max-sm:justify-center max-sm:h-fit fadeupanim max-md:w-full max-md:justify-center">
           {/* Title & Paragraph */}
           <div>
             
             <h3
               ref={titleRef}
-              className="text-[3.4vw] font-display mb-2 max-sm:text-[8.5vw] max-sm:font-medium"
+              className="text-[3.4vw] font-display mb-2 max-sm:text-[8.5vw] max-sm:font-medium max-md:text-[5.5vw]"
             />
-            <p ref={paraRef} className="w-[70%] max-sm:w-[90%]" />
+            <p ref={paraRef} className="w-[70%] max-sm:w-[90%] " />
           </div>
 
           {/* Steps + Restart */}
@@ -178,10 +178,10 @@ const Steps = () => {
             {stepData.steps.map((step, i) => (
               <div
                 key={i}
-                className="flex items-center gap-[1vw] cursor-pointer max-sm:gap-[3vw]"
+                className="flex items-center gap-[1vw] cursor-pointer max-sm:gap-[3vw] max-md:gap-[2vw]"
                 onClick={() => playStep(i)}
               >
-                <div className="relative w-[2.5vw] h-[2.5vw] border border-white rounded-full max-sm:w-[10vw] max-sm:h-[10vw]">
+                <div className="relative w-[2.5vw] h-[2.5vw] border border-white rounded-full max-sm:w-[10vw] max-sm:h-[10vw] max-md:w-[7vw] max-md:h-[7vw]">
                   <span className="absolute inset-0 flex justify-center items-center font-display">
                     {step.number}
                   </span>

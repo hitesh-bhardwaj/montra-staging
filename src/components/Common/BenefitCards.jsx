@@ -145,7 +145,7 @@ const BenefitCards = ({ cardData }) => {
             delay: -0.5,
           });
       } 
-      if(globalThis.innerWidth>541){
+      if(globalThis.innerWidth>541&&globalThis.innerWidth<1024){
         const cards = document.querySelectorAll(".card-inner");
         cards.forEach((card) => {
           gsap.to(card, {
@@ -161,7 +161,7 @@ const BenefitCards = ({ cardData }) => {
           });
         });
       }
-      else {
+      if(globalThis.innerWidth<541) {
         const cards = document.querySelectorAll(".card-inner");
         cards.forEach((card) => {
           gsap.to(card, {
@@ -200,10 +200,10 @@ const BenefitCards = ({ cardData }) => {
         </Copy>
       </div>
 
-      <div className=" h-fit w-full sticky top-[20%] pb-[10%] pt-[20%] max-sm:static max-sm:flex max-sm:flex-col max-sm:gap-[7vw] max-sm:pb-0 max-md:static max-md:flex  max-md:gap-y-[7vw] max-md:pb-0 max-md:flex-wrap max-md:justify-between max-md:px-[5vw] max-md:pt-0">
+      <div className=" h-fit w-full sticky top-[20%] pb-[10%] pt-[20%] max-sm:static max-sm:flex max-sm:flex-col max-sm:gap-[7vw] max-sm:pb-0 max-md:static max-md:flex  max-md:gap-y-[7vw] max-md:pb-0 max-md:flex-wrap max-md:justify-between max-md:px-[5vw] max-sm:px-0 max-sm:pt-[10vw] max-md:pt-0">
         <div
           ref={card1Ref}
-          className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw] max-md:w-[43vw] max-md:h-[70vw] max-md:static"
+          className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw] max-md:w-[43vw] max-md:h-[60vw] max-md:static"
         >
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
@@ -230,7 +230,7 @@ const BenefitCards = ({ cardData }) => {
         </div>
         <div
           ref={card2Ref}
-          className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw] max-md:w-[43vw] max-md:h-[70vw] max-md:static"
+          className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw] max-md:w-[43vw] max-md:h-[60vw] max-md:static"
         >
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
@@ -257,7 +257,7 @@ const BenefitCards = ({ cardData }) => {
         </div>
         <div
           ref={card3Ref}
-          className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw] max-md:w-[43vw] max-md:h-[70vw] max-md:static"
+          className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw] max-md:w-[43vw] max-md:h-[60vw] max-md:static"
         >
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">
@@ -284,7 +284,7 @@ const BenefitCards = ({ cardData }) => {
         </div>
         <div
           ref={card4Ref}
-          className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw] max-md:w-[43vw] max-md:h-[70vw] max-md:static"
+          className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw] max-md:w-[43vw] max-md:h-[60vw] max-md:static"
         >
           <div className="card-inner">
             <div className="card-front bg-primary text-white border-[1.5px] border-white">

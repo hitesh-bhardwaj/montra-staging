@@ -95,11 +95,11 @@ export default function Control({ allowMultiple = false }) {
 
   return (
     <section className="px-[7vw] py-[6vw] w-full ">
-      <div className="flex flex-col items-center gap-[15vw]">
-        <h2 className="font-display font-medium text-[11.5vw] leading-[1.2]">
+      <div className="flex flex-col items-center max-sm:gap-[15vw] max-md:gap-[7vw]">
+        <h2 className="font-display font-medium max-sm:text-[11.5vw] leading-[1.2] max-md:text-[7.5vw]">
           Take Control of Your Money. Effortlessly.
         </h2>
-        <div className="w-full space-y-[2vw]">
+        <div className="w-full max-sm:space-y-[2vw] max-md:space-y-0">
           {controlContent.map((f, i) => (
             <Accordion
               key={i}
@@ -132,15 +132,15 @@ function Accordion({
   color,
 }) {
   return (
-    <div className="w-full group overflow-hidden">
+    <div className="w-full group overflow-hidden ">
       <div className="w-full mr-auto bg-white ">
         <button
           onClick={onToggle}
           aria-expanded={isOpen}
-          className="relative cursor-pointer w-full h-full py-[5vw] flex items-center justify-between"
+          className="relative cursor-pointer w-full h-full max-sm:py-[5vw] flex items-center justify-between max-md:py-[2.5vw]"
         >
           <div className="w-full flex gap-[6vw] items-center">
-            <div className="w-[15vw] h-[15vw]">
+            <div className="max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw]">
               <Image
                 src={src}
                 alt="perosnal-icons"
@@ -150,7 +150,7 @@ function Accordion({
               />
             </div>
             <div
-              className={`text-[11vw] font-display uppercase font-bold ${color}`}
+              className={`max-sm:text-[11vw] font-display uppercase font-bold max-md:text-[5.5vw] ${color}`}
             >
               {iconText}
             </div>
@@ -168,7 +168,7 @@ function Accordion({
               className="overflow-hidden"
             >
               <div className="w-full flex flex-col gap-[5vw] pb-[10vw]">
-                <div className="w-[80%] h-[100vw]">
+                <div className="w-[80%] max-sm:h-[100vw] max-md:h-[50vw]">
                   <Image
                     src={contentImg}
                     alt=""
@@ -177,7 +177,7 @@ function Accordion({
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="text-[7.5vw] capitalize font-medium font-display">
+                <h3 className="max-sm:text-[7.5vw] capitalize font-medium font-display max-md:text-[5.5vw]">
                   {contenTitle}
                 </h3>
                 <ul className="list-disc pl-[4vw] space-y-[2vw] mb-[2vw]">

@@ -82,14 +82,14 @@ export default function SectionBreak({content, width}) {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:px-[7vw] bg-[#FBFBFB] max-md:h-[70vh]"
+      className="relative h-screen w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:px-[7vw] bg-[#FBFBFB] max-md:h-[70vh] max-sm:h-screen"
     >
       {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden"/> */}
 
-      <div className={`h-full flex items-center justify-center relative text-center mx-auto max-sm:w-full ${width}`}>
+      <div className={`h-full flex items-center justify-center relative text-center mx-auto max-sm:w-full max-md:w-[90%] ${width}`}>
         <h2
           data-split="lines"
-          className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw]"
+          className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw]"
         >
           {content}
         </h2>

@@ -46,7 +46,7 @@ const FooterCta = () => {
                         <div className="w-[65%] flex flex-col items-center text-center max-sm:w-full max-md:w-full">
                             <div className="max-md:w-[75%] max-sm:w-full">
                             <Heading>
-                                <h6 className="text-[5.7vw] font-medium leading-[1.2] font-display max-sm:text-[11.5vw] capitalize ">Take charge of your financial future</h6>
+                                <h6 className="text-[5.7vw] font-medium leading-[1.2] font-display max-sm:text-[11.5vw] capitalize max-md:text-[7.5vw] ">Take charge of your financial future</h6>
                                 <p className="mt-[2vw] max-sm:mt-[4vw]">It only takes few seconds to get started.</p>
                             </Heading>
                             </div>

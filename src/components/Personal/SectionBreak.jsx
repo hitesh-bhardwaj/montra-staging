@@ -47,17 +47,25 @@ export default function SectionBreak() {
           ease: "none",
         });
     }
-    else{
-      gsap.to(".gradient", {
+    if(globalThis.innerWidth>541&&globalThis.innerWidth<1024){
+      gsap
+      .timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          pin: ".gradient",
-          start: "top 90%",
-          end: "bottom bottom",
-          scrub: true,
-          // markers: true,
+          start: "top bottom",
+          end: "center bottom",
+          scrub: 0.25,
+            // markers:true,
         },
+      })
+      .to(lines, {
+        maskPosition: "0% 100%",
+        stagger: 0.1,
+        ease: "none",
       });
+    }
+    if(globalThis.innerWidth<541){
+    
       
       gsap
         .timeline({
@@ -88,9 +96,9 @@ export default function SectionBreak() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen mt-[-10vw] w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB]"
+      className="relative h-screen mt-[-10vw] w-screen  px-[4vw] overflow-hidden max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB] max-md:mt-0 max-md:h-[70vh] max-sm:h-screen"
     >
-      <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden"/>
+      <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden max-md:hidden"/>
 
       <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto">
         <h2

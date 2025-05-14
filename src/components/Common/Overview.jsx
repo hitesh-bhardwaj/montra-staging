@@ -114,7 +114,7 @@ const Overview = ({ content }) => {
               <div className="capitalize">{content.subcontent2}</div>
             </div>
           </div>
-          <div className="w-[45%] h-[60vw] justify-center flex flex-col  space-y-[3vw] max-sm:w-full max-sm:h-full max-sm:gap-[10vw] max-sm:items-start max-md:w-full max-md:h-full">
+          <div className="w-[45%] h-[60vw] justify-center flex flex-col  space-y-[3vw] max-sm:w-full max-sm:h-full max-sm:gap-[10vw] max-sm:items-start max-md:w-full max-md:h-full max-md:space-y-[7vw]">
             <div className="w-full flex flex-col gap-[2vw] pr-[3vw] max-sm:gap-[7vw] max-md:gap-[4vw]">
               <Heading>
                 <h2 className="text-[3.2vw] leading-[1.2] font-display font-medium capitalize max-sm:text-[7.5vw] max-sm:leading-[1.4] max-md:text-[5.5vw]">
@@ -133,18 +133,18 @@ const Overview = ({ content }) => {
               ))}
             </div>
             {content.cards?.length > 0 && (
-              <div className="flex items-start gap-[1vw] max-sm:flex-wrap max-sm:justify-between max-sm:gap-y-[6vw] max-sm:gap-0  max-sm:w-full fadeupanim">
+              <div className="flex items-start gap-[1vw] max-sm:flex-wrap max-sm:justify-between max-sm:gap-y-[6vw] max-sm:gap-0  max-sm:w-full fadeupanim max-md:gap-[2vw]">
                 {content.cards.map((item, index) => (
                   <div
                     key={index}
-                    className={`h-[9vw] w-[9vw] p-[1vw] px-[1.5vw] rounded-[1.5vw] flex flex-col gap-[0.5vw] items-center justify-center max-sm:w-[27vw] max-sm:h-[27vw] max-sm:rounded-[6vw] max-sm:gap-[2vw] ${item.color}`}
+                    className={`h-[9vw] w-[9vw] p-[1vw] px-[1.5vw] rounded-[1.5vw] flex flex-col gap-[0.5vw] items-center justify-center max-sm:w-[27vw] max-sm:h-[27vw] max-sm:rounded-[6vw] max-sm:gap-[2vw] max-md:w-[25vw] max-md:h-[25vw] max-md:gap-[2vw] max-md:rounded-[4vw] ${item.color}`}
                   >
                     <Image
                       src={item.icon}
                       height={90}
                       width={90}
                       alt={item.text}
-                      className="h-[5vw] w-[5vw] max-sm:w-[10vw] max-sm:h-[10vw]"
+                      className="h-[5vw] w-[5vw] max-sm:w-[10vw] max-sm:h-[10vw] max-md:w-[8vw] max-md:h-[8vw]"
                     />
                     <p className="text-white font-medium">{item.text}</p>
                   </div>
