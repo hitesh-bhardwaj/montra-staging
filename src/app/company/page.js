@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 
 export default function CompanyPage() {
   fadeUpAnim();
-  const useIsMobile = (breakpoint = 541) => {
+  const useIsMobile = (breakpoint = 1024) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {

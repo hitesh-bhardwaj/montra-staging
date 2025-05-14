@@ -76,16 +76,17 @@ const Hero = () => {
 
   return (
     <section id="hero" className="w-screen overflow-hidden relative">
-      <div className="h-full flex items-center justify-center text-center px-[4vw]">
-        <div className="w-[80%] mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw]">
+      <div className="h-full flex items-center justify-center text-center px-[4vw] max-md:flex-col">
+        <div className="w-[80%] mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw] max-md:pt-[30vw] max-md:w-full max-md:space-y-[5vw]">
           <Heading delay={0.5}>
-            <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11.5vw] max-sm:leading-[1.2]">
+            <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11.5vw] max-sm:leading-[1.2] max-sm:w-full max-md:text-[8vw] max-md:w-[70%] max-md:mx-auto">
               <span className="text-primary">Montra: </span>Building future of
               an Inclusive Financial Ecosystem
             </h1>
           </Heading>
+         
           <Copy delay={1}>
-            <p className="font-body w-[95%] mx-auto heroAnim max-sm:w-[95%]">
+            <p className="font-body w-[95%] mx-auto heroAnim max-sm:w-[95%] max-md:w-[70%]">
               Montra is reimagining how people and businesses in emerging
               markets access, manage, and grow their money—without the
               complexity of traditional banks. We make finance simple,
@@ -102,15 +103,15 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="h-[120vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw]">
-        <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw] ">
+      <div className="h-[120vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw] max-md:pb-[10vw]">
+        <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw] max-md:flex-col max-md:items-start max-md:gap-[7vw]">
           <Heading>
-            <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[26%] font-display max-sm:w-full max-sm:text-[10vw]">
+            <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[26%] font-display max-sm:w-full max-sm:text-[10vw] max-md:text-[5.5vw] max-md:w-[80%]">
               How We&apos;re Changing the Game
             </h2>
           </Heading>
           <Copy>
-            <p className="w-1/2 max-sm:w-full ">
+            <p className="w-1/2 max-sm:w-full max-md:w-[80%]">
               Montra offers a comprehensive suite of digital products and
               platforms that serve both individuals and businesses. From
               easy-to-use apps for payments & account management to powerful
@@ -127,7 +128,7 @@ const Hero = () => {
                 style={{ clipPath: 'ellipse(20vw 20vw at 50% 35%)' }}
                 // style={{ clipPath: 'ellipse(50vw 50vw at 50% 25%)' }}
 
-                className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden">
+                className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden">
                 <Image
                     ref={imgRef}
                     src={bgImage}
@@ -138,7 +139,7 @@ const Hero = () => {
                 />
             </div>
             <div
-                className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block">
+                className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block max-md:block">
                 <Image
                     src={bgImage}
                     alt="background-image"

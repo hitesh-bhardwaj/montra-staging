@@ -89,7 +89,7 @@ const arrowScale = useTransform(scrollYProgress, [0.38, 0.60], [1, 4])
       <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto mt-[-10vw] max-sm:mt-0 max-sm:pt-[70vw]">
         <h2
           data-split="lines"
-          className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw]"
+          className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw]"
         >
           We're not just building products—we're building possibilities.
         </h2>

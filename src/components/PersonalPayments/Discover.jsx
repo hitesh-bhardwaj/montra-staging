@@ -34,7 +34,7 @@ const Discover = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className="px-[6vw] py-[4vw] h-full w-screen bg-white max-sm:px-0 max-sm:py-0 max-md:px-0 max-md:py-0 max-md:mt-0">
+    <section className="px-[6vw] py-[4vw] h-full w-screen bg-white max-sm:px-0 max-sm:py-0 max-md:px-0 max-md:pt-[10vw] ">
       <div className="flex items-center relative  justify-between  overflow-hidden bg-primary rounded-[4vw] py-[4vw] px-[2vw] pl-[4vw] max-sm:flex-col max-sm:px-0 max-sm:py-0 max-sm:pl-0 max-sm:rounded-none max-sm:gap-[12vw] max-sm:pt-[10%]  max-md:flex max-md:flex-col max-md:px-0 max-md:py-0 max-md:pt-[10vw] max-md:pl-0 max-md:border-none max-md:gap-[10vw]  max-md:rounded-[0vw]">
         <div className="w-[70%] max-sm:py-[4vw] max-sm:w-full max-sm:px-[7vw] ">
           <Heading>

@@ -6,16 +6,16 @@ import React, { useEffect, useRef } from "react";
 const MontraAnimationMobile = () => {
   return (
     <section
-      className="w-screen h-full px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full "
+      className="w-screen h-full px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-md:h-full"
       id="benefits"
     >
-      <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw]">
-        <div className="w-full flex flex-col items-center gap-[1.5vw] max-sm:gap-[4vw] max-sm:items-start">
+      <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw] max-md:gap-[8vw]">
+        <div className="w-full flex flex-col items-center gap-[1.5vw] max-sm:gap-[4vw] max-sm:items-start max-md:items-start">
           <h2
-            className={`text-[5.7vw] font-display font-medium leading-[1.3] capitalize max-sm:text-[11vw] max-sm:w-full max-sm:leading-[1.2] `}>Our Core Values</h2>
+            className={`text-[5.7vw] font-display font-medium leading-[1.3] capitalize max-sm:text-[11vw] max-sm:w-full max-sm:leading-[1.2] max-md:text-[7.5vw] max-md:w-full max-sm:mb-[5vw]`}>Our Core Values</h2>
         </div>
         <div
-          className={`flex w-full h-full relative text-[1.2vw] font-medium max-sm:flex-col max-sm:gap-[6vw] `}
+          className={`flex w-full h-full relative text-[1.2vw] font-medium max-sm:flex-col max-sm:gap-[6vw] max-md:flex-col max-md:gap-[4vw] max-md:pl-[8vw] max-sm:pl-0`}
         >
           {data.map((item) => (
             <AnimatedOpeners
@@ -51,7 +51,6 @@ const AnimatedOpeners = ({
     const ctx = gsap.context(() => {
       if (globalThis.innerWidth > 1024) {
         const tl = gsap.timeline({ paused: true });
-
         tl.to(`.${classPrefix}-container`, {
           x: "-4vw",
           ease: "power3.inOut",
@@ -73,9 +72,32 @@ const AnimatedOpeners = ({
           });
 
         tlRef.current = tl;
-      } else {
+      }if(globalThis.innerWidth>541 && globalThis.innerWidth<1024){
         const tl = gsap.timeline({ paused: true });
+        tl.to(`.${classPrefix}-container`, {
+          x: "-11vw",
+          ease: "power3.inOut",
+        })
+          .to(`.${classPrefix}-alpha`, {
+            x: "-11vw",
+            delay: -0.5,
+            ease: "power3.inOut",
+          })
+          .to(`.${classPrefix}-circle`, {
+            height: "50vw",
+            ease: "power3.inOut",
+            delay: -0.3,
+          })
+          .to(`.${classPrefix}-content`, {
+            opacity: 1,
+            delay: -0.3,
+            ease: "power3.inOut",
+          });
 
+        tlRef.current = tl;
+      }
+       if(globalThis.innerWidth<541) {
+        const tl = gsap.timeline({ paused: true });
         tl.to(`.${classPrefix}-container`, {
           x: "-15vw",
           ease: "power3.inOut",
@@ -113,33 +135,33 @@ const AnimatedOpeners = ({
 
   return (
     <span
-      className={`absolute  ${classPrefix}  max-sm:static ${classPrefix}-circle max-sm:h-[15vw]`}
+      className={`absolute  ${classPrefix}  max-sm:static ${classPrefix}-circle max-sm:h-[15vw] max-md:h-[10vw] max-md:static`}
     >
       <div
-        className={`rounded-[3vw] absolute overflow-hidden max-sm:w-[90vw]  `}
+        className={`rounded-[3vw] absolute overflow-hidden max-sm:w-[90vw] max-md:w-[80vw] `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <div
-          className={` h-[4.2vw] border-[1.5px] relative border-black overflow-hidden rounded-[3vw]  circle ${classPrefix}-circle max-sm:w-[85vw] max-sm:h-[15vw] max-sm:rounded-[9vw]`}
+          className={` h-[4.2vw] border-[1.5px] relative border-black overflow-hidden rounded-[3vw]  circle ${classPrefix}-circle max-sm:w-[85vw] max-sm:h-[15vw] max-sm:rounded-[9vw] max-md:w-[75vw] max-md:rounded-[9vw] max-md:h-[10vw]`}
         >
           <div
-            className={`w-fit bg-black rounded-[3vw] flex h-full z-[-1] ${classPrefix}-container`}
+            className={`w-fit bg-black rounded-[3vw] flex h-full z-[-1] ${classPrefix}-container max-md:rounded-[11vw] max-sm:rounded-[9vw]`}
           >
             <span
-              className={`rounded-full flex justify-center max-sm:text-[4.5vw] capitalize font-medium items-center ${color} max-sm:w-[14.5vw] max-sm:h-[14.5vw]`}
+              className={`rounded-full flex justify-center max-sm:text-[4.5vw] capitalize font-medium items-center ${color} max-sm:w-[14.5vw] max-sm:h-[14.5vw] max-md:w-[10vw] max-md:h-[10vw] max-md:text-[3.5vw]`}
             >
             {classPrefix}
             </span>
             <div
-              className={`h-full rounded-[3vw] px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[4vw] max-sm:gap-[10vw]  ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] `}
+              className={`h-full rounded-[3vw] px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[4vw] max-sm:gap-[10vw]  ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] max-md:py-[2vw] max-md:px-[4vw] max-md:gap-[5vw] max-md:w-[77vw] max-md:rounded-[10vw]`}
             >
-              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4.5vw] max-sm:h-fit  !font-medium">
+              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4.5vw] max-sm:h-fit  !font-medium max-md:h-fit max-md:text-[3.5vw] max-md:px-[2vw] max-sm:px-0">
                 {title}
               </div>
               <div className="absolute right-[8%] cursor-pointer">
                 <Image
-                  className="w-[2vw] h-[2vw] object-contain invert max-sm:w-[7vw] max-sm:h-[7vw]"
+                  className="w-[2vw] h-[2vw] object-contain invert max-sm:w-[7vw] max-sm:h-[7vw] max-md:w-[5vw] max-md:h-[5vw]"
                   alt="cross"
                   src="/assets/icons/cross-icon.svg"
                   width={50}
@@ -148,7 +170,7 @@ const AnimatedOpeners = ({
                 />
               </div>
               <div
-                className={`text-[1.2vw] ${classPrefix}-content font-normal text-left opacity-0 max-sm:text-[4.5vw]`}
+                className={`text-[1.2vw] ${classPrefix}-content font-normal text-left opacity-0 max-sm:text-[4.5vw] max-md:text-[3.5vw]`}
               >
                 {content}
               </div>

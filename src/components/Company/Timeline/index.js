@@ -33,7 +33,7 @@ export default function Timeline() {
     setDirection(index > activeIndex ? 1 : -1);
     setActiveIndex(index);
   };
-  const useIsMobile = (breakpoint = 541) => {
+  const useIsMobile = (breakpoint = 1024) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -61,26 +61,24 @@ export default function Timeline() {
 
   return (
     <section
-      className="relative w-full h-screen overflow-hidden bg-primary text-white timeline-section max-sm:h-full max-sm:px-[7vw]"
+      className="relative w-full h-screen overflow-hidden bg-primary text-white timeline-section max-sm:h-full max-sm:px-[7vw]  max-md:px-[5vw] max-md:h-full max-md:flex max-md:flex-col max-md:gap-[5vw] max-md:py-[7%]"
       id="timeline"
     >
-      <div className="absolute top-[5%] text-center left-1/2 -translate-x-1/2 w-full max-sm:w-[80%] max-sm:static max-sm:translate-x-0 max-sm:text-left">
+      <div className="absolute top-[5%] text-center left-1/2 -translate-x-1/2 w-full max-sm:w-[100%] max-sm:static max-sm:translate-x-0 max-sm:text-left max-md:w-full max-md:text-center max-md:static max-md:translate-x-0 max-md:order-0">
       <Heading>
-        <h3 className="leading-[1.2] font-medium font-display text-[5.7vw] max-sm:text-[10.5vw]">
+        <h3 className="leading-[1.2] font-medium font-display text-[5.7vw] max-sm:text-[10.5vw] max-md:text-[7.5vw] max-md:w-[70%] max-md:text-center max-md:mx-auto max-sm:w-full max-sm:text-center max-sm:mx-auto ">
           Our Story from Vision to Impact
         </h3>
-
       </Heading>
       </div>
-      <div className="absolute z-[100] bottom-[7%] left-1/2 -translate-x-1/2 flex space-x-[2vw] max-sm:static max-sm:translate-x-0 max-sm:items-center max-sm:justify-center max-sm:pt-[15%]">
+      <div className="absolute z-[100] bottom-[7%] left-1/2 -translate-x-1/2 flex space-x-[2vw] max-sm:static max-sm:translate-x-0 max-sm:items-center max-sm:justify-center max-sm:pt-[15%] max-md:items-center max-md:justify-center max-md:static max-md:translate-x-0  max-md:order-2  max-sm:order-1">
         <button
           onClick={prevSlide}
-          className="border w-[3.2vw] h-[3.2vw] flex items-center justify-center border-white hover:bg-white hover:text-primary text-white duration-300 rounded-full max-sm:w-[12vw] max-sm:h-[12vw] "
+          className="border w-[3.2vw] h-[3.2vw] flex items-center justify-center border-white hover:bg-white hover:text-primary text-white duration-300 rounded-full max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[8vw] max-md:h-[8vw]"
           aria-label="previous slide"
         >
-          <ArrowRight className="w-4 h-4 rotate-180" />
+          <ArrowRight className="w-4 h-4 rotate-180 max-sm:h-4 max-sm:w-4 max-md:h-[3vw] max-md:w-[3vw]" />
         </button>
-        {/* Year Selector */}
         <div
           className="transform flex gap-2 bg-white/20 rounded-full "
           onMouseLeave={() => setHoveredIndex(null)}
@@ -89,9 +87,7 @@ export default function Timeline() {
             const isActive = activeIndex === index;
             const isHovered = hoveredIndex === index;
             const shouldShowPill = hoveredIndex !== null ? isHovered : isActive;
-
             if (isMobile && !isActive) return null;
-
             return (
               <div
                 key={year}
@@ -108,7 +104,7 @@ export default function Timeline() {
                 )}
                 <button
                   onClick={() => goToSlide(index)}
-                  className={`relative z-10 px-[1.5vw] font-display text-[1vw] py-[0.8vw] rounded-full transition-colors duration-300 max-sm:text-[6.5vw] max-sm:px-[10vw]  max-sm:py-[2.5vw]`}
+                  className={`relative z-10 px-[1.5vw] font-display text-[1vw] py-[0.8vw] rounded-full transition-colors duration-300 max-sm:text-[6.5vw] max-sm:px-[10vw]  max-sm:py-[2.5vw] max-md:text-[4.5vw] max-md:px-[10vw] max-md:py-[2vw] max-sm:w-[35vw] max-md:w-[30vw]`}
                 >
                   {year}
                 </button>
@@ -118,15 +114,13 @@ export default function Timeline() {
         </div>
         <button
           onClick={nextSlide}
-          className="border w-[3.2vw] h-[3.2vw] flex items-center justify-center border-white hover:bg-white hover:text-primary text-white duration-300 rounded-full max-sm:w-[12vw] max-sm:h-[12vw]"
+          className="border w-[3.2vw] h-[3.2vw] flex items-center justify-center border-white hover:bg-white hover:text-primary text-white duration-300 rounded-full max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[8vw] max-md:h-[8vw]"
           aria-label="next slide"
         >
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-4 h-4 max-sm:h-4 max-sm:w-4 max-md:h-[3vw] max-md:w-[3vw]" />
         </button>
       </div>
-
-      {/* Slide Content */}
-      <div className="max-sm:pb-[15%]">
+      <div className="max-sm:pb-[15%] max-md:h-full max-md:w-full max-md:order-1 max-sm:order-2">
       <MarqueeBackground year={years[activeIndex]} />
       <AnimatePresence custom={direction} mode="wait">
         <TimelineSlide
