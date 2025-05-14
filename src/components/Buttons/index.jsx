@@ -3,13 +3,13 @@ import { AppleIcon, ArrowRight, GooglePlay } from "./icons"
 
 export const AppleStoreButton = () => {
     return (
-        <button aria-label="Download from Apple Store" className="font-display text-white flex w-[16vw] justify-start items-center gap-4 py-[0.6vw] px-[2vw] rounded-full overflow-hidden bg-primary border border-primary max-sm:min-w-[65vw] max-sm:w-fit max-sm:px-[10vw] max-sm:py-[3vw]">
+        <button aria-label="Download from Apple Store" className="font-display text-white flex w-[16vw] justify-start items-center gap-4 py-[0.6vw] px-[2vw] rounded-full overflow-hidden bg-primary border border-primary max-sm:min-w-[65vw] max-sm:w-fit max-sm:px-[10vw] max-sm:py-[3vw] max-md:min-w-[30vw] max-md:py-[1.5vw] max-md:px-[4vw]">
             <div>
-                <AppleIcon className="w-[2.2vw] h-[2.4vw] mt-[-0.5vw] max-sm:w-[8vw] max-sm:h-[8vw]" />
+                <AppleIcon className="w-[2.2vw] h-[2.4vw] mt-[-0.5vw] max-sm:w-[8vw] max-sm:h-[8vw] max-md:w-[4.5vw] max-md:h-[4.5vw]" />
             </div>
             <div className="text-left flex flex-col">
-                <span className="text-[0.83vw] h-[0.8vw] max-sm:text-[3vw] max-sm:h-auto">Download on the</span>
-                <p className="text-[1.5vw] leading-8 max-sm:text-[6vw] max-sm:leading-[1.2]">App Store</p>
+                <span className="text-[0.83vw] h-[0.8vw] max-sm:text-[3vw] max-sm:h-auto max-md:text-[2vw] max-md:h-[2.5vw]">Download on the</span>
+                <p className="text-[1.5vw] leading-8 max-sm:text-[6vw] max-sm:leading-[1.2] max-md:text-[3.2vw] max-md:leading-[1.2]">App Store</p>
             </div>
         </button>
     )
@@ -17,13 +17,13 @@ export const AppleStoreButton = () => {
 
 export const PlayStoreButton = () => {
     return (
-        <button aria-label="Download from Play Store" className="font-display text-black-1 flex w-[16vw] justify-start items-center gap-4 py-[0.6vw] px-[2vw] rounded-full overflow-hidden bg-white border border-gray-100 max-sm:min-w-[65vw] max-sm:w-fit max-sm:px-[10vw] max-sm:py-[3vw]">
+        <button aria-label="Download from Play Store" className="font-display text-black-1 flex w-[16vw] justify-start items-center gap-4 py-[0.6vw] px-[2vw] rounded-full overflow-hidden bg-white border border-gray-100 max-sm:min-w-[65vw] max-sm:w-fit max-sm:px-[10vw] max-sm:py-[3vw] max-md:min-w-[30vw] max-md:w-fit max-md:py-[1.5vw] max-md:px-[4vw]">
             <div>
-                <GooglePlay className="w-[2.2vw] h-[2.2vw] max-sm:w-[8vw] max-sm:h-[8vw]" />
+                <GooglePlay className="w-[2.2vw] h-[2.2vw] max-sm:w-[8vw] max-sm:h-[8vw] max-md:w-[4.5vw] max-md:h-[4.5vw]" />
             </div>
             <div className="text-left flex flex-col">
-                <span className="text-[0.83vw] h-[0.8vw] max-sm:text-[3vw] max-sm:h-auto">Get it on</span>
-                <p className="text-[1.5vw] leading-8 max-sm:text-[6vw] max-sm:leading-[1.2]">Google Play</p>
+                <span className="text-[0.83vw] h-[0.8vw] max-sm:text-[3vw] max-sm:h-auto max-md:text-[2vw] max-md:h-[2.5vw]">Get it on</span>
+                <p className="text-[1.5vw] leading-8 max-sm:text-[6vw] max-sm:leading-[1.2] max-md:text-[3.2vw] max-md:leading-[1.2]">Google Play</p>
             </div>
         </button>
     )

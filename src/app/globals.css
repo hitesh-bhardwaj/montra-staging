@@ -213,6 +213,21 @@ li .link-line::after {
 }
 
 
+@media screen and (max-width: 1024px) {
+  #hero{
+    margin-top: 0;
+  }
+
+  body{
+    font-size: 2.5vw !important;
+  }
+  .card-front,
+  .card-back {
+  border-radius: 9vw;
+  padding: 7vw;
+  padding-bottom: 10vw;
+  }
+}
 @media screen and (max-width: 541px) {
   #hero{
     margin-top: 0;

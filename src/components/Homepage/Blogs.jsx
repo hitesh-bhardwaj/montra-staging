@@ -24,7 +24,7 @@ export default function Blogs() {
 
                 <div className="flex items-start max-sm:flex-col">
                     <div className="w-1/2 grid grid-cols-2 gap-6 max-sm:flex max-sm:flex-col max-sm:w-full">
-                        <div className={`fadeupanim rounded-[3vw] overflow-hidden bg-white border border-gray hover:bg-primary hover:text-white w-full col-span-2 flex justify-between group max-sm:flex-col max-sm:w-full max-sm:rounded-[5.5vw] ${active == 0 ? "!bg-primary !text-white" : "bg-white"}`} onMouseEnter={() => {
+                        <div className={`fadeupanim rounded-[3vw] overflow-hidden bg-white border border-gray hover:bg-primary hover:text-white w-full col-span-2 flex justify-between group max-sm:flex-col max-sm:w-full max-sm:rounded-[5.5vw] transition-colors duration-500 ease-in-out ${active == 0 ? "!bg-primary !text-white" : "bg-white"}`} onMouseEnter={() => {
                             setActive(0)
                         }}>
                             <div className="overflow-hidden w-[25.6vw] h-full max-sm:w-full max-sm:h-[55vw]">
@@ -39,7 +39,7 @@ export default function Blogs() {
                             </div>
                         </div>
 
-                        <div className={`fadeupanim rounded-[3vw] overflow-hidden bg-white border border-gray hover:bg-primary hover:text-white w-full col-span-1 flex flex-col justify-between group max-sm:flex-col max-sm:w-full max-sm:rounded-[5.5vw] ${active == 1 ? "!bg-primary !text-white" : "bg-white"}`} onMouseEnter={() => {
+                        <div className={`fadeupanim rounded-[3vw] overflow-hidden bg-white border border-gray hover:bg-primary hover:text-white w-full col-span-1 flex flex-col justify-between group max-sm:flex-col max-sm:w-full max-sm:rounded-[5.5vw] transition-colors duration-500 ease-in-out ${active == 1 ? "!bg-primary !text-white" : "bg-white"}`} onMouseEnter={() => {
                             setActive(1)
                         }}>
                             <div className="overflow-hidden w-full h-[12vw] max-sm:w-full max-sm:h-[55vw]">
@@ -54,7 +54,7 @@ export default function Blogs() {
                             </div>
                         </div>
 
-                        <div className={`fadeupanim rounded-[3vw] overflow-hidden bg-white border border-gray hover:bg-primary hover:text-white w-full col-span-1 flex flex-col justify-between group max-sm:flex-col max-sm:w-full max-sm:rounded-[5.5vw] ${active == 2 ? "!bg-primary !text-white" : "bg-white"}`} onMouseEnter={() => {
+                        <div className={`fadeupanim rounded-[3vw] overflow-hidden bg-white border border-gray hover:bg-primary hover:text-white w-full col-span-1 flex flex-col justify-between group max-sm:flex-col max-sm:w-full max-sm:rounded-[5.5vw] transition-colors duration-500 ease-in-out ${active == 2 ? "!bg-primary !text-white" : "bg-white"}`} onMouseEnter={() => {
                             setActive(2)
                         }}>
                             <div className="overflow-hidden w-full h-[12vw]  max-sm:h-[55vw]">

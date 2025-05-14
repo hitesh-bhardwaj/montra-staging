@@ -75,7 +75,7 @@ const overviewContent = {
   subcontent2:"Pay faster. Live smarter"
 }
 const  benefitsData = {
-  heading:"The Future of Payments—Right at Your Fingertips",
+  heading:"The Future of Payments— Right at Your Fingertips",
   para:"It’s inventory management made simple, efficient, and built for growth.",
   headingWidth:"w-[80%]",
   paraWidth:"w-[70%]",
@@ -90,7 +90,7 @@ const  benefitsData = {
 const cardData ={
   heading:"Turn Your Phone Into a POS with Tap & Pay on Montra App",
   subHeading:"Offer everyday banking services to your community—all from your shop.",
-  headingWidth:"w-[80%]",
+  headingWidth:"w-[75%]",
   icon1:"/assets/images/business-tapnpay/card-icon-1.svg",
   icon2:"/assets/images/business-tapnpay/card-icon-2.svg",
   icon3:"/assets/images/business-tapnpay/card-icon-1.svg",

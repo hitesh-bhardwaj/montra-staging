@@ -224,7 +224,7 @@ const benefitsData2 = {
     {
       classPrefix: "b",
       left: "!left-[20%]",
-      top: "!top-[55%]",
+      top: "!top-[75%]",
       color: "bg-[#FEFFA7]",
       content:
         "Stay covered without the hassle. Renew your existing policies in just a few taps.",

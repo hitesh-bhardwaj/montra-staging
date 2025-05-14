@@ -337,7 +337,7 @@ const Control = () => {
         </div>
       </div>
 
-      <div className="w-screen h-[40vw] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4%] right-0 ">
+      <div className="w-screen h-[40vw] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4%] right-0  z-[200]">
         <div className="w-full h-full relative flex justify-end ">
           <div className="w-[75%] h-[40vw] relative bottom-content flex justify-end opacity-0 pr-[4vw]">
             {sections.map((sectionKey) => (

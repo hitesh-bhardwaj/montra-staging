@@ -57,7 +57,7 @@ export default function Hero({
     >
       <div className="h-full flex flex-col items-center justify-center text-center px-[4vw]">
         <div
-          className={` mx-auto space-y-[1.2vw] py-[5vw] max-sm:w-full  max-sm:space-y-[7vw] ${
+          className={` mx-auto space-y-[1.5vw] py-[5vw] max-sm:w-full  max-sm:space-y-[7vw] max-md:space-y-[5vw] ${
             titleWidth ? titleWidth : "w-[90%]"
           } `}
         >
@@ -65,7 +65,7 @@ export default function Hero({
 
           <h1
            
-            className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11vw] max-sm:leading-[1.2]"
+            className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11vw] max-sm:leading-[1.2] max-md:text-[8vw] max-md:leading-[1.2]"
           >
             <span className="text-primary">{primaryHeading}</span>
             {heading}
@@ -81,7 +81,7 @@ export default function Hero({
               {content}
             </p>
           </Copy>
-          <div className=" flex gap-6 justify-center mt-[4vw] max-sm:flex-col max-sm:items-center max-sm:gap-5">
+          <div className=" flex gap-6 justify-center mt-[4vw] max-sm:flex-col max-sm:items-center max-sm:gap-5 max-md:mt-[7vw]">
             <div className="heroFadeUp">
               <AppleStoreButton />
             </div>
@@ -90,7 +90,7 @@ export default function Hero({
             </div>
           </div>
         </div>
-        <div className="breadcrumbs w-full flex items-start justify-start text-[1.15vw] text-[#D2D2D2] !tracking-normal font-display max-sm:text-[4vw] absolute left-[5%] bottom-[8%] max-sm:bottom-[5%] ">
+        <div className="breadcrumbs w-full flex items-start justify-start text-[1.15vw] text-[#D2D2D2] !tracking-normal font-display max-sm:text-[4vw] absolute left-[5%] bottom-[8%] max-sm:bottom-[5%] max-md:text-[2.2vw] ">
           <div className="flex gap-3  ">
             <Link href="/" className="">
               Home

@@ -12,7 +12,7 @@ export default function Footer() {
                 style={{clipPath: 'rect(0px 100% 100% 0px)'}}
                 >
 
-                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-lg z-0 max-sm:h-full max-sm:static max-sm:pb-[0vw]'>
+                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-lg z-0 max-sm:h-full max-sm:static max-sm:pb-[0vw] max-md:static'>
                     {/* Top Content */}
                     <div className="flex flex-row mb-[5vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw] ">
                         {/* Logo */}

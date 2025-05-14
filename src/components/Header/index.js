@@ -105,7 +105,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-[100] transform transition-transform duration-300 w-screen   ${hidden ? "-translate-y-full" : "translate-y-0"
         }`}
     >
-      <div id="header-container" className="px-[4vw] py-[1vw] header w-full max-sm:pt-[5vw] max-sm:px-[7vw]">
+      <div id="header-container" className="px-[4vw] py-[1vw] header w-full max-sm:pt-[5vw] max-sm:px-[7vw] max-md:pt-[5vw]">
         <div className="flex justify-between items-center w-full ">
           <a onClick={(e) => {
             e.preventDefault();
@@ -114,7 +114,7 @@ export default function Header() {
             <Image
               src={montraLogo}
               alt="montra logo"
-              className={`w-[10vw] max-sm:w-[30vw] logo`}
+              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw]`}
             />
           </a>
           <Navbar navigateTo={navigateTo} />
