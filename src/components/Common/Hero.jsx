@@ -74,7 +74,7 @@ export default function Hero({
           </Heading>
           <Copy delay={0.5}>
             <p
-              className={`font-body mx-auto heroAnim max-sm:w-[95%] ${
+              className={`font-body mx-auto heroAnim max-sm:w-[95%] max-md:w-[90%] ${
                 paraWidth ? paraWidth : "w-[75%]"
               }`}
             >

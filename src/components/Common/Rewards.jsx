@@ -47,31 +47,31 @@ const Rewards = ({rewardsData}) => {
 
   return (
 <section ref={sectionRef} className="h-full w-screen bg-white relative max-sm:px-[7vw] max-sm:py-[10%]">
-  <div className="w-full text-center flex flex-col gap-[2vw] pb-[5%] items-center justify-center max-sm:items-start max-sm:text-left max-sm:gap-[4vw]">
+  <div className="w-full text-center flex flex-col gap-[2vw] pb-[5%] items-center justify-center max-sm:items-start max-sm:text-left max-sm:gap-[4vw] max-md:gap-[7vw]">
     <Heading>
     <h2
-      className={`text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:leading-[1.2] max-sm:text-[11vw] max-sm:w-full ${rewardsData.headingWidth}`}
+      className={`text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:leading-[1.2] max-sm:text-[11vw] max-sm:w-full max-md:text-[7.5vw] ${rewardsData.headingWidth}`}
     >
       {rewardsData.heading}
     </h2>
 
     </Heading>
-    <div className={`px-[4vw] py-[4vw] grid  gap-[5vw] w-full max-sm:flex max-sm:flex-col max-sm:px-0 max-sm:gap-[10vw] max-sm:mt-[10vw] ${rewardsData.gridCols}`}>
+    <div className={`px-[4vw] py-[4vw] grid  gap-[5vw] w-full max-sm:flex max-sm:flex-col max-sm:px-0 max-sm:gap-[10vw] max-sm:mt-[10vw] max-md:flex max-md:flex-wrap max-md:justify-between max-md:gap-y-[7vw] max-md:px-[5vw] ${rewardsData.gridCols}`}>
       {rewardsData.cards.map((item, index) => (
         <div
           key={index}
           ref={(el) => (cards.current[index] = el)}
-          className="flex flex-col gap-[10vw]  group"
+          className="flex flex-col gap-[10vw]  group max-md:w-[45%] max-md:gap-[6vw]"
         >
-          <div className="flex flex-col gap-[1.5vw] h-[15vw] max-sm:h-fit max-sm:gap-[6vw]">
+          <div className="flex flex-col gap-[1.5vw] h-[15vw] max-sm:h-fit max-sm:gap-[6vw] max-md:h-full max-md:gap-[3vw]">
           <Image
             src={item.icon}
             height={40}
             width={40}
-            className="w-[3vw] h-[3vw] object-contain max-sm:w-[10vw] max-sm:h-[10vw]"
+            className="w-[3vw] h-[3vw] object-contain max-sm:w-[10vw] max-sm:h-[10vw] max-md:w-[7vw] max-md:h-[7vw]"
             alt="montra-account-statement"
           />
-          <p className="font-medium text-start w-[80%] max-sm:text-[5vw]">{item.title}</p>
+          <p className="font-medium text-start w-[80%] max-sm:text-[5vw] max-md:text-[3vw]">{item.title}</p>
           <p className="text-start">{item.para}</p>
           </div>
           <div className="relative w-full h-[1px] bg-[#CBCBCB] overflow-hidden">

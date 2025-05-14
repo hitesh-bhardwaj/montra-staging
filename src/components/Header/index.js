@@ -119,7 +119,7 @@ export default function Header() {
           </a>
           <Navbar navigateTo={navigateTo} />
           <div
-            className="hidden  max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150]"
+            className="hidden  max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[6.5vw] max-md:gap-[1vw]"
             onClick={() => {
               setopenMenu((prev) => !prev);
             }}
@@ -135,7 +135,7 @@ export default function Header() {
               }`}
           >
             <div
-              className={` w-[70vw] h-[110vw] py-[10%] overflow-hidden rounded-[7vw] bg-primary text-white flex flex-col gap-[3vw] px-[7vw] font-display font-medium text-[5.5vw] absolute top-[8%] z-[160] right-[10%] transition-all duration-300 origin-top-right ${openMenu ? "scale-100 opacity-100" : "scale-0 opacity-0"
+              className={` w-[70vw] h-[110vw] py-[10%] overflow-hidden rounded-[7vw] bg-primary text-white flex flex-col gap-[3vw] px-[7vw] font-display font-medium text-[5.5vw] absolute top-[8%] z-[160] right-[10%] transition-all duration-300 origin-top-right max-md:w-[60vw] max-md:h-[80vw] max-md:text-[4vw] ${openMenu ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
             >
               <Link

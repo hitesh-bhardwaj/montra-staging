@@ -46,7 +46,7 @@ export default function Navbar({navigateTo}) {
 
   return (
     <nav
-      className="bg-black rounded-full h-[4.1vw] px-1.5 py-1.5 max-sm:hidden">
+      className="bg-black rounded-full h-[4.1vw] px-1.5 py-1.5 max-sm:hidden max-md:hidden">
       <div
         ref={navRef}
         className="relative w-full inline-flex h-full items-center overflow-hidden"
