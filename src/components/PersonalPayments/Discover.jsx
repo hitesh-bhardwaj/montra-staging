@@ -34,21 +34,21 @@ const Discover = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className="px-[6vw] py-[4vw] h-full w-screen bg-white max-sm:px-0 max-sm:py-0">
-      <div className="flex items-center relative  justify-between  overflow-hidden bg-primary rounded-[4vw] py-[4vw] px-[2vw] pl-[4vw] max-sm:flex-col max-sm:px-0 max-sm:py-0 max-sm:pl-0 max-sm:rounded-none max-sm:gap-[12vw] max-sm:pt-[10%] fadeupanim">
-        <div className="w-[70%] max-sm:py-[4vw] max-sm:w-full max-sm:px-[7vw]">
+    <section className="px-[6vw] py-[4vw] h-full w-screen bg-white max-sm:px-0 max-sm:py-0 max-md:px-0 max-md:py-0 max-md:mt-[40vw]">
+      <div className="flex items-center relative  justify-between  overflow-hidden bg-primary rounded-[4vw] py-[4vw] px-[2vw] pl-[4vw] max-sm:flex-col max-sm:px-0 max-sm:py-0 max-sm:pl-0 max-sm:rounded-none max-sm:gap-[12vw] max-sm:pt-[10%]  max-md:flex max-md:flex-col max-md:px-0 max-md:py-0 max-md:pt-[10vw] max-md:pl-0 max-md:border-none max-md:gap-[10vw]  max-md:rounded-[0vw]">
+        <div className="w-[70%] max-sm:py-[4vw] max-sm:w-full max-sm:px-[7vw] ">
           <Heading>
-            <h2 className="text-[5.7vw] font-display font-medium  w-[80%] capitalize leading-[1.15] text-white max-sm:text-[11vw] max-sm:leading-[1.2]">
+            <h2 className="text-[5.7vw] font-display font-medium  w-[80%] capitalize leading-[1.15] text-white max-sm:text-[11vw] max-sm:leading-[1.2] max-md:text-[7.5vw] max-md:w-full">
               Discover More on Montra Marketplace
             </h2>
           </Heading>
         </div>
-        <div className="w-screen h-[8vw] absolute  left-0 top-0 z-[10] bg-gradient-to-t from-transparent via-primary/50 to-primary max-sm:top-[35%] max-sm:h-[25vw] " />
-        <div className="w-screen h-[8vw] absolute  left-0 bottom-0 z-[10] bg-gradient-to-b from-transparent via-primary/50 to-primary max-sm:h-[25vw] max-sm:via-primary/50" />
-        <div className="h-[33vw]  w-[40vw] max-sm:h-[120vw] max-sm:w-full max-sm:overflow-hidden">
+        <div className="w-screen h-[8vw] absolute  left-0 top-0 z-[10] bg-gradient-to-t from-transparent via-primary/50 to-primary max-sm:top-[35%] max-sm:h-[25vw]  max-md:h-[25vw] max-md:top-[25%]" />
+        <div className="w-screen h-[8vw] absolute  left-0 bottom-0 z-[10] bg-gradient-to-b from-transparent via-primary/50 to-primary max-sm:h-[25vw] max-sm:via-primary/50  max-md:h-[20vw] " />
+        <div className="h-[33vw]  w-[40vw] max-sm:h-[120vw] max-sm:w-full max-sm:overflow-hidden max-md:!overflow-hidden max-md:h-[95vw] max-md:w-full">
           <div
             ref={marqueeRef}
-            className="w-full marquee-vertical h-fit overflow-hidden  flex flex-col items-center gap-[2.5vw] max-sm:gap-[4vw]"
+            className="w-full marquee-vertical h-fit overflow-hidden flex flex-col items-center gap-[2.5vw] max-sm:gap-[4vw] max-md:gap-[4vw]"
           >
             {[...data, ...data].map((item, index) => (
               <div
@@ -56,17 +56,17 @@ const Discover = () => {
                 ref={(el) => (itemRefs.current[index] = el)}
                 className="bg-[#111111] rounded-[6vw] h-fit w-fit p-[0.1vw] flex max-sm:rounded-[9vw] max-sm:p-[0.35vw]"
               >
-                <div className="h-[4.5vw] w-[4.5vw] bg-white rounded-full flex items-center justify-center max-sm:w-[15vw] max-sm:h-[15vw]">
+                <div className="h-[4.5vw] w-[4.5vw] bg-white rounded-full flex items-center justify-center max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw]">
                   <Image
                     src={item.icon}
                     height={28}
                     width={28}
                     alt="electricity-icon"
-                    className="h-[2.2vw] w-[2.2vw] max-sm:w-[8vw] max-sm:h-[8vw] max-sm:object-contain"
+                    className="h-[2.2vw] w-[2.2vw] max-sm:w-[8vw] max-sm:h-[8vw] max-sm:object-contain max-md:h-[5vw] max-md:w-[5vw]"
                   />
                 </div>
                 <div
-                  className={`h-[4.5vw] w-[14.5vw] px-[2.5vw] rounded-[6vw]  flex items-center justify-center text-center max-sm:w-[70vw] max-sm:rounded-[9vw] max-sm:h-[15vw] max-sm:text-left max-sm:justify-start max-sm:pl-[7vw] `}
+                  className={`h-[4.5vw] w-[14.5vw] px-[2.5vw] rounded-[6vw]  flex items-center justify-center text-center max-sm:w-[70vw] max-sm:rounded-[9vw] max-sm:h-[15vw] max-sm:text-left max-sm:justify-start max-sm:pl-[7vw]  max-md:w-[40vw] max-md:rounded-[7vw] max-md:h-[10vw]`}
                   style={{ backgroundColor: item.color }}
                 >
                   <p className="font-medium">{item.text}</p>

@@ -38,17 +38,19 @@ const FooterCta = () => {
     return (
         <>
             <div className="z-[1] relative" id="footer-cta">
-                <div className="py-[5vw] pt-[10vw] px-[4vw] max-sm:px-[7vw] max-sm:py-[15%]">
-                    <div className="flex items-start justify-center max-sm:flex-col">
-                        <div className="w-[30%] max-sm:w-full fadeupanim">
+                <div className="py-[5vw] pt-[10vw] px-[4vw] max-sm:px-[7vw] max-sm:py-[15%] max-md:py-[10vw]">
+                    <div className="flex items-start justify-center max-sm:flex-col max-md:flex-col max-md:items-center">
+                        <div className="w-[30%] max-sm:w-full fadeupanim max-md:w-[60%]">
                             <Image src={mockupImage} alt="phone mockup" className="w-full h-full object-contain" />
                         </div>
-                        <div className="w-[65%] flex flex-col items-center text-center max-sm:w-full">
+                        <div className="w-[65%] flex flex-col items-center text-center max-sm:w-full max-md:w-full">
+                            <div className="max-md:w-[75%] max-sm:w-full">
                             <Heading>
-                                <h6 className="text-[5.7vw] font-medium leading-[1.2] font-display max-sm:text-[11.5vw] capitalize">Take charge of your financial future</h6>
+                                <h6 className="text-[5.7vw] font-medium leading-[1.2] font-display max-sm:text-[11.5vw] capitalize ">Take charge of your financial future</h6>
                                 <p className="mt-[2vw] max-sm:mt-[4vw]">It only takes few seconds to get started.</p>
                             </Heading>
-                            <div className="fadeupanim flex gap-10 justify-center mt-[3vw] max-sm:flex-col max-sm:gap-4 max-sm:mt-[10vw]">
+                            </div>
+                            <div className="fadeupanim flex gap-10 justify-center mt-[3vw] max-sm:flex-col max-sm:gap-4 max-sm:mt-[10vw] max-md:mt-[5vw]">
                                 <AppleStoreButton />
                                 <PlayStoreButton />
                             </div>

@@ -152,7 +152,7 @@ body {
 
 @keyframes marqueeVertical {
   from { transform: translateY(0); }
-  to   { transform: translateY(-51.2%); }
+  to   { transform: translateY(-51.45%); }
 }
 .marquee-vertical {
   animation: marqueeVertical 8s linear infinite;
@@ -241,6 +241,10 @@ li .link-line::after {
   border-radius: 9vw;
   padding: 7vw;
   padding-bottom: 10vw;
+  }
+  @keyframes marqueeVertical {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-50.55%); }
   }
 }
 

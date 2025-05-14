@@ -25,13 +25,13 @@ export default function FAQs({ allowMultiple = false , content}) {
 
   return (
     <section className="px-[4vw] py-[6vw] w-full max-sm:px-[7vw] bg-[#FBFBFB] relative max-sm:pb-[10%]">
-      <div className="flex flex-col items-center gap-[4vw] max-sm:gap-[10vw]">
+      <div className="flex flex-col items-center gap-[4vw] max-sm:gap-[10vw] max-md:justify-center">
         <Heading>
           <h2 className="font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10.5vw] max-sm:text-left">
             Frequently Asked Questions
           </h2>
         </Heading>
-        <div className="w-4/5 space-y-[2vw] max-sm:w-full max-sm:space-y-[5vw]">
+        <div className="w-4/5 space-y-[2vw] max-sm:w-full max-sm:space-y-[5vw] max-md:w-[90%] max-md:py-[3vw] max-md:space-y-[3vw]">
           {content.map((f, i) => (
             <Accordion
               key={i}
@@ -48,34 +48,32 @@ export default function FAQs({ allowMultiple = false , content}) {
 }
 
 function Accordion({ question, answer, isOpen, onToggle }) {
-  
-
   return (
     <div className="w-full group overflow-hidden relative z-[10] fadeupanim">
-      <div className="w-[90%] mr-auto bg-white  overflow-hidden border border-gray rounded-3xl px-[3vw] max-sm:w-full max-sm:pl-[6vw] max-sm:py-[2vw] max-sm:rounded-[4.2vw]">
+      <div className="w-[90%] mr-auto bg-white  overflow-hidden border border-gray rounded-3xl px-[3vw] max-sm:w-full max-sm:pl-[6vw] max-sm:py-[2vw] max-sm:rounded-[4.2vw] max-md:rounded-[3vw]  max-md:py-[2vw] max-md:w-full">
         <button
           onClick={onToggle}
           aria-expanded={isOpen}
           className=" cursor-pointer  w-full h-full py-[2vw] flex items-center justify-between "
         >
-          <h4 className="text-[1.9vw] text-left leading-[1.2] max-sm:text-[5.2vw] max-sm:w-[70%]">
+          <h4 className="text-[1.9vw] text-left leading-[1.2] max-sm:text-[5.2vw] max-sm:w-[70%] max-md:text-[3vw] ">
             {question}
           </h4>
           <div
             className={`
               bg-primary absolute h-[6.5vw] right-0 duration-400 transition-all max-sm:bg-transparent max-sm:border max-sm:border-primary max-sm:justify-center max-sm:w-[12vw] max-sm:static max-sm:h-[11vw]
-              z-[-1] w-[15vw] flex items-center justify-end rounded-3xl top-0 max-sm:z-[10] max-sm:rounded-[2vw] -translate-x-[10vw] max-sm:translate-x-0
-              ${isOpen ? 'translate-x-0 max-sm:translate-x-0 max-sm:!bg-primary' : 'group-hover:translate-x-0'}
+              z-[-1] w-[15vw] flex items-center justify-end rounded-3xl top-0 max-sm:z-[10] max-sm:rounded-[2vw] -translate-x-[10vw] max-sm:translate-x-0 max-md:translate-x-0 max-md:z-[10] max-md:static max-md:h-[8vw] max-md:w-[8vw] max-md:border max-md:border-primary max-md:bg-transparent max-md:justify-center max-md:rounded-[2vw]
+              ${isOpen ? 'translate-x-0 max-sm:translate-x-0 max-sm:!bg-primary max-md:!bg-primary max-md:translate-x-0 ' : 'group-hover:translate-x-0'}
             `}
           >
             <span
               className={`
-                relative mr-[3.5vw] flex items-center justify-center max-sm:mr-0
+                relative mr-[3.5vw] flex items-center justify-center max-sm:mr-0 max-md:mr-0
                 duration-400 ${isOpen ? 'rotate-45' : ''}
               `}
             >
-              <span className={`bg-white absolute block h-[2vw] w-[1.5px]  max-sm:h-[5.5vw] duration-400 transition-all ${isOpen?"max-sm:bg-white":"max-sm:bg-primary"}`}/>
-              <span className={`bg-white absolute block h-[2vw] w-[1.5px] rotate-90 max-sm:bg-primary max-sm:h-[5.5vw] duration-400 transition-all ${isOpen?"max-sm:bg-white":"max-sm:bg-primary"}`} />
+              <span className={`bg-white absolute block h-[2vw] w-[1.5px]  max-sm:h-[5.5vw] duration-400 transition-all max-md:h-[3.5vw] ${isOpen?"max-sm:bg-white max-md:bg-white":"max-sm:bg-primary max-md:bg-primary"}`}/>
+              <span className={`bg-white absolute block h-[2vw] w-[1.5px] rotate-90 max-sm:bg-primary max-sm:h-[5.5vw] duration-400 transition-all max-md:h-[3.5vw] ${isOpen?"max-sm:bg-white max-md:bg-white":"max-sm:bg-primary max-md:bg-primary"}`} />
             </span>
           </div>
         </button>
