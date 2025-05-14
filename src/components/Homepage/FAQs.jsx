@@ -56,7 +56,7 @@ function Accordion({ question, answer, isOpen, onToggle }) {
           aria-expanded={isOpen}
           className=" cursor-pointer  w-full h-full py-[2vw] flex items-center justify-between "
         >
-          <h4 className="text-[1.9vw] text-left leading-[1.2] max-sm:text-[5.2vw] max-sm:w-[70%] max-md:text-[3vw] ">
+          <h4 className="text-[1.9vw] text-left leading-[1.2] max-sm:text-[5.2vw] max-sm:w-[70%] max-md:text-[3vw] max-md:w-[80%]">
             {question}
           </h4>
           <div
