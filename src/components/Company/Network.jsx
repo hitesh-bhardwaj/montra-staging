@@ -19,7 +19,7 @@ const Network = () => {
                             style={{ '--hover-color': logo.color }}
                             data-v-color={logo.color}
                             key={index}
-                            className={`rounded-4xl w-[13.35vw] h-[13.35vw] first:col-start-2 nth-4:col-start-1 border border-black-1 group hover:bg-[var(--hover-color)] hover:border-[var(--hover-color)] duration-300 ease-out fadeupanim max-sm:h-[30vw] max-sm:w-[30vw] max-sm:bg-[var(--hover-color)] max-sm:border-[var(--hover-color)]`}>
+                            className={`rounded-4xl w-[13.35vw] h-[13.35vw] first:col-start-2 nth-4:col-start-1 border border-black-1 group hover:bg-[var(--hover-color)] hover:border-[var(--hover-color)] duration-300 ease-out fadeupanim max-sm:h-[30vw] max-sm:w-[30vw] max-sm:bg-[var(--hover-color)] max-sm:border-[var(--hover-color)] fadeupanim`}>
                             <Image src={logo.src} alt="montra network" width={200} height={200} className="w-full h-full duration-300 group-hover:invert-100 group-hover:brightness-0 max-sm:invert-100" />
                         </div>
                     ))}

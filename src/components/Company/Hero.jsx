@@ -62,6 +62,17 @@ const Hero = () => {
     
         return () => ctx.revert();
     }, []);
+    useEffect(()=>{
+      const ctx = gsap.context(()=>{
+       gsap.from(".fadeup",{
+        y:30,
+        opacity:0,
+        delay:1,
+       })
+
+      })
+      return()=>ctx.revert()
+    },[])
 
   return (
     <section id="hero" className="w-screen overflow-hidden relative">

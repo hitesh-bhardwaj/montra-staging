@@ -191,17 +191,20 @@ body {
   width: fit-content;
   position: relative;
 }
+li .link-line::after {
+  bottom: -20%;
+}
 .link-line::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: -15%;
+  bottom: -2%;
   left: 0;
   width: 100%;
   height: 1.5px;
   background-color: currentColor;
   transform-origin: right;
-  transition: transform 0.735s cubic-bezier(0.62, 0.05, 0.01, 0.99);
+  transition: transform 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99);
   transform: scaleX(0) rotate(0.001deg);
 }
 .link-line:hover::after {

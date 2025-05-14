@@ -40,7 +40,7 @@ export default function Footer() {
                                 {/* Personal Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
                                     {personalLinks.map((link, index) => (
-                                        <li key={index} className='first:uppercase'><Link href={link.href} className='link-line'>{link.name}</Link></li>
+                                        <li key={index} className='first:uppercase '><Link href={link.href} className='link-line'>{link.name}</Link></li>
                                     ))}
                                 </ul>
 

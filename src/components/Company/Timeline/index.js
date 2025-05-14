@@ -8,6 +8,7 @@ import { timelineData } from "./TimelineData";
 import { ArrowRight } from "@/components/Buttons/icons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Heading from "@/components/Heading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,9 +65,12 @@ export default function Timeline() {
       id="timeline"
     >
       <div className="absolute top-[5%] text-center left-1/2 -translate-x-1/2 w-full max-sm:w-[80%] max-sm:static max-sm:translate-x-0 max-sm:text-left">
+      <Heading>
         <h3 className="leading-[1.2] font-medium font-display text-[5.7vw] max-sm:text-[10.5vw]">
           Our Story from Vision to Impact
         </h3>
+
+      </Heading>
       </div>
       <div className="absolute z-[100] bottom-[7%] left-1/2 -translate-x-1/2 flex space-x-[2vw] max-sm:static max-sm:translate-x-0 max-sm:items-center max-sm:justify-center max-sm:pt-[15%]">
         <button
