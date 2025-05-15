@@ -42,7 +42,7 @@ export default function PinnedRevealSection() {
         <section ref={ref} className="relative h-[480vh]" id='feature-text'>
             <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB]">
                 {/* 1) Six HEADINGS */}
-                <div className='flex flex-col justify-center items-center max-sm:gap-[4vw]'>
+                <div className='flex flex-col justify-center items-center max-sm:gap-[4vw] max-md:gap-[3vw]'>
                     {items.map((it, i) => (
                         <motion.div
                             key={it.label}
@@ -53,8 +53,8 @@ export default function PinnedRevealSection() {
                             }}
                             className="flex items-center space-x-[2vw] max-sm:space-x-[4vw]"
                         >
-                            <img src={it.icon} alt={it.label} className="w-[4.5vw] h-[4.5vw] max-sm:w-[12vw] max-sm:h-[12vw]" loading='lazy' />
-                            <h2 className={`text-[5vw] font-bold font-display max-sm:text-[10.5vw] ${it.color}`}>
+                            <img src={it.icon} alt={it.label} className="w-[4.5vw] h-[4.5vw] max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[10vw] max-md:h-[10vw]" loading='lazy' />
+                            <h2 className={`text-[5vw] font-bold font-display max-sm:text-[10.5vw] max-md:text-[7.5vw] ${it.color}`}>
                                 {it.label}
                             </h2>
                         </motion.div>
@@ -80,7 +80,7 @@ export default function PinnedRevealSection() {
             </div>
 
             {/* 3) Carousel cards */}
-            <motion.div className="absolute bottom-0 w-screen z-10 h-screen">
+            <motion.div className="absolute bottom-0 w-screen z-10 h-screen max-md:h-fit max-md:pb-[7%]">
                 <InfoCarouselSwiper />
             </motion.div>
         </section>

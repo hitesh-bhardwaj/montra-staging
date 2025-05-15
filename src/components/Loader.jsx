@@ -39,13 +39,43 @@ const Loader = () => {
         })
 
       }
-      else{
+      if(globalThis.innerWidth>541&&globalThis.innerWidth<1024){
         const tl = gsap.timeline();
         const steps = 5; // Number of animation steps (and iterations)
   
         for (let i = 1; i <= steps; i++) {
           tl.to(".sequence-container", {
-            xPercent: i * 57,
+            xPercent: i * 100,
+            ease: "power3.inOut",
+            duration: 0.9,
+          }).to(
+            ".number-container",
+            {
+              xPercent: i * 20,
+              duration: 0.9,
+              ease: "power3.inOut",
+            },
+            "<"
+          );
+        }
+        tl.to("#loader", {
+          opacity: 0,
+  
+          filter: "blur(20px)",
+          // duration:4,
+  
+          onComplete: () => {
+            setIsHidden(true)
+          }
+        })
+      }
+      if(globalThis.innerWidth<541){
+        const tl = gsap.timeline();
+        const steps = 5; // Number of animation steps (and iterations)
+  
+        for (let i = 1; i <= steps; i++) {
+          tl.to(".sequence-container", {
+            xPercent: i * 60,
             ease: "power3.inOut",
             duration: 0.9,
           }).to(

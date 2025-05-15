@@ -106,7 +106,7 @@ export default function PaymentMobile({ allowMultiple = false }) {
   }
 
   return (
-    <section ref={sectionRef} className="px-[7vw] py-[15%] w-full bg-white relative">
+    <section ref={sectionRef} className="px-[7vw] max-sm:py-[15%] w-full bg-white relative max-md:py-[7%]">
       <div className="h-[5vh] relative w-full">
 
         <div className="absolute top-[10%] left-1/2 -translate-x-1/2 flex gap-2 z-30 bg-white border border-[#E2EFFF] rounded-full overflow-hidden p-0.5">
@@ -134,7 +134,7 @@ export default function PaymentMobile({ allowMultiple = false }) {
         </div>
       </div>
 
-      <div className="w-full space-y-[2vw] pt-[20vw]">
+      <div className="w-full space-y-[2vw] max-sm:pt-[20vw] max-md:pt-[10vw]">
         {controlContent.map((f, i) => (
           <Accordion
             key={i}
@@ -171,20 +171,20 @@ function Accordion({
         <button
           onClick={onToggle}
           aria-expanded={isOpen}
-          className="relative cursor-pointer w-full h-full pt-[5vw] pb-[7vw] flex items-center justify-between"
+          className="relative cursor-pointer w-full h-full max-sm:pt-[5vw] max-sm:pb-[7vw] flex items-center justify-between max-md:pt-[3vw] max-md:pb-[5vw]"
         >
           <div className="w-full flex justify-between">
-            <h3 className="text-[8.5vw] font-display capitalize">
+            <h3 className="max-sm:text-[8.5vw] font-display capitalize max-md:text-[5.5vw]">
               {iconText}
 
             </h3>
             <div
-              className={`w-[13vw] h-[12vw] border border-primary relative flex items-center justify-center rounded-[3vw] transition-all duration-500 ${isOpen ? "bg-primary" : "bg-white"}`}
+              className={`max-sm:w-[13vw] max-sm:h-[12vw] border border-primary relative flex items-center justify-center max-sm:rounded-[3vw] transition-all duration-500 max-md:w-[9vw] max-md:h-[8vw] max-md:rounded-[1.5vw] ${isOpen ? "bg-primary" : "bg-white"}`}
 
             >
 
-              <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 ${isOpen ? "!rotate-45 bg-white " : "bg-primary"}`} />
-              <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 ${isOpen ? "rotate-[135deg] bg-white" : "rotate-90 bg-primary"}`} />
+              <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${isOpen ? "!rotate-45 bg-white " : "bg-primary"}`} />
+              <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${isOpen ? "rotate-[135deg] bg-white" : "rotate-90 bg-primary"}`} />
             </div>
           </div>
         </button>
@@ -199,8 +199,8 @@ function Accordion({
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="overflow-hidden"
             >
-              <div className="w-full flex flex-col gap-[5vw] pb-[10vw]">
-                <div className="w-[80%] h-[100vw]">
+              <div className="w-full flex flex-col max-sm:gap-[5vw] max-sm:pb-[10vw] max-md:items-center max-md:pb-[5vw] max-md:gap-[3vw]">
+                <div className="max-sm:w-[80%] max-sm:h-[100vw] max-md:w-[45%] max-md:h-[50vw] max-md:ml-[-10vw] max-sm:ml-0">
                   <Image
                     src={contentImg}
                     alt=""
@@ -209,11 +209,14 @@ function Accordion({
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="text-[7.5vw] capitalize font-medium font-display">
+                <h3 className="max-sm:text-[7.5vw] capitalize font-medium font-display max-md:text-[5.5vw]">
                   {contenTitle}
                 </h3>
                 <p>{content}</p>
+                <div className="w-full">
+
                 <LinkButton text={"Learn More"} href={contentLink} />
+                </div>
               </div>
             </motion.div>
           )}

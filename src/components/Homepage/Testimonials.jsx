@@ -16,7 +16,7 @@ import Heading from '../Heading'
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger)
 }
-const useIsMobile = (breakpoint = 541) => {
+const useIsMobile = (breakpoint = 1024) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -85,7 +85,7 @@ export default function Testimonials() {
     return (
         <section
             ref={sectionRef}
-            className="w-screen h-full relative overflow-hidden py-[4vw] max-sm:py-[15%] dark"
+            className="w-screen h-full relative overflow-hidden py-[4vw] max-sm:py-[15%] dark max-md:py-[7%]"
         >
             <Image
                 src={bgImage}
@@ -95,9 +95,9 @@ export default function Testimonials() {
                 className="z-0 object-cover object-top"
             />
 
-            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2] max-sm:px-[0vw] max-sm:gap-[25vw]">
+            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2] max-sm:px-[0vw] max-sm:gap-[25vw] max-md:gap-[10vw]">
                 <Heading>
-                    <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10vw] max-sm:px-[7vw] max-sm:text-left">
+                    <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10vw] max-sm:px-[7vw] max-sm:text-left max-md:text-[7.5vw]">
                         Better Reviews, Happier Choices
                     </h3>
                 </Heading>
@@ -126,6 +126,10 @@ export default function Testimonials() {
                             modules={[Pagination, FreeMode]}
                             slidesPerView={1.05}
                             spaceBetween={20}
+                            breakpoints={{
+                                768: { slidesPerView: 2, spaceBetween: 30 },
+                                1024:{slidesPerView:3,spaceBetween:30}
+                            }}
                             freeMode={true}
                             speed={500}
                             pagination={{ clickable: true }}
@@ -157,7 +161,7 @@ const Card = ({ img, text, name, rating, className = "" }) => {
             className={
                 `${className} border text-white font-display border-[#939393] 
          rounded-[1vw] overflow-hidden backdrop-blur-2xl bg-[#99999940] 
-         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw] max-sm:w-full  max-sm:h-[110vw] max-sm:rounded-[4vw] max-sm:py-[10vw] max-sm:px-[7vw] max-sm:flex max-sm:flex-col max-sm:justify-between`
+         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw] max-sm:w-full  max-sm:h-[110vw] max-sm:rounded-[4vw] max-sm:py-[10vw] max-sm:px-[7vw] max-sm:flex max-sm:flex-col max-sm:justify-between max-md:w-full max-md:rounded-[3vw] max-md:p-[3vw] max-md:h-[60vw] max-md:justify-between max-md:flex max-md:flex-col`
             }
         >
             {/* stars */}
@@ -165,7 +169,7 @@ const Card = ({ img, text, name, rating, className = "" }) => {
                 {Array.from({ length: rating }).map((_, i) => (
                     <svg
                         key={i}
-                        className="w-[1.5vw] h-[1.5vw] max-sm:w-[6vw] max-sm:h-[6vw]"
+                        className="w-[1.5vw] h-[1.5vw] max-sm:w-[6vw] max-sm:h-[6vw] max-md:w-[3.5vw] max-md:h-[3.5vw]"
                         viewBox="0 0 23 20"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -185,17 +189,17 @@ const Card = ({ img, text, name, rating, className = "" }) => {
                 ))}
             </div>
 
-            <p className='h-[7vw] max-sm:h-fit max-sm:text-[4.5vw]'>{text}</p>
+            <p className='h-[7vw] max-sm:h-fit max-sm:text-[4.5vw] max-md:h-fit max-md:text-[2.8vw]'>{text}</p>
 
-            <div className="flex items-center gap-[1vw] max-sm:gap-[4vw]">
+            <div className="flex items-center gap-[1vw] max-sm:gap-[4vw] max-md:gap-[2vw]">
                 <Image
                     src={img}
                     alt={name}
                     width={64}
                     height={64}
-                    className="w-[3.3vw] h-[3.3vw] rounded-full max-sm:w-[15vw] max-sm:h-[15vw]"
+                    className="w-[3.3vw] h-[3.3vw] rounded-full max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[7vw] max-md:h-[7vw]"
                 />
-                <p className="text-[1.05vw] max-sm:text-[6.5vw]">{name}</p>
+                <p className="text-[1.05vw] max-sm:text-[6.5vw] max-md:text-[3vw]">{name}</p>
             </div>
         </div>
     )

@@ -37,9 +37,12 @@ export default function InfoCarouselSwiper() {
 
     return (
         <div className="text-white py-[3vw] bg-primary" id='infocarousel'>
+            <div className='max-md:w-full max-md:flex max-md:justify-center max-sm:justify-start'>
             <Copy>
-                <h3 className='ml-[5vw] text-white font-display font-medium text-[3vw] w-[40%] capitalize leading-[1.3] pb-[3vw] max-sm:text-[7.5vw] max-sm:w-[85%] max-sm:pb-[10vw]'>Sort All Your Payments And Cash Flow Needs</h3>
+                <h3 className='ml-[5vw] text-white font-display font-medium text-[3vw] w-[40%] capitalize leading-[1.3] pb-[3vw] max-sm:text-[7.5vw] max-sm:w-[85%] max-sm:pb-[10vw] max-md:text-[7.5vw] max-md:w-[80%] max-md:pb-[6vw] max-md:text-center max-sm:text-left'>Sort All Your Payments And Cash Flow Needs</h3>
             </Copy>
+
+            </div>
             <Swiper
                 modules={[Pagination, FreeMode]}
                 slidesPerView={1.05}
@@ -48,7 +51,8 @@ export default function InfoCarouselSwiper() {
                 freeMode={true}
                 pagination={{ clickable: true }}
                 breakpoints={{
-                    768: { slidesPerView: 3, spaceBetween: 70 }
+                    768: { slidesPerView: 2, spaceBetween: 30 },
+                    1024:{slidesPerView:3,spaceBetween:30}
                 }}
                 className="!px-[5vw] swipe"
             >
@@ -65,8 +69,8 @@ export default function InfoCarouselSwiper() {
 
 const Card = ({ img, bgColor, text }) => {
     return (
-        <div style={{ background: bgColor }} className="overflow-hidden group rounded-[3vw] hover:scale-[0.99] duration-500 transition-transform max-sm:rounded-[9vw]">
-            <div className='relative h-[27vw] w-full rounded-b-[3vw] overflow-hidden max-sm:h-[100vw] max-sm:rounded-[9vw]'>
+        <div style={{ background: bgColor }} className="overflow-hidden group rounded-[3vw] hover:scale-[0.99] duration-500 transition-transform max-sm:rounded-[9vw] max-md:h-[65vw] max-sm:h-fit max-md:rounded-[5vw]">
+            <div className='relative h-[27vw] w-full rounded-b-[3vw] overflow-hidden max-sm:h-[100vw] max-sm:rounded-[9vw] max-md:h-[40vw]'>
                 <Image src={img} alt='feature image' fill className='object-cover group-hover:scale-[1.05] duration-500' />
             </div>
             <p className='text-black-1 py-7 px-6'>{text}</p>

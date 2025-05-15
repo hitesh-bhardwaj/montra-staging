@@ -135,9 +135,9 @@ export default function SectionBreak() {
     return (
         <section
             ref={sectionRef}
-            className="relative h-screen w-screen overflow-hidden px-[4vw] bg-[#FBFBFB]"
+            className="relative h-screen w-screen overflow-hidden px-[4vw] bg-[#FBFBFB] max-md:h-[70vh] max-sm:h-screen"
         >
-            <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:h-[40vw] max-sm:hidden" />
+            <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:h-[40vw] max-sm:hidden max-md:hidden" />
             <div
                 ref={iconsContainer}
                 className="absolute inset-0 pointer-events-none overflow-hidden"
@@ -145,7 +145,7 @@ export default function SectionBreak() {
             <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto max-sm:w-[95%]">
                 <h2
                     data-split="lines"
-                    className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[11vw]"
+                    className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[11vw] max-md:text-[7.5vw]"
                 >
                     Montra helps users shift from cash to digital payments besides making credit,
                     insurance, and investments easily accessible.

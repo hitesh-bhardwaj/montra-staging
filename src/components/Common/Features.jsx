@@ -111,7 +111,7 @@ const Features = ({ featuresData }) => {
       <div className="w-full h-full flex flex-col items-center gap-[8vw] max-sm:gap-[12vw]">
         <Heading>
           <h3
-            className={` font-display capitalize font-medium max-sm:text-[11vw] max-md:text-[7.5vw] max-md:text-center max-md:w-[90%] ${featuresData.headingSize}`}
+            className={` font-display capitalize font-medium max-sm:text-[11vw] max-md:text-[7.5vw] max-md:text-center max-md:w-[90%] max-sm:w-full max-sm:text-left ${featuresData.headingSize}`}
           >
             {featuresData.heading}
           </h3>
