@@ -6,7 +6,7 @@ import Overview from "@/components/Common/Overview";
 import SectionBreak from "@/components/Common/SectionBreak";
 import Steps from "@/components/Common/Steps";
 import WhatWhy from "@/components/Common/WhatWhy";
-import { fadeUpAnim } from "@/components/gsapAnimations";
+// import { fadeUpAnim } from "@/components/gsapAnimations";
 import Header from "@/components/Header";
 import FAQs from "@/components/Homepage/FAQs";
 import InvestmentPlans from "@/components/PersonalFinance/InvestmentPlans";
@@ -59,7 +59,7 @@ const personalFinance = () => {
       triggers.forEach((trigger) => trigger.kill());
     };
   }, []);
-  fadeUpAnim();
+  // fadeUpAnim();
   return (
     <>
       <Header />
