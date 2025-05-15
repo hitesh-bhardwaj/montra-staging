@@ -30,11 +30,10 @@ export default function Hero() {
     return (
         <>
             <section ref={targetRef} id="hero" className="h-full w-screen">
-                <div className="relative h-[500vh] max-sm:h-full" >
-
+                <div className="relative h-[500vh] max-sm:h-full max-md:h-full " >
                     <TopContent />
 
-                    <div className="hidden justify-center pointer-events-none items-center z-10 relative h-[100vw] mt-[20vw] max-sm:flex">
+                    <div className="hidden justify-center pointer-events-none items-center z-10 relative h-[100vw] mt-[20vw] max-sm:flex max-md:flex">
                         {isMobileWidth ? (
                             <ImageContainerMobile
                                 img1={img1}
@@ -46,7 +45,7 @@ export default function Hero() {
                             <></>
                         )}
                     </div>
-                    <div className="flex justify-center pointer-events-none items-center h-[90vh] sticky top-0 z-10 max-sm:hidden">
+                    <div className="flex justify-center pointer-events-none items-center h-[90vh] sticky top-0 z-10 max-sm:hidden max-md:hidden">
                     {isMobileWidth ? (
                         <></>
                     ) : (

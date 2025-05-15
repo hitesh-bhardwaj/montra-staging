@@ -76,11 +76,7 @@ export default function SectionBreak() {
         });
 
     }
-
-    // — now the floating icons logic
-
     return () => {
-      // clearTimeout(spawnTimeout)
       gsap.killTweensOf("*");
     };
   }, []);

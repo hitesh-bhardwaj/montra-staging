@@ -1,11 +1,22 @@
 "use client"
 import React, { useEffect, useState } from "react";
+import { useLenis } from "lenis/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Loader = () => {
   const [hidden, setIsHidden] = useState(false)
+  //  const lenis = useLenis();
+  //   useEffect(() => {
+  //     if (!hidden) {
+  //       lenis && lenis.stop();
+  //     } else {
+  //       lenis && lenis.start();
+  //     }
+  //   }, [hidden, lenis]);
+
+    
   useEffect(() => {
     const ctx = gsap.context(() => {
       if(globalThis.innerWidth>1024){

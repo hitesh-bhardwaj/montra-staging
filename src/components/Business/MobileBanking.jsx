@@ -9,14 +9,14 @@ const BankingCard = ({ color, link, title, para, icon, field }) => {
   return (
     <>
       <div className='w-full flex flex-col items-center justify-center h-full'>
-        <div className={` h-[60vw] w-full rounded-[6vw] flex  items-center justify-center gap-[3vw] text-white`} style={{ backgroundColor: color }}>
+        <div className={` max-sm:h-[60vw]max-sm: w-full rounded-[6vw] flex  items-center justify-center gap-[3vw] text-white max-md:h-[50vw] max-md:w-[100%]`} style={{ backgroundColor: color }}>
           <Image src={icon} height={70} width={70} alt='banking-icon' />
-          <p className='text-[6.5vw] font-display font-medium'>{field}</p>
+          <p className='max-sm:text-[6.5vw] font-display font-medium max-sm:w-[40%] max-sm:text-center max-md:text-[5.5vw] max-md:w-[50%]'>{field}</p>
 
         </div>
         <div className='space-y-[6vw] pt-[8vw] pb-[4vw] px-[1vw]'>
           <h2 className='text-[6.5vw] font-display w-[70%] capitalize font-medium'>{title}</h2>
-          <p>{para}</p>
+          <p className='max-sm:w-full max-md:w-[85%]'>{para}</p>
           <LinkButton href={link} text={"Learn More"} />
 
         </div>
@@ -43,10 +43,10 @@ const MobileBanking = () => {
     }
   };
   return (
-    <section  className="h-full w-screen px-[7vw] relative bg-white">
+    <section  className="h-full w-screen px-[7vw] relative bg-white max-sm:py-[10%] max-md:py-[7%]">
       <div className='space-y-[5vw]'>
     <div className='w-full text-left flex items-center justify-center '>
-  <h2 className='text-[11vw] font-display font-medium  capitalize leading-[1.15] mb-[7vw]'>Smart Business Management Tools For Smarter Businesses</h2>
+  <h2 className='max-sm:text-[11vw] font-display font-medium  capitalize leading-[1.15] mb-[7vw] max-md:text-[8vw]'>Smart Business Management Tools For Smarter Businesses</h2>
 </div>
 <div className=' '>
 <Swiper onSwiper={(swiper) => (swiperRef.current = swiper)} spaceBetween={30}
@@ -56,15 +56,15 @@ const MobileBanking = () => {
   ))}
       </Swiper>
       <div
-          className={`absolute z-[5] w-[10vw] h-[10vw] top-[100%] right-[20%]  border border-black overflow-hidden group  transition-all duration-500 rounded-full prev-button cursor-pointer mobile:top-[85%] mobile:w-fit mobile:h-fit mobile:p-[3vw] mobile:right-[25%] mobile:hidden tablet:w-fit tablet:h-fit tablet:right-[12%] tablet:top-[20%] hover:text-white hover:bg-primary hover:border-primary group ease
+          className={`absolute z-[5] w-[10vw] h-[10vw] top-[100%] right-[20%]  border border-black overflow-hidden group  transition-all duration-500 rounded-full prev-button cursor-pointer max-sm:top-[103%] max-sm:w-fit max-sm:h-fit max-sm:p-[1vw]  max-sm:right-[25%] max-md:w-fit max-md:h-fit max-md:right-[20%] max-md:top-[95%] hover:text-white hover:bg-primary hover:border-primary group ease
                 ${activeButton === "prev"
                 ? " text-black group-hover:text-white"
                 : "bg-transparent "
               } transition-colors duration-300`}
             onClick={handlePrev}
           >
-            <div className="w-[10vw] h-[10vw]  mobile:w-[7.5vw] mobile:h-[7.5vw] relative z-[6] tablet:w-[5.5vw] tablet:h-[5.5vw] flex justify-center items-center ">
-              <span className="w-[4vw] h-[4vw] flex justify-center items-center mobile:w-[5.5vw] mobile:h-[5.5vw] group-hover:text-white rotate-180">
+            <div className="w-[10vw] h-[10vw]  max-sm:w-[7.5vw] max-sm:h-[7.5vw] relative z-[6] max-md:h-[8vw] max-md:w-[8vw] flex justify-center items-center ">
+              <span className="w-[4vw] h-[4vw] flex justify-center items-center max-sm:w-[5.5vw] max-sm:h-[5.5vw]  max-md:h-[5vw] max-md:w-[5vw] group-hover:text-white rotate-180">
                 <svg width="30" height="30" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.1804 8.0298L11.4307 14.7796C11.2899 14.9203 11.0991 14.9994 10.9 14.9994C10.701 14.9994 10.5102 14.9203 10.3694 14.7796C10.2287 14.6389 10.1497 14.448 10.1497 14.249C10.1497 14.05 10.2287 13.8591 10.3694 13.7184L15.8396 8.24917H1.15037C0.95146 8.24917 0.760701 8.17016 0.620053 8.02951C0.479406 7.88886 0.400391 7.6981 0.400391 7.49919C0.400391 7.30029 0.479406 7.10953 0.620053 6.96888C0.760701 6.82823 0.95146 6.74922 1.15037 6.74922L15.8396 6.74922L10.3694 1.28002C10.2287 1.1393 10.1497 0.948432 10.1497 0.749416C10.1497 0.550399 10.2287 0.359534 10.3694 0.218808C10.5102 0.0780824 10.701 -0.000976562 10.9 -0.000976563C11.0991 -0.000976563 11.2899 0.0780824 11.4307 0.218808L18.1804 6.96859C18.2502 7.03824 18.3055 7.12095 18.3432 7.212C18.381 7.30304 18.4004 7.40064 18.4004 7.49919C18.4004 7.59775 18.381 7.69534 18.3432 7.78639C18.3055 7.87744 18.2502 7.96015 18.1804 8.0298Z" fill="#111111" />
                 </svg>
@@ -73,13 +73,13 @@ const MobileBanking = () => {
             </div>
           </div>
           <div
-            className={`absolute z-[5] top-[100%] right-[7%] w-[10vw] h-[10vw] overflow-hidden rounded-full next-button hover:bg-primary duration-500 transitiona-all ease cursor-pointer border border-black hover:border-primary mobile:top-[85%] mobile:w-fit mobile:h-fit mobile:p-[3vw]  group
+            className={`absolute z-[5] top-[100%] right-[7%] w-[10vw] h-[10vw] overflow-hidden rounded-full next-button hover:bg-primary duration-500 transitiona-all ease cursor-pointer border border-black max-sm:top-[103%] max-sm:w-fit max-sm:h-fit max-sm:p-[1vw]  max-sm:right-[10%] max-md:w-fit max-md:h-fit max-md:right-[10%] max-md:top-[95%] hover:text-white  group ease
                 ${activeButton === "next" ? " text-black hover:text-white" : "bg-transparent"
               } transition-colors duration-300`}
             onClick={handleNext}
           >
-            <div className="w-[10vw] h-[10vw]  relative z-[6] mobile:w-[7.5vw] mobile:h-[7.5vw] tablet:w-[5.5vw] tablet:h-[5.5vw] flex justify-center items-center  transition-all duration-500">
-              <span className="w-[4vw] h-[4vw] flex justify-center items-center mobile:w-[5.5vw] mobile:h-[5.5vw] group-hover:text-white">
+            <div className="w-[10vw] h-[10vw]  relative z-[6] max-sm:w-[7.5vw] max-sm:h-[7.5vw] max-md:w-[8vw] max-md:h-[8vw] flex justify-center items-center  transition-all duration-500">
+              <span className="w-[4vw] h-[4vw] flex justify-center items-center max-sm:w-[5.5vw] max-sm:h-[5.5vw] max-md:h-[5vw] max-md:w-[5vw] group-hover:text-white">
                 <svg width="30" height="30" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.1804 8.0298L11.4307 14.7796C11.2899 14.9203 11.0991 14.9994 10.9 14.9994C10.701 14.9994 10.5102 14.9203 10.3694 14.7796C10.2287 14.6389 10.1497 14.448 10.1497 14.249C10.1497 14.05 10.2287 13.8591 10.3694 13.7184L15.8396 8.24917H1.15037C0.95146 8.24917 0.760701 8.17016 0.620053 8.02951C0.479406 7.88886 0.400391 7.6981 0.400391 7.49919C0.400391 7.30029 0.479406 7.10953 0.620053 6.96888C0.760701 6.82823 0.95146 6.74922 1.15037 6.74922L15.8396 6.74922L10.3694 1.28002C10.2287 1.1393 10.1497 0.948432 10.1497 0.749416C10.1497 0.550399 10.2287 0.359534 10.3694 0.218808C10.5102 0.0780824 10.701 -0.000976562 10.9 -0.000976563C11.0991 -0.000976563 11.2899 0.0780824 11.4307 0.218808L18.1804 6.96859C18.2502 7.03824 18.3055 7.12095 18.3432 7.212C18.381 7.30304 18.4004 7.40064 18.4004 7.49919C18.4004 7.59775 18.381 7.69534 18.3432 7.78639C18.3055 7.87744 18.2502 7.96015 18.1804 8.0298Z" fill="#111111" />
                 </svg>

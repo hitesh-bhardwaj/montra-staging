@@ -74,7 +74,7 @@ export default function Timeline() {
       <div className="absolute z-[100] bottom-[7%] left-1/2 -translate-x-1/2 flex space-x-[2vw] max-sm:static max-sm:translate-x-0 max-sm:items-center max-sm:justify-center max-sm:pt-[15%] max-md:items-center max-md:justify-center max-md:static max-md:translate-x-0  max-md:order-2  max-sm:order-1">
         <button
           onClick={prevSlide}
-          className="border w-[3.2vw] h-[3.2vw] flex items-center justify-center border-white hover:bg-white hover:text-primary text-white duration-300 rounded-full max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[8vw] max-md:h-[8vw]"
+          className="border w-[3.2vw] h-[3.2vw] flex items-center justify-center border-white hover:bg-white hover:text-primary text-white duration-300 rounded-full max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[8vw] max-md:h-[8vw] cursor-pointer"
           aria-label="previous slide"
         >
           <ArrowRight className="w-4 h-4 rotate-180 max-sm:h-4 max-sm:w-4 max-md:h-[3vw] max-md:w-[3vw]" />
@@ -114,7 +114,7 @@ export default function Timeline() {
         </div>
         <button
           onClick={nextSlide}
-          className="border w-[3.2vw] h-[3.2vw] flex items-center justify-center border-white hover:bg-white hover:text-primary text-white duration-300 rounded-full max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[8vw] max-md:h-[8vw]"
+          className="border w-[3.2vw] h-[3.2vw] flex items-center justify-center border-white hover:bg-white hover:text-primary text-white duration-300 rounded-full max-sm:w-[12vw] max-sm:h-[12vw] max-md:w-[8vw] max-md:h-[8vw] cursor-pointer"
           aria-label="next slide"
         >
           <ArrowRight className="w-4 h-4 max-sm:h-4 max-sm:w-4 max-md:h-[3vw] max-md:w-[3vw]" />

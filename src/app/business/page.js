@@ -1,13 +1,14 @@
 'use client'
 import BankingSection from "@/components/Business/BankingSection";;
 import MobileBanking from "@/components/Business/MobileBanking";
-import SectionBreak from "@/components/Business/SectionBreak";
+// import SectionBreak from "@/components/Business/SectionBreak";
 import FAQs from "@/components/Homepage/FAQs";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { fadeUpAnim } from "@/components/gsapAnimations";
 import Hero from "@/components/Business/Hero";
+import SectionBreak from "@/components/Common/SectionBreak";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,7 +27,7 @@ export default function Business() {
     <>
       <Hero />
       {!mobileWidth ? <BankingSection /> : <MobileBanking />}
-      <SectionBreak />
+      <SectionBreak content={"With Montra for Business, you're in control—accept payments, manage cash flow, access credit, and grow your business without the banking complexity."} width={"w-[85%]"} />
       <FAQs content={faqContent} />
     </>
   );

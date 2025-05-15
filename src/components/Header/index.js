@@ -4,7 +4,9 @@ import montraLogo from "../../../public/montra-logo.png";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
+import { useLenis } from "lenis/react";
 import { useTransitionRouter } from "next-view-transitions";
+
 
 export default function Header() {
   const router = useTransitionRouter();
@@ -12,7 +14,15 @@ export default function Header() {
   const [lastY, setLastY] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [openMenu, setopenMenu] = useState(false);
-
+  const lenis = useLenis();
+  
+  useEffect(() => {
+    if (openMenu) {
+      lenis && lenis.stop();
+    } else {
+      lenis && lenis.start();
+    }
+  }, [openMenu, lenis]);
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
@@ -117,25 +127,39 @@ export default function Header() {
           </a>
           <Navbar navigateTo={navigateTo} />
           <div
-            className="hidden  max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[6.5vw] max-md:gap-[1vw]"
-            onClick={() => {
-              setopenMenu((prev) => !prev);
-            }}
-          >
-            <div className="w-full h-[2.5px] bg-primary rounded-full line-1" />
-            <div className="w-full h-[2.5px] bg-primary rounded-full line-2" />
-            <div className="w-full h-[2.5px] bg-primary rounded-full line-3" />
-          </div>
+  className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]"
+  onClick={() => {
+    setopenMenu((prev) => !prev);
+  }}
+>
+  <div
+    className={`w-full h-[2.5px] bg-primary rounded-full line-1 transition-all duration-500 origin-center ${
+      openMenu ? 'rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px]' : ''
+    }`}
+  />
+  <div
+    className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ${
+      openMenu ? 'opacity-0' : ''
+    }`}
+  />
+  <div
+    className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ${
+      openMenu ? '-rotate-45 max-sm:-translate-y-[7px] max-md:-translate-y-[10px]' : ''
+    }`}
+  />
+</div>
+
           <div
-            className={`w-screen h-screen fixed top-0 left-0  bg-black/20 transition-all duration-300 ${openMenu
+            className={`w-screen h-screen fixed top-0 left-0  bg-black/20 transition-all duration-500 ${openMenu
               ? "opacity-100 backdrop-blur-sm"
               : " opacity-0 pointer-events-none"
               }`}
           >
             <div
-              className={` w-[70vw] h-[110vw] py-[10%] overflow-hidden rounded-[7vw] bg-primary text-white flex flex-col gap-[3vw] px-[7vw] font-display font-medium text-[5.5vw] absolute top-[8%] z-[160] right-[10%] transition-all duration-300 origin-top-right max-md:w-[60vw] max-md:h-[80vw] max-md:text-[4vw] ${openMenu ? "scale-100 opacity-100" : "scale-0 opacity-0"
+              className={` w-[70vw] max-sm:h-fit overflow-hidden rounded-[7vw] bg-primary text-white flex flex-col gap-[3vw] px-[7vw] font-display font-medium text-[5.5vw] absolute top-[8%] z-[160] right-[10%]  max-sm:space-y-[5vw] max-sm:py-[8vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-fit max-md:text-[4vw] max-md:space-y-[7vw] ${openMenu ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
             >
+              <div className="flex flex-col gap-[3vw] items-start">
               <Link
                 href={"/"}
                 className="link-text"
@@ -186,7 +210,32 @@ export default function Header() {
                 Company
               </Link>
               <span className="bg-white h-[1px] w-full"></span>
+              </div>
+              <div className="flex items-start justify-start gap-[3vw]">
+                <Link href={"/"} className="h-fit w-fit rounded-full border border-white "  onClick={() => {
+                  setopenMenu(false);
+                }}>
+                  <Image src={"/assets/icons/facebook-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="facebook_icon"/>
+                </Link>
+                <Link href={"/"} className="h-fit w-fit rounded-full border border-white "  onClick={() => {
+                  setopenMenu(false);
+                }}>
+                  <Image src={"/assets/icons/insta-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="instagram_icon"/>
+                </Link>
+                <Link href={"/"} className="h-fit w-fit rounded-full border border-white "  onClick={() => {
+                  setopenMenu(false);
+                }}>
+                  <Image src={"/assets/icons/linkedin-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="linkedin_icon"/>
+                </Link>
+                <Link href={"/"} className="h-fit w-fit rounded-full border border-white "  onClick={() => {
+                  setopenMenu(false);
+                }}>
+                  <Image src={"/assets/icons/x-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="x_icon"/>
+                </Link>
+
+              </div>
             </div>
+             
           </div>
         </div>
       </div>

@@ -79,7 +79,7 @@ export default function Payments() {
   }, [data]);
 
   return (
-    <section ref={sectionRef} className="h-[580vh] pt-[10vw] w-screen bg-white">
+    <section ref={sectionRef} className="h-[580vh] pt-[10vw] w-screen bg-white max-sm:hidden max-md:hidden">
       <div className="w-full text-center flex items-center justify-center ">
         <Heading>
           <h2 className="text-[5.7vw] font-display font-medium  w-[80%] capitalize leading-[1.2]">
