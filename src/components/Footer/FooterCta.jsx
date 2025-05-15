@@ -6,11 +6,20 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Heading from "../Heading";
 import { useEffect } from "react";
-
+import { usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 
 const FooterCta = () => {
+    const pathname = usePathname();
 
+    useEffect(() => {
+      const canvas = document.getElementById("canvas-18971");
+      if (canvas) {
+        canvas.style.width = "100vw";
+        canvas.style.borderBottomLeftRadius = "0vw";
+        canvas.style.borderBottomRightRadius = "0vw";
+      }
+    }, [pathname]);
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo("#canvas-18971", {
