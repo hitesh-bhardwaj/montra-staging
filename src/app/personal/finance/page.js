@@ -10,10 +10,55 @@ import { fadeUpAnim } from "@/components/gsapAnimations";
 import Header from "@/components/Header";
 import FAQs from "@/components/Homepage/FAQs";
 import InvestmentPlans from "@/components/PersonalFinance/InvestmentPlans";
-import { Tag } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const personalFinance = () => {
+  const [activeNav, setActiveNav] = useState(0);
+  const [color, setcolor] = useState(false);
+  useEffect(() => {
+    const triggers = [];
+
+    triggers.push(
+      ScrollTrigger.create({
+        trigger: "#benefits-second",
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => setActiveNav(1),
+        onLeaveBack: () => setActiveNav(0),
+      })
+    );
+    triggers.push(
+      ScrollTrigger.create({
+        trigger: "#steps",
+        start: "top center",
+        end: "bottom center",
+        // markers: true,
+        onEnter: () => setcolor(true),
+        onLeave: () => setcolor(false),
+        onEnterBack: () => setcolor(true),
+        onLeaveBack: () => setcolor(false),
+      })
+    );
+
+    triggers.push(
+      ScrollTrigger.create({
+        trigger: "#whatwhy",
+        start: "top center",
+        end: "bottom center",
+        onLeave: () => setActiveNav(2),
+        onEnterBack: () => setActiveNav(1),
+        onLeaveBack: () => setActiveNav(1),
+      })
+    );
+
+    return () => {
+      triggers.forEach((trigger) => trigger.kill());
+    };
+  }, []);
   fadeUpAnim();
   return (
     <>
@@ -27,22 +72,68 @@ const personalFinance = () => {
       />
       <Overview content={overviewContent} />
       <div className="w-full relative">
-        {/* <div className="sticky z-10 h-screen flex w-fit justify-start items-start pt-[20vw] top-0 px-[4vw]">
-          <div className="flex gap-[1vw] font-display ">
-            <span className="text-primary opacity-100">Finance:</span>
-            <div className="flex flex-col gap-[0.3vw] ">
-              <span className="text-primary">Loans</span>
-              <span className="opacity-35">Insurance</span>
-              <span className="opacity-35">Investment</span>
+        <div className="sticky z-10 h-screen flex w-fit justify-start items-start pt-[28vw] top-0 px-[2vw] max-md:hidden">
+          <div className="flex gap-[1vw] font-display text-[1vw] ">
+            <span
+              className={` opacity-100 transition-colors duration-500 ease-in-out ${
+                color ? "text-white" : "text-primary"
+              }`}
+            >
+              Finance:
+            </span>
+            <div
+              className={`flex flex-col gap-[0.3vw] h-full w-full transition-transform duration-500 ease-in-out ${
+                activeNav == 0 ? "translate-y-0" : ""
+              } ${activeNav == 1 ? "translate-y-[-33%]" : ""} ${
+                activeNav == 2 ? "translate-y-[-70%]" : ""
+              }`}
+            >
+              <span
+                className={`${
+                  activeNav == 0 ? "text-primary" : "opacity-35"
+                } transition-colors duration-500 ease-in-out ${
+                  color ? "text-white" : ""
+                } cursor-pointer`}
+                onClick={() => {
+                  document
+                    .getElementById("benefits")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Loans
+              </span>
+              <span
+                className={`${
+                  activeNav == 1 ? "text-primary" : "opacity-35"
+                } transition-colors duration-500 ease-in-out ${
+                  color ? "text-white" : ""
+                } cursor-pointer`}
+                onClick={() => {
+                  document.getElementById("benefits-second")?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Insurance
+              </span>
+              <span
+                className={`${
+                  activeNav == 2 ? "text-primary" : "opacity-35"
+                } transition-colors duration-500 ease-in-out ${
+                  color ? "text-white" : ""
+                } cursor-pointer`}
+                onClick={() => {
+                  document.getElementById("investmentplan")?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Investment
+              </span>
             </div>
           </div>
-        </div> */}
-        {/* <div className="mt-[-100vh]"> */}
-        <Benefits data={benefitsData} />
-
-        {/* </div> */}
+        </div>
+        <div className="mt-[-100vh] max-md:mt-0">
+          <Benefits data={benefitsData} id={"benefits"} />
+        </div>
         <Steps stepData={stepData}/>
-        <Benefits data={benefitsData2} />
+        <Benefits data={benefitsData2} id={"benefits-second"} />
         <Features featuresData={featuresData} />
         <WhatWhy data={whatWhyData} height={"h-[60vw]"} />
         <InvestmentPlans />

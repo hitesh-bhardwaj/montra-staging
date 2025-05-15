@@ -6,14 +6,13 @@ import Heading from "../Heading";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Copy from "../Copy";
 // import { scale } from "motion";
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-const Benefits = ({ data }) => {
- 
+const Benefits = ({ data, id }) => {
   return (
     <section
       className="w-screen h-[120vh] px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-md:h-full max-md:pb-[15%]  "
-      id="benefits"
+      id={id ? id : "benefits"}
     >
       <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw] max-md:gap-[7vw]  ">
         <div className="w-full flex flex-col items-center gap-[1.5vw] max-sm:gap-[4vw] max-sm:items-start max-md:gap-[3vw] ">
@@ -24,8 +23,9 @@ const Benefits = ({ data }) => {
             />
           </Heading>
           <Copy>
-          <p className={`${data.paraWidth} max-sm:w-[80%] max-md:w-[90%]`}>{data.para}</p>
-
+            <p className={`${data.paraWidth} max-sm:w-[80%] max-md:w-[90%]`}>
+              {data.para}
+            </p>
           </Copy>
         </div>
         <div
@@ -113,8 +113,8 @@ const AnimatedOpeners = ({
           });
 
         tlRef.current = tl;
-      } 
-      if(globalThis.innerWidth>541&&globalThis.innerWidth<1024){
+      }
+      if (globalThis.innerWidth > 541 && globalThis.innerWidth < 1024) {
         const tl = gsap.timeline({ paused: true });
 
         tl.to(`.${classPrefix}-container`, {
@@ -138,9 +138,8 @@ const AnimatedOpeners = ({
           });
 
         tlRef.current = tl;
-
       }
-      if(globalThis.innerWidth<541) {
+      if (globalThis.innerWidth < 541) {
         const tl = gsap.timeline({ paused: true });
 
         tl.to(`.${classPrefix}-container`, {
@@ -169,7 +168,21 @@ const AnimatedOpeners = ({
 
     return () => ctx.revert();
   }, [classPrefix]);
-
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     gsap.from(".fadeup", {
+  //       y: 30,
+  //       opacity: 0,
+  //       stagger: 0.5,
+  //       scrollTrigger: {
+  //         trigger: "#benefits",
+  //         start: "top 60%",
+  //         markers: true,
+  //       },
+  //     });
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
   const handleMouseEnter = () => {
     tlRef.current?.play();
   };
@@ -179,7 +192,6 @@ const AnimatedOpeners = ({
   };
 
   return (
-    
     <div
       className={`absolute ${left} ${top} ${classPrefix} ${z} max-sm:static ${classPrefix}-circle max-sm:h-[15vw] max-md:static max-md:h-[8vw]`}
     >

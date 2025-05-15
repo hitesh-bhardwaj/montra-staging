@@ -67,7 +67,7 @@ const Steps = ({stepData}) => {
       }
     }, [step]);
     return (
-        <section ref={ref} className="w-screen h-screen bg-primary px-[4vw] py-[5%] text-white max-sm:py-[15%] max-sm:px-[7vw] relative max-sm:h-fit overflow-hidden">
+        <section ref={ref} className="w-screen h-screen bg-primary px-[4vw] py-[5%] text-white max-sm:py-[15%] max-sm:px-[7vw] relative max-sm:h-fit overflow-hidden" id="steps">
             <div className="flex h-full items-start max-sm:flex-col max-md:flex-col">
 
                 <div className="w-2/5 flex items-center max-sm:w-full max-md:w-full ">
