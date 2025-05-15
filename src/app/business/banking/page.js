@@ -27,7 +27,7 @@ const businessBanking = () => {
       />
       
       <Benefits data={benefitsData} />
-      <Steps/>
+      <Steps stepData={stepData}/>
       <WhatWhy height={"h-[68vw]"} data={whatWhyData}/>
       <SectionBreak content={"Whether you're tracking payments, linking accounts, or accepting digital transactions, Montra has everything you need to grow your business with ease."} width={"w-[95%]"}/>
       <FAQs content={faqContent} />
@@ -123,36 +123,36 @@ const  benefitsData = {
     { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Rest easy knowing your funds are secure. Your deposits are never converted into risky assets.", title: "Unmatched Security", z: "z-[4]",  width:"w-[21vw]", height:"17vw" },
   ]
 }
-// const stepData = {
-//   heading:"Get started in minutes",
-//   steps:[
-//     {
-//       number:"01",
-//       title:"Download Montra App",
-//       para:"You can download Montra App from Google & IOS App stores.",
-//       tag:"Download App",
-//       img:"/assets/images/personal-banking/steps-img-1.png"
-//     },
-//     {
-//       number:"02",
-//       title:"Download Montra App",
-//       para:"You can download Montra App from Google & IOS App stores.",
-//       tag:"Download App",
-//       img:"/assets/images/personal-banking/steps-img-1.png"
-//     },
-//     {
-//       number:"03",
-//       title:"Download Montra App",
-//       para:"You can download Montra App from Google & IOS App stores.",
-//       tag:"Download App",
-//       img:"/assets/images/personal-banking/steps-img-1.png"
-//     },
-//     {
-//       number:"04",
-//       title:"Download Montra App",
-//       para:"You can download Montra App from Google & IOS App stores.",
-//       tag:"Download App",
-//       img:"/assets/images/personal-banking/steps-img-1.png"
-//     },
-//   ]
-// }
+const stepData = {
+  heading: "Get started in minutes",
+  steps: [
+      {
+          number: "01",
+          title: "Sign Up for Montra Business Account",
+          para: "Download the Montra App and register as an individual. Then, easily switch to BUSINESS mode using the toggle bar. Ensure your KYC Level 2 is completed to sign up for a business account.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+          tag:"Sign Up"
+      },
+      {
+          number: "02",
+          title: "Sign Up for Montra Business Account",
+          para: "Download the Montra App and register as an individual. Then, easily switch to BUSINESS mode using the toggle bar. Ensure your KYC Level 2 is completed to sign up for a business account.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+          tag:"Sign Up"
+      },
+      {
+          number: "03",
+          title: "Sign Up for Montra Business Account",
+          para: "Download the Montra App and register as an individual. Then, easily switch to BUSINESS mode using the toggle bar. Ensure your KYC Level 2 is completed to sign up for a business account.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+          tag:"Sign Up"
+      },
+      {
+          number: "04",
+          title: "Sign Up for Montra Business Account",
+          para: "Download the Montra App and register as an individual. Then, easily switch to BUSINESS mode using the toggle bar. Ensure your KYC Level 2 is completed to sign up for a business account.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+          tag:"Sign Up"
+      },
+  ],
+};

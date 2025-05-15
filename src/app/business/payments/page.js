@@ -22,7 +22,7 @@ const businessPayments = () => {
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>
    <Rewards rewardsData={rewardsData}/>
-   <Steps/>
+   <Steps stepData={stepData}/>
    <WhatWhy data={whatWhyData} height={"h-[55vw]"}/>
    <SectionBreak content={"From seamless payments to accessible credit options, Montra empowers you to take control of your financial future."} width={"w-[85%]"}/>
    <FAQs content={faqContent}/>
@@ -159,3 +159,36 @@ const whatWhyData = {
     }
   ],
   }
+  const stepData = {
+    heading: "Get Paid Instantly ",
+    steps: [
+        {
+            number: "01",
+            title: "Sign In or Get Started",
+            para: "New to Montra? Download the Montra App and sign up for a Business account in minutes. Already registered? Just log in via the Montra App or Merchant Portal.",
+            img: "/assets/images/payment-gateway/steps-img-1.png",
+            tag:"Sign In"
+        },
+        {
+            number: "02",
+            title: "Sign In or Get Started",
+            para: "New to Montra? Download the Montra App and sign up for a Business account in minutes. Already registered? Just log in via the Montra App or Merchant Portal.",
+            img: "/assets/images/payment-gateway/steps-img-1.png",
+            tag:"Sign In"
+        },
+        {
+            number: "03",
+            title: "Sign In or Get Started",
+            para: "New to Montra? Download the Montra App and sign up for a Business account in minutes. Already registered? Just log in via the Montra App or Merchant Portal.",
+            img: "/assets/images/payment-gateway/steps-img-1.png",
+            tag:"Sign In"
+        },
+        {
+            number: "04",
+            title: "Sign In or Get Started",
+            para: "New to Montra? Download the Montra App and sign up for a Business account in minutes. Already registered? Just log in via the Montra App or Merchant Portal.",
+            img: "/assets/images/payment-gateway/steps-img-1.png",
+            tag:"Sign In"
+        },
+    ],
+};

@@ -10,6 +10,7 @@ import { fadeUpAnim } from "@/components/gsapAnimations";
 import Header from "@/components/Header";
 import FAQs from "@/components/Homepage/FAQs";
 import InvestmentPlans from "@/components/PersonalFinance/InvestmentPlans";
+import { Tag } from "lucide-react";
 import React from "react";
 
 const personalFinance = () => {
@@ -40,7 +41,7 @@ const personalFinance = () => {
         <Benefits data={benefitsData} />
 
         {/* </div> */}
-        <Steps />
+        <Steps stepData={stepData}/>
         <Benefits data={benefitsData2} />
         <Features featuresData={featuresData} />
         <WhatWhy data={whatWhyData} height={"h-[60vw]"} />
@@ -322,5 +323,39 @@ const featuresData = {
       text: "Travel Insurance",
       color: "bg-[#215CFF]",
     },
+  ],
+};
+const stepData = {
+  heading: "Borrow in Minutes",
+  steps: [
+      {
+          number: "01",
+          title: "Choose a Loan Product",
+          para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+         tag:"Choose Plan"
+      },
+      {
+          number: "02",
+          title: "Choose a Loan Product",
+          para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+         tag:"Choose Plan"
+      },
+      {
+          number: "03",
+          title: "Choose a Loan Product",
+          para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+         tag:"Choose Plan"
+      },
+      {
+          number: "04",
+          title: "Choose a Loan Product",
+          para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+         tag:"Choose Plan"
+
+      },
   ],
 };

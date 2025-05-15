@@ -26,9 +26,8 @@ const personalBanking = () => {
       <Overview
        content={overviewContent}
       />
-      
       <Benefits data={benefitsData} />
-      <Steps/>
+      <Steps stepData={stepData}/>
       <WhatWhy height={"h-[55vw]"} data={whatWhyData}/>
       <SectionBreak content={"From seamless payments to accessible credit options, Montra empowers you to take control of your financial future."} width={"w-[88%]"}/>
       <FAQs content={faqContent} />
@@ -118,35 +117,35 @@ const  benefitsData = {
   ]
 }
 const stepData = {
-  heading:"Get started in minutes",
-  steps:[
-    {
-      number:"01",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-    {
-      number:"02",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-    {
-      number:"03",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-    {
-      number:"04",
-      title:"Download Montra App",
-      para:"You can download Montra App from Google & IOS App stores.",
-      tag:"Download App",
-      img:"/assets/images/personal-banking/steps-img-1.png"
-    },
-  ]
-}
+  heading: "Get started in minutes",
+  steps: [
+      {
+          number: "01",
+          title: "Download Montra App",
+          para: "You can download Montra App from Google & IOS App stores.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+          tag:"Download App"
+      },
+      {
+          number: "02",
+          title: "Download Montra App",
+          para: "You can download Montra App from Google & IOS App stores.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+          tag:"Download App"
+      },
+      {
+          number: "03",
+          title: "Download Montra App",
+          para: "You can download Montra App from Google & IOS App stores.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+          tag:"Download App"
+      },
+      {
+          number: "04",
+          title: "Download Montra App",
+          para: "You can download Montra App from Google & IOS App stores.",
+          img: "/assets/images/personal-banking/steps-img-1.png",
+          tag:"Download App"
+      },
+  ],
+};
