@@ -95,9 +95,9 @@ export default function Testimonials() {
                 className="z-0 object-cover object-top"
             />
 
-            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2] max-sm:px-[0vw] max-sm:gap-[25vw] max-md:gap-[10vw]">
+            <div className="w-full px-[4vw] flex flex-col items-center justify-center gap-[4vw] relative z-[2] max-sm:px-[0vw] max-sm:gap-[25vw] max-md:gap-[10vw] max-sm:items-start">
                 <Heading>
-                    <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10vw] max-sm:px-[7vw] max-sm:text-left max-md:text-[7.5vw]">
+                    <h3 className="text-white font-display font-medium text-[5.7vw] text-center leading-[1.2] max-sm:px-[7vw] max-sm:text-[10vw]  max-sm:text-left max-md:text-[7.5vw]">
                         Better Reviews, Happier Choices
                     </h3>
                 </Heading>
@@ -161,7 +161,7 @@ const Card = ({ img, text, name, rating, className = "" }) => {
             className={
                 `${className} border text-white font-display border-[#939393] 
          rounded-[1vw] overflow-hidden backdrop-blur-2xl bg-[#99999940] 
-         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw] max-sm:w-full  max-sm:h-[110vw] max-sm:rounded-[4vw] max-sm:py-[10vw] max-sm:px-[7vw] max-sm:flex max-sm:flex-col max-sm:justify-between max-md:w-full max-md:rounded-[3vw] max-md:p-[3vw] max-md:h-[60vw] max-md:justify-between max-md:flex max-md:flex-col`
+         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw] max-sm:w-full  max-sm:h-[110vw] max-sm:rounded-[6vw] max-sm:py-[10vw] max-sm:px-[7vw] max-sm:flex max-sm:flex-col max-sm:justify-between max-md:w-full max-md:rounded-[3vw] max-md:p-[3vw] max-md:h-[60vw] max-md:justify-between max-md:flex max-md:flex-col`
             }
         >
             {/* stars */}

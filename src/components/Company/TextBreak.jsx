@@ -82,11 +82,11 @@ const arrowScale = useTransform(scrollYProgress, [0.38, 0.60], [1, 4])
   return (
     <section
       ref={sectionRef}
-      className="relative h-[130vh] w-screen  px-[4vw] overflow-hidden max-sm:h-full max-sm:py-[25%]  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center" id="text-break"
+      className="relative h-[130vh] w-screen  px-[4vw] overflow-hidden max-sm:py-[25%]  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:h-screen" id="text-break"
     >
       {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden" /> */}
 
-      <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto mt-[-10vw] max-sm:mt-0 max-sm:pt-[70vw]">
+      <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto mt-[-10vw] max-sm:mt-0 max-sm:pt-[40vw]">
         <h2
           data-split="lines"
           className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw]"
@@ -94,7 +94,7 @@ const arrowScale = useTransform(scrollYProgress, [0.38, 0.60], [1, 4])
           We're not just building products—we're building possibilities.
         </h2>
       </div>
-      <div className=" h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB] ">
+      <div className=" h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB] max-sm:h-[50vh] ">
                 <motion.svg
                     style={{
                         scale: arrowScale,

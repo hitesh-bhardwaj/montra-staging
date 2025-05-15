@@ -24,14 +24,8 @@ export default function Hero({
   useEffect(() => {
     initSplitLines();
     const ctx = gsap.context(() => {
-      const heroLines = heroRef.current.querySelectorAll(".single-line");
-      gsap.to(heroLines, {
-        maskPosition: "0% 100%",
-        stagger: 0.2,
-        duration: 2,
-        // delay:4.2,
-        ease: "none",
-      });
+     
+    
       gsap.from(".header", {
         yPercent: -70,
         opacity: 0,
@@ -41,7 +35,7 @@ export default function Hero({
       gsap.from(".heroFadeUp", {
         yPercent: 70,
         opacity: 0,
-        delay:0.5,
+        delay:1,
         duration: 1,
         // stagger: 0.15,
       });
@@ -61,18 +55,18 @@ export default function Hero({
             titleWidth ? titleWidth : "w-[90%]"
           } `}
         >
-          <Heading delay={0.5}>
+          <Heading delay={0.8}>
 
           <h1
            
-            className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11vw] max-sm:leading-[1.2] max-md:text-[8vw] max-md:leading-[1.2]"
+            className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11vw] max-sm:leading-[1.2] max-md:text-[8vw] max-md:leading-[1.2]"
           >
             <span className="text-primary">{primaryHeading}</span>
             {heading}
           </h1>
 
           </Heading>
-          <Copy delay={0.5}>
+          <Copy delay={1.2}>
             <p
               className={`font-body mx-auto heroAnim max-sm:w-[95%] max-md:w-[90%] ${
                 paraWidth ? paraWidth : "w-[75%]"

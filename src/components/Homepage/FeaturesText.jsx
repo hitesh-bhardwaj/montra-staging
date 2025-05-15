@@ -39,7 +39,7 @@ export default function PinnedRevealSection() {
     const arrowScale = useTransform(scrollYProgress, [0.48, 0.70], [1, 4])
 
     return (
-        <section ref={ref} className="relative h-[480vh]" id='feature-text'>
+        <section ref={ref} className="relative h-[470vh] max-md:h-[380vh] max-sm:h-[360vh]" id='feature-text'>
             <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB]">
                 {/* 1) Six HEADINGS */}
                 <div className='flex flex-col justify-center items-center max-sm:gap-[4vw] max-md:gap-[3vw]'>

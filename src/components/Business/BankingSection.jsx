@@ -200,7 +200,7 @@ const data = [
   {
     title: "Banking That Works for Your Business",
     para: "Experience seamless digital banking with Montra—designed to simplify transactions, manage cash flow, and unlock access to credit and financial tools. Whether you're a small shop or a scaling enterprise, Montra helps you bank smarter, not harder.",
-    link: "#",
+    link: "/business/banking",
     color: "#FF8100",
     icon: "/assets/images/business/banking-icon.svg",
     field: "Banking",
@@ -208,7 +208,7 @@ const data = [
   {
     title: "Banking That Works for Your Business",
     para: "Experience seamless digital banking with Montra—designed to simplify transactions, manage cash flow, and unlock access to credit and financial tools. Whether you're a small shop or a scaling enterprise, Montra helps you bank smarter, not harder.",
-    link: "#",
+    link: "/business/payments",
     color: "#215CFF",
     icon: "/assets/images/business/payments-icon.svg",
     field: "Payments",
@@ -216,7 +216,7 @@ const data = [
   {
     title: "Banking That Works for Your Business",
     para: "Experience seamless digital banking with Montra—designed to simplify transactions, manage cash flow, and unlock access to credit and financial tools. Whether you're a small shop or a scaling enterprise, Montra helps you bank smarter, not harder.",
-    link: "#",
+    link: "/business/agency-banking",
     color: "#35C771",
     icon: "/assets/images/business/agency-banking-icon.svg",
     field: "Agency Banking",
@@ -224,7 +224,7 @@ const data = [
   {
     title: "Banking That Works for Your Business",
     para: "Experience seamless digital banking with Montra—designed to simplify transactions, manage cash flow, and unlock access to credit and financial tools. Whether you're a small shop or a scaling enterprise, Montra helps you bank smarter, not harder.",
-    link: "#",
+    link: "/business/inventory-management",
     color: "#111111",
     icon: "/assets/images/business/inventory-icon.svg",
     field: "Inventory Management",
@@ -232,7 +232,7 @@ const data = [
   {
     title: "Banking That Works for Your Business",
     para: "Experience seamless digital banking with Montra—designed to simplify transactions, manage cash flow, and unlock access to credit and financial tools. Whether you're a small shop or a scaling enterprise, Montra helps you bank smarter, not harder.",
-    link: "#",
+    link: "/business/montra-store",
     color: "#FB2F55",
     icon: "/assets/images/business/montra-icon.svg",
     field: "Montra Store",
@@ -240,7 +240,7 @@ const data = [
   {
     title: "Banking That Works for Your Business",
     para: "Experience seamless digital banking with Montra—designed to simplify transactions, manage cash flow, and unlock access to credit and financial tools. Whether you're a small shop or a scaling enterprise, Montra helps you bank smarter, not harder.",
-    link: "#",
+    link: "/business/payment-gateway",
     color: "#7A78FF",
     icon: "/assets/images/business/payment-gateway-icon.svg",
     field: "Payment Gateway",
@@ -248,7 +248,7 @@ const data = [
   {
     title: "Banking That Works for Your Business",
     para: "Experience seamless digital banking with Montra—designed to simplify transactions, manage cash flow, and unlock access to credit and financial tools. Whether you're a small shop or a scaling enterprise, Montra helps you bank smarter, not harder.",
-    link: "#",
+    link: "/business/tap-and-pay",
     color: "#FFB909",
     icon: "/assets/images/business/tap-and-pay-icon.svg",
     field: "Tap & Pay",

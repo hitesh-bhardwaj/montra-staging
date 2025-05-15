@@ -12,7 +12,7 @@ const controlContent = [
     color: "text-[#FF8100]",
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/",
+    link: "/personal/banking",
     content: [
       "Open a Montra Account and get a virtual Montra Card issued instantly.",
       "You can also link your existing Bank accounts on Montra App",
@@ -26,7 +26,7 @@ const controlContent = [
     color: "text-primary",
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/",
+    link: "/personal/payments",
     content: [
       "Open a Montra Account and get a virtual Montra Card issued instantly.",
       "You can also link your existing Bank accounts on Montra App",
@@ -40,7 +40,7 @@ const controlContent = [
     color: "text-[#35C771]",
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/",
+    link: "/personal/finance",
     content: [
       "Open a Montra Account and get a virtual Montra Card issued instantly.",
       "You can also link your existing Bank accounts on Montra App",
@@ -54,7 +54,7 @@ const controlContent = [
     color: "text-[#FB2F55]",
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/",
+    link: "/personal/chat",
     content: [
       "Open a Montra Account and get a virtual Montra Card issued instantly.",
       "You can also link your existing Bank accounts on Montra App",
@@ -68,7 +68,7 @@ const controlContent = [
     color: "text-[#111111]",
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/",
+    link: "/personal/shop",
     content: [
       "Open a Montra Account and get a virtual Montra Card issued instantly.",
       "You can also link your existing Bank accounts on Montra App",

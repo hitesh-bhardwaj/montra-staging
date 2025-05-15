@@ -12,12 +12,13 @@ import { TopContent } from "./TopContent";
 import { BottomContent } from "./BottomContent";
 import { ImageContainer } from "./ImageContainer";
 import { ImageContainerMobile } from "./ImageContainerMobile";
+import { useLenis } from "lenis/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
     const targetRef = useRef(null);
-
+    const lenis = useLenis();
     const [isMobileWidth, setMobileWidth] = useState(false);
     useEffect(() => {
         if (globalThis.innerWidth > 1024) {
@@ -26,6 +27,15 @@ export default function Hero() {
             setMobileWidth(true);
         }
     }, []);
+    useEffect(() => {
+        lenis && lenis.stop();
+    
+        const timeout = setTimeout(() => {
+          lenis && lenis.start();
+        }, 2200);
+    
+        return () => clearTimeout(timeout)
+      }, [lenis]);
 
     return (
         <>

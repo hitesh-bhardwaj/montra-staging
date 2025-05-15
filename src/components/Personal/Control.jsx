@@ -16,7 +16,88 @@ const Control = () => {
   const prevActiveRef = useRef(active);
   const sectionRefs = useRef({});
 
-  const sections = ["Banking", "Payments", "Finance", "Chat", "Shop"];
+  const sections = [
+    {
+      key: "Banking",
+      title: "Do More with your money. Spend & earn rewards",
+      points: [
+        "Open a Montra Account and get a virtual Montra Card issued instantly.",
+        "You can also link your existing Bank accounts on Montra App.",
+        "Now you can start making payments using your Montra or Linked Bank accounts and earn exciting rewards.",
+      ],
+      image: "/assets/images/personal/personal-control-img-1.png",
+      link: {
+        text: "Learn More",
+        href: "/personal/banking",
+      },
+      icon: "/assets/images/personal/personal-icon-1.png",
+      iconColor: "#FF8100",
+    },
+    {
+      key: "Finance",
+      title: "Finance Management Simplified for Everyone",
+      points: [
+        "Track expenses in real-time.",
+        "Set financial goals and budgets.",
+        "Receive smart insights for better decisions.",
+      ],
+      image: "/assets/images/personal/personal-control-img-1.png",
+      link: {
+        text: "Learn More",
+        href: "/personal/finance",
+      },
+      icon: "/assets/images/personal/personal-icon-2.png",
+      iconColor: "#35C771",
+    },
+    {
+      key: "Shop",
+      title: "Smart Shopping with Rewards",
+      points: [
+        "Exclusive deals from partner brands.",
+        "Pay later with flexible EMIs.",
+        "Earn cashback on every purchase.",
+      ],
+      image: "/assets/images/personal/personal-control-img-1.png",
+      link: {
+        text: "Learn More",
+        href: "/personal/shop",
+      },
+      icon: "/assets/images/personal/personal-icon-3.png",
+      iconColor: "#111111",
+    },
+    {
+      key: "Chat",
+      title: "Chat and Transact Instantly",
+      points: [
+        "Send money through chat.",
+        "Split bills with a tap.",
+        "Group chats for shared expenses.",
+      ],
+      image: "/assets/images/personal/personal-control-img-1.png",
+      link: {
+        text: "Learn More",
+        href: "/personal/chat",
+      },
+      icon: "/assets/images/personal/personal-icon-4.png",
+      iconColor: "#FB2F55",
+    },
+    {
+      key: "Payments",
+      title: "Make Fast & Secure Payments",
+      points: [
+        "UPI, cards & net banking supported.",
+        "Instant refunds and smart alerts.",
+        "Auto-reminders for bills & subscriptions.",
+      ],
+      image: "/assets/images/personal/personal-control-img-1.png",
+      link: {
+        text: "Learn More",
+        href: "/personal/payments",
+      },
+      icon: "/assets/images/personal/personal-icon-5.png",
+      iconColor: "#4F46E5",
+    },
+  ];
 
   useEffect(() => {
     // Initialize hidden
@@ -187,9 +268,8 @@ const Control = () => {
       bl.to(".bottom-content", {
         opacity: 1,
         duration: 0.7,
-        delay:1,
+        delay: 1,
       });
-     
     });
     return () => ctx.revert();
   }, [active]);
@@ -199,7 +279,6 @@ const Control = () => {
       className="w-screen h-[310vw] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb]"
       id="control"
     >
-      
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">
         <Heading>
           <h2 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-center">
@@ -207,7 +286,11 @@ const Control = () => {
           </h2>
         </Heading>
         <div className="w-full flex justify-between px-[6.5vw] h-[30vw]">
-          <div className={`icon-container w-full h-full ${pointerevent?"pointer-events-auto":"pointer-events-none"}`}>
+          <div
+            className={`icon-container w-full h-full ${
+              pointerevent ? "pointer-events-auto" : "pointer-events-none"
+            }`}
+          >
             <div className="w-[15vw] h-[15vw] control-icon icon-1 absolute top-[65%] z-[10]">
               <div
                 className={`relative w-full h-full ${
@@ -215,8 +298,8 @@ const Control = () => {
                 } `}
                 onClick={() => {
                   setPointer(false); // disable pointer
-                     setTimeout(() => {
-                   setPointer(true); // re-enable after 2 seconds
+                  setTimeout(() => {
+                    setPointer(true); // re-enable after 2 seconds
                   }, 1000);
                   setActive("Banking");
                 }}
@@ -240,8 +323,8 @@ const Control = () => {
                 }`}
                 onClick={() => {
                   setPointer(false); // disable pointer
-                     setTimeout(() => {
-                   setPointer(true); // re-enable after 2 seconds
+                  setTimeout(() => {
+                    setPointer(true); // re-enable after 2 seconds
                   }, 1000);
                   setActive("Finance");
                 }}
@@ -265,8 +348,8 @@ const Control = () => {
                 }`}
                 onClick={() => {
                   setPointer(false); // disable pointer
-                     setTimeout(() => {
-                   setPointer(true); // re-enable after 2 seconds
+                  setTimeout(() => {
+                    setPointer(true); // re-enable after 2 seconds
                   }, 1000);
                   setActive("Shop");
                 }}
@@ -290,8 +373,8 @@ const Control = () => {
                 }`}
                 onClick={() => {
                   setPointer(false); // disable pointer
-                     setTimeout(() => {
-                   setPointer(true); // re-enable after 2 seconds
+                  setTimeout(() => {
+                    setPointer(true); // re-enable after 2 seconds
                   }, 1000);
                   setActive("Chat");
                 }}
@@ -315,8 +398,8 @@ const Control = () => {
                 }`}
                 onClick={() => {
                   setPointer(false); // disable pointer
-                     setTimeout(() => {
-                   setPointer(true); // re-enable after 2 seconds
+                  setTimeout(() => {
+                    setPointer(true); // re-enable after 2 seconds
                   }, 1000);
                   setActive("Payments");
                 }}
@@ -340,18 +423,18 @@ const Control = () => {
       <div className="w-screen h-[40vw] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4%] right-0 ">
         <div className="w-full h-full relative flex justify-end ">
           <div className="w-[75%] h-[40vw] relative bottom-content flex justify-end opacity-0 pr-[4vw]  z-[200]">
-            {sections.map((sectionKey) => (
+            {sections.map((section) => (
               <div
-                key={sectionKey}
-                ref={(el) => (sectionRefs.current[sectionKey] = el)}
-                className={`w-full h-[40vw] flex justify-between absolute top-0 left-0 pr-[4vw] ${
-                  active === sectionKey ? "z-20" : "z-10"
+                key={section.key}
+                ref={(el) => (sectionRefs.current[section.key] = el)}
+                className={`w-full h-[40vw] flex justify-between absolute top-0 left-0 pr-[4vw] opacity-0 ${
+                  active === section.key ? "z-20" : "z-10"
                 }`}
               >
                 <div className="w-[35%]">
                   <Image
-                    src={"/assets/images/personal/personal-control-img-1.png"}
-                    alt=""
+                    src={section.image}
+                    alt={section.key}
                     className="w-full h-full object-contain"
                     width={500}
                     height={900}
@@ -359,32 +442,24 @@ const Control = () => {
                 </div>
                 <div className="w-[55%] flex flex-col gap-[3vw] h-full justify-center">
                   <h3 className="text-[3.4vw] leading-[1.3] font-display capitalize font-medium">
-                    Do More with your money. Spend & earn rewards
+                    {section.title}
                   </h3>
                   <ul className="list-disc ml-[1vw] w-[60%]">
-                    <li>
-                      Open a Montra Account and get a virtual Montra Card issued
-                      instantly.
-                    </li>
-                    <li>
-                      You can also link your existing Bank accounts on Montra
-                      App.
-                    </li>
-                    <li>
-                      Now you can start making payments using your Montra or
-                      Linked Bank accounts and earn exciting rewards.
-                    </li>
+                    {section.points.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
                   </ul>
-                  <LinkButton text={"Learn More"} href={"/"} />
+                  <LinkButton
+                    text={section.link.text}
+                    href={section.link.href}
+                  />
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <div className="w-screen h-[310vw] absolute top-0 left-0">
-
-      </div>
+      <div className="w-screen h-[310vw] absolute top-0 left-0"></div>
 
       <p className="w-[30%] h-fit fixed bottom-[10%] left-[5%] text-[3vw] font-display font-medium control-content opacity-0">
         Effortless

@@ -79,7 +79,7 @@ const Hero = () => {
       <div className="h-full flex items-center justify-center text-center px-[4vw] max-md:flex-col">
         <div className="w-[80%] mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw] max-md:pt-[30vw] max-md:w-full max-md:space-y-[5vw]">
           <Heading delay={0.5}>
-            <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11.5vw] max-sm:leading-[1.2] max-sm:w-full max-md:text-[8vw] max-md:w-[70%] max-md:mx-auto">
+            <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11.5vw] max-sm:leading-[1.2] max-sm:w-full max-md:text-[8vw] max-md:w-[80%] max-md:mx-auto">
               <span className="text-primary">Montra: </span>Building future of
               an Inclusive Financial Ecosystem
             </h1>

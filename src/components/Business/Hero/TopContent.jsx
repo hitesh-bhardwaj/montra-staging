@@ -4,7 +4,7 @@ import Heading from "@/components/Heading";
 export const TopContent = () => {
     return (
         <div className="text-center flex items-center justify-center pt-[14vw] px-[4vw] max-sm:pt-[35vw] max-md:pt-[30vw]">
-            <div className="space-y-[1.2vw] max-sm:space-y-[7vw]">
+            <div className="space-y-[1.2vw] max-sm:space-y-[7vw] max-md:space-y-[3vw]">
                 <Heading delay={0.5}>
                     <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw] max-md:text-[7.5vw]">
                         <span className="text-primary">Montra Business Account: </span> Go

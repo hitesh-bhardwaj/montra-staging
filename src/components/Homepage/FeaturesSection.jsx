@@ -179,7 +179,7 @@ const FeatureSection = () => {
                     return (
                         <motion.div
                             key={i}
-                            className="absolute w-[10vw] h-[10vw] rounded-[3vw] overflow-hidden max-sm:w-[25vw] max-sm:h-[25vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:rounded-[7vw]"
+                            className="absolute w-[10vw] h-[10vw] rounded-[3vw] overflow-hidden max-sm:w-[25vw] max-sm:h-[25vw] max-md:w-[15vw] max-md:h-[15vw] max-md:rounded-[4vw] max-sm:rounded-[7vw]"
                             style={style}
                             variants={item}
                             custom={offsets}

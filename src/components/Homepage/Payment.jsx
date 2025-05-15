@@ -20,64 +20,65 @@ export default function Payments() {
             {
                 title: 'Secure way of accessing World of Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/personal/banking',
             },
             {
                 title: 'Secure way of accessing World of Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/personal/payments',
             },
             {
                 title: 'Secure way of accessing World of Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/personal/finance',
             },
             {
                 title: 'Secure way of accessing World of Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/personal/chat',
             },
             {
                 title: 'Secure way of accessing World of Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/personal/shop',
             },
-            {
-                title: 'Secure way of accessing World of Banking',
-                desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
-            },
+          
         ],
         business: [
             {
                 title: 'Business-grade Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/business/banking',
             },
             {
                 title: 'Business-grade Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/business/payments',
             },
             {
                 title: 'Business-grade Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/business/agency-banking',
             },
             {
                 title: 'Business-grade Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/business/inventory-management',
             },
             {
                 title: 'Business-grade Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/business/payment-gateway',
             },
             {
                 title: 'Business-grade Banking',
                 desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
-                link: '#',
+                link: '/business/tap-and-pay',
+            },
+            {
+                title: 'Business-grade Banking',
+                desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+                link: '/business/montra-store',
             },
         ],
     };
@@ -128,7 +129,7 @@ export default function Payments() {
         finance: (132 - yStart) / length,
         chat: (195 - yStart) / length,
         shop: (258 - yStart) / length,
-        lend: (315.5 - yStart) / length,
+        // lend: (315.5 - yStart) / length,
     };
 
     const RAMP = 0.01;
@@ -148,16 +149,16 @@ export default function Payments() {
     const colorFinance = makeColor(thresholds.finance);
     const colorChat = makeColor(thresholds.chat);
     const colorShop = makeColor(thresholds.shop);
-    const colorLend = makeColor(thresholds.lend);
+    // const colorLend = makeColor(thresholds.lend);
 
     // line fill
     const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     // translateY for your step text column:
-    const translateY = useTransform(scrollYProgress, [0, 1], ['0', '-82%']);
+    const translateY = useTransform(scrollYProgress, [0, 1], ['0', '-78%']);
 
     return (
-        <section ref={sectionRef} className="h-[600vh] bg-white relative" id='payment'>
+        <section ref={sectionRef} className="h-[600vh] bg-white relative py-[4vw]" id='payment'>
             <div className="sticky top-0 px-[4vw] h-screen flex items-center justify-between">
 
                 {/* ─── CONTROLS ─── */}
@@ -197,16 +198,16 @@ export default function Payments() {
                 <div className="flex gap-4 fadeupanim">
                     <motion.svg
                         className="h-[15vw]"
-                        width="14" height="328"
+                        width="14" height="428"
                         viewBox="0 0 14 328"
                         fill="none" xmlns="http://www.w3.org/2000/svg"
                     >
                         <line
-                            x1="6.95801" y1="5.5" x2="6.95799" y2="315.5"
+                            x1="6.95801" y1="5.5" x2="6.95799" y2="345"
                             stroke={inactiveColor} strokeWidth="3"
                         />
                         <motion.line
-                            x1="6.95801" y1="5.5" x2="6.95799" y2="315.5"
+                            x1="6.95801" y1="5.5" x2="6.95799" y2="345"
                             stroke={activeColor} strokeWidth="3"
                             style={{ scaleY }} className="!origin-top"
                         />
@@ -216,25 +217,25 @@ export default function Payments() {
                             fill={colorBanking} stroke={colorBanking} strokeWidth="2"
                         />
                         <motion.circle
-                            cx="6.95801" cy="69" r="5.5"
+                            cx="6.95801" cy="83" r="5.5"
                             fill={colorPayment} stroke={colorPayment} strokeWidth="2"
                         />
                         <motion.circle
-                            cx="6.95801" cy="132" r="5.5"
+                            cx="6.95801" cy="162" r="5.5"
                             fill={colorFinance} stroke={colorFinance} strokeWidth="2"
                         />
                         <motion.circle
-                            cx="6.95801" cy="195" r="5.5"
+                            cx="6.95801" cy="240" r="5.5"
                             fill={colorChat} stroke={colorChat} strokeWidth="2"
                         />
                         <motion.circle
-                            cx="6.95801" cy="258" r="5.5"
+                            cx="6.95801" cy="321" r="5.5"
                             fill={colorShop} stroke={colorShop} strokeWidth="2"
                         />
-                        <motion.circle
+                        {/* <motion.circle
                             cx="6.95801" cy="321" r="5.5"
                             fill={colorLend} stroke={colorLend} strokeWidth="2"
-                        />
+                        /> */}
                     </motion.svg>
 
                     <div className="flex flex-col justify-between font-display text-[1vw] leading-[0.5] pb-1">
@@ -253,9 +254,7 @@ export default function Payments() {
                         <motion.span style={{ color: colorShop }}>
                             Shop
                         </motion.span>
-                        <motion.span style={{ color: colorLend }}>
-                            Lend
-                        </motion.span>
+                     
                     </div>
                 </div>
 

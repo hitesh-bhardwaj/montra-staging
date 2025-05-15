@@ -69,13 +69,13 @@ export const BottomContent = ({ img6 }) => {
                         <p>Whether it's accepting digital payments, managing operations, or unlocking credit and insurance, Montra helps businesses grow with confidence—no matter their size or stage.</p>
                     </Copy>
                     <div className="space-y-[1.5vw] w-[95%] max-sm:space-y-[4vw] max-sm:w-full max-md:w-[80%] max-md:space-y-[4vw]">
-                        <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-white text-black max-sm:px-[4vw] max-sm:py-[3vw] max-md:px-[5vw] max-md:py-[2vw]">
+                        <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-white text-black max-sm:px-[4vw] max-sm:py-[5vw] max-sm:rounded-[5vw] max-md:px-[5vw] max-md:py-[2vw]">
                             Track payment collections & Settlements
                         </div>
-                        <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-[#FFEAEE] text-black max-sm:px-[4vw] max-sm:py-[3vw] max-md:px-[5vw] max-md:py-[2vw]">
+                        <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-[#FFEAEE] text-black max-sm:px-[4vw] max-sm:py-[5vw] max-sm:rounded-[5vw] max-md:px-[5vw] max-md:py-[2vw]">
                             Voice & Text notifications for payment confirmation
                         </div>
-                        <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-[#EAF1FF] text-black max-sm:px-[4vw] max-sm:py-[3vw] max-md:px-[5vw] max-md:py-[2vw]">
+                        <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-[#EAF1FF] text-black max-sm:px-[4vw] max-sm:py-[5vw] max-sm:rounded-[5vw] max-md:px-[5vw] max-md:py-[2vw]">
                             Set up a Montra Store on Montra App & start selling your products & services virtually
                         </div>
                     </div>
