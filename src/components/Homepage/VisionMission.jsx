@@ -1,7 +1,8 @@
-'use client';
+'use client'
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef } from "react";
 import Heading from "../Heading";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -56,44 +57,6 @@ const VisionMission = () => {
 };
 
 export default VisionMission;
-
-// // Extracted animation setup function
-// function initVisionMissionAnimations({ container, section }) {
-//     if (!container || !section) return;
-
-//     const getCardElements = (id) => {
-//         const card = container.querySelector(`#${id}`);
-//         return {
-//             front: card?.querySelector(".flip-card-front"),
-//             back: card?.querySelector(".flip-card-back"),
-//             cardEl: card,
-//         };
-//     };
-
-//     const c1 = getCardElements("card-1");
-//     const c2 = getCardElements("card-2");
-
-//     const tl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: section,
-//             start: "20% center",
-//             end: "80% center",
-//             scrub: 0.25,
-//         },
-//         defaults: { ease: "none" },
-//     });
-
-//     tl.to(c1.cardEl, { rotation: -4, duration: 0.5 })
-//         .to(c2.cardEl, { rotation: 4, duration: 0.5 }, "<")
-//         .to(c1.cardEl, { left: "34%", duration: 1.5 })
-//         .to(c2.cardEl, { left: "67%", duration: 1.5 }, "<")
-//         .to(c1.front, { rotateY: 180, duration: 5, ease: "back.inOut(2.5)" })
-//         .fromTo(c1.back, { rotateY: -180 }, { rotateY: 0, duration: 5, ease: "back.inOut(2.5)" }, "<")
-//         .to(c1.cardEl, { rotation: 0, duration: 5 }, "<")
-//         .to(c2.front, { rotateY: 180, duration: 5, delay: -3, ease: "back.out(2.5)" })
-//         .fromTo(c2.back, { rotateY: -180 }, { rotateY: 0, duration: 5, ease: "back.out(2.5)" }, "<")
-//         .to(c2.cardEl, { rotation: 0, duration: 5 }, "<");
-// }
 
 function initVisionMissionAnimations({ container, section }) {
     if (!container || !section) return;

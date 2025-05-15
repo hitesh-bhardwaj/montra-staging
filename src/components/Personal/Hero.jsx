@@ -11,11 +11,11 @@ const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (globalThis.innerWidth > 1024) {
-        gsap.from(".fadeUpHero",{
-          opacity:0,
-          duration:0.7,
-          y:30,
-          delay:1.2,
+        gsap.from(".fadeUpHero", {
+          opacity: 0,
+          duration: 0.7,
+          y: 30,
+          delay: 1.2,
         })
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -65,7 +65,6 @@ const Hero = () => {
             ease: "none",
 
           })
-
       }
       if(globalThis.innerWidth>541&&globalThis.innerWidth<1024){
         const tl = gsap.timeline({
@@ -113,20 +112,18 @@ const Hero = () => {
             pin: ".hero-image-container",
             start: "12% top",
             end: "+1300 top",
-            // markers: true,
             scrub: 0.5,
           },
         });
-       
-          tl.to(".hero-image-anim", {
-            width: "105vw",
-            height: "220vw",
-            ease: "none",
-            left: "-2.5%",
-            top: "-54%",
-            delay: -0.5,
-            borderRadius: "0vw",
-          })
+        tl.to(".hero-image-anim", {
+          width: "105vw",
+          height: "220vw",
+          ease: "none",
+          left: "-2.5%",
+          top: "-54%",
+          delay: -0.5,
+          borderRadius: "0vw",
+        })
           .to(".hero-main-card", {
             height: "90vw",
             yPercent: -10,
@@ -148,6 +145,7 @@ const Hero = () => {
     });
     return () => ctx.revert();
   }, []);
+  
   return (
     <section className="w-screen h-[270vh] max-sm:h-[560vw] overflow-hidden max-md:h-[215vh]" id="hero">
       <div className="w-full h-full flex flex-col gap-[2vw] max-sm:gap-[12vw]">

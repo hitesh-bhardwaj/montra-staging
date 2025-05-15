@@ -3,16 +3,14 @@ import Link from "next/link";
 import montraLogo from "../../../public/montra-logo.png";
 import Image from "next/image";
 import Navbar from "./Navbar";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTransitionRouter } from "next-view-transitions";
 
 export default function Header() {
   const router = useTransitionRouter();
   const [hidden, setHidden] = useState(false);
   const [lastY, setLastY] = useState(0);
-  const [isInverted, setIsInverted] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-
   const [openMenu, setopenMenu] = useState(false);
 
   useEffect(() => {
@@ -169,7 +167,7 @@ export default function Header() {
               </Link>
               <span className="bg-white h-[1px] w-full"></span>
               <Link
-                href={"/"}
+                href={"#"}
                 className="link-text"
                 onClick={() => {
                   setopenMenu(false);
