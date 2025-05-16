@@ -125,7 +125,7 @@ export default function Navbar({ navigateTo, hidden }) {
         {
           // opacity:0,
           yPercent: 0,
-          delay: -0.5,
+          delay: 0,
           // delay:0.1,
           stagger: 0.1,
         }
@@ -138,7 +138,7 @@ export default function Navbar({ navigateTo, hidden }) {
         {
           opacity: 1,
           duration: 1,
-          delay: 0.5,
+          delay: 0.3,
         }
       );
     });
@@ -229,11 +229,10 @@ export default function Navbar({ navigateTo, hidden }) {
             >
               {link.icon || link.name}
               <div
-                className={`w-[1.2vw] h-[1.2vw] flex justify-center items-center rounded-full border text-[0.7vw] border-white absolute top-[20%] left-[76%] ${
-                  link.name === "Personal" || link.name === "Business"
+                className={`w-[1.2vw] h-[1.2vw] flex justify-center items-center rounded-full border text-[0.7vw] border-white bg-white absolute top-[20%] left-[76%] text-primary font-semibold ${link.name === "Personal" || link.name === "Business"
                     ? ""
                     : "hidden"
-                }`}
+                  }`}
               >
                 {link.name == "Personal" ? <p>5</p> : <p>7</p>}
               </div>
@@ -248,9 +247,8 @@ export default function Navbar({ navigateTo, hidden }) {
         onMouseLeave={() => {
           setOpenMenu(false);
         }}
-        className={`w-full  absolute top-[10%] left-0 rounded-[2vw] bg-[#FAFBFF] border border-black/10 z-[51] flex justify-end overflow-hidden transition-all duration-300 ease-out  ${
-          openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
-        }`}
+        className={`w-full  absolute top-[10%] left-0 rounded-[2vw] bg-[#FAFBFF] border border-black/10 z-[51] flex justify-end overflow-hidden transition-all duration-300 ease-out  ${openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
+          }`}
       >
         <div className="w-[82.5%] flex gap-[1vw] h-full font-display text-primary">
           <div className="w-[60%] h-full py-[2vw] flex flex-col justify-between">
@@ -309,9 +307,9 @@ export default function Navbar({ navigateTo, hidden }) {
                 <></>
               )}
             </div>
-            <div className="w-full flex gap-[0.5vw]">
-              <div className="w-full flex gap-[1vw] items-center text-[1vw]  fadeup-navpolicy">
-                <Link href={"/"} className="link-line">
+            <div className="w-full flex gap-[0.5vw] items-center">
+              <div className="w-full flex gap-[1vw] items-center text-[1vw] fadeup-navpolicy">
+                <Link href={"/"} className="link-line text-black-1">
                   Privacy Policy
                 </Link>
                 <span>
@@ -320,10 +318,10 @@ export default function Navbar({ navigateTo, hidden }) {
                     alt=""
                     width={40}
                     height={40}
-                    className="w-[0.4vw] h-[0.4vw]"
+                    className="w-[0.4vw] h-[0.4vw] brightness-0"
                   />
                 </span>
-                <Link href={"/"} className="link-line">
+                <Link href={"/"} className="link-line text-black-1">
                   Cookie Policy
                 </Link>
               </div>
@@ -340,50 +338,50 @@ export default function Navbar({ navigateTo, hidden }) {
               />
             </div>
             <div className="w-full flex gap-[0.5vw] fadeup-navicon">
-              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
+              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
                 <a
                   href="/"
-                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300"
+                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
                 >
                   <Facebook
                     className={
-                      "text-primary group-hover:text-white transition-all duration-300 "
+                      "text-black-1 group-hover:text-white transition-all duration-300 "
                     }
                   />
                 </a>
               </div>
-              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
+              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
                 <a
                   href="/"
-                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300"
+                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
                 >
                   <Linkedin
                     className={
-                      "text-primary group-hover:text-white transition-all duration-300"
+                      "text-black-1 group-hover:text-white transition-all duration-300"
                     }
                   />
                 </a>
               </div>
-              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
+              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
                 <a
                   href="/"
-                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300"
+                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
                 >
                   <Twitter
                     className={
-                      "text-primary group-hover:text-white transition-all duration-300"
+                      "text-black-1 group-hover:text-white transition-all duration-300"
                     }
                   />
                 </a>
               </div>
-              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300">
+              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300">
                 <a
                   href="/"
-                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300"
+                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
                 >
                   <Instagram
                     className={
-                      "text-primary group-hover:text-white transition-all duration-300"
+                      "text-black-1 group-hover:text-white transition-all duration-300"
                     }
                   />
                 </a>
