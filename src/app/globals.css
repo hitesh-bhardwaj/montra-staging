@@ -128,7 +128,7 @@ body {
 /* Marquee */
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50.92%); }
+  to   { transform: translateX(-51.24%); }
 }
 .marquee {
   /* length should match the total width of one loop of items */
@@ -205,11 +205,11 @@ li .link-line::after {
   background-color: currentColor;
   transform-origin: right;
   transition: transform 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99);
-  transform: scaleX(0) rotate(0.001deg);
+  transform: scaleX(0);
 }
 .link-line:hover::after {
   transform-origin: left;
-  transform: scaleX(1) rotate(0.001deg);
+  transform: scaleX(1);
 }
 
 

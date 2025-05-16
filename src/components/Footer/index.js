@@ -1,12 +1,19 @@
 "use client"
 import Image from 'next/image'
 import logo from '../../../public/montra-white-logo.svg';
-import { ArrowRight, NftIcon } from '../Buttons/icons'
+import { ArrowRight, NftIcon, SellIcon, ReceiveIcon } from '../Buttons/icons'
 import React from 'react'
 import { useAnimatedNavigation } from '../NavigationContext';
 
+const iconMap = {
+    PAY: NftIcon,
+    RECEIVE: ReceiveIcon,
+    SELL: SellIcon,
+};
+
 export default function Footer() {
     const { navigateTo } = useAnimatedNavigation();
+    const words = ['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL'];
 
     return (
         <>
@@ -84,8 +91,8 @@ export default function Footer() {
                                                 navigateTo("/platform");
                                             }}
                                             className="uppercase block w-fit link-line" >Platform</a>
-                                        <a 
-                                            href="/company" 
+                                        <a
+                                            href="/company"
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 navigateTo("/company");
@@ -114,13 +121,16 @@ export default function Footer() {
 
                     {/* Marquee */}
                     <div className="overflow-hidden whitespace-nowrap text-nowrap max-sm:h-[20vw] bg-primary max-sm:hidden max-md:py-[5vw]">
-                        <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[10vw] leading-0 font-bold text-white gap-[5vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
-                            {['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL'].map((word, i) => (
-                                <React.Fragment key={i}>
-                                    <span>{word}</span>
-                                    <NftIcon className='w-[8vw] h-[8vw] mt-2' />
-                                </React.Fragment>
-                            ))}
+                        <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[7vw] leading-0 font-semibold text-white gap-[5vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
+                            {words.map((word, i) => {
+                                const IconComponent = iconMap[word]; // dynamically pick icon
+                                return (
+                                    <React.Fragment key={i}>
+                                        <span>{word}</span>
+                                        <IconComponent className="w-[6vw] h-[6vw] mt-2" />
+                                    </React.Fragment>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -134,6 +144,8 @@ export default function Footer() {
         </>
     )
 }
+
+
 
 const socialLinks = [
     {
