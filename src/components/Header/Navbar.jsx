@@ -293,15 +293,15 @@ export default function Navbar({ navigateTo, hidden }) {
                       >
                         {business.name}
                       </Link>
-                      <span>
+                      <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block">
                         <Image
                           src={"/assets/icons/diagonal-arrow.svg"}
                           alt=""
                           width={40}
                           height={40}
-                          className="w-[0.7vw] h-[0.7vw] opacity-0 translate-y-[40%] group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out"
+                          className="w-[0.7vw] h-[0.7vw] scale-[0.7] translate-y-[100%] translate-x-[-100%] group-hover:translate-y-0 group-hover:translate-x-0  group-hover:scale-[1] transition-all duration-300 ease-in-out"
                         />
-                      </span>
+                      </div>
                     </div>
                   ))}
                 </>
