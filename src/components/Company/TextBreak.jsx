@@ -84,7 +84,9 @@ const arrowScale = useTransform(scrollYProgress, [0.48, 0.60], [1, 4])
       ref={sectionRef}
       className="relative h-[130vh] w-screen  px-[4vw] overflow-hidden max-sm:py-[25%]  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:h-screen" id="text-break"
     >
-      <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto max-sm:mt-0 max-sm:pt-[40vw]">
+      {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden" /> */}
+
+      <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto  max-sm:mt-0 max-sm:pt-[40vw]">
         <h2
           data-split="lines"
           className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw]"

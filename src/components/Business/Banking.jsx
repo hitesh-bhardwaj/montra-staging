@@ -44,7 +44,7 @@ const Banking = () => {
                 scrollTrigger: {
                     trigger: sliderContainer.current,
                     start: "top top",
-                    end: "470% top",
+                    end: "630% top",
                     // pin: true,
                     // markers:true,
                     scrub: 0.25,

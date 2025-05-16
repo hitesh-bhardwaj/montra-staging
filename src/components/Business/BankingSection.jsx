@@ -14,14 +14,14 @@ export default function Payments() {
   useEffect(() => {
     itemsRef.current = itemsRef.current.slice(0, data.length);
     const totalItems = data.length;
-    const sectionHeight = 100 / totalItems;
+    const sectionHeight = 98 / totalItems;
     const circles = document.querySelectorAll(".svg-circle");
     const labels = document.querySelectorAll(".indicator-label");
 
     itemsRef.current.forEach((el, index) => {
-      const start = `${sectionHeight * index - 1.5}% top`;
-      const end = `${sectionHeight * (index + 0.9)}% top`;
-      console.log(start, end);
+      const start = `${sectionHeight * index + 4}% 30%`;
+      const end = `${sectionHeight * (index + 1.1)}% 30%`;
+    
       gsap
         .timeline({
           scrollTrigger: {
@@ -30,6 +30,11 @@ export default function Payments() {
             end,
             scrub: true,
             onEnter: () => {
+              // Set zIndex higher
+              itemsRef.current.forEach((item, i) => {
+                gsap.set(item, { zIndex: i === index ? 10 : 0 });
+              });
+    
               gsap.to(circles[index], {
                 fill: "#215CFF",
                 stroke: "#215CFF",
@@ -37,13 +42,18 @@ export default function Payments() {
               });
               gsap.to(labels[index], { color: "#215CFF", duration: 0.3 });
             },
-            onLeaveBack: () => {
+            onEnterBack: () => {
+              // Same as onEnter for reverse scroll
+              itemsRef.current.forEach((item, i) => {
+                gsap.set(item, { zIndex: i === index ? 10 : 0 });
+              });
+    
               gsap.to(circles[index], {
-                fill: "white",
-                stroke: "#D2D2D2",
+                fill: "#215CFF",
+                stroke: "#215CFF",
                 duration: 0.3,
               });
-              gsap.to(labels[index], { color: "#D2D2D2", duration: 0.3 });
+              gsap.to(labels[index], { color: "#215CFF", duration: 0.3 });
             },
             onLeave: () => {
               gsap.to(circles[index], {
@@ -53,13 +63,13 @@ export default function Payments() {
               });
               gsap.to(labels[index], { color: "#D2D2D2", duration: 0.3 });
             },
-            onEnterBack: () => {
+            onLeaveBack: () => {
               gsap.to(circles[index], {
-                fill: "#215CFF",
-                stroke: "#215CFF",
+                fill: "white",
+                stroke: "#D2D2D2",
                 duration: 0.3,
               });
-              gsap.to(labels[index], { color: "#215CFF", duration: 0.3 });
+              gsap.to(labels[index], { color: "#D2D2D2", duration: 0.3 });
             },
           },
         })
@@ -73,13 +83,14 @@ export default function Payments() {
           yPercent: -5,
           duration: 1,
           ease: "none",
-          delay: -0.2,
+          delay: 0.2,
         });
     });
+    
   }, [data]);
 
   return (
-    <section ref={sectionRef} className="h-[580vh] pt-[10vw] w-screen bg-white max-sm:hidden max-md:hidden">
+    <section ref={sectionRef} className="h-[750vh] pt-[10vw] w-screen bg-white max-sm:hidden max-md:hidden">
       <div className="w-full text-center flex items-center justify-center ">
         <Heading>
           <h2 className="text-[5.7vw] font-display font-medium  w-[80%] capitalize leading-[1.2]">

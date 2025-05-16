@@ -260,9 +260,10 @@ const Control = () => {
       const bl = gsap.timeline({
         scrollTrigger: {
           trigger: "#control",
-          start: "61% top",
-          end: "85% top",
+          start: "65% top",
+          end: "81% top",
           scrub: true,
+          // markers:true,
         },
       });
       bl.to(".bottom-content", {
