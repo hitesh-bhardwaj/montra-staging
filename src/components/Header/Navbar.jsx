@@ -1,9 +1,11 @@
 "use client";
 
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState, useEffect } from "react";
+import { Facebook, Instagram, Linkedin, Twitter } from "../Buttons/icons";
 
 const navLinks = [
   {
@@ -29,21 +31,80 @@ const navLinks = [
       </svg>
     ),
   },
-  { name: "Personal", href: "/personal", svg: "/assets/icons/arrow-down.svg" },
-  { name: "Business", href: "/business", svg: "/assets/icons/arrow-down.svg" },
+  { name: "Personal", href: "/personal",  },
+  { name: "Business", href: "/business", },
   {
     name: "Platform",
     href: "#",
-    svg: "/assets/icons/diagonal-arrow.svg",
     svgWidth: "w-[0.7vw]",
   },
   { name: "Company", href: "/company" },
 ];
+const navLinkArray = [
+  {
+    personal: [
+      {
+        link: "/personal/banking",
+        name: "Banking",
+      },
+      {
+        link: "/personal/payments",
+        name: "Payments",
+      },
+      {
+        link: "/personal/finance",
+        name: "Finance",
+      },
+      {
+        link: "/personal/chat",
+        name: "Chat",
+      },
+      {
+        link: "/personal/shop",
+        name: "Shop",
+      },
+    ],
+  },
+  {
+    business: [
+      {
+        link: "/business/banking",
+        name: "Banking",
+      },
+      {
+        link: "/business/payments",
+        name: "Payments",
+      },
+      {
+        link: "/business/agency-banking",
+        name: "Agency Banking",
+      },
+      {
+        link: "/business/inventory-management",
+        name: "Inventory Management",
+      },
+      {
+        link: "/business/montra-store",
+        name: "Montra Store",
+      },
+      {
+        link: "/business/payment-gateway",
+        name: "Payment Gateway",
+      },
+      {
+        link: "/business/tap-and-pay",
+        name: "Tap & Pay",
+      },
+    ],
+  },
+];
 
-export default function Navbar({ navigateTo }) {
+export default function Navbar({ navigateTo,hidden }) {
   const pathname = usePathname();
   const navRef = useRef(null);
+  const [active, setActive] = useState(null);
   const [highlight, setHighlight] = useState({ left: 0, width: 0 });
+  const [openMenu, setOpenMenu] = useState(false);
 
   const movePill = (el) => {
     if (!el || !navRef.current) return;
@@ -54,7 +115,37 @@ export default function Navbar({ navigateTo }) {
       width: rect.width,
     });
   };
-
+ useEffect(()=>{
+  const ctx = gsap.context(()=>{
+  gsap.from(".fadeup-navlink",{
+    // opacity:0,
+    yPercent:100,
+    delay:0.2,
+    stagger:0.1
+  })
+  gsap.from(".fadeup-navimg",{
+    opacity:0,
+    duration:1,
+    delay:0.3,
+  })
+  })
+  return()=>ctx.revert()
+ },[active,openMenu])
+ useEffect(()=>{
+  const ctx = gsap.context(()=>{
+   gsap.from(".fadeup-navpolicy",{
+    opacity:0,
+    y:5,
+    delay:0.5
+   })
+   gsap.from(".fadeup-navicon",{
+    opacity:0,
+    y:5,
+    delay:0.5
+   })
+  })
+  return()=>ctx.revert()
+ },[openMenu])
   useEffect(() => {
     requestAnimationFrame(() => {
       const active = navRef.current.querySelector('a[data-active="true"]');
@@ -66,17 +157,17 @@ export default function Navbar({ navigateTo }) {
     <nav className="bg-black rounded-full h-[4.1vw] max-sm:hidden max-md:hidden relative z-[52]">
       <div
         ref={navRef}
-        className="relative w-full inline-flex h-full items-center overflow-hidden z-[54] bg-black rounded-full  px-[0.2vw]"
+        className="relative w-full inline-flex h-full items-center overflow-hidden z-[54] bg-black rounded-full  px-[0.5vw]"
         onMouseLeave={() => {
           const active = navRef.current.querySelector('a[data-active="true"]');
           movePill(active);
         }}
       >
         <span
-          className="absolute bg-primary rounded-full h-[85%] w-[90%] transition-all duration-300"
+          className="absolute bg-primary rounded-full h-[82%] w-[90%] transition-all duration-300"
           style={{
-            transform: `translateX(${highlight.left}px)`,
-            width: highlight.width - 5,
+            transform: `translateX(${highlight.left - 7}px)`,
+            width: highlight.width,
           }}
         ></span>
 
@@ -95,135 +186,98 @@ export default function Navbar({ navigateTo }) {
               href={link.href}
               data-active={isActive ? "true" : undefined}
               aria-label={link.name}
-              className="relative z-10 flex text-[1.05vw] min-w-[8vw] h-full items-center px-5 justify-center text-white whitespace-nowrap font-display gap-[0.5vw]"
-              onMouseEnter={(e) => movePill(e.currentTarget)}
+              className="relative z-10 flex text-[1.05vw] min-w-[5vw] h-full items-center px-[2vw] justify-center text-white whitespace-nowrap font-display gap-[0.5vw]"
+              onMouseEnter={(e) => {
+                movePill(e.currentTarget);
+                if (link.name == "Personal" || link.name == "Business") {
+                  setOpenMenu(true);
+                }
+                if (link.name == "Personal") {
+                  setActive(1);
+                }
+                if (link.name == "Business") {
+                  setActive(2);
+                }
+              }}
+              onMouseLeave={() => setOpenMenu(false)}
             >
+              
               {link.icon || link.name}
+              <div className={`w-[1.2vw] h-[1.2vw] flex justify-center items-center rounded-full border text-[0.7vw] border-white absolute top-[20%] left-[76%] ${link.name === "Personal" || link.name === "Business" ? "" : "hidden"}`}>
 
-              <span>
-                {link.svg ? (
-                  <Image
-                    src={link.svg}
-                    alt="svg"
-                    className={` h-[1.2vw] ${
-                      link.svgWidth ? link.svgWidth : "w-[1.2vw]"
-                    }`}
-                    width={50}
-                    height={50}
-                  />
-                ) : (
-                  <></>
-                )}
-              </span>
+               {
+                link.name=="Personal"?<p>5</p>:<p>7</p>
+               }
+              </div>
+             
             </a>
           );
         })}
       </div>
-      <div className="w-full h-[0vw] absolute top-0 left-0 rounded-[2vw] bg-primary z-[51] flex justify-end overflow-hidden pt-[4.2vw]">
-        <div className="w-[78%] flex gap-[1vw] h-full font-display text-white">
+      <div
+        onMouseEnter={() => {
+          setOpenMenu(true);
+        }}
+        onMouseLeave={() => {
+          setOpenMenu(false);
+        }}
+        className={`w-full  absolute top-[10%] left-0 rounded-[2vw] bg-[#FAFBFF] border border-black/10 z-[51] flex justify-end overflow-hidden transition-all duration-300 ease-out  ${
+          openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
+        }`}
+      >
+        <div className="w-[82.5%] flex gap-[1vw] h-full font-display text-primary">
           <div className="w-[60%] h-full py-[2vw] flex flex-col justify-between">
             <div className="flex flex-col gap-[0.7vw] text-[1.1vw]">
-              <div className="w-full flex gap-[0.5vw] items-center ">
-                <Link href={"/"} className="link-line">
-                  Banking
-                </Link>
-                <span>
-                  <Image
-                    src={"/assets/icons/diagonal-arrow.svg"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="w-[0.7vw] h-[0.7vw]"
-                  />
-                </span>
-              </div>
-              <div className="w-full flex gap-[0.5vw] items-center">
-                <Link href={"/"} className="link-line">
-                  Payments
-                </Link>
-                <span>
-                  <Image
-                    src={"/assets/icons/diagonal-arrow.svg"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="w-[0.7vw] h-[0.7vw]"
-                  />
-                </span>
-              </div>
-              <div className="w-full flex gap-[0.5vw] items-center">
-                <Link href={"/"} className="link-line">
-                  Agency Banking
-                </Link>
-                <span>
-                  <Image
-                    src={"/assets/icons/diagonal-arrow.svg"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="w-[0.7vw] h-[0.7vw]"
-                  />
-                </span>
-              </div>
-              <div className="w-full flex gap-[0.5vw] items-center">
-                <Link href={"/"} className="link-line">
-                  Inventory Management
-                </Link>
-                <span>
-                  <Image
-                    src={"/assets/icons/diagonal-arrow.svg"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="w-[0.7vw] h-[0.7vw]"
-                  />
-                </span>
-              </div>
-              <div className="w-full flex gap-[0.5vw] items-center">
-                <Link href={"/"} className="link-line">
-                  Montra Store
-                </Link>
-                <span>
-                  <Image
-                    src={"/assets/icons/diagonal-arrow.svg"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="w-[0.7vw] h-[0.7vw]"
-                  />
-                </span>
-              </div>
-              <div className="w-full flex gap-[0.5vw] items-center">
-                <Link href={"/"} className="link-line">
-                Payment Gateway
-                </Link>
-                <span>
-                  <Image
-                    src={"/assets/icons/diagonal-arrow.svg"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="w-[0.7vw] h-[0.7vw]"
-                  />
-                </span>
-              </div>
-              <div className="w-full flex gap-[0.5vw] items-center">
-                <Link href={"/"} className="link-line">
-                Tap & Pay
-                </Link>
-                <span>
-                  <Image
-                    src={"/assets/icons/diagonal-arrow.svg"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="w-[0.7vw] h-[0.7vw]"
-                  />
-                </span>
-              </div>
+              {active == 1 ? (
+                <>
+                  {navLinkArray[0].personal.map((personal, id) => (
+                    <div
+                      className="w-full flex gap-[0.5vw] items-center  group overflow-hidden"
+                      key={id}
+                    >
+                      <Link href={personal.link} className="link-line fadeup-navlink font-medium">
+                        {personal.name}
+                      </Link>
+                      <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block">
+                        <Image
+                          src={"/assets/icons/diagonal-arrow.svg"}
+                          alt=""
+                          width={40}
+                          height={40}
+                          className="w-[0.7vw] h-[0.7vw] scale-[0.7] translate-y-[100%] translate-x-[-100%] group-hover:translate-y-0 group-hover:translate-x-0  group-hover:scale-[1] transition-all duration-300 ease-in-out"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </>
+              ) : <></> || active == 2 ? (
+                <>
+                  {navLinkArray[1].business.map((business, id) => (
+                    <div
+                      className="w-full flex gap-[0.5vw] items-center  group overflow-hidden "
+                      key={id}
+                    >
+                      <Link href={business.link} className="link-line fadeup-navlink font-medium ">
+                        {business.name}
+                      </Link>
+                      <span>
+                        <Image
+                          src={"/assets/icons/diagonal-arrow.svg"}
+                          alt=""
+                          width={40}
+                          height={40}
+                          className="w-[0.7vw] h-[0.7vw] opacity-0 translate-y-[40%] group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out"
+                        />
+                      </span>
+                    </div>
+                  ))}
+                </>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="w-full flex gap-[0.5vw]">
-            <div className="w-full flex gap-[1vw] items-center text-[1.1vw] ">
+              <div className="w-full flex gap-[1vw] items-center text-[1vw]  fadeup-navpolicy font-medium">
                 <Link href={"/"} className="link-line">
                   Privacy Policy
                 </Link>
@@ -240,20 +294,41 @@ export default function Navbar({ navigateTo }) {
                   Cookie Policy
                 </Link>
               </div>
-
             </div>
           </div>
-          <div className="w-[55%] bg-red-500 h-full flex flex-col py-[2vw] justify-between">
-            <div className="w-[90%] h-[70%] rounded-[2vw] overflow-hidden">
-              <Image src={"/assets/images/header/business-nav.png"} alt="" width={300} height={400} className="w-full h-full object-cover"/>
+          <div className="w-[55%] h-full flex flex-col py-[2vw] justify-between">
+            <div className="w-[90%] h-[70%] rounded-[2vw] overflow-hidden fadeup-navimg">
+              <Image
+                src={"/assets/images/header/business-nav.png"}
+                alt=""
+                width={300}
+                height={400}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="w-full flex gap-[0.8vw]">
-            <div>
-
+            <div className="w-full flex gap-[0.5vw] fadeup-navicon">
+              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
+                <a href="/" className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300">
+                <Facebook className={"text-primary group-hover:text-white transition-all duration-300 "}/>
+                  
+                </a>
+              </div>
+              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
+                <a href="/" className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300">
+                  <Linkedin className={"text-primary group-hover:text-white transition-all duration-300"}/>
+                </a>
+              </div>
+              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
+                <a href="/" className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300">
+                 <Twitter className={"text-primary group-hover:text-white transition-all duration-300"}/>
+                </a>
+              </div>
+              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300">
+                <a href="/" className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300">
+                  <Instagram className={"text-primary group-hover:text-white transition-all duration-300"}/>
+                </a>
+              </div>
             </div>
-
-            </div>
-
           </div>
         </div>
       </div>

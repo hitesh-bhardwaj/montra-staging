@@ -91,7 +91,7 @@ export default function Header() {
               }`}
             />
           </a>
-          <Navbar navigateTo={navigateTo} />
+          <Navbar navigateTo={navigateTo} hidden={hidden} />
           <div
             className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]"
             onClick={() => {
