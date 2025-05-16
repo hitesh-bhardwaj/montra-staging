@@ -74,9 +74,9 @@ const Rewards = ({rewardsData}) => {
           <p className="font-medium text-start w-[80%] max-sm:text-[5vw] max-md:text-[3vw]">{item.title}</p>
           <p className="text-start">{item.para}</p>
           </div>
-          <div className="relative w-full h-[1px] bg-[#CBCBCB] overflow-hidden">
-            <span className="absolute left-0 top-0 h-full w-full bg-primary origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
-          </div>
+          <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden">
+              <span className="block scale-x-0 bg-primary h-full origin-[100%] group-hover:scale-x-100 transition-transform duration-700 ease-link-line group-hover:origin-[0]" />
+            </div>
         </div>
       ))}
     </div>

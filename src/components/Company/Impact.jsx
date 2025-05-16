@@ -61,8 +61,8 @@ const Impact = () => {
                 financial tools.
               </p>
             </Copy>
-            <div className="w-full h-[1.5px] bg-gray group lineDraw ">
-              <span className="block w-0 bg-primary h-full origin-left group-hover:w-full transition-all duration-700 ease-in-out " />
+            <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden">
+              <span className="block scale-x-0 bg-primary h-full origin-[100%] group-hover:scale-x-100 transition-transform duration-700 ease-link-line group-hover:origin-[0]" />
             </div>
           </div>
           <div className="text-black-1 col-span-1 col-start-2 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[1] = el)}>
@@ -74,8 +74,8 @@ const Impact = () => {
                 financially.
               </p>
             </Copy>
-            <div className="w-full h-[1.5px] bg-gray lineDraw">
-              <span className="block w-0 bg-primary h-full origin-left group-hover:w-full transition-all duration-700 ease-in-out" />
+            <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden">
+              <span className="block scale-x-0 bg-primary h-full origin-[100%] group-hover:scale-x-100 transition-transform duration-700 ease-link-line group-hover:origin-[0]" />
             </div>
           </div>
           <div className="text-black-1 col-span-1 col-start-3 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[2] = el)}>
@@ -87,8 +87,8 @@ const Impact = () => {
                 growth.
               </p>
             </Copy>
-            <div className="w-full h-[1.5px] bg-gray lineDraw">
-              <span className="block w-0 bg-primary h-full origin-left group-hover:w-full transition-all duration-700 ease-in-out" />
+            <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden">
+              <span className="block scale-x-0 bg-primary h-full origin-[100%] group-hover:scale-x-100 transition-transform duration-700 ease-link-line group-hover:origin-[0]" />
             </div>
           </div>
         </div>

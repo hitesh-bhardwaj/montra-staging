@@ -24,6 +24,7 @@ html{
   --font-body: var(--font-body);
   --font-display: var(--font-display);
   --color-gray-100: #D2D2D2;
+  --ease-link-line: cubic-bezier(.62, .05, .01, .99);
 }
 
 body {
@@ -63,7 +64,6 @@ body {
 #hero{
   margin-top: -100vh;
 }
-
 
 .perspective-box{
   transform: perspective(1204.82px) translate3d(0px, 0px, 0px) rotateY(30deg);
