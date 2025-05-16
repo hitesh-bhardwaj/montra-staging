@@ -31,8 +31,8 @@ const navLinks = [
       </svg>
     ),
   },
-  { name: "Personal", href: "/personal",  },
-  { name: "Business", href: "/business", },
+  { name: "Personal", href: "/personal" },
+  { name: "Business", href: "/business" },
   {
     name: "Platform",
     href: "#",
@@ -99,7 +99,7 @@ const navLinkArray = [
   },
 ];
 
-export default function Navbar({ navigateTo,hidden }) {
+export default function Navbar({ navigateTo, hidden }) {
   const pathname = usePathname();
   const navRef = useRef(null);
   const [active, setActive] = useState(null);
@@ -115,37 +115,63 @@ export default function Navbar({ navigateTo,hidden }) {
       width: rect.width,
     });
   };
- useEffect(()=>{
-  const ctx = gsap.context(()=>{
-  gsap.from(".fadeup-navlink",{
-    // opacity:0,
-    yPercent:100,
-    delay:0.2,
-    stagger:0.1
-  })
-  gsap.from(".fadeup-navimg",{
-    opacity:0,
-    duration:1,
-    delay:0.3,
-  })
-  })
-  return()=>ctx.revert()
- },[active,openMenu])
- useEffect(()=>{
-  const ctx = gsap.context(()=>{
-   gsap.from(".fadeup-navpolicy",{
-    opacity:0,
-    y:5,
-    delay:0.5
-   })
-   gsap.from(".fadeup-navicon",{
-    opacity:0,
-    y:5,
-    delay:0.5
-   })
-  })
-  return()=>ctx.revert()
- },[openMenu])
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".fadeup-navlink",
+        {
+          yPercent: 100,
+        },
+        {
+          // opacity:0,
+          yPercent: 0,
+          delay: -0.5,
+          // delay:0.1,
+          stagger: 0.1,
+        }
+      );
+      gsap.fromTo(
+        ".fadeup-navimg",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+        }
+      );
+    });
+    return () => ctx.revert();
+  }, [active, openMenu]);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".fadeup-navpolicy",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          y: 5,
+          delay: 0.5,
+        }
+      );
+      gsap.fromTo(
+        ".fadeup-navicon",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+
+          y: 5,
+          delay: 0.5,
+        }
+      );
+    });
+    return () => ctx.revert();
+  }, [openMenu]);
   useEffect(() => {
     requestAnimationFrame(() => {
       const active = navRef.current.querySelector('a[data-active="true"]');
@@ -201,15 +227,16 @@ export default function Navbar({ navigateTo,hidden }) {
               }}
               onMouseLeave={() => setOpenMenu(false)}
             >
-              
               {link.icon || link.name}
-              <div className={`w-[1.2vw] h-[1.2vw] flex justify-center items-center rounded-full border text-[0.7vw] border-white absolute top-[20%] left-[76%] ${link.name === "Personal" || link.name === "Business" ? "" : "hidden"}`}>
-
-               {
-                link.name=="Personal"?<p>5</p>:<p>7</p>
-               }
+              <div
+                className={`w-[1.2vw] h-[1.2vw] flex justify-center items-center rounded-full border text-[0.7vw] border-white absolute top-[20%] left-[76%] ${
+                  link.name === "Personal" || link.name === "Business"
+                    ? ""
+                    : "hidden"
+                }`}
+              >
+                {link.name == "Personal" ? <p>5</p> : <p>7</p>}
               </div>
-             
             </a>
           );
         })}
@@ -232,10 +259,13 @@ export default function Navbar({ navigateTo,hidden }) {
                 <>
                   {navLinkArray[0].personal.map((personal, id) => (
                     <div
-                      className="w-full flex gap-[0.5vw] items-center  group overflow-hidden"
+                      className="w-fit flex gap-[0.5vw] items-center group overflow-hidden"
                       key={id}
                     >
-                      <Link href={personal.link} className="link-line fadeup-navlink font-medium">
+                      <Link
+                        href={personal.link}
+                        className="link-line fadeup-navlink font-medium"
+                      >
                         {personal.name}
                       </Link>
                       <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block">
@@ -254,10 +284,13 @@ export default function Navbar({ navigateTo,hidden }) {
                 <>
                   {navLinkArray[1].business.map((business, id) => (
                     <div
-                      className="w-full flex gap-[0.5vw] items-center  group overflow-hidden "
+                      className="w-fit flex gap-[0.5vw] items-center  group overflow-hidden "
                       key={id}
                     >
-                      <Link href={business.link} className="link-line fadeup-navlink font-medium ">
+                      <Link
+                        href={business.link}
+                        className="link-line fadeup-navlink font-medium "
+                      >
                         {business.name}
                       </Link>
                       <span>
@@ -277,7 +310,7 @@ export default function Navbar({ navigateTo,hidden }) {
               )}
             </div>
             <div className="w-full flex gap-[0.5vw]">
-              <div className="w-full flex gap-[1vw] items-center text-[1vw]  fadeup-navpolicy font-medium">
+              <div className="w-full flex gap-[1vw] items-center text-[1vw]  fadeup-navpolicy">
                 <Link href={"/"} className="link-line">
                   Privacy Policy
                 </Link>
@@ -308,24 +341,51 @@ export default function Navbar({ navigateTo,hidden }) {
             </div>
             <div className="w-full flex gap-[0.5vw] fadeup-navicon">
               <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
-                <a href="/" className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300">
-                <Facebook className={"text-primary group-hover:text-white transition-all duration-300 "}/>
-                  
+                <a
+                  href="/"
+                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300"
+                >
+                  <Facebook
+                    className={
+                      "text-primary group-hover:text-white transition-all duration-300 "
+                    }
+                  />
                 </a>
               </div>
               <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
-                <a href="/" className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300">
-                  <Linkedin className={"text-primary group-hover:text-white transition-all duration-300"}/>
+                <a
+                  href="/"
+                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300"
+                >
+                  <Linkedin
+                    className={
+                      "text-primary group-hover:text-white transition-all duration-300"
+                    }
+                  />
                 </a>
               </div>
               <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
-                <a href="/" className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300">
-                 <Twitter className={"text-primary group-hover:text-white transition-all duration-300"}/>
+                <a
+                  href="/"
+                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300"
+                >
+                  <Twitter
+                    className={
+                      "text-primary group-hover:text-white transition-all duration-300"
+                    }
+                  />
                 </a>
               </div>
               <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-primary group overflow-hidden hover:scale-[0.95] transition-all duration-300">
-                <a href="/" className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300">
-                  <Instagram className={"text-primary group-hover:text-white transition-all duration-300"}/>
+                <a
+                  href="/"
+                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-primary transition-all duration-300"
+                >
+                  <Instagram
+                    className={
+                      "text-primary group-hover:text-white transition-all duration-300"
+                    }
+                  />
                 </a>
               </div>
             </div>
