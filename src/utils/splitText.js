@@ -26,7 +26,6 @@ export function initSplitLetters() {
 
 export function initSplitLines() {
     const elements = document.querySelectorAll('[data-split="lines"]');
-
     Array.from(elements).forEach((el) => {
         // Prevent duplicate splitting
         if (!el.hasAttribute("split-ran")) {

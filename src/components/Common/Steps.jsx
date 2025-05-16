@@ -134,7 +134,7 @@ const Steps = ({stepData}) => {
                         {stepData.steps.map((s, i) => (
                             <div
                                 key={i}
-                                className="flex items-center gap-[1vw] cursor-pointer max-sm:gap-[3vw] max-md:gap-[2vw]"
+                                className="flex items-center gap-[0.8vw] text-[1vw] cursor-pointer max-sm:gap-[3vw] max-md:gap-[2vw]"
                                 onClick={() => {
                                     const prevStep = prevStepRef.current;
                                     controlsArray.current[prevStep].stop();
@@ -150,8 +150,8 @@ const Steps = ({stepData}) => {
                                 }}
 
                             >
-                                <div className="relative w-[2.5vw] h-[2.5vw] border border-white rounded-full max-sm:w-[9vw] max-sm:h-[9vw] max-md:w-[7vw] max-md:h-[7vw]">
-                                    <span className="absolute inset-0 flex justify-center items-center font-display">
+                                <div className="relative w-[2.5vw] h-[2.5vw] border border-white rounded-full p-2 max-sm:w-[9vw]  max-sm:h-[9vw] max-md:w-[7vw] max-md:h-[7vw]">
+                                    <span className="absolute inset-0 flex justify-center items-center font-display ">
                                         {s.number}
                                     </span>
                                     <svg
@@ -183,13 +183,16 @@ const Steps = ({stepData}) => {
                         ))}
                         {showRestart && (
                             <motion.div
-                                className="ml-4 font-display cursor-pointer opacity-0 "
+                                className="ml-4 font-display cursor-pointer opacity-0  absolute bottom-[-3vw] right-[-2vw] rounded-[4vw] flex items-center gap-2 text-[1vw]"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.6 }}
                                 onClick={() => setStep(0)}
                             >
-                                restart
+                                Restart
+                                <span>
+                                    <Image src={"/assets/icons/restart-icon.svg"} height={12} width={12} alt="restart-icon"/>
+                                </span>
                             </motion.div>
                         )}
 
