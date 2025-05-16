@@ -6,7 +6,7 @@ import InteractiveBackground from "@/components/Background";
 import Layout from "@/components/Layout";
 import Footer from "@/components/Footer";
 import { ViewTransitions } from "next-view-transitions";
-import Header from "@/components/Header";
+import { NavigationProvider } from "@/components/NavigationContext";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -58,15 +58,17 @@ export default function RootLayout({ children }) {
           className={`${workSans.variable} ${standerd.variable} antialiased bg-primary`}
         >
           <ViewTransitions>
-            <main className="relative z-[1] bg-primary max-sm:rounded-b-[10vw] max-sm:bg-white max-md:bg-white">
-              <Layout>
-                <InteractiveBackground />
-                <div style={{ position: "relative" }}>
-                  {children}
-                </div>
-              </Layout>
-            </main>
-            <Footer />
+            <NavigationProvider>
+              <main className="relative z-[1] bg-primary max-sm:rounded-b-[10vw] max-sm:bg-white max-md:bg-white">
+                <Layout>
+                  <InteractiveBackground />
+                  <div style={{ position: "relative" }}>
+                    {children}
+                  </div>
+                </Layout>
+              </main>
+              <Footer />
+            </NavigationProvider>
           </ViewTransitions>
         </body>
       </html>

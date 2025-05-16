@@ -1,7 +1,5 @@
-// app/components/Navbar.jsx
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState, useEffect } from "react";
 
@@ -22,7 +20,7 @@ const navLinks = [
   { name: "Company", href: "/company" },
 ];
 
-export default function Navbar({navigateTo}) {
+export default function Navbar({ navigateTo }) {
   const pathname = usePathname();
   const navRef = useRef(null);
   const [highlight, setHighlight] = useState({ left: 0, width: 0 });
@@ -56,7 +54,7 @@ export default function Navbar({navigateTo}) {
         }}
       >
         <span
-          className="absolute bg-primary rounded-full h-full w-full transition-all duration-500"
+          className="absolute bg-primary rounded-full h-full w-full transition-all duration-300"
           style={{
             transform: `translateX(${highlight.left}px)`,
             width: highlight.width,

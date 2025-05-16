@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AppleIcon, ArrowRight, GooglePlay } from "./icons";
 import { useState } from "react";
 import { useTransitionRouter } from "next-view-transitions";
+import { useAnimatedNavigation } from "../NavigationContext";
 
 export const AppleStoreButton = () => {
   return (
@@ -46,76 +47,8 @@ export const PlayStoreButton = () => {
 };
 
 export const LinkButton = ({ text, href, className = "", ...props }) => {
-  const router = useTransitionRouter();
+  const { navigateTo } = useAnimatedNavigation();
 
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  function slideInOut() {
-    document.documentElement.animate(
-      [
-        {
-          opacity: 1,
-          transform: "scale(1)",
-          borderRadius: "0"
-        },
-        {
-          opacity: 0.2,
-          transform: "scale(0.95)",
-          borderRadius: "20px",
-        },
-      ],
-      {
-        duration: 1200,
-        easing: "cubic-bezier(0.87, 0, 0.13, 1)",
-        fill: "forwards",
-        pseudoElement: "::view-transition-old(root)",
-      }
-    );
-
-    document.documentElement.animate(
-      [
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-        },
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        },
-      ],
-      {
-        duration: 1200,
-        easing: "cubic-bezier(0.87, 0, 0.13, 1)",
-        fill: "forwards",
-        pseudoElement: "::view-transition-new(root)",
-      }
-    );
-  }
-  const getExactPath = () => {
-    if (typeof window !== "undefined") {
-      return window.location.pathname;
-    }
-    return currentPath;
-  };
-
-  const isExactPath = (path) => {
-    const exactCurrentPath = getExactPath();
-    return exactCurrentPath === path;
-  };
-
-  const navigateTo = (path) => {
-    if (isAnimating) return;
-
-    if (isExactPath(path)) {
-      return;
-    }
-
-    router.push(path, {
-      onTransitionReady: slideInOut,
-    });
-
-    setTimeout(() => {
-      setIsAnimating(false);
-    }, 1500);
-  };
   return (
     <Link
       className={`group w-fit hover:text-primary duration-300 ${className}`}

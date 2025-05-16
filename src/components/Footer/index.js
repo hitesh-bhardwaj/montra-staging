@@ -1,16 +1,19 @@
+"use client"
 import Image from 'next/image'
-import Link from 'next/link'
 import logo from '../../../public/montra-white-logo.svg';
 import { ArrowRight, NftIcon } from '../Buttons/icons'
 import React from 'react'
+import { useAnimatedNavigation } from '../NavigationContext';
 
 export default function Footer() {
+    const { navigateTo } = useAnimatedNavigation();
+
     return (
         <>
-            <footer 
+            <footer
                 className="w-screen h-[43vw] max-sm:h-full max-sm:rounded-t-4xl max-sm:overflow-hidden max-md:h-[115vw] "
-                style={{clipPath: 'rect(0px 100% 100% 0px)'}}
-                >
+                style={{ clipPath: 'rect(0px 100% 100% 0px)' }}
+            >
                 <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-lg z-0 max-sm:h-full max-sm:static max-sm:pb-[0vw] max-md:h-[115vw]' >
                     {/* Top Content */}
                     <div className="flex flex-row mb-[5vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw]  max-md:flex-col max-md:gap-[10vw] max-md:px-[7vw]">
@@ -25,7 +28,7 @@ export default function Footer() {
                             </p>
                             <p className='font-semibold max-sm:font-medium max-md:text-[2.5vw] max-sm:text-[4.5vw]'>
                                 Connect with us:{' '}
-                                <a href="mailto:info@montra.org" className="">
+                                <a target='_blank' href="mailto:info@montra.org" className="">
                                     info@montra.org
                                 </a>
                             </p>
@@ -39,27 +42,61 @@ export default function Footer() {
                                 {/* Personal Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
                                     {personalLinks.map((link, index) => (
-                                        <li key={index} className='first:uppercase '><Link href={link.href} className='link-line'>{link.name}</Link></li>
+                                        <li key={index} className='first:uppercase'>
+                                            <a
+                                                href={link.href}
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    navigateTo(link.href);
+                                                }}
+                                                className='link-line'
+                                            >
+                                                {link.name}
+                                            </a>
+                                        </li>
                                     ))}
                                 </ul>
 
                                 {/* Business Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
                                     {businessLinks.map((link, index) => (
-                                        <li key={index} className='first:uppercase'><Link href={link.href} className='link-line'>{link.name}</Link></li>
+                                        <li key={index} className='first:uppercase'>
+                                            <a
+                                                href={link.href}
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    navigateTo(link.href);
+                                                }}
+                                                className='link-line'
+                                            >
+                                                {link.name}
+                                            </a>
+                                        </li>
                                     ))}
                                 </ul>
 
                                 <div className="flex flex-col justify-between items-center">
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw]'>
-                                        <Link href="/platform" className="uppercase block w-fit link-line" >Platform</Link>
-                                        <Link href="/company" className="uppercase block w-fit link-line">Company</Link>
+                                        <a
+                                            href="/platform"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                navigateTo("/platform");
+                                            }}
+                                            className="uppercase block w-fit link-line" >Platform</a>
+                                        <a 
+                                            href="/company" 
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                navigateTo("/company");
+                                            }}
+                                            className="uppercase block w-fit link-line">Company</a>
                                     </div>
 
                                     {/* Social Media Links */}
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw] max-sm:mt-[10vw]'>
                                         {socialLinks.map((link, index) => (
-                                            <a key={index} href={link.href} aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3 '>
+                                            <a key={index} href={link.href} target='_blank' aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3 '>
                                                 <span className='link-line'>{link.name}</span>
                                                 <div className='h-[0.8vw] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw]'>
                                                     <span className='inline-flex w-[200%] h-full duration-300 group-hover:translate-x-1/2'>
@@ -90,7 +127,7 @@ export default function Footer() {
                     {/* Copyright Statement */}
                     <div className="px-[4vw] py-4 flex items-center justify-between max-sm:py-[8vw] ">
                         <span className="text-[1vw] max-sm:text-[3.8vw] max-md:text-[2vw] ">Copyright © Montra 2025</span>
-                        <span className="text-[1vw] max-sm:text-[3.8vw] max-md:text-[2vw]">By: <a href='https://weareenigma.com/'>Enigma Digital</a></span>
+                        <span className="text-[1vw] max-sm:text-[3.8vw] max-md:text-[2vw]">By: <a target='_blank' href='https://weareenigma.com/'>Enigma Digital</a></span>
                     </div>
                 </div>
             </footer>

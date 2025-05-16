@@ -5,17 +5,15 @@ import Image from "next/image";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 import { useLenis } from "lenis/react";
-import { useTransitionRouter } from "next-view-transitions";
-
+import { useAnimatedNavigation } from "../NavigationContext";
 
 export default function Header() {
-  const router = useTransitionRouter();
+  const { navigateTo } = useAnimatedNavigation();
   const [hidden, setHidden] = useState(false);
   const [lastY, setLastY] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [openMenu, setopenMenu] = useState(false);
   const lenis = useLenis();
-  
+
   useEffect(() => {
     if (openMenu) {
       lenis && lenis.stop();
@@ -23,6 +21,7 @@ export default function Header() {
       lenis && lenis.start();
     }
   }, [openMenu, lenis]);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
@@ -40,73 +39,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastY]);
 
-  function slideInOut() {
-    document.documentElement.animate(
-      [
-        {
-          opacity: 1,
-          transform: "scale(1)",
-          borderRadius: "0"
-        },
-        {
-          opacity: 0.2,
-          transform: "scale(0.95)",
-          borderRadius: "20px",
-        },
-      ],
-      {
-        duration: 1200,
-        easing: "cubic-bezier(0.87, 0, 0.13, 1)",
-        fill: "forwards",
-        pseudoElement: "::view-transition-old(root)",
-      }
-    );
 
-    document.documentElement.animate(
-      [
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-        },
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        },
-      ],
-      {
-        duration: 1200,
-        easing: "cubic-bezier(0.87, 0, 0.13, 1)",
-        fill: "forwards",
-        pseudoElement: "::view-transition-new(root)",
-      }
-    );
-  }
-
-  const getExactPath = () => {
-    if (typeof window !== "undefined") {
-      return window.location.pathname;
-    }
-    return currentPath;
-  };
-
-  const isExactPath = (path) => {
-    const exactCurrentPath = getExactPath();
-    return exactCurrentPath === path;
-  };
-
-  const navigateTo = (path) => {
-    if (isAnimating) return;
-
-    if (isExactPath(path)) {
-      return;
-    }
-
-    router.push(path, {
-      onTransitionReady: slideInOut,
-    });
-
-    setTimeout(() => {
-      setIsAnimating(false);
-    }, 1500);
-  };
 
   return (
     <header
@@ -127,27 +60,24 @@ export default function Header() {
           </a>
           <Navbar navigateTo={navigateTo} />
           <div
-  className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]"
-  onClick={() => {
-    setopenMenu((prev) => !prev);
-  }}
->
-  <div
-    className={`w-full h-[2.5px] bg-primary rounded-full line-1 transition-all duration-500 origin-center ${
-      openMenu ? 'rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px]' : ''
-    }`}
-  />
-  <div
-    className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ${
-      openMenu ? 'opacity-0' : ''
-    }`}
-  />
-  <div
-    className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ${
-      openMenu ? '-rotate-45 max-sm:-translate-y-[7px] max-md:-translate-y-[10px]' : ''
-    }`}
-  />
-</div>
+            className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]"
+            onClick={() => {
+              setopenMenu((prev) => !prev);
+            }}
+          >
+            <div
+              className={`w-full h-[2.5px] bg-primary rounded-full line-1 transition-all duration-500 origin-center ${openMenu ? 'rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px]' : ''
+                }`}
+            />
+            <div
+              className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ${openMenu ? 'opacity-0' : ''
+                }`}
+            />
+            <div
+              className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ${openMenu ? '-rotate-45 max-sm:-translate-y-[7px] max-md:-translate-y-[10px]' : ''
+                }`}
+            />
+          </div>
 
           <div
             className={`w-screen h-screen fixed top-0 left-0  bg-black/20 transition-all duration-500 ${openMenu
@@ -160,82 +90,82 @@ export default function Header() {
                 }`}
             >
               <div className="flex flex-col gap-[3vw] items-start">
-              <Link
-                href={"/"}
-                className="link-text"
-                onClick={() => {
-                  setopenMenu(false);
-                }}
-              >
-                Home
-              </Link>
-              <span className="bg-white h-[1px] w-full"></span>
-              <Link
-                href={"/personal"}
-                className="link-text"
-                onClick={() => {
-                  setopenMenu(false);
-                }}
-              >
-                Personal
-              </Link>
-              <span className="bg-white h-[1px] w-full"></span>
-              <Link
-                href={"/business"}
-                className="link-text"
-                onClick={() => {
-                  setopenMenu(false);
-                }}
-              >
-                Business
-              </Link>
-              <span className="bg-white h-[1px] w-full"></span>
-              <Link
-                href={"#"}
-                className="link-text"
-                onClick={() => {
-                  setopenMenu(false);
-                }}
-              >
-                Platform
-              </Link>
-              <span className="bg-white h-[1px] w-full"></span>
-              <Link
-                href={"/company"}
-                className="link-text"
-                onClick={() => {
-                  setopenMenu(false);
-                }}
-              >
-                Company
-              </Link>
-              <span className="bg-white h-[1px] w-full"></span>
+                <Link
+                  href={"/"}
+                  className="link-text"
+                  onClick={() => {
+                    setopenMenu(false);
+                  }}
+                >
+                  Home
+                </Link>
+                <span className="bg-white h-[1px] w-full"></span>
+                <Link
+                  href={"/personal"}
+                  className="link-text"
+                  onClick={() => {
+                    setopenMenu(false);
+                  }}
+                >
+                  Personal
+                </Link>
+                <span className="bg-white h-[1px] w-full"></span>
+                <Link
+                  href={"/business"}
+                  className="link-text"
+                  onClick={() => {
+                    setopenMenu(false);
+                  }}
+                >
+                  Business
+                </Link>
+                <span className="bg-white h-[1px] w-full"></span>
+                <Link
+                  href={"#"}
+                  className="link-text"
+                  onClick={() => {
+                    setopenMenu(false);
+                  }}
+                >
+                  Platform
+                </Link>
+                <span className="bg-white h-[1px] w-full"></span>
+                <Link
+                  href={"/company"}
+                  className="link-text"
+                  onClick={() => {
+                    setopenMenu(false);
+                  }}
+                >
+                  Company
+                </Link>
+                <span className="bg-white h-[1px] w-full"></span>
               </div>
               <div className="flex items-start justify-start gap-[3vw]">
-                <Link href={"/"} className="h-fit w-fit rounded-full border border-white "  onClick={() => {
+                <Link href={"/"} className="h-fit w-fit rounded-full border border-white " onClick={() => {
                   setopenMenu(false);
                 }}>
-                  <Image src={"/assets/icons/facebook-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="facebook_icon"/>
+                  <Image src={"/assets/icons/facebook-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="facebook_icon" />
                 </Link>
-                <Link href={"/"} className="h-fit w-fit rounded-full border border-white "  onClick={() => {
+                <Link href={"/"} className="h-fit w-fit rounded-full border border-white " onClick={() => {
                   setopenMenu(false);
                 }}>
-                  <Image src={"/assets/icons/insta-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="instagram_icon"/>
+                  <Image src={"/assets/icons/insta-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="instagram_icon" />
                 </Link>
-                <Link href={"/"} className="h-fit w-fit rounded-full border border-white "  onClick={() => {
+                <Link href={"/"} className="h-fit w-fit rounded-full border border-white " onClick={() => {
                   setopenMenu(false);
                 }}>
-                  <Image src={"/assets/icons/linkedin-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="linkedin_icon"/>
+                  <Image src={"/assets/icons/linkedin-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="linkedin_icon" />
                 </Link>
-                <Link href={"/"} className="h-fit w-fit rounded-full border border-white "  onClick={() => {
+                <Link href={"/"} className="h-fit w-fit rounded-full border border-white " onClick={() => {
                   setopenMenu(false);
                 }}>
-                  <Image src={"/assets/icons/x-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="x_icon"/>
+                  <Image src={"/assets/icons/x-icon.svg"} height={100} width={100} className="h-[8vw] w-[8vw]" alt="x_icon" />
                 </Link>
 
               </div>
             </div>
-             
+
           </div>
         </div>
       </div>

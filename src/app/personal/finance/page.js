@@ -16,9 +16,10 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const personalFinance = () => {
+const PersonalFinance = () => {
   const [activeNav, setActiveNav] = useState(0);
   const [color, setcolor] = useState(false);
+
   useEffect(() => {
     const triggers = [];
 
@@ -75,25 +76,20 @@ const personalFinance = () => {
         <div className="sticky z-10 h-screen flex w-fit justify-start items-start pt-[28vw] top-0 px-[2vw] max-md:hidden">
           <div className="flex gap-[1vw] font-display text-[1vw] ">
             <span
-              className={` opacity-100 transition-colors duration-500 ease-in-out ${
-                color ? "text-white" : "text-primary"
-              }`}
+              className={` opacity-100 transition-colors duration-500 ease-in-out ${color ? "text-white" : "text-primary"
+                }`}
             >
               Finance:
             </span>
             <div
-              className={`flex flex-col gap-[0.3vw] h-full w-full transition-transform duration-500 ease-in-out ${
-                activeNav == 0 ? "translate-y-0" : ""
-              } ${activeNav == 1 ? "translate-y-[-33%]" : ""} ${
-                activeNav == 2 ? "translate-y-[-70%]" : ""
-              }`}
+              className={`flex flex-col gap-[0.3vw] h-full w-full transition-transform duration-500 ease-in-out ${activeNav == 0 ? "translate-y-0" : ""
+                } ${activeNav == 1 ? "translate-y-[-33%]" : ""} ${activeNav == 2 ? "translate-y-[-70%]" : ""
+                }`}
             >
               <span
-                className={`${
-                  activeNav == 0 ? "text-primary" : "opacity-35"
-                } transition-colors duration-500 ease-in-out ${
-                  color ? "text-white" : ""
-                } cursor-pointer`}
+                className={`${activeNav == 0 ? "text-primary" : "opacity-35"
+                  } transition-colors duration-500 ease-in-out ${color ? "text-white" : ""
+                  } cursor-pointer`}
                 onClick={() => {
                   document
                     .getElementById("benefits")
@@ -103,11 +99,9 @@ const personalFinance = () => {
                 Loans
               </span>
               <span
-                className={`${
-                  activeNav == 1 ? "text-primary" : "opacity-35"
-                } transition-colors duration-500 ease-in-out ${
-                  color ? "text-white" : ""
-                } cursor-pointer`}
+                className={`${activeNav == 1 ? "text-primary" : "opacity-35"
+                  } transition-colors duration-500 ease-in-out ${color ? "text-white" : ""
+                  } cursor-pointer`}
                 onClick={() => {
                   document.getElementById("benefits-second")?.scrollIntoView({ behavior: "smooth" });
                 }}
@@ -115,11 +109,9 @@ const personalFinance = () => {
                 Insurance
               </span>
               <span
-                className={`${
-                  activeNav == 2 ? "text-primary" : "opacity-35"
-                } transition-colors duration-500 ease-in-out ${
-                  color ? "text-white" : ""
-                } cursor-pointer`}
+                className={`${activeNav == 2 ? "text-primary" : "opacity-35"
+                  } transition-colors duration-500 ease-in-out ${color ? "text-white" : ""
+                  } cursor-pointer`}
                 onClick={() => {
                   document.getElementById("investmentplan")?.scrollIntoView({ behavior: "smooth" });
                 }}
@@ -132,7 +124,7 @@ const personalFinance = () => {
         <div className="mt-[-100vh] max-md:mt-0">
           <Benefits data={benefitsData} id={"benefits"} />
         </div>
-        <Steps stepData={stepData}/>
+        <Steps stepData={stepData} />
         <Benefits data={benefitsData2} id={"benefits-second"} />
         <Features featuresData={featuresData} />
         <WhatWhy data={whatWhyData} height={"h-[60vw]"} />
@@ -149,7 +141,7 @@ const personalFinance = () => {
   );
 };
 
-export default personalFinance;
+export default PersonalFinance;
 
 const faqContent = [
   {
@@ -419,34 +411,34 @@ const featuresData = {
 const stepData = {
   heading: "Borrow in Minutes",
   steps: [
-      {
-          number: "01",
-          title: "Choose a Loan Product",
-          para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
-         tag:"Choose Plan"
-      },
-      {
-          number: "02",
-          title: "Choose a Loan Product",
-          para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
-         tag:"Choose Plan"
-      },
-      {
-          number: "03",
-          title: "Choose a Loan Product",
-          para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
-         tag:"Choose Plan"
-      },
-      {
-          number: "04",
-          title: "Choose a Loan Product",
-          para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
-         tag:"Choose Plan"
+    {
+      number: "01",
+      title: "Choose a Loan Product",
+      para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+      tag: "Choose Plan"
+    },
+    {
+      number: "02",
+      title: "Choose a Loan Product",
+      para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+      tag: "Choose Plan"
+    },
+    {
+      number: "03",
+      title: "Choose a Loan Product",
+      para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+      tag: "Choose Plan"
+    },
+    {
+      number: "04",
+      title: "Choose a Loan Product",
+      para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+      img: "/assets/images/personal-banking/steps-img-1.png",
+      tag: "Choose Plan"
 
-      },
+    },
   ],
 };
