@@ -39,6 +39,12 @@ export default function Hero({
         duration: 1,
         // stagger: 0.15,
       });
+      gsap.from(".breadcrumbs",{
+        yPercent:70,
+        opacity:0,
+        delay:1,
+        duration:1
+      })
     });
     return () => ctx.revert();
   }, []);

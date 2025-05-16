@@ -17,27 +17,17 @@ export default function SectionBreak() {
         initSplitLines();
         const lines = sectionRef.current.querySelectorAll('.single-line')
         if (globalThis.innerWidth > 1024) {
-            gsap.to(".gradient", {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    pin: ".gradient",
-                    start: "top 70%",
-                    end: "bottom bottom",
-                    scrub: true,
-                    // markers: true,
-                },
-            });
             gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: 'top center',
-                    end: 'center 20%',
+                    end: 'bottom center',
                     scrub: 0.25,
                 }
             })
                 .to(lines, {
-                    maskPosition: "0% 100%",
-                    stagger: 0.05,
+                    maskPosition: "40% 100%",
+                    stagger: 0.03,
                     ease: 'none'
                 })
 
@@ -126,7 +116,6 @@ export default function SectionBreak() {
             ref={sectionRef}
             className="relative h-screen w-screen overflow-hidden px-[4vw] bg-[#FBFBFB]"
         >
-            {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:h-[40vw] max-sm:hidden" /> */}
             <div
                 ref={iconsContainer}
                 className="absolute inset-0 pointer-events-none overflow-hidden"

@@ -106,9 +106,9 @@ body {
 
 /* Section Break Background */
 .text-break .single-line {
-  mask-image: linear-gradient(150deg,#111111 33.3%,#1a1a1a11 66.6%);
-  mask-size: 500% 100%;
-  mask-position: 100% 100%;
+  mask-image: linear-gradient(90deg,#111111 50%, #11111130 50%);
+  mask-size: 800% 300%;
+  mask-position: 60% 100%;
 }
 
 @keyframes fadeInDelayed {
@@ -262,7 +262,7 @@ li .link-line::after {
     transform: translate(0%, 0%);
   }
   50% {
-    transform: translate(0%, 0%);
+    transform: translate(0%, 5%);
   }
   100% {
     transform: translate(0%, 0%);
