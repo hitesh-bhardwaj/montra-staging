@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export const BottomContent = ({ img6 }) => {
     return (
-        <div className="bg-primary w-screen p-[4vw] flex flex-col gap-[20vw] h-fit absolute bottom-0 text-white max-sm:p-[8vw] max-sm:gap-12 max-sm:static max-md:static max-md:gap-10 max-md:pb-[10vw]">
+        <div className=" w-screen p-[4vw] flex flex-col gap-[20vw] h-fit absolute bottom-0 text-white max-sm:p-[8vw] max-sm:gap-12 max-sm:static max-md:static max-md:gap-10 max-md:pb-[10vw] dark">
             <div className="h-[65vw] hidden max-sm:block mt-12 max-md:block" />
             <div className="w-[42%] self-end text-left space-y-[2vw] max-sm:w-full max-sm:space-y-[6vw] max-md:w-full max-md:space-y-[4vw]">
                 <Heading>

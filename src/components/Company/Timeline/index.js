@@ -61,7 +61,7 @@ export default function Timeline() {
 
   return (
     <section
-      className="relative w-full h-screen overflow-hidden bg-primary text-white timeline-section max-sm:px-[7vw]  max-md:px-[5vw] max-md:h-full max-md:flex max-md:flex-col max-md:gap-[5vw] max-md:py-[7%] max-sm:h-full"
+      className="relative w-full h-screen overflow-hidden bg-primary text-white timeline-section max-sm:px-[7vw]  max-md:px-[5vw] max-md:h-full max-md:flex max-md:flex-col max-md:gap-[5vw] max-md:py-[7%] max-sm:h-full dark"
       id="timeline"
     >
       <div className="absolute top-[5%] text-center left-1/2 -translate-x-1/2 w-full max-sm:w-[100%] max-sm:static max-sm:translate-x-0 max-sm:text-left max-md:w-full max-md:text-center max-md:static max-md:translate-x-0 max-md:order-0">

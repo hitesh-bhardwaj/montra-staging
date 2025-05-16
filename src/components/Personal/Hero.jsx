@@ -5,9 +5,20 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Heading from "../Heading";
 import Copy from "../Copy";
+import { useLenis } from "lenis/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  const lenis = useLenis();
+  useEffect(() => {
+    lenis && lenis.stop();
+
+    const timeout = setTimeout(() => {
+      lenis && lenis.start();
+    }, 2000);
+
+    return () => clearTimeout(timeout)
+  }, [lenis]);
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (globalThis.innerWidth > 1024) {
