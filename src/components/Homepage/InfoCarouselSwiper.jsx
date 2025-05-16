@@ -25,7 +25,7 @@ const content = [
 export default function InfoCarouselSwiper() {
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
+        const ctx = gsap.context(() => { 
             gsap.fromTo(".featureSwipeSlide", {
                 opacity: 0, y: 50
             }, {
@@ -61,8 +61,9 @@ export default function InfoCarouselSwiper() {
                         <Card img={c.img} text={c.text} bgColor={c.bgColor} />
                     </SwiperSlide>
                 ))}
+                 <Cursor />
             </Swiper>
-            <Cursor />
+           
         </div>
     )
 }

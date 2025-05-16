@@ -29,7 +29,7 @@ export default function TimelineSlide({ year, direction, data }) {
             exit="exit"
         >
             {/* Content Cards */}
-            <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 relative w-full h-full max-sm:flex max-sm:flex-col  max-sm:mt-[10vw] max-md:flex max-md:flex-col">
+            <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 relative w-full h-full max-sm:flex max-sm:flex-col  max-sm:mt-[10vw] max-md:flex max-md:flex-col fadeupanim">
                 <AnimatePresence mode="popLayout">
                     {data.cards.map((card, i) => (
                         <motion.div

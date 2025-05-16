@@ -134,6 +134,7 @@ export default function SectionBreak() {
 
     return (
         <section
+        id='section-break'
             ref={sectionRef}
             className="relative h-screen w-screen overflow-hidden px-[4vw] bg-[#FBFBFB] max-md:h-[70vh] max-sm:h-screen"
         >

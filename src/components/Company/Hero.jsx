@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef, useEffect } from "react";
 import Heading from "../Heading";
 import Copy from "../Copy";
+import { useLenis } from "lenis/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,16 @@ const Hero = () => {
   const sectionRef = useRef(null);
   const bgRef = useRef(null);
   const imgRef = useRef(null);
+   const lenis = useLenis();
+   useEffect(() => {
+    lenis && lenis.stop();
+
+    const timeout = setTimeout(() => {
+      lenis && lenis.start();
+    }, 1500);
+
+    return () => clearTimeout(timeout)
+  }, [lenis]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -128,25 +139,16 @@ const Hero = () => {
                 style={{ clipPath: 'ellipse(20vw 20vw at 50% 35%)' }}
                 // style={{ clipPath: 'ellipse(50vw 50vw at 50% 25%)' }}
 
-                className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden">
-                <Image
-                    ref={imgRef}
-                    src={bgImage}
-                    alt="background-image"
-                    placeholder="blur"
-                    quality={90}
-                    className="w-full h-full object-cover absolute"
-                />
+                className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden fadeup">
+                  <video  muted playsInline loop autoPlay
+                   src={"/assets/images/company/company-page-background.mp4"} 
+                   poster="/assets/images/company/poster.webp"
+                    ref={imgRef} 
+                     className="w-full h-full object-cover absolute"/>
             </div>
             <div
                 className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block max-md:block">
-                <Image
-                    src={bgImage}
-                    alt="background-image"
-                    placeholder="blur"
-                    quality={90}
-                    className="w-full h-full object-cover absolute"
-                />
+                     <video src={"/assets/images/company/company-page-background.mp4"} muted playsInline loop ref={imgRef}  className="w-full h-full object-cover absolute"/>
             </div>
         </section>
     );

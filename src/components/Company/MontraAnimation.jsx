@@ -111,12 +111,12 @@ const MontraAnimation = () => {
             opacity:1,
             delay:-0.3,
         })
-          .to(`.${key}-alpha`, { x: "-5vw", delay: -0.7, ease: "power3.inOut" })
+          .to(`.${key}-alpha`, { x: "-5vw", delay: -0.5, ease: "power3.inOut" })
           .to(`.${key}-circle`, {
             height: "17vw",
             // borderRadius: "2.5vw",
             ease: "power3.inOut",
-            delay: -0.4,
+            delay: -0.3,
           })
           .from(`.${key}-content`, {
             opacity: 0,
@@ -148,24 +148,26 @@ const MontraAnimation = () => {
           delay: i === 0 ? 0 : -0.5 + i * 0.01, // same staggering you had
         });
       });
-      tl.from(".value-heading",{
-        opacity:0,
-        duration:0.5,
-        
-      })
+     
       // scale down all “-alpha”s together
       tl.to(
         lettersData.map((l) => `.${l.key}-alpha`),
-        { scale: 0.5, delay: -1 }
+        { scale: 0.5, delay: -0.6 }
       )
         .to(".circle", {
           opacity: 1,
-          delay: -0.5,
+          delay: -0.3,
           duration: 0.2,
           onComplete: () => {
             setPointer(true);
           },
           onReverseComplete: () => setPointer(false),
+        })
+        .to(".value-heading",{
+          opacity:1,
+          duration:0.5,
+          delay:-0.4
+          
         })
         
     });
@@ -183,7 +185,7 @@ const MontraAnimation = () => {
     <section className="w-screen h-[400vh] bg-[#fbfbfb] max-sm:hidden max-md:hidden" id="montraanimation">
       <div className="w-full h-screen px-[4vw] sticky top-0">
         <div className="w-full flex justify-center pt-[5%]">
-          <h2 className="text-[5.7vw] font-display font-medium capitalize value-heading">
+          <h2 className="text-[5.7vw] font-display font-medium capitalize value-heading opacity-0">
             our core values
 
           </h2>

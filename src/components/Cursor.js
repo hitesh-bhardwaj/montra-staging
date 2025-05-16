@@ -12,7 +12,7 @@ function Cursor() {
             const onmousemove =(e)=>{
              const{clientX,clientY} = e
              gsap.to(cursor,{
-                x:clientX,
+                x:clientX+35,
                 y:clientY
              })
                 
@@ -48,8 +48,9 @@ function Cursor() {
     },[])
   return (
     <>
-    <div id='cursor' className='cursor fixed top-[-2%] left-[-2%] scale-0 h-[6vw] w-[6vw] rounded-full pointer-events-none z-[999] p-[10px] flex justify-center items-center bg-white'>
-        <span className='cursor-text tracking-wider text-[1.2vw] font-display text-primary bg-white font-semibold' >Drag</span>
+    <div id='cursor' className='cursor fixed top-[-2%] left-[-2%] scale-0 h-[3vw] w-[8vw] rounded-[2vw] pointer-events-none z-[999]  flex justify-center items-center bg-white/60 backdrop-blur-sm'>
+        <span className='cursor-text tracking-wider text-[1.2vw] font-display text-primary bg-transparent
+         font-semibold drop-shadow-2xl' >Drag</span>
     </div>
     </>
   )
