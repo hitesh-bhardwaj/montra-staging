@@ -20,7 +20,7 @@ const VisionMission = () => {
                     section: section.current,
                     cardRefs: cardRefs.current,
                 });
-            }else {
+            } else {
                 initVisionMissionMobileAnimations({
                     container: container.current,
                     section: section.current,
@@ -69,14 +69,14 @@ function initVisionMissionAnimations({ container, section }) {
         const tl = gsap.timeline();
 
         tl.to(card, { rotation: id === "card-1" ? -4 : 4, duration: 0.5 })
-          .to(card, { left: id === "card-1" ? "34%" : "67%", duration: 1.5 })
-          .to(inner, {
-              rotateY: 180,
-              duration: 1.5,
-              ease: "back.inOut(2.5)",
-              delay,
-          })
-          .to(card, { rotation: 0, duration: 0.5 }, "<");
+            .to(card, { left: id === "card-1" ? "34%" : "67%", duration: 1.5 })
+            .to(inner, {
+                rotateY: 180,
+                duration: 3,
+                ease: "none",
+                delay,
+            })
+            .to(card, { rotation: 0, duration: 0.5 }, "<");
 
         ScrollTrigger.create({
             animation: tl,
@@ -121,7 +121,7 @@ const Card = forwardRef(({ title, description, children, id, className = "" }, r
     return (
         <div className={`card absolute w-[32vw] h-[75vh] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 perspective-distant max-sm:w-[85vw] max-sm:h-[120vw] max-sm:relative max-sm:translate-y-0 max-sm:translate-x-0 max-sm:left-0 max-sm:top-0 max-md:w-[60vw] max-md:h-[75vw] max-md:relative max-md:translate-y-0 max-md:translate-x-0 max-md:left-0 max-md:top-0 ${className}`} id={id} ref={ref}>
             <div className="card-wrapper h-full w-full absolute left-1/2 -translate-x-1/2 perspective-distant max-sm:relative max-sm:left-0 max-sm:translate-x-0  max-md:relative max-md:left-0 max-md:translate-x-0">
-                <div style={{transformStyle: "preserve-3d"}} className="flip-card-inner w-full h-full relative perspective-distant max-sm:py-[10vw] ">
+                <div style={{ transformStyle: "preserve-3d" }} className="flip-card-inner w-full h-full relative perspective-distant max-sm:py-[10vw] ">
                     <div className="flip-card-front absolute perspective-distant w-full h-full backface-hidden rounded-4xl border border-gray-100 overflow-hidden bg-primary text-white p-[3vw] flex flex-col justify-between max-sm:p-[7vw] max-sm:pb-[10vw] max-md:p-[5vw] max-md:pb-[5vw]">
                         {children}
                         <h3 className="w-[50%] font-display font-medium leading-[1.2] text-[5.7vw] text-white max-sm:text-[7.5vw] max-md:text-[7.5vw]">{title}</h3>
