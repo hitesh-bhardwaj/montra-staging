@@ -26,7 +26,7 @@ const businessPaymentGateway = () => {
    <Features featuresData={featuresData}/>
    <Rewards rewardsData={rewardsData}/>
    <BenefitCards cardData={cardData}/>
-   <WhatWhy data={whatWhyData} height={"h-[55vw]"}/>
+   <WhatWhy data={whatWhyData} height={"h-[47vw]"}/>
    <SectionBreak content={"MontraPay makes it simple for businesses of all sizes to accept secure payments online or offline"} width={"w-[90%]"}/>
    <FAQs content={faqContent}/>
    </>

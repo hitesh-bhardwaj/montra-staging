@@ -27,7 +27,7 @@ export default function SectionBreak() {
             })
                 .to(lines, {
                     maskPosition: "40% 100%",
-                    stagger: 0.03,
+                    stagger: 0.25,
                     ease: 'none'
                 })
 
@@ -44,7 +44,7 @@ export default function SectionBreak() {
             })
                 .to(lines, {
                     maskPosition: "0% 100%",
-                    stagger: 0.05,
+                    stagger: 0.25,
                     ease: 'none'
                 })
         }

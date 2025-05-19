@@ -86,7 +86,7 @@ export default function Header() {
             <Image
               src={montraLogo}
               alt="montra logo"
-              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] ${
+              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${
                 isInverted ? " brightness-[16]" : ""
               }`}
             />

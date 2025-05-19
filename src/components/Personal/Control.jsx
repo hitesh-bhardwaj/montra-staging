@@ -250,12 +250,7 @@ const Control = () => {
           opacity: 0,
           delay: -1.2,
           duration: 0.2,
-          onStart: () => {
-            setPointerEvent(true);
-          },
-          onReverseComplete: () => {
-            setPointerEvent(false);
-          },
+        
         });
       const bl = gsap.timeline({
         scrollTrigger: {
@@ -270,6 +265,12 @@ const Control = () => {
         opacity: 1,
         duration: 0.7,
         delay: 1,
+        onComplete: () => {
+          setPointerEvent(true);
+        },
+        onReverseComplete: () => {
+          setPointerEvent(false);
+        },
       });
     });
     return () => ctx.revert();

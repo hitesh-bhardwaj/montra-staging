@@ -9,7 +9,8 @@ import Cursor from '../Cursor'
 import Copy from '../Copy'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import { NextButton, PreviousButton } from '../Buttons/SliderButtons'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,19 @@ const content = [
 ]
 
 export default function InfoCarouselSwiper() {
+    const swiperRef = useRef(null); 
+  
+    const handleNext = () => {
+      if (swiperRef.current) {
+        swiperRef.current.slideNext(); 
+      }
+    };
+  
+    const handlePrev = () => {
+      if (swiperRef.current) {
+        swiperRef.current.slidePrev(); 
+      }
+    };
 
     useEffect(() => {
         const ctx = gsap.context(() => { 
@@ -36,7 +50,7 @@ export default function InfoCarouselSwiper() {
     });
 
     return (
-        <div className="text-white py-[3vw] bg-primary dark" id='infocarousel'>
+        <div className="text-white py-[3vw] bg-primary dark relative" id='infocarousel'>
             <div className='max-md:w-full max-md:flex max-md:justify-center max-sm:justify-start'>
             <Copy>
                 <h3 className='ml-[5vw] text-white font-display font-medium text-[3vw] w-[40%] capitalize leading-[1.3] pb-[3vw] max-sm:text-[7.5vw] max-sm:w-[85%] max-sm:pb-[10vw] max-md:text-[7.5vw] max-md:w-[80%] max-md:pb-[6vw] max-md:text-center max-sm:text-left'>Sort All Your Payments And Cash Flow Needs</h3>
@@ -46,6 +60,7 @@ export default function InfoCarouselSwiper() {
             <Swiper
                 modules={[Pagination, FreeMode]}
                 slidesPerView={1.05}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
                 spaceBetween={20}
                 speed={1000}
                 freeMode={true}
@@ -63,7 +78,11 @@ export default function InfoCarouselSwiper() {
                 ))}
                  <Cursor />
             </Swiper>
-           
+            <div className='w-fit flex gap-4 absolute right-[5%] top-[10%] max-md:hidden'>
+
+            <PreviousButton onClick={handlePrev} />
+            <NextButton onClick={handleNext} />
+            </div>
         </div>
     )
 }

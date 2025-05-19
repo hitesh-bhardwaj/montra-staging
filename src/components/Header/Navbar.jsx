@@ -229,7 +229,7 @@ export default function Navbar({ navigateTo, hidden }) {
             >
               {link.icon || link.name}
               <div
-                className={`w-[1.2vw] h-[1.2vw] flex justify-center items-center rounded-full border text-[0.7vw] border-white bg-white absolute top-[20%] left-[76%] text-primary font-semibold ${link.name === "Personal" || link.name === "Business"
+                className={`w-[1.2vw] h-[1.2vw] flex justify-center font-bold items-center rounded-full border text-[0.8vw] border-white bg-white absolute top-[20%] left-[76%] text-primary ${link.name === "Personal" || link.name === "Business"
                     ? ""
                     : "hidden"
                   }`}
@@ -263,6 +263,10 @@ export default function Navbar({ navigateTo, hidden }) {
                       <Link
                         href={personal.link}
                         className="link-line fadeup-navlink font-medium"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigateTo(personal.link);
+                        }}
                       >
                         {personal.name}
                       </Link>
@@ -288,6 +292,10 @@ export default function Navbar({ navigateTo, hidden }) {
                       <Link
                         href={business.link}
                         className="link-line fadeup-navlink font-medium "
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigateTo(business.link);
+                        }}
                       >
                         {business.name}
                       </Link>

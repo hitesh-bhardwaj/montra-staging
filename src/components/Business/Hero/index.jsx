@@ -21,6 +21,45 @@ export default function Hero() {
   const lenis = useLenis();
   const [isMobileWidth, setMobileWidth] = useState(false);
   useEffect(() => {
+    const ctx = gsap.context(() => {
+    
+      gsap.to(".montra-logo", {
+        filter: "brightness(1)",
+        duration: 0,
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "20% top",
+          // markers: true,
+          onEnter: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onLeave: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onEnterBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+        },
+      });
+    });
+    return () => ctx.revert();
+  });
+  useEffect(() => {
     if (globalThis.innerWidth > 1024) {
       setMobileWidth(false);
     } else {

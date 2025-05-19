@@ -26,7 +26,7 @@ export default function HeroNew() {
     const img6Ref = useRef(null);
 
     fadeUpAnim();
-
+    
     useEffect(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline();

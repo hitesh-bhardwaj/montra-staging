@@ -17,8 +17,55 @@ export default function TextBreak() {
     offset: ['start end', 'end start'],
 })
 
-const arrowTranslateX = useTransform(scrollYProgress, [0.38, 0.70], ['-100%', '0%'])
-const arrowScale = useTransform(scrollYProgress, [0.48, 0.60], [1, 4])
+const arrowTranslateX = useTransform(
+  scrollYProgress,
+  [0.25, 0.7],
+  ["-350%", "0%"]
+);
+const arrowScale = useTransform(scrollYProgress, [0.25, 0.7], [3, 10]);
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    gsap.to(".montra-logo", {
+    
+      scrollTrigger: {
+        trigger: "#text-break",
+        start: "20% top",
+        // markers: true,
+        onLeaveBack: () => {
+          gsap.to(".montra-logo", {
+            filter: "brightness(1)",
+            duration: 0,
+          });
+        },
+        onEnter: () => {
+          gsap.to(".montra-logo", {
+            filter: "brightness(16)",
+            duration: 0,
+          });
+        },
+        onLeave: () => {
+          gsap.to(".montra-logo", {
+            filter: "brightness(1)",
+            duration: 0,
+          });
+        },
+        onLeaveBack:()=>{
+          gsap.to(".montra-logo", {
+            filter: "brightness(1)",
+            duration: 0,
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(".montra-logo", {
+            filter: "brightness(16)",
+            duration: 0,
+          });
+        },
+      },
+    });
+  });
+  return () => ctx.revert();
+});
 
   useEffect(() => {
     initSplitLines();
@@ -82,35 +129,40 @@ const arrowScale = useTransform(scrollYProgress, [0.48, 0.60], [1, 4])
   return (
     <section
       ref={sectionRef}
-      className="relative h-[130vh] w-screen  px-[4vw] overflow-hidden max-sm:py-[25%]  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:h-screen" id="text-break"
+      className="relative h-[180vh] w-screen  max-sm:py-[25%]  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:h-screen" id="text-break"
     >
       {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden" /> */}
 
-      <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto  max-sm:mt-0 max-sm:pt-[40vw]">
+      <div className="h-fit flex justify-center text-center w-full mx-auto  max-sm:mt-0 max-sm:pt-[40vw] sticky top-[30%]">
         <h2
           data-split="lines"
-          className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw]"
+          className="text-[5.7vw] w-[88%] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw] "
         >
           We're not just building products—we're building possibilities.
         </h2>
+
+      <motion.svg
+          style={{
+            scale: arrowScale,
+            translateX: arrowTranslateX,
+            transformOrigin: "0% 50%",
+          }}
+          className="absolute inset-0 w-auto h-full"
+          width="1459"
+          height="1073"
+          viewBox="0 0 1459 1073"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.000976562 0.510742C84.1488 171.168 459.872 513.205 1289.6 516.178V516.176L1393.16 516.412L1399.45 481.279L1458.43 537.775L1379.49 592.722L1386.13 555.657L1289.75 556.808V556.821C459.917 559.754 84.1538 901.822 0.000976562 1072.49V0.510742Z"
+            fill="#215CFF"
+          />
+        </motion.svg>
+
       </div>
-      <div className=" h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB] max-sm:h-[50vh] ">
-                <motion.svg
-                    style={{
-                        scale: arrowScale,
-                        translateX: arrowTranslateX,
-                        transformOrigin: '0% 50%',
-                    }}
-                    className="absolute inset-0 w-auto h-full"
-                    width="1459"
-                    height="1073"
-                    viewBox="0 0 1459 1073"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path d="M0.000976562 0.510742C84.1488 171.168 459.872 513.205 1289.6 516.178V516.176L1393.16 516.412L1399.45 481.279L1458.43 537.775L1379.49 592.722L1386.13 555.657L1289.75 556.808V556.821C459.917 559.754 84.1538 901.822 0.000976562 1072.49V0.510742Z" fill="#215CFF" />
-                </motion.svg>
-            </div>
+
+          
     </section>
   );
 }

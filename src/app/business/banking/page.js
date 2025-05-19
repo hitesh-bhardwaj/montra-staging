@@ -28,7 +28,7 @@ const businessBanking = () => {
       
       <Benefits data={benefitsData} />
       <Steps stepData={stepData}/>
-      <WhatWhy height={"h-[68vw]"} data={whatWhyData}/>
+      <WhatWhy height={"h-[63vw]"} data={whatWhyData}/>
       <SectionBreak content={"Whether you're tracking payments, linking accounts, or accepting digital transactions, Montra has everything you need to grow your business with ease."} width={"w-[95%]"}/>
       <FAQs content={faqContent} />
     </>
@@ -85,6 +85,7 @@ const overviewContent = {
 const whatWhyData = {
   heading:"Link Your Bank Account to Montra for Seamless Transactions",
   headingWidth:"w-[90%]",
+  // height:"h-[30vw]",
   top:"top-[31%]",
   para:"",
   content:[

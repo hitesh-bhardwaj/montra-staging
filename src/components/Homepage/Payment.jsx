@@ -262,8 +262,8 @@ export default function Payments() {
                 {/* ─── TEXT BLOCK ─── */}
                 <div className="h-[100vh] overflow-clip w-[40%] relative bg-white">
                     {/* fade masks */}
-                    <span className="absolute top-0 inset-x-0 pointer-events-none h-[20vw] bg-gradient-to-b from-white via-[#fff] to-transparent z-10" />
-                    <span className="absolute bottom-0 inset-x-0 pointer-events-none h-[14vw] bg-gradient-to-t from-white via-[#fff] to-transparent z-10" />
+                    <span className="absolute top-0 inset-x-0 pointer-events-none h-[16vw] bg-gradient-to-b from-white via-white to-transparent z-10" />
+                    <span className="absolute bottom-0 inset-x-0 pointer-events-none h-[11vw] bg-gradient-to-t from-white via-white to-transparent z-10" />
 
                     <motion.div
                         style={{ translateY }}
@@ -279,7 +279,7 @@ export default function Payments() {
                                 <Copy>
                                     <p className="w-[80%] py-8">{step.desc}</p>
                                 </Copy>
-                                <LinkButton text="Learn More" href={step.link} />
+                                <LinkButton text="Learn More" href={step.link} className='w-fit block' />
                             </div>
                         ))}
                     </motion.div>

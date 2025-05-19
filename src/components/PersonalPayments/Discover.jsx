@@ -12,29 +12,45 @@ const Discover = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const marquee = marqueeRef.current;
-      if (globalThis.innerWidth > 1024) {
-        const animate = () => {
-          const containerRect = marquee.parentElement.getBoundingClientRect();
-          const centerY = containerRect.top + containerRect.height / 2;
-          itemRefs.current.forEach((el) => {
-            const rect = el.getBoundingClientRect();
-            const elCenter = rect.top + rect.height / 2;
-            const dist = Math.abs(centerY - elCenter);
-            const maxDist = containerRect.height / 2;
-            const scale = gsap.utils.mapRange(0, maxDist, 1.1, 0.7)(dist);
-            el.style.transform = `scale(${scale})`;
-          });
-          requestAnimationFrame(animate);
-        };
-        requestAnimationFrame(animate);
-      } else {
-      }
+      if (!marquee || globalThis.innerWidth <= 1024) return;
+  
+      const container = marquee.parentElement;
+  
+      const update = () => {
+        const containerRect = container.getBoundingClientRect();
+        const centerY = containerRect.top + containerRect.height / 2;
+  
+        itemRefs.current.forEach((el) => {
+          if (!el) return;
+  
+          const rect = el.getBoundingClientRect();
+          const elCenter = rect.top + rect.height / 2;
+          const dist = Math.abs(centerY - elCenter);
+          const maxDist = containerRect.height / 2;
+  
+          const scale = gsap.utils.clamp(
+            0.9,
+            1.1,
+            gsap.utils.mapRange(0, maxDist, 1.1, 0.9, dist)
+          );
+  
+          gsap.set(el, { scale });
+        });
+      };
+  
+      // Use GSAP ticker for smoother loop
+      gsap.ticker.add(update);
+  
+      return () => {
+        gsap.ticker.remove(update);
+      };
     });
-
+  
     return () => ctx.revert();
   }, []);
+  
   return (
-    <section className="px-[6vw] py-[4vw] h-full w-screen bg-white max-sm:px-0 max-sm:py-0 max-md:px-0 max-md:pt-[10vw] ">
+    <section className="px-[6vw] py-[4vw] h-full w-screen bg-white max-sm:px-0 max-sm:py-0 max-md:px-0 max-md:py-0 max-md:mt-0">
       <div className="flex items-center relative  justify-between  overflow-hidden bg-primary rounded-[4vw] py-[4vw] px-[2vw] pl-[4vw] max-sm:flex-col max-sm:px-0 max-sm:py-0 max-sm:pl-0 max-sm:rounded-none max-sm:gap-[12vw] max-sm:pt-[10%]  max-md:flex max-md:flex-col max-md:px-0 max-md:py-0 max-md:pt-[10vw] max-md:pl-0 max-md:border-none max-md:gap-[10vw]  max-md:rounded-[0vw]">
         <div className="w-[70%] max-sm:py-[4vw] max-sm:w-full max-sm:px-[7vw] ">
           <Heading>

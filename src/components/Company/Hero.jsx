@@ -1,7 +1,5 @@
 "use client";
 import { AppleStoreButton, PlayStoreButton } from "../Buttons";
-import Image from "next/image";
-import bgImage from "../../../public/assets/images/company/company-bg.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef, useEffect } from "react";
@@ -16,6 +14,50 @@ const Hero = () => {
   const bgRef = useRef(null);
   const imgRef = useRef(null);
    const lenis = useLenis();
+   useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(".montra-logo", {
+        duration: 0,
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "40% top",
+          // markers: true,
+          onLeaveBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onEnter: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+          onLeave: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onLeaveBack:()=>{
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onEnterBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+        },
+      });
+    });
+    return () => ctx.revert();
+  });
+
    useEffect(() => {
     lenis && lenis.stop();
 
@@ -48,26 +90,6 @@ const Hero = () => {
                     duration: 1,
                     ease: "none",
                 })
-            } else{
-            //     const tl = gsap.timeline({
-            //         scrollTrigger: {
-            //             trigger: bgRef.current,
-            //             start: "top 60%",
-            //             end: "40% 60%",
-            //             scrub: 0.25,
-            //             // markers:true
-            //         }
-            //     });
-    
-            //     tl.to(bgRef.current, {
-            //         clipPath: 'ellipse(50vw 50vw at 50% 25%)',
-            //         ease: "none",
-            //     })
-            //         tl.to(bgRef.current, {
-            //             clipPath: 'ellipse(100vw 100vh at 50% 55%)',
-            //             duration: 1,
-            //             ease: "none",
-            //         })
             }
         }, sectionRef);
     
@@ -114,7 +136,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="h-[120vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw] max-md:pb-[10vw]">
+      <div className="h-[120vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw] max-md:pb-[10vw] hero-content">
         <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw] max-md:flex-col max-md:items-start max-md:gap-[7vw]">
           <Heading>
             <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[26%] font-display max-sm:w-full max-sm:text-[10vw] max-md:text-[5.5vw] max-md:w-[80%]">

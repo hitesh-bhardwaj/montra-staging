@@ -48,16 +48,50 @@ export default function Timeline() {
 
   const isMobile = useIsMobile();
 
-  //    useEffect(() => {
-  //     const ctx = gsap.context(() => {
-  //         gsap.fromTo(".timeline-section", {
-  //             opacity: 0, y: 50
-  //         }, {
-  //             opacity: 1, y: 0, duration: 1, stagger: 0.1,delay:-0.5 ,scrollTrigger: { trigger: "#timeline", start: 'top 90%', markers: false}
-  //         })
-  //     })
-  //     return () => ctx.revert();
-  // });
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(".montra-logo", {
+       
+        scrollTrigger: {
+          trigger: "#timeline",
+          start: "top top",
+          // markers: true,
+          onLeaveBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onEnter: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+          onLeave: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onLeaveBack:()=>{
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onEnterBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+        },
+      });
+    });
+    return () => ctx.revert();
+  });
+  
 
   return (
     <section

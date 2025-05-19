@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import Image from "next/image";
 import { useInView } from "framer-motion";
+import gsap from "gsap";
 
 const Steps = ({stepData}) => {
     const [step, setStep] = useState(0);
@@ -13,7 +14,49 @@ const Steps = ({stepData}) => {
     const controlsArray = useRef(stepData.steps.map(() => useAnimation()));
     const ref = useRef(null);
   const inView = useInView(ref, { amount: 0.5 });
-
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(".montra-logo", {
+      
+        scrollTrigger: {
+          trigger: "#steps",
+          start: "top top",
+          // markers: true,
+          onLeaveBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onEnter: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+          onLeave: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onLeaveBack:()=>{
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onEnterBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+        },
+      });
+    });
+    return () => ctx.revert();
+  });
     useEffect(() => {
       if (inView) {
         if (step === stepData.steps.length - 1) {
@@ -67,7 +110,7 @@ const Steps = ({stepData}) => {
       }
     }, [step]);
     return (
-        <section ref={ref} className="w-screen h-screen bg-primary px-[4vw] py-[5%] text-white max-sm:py-[15%] max-sm:px-[7vw] relative max-sm:h-fit overflow-hidden dark" id="steps">
+        <section ref={ref} className="w-screen h-screen bg-primary px-[4vw] py-[5%] text-white max-sm:py-[15%] max-sm:px-[7vw] relative max-sm:h-fit overflow-hidden" id="steps">
             <div className="flex h-full items-start max-sm:flex-col max-md:flex-col">
 
                 <div className="w-2/5 flex items-center max-sm:w-full max-md:w-full ">

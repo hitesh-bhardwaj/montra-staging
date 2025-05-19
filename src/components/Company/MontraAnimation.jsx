@@ -111,12 +111,12 @@ const MontraAnimation = () => {
             opacity:1,
             delay:-0.3,
         })
-          .to(`.${key}-alpha`, { x: "-5vw", delay: -0.5, ease: "power3.inOut" })
+          .to(`.${key}-alpha`, { x: "-5vw", delay: -0.7, ease: "power3.inOut" })
           .to(`.${key}-circle`, {
             height: "17vw",
-            // borderRadius: "2.5vw",
+            borderRadius: "3vw",
             ease: "power3.inOut",
-            delay: -0.3,
+            delay: -0.5,
           })
           .from(`.${key}-content`, {
             opacity: 0,

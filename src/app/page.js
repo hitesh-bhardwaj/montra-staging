@@ -7,6 +7,7 @@ import FeatureSection from "@/components/Homepage/FeaturesSection";
 import FeaturesText from "@/components/Homepage/FeaturesText";
 import Hero from "@/components/Homepage/Hero";
 import Payments from "@/components/Homepage/Payment";
+import PaymentCopy from "@/components/Homepage/PaymentCopy";
 import PaymentMobile from "@/components/Homepage/PaymentMobile";
 import SectionBreak from "@/components/Homepage/SectionBreak";
 import Testimonials from "@/components/Homepage/Testimonials";
@@ -48,7 +49,7 @@ export default function Home() {
       <Hero />
       <FeatureSection />
       <FeaturesText />
-      {mobileWidth ? <PaymentMobile /> : <Payments />}
+      {mobileWidth ? <PaymentMobile /> : <PaymentCopy />}
       <SectionBreak />
       <VisionMission />
       <Testimonials />

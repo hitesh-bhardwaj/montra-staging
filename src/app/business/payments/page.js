@@ -23,7 +23,7 @@ const businessPayments = () => {
    <BenefitCards cardData={cardData}/>
    <Rewards rewardsData={rewardsData}/>
    <Steps stepData={stepData}/>
-   <WhatWhy data={whatWhyData} height={"h-[55vw]"}/>
+   <WhatWhy data={whatWhyData} height={"h-[50vw]"}/>
    <SectionBreak content={"From seamless payments to accessible credit options, Montra empowers you to take control of your financial future."} width={"w-[85%]"}/>
    <FAQs content={faqContent}/>
    </>

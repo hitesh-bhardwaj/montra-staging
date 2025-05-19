@@ -106,7 +106,7 @@ export default function PaymentMobile({ allowMultiple = false }) {
   }
 
   return (
-    <section ref={sectionRef} className="px-[7vw] max-sm:py-[15%] w-full bg-white relative max-md:py-[7%]">
+    <section ref={sectionRef} className="px-[7vw] max-sm:py-[15%] w-full bg-white relative max-md:py-[7%] ">
       <div className="h-[5vh] relative w-full">
 
         <div className="absolute top-[10%] left-1/2 -translate-x-1/2 flex gap-2 z-30 bg-white border border-[#E2EFFF] rounded-full overflow-hidden p-0.5">

@@ -11,17 +11,32 @@ export default function Payments() {
   const sectionRef = useRef(null);
   const containerRef = useRef();
   const itemsRef = useRef([]);
+  const scrollToStep = (index) => {
+    if (!sectionRef.current) return;
+
+    const totalItems = data.length;
+    const sectionHeight = 98 / totalItems; // matches the logic in useEffect
+    const targetY = (window.innerHeight * index)+495;
+    console.log(sectionHeight)
+    const scrollTop = sectionRef.current.offsetTop + targetY;
+
+    window.scrollTo({
+      top: scrollTop,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     itemsRef.current = itemsRef.current.slice(0, data.length);
     const totalItems = data.length;
     const sectionHeight = 98 / totalItems;
     const circles = document.querySelectorAll(".svg-circle");
     const labels = document.querySelectorAll(".indicator-label");
-
+   
     itemsRef.current.forEach((el, index) => {
       const start = `${sectionHeight * index + 4}% 30%`;
       const end = `${sectionHeight * (index + 1.1)}% 30%`;
-    
+
       gsap
         .timeline({
           scrollTrigger: {
@@ -34,7 +49,7 @@ export default function Payments() {
               itemsRef.current.forEach((item, i) => {
                 gsap.set(item, { zIndex: i === index ? 10 : 0 });
               });
-    
+
               gsap.to(circles[index], {
                 fill: "#215CFF",
                 stroke: "#215CFF",
@@ -47,7 +62,7 @@ export default function Payments() {
               itemsRef.current.forEach((item, i) => {
                 gsap.set(item, { zIndex: i === index ? 10 : 0 });
               });
-    
+
               gsap.to(circles[index], {
                 fill: "#215CFF",
                 stroke: "#215CFF",
@@ -86,11 +101,13 @@ export default function Payments() {
           delay: 0.2,
         });
     });
-    
   }, [data]);
 
   return (
-    <section ref={sectionRef} className="h-[750vh] pt-[10vw] w-screen bg-white max-sm:hidden max-md:hidden">
+    <section
+      ref={sectionRef}
+      className="h-[750vh] pt-[10vw] w-screen bg-white max-sm:hidden max-md:hidden"
+    >
       <div className="w-full text-center flex items-center justify-center ">
         <Heading>
           <h2 className="text-[5.7vw] font-display font-medium  w-[80%] capitalize leading-[1.2]">
@@ -110,15 +127,15 @@ export default function Payments() {
           >
             <circle
               cx="6.95801"
-              cy="5.5"
-              r="5"
-              fill="#FF8100"
+              cy="12"
+              r="5.5"
+              fill="white"
               stroke="#EEEEEE"
               className="svg-circle"
             />
             <circle
               cx="6.95801"
-              cy="68.5"
+              cy="73.5"
               r="5.5"
               fill="white"
               stroke="#EEEEEE"
@@ -127,7 +144,7 @@ export default function Payments() {
             />
             <circle
               cx="6.95801"
-              cy="131.5"
+              cy="135.5"
               r="5.5"
               fill="white"
               stroke="#EEEEEE"
@@ -136,7 +153,7 @@ export default function Payments() {
             />
             <circle
               cx="6.95801"
-              cy="194.5"
+              cy="196.5"
               r="5.5"
               fill="white"
               stroke="#EEEEEE"
@@ -145,7 +162,7 @@ export default function Payments() {
             />
             <circle
               cx="6.95801"
-              cy="257.5"
+              cy="255.5"
               r="5.5"
               fill="white"
               stroke="#EEEEEE"
@@ -154,7 +171,7 @@ export default function Payments() {
             />
             <circle
               cx="6.95801"
-              cy="320.5"
+              cy="318.5"
               r="5.5"
               fill="white"
               stroke="#EEEEEE"
@@ -163,7 +180,7 @@ export default function Payments() {
             />
             <circle
               cx="6.95801"
-              cy="383.5"
+              cy="380.5"
               r="5.5"
               fill="white"
               stroke="#EEEEEE"
@@ -171,14 +188,16 @@ export default function Payments() {
               className="svg-circle"
             />
           </svg>
-          <div className="flex flex-col w-[12vw] justify-between text-[#D2D2D2] font-display text-[1vw] leading-[1.2] ">
-            <span className="indicator-label">Banking</span>
-            <span className="indicator-label">Payments</span>
-            <span className="indicator-label">Agency Banking</span>
-            <span className="indicator-label">Inventory Management</span>
-            <span className="indicator-label">Montra Store</span>
-            <span className="indicator-label">Payment Gateway</span>
-            <span className="indicator-label">Tap & Pay</span>
+          <div className="flex flex-col w-[12vw] justify-between text-[#D2D2D2] font-display text-[1vw] leading-[1.2] navigation-business">
+            {data.map((item, index) => (
+              <span
+                key={index}
+                className="indicator-label cursor-pointer"
+                onClick={() => scrollToStep(index)}
+              >
+                {item.field}
+              </span>
+            ))}
           </div>
         </div>
 

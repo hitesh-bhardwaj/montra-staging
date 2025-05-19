@@ -85,7 +85,7 @@ export default function Testimonials() {
     return (
         <section
             ref={sectionRef}
-            className="w-screen h-full relative overflow-hidden py-[4vw] max-sm:py-[15%] dark max-md:py-[7%]"
+            className="w-screen h-full relative overflow-hidden py-[4vw] max-sm:py-[15%] dark max-md:py-[7%] max-sm:h-[90vh]"
         >
             <Image
                 src={bgImage}
