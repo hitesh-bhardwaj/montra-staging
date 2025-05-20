@@ -165,8 +165,8 @@ export default function Header() {
                           text: "Banking",
                         },
                         {
-                          href: "/personal/payment",
-                          text: "Payment",
+                          href: "/personal/payments",
+                          text: "Payments",
                         },
                         {
                           href: "/personal/finance",

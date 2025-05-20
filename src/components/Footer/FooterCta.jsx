@@ -7,6 +7,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Heading from "../Heading";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Copy from "../Copy";
 gsap.registerPlugin(ScrollTrigger);
 
 const FooterCta = () => {
@@ -56,8 +57,12 @@ const FooterCta = () => {
                             <div className="max-md:w-[75%] max-sm:w-full">
                             <Heading>
                                 <h6 className="text-[5.7vw] font-medium leading-[1.2] font-display max-sm:text-[11.5vw] capitalize max-md:text-[7.5vw] ">Take charge of your financial future</h6>
+                                </Heading>
+                                <Copy>
                                 <p className="mt-[2vw] max-sm:mt-[4vw]">It only takes few seconds to get started.</p>
-                            </Heading>
+
+                                </Copy>
+                            
                             </div>
                             <div className="fadeupanim flex gap-10 justify-center mt-[3vw] max-sm:flex-col max-sm:gap-4 max-sm:mt-[10vw] max-md:mt-[5vw]">
                                 <AppleStoreButton />
