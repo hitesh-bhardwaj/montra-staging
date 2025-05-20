@@ -1,29 +1,15 @@
-import Image from "next/image";
+import { ArrowRight } from "./icons";
 
 export function PreviousButton({ onClick }) {
   return (
     <button
       aria-label="previous slide"
       onClick={onClick}
-      className="h-[4vw] w-[4vw] px-[1.2vw] group rounded-full relative border border-white hover:border-transparent duration-400 hover:scale-90 cursor-pointer"
+      className="h-[3.5vw] w-[3.5vw] px-[1.2vw] group rounded-full text-white hover:text-primary relative border border-white hover:border-transparent duration-400 hover:scale-95 cursor-pointer"
     >
-      <span className="block w-[4vw] h-[4vw] absolute bg-white group-hover:scale-100 scale-0 duration-400 rounded-full left-0 top-0" />
+      <span className="block h-full w-full absolute bg-white group-hover:scale-100 scale-0 duration-400 rounded-full left-0 top-0" />
       <div className="w-fit h-fit justify-center flex items-center">
-      <svg
-        width="19"
-        height="15"
-        viewBox="0 0 19 15"
-        className="rotate-180 w-[1.5vw] h-[1.5vw]"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M18.1804 8.0298L11.4307 14.7796C11.2899 14.9203 11.0991 14.9994 10.9 14.9994C10.701 14.9994 10.5102 14.9203 10.3694 14.7796C10.2287 14.6389 10.1497 14.448 10.1497 14.249C10.1497 14.05 10.2287 13.8591 10.3694 13.7184L15.8396 8.24917H1.15037C0.95146 8.24917 0.760701 8.17016 0.620053 8.02951C0.479406 7.88886 0.400391 7.6981 0.400391 7.49919C0.400391 7.30029 0.479406 7.10953 0.620053 6.96888C0.760701 6.82823 0.95146 6.74922 1.15037 6.74922L15.8396 6.74922L10.3694 1.28002C10.2287 1.1393 10.1497 0.948432 10.1497 0.749416C10.1497 0.550399 10.2287 0.359534 10.3694 0.218808C10.5102 0.0780824 10.701 -0.000976562 10.9 -0.000976563C11.0991 -0.000976563 11.2899 0.0780824 11.4307 0.218808L18.1804 6.96859C18.2502 7.03824 18.3055 7.12095 18.3432 7.212C18.381 7.30304 18.4004 7.40064 18.4004 7.49919C18.4004 7.59775 18.381 7.69534 18.3432 7.78639C18.3055 7.87744 18.2502 7.96015 18.1804 8.0298Z"
-          fill="#ffffff"
-          className="group-hover:fill-primary duration-400  "
-        />
-      </svg>
-
+        <ArrowRight className="rotate-180 relative z-10" />
       </div>
     </button>
   );
@@ -34,25 +20,11 @@ export function NextButton({ onClick }) {
     <button
       aria-label="next slide"
       onClick={onClick}
-      className="h-[4vw] w-[4vw] px-[1.2vw] group rounded-full relative border border-white hover:border-transparent duration-400 hover:scale-90 cursor-pointer"
+      className="h-[3.5vw] w-[3.5vw] px-[1.2vw] group rounded-full text-white hover:text-primary relative border border-white hover:border-transparent duration-400 hover:scale-95 cursor-pointer"
     >
-      <span className="block w-[4vw] h-[4vw] absolute bg-white group-hover:scale-100 scale-0 duration-400 rounded-full left-0 top-0" />
+      <span className="block w-full h-full absolute bg-white group-hover:scale-100 scale-0 duration-400 rounded-full left-0 top-0" />
       <div className="w-fit h-fit justify-center flex items-center">
-      <svg
-        width="19"
-        height="15"
-        viewBox="0 0 19 15"
-        className="rotate-0 w-[1.5vw] h-[1.5vw]"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M18.1804 8.0298L11.4307 14.7796C11.2899 14.9203 11.0991 14.9994 10.9 14.9994C10.701 14.9994 10.5102 14.9203 10.3694 14.7796C10.2287 14.6389 10.1497 14.448 10.1497 14.249C10.1497 14.05 10.2287 13.8591 10.3694 13.7184L15.8396 8.24917H1.15037C0.95146 8.24917 0.760701 8.17016 0.620053 8.02951C0.479406 7.88886 0.400391 7.6981 0.400391 7.49919C0.400391 7.30029 0.479406 7.10953 0.620053 6.96888C0.760701 6.82823 0.95146 6.74922 1.15037 6.74922L15.8396 6.74922L10.3694 1.28002C10.2287 1.1393 10.1497 0.948432 10.1497 0.749416C10.1497 0.550399 10.2287 0.359534 10.3694 0.218808C10.5102 0.0780824 10.701 -0.000976562 10.9 -0.000976563C11.0991 -0.000976563 11.2899 0.0780824 11.4307 0.218808L18.1804 6.96859C18.2502 7.03824 18.3055 7.12095 18.3432 7.212C18.381 7.30304 18.4004 7.40064 18.4004 7.49919C18.4004 7.59775 18.381 7.69534 18.3432 7.78639C18.3055 7.87744 18.2502 7.96015 18.1804 8.0298Z"
-          fill="#ffffff"
-          className="group-hover:fill-primary duration-400  "
-        />
-      </svg>
-
+        <ArrowRight className="relative z-10" />
       </div>
     </button>
   );
