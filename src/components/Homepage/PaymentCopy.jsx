@@ -1,10 +1,10 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { LinkButton } from '../Buttons';
 import Image from 'next/image';
 import Heading from '../Heading';
-import Copy from '../Copy';
+// import Copy from '../Copy';
 
 export default function PaymentCopy() {
   const sectionRef = useRef(null);
@@ -18,20 +18,20 @@ export default function PaymentCopy() {
 
   const stepsData = {
     personal: [
-      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/banking' },
-      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/payments' },
-      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/finance' },
-      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/chat' },
-      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/shop' },
+      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/banking',image:'/assets/images/homepage/personal-mobile-mockup.png', },
+      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/payments',image:'/assets/images/homepage/personal-mobile-mockup.png', },
+      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/finance' ,image:'/assets/images/homepage/personal-mobile-mockup.png',},
+      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/chat',image:'/assets/images/homepage/personal-mobile-mockup.png', },
+      { title: 'Secure way of accessing World of Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/personal/shop',image:'/assets/images/homepage/personal-mobile-mockup.png', },
     ],
     business: [
-      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/banking' },
-      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/payments' },
-      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/agency-banking' },
-      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/inventory-management' },
-      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/montra-store' },
-      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/payment-gateway' },
-      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/tap-and-pay' },
+      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/banking',image:'/assets/images/homepage/personal-mobile-mockup.png', },
+      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/payments',image:'/assets/images/homepage/personal-mobile-mockup.png', },
+      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/agency-banking',image:'/assets/images/homepage/personal-mobile-mockup.png', },
+      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/inventory-management' ,image:'/assets/images/homepage/personal-mobile-mockup.png',},
+      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/montra-store',image:'/assets/images/homepage/personal-mobile-mockup.png', },
+      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/payment-gateway' ,image:'/assets/images/homepage/personal-mobile-mockup.png',},
+      { title: 'Business-grade Banking', desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.', link: '/business/tap-and-pay',image:'/assets/images/homepage/personal-mobile-mockup.png', },
     ],
   };
 

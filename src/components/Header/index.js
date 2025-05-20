@@ -88,7 +88,7 @@ export default function Header() {
               alt="montra logo"
               className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${
                 isInverted ? " brightness-[16]" : ""
-              }`}
+              } ${openMenu?"brightness-[16]":""}`}
             />
           </a>
           <Navbar navigateTo={navigateTo} hidden={hidden} />
@@ -103,21 +103,21 @@ export default function Header() {
                 isInverted ? "bg-white" : "bg-primary"
               } ${
                 openMenu
-                  ? "rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px]"
+                  ? "rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px] bg-white"
                   : ""
               }`}
             />
             <div
               className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ${
                 isInverted ? "bg-white" : "bg-primary"
-              } ${openMenu ? "opacity-0" : ""}`}
+              } ${openMenu ? "opacity-0 bg-white" : ""}`}
             />
             <div
               className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ${
                 isInverted ? "bg-white" : "bg-primary"
               } ${
                 openMenu
-                  ? "-rotate-45 max-sm:-translate-y-[7px] max-md:-translate-y-[10px]"
+                  ? "-rotate-45 max-sm:-translate-y-[7px] max-md:-translate-y-[10px] bg-white"
                   : ""
               }`}
             />
@@ -131,7 +131,7 @@ export default function Header() {
             }`}
           >
             <div
-              className={` w-[70vw] max-sm:h-fit overflow-hidden rounded-[7vw] bg-primary text-white flex flex-col gap-[3vw] px-[7vw] font-display font-medium text-[5.5vw] absolute top-[8%] z-[160] right-[10%]  max-sm:space-y-[5vw] max-sm:py-[8vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-fit max-md:text-[4vw] max-md:space-y-[7vw] ${
+              className={`max-sm:w-screen max-sm:h- overflow-hidden bg-primary text-white flex flex-col gap-[3vw] px-[7vw] font-display font-medium text-[5.5vw] absolute top-0 z-[160] right-0  max-sm:space-y-[5vw] max-sm:py-[8vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-fit max-md:text-[4vw] max-md:space-y-[7vw] ${
                 openMenu ? "scale-100 opacity-100" : "scale-0 opacity-0"
               }`}
             >

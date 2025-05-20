@@ -49,7 +49,10 @@ export default function Home() {
       <Hero />
       <FeatureSection />
       <FeaturesText />
+      <div className="max-sm:h-[180vh]">
       {mobileWidth ? <PaymentMobile /> : <PaymentCopy />}
+
+      </div>
       <SectionBreak />
       <VisionMission />
       <Testimonials />
