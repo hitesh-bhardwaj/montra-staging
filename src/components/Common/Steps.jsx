@@ -54,6 +54,39 @@ const Steps = ({stepData}) => {
           },
         },
       });
+      gsap.to(".ham-mobile",{
+        backgroundColor: "#215CFF",
+        duration:0,
+        scrollTrigger: {
+          trigger: "#steps",
+          start: "top top",
+          // markers: true,
+          onEnter: () => {
+            gsap.to(".ham-mobile", {
+              backgroundColor:"white",
+              duration: 0,
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(".ham-mobile", {
+              backgroundColor: "#215CFF",
+              duration: 0,
+            });
+          },
+          onLeave: () => {
+            gsap.to(".ham-mobile", {
+              backgroundColor: "#215CFF",
+              duration: 0,
+            });
+          },
+          onEnterBack: () => {
+            gsap.to(".ham-mobile", {
+              backgroundColor: "white",
+              duration: 0,
+            });
+          },
+        },
+      })
     });
     return () => ctx.revert();
   });
@@ -194,7 +227,7 @@ const Steps = ({stepData}) => {
 
                             >
                                 <div className="relative w-[2.5vw] h-[2.5vw] border border-white rounded-full p-2 max-sm:w-[9vw]  max-sm:h-[9vw] max-md:w-[7vw] max-md:h-[7vw]">
-                                    <span className="absolute inset-0 flex justify-center items-center font-display ">
+                                    <span className="absolute inset-0 flex justify-center items-center font-display max-sm:text-[4vw] max-md:text-[2.5vw]">
                                         {s.number}
                                     </span>
                                     <svg
@@ -216,7 +249,7 @@ const Steps = ({stepData}) => {
                                     </svg>
                                 </div>
                                 <motion.div
-                                    className="inline-block overflow-hidden whitespace-nowrap font-display"
+                                    className="inline-block overflow-hidden whitespace-nowrap font-display max-sm:text-[4vw] max-md:text-[2.5vw]"
                                     animate={{ width: i === step ? "auto" : 0, opacity: i === step ? 1 : 0 }}
                                     style={{ width: i === step ? "auto" : 0 }}
                                 >
@@ -226,7 +259,7 @@ const Steps = ({stepData}) => {
                         ))}
                         {showRestart && (
                             <motion.div
-                                className="ml-4 font-display cursor-pointer opacity-0  absolute bottom-[-3vw] right-[-2vw] rounded-[4vw] flex items-center gap-2 text-[1vw]"
+                                className="ml-4 font-display cursor-pointer opacity-0  absolute bottom-[-3vw] right-[-2vw] rounded-[4vw] flex items-center gap-2 text-[1vw] max-sm:text-[4vw] max-sm:bottom-[3%] max-sm:right-[5%]"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.6 }}

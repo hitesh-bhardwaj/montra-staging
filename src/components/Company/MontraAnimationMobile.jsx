@@ -2,6 +2,7 @@
 import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
+import Heading from "../Heading";
 
 const MontraAnimationMobile = () => {
   return (
@@ -11,8 +12,13 @@ const MontraAnimationMobile = () => {
     >
       <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw] max-md:gap-[8vw]">
         <div className="w-full flex flex-col items-center gap-[1.5vw] max-sm:gap-[4vw] max-sm:items-start max-md:items-start">
-          <h2
-            className={`text-[5.7vw] font-display font-medium leading-[1.3] capitalize max-sm:text-[11vw] max-sm:w-full max-sm:leading-[1.2] max-md:text-[7.5vw] max-md:w-full max-sm:mb-[5vw]`}>Our Core Values</h2>
+          <Heading>
+            <h2
+              className={`text-[5.7vw] font-display font-medium leading-[1.3] capitalize max-sm:text-[11vw] max-sm:w-full max-sm:leading-[1.2] max-md:text-[7.5vw] max-md:w-full max-sm:mb-[5vw]`}
+            >
+              Our Core Values
+            </h2>
+          </Heading>
         </div>
         <div
           className={`flex w-full h-full relative text-[1.2vw] font-medium max-sm:flex-col max-sm:gap-[6vw] max-md:flex-col max-md:gap-[4vw] max-md:pl-[8vw] max-sm:pl-0`}
@@ -37,14 +43,9 @@ const MontraAnimationMobile = () => {
   );
 };
 
-export default MontraAnimationMobile
+export default MontraAnimationMobile;
 
-const AnimatedOpeners = ({
-  classPrefix,
-  color,
-  title,
-  content,
-}) => {
+const AnimatedOpeners = ({ classPrefix, color, title, content }) => {
   const tlRef = useRef(null);
 
   useEffect(() => {
@@ -72,7 +73,8 @@ const AnimatedOpeners = ({
           });
 
         tlRef.current = tl;
-      }if(globalThis.innerWidth>541 && globalThis.innerWidth<1024){
+      }
+      if (globalThis.innerWidth > 541 && globalThis.innerWidth < 1024) {
         const tl = gsap.timeline({ paused: true });
         tl.to(`.${classPrefix}-container`, {
           x: "-11vw",
@@ -96,7 +98,7 @@ const AnimatedOpeners = ({
 
         tlRef.current = tl;
       }
-       if(globalThis.innerWidth<541) {
+      if (globalThis.innerWidth < 541) {
         const tl = gsap.timeline({ paused: true });
         tl.to(`.${classPrefix}-container`, {
           x: "-15vw",
@@ -135,7 +137,7 @@ const AnimatedOpeners = ({
 
   return (
     <span
-      className={`absolute  ${classPrefix}  max-sm:static ${classPrefix}-circle max-sm:h-[15vw] max-md:h-[10vw] max-md:static`}
+      className={`absolute  ${classPrefix}  max-sm:static ${classPrefix}-circle max-sm:h-[15vw] max-md:h-[10vw] max-md:static fadeupanim`}
     >
       <div
         className={`rounded-[3vw] absolute overflow-hidden max-sm:w-[90vw] max-md:w-[80vw] `}
@@ -151,7 +153,7 @@ const AnimatedOpeners = ({
             <span
               className={`rounded-full flex justify-center max-sm:text-[4.5vw] capitalize font-medium items-center ${color} max-sm:w-[14.5vw] max-sm:h-[14.5vw] max-md:w-[10vw] max-md:h-[10vw] max-md:text-[3.5vw]`}
             >
-            {classPrefix}
+              {classPrefix}
             </span>
             <div
               className={`h-full rounded-[3vw] px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[4vw] max-sm:gap-[10vw]  ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] max-md:py-[2vw] max-md:px-[4vw] max-md:gap-[5vw] max-md:w-[77vw] max-md:rounded-[10vw]`}
@@ -177,17 +179,52 @@ const AnimatedOpeners = ({
             </div>
           </div>
         </div>
-       
       </div>
     </span>
   );
 };
 
-const  data= [
-      { classPrefix: "m", color: "bg-[#D9F7C5]", content: "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence", title: "Make Things Easier"},
-      { classPrefix: "o", color: "bg-[#FFEAEE]", content: "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence", title: "Operational Excellence" },
-      { classPrefix: "n",color: "bg-[#EAF1FF]", content: "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence", title: "Never Settle" },
-      { classPrefix: "t",  color: "bg-[#CAC5F7]", content: "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence", title: "Trustworthiness",  },
-      { classPrefix: "r",  color: "bg-[#FFD7CB]", content: "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence", title: "Respect",  },
-      { classPrefix: "a",  color: "bg-[#FEFFA7]", content: "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence", title: "Accountability",  },
-    ]
+const data = [
+  {
+    classPrefix: "m",
+    color: "bg-[#D9F7C5]",
+    content:
+      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+    title: "Make Things Easier",
+  },
+  {
+    classPrefix: "o",
+    color: "bg-[#FFEAEE]",
+    content:
+      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+    title: "Operational Excellence",
+  },
+  {
+    classPrefix: "n",
+    color: "bg-[#EAF1FF]",
+    content:
+      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+    title: "Never Settle",
+  },
+  {
+    classPrefix: "t",
+    color: "bg-[#CAC5F7]",
+    content:
+      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+    title: "Trustworthiness",
+  },
+  {
+    classPrefix: "r",
+    color: "bg-[#FFD7CB]",
+    content:
+      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+    title: "Respect",
+  },
+  {
+    classPrefix: "a",
+    color: "bg-[#FEFFA7]",
+    content:
+      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+    title: "Accountability",
+  },
+];

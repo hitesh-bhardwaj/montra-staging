@@ -54,6 +54,39 @@ const Hero = () => {
           },
         },
       });
+      gsap.to(".ham-mobile",{
+        backgroundColor: "#215CFF",
+        duration:0,
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "40% top",
+          // markers: true,
+          onEnter: () => {
+            gsap.to(".ham-mobile", {
+              backgroundColor:"white",
+              duration: 0,
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(".ham-mobile", {
+              backgroundColor: "#215CFF",
+              duration: 0,
+            });
+          },
+          onLeave: () => {
+            gsap.to(".ham-mobile", {
+              backgroundColor: "#215CFF",
+              duration: 0,
+            });
+          },
+          onEnterBack: () => {
+            gsap.to(".ham-mobile", {
+              backgroundColor: "white",
+              duration: 0,
+            });
+          },
+        },
+      })
     });
     return () => ctx.revert();
   });

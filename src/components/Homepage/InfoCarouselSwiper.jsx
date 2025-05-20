@@ -48,6 +48,40 @@ export default function InfoCarouselSwiper() {
         })
         return () => ctx.revert();
     });
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+    
+          gsap.to(".ham-mobile",{
+            backgroundColor: "#215CFF",
+            duration:0,
+            scrollTrigger: {
+              trigger: "#infocarousel",
+              start: "top top",
+              // markers: true,
+              onEnter: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor:"white",
+                  duration: 0,
+                });
+              },
+            
+              onLeave: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor: "#215CFF",
+                  duration: 0,
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor: "white",
+                  duration: 0,
+                });
+              },
+            },
+          })
+        });
+        return () => ctx.revert();
+      });
 
     return (
         <div className="text-white py-[3vw] bg-primary dark relative" id='infocarousel'>

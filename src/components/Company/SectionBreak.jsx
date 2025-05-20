@@ -36,8 +36,8 @@ export default function SectionBreak() {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: '100% 50%',
-                    end: '150% 20%',
+                    start: 'top 50%',
+                    end: 'bottom 50%',
                     scrub: 0.25,
                     // markers:true
                 }

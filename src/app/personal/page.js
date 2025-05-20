@@ -23,7 +23,10 @@ export default function Personal() {
   return (
     <>
       <Hero />
+      <div className="max-sm:h-[180vh] max-md:min-h-[170vh]">
+
       {!mobileWidth ? <Control /> : <ControlMobile />}
+      </div>
       <SectionBreak />
       <FAQs content={faqContent} />
     </>

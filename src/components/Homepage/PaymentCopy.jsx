@@ -126,10 +126,10 @@ export default function PaymentCopy() {
   // 4) Your scroll thresholds
   const thresholds = {
     banking: 0.02,
-    payment: 0.24,
-    finance: 0.46,
-    chat: 0.66,
-    shop: 0.85,
+    payment: 0.25,
+    finance: 0.50,
+    chat: 0.74,
+    shop: 0.88,
     businessBanking: 0.02,
     businessPayments: 0.15,
     agency: 0.30,

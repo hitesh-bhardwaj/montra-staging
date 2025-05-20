@@ -277,7 +277,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="w-screen h-screen absolute top-0 left-0 hero-main-content opacity-0 z-[10]">
-            <div className="text-[3.2vw] font-medium w-[25%] z-[10] absolute top-[-10%] left-[5%] capitalize font-display max-sm:w-[80%] max-sm:top-[-20%] max-sm:text-[8vw] max-md:top-[-28%] max-md:text-[5.5vw] max-md:w-[50%]">
+            <div className="text-[3.2vw] font-medium w-[25%] z-[10] absolute top-[-10%] left-[5%] capitalize font-display max-sm:w-[80%] max-sm:top-[-23%] max-sm:text-[8vw] max-md:top-[-28%] max-md:text-[5.5vw] max-md:w-[50%]">
               Empower your financial journey with Montra
             </div>
             <div className="flex flex-col gap-[1vw] absolute right-[5%] bottom-[35%] z-[10] max-sm:text-[4.1vw] max-sm:gap-[4vw] max-sm:bottom-[35%] max-md:bottom-[43%] max-md:gap-[2vw]">

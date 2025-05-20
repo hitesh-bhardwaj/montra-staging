@@ -8,6 +8,7 @@ import { useLenis } from "lenis/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useAnimatedNavigation } from "../NavigationContext";
+import { Facebook, Instagram, Linkedin, Twitter } from "../Buttons/icons";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
@@ -17,6 +18,10 @@ export default function Header() {
   const [isInverted, setIsInverted] = useState(false);
   const [openMenu, setopenMenu] = useState(false);
   const lenis = useLenis();
+  const [openSection, setOpenSection] = useState(null);
+  const toggleSection = (section) => {
+    setOpenSection((prev) => (prev === section ? null : section));
+  };
 
   useEffect(() => {
     if (openMenu) {
@@ -63,8 +68,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastY]);
 
-
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[100] transform transition-transform duration-300 w-screen   ${
@@ -87,8 +90,8 @@ export default function Header() {
               src={montraLogo}
               alt="montra logo"
               className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${
-                isInverted ? " brightness-[16]" : ""
-              } ${openMenu?"brightness-[16]":""}`}
+                openMenu ? "!brightness-[1]" : ""
+              } ${isInverted ? " brightness-[16]" : ""} `}
             />
           </a>
           <Navbar navigateTo={navigateTo} hidden={hidden} />
@@ -99,26 +102,26 @@ export default function Header() {
             }}
           >
             <div
-              className={`w-full h-[2.5px]  rounded-full line-1 transition-all duration-500 origin-center ${
+              className={`w-full h-[2.5px]  rounded-full line-1 transition-all duration-500 origin-center ham-mobile ${
                 isInverted ? "bg-white" : "bg-primary"
               } ${
                 openMenu
-                  ? "rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px] bg-white"
-                  : ""
+                  ? "rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px] !bg-primary "
+                  : "bg-primary"
               }`}
             />
             <div
-              className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ${
+              className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile ${
                 isInverted ? "bg-white" : "bg-primary"
-              } ${openMenu ? "opacity-0 bg-white" : ""}`}
+              } ${openMenu ? "opacity-0 bg-white " : "bg-primary"}`}
             />
             <div
-              className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ${
+              className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ham-mobile ${
                 isInverted ? "bg-white" : "bg-primary"
               } ${
                 openMenu
-                  ? "-rotate-45 max-sm:-translate-y-[7px] max-md:-translate-y-[10px] bg-white"
-                  : ""
+                  ? "-rotate-45 max-sm:-translate-y-[7px] max-md:-translate-y-[10px] !bg-primary"
+                  : "bg-primary"
               }`}
             />
           </div>
@@ -131,121 +134,266 @@ export default function Header() {
             }`}
           >
             <div
-              className={`max-sm:w-screen max-sm:h- overflow-hidden bg-primary text-white flex flex-col gap-[3vw] px-[7vw] font-display font-medium text-[5.5vw] absolute top-0 z-[160] right-0  max-sm:space-y-[5vw] max-sm:py-[8vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-fit max-md:text-[4vw] max-md:space-y-[7vw] ${
-                openMenu ? "scale-100 opacity-100" : "scale-0 opacity-0"
+              className={`max-sm:w-screen max-sm:h-screen overflow-hidden !opacity-100 bg-[#FAFBFF] text-primary flex flex-col max-sm:gap-[10vw] px-[7vw] font-display font-medium max-sm:text-[6vw] absolute top-0 z-[160] right-0 max-sm:pt-[20vw]  max-sm:space-y-[5vw] max-sm:py-[8vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${
+                openMenu ? "translate-x-0 " : "translate-x-[100%]"
               }`}
             >
-              <div className="flex flex-col gap-[3vw] items-start">
+              <div className="flex flex-col max-sm:gap-[4vw] items-start max-md:gap-[3vw]">
                 <Link
                   href={"/"}
                   className="link-text"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo("/");
                     setopenMenu(false);
+                    setIsInverted(false);
                   }}
                 >
                   Home
                 </Link>
-                <span className="bg-white h-[1px] w-full"></span>
-                <Link
-                  href={"/personal"}
-                  className="link-text"
-                  onClick={() => {
-                    setopenMenu(false);
-                  }}
-                >
-                  Personal
-                </Link>
-                <span className="bg-white h-[1px] w-full"></span>
-                <Link
-                  href={"/business"}
-                  className="link-text"
-                  onClick={() => {
-                    setopenMenu(false);
-                  }}
-                >
-                  Business
-                </Link>
-                <span className="bg-white h-[1px] w-full"></span>
+                <span className="bg-primary h-[1px] w-full"></span>
+
+                <div className="w-full">
+                  {/* Sections */}
+                  {[
+                    {
+                      title: "Personal",
+                      link: "/personal",
+                      links: [
+                        {
+                          href: "/personal/banking",
+                          text: "Banking",
+                        },
+                        {
+                          href: "/personal/payment",
+                          text: "Payment",
+                        },
+                        {
+                          href: "/personal/finance",
+                          text: "Finance",
+                        },
+                        {
+                          href: "/personal/chat",
+                          text: "Chat",
+                        },
+                        {
+                          href: "/personal/shop",
+                          text: "Shop",
+                        },
+                      ],
+                    },
+                    {
+                      title: "Business",
+                      link: "/business",
+                      links: [
+                        {
+                          href: "/business/banking",
+                          text: "Banking",
+                        },
+                        {
+                          href: "/business/payments",
+                          text: "Payments",
+                        },
+                        {
+                          href: "/business/agency-banking",
+                          text: "Agency Banking",
+                        },
+                        {
+                          href: "/business/inventory-management",
+                          text: "Inventory Management",
+                        },
+                        {
+                          href: "/business/montra-store",
+                          text: "Montra Store",
+                        },
+                        {
+                          href: "/business/payment-gateway",
+                          text: "Payment Gateway",
+                        },
+                        {
+                          href: "/business/tap-and-pay",
+                          text: "Tap & Pay",
+                        },
+                      ],
+                    },
+                  ].map((section, index) => (
+                    <div
+                      key={index}
+                      className={`flex w-full flex-col ${
+                        index % 3 >= 1 ? "mt-[4vw]" : "mt-[0.5vw] "
+                      }`}
+                    >
+                      {/* Title */}
+                      <div
+                        className="flex justify-between w-full list-title cursor-pointer items-center"
+                        onClick={() => toggleSection(section.title)}
+                      >
+                        <a
+                          href={section.link}
+                          className=""
+                          onClick={(e) => {
+                            e.preventDefault();
+                            navigateTo(section.link);
+                            setopenMenu(false);
+                            setIsInverted(false);
+                          }}
+                        >
+                          {section.title}
+                        </a>
+
+                        {/* Icon with Rotation */}
+
+                        <div
+                          className={` w-fit h-fit transition-transform duration-300  ${
+                            openSection === section.title
+                              ? "-rotate-90"
+                              : "rotate-0"
+                          }`}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="max-sm:h-[5vw] max-sm:w-[5vw] max-md:w-[3vw] max-md:h-[3vw] group-hover:rotate-[-180deg] ease-in-out transition-all duration-700 "
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+
+                      {/* Sublist (Expands on Click) */}
+                      <div
+                        className={` overflow-hidden transition-all ease-none  ${
+                          section.title == "Personal"
+                            ? "duration-700 mb-[4vw]"
+                            : "duration-700 mb-[1vw]"
+                        } ${
+                          openSection === section.title
+                            ? "max-h-[50vw] opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        <ul className="max-sm:text-[4.5vw] max-md:text-[3.5vw] pt-[3vw] pl-[3vw] pb-[7vw] flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw]">
+                          {section.links.map((link, idx) => (
+                            <li key={idx}>
+                              <Link
+                                href={link.href}
+                                className="link-line "
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  navigateTo(link.href);
+                                  setopenMenu(false);
+                                  setIsInverted(false);
+                                }}
+                              >
+                                {link.text}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Separator Line */}
+                      <div
+                        className={`w-full h-[1.1px] bg-primary  ${
+                          section.title == "Business" ? "hidden" : ""
+                        }`}
+                      ></div>
+                    </div>
+                  ))}
+                </div>
+                <span className="bg-primary h-[1px] w-full"></span>
                 <Link
                   href={"#"}
                   className="link-text"
                   onClick={() => {
                     setopenMenu(false);
+                    setIsInverted(false);
                   }}
                 >
                   Platform
                 </Link>
-                <span className="bg-white h-[1px] w-full"></span>
+                <span className="bg-primary h-[1px] w-full"></span>
                 <Link
                   href={"/company"}
                   className="link-text"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo("/company");
                     setopenMenu(false);
+                    setIsInverted(false);
                   }}
                 >
                   Company
                 </Link>
-                <span className="bg-white h-[1px] w-full"></span>
+                <span className="bg-primary h-[1px] w-full"></span>
+                <div className="w-full flex gap-[2vw] items-center max-sm:text-[4.5vw] max-md:text-[3vw] fadeup-navpolicy">
+                  <Link href={"/"} className="link-line text-primary">
+                    Privacy Policy
+                  </Link>
+                  <span>
+                    <Image
+                      src={"/assets/icons/circle.svg"}
+                      alt=""
+                      width={40}
+                      height={40}
+                      className="max-sm:w-[2vw] max-sm:h-[2vw] brightness-[1] max-md:w-[1.5vw] max-md:h-[1.5vw]"
+                    />
+                  </span>
+                  <Link href={"/"} className="link-line text-primary">
+                    Cookie Policy
+                  </Link>
+                </div>
               </div>
               <div className="flex items-start justify-start gap-[3vw]">
                 <Link
                   href={"/"}
-                  className="h-fit w-fit rounded-full border border-white "
+                  className=" rounded-full border border-primary max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw] "
                   onClick={() => {
                     setopenMenu(false);
                   }}
                 >
-                  <Image
-                    src={"/assets/icons/facebook-icon.svg"}
-                    height={100}
-                    width={100}
-                    className="h-[8vw] w-[8vw]"
-                    alt="facebook_icon"
+                  <Facebook
+                    className={"text-primary  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
                   />
                 </Link>
                 <Link
                   href={"/"}
-                  className="h-fit w-fit rounded-full border border-white "
+                  className="h-fit w-fit rounded-full border border-primary max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                   onClick={() => {
                     setopenMenu(false);
                   }}
                 >
-                  <Image
-                    src={"/assets/icons/insta-icon.svg"}
-                    height={100}
-                    width={100}
-                    className="h-[8vw] w-[8vw]"
-                    alt="instagram_icon"
+                  <Instagram
+                    className={"text-primary  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
                   />
                 </Link>
                 <Link
                   href={"/"}
-                  className="h-fit w-fit rounded-full border border-white "
+                  className="h-fit w-fit rounded-full border border-primary  max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                   onClick={() => {
                     setopenMenu(false);
                   }}
                 >
-                  <Image
-                    src={"/assets/icons/linkedin-icon.svg"}
-                    height={100}
-                    width={100}
-                    className="h-[8vw] w-[8vw]"
-                    alt="linkedin_icon"
+                  <Linkedin
+                    className={"text-primary  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
                   />
                 </Link>
                 <Link
                   href={"/"}
-                  className="h-fit w-fit rounded-full border border-white "
+                  className="h-fit w-fit rounded-full border border-primary max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                   onClick={() => {
                     setopenMenu(false);
                   }}
                 >
-                  <Image
-                    src={"/assets/icons/x-icon.svg"}
-                    height={100}
-                    width={100}
-                    className="h-[8vw] w-[8vw]"
-                    alt="x_icon"
+                  <Twitter
+                    className={"text-primary  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
                   />
                 </Link>
               </div>

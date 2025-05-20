@@ -1,77 +1,89 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { initSplitLines } from "@/utils/splitText";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from "motion/react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 export default function TextBreak() {
+    const useIsMobile = (breakpoint = 1024) => {
+      const [isMobile, setIsMobile] = useState(false);
+  
+      useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < breakpoint);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+      }, [breakpoint]);
+  
+      return isMobile;
+    };
+  
+    const isMobile = useIsMobile();
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start end', 'end start'],
-})
-
-const arrowTranslateX = useTransform(
-  scrollYProgress,
-  [0.25, 0.7],
-  ["-350%", "0%"]
-);
-const arrowScale = useTransform(scrollYProgress, [0.25, 0.7], [3, 10]);
-useEffect(() => {
-  const ctx = gsap.context(() => {
-    gsap.to(".montra-logo", {
-    
-      scrollTrigger: {
-        trigger: "#text-break",
-        start: "20% top",
-        // markers: true,
-        onLeaveBack: () => {
-          gsap.to(".montra-logo", {
-            filter: "brightness(1)",
-            duration: 0,
-          });
-        },
-        onEnter: () => {
-          gsap.to(".montra-logo", {
-            filter: "brightness(16)",
-            duration: 0,
-          });
-        },
-        onLeave: () => {
-          gsap.to(".montra-logo", {
-            filter: "brightness(1)",
-            duration: 0,
-          });
-        },
-        onLeaveBack:()=>{
-          gsap.to(".montra-logo", {
-            filter: "brightness(1)",
-            duration: 0,
-          });
-        },
-        onEnterBack: () => {
-          gsap.to(".montra-logo", {
-            filter: "brightness(16)",
-            duration: 0,
-          });
-        },
-      },
-    });
+    offset: ["start end", "end start"],
   });
-  return () => ctx.revert();
-});
+
+  const arrowTranslateX = useTransform(
+    scrollYProgress,
+    [isMobile?0.38:0.32, 0.7],
+    ["-150%", "0%"]
+  );
+  const arrowScale = useTransform(scrollYProgress, [isMobile?0.38:0.32, 0.7], [0.1, 5]);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(".montra-logo", {
+        scrollTrigger: {
+          trigger: "#text-break",
+          start: "20% top",
+          // markers: true,
+          onLeaveBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onEnter: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+          onLeave: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(1)",
+              duration: 0,
+            });
+          },
+          onEnterBack: () => {
+            gsap.to(".montra-logo", {
+              filter: "brightness(16)",
+              duration: 0,
+            });
+          },
+        },
+      });
+    });
+    return () => ctx.revert();
+  });
 
   useEffect(() => {
     initSplitLines();
 
     const lines = sectionRef.current.querySelectorAll(".single-line");
-
 
     if (globalThis.innerWidth > 1024) {
       gsap.to(".gradient", {
@@ -89,8 +101,8 @@ useEffect(() => {
         .timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 70%",
-            end: "center 50%",
+            start: "top 30%",
+            end: "center 30%",
             scrub: 0.25,
             //   markers:true,
           },
@@ -100,13 +112,12 @@ useEffect(() => {
           stagger: 0.1,
           ease: "none",
         });
-    }
-    else {
+    } else {
       gsap
         .timeline({
           scrollTrigger: {
             trigger: "#text-break",
-            start: "60% 90%",
+            start: "top 90%",
             end: "bottom 50%",
             scrub: 0.25,
             // markers: true,
@@ -117,23 +128,21 @@ useEffect(() => {
           stagger: 0.1,
           ease: "none",
         });
-
     }
     return () => {
       gsap.killTweensOf("*");
     };
   }, []);
 
-  
-
   return (
     <section
       ref={sectionRef}
-      className="relative h-[180vh] w-screen  max-sm:py-[25%]  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:h-screen" id="text-break"
+      className="relative h-[180vh] w-screen  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-start max-sm:h-[180vh]"
+      id="text-break"
     >
       {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden" /> */}
 
-      <div className="h-fit flex justify-center text-center w-full mx-auto  max-sm:mt-0 max-sm:pt-[40vw] sticky top-[30%]">
+      <div className="h-screen flex  justify-center text-center overflow-hidden w-screen mx-auto  max-sm:mt-0 sticky top-0 pt-[17%] max-md:pt-[55%]">
         <h2
           data-split="lines"
           className="text-[5.7vw] w-[88%] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw] "
@@ -141,7 +150,7 @@ useEffect(() => {
           We're not just building products—we're building possibilities.
         </h2>
 
-      <motion.svg
+        <motion.svg
           style={{
             scale: arrowScale,
             translateX: arrowTranslateX,
@@ -159,13 +168,7 @@ useEffect(() => {
             fill="#215CFF"
           />
         </motion.svg>
-
       </div>
-
-          
     </section>
   );
 }
-
-
-

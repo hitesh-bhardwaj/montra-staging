@@ -26,7 +26,10 @@ export default function Business() {
   return (
     <>
       <Hero />
+      <div className="max-sm:h-screen max-md:min-h-screen">
       {!mobileWidth ? <BankingSection /> : <MobileBanking />}
+
+      </div>
       <SectionBreak content={"With Montra for Business, you're in control—accept payments, manage cash flow, access credit, and grow your business without the banking complexity."} width={"w-[85%]"} />
       <FAQs content={faqContent} />
     </>

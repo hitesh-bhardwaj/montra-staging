@@ -34,7 +34,10 @@ export default function CompanyPage() {
       <Impact />
       <Network />
       <VisionMission />
+      <div className="max-sm:min-h-[90vh] w-screen max-md:min-h-screen">
+
       {isMobile ? <MontraAnimationMobile /> : <MontraAnimation />}
+      </div>
       <TextBreak />
       <Timeline />
       <SectionBreak />

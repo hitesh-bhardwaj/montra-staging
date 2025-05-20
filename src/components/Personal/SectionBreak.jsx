@@ -84,12 +84,12 @@ export default function SectionBreak() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen mt-[-10vw] w-screen  px-[4vw] overflow-hidden max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB] max-md:mt-0 max-md:h-[70vh] max-sm:h-screen"
+      className="relative h-screen mt-[-10vw] w-screen  px-[4vw] overflow-hidden max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB] max-md:mt-0 max-md:h-[80vh] max-sm:h-screen"
     >
       <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto">
         <h2
           data-split="lines"
-          className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw]"
+          className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw]"
         >
           With Montra for Personal, you're in charge—track spending, send money,
           save, and access financial tools without the bank hassle.
