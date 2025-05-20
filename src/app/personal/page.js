@@ -23,7 +23,7 @@ export default function Personal() {
   return (
     <>
       <Hero />
-      <div className="max-sm:h-[180vh] max-md:min-h-[170vh]">
+      <div className="max-sm:h-[180vh] max-md:min-h-[190vh]">
 
       {!mobileWidth ? <Control /> : <ControlMobile />}
       </div>
