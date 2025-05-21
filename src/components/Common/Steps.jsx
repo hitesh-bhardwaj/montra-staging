@@ -266,7 +266,7 @@ const Steps = ({stepData}) => {
                             >
                                 Restart
                                 <span>
-                                    <Image src={"/assets/icons/restart-icon.svg"} height={12} width={12} alt="restart-icon"/>
+                                    <Image src={"/assets/icons/restart-icon.svg"} height={12} width={12} alt="restart-icon" className="animate-wiggle"/>
                                 </span>
                             </motion.div>
                         )}

@@ -265,7 +265,7 @@ const Control = () => {
         opacity: 1,
         duration: 0.7,
         delay: 1,
-        onComplete: () => {
+        onStart: () => {
           setPointerEvent(true);
         },
         onReverseComplete: () => {

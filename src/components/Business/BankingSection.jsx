@@ -32,11 +32,23 @@ export default function Payments() {
     const sectionHeight = 98 / totalItems;
     const circles = document.querySelectorAll(".svg-circle");
     const labels = document.querySelectorAll(".indicator-label");
-   
+    gsap.fromTo(".line-banking",{
+      height:"0%"
+     },{
+      height:"100%",
+      ease:"none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start:"top top",
+        end:"bottom 80%",
+        scrub: true,
+        // markers:true,
+      },
+     })
     itemsRef.current.forEach((el, index) => {
       const start = `${sectionHeight * index + 4}% 30%`;
       const end = `${sectionHeight * (index + 1.1)}% 30%`;
-
+     
       gsap
         .timeline({
           scrollTrigger: {
@@ -70,14 +82,7 @@ export default function Payments() {
               });
               gsap.to(labels[index], { color: "#215CFF", duration: 0.3 });
             },
-            onLeave: () => {
-              gsap.to(circles[index], {
-                fill: "white",
-                stroke: "#D2D2D2",
-                duration: 0.3,
-              });
-              gsap.to(labels[index], { color: "#D2D2D2", duration: 0.3 });
-            },
+          
             onLeaveBack: () => {
               gsap.to(circles[index], {
                 fill: "white",
@@ -116,7 +121,10 @@ export default function Payments() {
         </Heading>
       </div>
       <div className="sticky top-0 pl-[4vw] h-screen flex items-center justify-between overflow-hidden">
-        <div className="flex gap-3 w-[30vw] h-[20vw]">
+        <div className="bg-black/5 h-[19vw] w-[2px] absolute top-[32.5%] left-[4.43%]">
+          <div className="w-full h-[20%] bg-primary line-banking"/>
+        </div>
+        <div className="flex gap-3 w-[30vw] h-[20vw] relative z-[5]">
           <svg
             className="h-full"
             width="14"

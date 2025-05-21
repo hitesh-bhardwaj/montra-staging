@@ -211,15 +211,15 @@ const BenefitCards = ({ cardData }) => {
                 src={cardData.icon1}
                 height={50}
                 width={50}
-                className="max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw]"
+                className="max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw] w-[4vw] h-[4vw] object-contain"
                 alt="montra-account"
               />
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
+              <h3 className="text-[2.1vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
                 {cardData.cardTitle1}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2] h-full w-full flex ">
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
+              <h3 className="text-[2.1vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
                 {cardData.cardTitle1}
               </h3>
               <div
@@ -238,15 +238,15 @@ const BenefitCards = ({ cardData }) => {
                 src={cardData.icon2}
                 height={50}
                 width={50}
-                className="max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw]"
+                className="max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw] w-[4vw] h-[4vw] object-contain"
                 alt="montra-account"
               />
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
+              <h3 className="text-[2.1vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
                 {cardData.cardTitle2}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2]  ">
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
+              <h3 className="text-[2.1vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
                 {cardData.cardTitle2}
               </h3>
               <div
@@ -265,15 +265,15 @@ const BenefitCards = ({ cardData }) => {
                 src={cardData.icon3}
                 height={50}
                 width={50}
-                className="max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw]"
+                className="max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw] w-[4vw] h-[4vw] object-contain"
                 alt="montra-account"
               />
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
+              <h3 className="text-[2.1vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
                 {cardData.cardTitle3}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2]  ">
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
+              <h3 className="text-[2.1vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
                 {cardData.cardTitle3}
               </h3>
               <div
@@ -292,15 +292,15 @@ const BenefitCards = ({ cardData }) => {
                 src={cardData.icon4}
                 height={50}
                 width={50}
-                className="max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw]"
+                className="max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[10vw] max-md:h-[10vw] w-[4vw] h-[4vw] object-contain"
                 alt="montra-account"
               />
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
+              <h3 className="text-[2.1vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
                 {cardData.cardTitle4}
               </h3>
             </div>
             <div className="card-back bg-white text-black border border-[#D2D2D2] ">
-              <h3 className="text-[2.4vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
+              <h3 className="text-[2.1vw] leading-[1] font-display font-medium max-sm:text-[7.5vw] max-md:text-[4.5vw]">
                 {cardData.cardTitle4}
               </h3>
               <div

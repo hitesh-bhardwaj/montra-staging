@@ -24,6 +24,7 @@ html{
   --font-body: var(--font-body);
   --font-display: var(--font-display);
   --color-gray-100: #D2D2D2;
+  --animate-wiggle: wiggle 2s linear infinite;
   --ease-link-line: cubic-bezier(.62, .05, .01, .99);
 }
 
@@ -111,6 +112,16 @@ body {
   mask-position: 60% 100%;
 }
 
+@keyframes wiggle {
+  0%{
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  
+}
+
 @keyframes fadeInDelayed {
   0% {
     opacity: 0;
@@ -119,6 +130,7 @@ body {
     opacity: 1;
   }
 }
+
 
 .fade-in-delay {
   animation: fadeInDelayed 1s ease forwards;

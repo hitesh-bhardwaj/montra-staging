@@ -33,10 +33,10 @@ export default function TextBreak() {
 
   const arrowTranslateX = useTransform(
     scrollYProgress,
-    [isMobile?0.38:0.32, 0.7],
+    [isMobile?0.38:0.27, 0.7],
     ["-150%", "0%"]
   );
-  const arrowScale = useTransform(scrollYProgress, [isMobile?0.38:0.32, 0.7], [0.1, 5]);
+  const arrowScale = useTransform(scrollYProgress, [isMobile?0.38:0.27, 0.7], [0.1, 5]);
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".montra-logo", {
@@ -170,7 +170,7 @@ export default function TextBreak() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[180vh] w-screen  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-start max-sm:h-[180vh]"
+      className="relative h-[160vh] w-screen  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-start max-sm:h-[180vh]"
       id="text-break"
     >
       {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden" /> */}

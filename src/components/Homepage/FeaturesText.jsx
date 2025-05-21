@@ -65,10 +65,10 @@ export default function PinnedRevealSection() {
 
   const arrowTranslateX = useTransform(
     scrollYProgress,
-    [0.48, 0.7],
+    [0.48, 0.665],
     ["-100%", "0%"]
   );
-  const arrowScale = useTransform(scrollYProgress, [0.48, 0.7], [1, 4]);
+  const arrowScale = useTransform(scrollYProgress, [0.48, 0.665], [1, 4]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
