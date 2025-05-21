@@ -8,7 +8,7 @@ export const AppleStoreButton = () => {
   return (
     <button
       aria-label="Download from Apple Store"
-      className="font-display text-white flex w-[16vw] justify-start items-center gap-4 py-[0.6vw] px-[2vw] rounded-full overflow-hidden bg-primary border border-primary max-sm:min-w-[65vw] max-sm:w-fit max-sm:px-[10vw] max-sm:py-[3vw] max-md:min-w-[30vw] max-md:py-[1.5vw] max-md:px-[4vw] cursor-pointer"
+      className="font-display text-white flex w-[16vw] justify-start items-center gap-4 py-[0.6vw] px-[2vw] rounded-full overflow-hidden bg-primary border border-primary max-sm:min-w-[65vw] max-sm:w-fit max-sm:px-[10vw] max-sm:py-[3vw] max-md:min-w-[30vw] max-md:py-[1.5vw] max-md:px-[4vw] cursor-pointer group hover:scale-[0.95] transition-all duration-300 ease"
     >
       <div>
         <AppleIcon className="w-[2.2vw] h-[2.4vw] mt-[-0.5vw] max-sm:w-[8vw] max-sm:h-[8vw] max-md:w-[4.5vw] max-md:h-[4.5vw]" />
@@ -29,7 +29,7 @@ export const PlayStoreButton = () => {
   return (
     <button
       aria-label="Download from Play Store"
-      className="font-display text-black-1 flex relative z-[9999] w-[16vw] justify-start items-center gap-4 py-[0.6vw] px-[2vw] rounded-full overflow-hidden bg-white border border-gray-100 max-sm:min-w-[65vw] max-sm:w-fit max-sm:px-[10vw] max-sm:py-[3vw] max-md:min-w-[30vw] max-md:w-fit max-md:py-[1.5vw] max-md:px-[4vw] cursor-pointer"
+      className="font-display text-black-1 flex relative z-[9999] w-[16vw] justify-start items-center gap-4 py-[0.6vw] px-[2vw] rounded-full overflow-hidden bg-white border border-gray-100 max-sm:min-w-[65vw] max-sm:w-fit max-sm:px-[10vw] max-sm:py-[3vw] max-md:min-w-[30vw] max-md:w-fit max-md:py-[1.5vw] max-md:px-[4vw] cursor-pointer group hover:scale-[0.95] transition-all duration-300 ease"
     >
       <div>
         <GooglePlay className="w-[2.2vw] h-[2.2vw] max-sm:w-[8vw] max-sm:h-[8vw] max-md:w-[4.5vw] max-md:h-[4.5vw]" />

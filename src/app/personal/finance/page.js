@@ -75,7 +75,7 @@ const PersonalFinance = () => {
         <div className="sticky z-10 h-screen flex w-fit justify-start items-start pt-[28vw] top-0 px-[2vw] max-md:hidden">
           <div className="flex gap-[1vw] font-display text-[1vw] ">
             <span
-              className={` opacity-100 transition-colors duration-500 ease-in-out ${color ? "text-white" : "text-primary"
+              className={` opacity-100 transition-colors duration-500  ease-in-out ${color ? "text-white" : "text-primary"
                 }`}
             >
               Finance:

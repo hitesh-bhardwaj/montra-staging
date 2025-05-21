@@ -83,9 +83,12 @@ export default function Blogs() {
                                 <Copy>
                                     <LinkButton text={"Read More"} href="#" className="text-black-1 group-hover:text-primary" />
                                 </Copy>
-                                <div className="block w-full h-[1px] bg-gray-100 lineanim">
+                                {/* <div className="block w-full h-[1px] bg-gray-100 lineanim">
                                     <span className="block bg-primary h-full w-full group-hover:scale-x-100 scale-x-0 duration-500 origin-left" />
-                                </div>
+                                </div> */}
+                                <div className="w-full h-[1px] bg-gray-100 lineanim overflow-hidden">
+              <span className="block scale-x-0 bg-primary h-full origin-[100%] group-hover:scale-x-100 transition-transform duration-700 ease-link-line group-hover:origin-[0]" />
+            </div>
                             </div>
                         ))}
                     </div>

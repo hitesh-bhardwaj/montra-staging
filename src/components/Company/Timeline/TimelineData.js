@@ -301,7 +301,7 @@ export const timelineData = [
             },
             {
                 title: 'Verifyed',
-                left: 'left-[60%]',
+                left: 'left-[45%]',
                 top: 'top-[25%]',
                 color: '#EAF1FF',
                 content: [
@@ -335,6 +335,19 @@ export const timelineData = [
                     'Account Management System',
                     'Card Issuing, Management & Processing Platform',
                     'POS Acquiring platform',
+                ],
+                classPrefix: 'd',
+                letter: "M",
+                z: "z-[5]"
+            },
+            {
+                title: 'Development',
+                left: 'left-[70%]',
+                top: 'top-[20%]',
+                color: '#CAC5F7',
+                content: [
+                    'Completed Development of Montra Supply Chain Solution',
+                    'Obtained PSSP & Super-agent from CBN (Central Bank of Nigeria)',
                 ],
                 classPrefix: 'd',
                 letter: "M",

@@ -2,7 +2,7 @@
 import { AppleStoreButton, PlayStoreButton } from "../Buttons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Heading from "../Heading";
 import Copy from "../Copy";
 import { useLenis } from "lenis/react";
@@ -14,6 +14,17 @@ const Hero = () => {
   const bgRef = useRef(null);
   const imgRef = useRef(null);
    const lenis = useLenis();
+
+   const [videoSrc, setVideoSrc] = useState(null); 
+
+   useEffect(() => {
+     const timeout = setTimeout(() => {
+       setVideoSrc("/assets/images/company/company-page-background.mp4");
+     }, 3000);
+ 
+     return () => clearTimeout(timeout);
+   }, []);
+ 
    useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".montra-logo", {
@@ -171,7 +182,7 @@ const Hero = () => {
       <div className="h-[120vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw] max-md:pb-[10vw] hero-content">
         <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw] max-md:flex-col max-md:items-start max-md:gap-[7vw]">
           <Heading>
-            <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[26%] font-display max-sm:w-full max-sm:text-[10vw] max-md:text-[5.5vw] max-md:w-[80%]">
+            <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[27%] font-display max-sm:w-full max-sm:text-[10vw] max-md:text-[5.5vw] max-md:w-[80%]">
               How We&apos;re Changing the Game
             </h2>
           </Heading>
@@ -195,14 +206,14 @@ const Hero = () => {
 
                 className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden fadeup">
                   <video  muted playsInline loop autoPlay
-                   src={"/assets/images/company/company-page-background.mp4"} 
+                   src={videoSrc} 
                    poster="/assets/images/company/poster.webp"
                     ref={imgRef} 
                      className="w-full h-full object-cover absolute"/>
             </div>
             <div
                 className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block max-md:block">
-                     <video src={"/assets/images/company/company-page-background.mp4"} muted playsInline loop ref={imgRef}  className="w-full h-full object-cover absolute"/>
+                     <video src={videoSrc} muted playsInline loop ref={imgRef}  className="w-full h-full object-cover absolute"/>
             </div>
         </section>
     );

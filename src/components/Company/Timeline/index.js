@@ -166,7 +166,7 @@ export default function Timeline() {
                 )}
                 <button
                   onClick={() => goToSlide(index)}
-                  className={`relative z-10 px-[1.5vw] font-display text-[1vw] py-[0.8vw] rounded-full transition-colors duration-300 max-sm:text-[6.5vw] max-sm:px-[10vw]  max-sm:py-[2.5vw] max-md:text-[4.5vw] max-md:px-[10vw] max-md:py-[2vw] max-sm:w-[35vw] max-md:w-[30vw]`}
+                  className={`relative z-10 px-[1.5vw] cursor-pointer font-display text-[1vw] py-[0.8vw] rounded-full transition-colors duration-300 max-sm:text-[6.5vw] max-sm:px-[10vw]  max-sm:py-[2.5vw] max-md:text-[4.5vw] max-md:px-[10vw] max-md:py-[2vw] max-sm:w-[35vw] max-md:w-[30vw]`}
                 >
                   {year}
                 </button>

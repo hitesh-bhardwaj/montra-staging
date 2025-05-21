@@ -17,7 +17,6 @@ const Steps = ({stepData}) => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".montra-logo", {
-      
         scrollTrigger: {
           trigger: "#steps",
           start: "top top",
@@ -239,7 +238,7 @@ const Steps = ({stepData}) => {
                                             cy="20"
                                             r="20"
                                             stroke="white"
-                                            strokeWidth="2"
+                                            strokeWidth="3"
                                             fill="none"
                                             strokeDasharray="126"
                                             animate={controlsArray.current[i]}

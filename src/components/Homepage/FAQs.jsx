@@ -68,7 +68,7 @@ function Accordion({ question, answer, isOpen, onToggle }) {
           >
             <span
               className={`
-                relative mr-[3.5vw] flex items-center justify-center max-sm:mr-0 max-md:mr-0
+                relative mr-[4vw] flex items-center justify-center max-sm:mr-0 max-md:mr-0
                 duration-400 ${isOpen ? 'rotate-45' : ''}
               `}
             >

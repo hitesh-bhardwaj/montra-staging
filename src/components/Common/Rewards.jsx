@@ -82,7 +82,7 @@ const Rewards = ({rewardsData}) => {
     </div>
   </div>
 </section>
-
+ 
   );
 };
 

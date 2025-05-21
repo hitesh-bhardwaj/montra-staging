@@ -57,7 +57,7 @@ const FooterCta = () => {
                                 </Copy>
                             
                             </div>
-                            <div className="fadeupanim flex gap-10 justify-center mt-[3vw] max-sm:flex-col max-sm:gap-4 max-sm:mt-[10vw] max-md:mt-[5vw]">
+                            <div className="fadeupanim flex gap-6 justify-center mt-[3vw] max-sm:flex-col max-sm:gap-4 max-sm:mt-[10vw] max-md:mt-[5vw]">
                                 <AppleStoreButton />
                                 <PlayStoreButton />
                             </div>
