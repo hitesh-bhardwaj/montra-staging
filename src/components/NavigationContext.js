@@ -12,11 +12,11 @@ export const NavigationProvider = ({ children }) => {
   const slideInOut = () => {
     document.documentElement.animate(
       [
-        { opacity: 1, transform: "scale(1)", borderRadius: "0" },
-        { opacity: 0.2, transform: "scale(0.95)", borderRadius: "20px" },
+        { opacity: 1, transform: "scale(1) translateY(0)", borderRadius: "0" },
+        { opacity: 0.2, transform: "scale(0.90) translateY(50px)", borderRadius: "20px" },
       ],
       {
-        duration: 1200,
+        duration: 1300,
         easing: "cubic-bezier(0.87, 0, 0.13, 1)",
         fill: "forwards",
         pseudoElement: "::view-transition-old(root)",
@@ -29,7 +29,7 @@ export const NavigationProvider = ({ children }) => {
         { clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)" },
       ],
       {
-        duration: 1200,
+        duration: 1300,
         easing: "cubic-bezier(0.87, 0, 0.13, 1)",
         fill: "forwards",
         pseudoElement: "::view-transition-new(root)",
@@ -52,7 +52,7 @@ export const NavigationProvider = ({ children }) => {
 
       setTimeout(() => {
         setIsAnimating(false);
-      }, 1500);
+      }, 1600);
     },
     [isAnimating, router]
   );

@@ -12,13 +12,13 @@ const Impact = () => {
 
   useEffect(() => {
     const lines = sectionRef.current.querySelectorAll(".lineDraw");
-    gsap.set(cards.current, { opacity: 0, x: -100 });
+    gsap.set(cards.current, { opacity: 0, y: 100 });
     gsap.set(lines, { scaleX: 0, transformOrigin: "left center" });
 
     cards.current.forEach((card, i) => {
       gsap.to(card, {
         opacity: 1,
-        x: 0,
+        y: 0,
         duration: 1,
         ease: "power3.out",
         delay: i * 0.2,
@@ -34,7 +34,7 @@ const Impact = () => {
       scaleX: 1,
       duration: 1,
       ease: "power3.out",
-      stagger: 0.5,
+      stagger: 0.2,
       delay: 0.3,
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -53,7 +53,7 @@ const Impact = () => {
         </Heading>
         <div className="grid grid-cols-3 gap-x-[6vw] max-sm:flex-col max-sm:gap-[10vw] max-sm:flex max-md:flex max-md:flex-wrap max-md:gap-[8vw] ">
           <div className="text-black-1 col-span-1 col-start-1 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[0] = el)}>
-            <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw] fadeupanim max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw]" />
+            <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw]" />
             <Copy>
               <p className="mb-[3vw] max-sm:mb-[8vw] max-md:mb-[8vw]">
                 We are a fintech company dedicated to connecting cash-based
@@ -66,7 +66,7 @@ const Impact = () => {
             </div>
           </div>
           <div className="text-black-1 col-span-1 col-start-2 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[1] = el)}>
-            <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw] fadeupanim max-md:h-[8vw] max-md:w-[8vw]  max-md:mb-[3vw]" />
+            <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]  max-md:h-[8vw] max-md:w-[8vw]  max-md:mb-[3vw]" />
             <Copy>
               <p className="mb-[3vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">
                 We equip individuals and businesses—especially in underserved
@@ -79,7 +79,7 @@ const Impact = () => {
             </div>
           </div>
           <div className="text-black-1 col-span-1 col-start-3 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[2] = el)}>
-            <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw] fadeupanim max-md:h-[8vw] max-md:w-[8vw]  max-md:mb-[3vw]" />
+            <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]  max-md:h-[8vw] max-md:w-[8vw]  max-md:mb-[3vw]" />
             <Copy>
               <p className="mb-[3vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">
                 Our mission goes beyond access—we focus on unlocking

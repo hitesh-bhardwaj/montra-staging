@@ -150,7 +150,6 @@ const Hero = () => {
               an Inclusive Financial Ecosystem
             </h1>
           </Heading>
-         
           <Copy delay={1}>
             <p className="font-body w-[95%] mx-auto heroAnim max-sm:w-[95%] max-md:w-[70%]">
               Montra is reimagining how people and businesses in emerging

@@ -14,13 +14,13 @@ const Rewards = ({rewardsData}) => {
   useEffect(() => {
     const lines = sectionRef.current.querySelectorAll(".lineDraw");
 
-    gsap.set(cards.current, { opacity: 0, x: -100 });
+    gsap.set(cards.current, { opacity: 0, y: 100 });
     gsap.set(lines, { scaleX: 0, transformOrigin: "left center" });
 
     cards.current.forEach((card, i) => {
       gsap.to(card, {
         opacity: 1,
-        x: 0,
+        y: 0,
         duration: 1,
         ease: "power3.out",
         delay: i * 0.2,
@@ -36,7 +36,7 @@ const Rewards = ({rewardsData}) => {
       scaleX: 1,
       duration: 1,
       ease: "power3.out",
-      stagger: 0.5,
+      stagger: 0.2,
       delay: 0.3,
       scrollTrigger: {
         trigger: sectionRef.current,
