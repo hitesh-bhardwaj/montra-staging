@@ -258,7 +258,7 @@ const Steps = ({stepData}) => {
                         ))}
                         {showRestart && (
                             <motion.div
-                                className="ml-4 font-display cursor-pointer opacity-0  absolute bottom-[-3vw] right-[-2vw] rounded-[4vw] flex items-center gap-2 text-[1vw] max-sm:text-[4vw] max-sm:bottom-[3%] max-sm:right-[5%]"
+                                className="ml-4 font-display cursor-pointer opacity-0  group absolute bottom-[-3vw] right-[-2vw] rounded-[4vw] flex items-center gap-2 text-[1vw] max-sm:text-[4vw] max-sm:bottom-[3%] max-sm:right-[5%]"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.6 }}
@@ -266,7 +266,7 @@ const Steps = ({stepData}) => {
                             >
                                 Restart
                                 <span>
-                                    <Image src={"/assets/icons/restart-icon.svg"} height={12} width={12} alt="restart-icon" className="animate-wiggle"/>
+                                    <Image src={"/assets/icons/restart-icon.svg"} height={12} width={12} alt="restart-icon" className="group-hover:rotate-[360deg] duration-1000"/>
                                 </span>
                             </motion.div>
                         )}

@@ -85,7 +85,7 @@ const Overview = ({ content }) => {
             </div>
             <div
               ref={block1}
-              className="!w-fit  h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#F1FFE8] absolute top-[55%] left-[45%] z-[7] flex gap-[1vw] max-sm:px-[5vw] max-sm:gap-[2vw] max-sm:rounded-[3vw] max-sm:py-[3vw] max-sm:top-[70%] max-sm:left-[35%] max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw] items-center"
+              className="!w-fit  h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#F1FFE8] absolute top-[55%] right-[5%] z-[7] flex gap-[1vw] max-sm:px-[5vw] max-sm:gap-[2vw] max-sm:rounded-[3vw] max-sm:py-[3vw] max-sm:top-[70%] max-sm:right-[10%] max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw] items-center"
             >
               <div className="w-[2vw] h-[2vw] max-sm:w-[7vw] max-sm:h-[7vw] max-md:w-[5vw] max-md:h-[5vw]">
                 <Image

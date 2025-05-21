@@ -28,7 +28,7 @@ const personalBanking = () => {
       />
       <Benefits data={benefitsData} />
       <Steps stepData={stepData}/>
-      <WhatWhy height={"h-[55vw]"} data={whatWhyData}/>
+      <WhatWhy height={"h-[51vw]"} data={whatWhyData}/>
       <SectionBreak content={"From seamless payments to accessible credit options, Montra empowers you to take control of your financial future."} width={"w-[88%]"}/>
       <FAQs content={faqContent} />
     </>

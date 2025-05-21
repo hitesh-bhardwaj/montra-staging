@@ -126,7 +126,7 @@ const PersonalFinance = () => {
         <Steps stepData={stepData} />
         <Benefits data={benefitsData2} id={"benefits-second"} />
         <Features featuresData={featuresData} />
-        <WhatWhy data={whatWhyData} height={"h-[60vw]"} />
+        <WhatWhy data={whatWhyData} height={"h-[59vw]"} />
         <InvestmentPlans />
       </div>
       <SectionBreak
