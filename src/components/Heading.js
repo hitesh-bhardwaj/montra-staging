@@ -64,7 +64,7 @@ export default function Heading({ children, animateOnScroll = true, delay = 0 })
           ...animationProps,
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 85%",
+            start: "top 95%",
             once: true,
             // markers:true
           },

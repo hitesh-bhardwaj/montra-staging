@@ -12,15 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FooterCta = () => {
     const pathname = usePathname();
-
-    useEffect(() => {
-      const canvas = document.getElementById("canvas-18971");
-      if (canvas) {
-        canvas.style.width = "100vw";
-        canvas.style.borderBottomLeftRadius = "0vw";
-        canvas.style.borderBottomRightRadius = "0vw";
-      }
-    }, [pathname]);
+    // console.log(pathname)
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo("#canvas-18971", {
@@ -38,12 +30,13 @@ const FooterCta = () => {
                     start: "bottom bottom",
                     end: "bottom 10%",
                     scrub: true,
-                    invalidateOnRefresh: true,
+                    // markers:true,
+                    invalidateOnRefresh: false,
                 }
             })
         });
         return () => ctx.revert();
-    }, []);
+    }, [pathname]);
 
     return (
         <>

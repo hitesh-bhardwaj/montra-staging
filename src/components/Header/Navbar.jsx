@@ -40,61 +40,26 @@ const navLinks = [
   },
   { name: "Company", href: "/company" },
 ];
+
 const navLinkArray = [
   {
     personal: [
-      {
-        link: "/personal/banking",
-        name: "Banking",
-      },
-      {
-        link: "/personal/payments",
-        name: "Payments",
-      },
-      {
-        link: "/personal/finance",
-        name: "Finance",
-      },
-      {
-        link: "/personal/chat",
-        name: "Chat",
-      },
-      {
-        link: "/personal/shop",
-        name: "Shop",
-      },
+      { link: "/personal/banking", name: "Banking" },
+      { link: "/personal/payments", name: "Payments" },
+      { link: "/personal/finance", name: "Finance" },
+      { link: "/personal/chat", name: "Chat" },
+      { link: "/personal/shop", name: "Shop" },
     ],
   },
   {
     business: [
-      {
-        link: "/business/banking",
-        name: "Banking",
-      },
-      {
-        link: "/business/payments",
-        name: "Payments",
-      },
-      {
-        link: "/business/agency-banking",
-        name: "Agency Banking",
-      },
-      {
-        link: "/business/inventory-management",
-        name: "Inventory Management",
-      },
-      {
-        link: "/business/montra-store",
-        name: "Montra Store",
-      },
-      {
-        link: "/business/payment-gateway",
-        name: "Payment Gateway",
-      },
-      {
-        link: "/business/tap-and-pay",
-        name: "Tap & Pay",
-      },
+      { link: "/business/banking", name: "Banking" },
+      { link: "/business/payments", name: "Payments" },
+      { link: "/business/agency-banking", name: "Agency Banking" },
+      { link: "/business/inventory-management", name: "Inventory Management" },
+      { link: "/business/montra-store", name: "Montra Store" },
+      { link: "/business/payment-gateway", name: "Payment Gateway" },
+      { link: "/business/tap-and-pay", name: "Tap & Pay" },
     ],
   },
 ];
@@ -115,78 +80,56 @@ export default function Navbar({ navigateTo, hidden }) {
       width: rect.width,
     });
   };
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".fadeup-navlink",
-        {
-          yPercent: 100,
-        },
-        {
-          // opacity:0,
-          yPercent: 0,
-          delay: 0,
-          // delay:0.1,
-          stagger: 0.1,
-        }
+        { yPercent: 100 },
+        { yPercent: 0 , delay:0.3,}
       );
       gsap.fromTo(
         ".fadeup-navimg",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 1,
-          delay: 0.3,
-        }
+        { opacity: 0 },
+        { opacity: 1, duration: 1, delay: 0.3 }
       );
     });
     return () => ctx.revert();
   }, [active, openMenu]);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".fadeup-navpolicy",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          y: 5,
-          delay: 0.5,
-        }
+        { opacity: 0 },
+        { opacity: 1, y: 5, delay: 0.5 }
       );
       gsap.fromTo(
         ".fadeup-navicon",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-
-          y: 5,
-          delay: 0.5,
-        }
+        { opacity: 0 },
+        { opacity: 1, y: 5, delay: 0.5 }
       );
     });
     return () => ctx.revert();
   }, [openMenu]);
+
   useEffect(() => {
     requestAnimationFrame(() => {
-      const active = navRef.current.querySelector('a[data-active="true"]');
-      movePill(active);
+      const activeEl = navRef.current.querySelector('a[data-active="true"]');
+      movePill(activeEl);
     });
   }, [pathname]);
 
   return (
-    <nav className="bg-black rounded-full h-[4.1vw] max-sm:hidden max-md:hidden relative z-[52]">
+    <nav className="bg-black rounded-full h-[4.1vw] max-sm:hidden max-md:hidden relative z-[9999]">
       <div
         ref={navRef}
-        className="relative w-full inline-flex h-full items-center overflow-hidden z-[54] bg-black rounded-full  px-[0.5vw]"
+        className="relative w-full inline-flex h-full items-center overflow-hidden z-[54] bg-black rounded-full px-[0.5vw]"
         onMouseLeave={() => {
-          const active = navRef.current.querySelector('a[data-active="true"]');
-          movePill(active);
+          const activeEl = navRef.current.querySelector(
+            'a[data-active="true"]'
+          );
+          movePill(activeEl);
         }}
       >
         <span
@@ -202,6 +145,7 @@ export default function Navbar({ navigateTo, hidden }) {
             link.href === "/"
               ? pathname === "/"
               : pathname === link.href || pathname.startsWith(`${link.href}/`);
+
           return (
             <a
               onClick={(e) => {
@@ -210,18 +154,25 @@ export default function Navbar({ navigateTo, hidden }) {
               }}
               key={link.href}
               href={link.href}
-              data-active={isActive ? "true" : undefined}
+              data-active={
+                isActive
+                  ? "true"
+                  : link.name === "Personal"
+                  ? "personal"
+                  : link.name === "Business"
+                  ? "business"
+                  : undefined
+              }
               aria-label={link.name}
               className="relative z-10 flex text-[1.05vw] min-w-[5vw] h-full items-center px-[2vw] justify-center text-white whitespace-nowrap font-display gap-[0.5vw]"
               onMouseEnter={(e) => {
                 movePill(e.currentTarget);
-                if (link.name == "Personal" || link.name == "Business") {
+                if (link.name === "Personal") {
                   setOpenMenu(true);
-                }
-                if (link.name == "Personal") {
                   setActive(1);
                 }
-                if (link.name == "Business") {
+                if (link.name === "Business") {
+                  setOpenMenu(true);
                   setActive(2);
                 }
               }}
@@ -229,36 +180,56 @@ export default function Navbar({ navigateTo, hidden }) {
             >
               {link.icon || link.name}
               <div
-                className={`w-[1.2vw] h-[1.2vw] flex justify-center font-bold items-center rounded-full border text-[0.8vw] border-white bg-white absolute top-[20%] left-[76%] text-primary ${link.name === "Personal" || link.name === "Business"
+                className={`w-[1.2vw] h-[1.2vw] flex justify-center font-bold items-center rounded-full border text-[0.8vw] border-white bg-white absolute top-[20%] left-[76%] text-primary ${
+                  link.name === "Personal" || link.name === "Business"
                     ? ""
                     : "hidden"
-                  }`}
+                }`}
               >
-                {link.name == "Personal" ? <p>5</p> : <p>7</p>}
+                {link.name === "Personal" ? <p>5</p> : <p>7</p>}
               </div>
             </a>
           );
         })}
       </div>
+
+      {/* Dropdown Area */}
       <div
+        className="absolute top-[10%] left-0 w-full z-[51]"
         onMouseEnter={() => {
           setOpenMenu(true);
+          if (active === 1 || active === 2) {
+            const selector =
+              active === 1
+                ? 'a[data-active="personal"]'
+                : 'a[data-active="business"]';
+            const el = navRef.current?.querySelector(selector);
+            movePill(el);
+          }
         }}
         onMouseLeave={() => {
           setOpenMenu(false);
+          if (!navRef.current) return;
+          
+          
+            const el = navRef.current.querySelector('a[data-active="true"]');
+            movePill(el);
+          
         }}
-        className={`w-full  absolute top-[10%] left-0 rounded-[2vw] bg-[#FAFBFF] border border-black/10 z-[51] flex justify-end overflow-hidden transition-all duration-300 ease-out  ${openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
-          }`}
       >
-        <div className="w-[82.5%] flex gap-[1vw] h-full font-display text-primary">
-          <div className="w-[60%] h-full py-[2vw] flex flex-col justify-between">
-            <div className="flex flex-col gap-[0.7vw] text-[1.1vw]">
-              {active == 1 ? (
-                <>
-                  {navLinkArray[0].personal.map((personal, id) => (
+        <div
+          className={`w-full rounded-[2vw] bg-[#FAFBFF] border border-black/10 flex justify-end overflow-hidden transition-all duration-300 ease-out ${
+            openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
+          }`}
+        >
+          <div className="w-[82.5%] flex gap-[1vw] h-full font-display text-primary">
+            <div className="w-[60%] h-full py-[2vw] flex flex-col justify-between">
+              <div className="flex flex-col gap-[0.7vw] text-[1.1vw]">
+                {active === 1 &&
+                  navLinkArray[0].personal.map((personal, id) => (
                     <div
-                      className="w-fit flex gap-[0.5vw] items-center group overflow-hidden"
                       key={id}
+                      className="w-fit flex gap-[0.5vw] items-center group overflow-hidden"
                     >
                       <Link
                         href={personal.link}
@@ -272,26 +243,24 @@ export default function Navbar({ navigateTo, hidden }) {
                       </Link>
                       <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block">
                         <Image
-                          src={"/assets/icons/diagonal-arrow.svg"}
+                          src="/assets/icons/diagonal-arrow.svg"
                           alt=""
                           width={40}
                           height={40}
-                          className="w-[0.7vw] h-[0.7vw] scale-[0.7] translate-y-[100%] translate-x-[-100%] group-hover:translate-y-0 group-hover:translate-x-0  group-hover:scale-[1] transition-all duration-300 ease-in-out"
+                          className="w-[0.7vw] h-[0.7vw] scale-[0.7] translate-y-[100%] translate-x-[-100%] group-hover:translate-y-0 group-hover:translate-x-0 group-hover:scale-[1] transition-all duration-300 ease-in-out"
                         />
                       </div>
                     </div>
                   ))}
-                </>
-              ) : <></> || active == 2 ? (
-                <>
-                  {navLinkArray[1].business.map((business, id) => (
+                {active === 2 &&
+                  navLinkArray[1].business.map((business, id) => (
                     <div
-                      className="w-fit flex gap-[0.5vw] items-center  group overflow-hidden "
                       key={id}
+                      className="w-fit flex gap-[0.5vw] items-center group overflow-hidden"
                     >
                       <Link
                         href={business.link}
-                        className="link-line fadeup-navlink font-medium "
+                        className="link-line fadeup-navlink font-medium"
                         onClick={(e) => {
                           e.preventDefault();
                           navigateTo(business.link);
@@ -301,98 +270,56 @@ export default function Navbar({ navigateTo, hidden }) {
                       </Link>
                       <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block">
                         <Image
-                          src={"/assets/icons/diagonal-arrow.svg"}
+                          src="/assets/icons/diagonal-arrow.svg"
                           alt=""
                           width={40}
                           height={40}
-                          className="w-[0.7vw] h-[0.7vw] scale-[0.7] translate-y-[100%] translate-x-[-100%] group-hover:translate-y-0 group-hover:translate-x-0  group-hover:scale-[1] transition-all duration-300 ease-in-out"
+                          className="w-[0.7vw] h-[0.7vw] scale-[0.7] translate-y-[100%] translate-x-[-100%] group-hover:translate-y-0 group-hover:translate-x-0 group-hover:scale-[1] transition-all duration-300 ease-in-out"
                         />
                       </div>
                     </div>
                   ))}
-                </>
-              ) : (
-                <></>
-              )}
-            </div>
-            <div className="w-full flex gap-[0.5vw] items-center">
-              <div className="w-full flex gap-[1vw] items-center text-[1vw] fadeup-navpolicy">
-                <Link href={"/"} className="link-line text-black-1">
+              </div>
+              <div className="w-full flex gap-[0.5vw] items-center text-[1vw] fadeup-navpolicy">
+                <Link href="/" className="link-line text-black-1">
                   Privacy Policy
                 </Link>
-                <span>
-                  <Image
-                    src={"/assets/icons/circle.svg"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="w-[0.4vw] h-[0.4vw] brightness-0"
-                  />
-                </span>
-                <Link href={"/"} className="link-line text-black-1">
+                <Image
+                  src="/assets/icons/circle.svg"
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="w-[0.4vw] h-[0.4vw] brightness-0"
+                />
+                <Link href="/" className="link-line text-black-1">
                   Cookie Policy
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="w-[55%] h-full flex flex-col py-[2vw] justify-between">
-            <div className="w-[90%] h-[70%] rounded-[2vw] overflow-hidden fadeup-navimg">
-              <Image
-                src={"/assets/images/header/business-nav.png"}
-                alt=""
-                width={300}
-                height={400}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="w-full flex gap-[0.5vw] fadeup-navicon">
-              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
-                <a
-                  href="/"
-                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
-                >
-                  <Facebook
-                    className={
-                      "text-black-1 group-hover:text-white transition-all duration-300 "
-                    }
-                  />
-                </a>
+            <div className="w-[55%] h-full flex flex-col py-[2vw] justify-between">
+              <div className="w-[90%] h-[70%] rounded-[2vw] overflow-hidden fadeup-navimg">
+                <Image
+                  src="/assets/images/header/business-nav.png"
+                  alt=""
+                  width={300}
+                  height={400}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
-                <a
-                  href="/"
-                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
-                >
-                  <Linkedin
-                    className={
-                      "text-black-1 group-hover:text-white transition-all duration-300"
-                    }
-                  />
-                </a>
-              </div>
-              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300 ">
-                <a
-                  href="/"
-                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
-                >
-                  <Twitter
-                    className={
-                      "text-black-1 group-hover:text-white transition-all duration-300"
-                    }
-                  />
-                </a>
-              </div>
-              <div className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300">
-                <a
-                  href="/"
-                  className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
-                >
-                  <Instagram
-                    className={
-                      "text-black-1 group-hover:text-white transition-all duration-300"
-                    }
-                  />
-                </a>
+              <div className="w-full flex gap-[0.5vw] fadeup-navicon">
+                {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
+                  <div
+                    key={i}
+                    className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300"
+                  >
+                    <a
+                      href="/"
+                      className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
+                    >
+                      <Icon className="text-black-1 group-hover:text-white transition-all duration-300" />
+                    </a>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

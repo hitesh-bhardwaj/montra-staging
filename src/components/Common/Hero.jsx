@@ -60,7 +60,7 @@ export default function Hero({
           className={` mx-auto space-y-[1.5vw] py-[5vw] max-sm:w-full  max-sm:space-y-[7vw] max-md:space-y-[5vw] max-md:w-[90%] ${titleWidth ? titleWidth : "w-[90%]"
             } `}
         >
-          <Heading delay={0.8}>
+          <Heading delay={0.7}>
 
             <h1
 
@@ -71,7 +71,7 @@ export default function Hero({
             </h1>
 
           </Heading>
-          <Copy delay={1.2}>
+          <Copy delay={1}>
             <p
               className={`font-body mx-auto heroAnim max-sm:w-[95%] max-md:w-[90%] ${paraWidth ? paraWidth : "w-[75%]"
                 }`}
