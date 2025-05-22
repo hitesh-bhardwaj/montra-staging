@@ -66,11 +66,11 @@ export const ImageContainerMobile = ({ img1, img2, img3, container }) => {
 
     return (
         <>
-            <div ref={img2Ref} className="absolute top-[-10%] z-0 scale-[0.75] h-[70vw] w-[90%] overflow-hidden rounded-[8vw]">
+            <div ref={img2Ref} className="absolute top-[-8%] z-0 scale-[0.7] h-[70vw] w-[90%] overflow-hidden rounded-[8vw]">
                 <Image placeholder="blur" src={img2} alt="Business 1" className="w-full h-full object-cover" />
             </div>
 
-            <div ref={img3Ref} className="absolute top-0 z-0 scale-[0.85] h-[70vw] w-[90%] overflow-hidden rounded-[8vw]">
+            <div ref={img3Ref} className="absolute top-[3%] z-0 scale-[0.85] h-[70vw] w-[90%] overflow-hidden rounded-[8vw]">
                 <Image placeholder="blur" src={img3} alt="Business 1" className="w-full h-full object-cover" />
             </div>
 

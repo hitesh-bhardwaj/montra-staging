@@ -82,7 +82,7 @@ const Features = ({ featuresData }) => {
           ease: "elastic.inOut",
           duration: 1,
           stagger: {
-            amount: 0.5,
+            amount: 0.2,
             from: "random",
           },
         }).to(

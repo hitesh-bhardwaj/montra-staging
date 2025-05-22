@@ -41,11 +41,12 @@ const Impact = () => {
         start: "top 80%",
       },
     });
+    
   }, []);
 
   return (
     <section ref={sectionRef} className="px-[4vw] py-[6vw] w-full max-sm:px-[7vw] bg-white max-sm:py-[10vw]">
-      <div className="flex flex-col items-start gap-[10vw] max-sm:gap-[10vw]">
+      <div className="flex flex-col items-start gap-[10vw] max-sm:gap-[15vw]">
         <Heading>
           <h2 className="font-display w-[65%] font-medium text-[5.7vw] text-left leading-[1.2] max-sm:text-[10.5vw] max-sm:text-left max-sm:w-[85%]">
             Simple Tools. Real Impact. Lasting Change.

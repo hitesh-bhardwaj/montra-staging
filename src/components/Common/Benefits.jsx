@@ -218,9 +218,9 @@ const AnimatedOpeners = ({
               />
             </span>
             <div
-              className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[4vw] max-sm:gap-[10vw] max-md:gap-[7vw]  max-md:px-[5vw] ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] max-md:w-[70vw] max-md:rounded-[5vw] `}
+              className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[6vw] max-sm:gap-[10vw] max-md:gap-[7vw]  max-md:px-[5vw] ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] max-md:w-[70vw] max-md:rounded-[5vw] `}
             >
-              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4vw] max-sm:h-fit max-md:text-[3.2vw] max-sm:mt-[0.5vw] max-md:mt-[1.2vw] ">
+              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4vw] max-sm:h-fit max-md:text-[3.2vw] max-sm:mt-[0.5vw] max-md:mt-[1.2vw]  ">
                 {title}
               </div>
               <div className="absolute right-[8%] cursor-pointer max-md:pt-[1.5vw] max-sm:pt-0">

@@ -48,13 +48,13 @@ const FooterCta = () => {
                         </div>
                         <div className="w-[65%] flex flex-col items-center text-center max-sm:w-full max-md:w-full">
                             <div className="max-md:w-[75%] max-sm:w-full">
-                            <Heading>
-                                <h6 className="text-[5.7vw] font-medium leading-[1.2] font-display max-sm:text-[11.5vw] capitalize max-md:text-[7.5vw] ">Take charge of your financial future</h6>
-                                </Heading>
-                                <Copy>
-                                <p className="mt-[2vw] max-sm:mt-[4vw]">It only takes few seconds to get started.</p>
+                            {/* <Heading> */}
+                                <h6 className="text-[5.7vw] font-medium leading-[1.2] font-display max-sm:text-[11.5vw] capitalize max-md:text-[7.5vw] fadeupanim ">Take charge of your financial future</h6>
+                                {/* </Heading> */}
+                                {/* <Copy> */}
+                                <p className="mt-[2vw] max-sm:mt-[4vw] fadeupanim">It only takes few seconds to get started.</p>
 
-                                </Copy>
+                                {/* </Copy> */}
                             
                             </div>
                             <div className="fadeupanim flex gap-6 justify-center mt-[3vw] max-sm:flex-col max-sm:gap-4 max-sm:mt-[10vw] max-md:mt-[5vw]">

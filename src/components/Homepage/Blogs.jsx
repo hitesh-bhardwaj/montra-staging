@@ -23,7 +23,7 @@ export default function Blogs() {
         <Copy>
           <div className="w-full flex justify-end max-sm:flex max-sm:order-1 max-sm:justify-center max-md:order-1 max-md:justify-center">
             <LinkButton
-              text={"Read More"}
+              text={"View All"}
               href={"#"}
               className="text-black-1"
             />

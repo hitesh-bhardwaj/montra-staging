@@ -85,7 +85,7 @@ export default function Testimonials() {
     return (
         <section
             ref={sectionRef}
-            className="w-screen h-full relative overflow-hidden py-[4vw] max-sm:py-[15%] dark max-md:py-[7%] max-sm:h-[95vh]"
+            className="w-screen h-full relative overflow-hidden py-[4vw] max-sm:py-[15%] dark max-md:py-[7%] max-sm:h-[90vh]"
         >
             <Image
                 src={bgImage}
@@ -161,7 +161,7 @@ const Card = ({ img, text, name, rating, className = "" }) => {
             className={
                 `${className} border text-white font-display border-[#939393] 
          rounded-[1vw] overflow-hidden backdrop-blur-2xl bg-[#99999940] 
-         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw] max-sm:w-full  max-sm:h-[110vw] max-sm:rounded-[6vw] max-sm:py-[10vw] max-sm:px-[7vw] max-sm:flex max-sm:flex-col max-sm:justify-between max-md:w-full max-md:rounded-[3vw] max-md:p-[3vw] max-md:h-[60vw] max-md:justify-between max-md:flex max-md:flex-col`
+         px-[2vw] py-[2vw] w-[25vw] space-y-[1.5vw] max-sm:w-full  max-sm:h-[100vw] max-sm:rounded-[6vw] max-sm:py-[10vw] max-sm:px-[7vw] max-sm:flex max-sm:flex-col max-sm:justify-between max-md:w-full max-md:rounded-[3vw] max-md:p-[3vw] max-md:h-[60vw] max-md:justify-between max-md:flex max-md:flex-col`
             }
         >
             {/* stars */}
@@ -197,9 +197,9 @@ const Card = ({ img, text, name, rating, className = "" }) => {
                     alt={name}
                     width={64}
                     height={64}
-                    className="w-[3.3vw] h-[3.3vw] rounded-full max-sm:w-[15vw] max-sm:h-[15vw] max-md:w-[7vw] max-md:h-[7vw]"
+                    className="w-[3.3vw] h-[3.3vw] rounded-full max-sm:w-[13vw] max-sm:h-[13vw] max-md:w-[7vw] max-md:h-[7vw]"
                 />
-                <p className="text-[1.05vw] max-sm:text-[6.5vw] max-md:text-[3vw]">{name}</p>
+                <p className="text-[1.05vw] max-sm:text-[6vw] max-md:text-[3vw]">{name}</p>
             </div>
         </div>
     )

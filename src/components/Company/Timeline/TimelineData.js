@@ -1,6 +1,7 @@
 export const timelineData = [
     {
         year: 2019,
+        
         cards: [
             {
                 title: 'DUO',
@@ -17,7 +18,7 @@ export const timelineData = [
             },
             {
                 title: 'Verifyed',
-                left: 'left-[60%]',
+                left: 'left-[40%]',
                 top: 'top-[25%]',
                 color: '#EAF1FF',
                 content: [
@@ -88,7 +89,7 @@ export const timelineData = [
             },
             {
                 title: 'Verifyed',
-                left: 'left-[60%]',
+                left: 'left-[40%]',
                 top: 'top-[25%]',
                 color: '#EAF1FF',
                 content: [
@@ -285,6 +286,7 @@ export const timelineData = [
     },
     {
         year: 2023,
+        openCard:["Completed Development of Montra Supply Chain Solution","Obtained PSSP & Super-agent from CBN (Central Bank of Nigeria)"],
         cards: [
             {
                 title: 'DUO',
@@ -301,7 +303,7 @@ export const timelineData = [
             },
             {
                 title: 'Verifyed',
-                left: 'left-[45%]',
+                left: 'left-[35%]',
                 top: 'top-[25%]',
                 color: '#EAF1FF',
                 content: [
@@ -340,19 +342,19 @@ export const timelineData = [
                 letter: "M",
                 z: "z-[5]"
             },
-            {
-                title: 'Development',
-                left: 'left-[70%]',
-                top: 'top-[20%]',
-                color: '#CAC5F7',
-                content: [
-                    'Completed Development of Montra Supply Chain Solution',
-                    'Obtained PSSP & Super-agent from CBN (Central Bank of Nigeria)',
-                ],
-                classPrefix: 'd',
-                letter: "M",
-                z: "z-[5]"
-            }
+            // {
+            //     title: 'Development',
+            //     left: 'left-[50%]',
+            //     top: 'top-[40%]',
+            //     color: '#CAC5F7',
+            //     content: [
+            //         'Completed Development of Montra Supply Chain Solution',
+            //         'Obtained PSSP & Super-agent from CBN (Central Bank of Nigeria)',
+            //     ],
+            //     classPrefix: 'e',
+            //     letter: "M",
+            //     z: "z-[5]"
+            // }
         ],
         images: [
             {

@@ -72,70 +72,139 @@ export default function PinnedRevealSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(".montra-logo", {
-        scrollTrigger: {
-          trigger: "#feature-text",
-          start: "50% top",
-        //   markers: true,
-          onLeaveBack: () => {
-            gsap.to(".montra-logo", {
-              filter: "brightness(1)",
-              duration: 0,
-            });
+      if(globalThis.innerWidth>1024){
+        gsap.to(".montra-logo", {
+          scrollTrigger: {
+            trigger: "#feature-text",
+            start: "50% top",
+          //   markers: true,
+            onLeaveBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnter: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
+            onLeave: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
           },
-          onEnter: () => {
-            gsap.to(".montra-logo", {
-              filter: "brightness(16)",
-              duration: 0,
-            });
+        });
+        gsap.to(".ham-mobile",{
+          backgroundColor: "#215CFF",
+          duration:0,
+          scrollTrigger: {
+            trigger: "#feature-text",
+            start: "50% top",
+            // markers: true,
+            onEnter: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor:"white",
+                duration: 0,
+              });
+            },
+            onLeaveBack: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "#215CFF",
+                duration: 0,
+              });
+            },
+            onLeave: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "#215CFF",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "white",
+                duration: 0,
+              });
+            },
           },
-          onLeave: () => {
-            gsap.to(".montra-logo", {
-              filter: "brightness(1)",
-              duration: 0,
-            });
+        })
+
+      }
+      else{
+        gsap.to(".montra-logo", {
+          scrollTrigger: {
+            trigger: "#feature-text",
+            start: "45% top",
+            // markers: true,
+            onLeaveBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnter: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
+            onLeave: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
           },
-          onEnterBack: () => {
-            gsap.to(".montra-logo", {
-              filter: "brightness(16)",
-              duration: 0,
-            });
+        });
+        gsap.to(".ham-mobile",{
+          backgroundColor: "#215CFF",
+          duration:0,
+          scrollTrigger: {
+            trigger: "#feature-text",
+            start: "45% top",
+            // markers: true,
+            onEnter: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor:"white",
+                duration: 0,
+              });
+            },
+            onLeaveBack: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "#215CFF",
+                duration: 0,
+              });
+            },
+            onLeave: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "#215CFF",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "white",
+                duration: 0,
+              });
+            },
           },
-        },
-      });
-      gsap.to(".ham-mobile",{
-        backgroundColor: "#215CFF",
-        duration:0,
-        scrollTrigger: {
-          trigger: "#feature-text",
-          start: "50% top",
-          // markers: true,
-          onEnter: () => {
-            gsap.to(".ham-mobile", {
-              backgroundColor:"white",
-              duration: 0,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(".ham-mobile", {
-              backgroundColor: "#215CFF",
-              duration: 0,
-            });
-          },
-          onLeave: () => {
-            gsap.to(".ham-mobile", {
-              backgroundColor: "#215CFF",
-              duration: 0,
-            });
-          },
-          onEnterBack: () => {
-            gsap.to(".ham-mobile", {
-              backgroundColor: "white",
-              duration: 0,
-            });
-          },
-        },
-      })
+        })
+      }
     });
     return () => ctx.revert();
   });
@@ -143,7 +212,7 @@ export default function PinnedRevealSection() {
   return (
     <section
       ref={ref}
-      className="relative h-[470vh] max-md:h-[380vh] max-sm:h-[360vh]"
+      className="relative h-[470vh] max-md:h-[380vh] max-sm:h-[370vh]"
       id="feature-text"
     >
       <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB]">

@@ -59,15 +59,15 @@ export default function SectionBreak() {
         .timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 10%",
-            end: "center 10%",
-            scrub: 0.25,
+            start: "top center",
+            end: "bottom center",
+            scrub: 0.15,
               // markers:true,
           },
         })
         .to(lines, {
           maskPosition: "0% 100%",
-          stagger: 0.25,
+          stagger: 0.15,
           ease: "none",
         });
 

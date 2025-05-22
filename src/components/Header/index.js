@@ -120,7 +120,7 @@ export default function Header() {
                 isInverted ? "bg-white" : "bg-primary"
               } ${
                 openMenu
-                  ? "-rotate-45 max-sm:-translate-y-[7px] max-md:-translate-y-[10px] !bg-primary"
+                  ? "-rotate-45 max-sm:-translate-y-[6px] max-md:-translate-y-[10px] !bg-primary"
                   : "bg-primary"
               }`}
             />
@@ -134,7 +134,7 @@ export default function Header() {
             }`}
           >
             <div
-              className={`max-sm:w-screen max-sm:h-screen overflow-hidden !opacity-100 bg-[#FAFBFF] text-primary flex flex-col max-sm:gap-[10vw] px-[7vw] font-display font-medium max-sm:text-[6vw] absolute top-0 z-[160] right-0 max-sm:pt-[20vw]  max-sm:space-y-[5vw] max-sm:py-[8vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${
+              className={`max-sm:w-screen max-sm:h-screen overflow-hidden !opacity-100 bg-[#FAFBFF] text-primary flex flex-col max-sm:justify-between px-[7vw] font-display font-medium max-sm:text-[6vw] absolute top-0 z-[160] right-0 max-sm:pt-[30vw]  max-sm:space-y-[5vw] max-sm:pb-[15vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${
                 openMenu ? "translate-x-0 " : "translate-x-[100%]"
               }`}
             >
@@ -279,7 +279,7 @@ export default function Header() {
                             : "max-h-0 opacity-0"
                         }`}
                       >
-                        <ul className="max-sm:text-[4.5vw] max-md:text-[3.5vw] pt-[3vw] pl-[3vw] pb-[7vw] flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw]">
+                        <ul className="max-sm:text-[4.5vw] max-md:text-[3.5vw] pt-[7vw]  pb-[7vw] flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw]">
                           {section.links.map((link, idx) => (
                             <li key={idx}>
                               <Link
@@ -333,7 +333,10 @@ export default function Header() {
                   Company
                 </Link>
                 <span className="bg-primary h-[1px] w-full"></span>
-                <div className="w-full flex gap-[2vw] items-center max-sm:text-[4.5vw] max-md:text-[3vw] fadeup-navpolicy">
+                
+              </div>
+              <div className="flex flex-col gap-[7vw]">
+              <div className="w-full flex gap-[2vw] items-center max-sm:text-[4.5vw] max-md:text-[3vw] fadeup-navpolicy">
                   <Link href={"/"} className="link-line text-primary">
                     Privacy Policy
                   </Link>
@@ -350,7 +353,6 @@ export default function Header() {
                     Cookie Policy
                   </Link>
                 </div>
-              </div>
               <div className="flex items-start justify-start gap-[3vw]">
                 <Link
                   href={"/"}
@@ -396,6 +398,7 @@ export default function Header() {
                     className={"text-primary  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
                   />
                 </Link>
+              </div>
               </div>
             </div>
           </div>

@@ -139,7 +139,7 @@ const FeatureSection = () => {
         offset: ["start end", "end start"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 0.45], ["-30%", "-9%"]);
+    const y = useTransform(scrollYProgress, [0, 0.45], ["-30%", deviceType=="desktop"?"-9%":"-7.5%"]);
 
     return (
         <motion.section
@@ -153,7 +153,7 @@ const FeatureSection = () => {
             <div className="relative inline-block z-10 w-[55vw] h-[52vw] max-sm:translate-y-0 max-sm:w-[100vw] max-sm:h-[120vw] max-md:w-[80vw] max-md:h-[80vw]">
                 <motion.div className="overflow-hidden h-[110%]" style={{ y }}>
                     <Image
-                        id="hero-phone-image"
+                        // id="hero-phone-image"
                         src="/assets/images/homepage/phone-mockup.png"
                         alt="App mockup"
                         width={1200}

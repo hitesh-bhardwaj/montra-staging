@@ -39,43 +39,85 @@ export default function TextBreak() {
   const arrowScale = useTransform(scrollYProgress, [isMobile?0.38:0.27, 0.7], [0.1, 5]);
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(".montra-logo", {
-        scrollTrigger: {
-          trigger: "#text-break",
-          start: "20% top",
-          // markers: true,
-          onLeaveBack: () => {
-            gsap.to(".montra-logo", {
-              filter: "brightness(1)",
-              duration: 0,
-            });
+      if(globalThis.innerWidth>1024){
+        gsap.to(".montra-logo", {
+          scrollTrigger: {
+            trigger: "#text-break",
+            start: "20% top",
+            // markers: true,
+            onLeaveBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnter: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
+            onLeave: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onLeaveBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
           },
-          onEnter: () => {
-            gsap.to(".montra-logo", {
-              filter: "brightness(16)",
-              duration: 0,
-            });
+        });
+
+      }
+      else{
+        gsap.to(".montra-logo", {
+          scrollTrigger: {
+            trigger: "#text-break",
+            start: "30% top",
+            // markers: true,
+            onLeaveBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnter: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
+            onLeave: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onLeaveBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
           },
-          onLeave: () => {
-            gsap.to(".montra-logo", {
-              filter: "brightness(1)",
-              duration: 0,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(".montra-logo", {
-              filter: "brightness(1)",
-              duration: 0,
-            });
-          },
-          onEnterBack: () => {
-            gsap.to(".montra-logo", {
-              filter: "brightness(16)",
-              duration: 0,
-            });
-          },
-        },
-      });
+        });
+      }
     });
     return () => ctx.revert();
   });
@@ -118,7 +160,7 @@ export default function TextBreak() {
         duration:0,
         scrollTrigger: {
           trigger: "#text-break",
-          start: "50% top",
+          start: "30% top",
           // markers: true,
           onEnter: () => {
             gsap.to(".ham-mobile", {

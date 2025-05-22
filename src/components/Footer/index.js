@@ -2,8 +2,9 @@
 import Image from 'next/image'
 import logo from '../../../public/montra-white-logo.svg';
 import { ArrowRight, NftIcon, SellIcon, ReceiveIcon } from '../Buttons/icons'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAnimatedNavigation } from '../NavigationContext';
+import gsap from 'gsap';
 
 const iconMap = {
     PAY: NftIcon,
@@ -14,11 +15,83 @@ const iconMap = {
 export default function Footer() {
     const { navigateTo } = useAnimatedNavigation();
     const words = ['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL'];
+    useEffect(()=>{
+   const ctx = gsap.context(()=>{
+     if(globalThis.innerWidth<541){
+        gsap.to(".montra-logo", {
+            scrollTrigger: {
+              trigger: "#footer",
+              start: "top top",
+            //   markers: true,
+              onLeaveBack: () => {
+                gsap.to(".montra-logo", {
+                  filter: "brightness(1)",
+                  duration: 0,
+                });
+              },
+              onEnter: () => {
+                gsap.to(".montra-logo", {
+                  filter: "brightness(16)",
+                  duration: 0,
+                });
+              },
+              onLeave: () => {
+                gsap.to(".montra-logo", {
+                  filter: "brightness(1)",
+                  duration: 0,
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(".montra-logo", {
+                  filter: "brightness(16)",
+                  duration: 0,
+                });
+              },
+            },
+          });
+          gsap.to(".ham-mobile",{
+            backgroundColor: "#215CFF",
+            duration:0,
+            scrollTrigger: {
+              trigger: "#footer",
+              start: "top top",
+            //   markers: true,
+              onEnter: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor:"white",
+                  duration: 0,
+                });
+              },
+              onLeaveBack: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor: "#215CFF",
+                  duration: 0,
+                });
+              },
+              onLeave: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor: "#215CFF",
+                  duration: 0,
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor: "white",
+                  duration: 0,
+                });
+              },
+            },
+          })
+     }
+   })
+   return()=>ctx.revert()
+    },[])
 
     return (
         <>
             <footer
-                className="w-screen h-[43vw] max-sm:h-full max-sm:rounded-t-4xl max-sm:overflow-hidden max-md:h-[115vw] "
+            id='footer'
+                className="w-screen h-[43vw] max-sm:h-full max-sm:rounded-t-[10vw] max-sm:overflow-hidden max-md:h-[115vw] "
                 style={{ clipPath: 'rect(0px 100% 100% 0px)' }}
             >
                 <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-lg z-0 max-sm:h-full max-sm:static max-sm:pb-[0vw] max-md:h-[115vw]' >
@@ -55,6 +128,7 @@ export default function Footer() {
                                                 onClick={(e) => {
                                                     e.preventDefault();
                                                     navigateTo(link.href);
+                                                    window.scrollTo(0, 0);
                                                 }}
                                                 className='link-line'
                                             >
@@ -73,6 +147,7 @@ export default function Footer() {
                                                 onClick={(e) => {
                                                     e.preventDefault();
                                                     navigateTo(link.href);
+                                                    window.scrollTo(0, 0);
                                                 }}
                                                 className='link-line'
                                             >

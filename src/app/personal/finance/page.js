@@ -225,8 +225,8 @@ const benefitsData = {
     },
     {
       classPrefix: "b",
-      left: "!left-[24%]",
-      top: "!top-[55%]",
+      left: "!left-[44%]",
+      top: "!top-[45%]",
       color: "bg-[#FEFFA7]",
       content:
         "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",
@@ -250,7 +250,7 @@ const benefitsData = {
     {
       classPrefix: "d",
       left: "!left-[80%]",
-      top: "!top-[45.9%]",
+      top: "!top-[40%]",
       color: "bg-[#D9F7C5]",
       content:
         "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",
@@ -262,7 +262,7 @@ const benefitsData = {
     {
       classPrefix: "e",
       left: "!left-[60%]",
-      top: "!top-[80%]",
+      top: "!top-[67%]",
       color: "bg-[#FFD7CB]",
       content:
         "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",
@@ -274,7 +274,7 @@ const benefitsData = {
     {
       classPrefix: "f",
       left: "!left-[16%]",
-      top: "!top-[85%]",
+      top: "!top-[65%]",
       color: "bg-[#CAC5F7]",
       content:
         "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",

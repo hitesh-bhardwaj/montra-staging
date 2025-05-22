@@ -186,6 +186,7 @@ export default function Timeline() {
       <MarqueeBackground year={years[activeIndex]} />
       <AnimatePresence custom={direction} mode="wait">
         <TimelineSlide
+        // openCard={openCard}
           key={years[activeIndex]}
           year={years[activeIndex]}
           direction={direction}

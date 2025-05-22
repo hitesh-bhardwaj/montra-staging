@@ -38,13 +38,13 @@ export default function SectionBreak() {
                     trigger: sectionRef.current,
                     start: 'top 50%',
                     end: 'bottom 50%',
-                    scrub: 0.25,
+                    scrub: 0.1,
                     // markers:true
                 }
             })
                 .to(lines, {
                     maskPosition: "0% 100%",
-                    stagger: 0.25,
+                    stagger: 0.1,
                     ease: 'none'
                 })
         }

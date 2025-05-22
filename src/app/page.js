@@ -13,7 +13,9 @@ import SectionBreak from "@/components/Homepage/SectionBreak";
 import Testimonials from "@/components/Homepage/Testimonials";
 import VisionMission from "@/components/Homepage/VisionMission";
 import Loader from "@/components/Loader";
+import NewLoader from "@/components/NewLoader";
 import { useEffect, useState } from "react";
+
 
 export default function Home() {
 
@@ -45,7 +47,9 @@ export default function Home() {
 
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
+      {/* <NewLoader/> */}
+      <NewLoader/>
       <Hero />
       <FeatureSection />
       <FeaturesText />

@@ -27,7 +27,7 @@ export const BottomContent = ({ img6 }) => {
                             <li>POS - get a POS issued from Montra to start accepting card payments</li>
                         </Copy>
                     </ul>
-                    <div className="space-y-[1.5vw] w-[78%] max-sm:space-y-[4vw] max-sm:w-full max-md:w-[80%] max-md:space-y-[4vw]">
+                    <div className="space-y-[1.5vw] w-[78%] max-sm:space-y-[4vw] max-sm:w-full max-md:w-[80%] max-md:space-y-[4vw] max-sm:mt-[10vw]">
                         <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-white text-black max-sm:px-[4vw] max-sm:py-[3vw] max-md:px-[5vw] max-md:py-[2vw]">
                             Accept cashless payments with ease
                         </div>
@@ -41,7 +41,7 @@ export const BottomContent = ({ img6 }) => {
                 </div>
             </div>
 
-            <div className="shadow-2xl fadeinanim relative z-10 w-full h-[70vw] rounded-[8vw] overflow-hidden border-[10px] border-black-1 bg-black-1 hidden flex-col justify-between max-sm:flex max-md:flex">
+            <div className="shadow-2xl fadeinanim relative z-10 w-full h-[70vw] rounded-[8vw] overflow-hidden border-[10px] border-black-1 bg-black-1 hidden flex-col justify-between max-sm:flex max-md:flex max-sm:mt-[5vw]">
                 <Image placeholder="blur" src={img6} alt="Main Business" className="w-full h-full object-cover absolute top-0 left-0" />
                 <div className="relative top-0 left-0 w-full h-full flex flex-col justify-between p-[3vw]">
                     <span className="bg-primary text-white px-2 py-1 rounded-full self-end">

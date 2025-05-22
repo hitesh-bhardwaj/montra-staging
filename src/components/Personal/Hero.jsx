@@ -152,6 +152,71 @@ const Hero = () => {
             delay: -0.3,
             ease: "none",
           });
+          gsap.to(".montra-logo", {
+            // filter:"brightness(1)",
+            scrollTrigger: {
+              trigger: "#hero",
+              start: "39% top",
+              // markers: true,
+              onLeaveBack: () => {
+                gsap.to(".montra-logo", {
+                  filter: "brightness(1)",
+                  duration: 0,
+                });
+              },
+              onEnter: () => {
+                gsap.to(".montra-logo", {
+                  filter: "brightness(16)",
+                  duration: 0,
+                });
+              },
+              onLeave: () => {
+                gsap.to(".montra-logo", {
+                  filter: "brightness(1)",
+                  duration: 0,
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(".montra-logo", {
+                  filter: "brightness(16)",
+                  duration: 0,
+                });
+              },
+            },
+          });
+          gsap.to(".ham-mobile",{
+            backgroundColor: "#215CFF",
+            duration:0,
+            scrollTrigger: {
+              trigger: "#hero",
+              start: "39% top",
+              // markers: true,
+              onEnter: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor:"white",
+                  duration: 0,
+                });
+              },
+              onLeaveBack: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor: "#215CFF",
+                  duration: 0,
+                });
+              },
+              onLeave: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor: "#215CFF",
+                  duration: 0,
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(".ham-mobile", {
+                  backgroundColor: "white",
+                  duration: 0,
+                });
+              },
+            },
+          })
       }
     });
     return () => ctx.revert();
