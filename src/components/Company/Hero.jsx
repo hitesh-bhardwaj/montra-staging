@@ -213,7 +213,7 @@ const Hero = () => {
             </div>
             <div
                 className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block max-md:block">
-                     <video src={videoSrc} muted playsInline loop ref={imgRef}  className="w-full h-full object-cover absolute"/>
+                     <video src={videoSrc} muted playsInline loop autoPlay ref={imgRef}  className="w-full h-full object-cover absolute"/>
             </div>
         </section>
     );
