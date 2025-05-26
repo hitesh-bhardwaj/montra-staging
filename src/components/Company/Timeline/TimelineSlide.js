@@ -22,7 +22,7 @@ export default function TimelineSlide({  year, direction, data }) {
     }),
     exit: { scale: 0, opacity: 0 },
   };
-  console.log(data)
+  // console.log(data)
 
   return (
     <motion.div

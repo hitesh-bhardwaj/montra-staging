@@ -17,7 +17,7 @@ export default function Payments() {
     const totalItems = data.length;
     const sectionHeight = 98 / totalItems; // matches the logic in useEffect
     const targetY = (window.innerHeight * index)+495;
-    console.log(sectionHeight)
+    // console.log(sectionHeight)
     const scrollTop = sectionRef.current.offsetTop + targetY;
 
     window.scrollTo({
