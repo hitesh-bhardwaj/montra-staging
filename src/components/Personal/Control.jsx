@@ -293,7 +293,7 @@ const Control = () => {
               pointerevent ? "pointer-events-auto" : "pointer-events-none"
             }`}
           >
-            <div className="w-[15vw] h-[15vw] control-icon icon-1 absolute top-[65%] z-[10]">
+            <div className="w-[20%] h-[85%] control-icon icon-1 absolute top-[65%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"
@@ -313,12 +313,12 @@ const Control = () => {
                   height={200}
                   width={200}
                 />
-                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10.5vw] font-bold font-display uppercase">
+                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-[#FF8100]">Banking</div>
                 </div>
               </div>
             </div>
-            <div className="w-[15vw] h-[15vw] control-icon icon-2 absolute top-[65%] left-[21%] z-[10]">
+            <div className="w-[20%] h-[85%] control-icon icon-2 absolute top-[65%] left-[21%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"
@@ -338,12 +338,12 @@ const Control = () => {
                   height={200}
                   width={200}
                 />
-                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10.5vw] font-bold font-display uppercase">
+                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-[#35C771]">Finance</div>
                 </div>
               </div>
             </div>
-            <div className="w-[15vw] h-[15vw] control-icon icon-3 absolute top-[65%] left-[42%] z-[10]">
+            <div className="w-[20%] h-[85%] control-icon icon-3 absolute top-[65%] left-[42%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"
@@ -363,12 +363,12 @@ const Control = () => {
                   height={200}
                   width={200}
                 />
-                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10.5vw] font-bold font-display uppercase">
+                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-[#111111]">shop</div>
                 </div>
               </div>
             </div>
-            <div className="w-[15vw] h-[15vw] control-icon icon-4 absolute top-[65%] left-[63%] z-[10]">
+            <div className="w-[20%] h-[85%] control-icon icon-4 absolute top-[65%] left-[63%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"
@@ -388,12 +388,12 @@ const Control = () => {
                   height={200}
                   width={200}
                 />
-                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10.5vw] font-bold font-display uppercase">
+                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-[#FB2F55]">Chat</div>
                 </div>
               </div>
             </div>
-            <div className="w-[15vw] h-[15vw] control-icon icon-5 absolute top-[65%] left-[84%] z-[10]">
+            <div className="w-[20%] h-[85%] control-icon icon-5 absolute top-[65%] left-[84%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"
@@ -413,7 +413,7 @@ const Control = () => {
                   height={200}
                   width={200}
                 />
-                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10.5vw] font-bold font-display uppercase">
+                <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-primary">Payments</div>
                 </div>
               </div>
@@ -422,14 +422,14 @@ const Control = () => {
         </div>
       </div>
 
-      <div className="w-screen h-[40vw] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4%] right-0 ">
+      <div className="w-screen h-[80vh] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4.5%] right-0 ">
         <div className="w-full h-full relative flex justify-end ">
-          <div className="w-[75%] h-[40vw] relative bottom-content flex justify-end opacity-0 pr-[4vw]  z-[200]">
+          <div className="w-[75%] h-[80vh] relative bottom-content flex justify-end opacity-0 pr-[4vw]  z-[200]">
             {sections.map((section) => (
               <div
                 key={section.key}
                 ref={(el) => (sectionRefs.current[section.key] = el)}
-                className={`w-full h-[40vw] flex justify-between absolute top-0 left-0 pr-[4vw] opacity-0 ${
+                className={`w-full h-[80vh] flex justify-between absolute top-0 left-0 pr-[4vw] opacity-0 ${
                   active === section.key ? "z-20" : "z-10"
                 }`}
               >

@@ -15,12 +15,17 @@ import { NextButton, PreviousButton } from '../Buttons/SliderButtons'
 gsap.registerPlugin(ScrollTrigger);
 
 const content = [
-    { img: '/assets/images/homepage/features-1.png', bgColor: '#F1FFE8', text: 'Pay anyone, anywhere with a click. Save up to 1 day per week with automated payments.' },
-    { img: '/assets/images/homepage/features-2.png', bgColor: '#FFEAEE', text: 'Get paid faster. Boost cash flow and save time with automated accounts receivables.' },
-    { img: '/assets/images/homepage/features-3.png', bgColor: '#EAF1FF', text: 'Access working capital. Access pre-approved credit instantly, in your workflow.' },
-    { img: '/assets/images/homepage/features-1.png', bgColor: '#F1FFE8', text: 'Pay anyone, anywhere with a click. Save up to 1 day per week with automated payments.' },
-    { img: '/assets/images/homepage/features-2.png', bgColor: '#FFEAEE', text: 'Get paid faster. Boost cash flow and save time with automated accounts receivables.' },
-    { img: '/assets/images/homepage/features-3.png', bgColor: '#EAF1FF', text: 'Access working capital. Access pre-approved credit instantly, in your workflow.' },
+    { img: '/assets/images/homepage/features-1.png', bgColor: '#F1FFE8', text: 'Set-up an Instant Bank Account for FREE to save, manage & transfer funds.' },
+    { img: '/assets/images/homepage/features-2.png', bgColor: '#FFEAEE', text: 'Pay anyone, anywhere with just a click . Enabling quick, simple & secure payments.' },
+    { img: '/assets/images/homepage/features-3.png', bgColor: '#EAF1FF', text: 'Get paid faster. Grow your business by accepting Payments from everyone using our QR code, Soft-POS & POS terminal. Receive instant voice & text notifications & settlement advice on Montra App.' },
+    { img: '/assets/images/homepage/features-1.png', bgColor: '#F1FFE8', text: 'Power your business with our Payment Gateway. Simply integrate Montra Payment Gateway with your website or Mobile App to start accepting payments from your customers.' },
+    { img: '/assets/images/homepage/features-2.png', bgColor: '#FFEAEE', text: 'Compare loan offers from our Lending Partners & get instant loan disbursement to meet your cashflow gaps for your Personal & Business finances.' },
+    { img: '/assets/images/homepage/features-3.png', bgColor: '#EAF1FF', text: 'Shop from brands and creators you love powered by quick, simple & secure payments. Offering customers superior online shopping experience with Chat feature enabling them to interact with Sellers & even make payment while chatting.' },
+    { img: '/assets/images/homepage/features-1.png', bgColor: '#F1FFE8', text: 'Build your dream Virtual Store for free to start selling online. Send feeds to build awareness, Chat with those interested in buying, Build relationships with those who follow your store & Offer tailormade payment methods to boost your business.' },
+    { img: '/assets/images/homepage/features-2.png', bgColor: '#FFEAEE', text: 'Compare Insurance Policy Premiums & Features to buy the most suitable plan from our Insurance Partners.' },
+    { img: '/assets/images/homepage/features-3.png', bgColor: '#EAF1FF', text: 'Compare best Investment plans available towards maximizing your returns.' },
+    { img: '/assets/images/homepage/features-1.png', bgColor: '#F1FFE8', text: 'Simple, reliable, private messaging and calls for free. Montra Chat comes with CHAT PAY feature to enable you to make payments or request payments while you are chatting with someone.' },
+    { img: '/assets/images/homepage/features-2.png', bgColor: '#FFEAEE', text: 'Earn exciting rewards when you make Bill Payments or buy Airtime & Data on Montra App.' },
 ]
 
 export default function InfoCarouselSwiper() {
@@ -103,10 +108,10 @@ export default function InfoCarouselSwiper() {
                     768: { slidesPerView: 2, spaceBetween: 30 },
                     1024:{slidesPerView:3,spaceBetween:30}
                 }}
-                className="!px-[5vw] swipe"
+                className="!px-[5vw] swipe !pb-16 !h-auto"
             >
                 {content.map((c, index) => (
-                    <SwiperSlide className='pb-16 featureSwipeSlide' key={index}>
+                    <SwiperSlide className=' featureSwipeSlide !h-auto' key={index}>
                         <Card img={c.img} text={c.text} bgColor={c.bgColor} />
                     </SwiperSlide>
                 ))}
@@ -123,7 +128,7 @@ export default function InfoCarouselSwiper() {
 
 const Card = ({ img, bgColor, text }) => {
     return (
-        <div style={{ background: bgColor }} className="overflow-hidden group rounded-[3vw] hover:scale-[0.99] duration-500 transition-transform max-sm:rounded-[9vw] max-md:h-[65vw] max-sm:h-fit max-md:rounded-[5vw]">
+        <div style={{ background: bgColor }} className="overflow-hidden group min-h-[38vw] rounded-[3vw] hover:scale-[0.99] duration-500 transition-transform max-sm:rounded-[9vw] max-md:h-[65vw] max-sm:h-fit max-md:rounded-[5vw]">
             <div className='relative h-[27vw] w-full rounded-b-[3vw] overflow-hidden max-sm:h-[100vw] max-sm:rounded-[9vw] max-md:h-[40vw]'>
                 <Image src={img} alt='feature image' fill className='object-cover group-hover:scale-[1.05] duration-500' />
             </div>

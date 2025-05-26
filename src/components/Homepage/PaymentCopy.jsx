@@ -18,75 +18,75 @@ export default function PaymentCopy() {
     personal: [
       {
         title: 'Secure way of accessing World of Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        desc: '<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>',
         link: '/personal/banking',
         image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
-        title: 'Secure way of accessing World of Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'Pay Your Way with Montra',
+        desc: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards –  </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
         link: '/personal/payments',
         image: '/assets/images/homepage/business-mobile-mockup.png',
       },
       {
-        title: 'Secure way of accessing World of Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'Manage your Finance, on the Go',
+        desc: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul><p>Because your money should move as smartly as you do.</p> ',
         link: '/personal/finance',
         image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
-        title: 'Secure way of accessing World of Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'Send Messages. Send & Request Money. Same Chat.',
+        desc: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
         link: '/personal/chat',
         image: '/assets/images/homepage/business-mobile-mockup.png',
       },
       {
-        title: 'Secure way of accessing World of Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'Shopping Meets Simplicity',
+        desc: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands— everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
         link: '/personal/shop',
         image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
     ],
     business: [
       {
-        title: 'Business-grade Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'All-in-One Banking. Built for Businesses',
+        desc: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem — designed to help your business grow smarter & faster</p>',
         link: '/business/banking',
         image: '/assets/images/homepage/business-mobile-mockup.png',
       },
       {
-        title: 'Business-grade Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'Accept Payments. Expand Possibilities',
+        desc: '<p>Open a Montra Business Account to start receiving payments from anyone — anytime, anywhere. Accept payments using<ul class="pl-[1vw] space-y-[0.3vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
         link: '/business/payments',
         image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
-        title: 'Business-grade Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'Become a Montra Agent. Start Earning',
+        desc: '<p>Offer Agency Banking services for offering Cash Deposit & Cahs withdrawal services and get paid for every transaction — it’s that simple.</p>',
         link: '/business/agency-banking',
         image: '/assets/images/homepage/business-mobile-mockup.png',
       },
       {
-        title: 'Business-grade Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'Sell Smarter. Restock Faster. Pay & Get Paid Instantly. ',
+        desc: '<p>Manage orders, send invoices, and track stock.With Montra, every part of your business just flows.<ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
         link: '/business/inventory-management',
         image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
-        title: 'Business-grade Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'Start Selling Online — For Free',
+        desc: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
         link: '/business/montra-store',
         image: '/assets/images/homepage/business-mobile-mockup.png',
       },
       {
-        title: 'Business-grade Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'One Gateway. Multiple Payment Options.',
+        desc: '<p>Integrate <span class="font-semibold">Montra Payment Gateway</span> into your app or website and accept payments via:</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Debit & Credit Cards</li><li>Bank Transfers via QR</li><li>Montra App </li><li>USSD Payments </li></ul> <p class="font-semibold">More ways to get paid. Fast integration. Instant settlement.</p>',
         link: '/business/payment-gateway',
         image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
-        title: 'Business-grade Banking',
-        desc: 'Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.',
+        title: 'Tap. Accept. Get Paid.',
+        desc: '<p>With Montra Tap to Pay, your phone becomes a payment terminal — no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
         link: '/business/tap-and-pay',
         image: '/assets/images/homepage/business-mobile-mockup.png',
       },
@@ -125,12 +125,12 @@ export default function PaymentCopy() {
 
   // 4) Your scroll thresholds
   const thresholds = {
-    banking: 0.02,
+    banking: 0.0,
     payment: 0.25,
     finance: 0.50,
     chat: 0.74,
     shop: 0.88,
-    businessBanking: 0.02,
+    businessBanking: 0.0,
     businessPayments: 0.15,
     agency: 0.30,
     inventory: 0.44,
@@ -205,13 +205,13 @@ export default function PaymentCopy() {
   const translateY = useTransform(
     scrollYProgress,
     [0, 1],
-    ['0', mode === 'personal' ? '-78%' : '-83%']
+    ['0', mode === 'personal' ? '-80%' : '-86%']
   );
 
   return (
     <section
       ref={sectionRef}
-      className="h-[600vh] bg-white relative py-[4vw]"
+      className="h-[600vh] bg-white relative py-[15%]"
       id="payment"
     >
       <div className="sticky top-0 px-[4vw] h-screen flex items-center justify-between">
@@ -430,8 +430,8 @@ export default function PaymentCopy() {
 
         {/* TEXT BLOCK */}
         <div className="h-[100vh] w-[40%] overflow-clip relative bg-white">
-          <span className="absolute top-0 inset-x-0 h-[16vw] bg-gradient-to-b from-white to-transparent z-10" />
-          <span className="absolute bottom-0 inset-x-0 h-[11vw] bg-gradient-to-t from-white to-transparent z-10" />
+          <span className="absolute top-0 inset-x-0 h-[18vw] bg-gradient-to-b from-white via-50% via-white to-transparent z-10" />
+          <span className="absolute bottom-0 inset-x-0 h-[10vw] bg-gradient-to-t from-white via-white via-30% to-transparent z-10" />
           <motion.div
             style={{ translateY }}
             className="flex flex-col relative space-y-[10vw] pt-[30vh]"
@@ -443,7 +443,11 @@ export default function PaymentCopy() {
                     {step.title}
                   </h3>
                 </Heading>
-                <p className="w-[80%] py-8">{step.desc}</p>
+                <div
+                className='py-8 space-y-[1vw]'
+                dangerouslySetInnerHTML={{ __html: step.desc }}
+              />
+                {/* <p className="w-[80%] py-8">{step.desc}</p> */}
                 <LinkButton text="Learn More" href={step.link} />
               </div>
             ))}

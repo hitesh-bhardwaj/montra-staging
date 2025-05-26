@@ -7,64 +7,88 @@ import { LinkButton } from "../Buttons";
 
 const controlContent = [
   {
-    src: "/assets/images/personal/personal-icon-1.png",
-    iconText: "banking",
+    personalIconText: "banking",
+    businessIconText: "banking",
     color: "text-[#FF8100]",
     PersonalTitle: "Secure way of accessing World of Banking",
-    BusinessTitle: "Business-grade Banking",
+    BusinessTitle: "All-in-One Banking. Built for Businesses",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/personal/banking",
-    contentPersonal: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
-    contentBusiness: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
+    personalLink: "/personal/banking",
+    businessLink:"/business/banking",
+    contentPersonal: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>",
+    contentBusiness: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem — designed to help your business grow smarter & faster.</p>',
   },
   {
-    src: "/assets/images/personal/personal-icon-5.png",
-    question: "Is Montra licensed?",
-    iconText: "payment",
+
+    personalIconText: "payment",
+    businessIconText: "payment",
     color: "text-primary",
-    PersonalTitle: "Secure way of accessing World of Banking",
-    BusinessTitle: "Secure way of accessing World of Banking",
+    PersonalTitle: "Pay Your Way with Montra",
+    BusinessTitle: "Accept Payments. Expand Possibilities",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/personal/payments",
-    contentPersonal: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
-    contentBusiness: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
+    personalLink: "/personal/payments",
+    businessLink:"/business/payments",
+    contentPersonal: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[5vw] space-y-[1vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards – </span>Use your saved debit or credit cards on Montra App</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
+    contentBusiness: '<p>Open a Montra Business Account to start receiving payments from anyone — anytime, anywhere. Accept payments using<ul class="pl-[5vw] space-y-[1vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
   },
   {
-    src: "/assets/images/personal/personal-icon-2.png",
-    question: "What is unique about Montra?",
-    iconText: "finance",
+
+    personalIconText: "finance",
+    businessIconText: "Agency Banking",
     color: "text-[#35C771]",
-    PersonalTitle: "Secure way of accessing World of Banking",
-    BusinessTitle: "Secure way of accessing World of Banking",
+    PersonalTitle: "Manage your Finance, on the Go",
+    BusinessTitle: "Become a Montra Agent. Start Earning",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/personal/finance",
-    contentPersonal: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
-    contentBusiness: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
+    personalLink: "/personal/finance",
+    businessLink:"/business/agency-banking",
+    contentPersonal: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[5vw] space-y-[1vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul>',
+    contentBusiness: "<p>Offer Agency Banking services for offering Cash Deposit & Cash withdrawal services and get paid for every transaction — it’s that simple.</p>",
   },
   {
-    src: "/assets/images/personal/personal-icon-4.png",
-    question: "How do we Sign-Up on Montra?",
-    iconText: "chat",
+   
+    personalIconText: "chat",
+    businessIconText: "Inventory Management",
     color: "text-[#FB2F55]",
-    PersonalTitle: "Secure way of accessing World of Banking",
-    BusinessTitle: "Secure way of accessing World of Banking",
+    PersonalTitle: "Send Messages. Send & Request Money. Same Chat.",
+    BusinessTitle: "Sell Smarter. Restock Faster. Pay & Get Paid Instantly.",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/personal/chat",
-    contentPersonal: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
-    contentBusiness: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
+    personalLink: "/personal/chat",
+    businessLink:"/business/inventory-management",
+    contentPersonal: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
+    contentBusiness: '<p>Manage orders, send invoices, and track stock.With Montra, every part of your business just flows.<ul class="pl-[5vw] list-disc space-y-[1vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
   },
   {
-    src: "/assets/images/personal/personal-icon-3.png",
-    question: "How do we Sign-In on Montra?",
-    iconText: "Shop",
+   
+    personalIconText: "Shop",
+    businessIconText: "Montra Store",
     color: "text-[#111111]",
-    PersonalTitle: "Secure way of accessing World of Banking",
-    BusinessTitle: "Secure way of accessing World of Banking",
+    PersonalTitle: "Shopping Meets Simplicity",
+    BusinessTitle: "Start Selling Online — For Free",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
-    link: "/personal/shop",
-    contentPersonal: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
-    contentBusiness: "Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners.",
+    personalLink: "/personal/shop",
+    businessLink:"/business/montra-store",
+    contentPersonal: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands— everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
+    contentBusiness: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[5vw] list-disc space-y-[1vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
   },
+  {
+
+    businessIconText: "Payment Gateway",
+    color: "text-[#111111]",
+    BusinessTitle: "One Gateway. Multiple Payment Options.",
+    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    businessLink:"/business/payment-gateway",
+    contentBusiness: '<p>Integrate <span class="font-semibold">Montra Payment Gateway</span> into your app or website and accept payments via:</p><ul class="pl-[5vw] list-disc space-y-[1.5vw]"><li>Debit & Credit Cards</li><li>Bank Transfers via QR</li><li>Montra App </li><li>USSD Payments </li></ul> <p class="font-semibold">More ways to get paid. Fast integration. Instant settlement.</p>',
+  },
+  {
+ 
+    businessIconText: "Tap & Pay",
+    color: "text-[#111111]",
+    BusinessTitle: "Tap. Accept. Get Paid.",
+    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    businessLink:"/business/tap-and-pay",
+    contentBusiness: '<p>With Montra Tap to Pay, your phone becomes a payment terminal — no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
+  },
+  
 ];
 
 export default function PaymentMobile({ allowMultiple = false }) {
@@ -138,13 +162,15 @@ export default function PaymentMobile({ allowMultiple = false }) {
         {controlContent.map((f, i) => (
           <Accordion
             key={i}
-            src={f.src}
-            iconText={f.iconText}
+            index={i}
+            mode={mode}
+            // src={f.src}
+            iconText={mode=="personal"?f.personalIconText:f.businessIconText}
             color={f.color}
             contentImg={f.contentImg}
-            contentLink={f.link}
-            contenTitle={f.PersonalTitle}
-            content={f.contentPersonal}
+            contentLink={mode=="personal"?f.personalLink:f.businessLink}
+            contenTitle={mode=="personal"?f.PersonalTitle:f.BusinessTitle}
+            content={mode=="personal"?f.contentPersonal:f.contentBusiness}
             isOpen={openIndexes.includes(i)}
             onToggle={() => toggleIndex(i)}
           />
@@ -161,20 +187,22 @@ function Accordion({
   contentLink,
   isOpen,
   onToggle,
-
   iconText,
+  index,
+  mode
+
 
 }) {
   return (
-    <div className="w-full group overflow-hidden">
+    <div className={`w-full group overflow-hidden ${index>4&&mode=='personal'?"hidden":""}`}>
       <div className="w-full mr-auto  ">
         <button
           onClick={onToggle}
           aria-expanded={isOpen}
-          className="relative cursor-pointer w-full h-full max-sm:pt-[5vw] max-sm:pb-[7vw] flex items-center justify-between max-md:pt-[3vw] max-md:pb-[5vw]"
+          className="relative cursor-pointer w-full h-full max-sm:pt-[5vw] max-sm:pb-[7vw] flex items-start justify-between max-md:pt-[3vw] max-md:pb-[5vw]"
         >
           <div className="w-full flex justify-between">
-            <h3 className="max-sm:text-[8.5vw] font-display capitalize max-md:text-[5.5vw]">
+            <h3 className="max-sm:text-[8.5vw] font-display capitalize max-md:text-[5.5vw] text-left">
               {iconText}
 
             </h3>
@@ -199,7 +227,7 @@ function Accordion({
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="overflow-hidden"
             >
-              <div className="w-full flex flex-col max-sm:gap-[5vw] max-sm:pb-[10vw] max-md:items-center max-md:pb-[5vw] max-md:gap-[3vw]">
+              <div className="w-full flex flex-col max-sm:gap-[2vw] max-sm:pb-[10vw] max-md:items-center max-md:pb-[5vw] max-md:gap-[3vw]">
                 <div className="max-sm:w-[80%] max-sm:h-[100vw] max-md:w-[45%] max-md:h-[50vw] max-md:ml-[-10vw] max-sm:ml-0">
                   <Image
                     src={contentImg}
@@ -209,10 +237,18 @@ function Accordion({
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="max-sm:text-[7.5vw] capitalize font-medium font-display max-md:text-[5.5vw]">
+                <div className="w-full">
+                <h3 className="max-sm:text-[7.5vw] capitalize font-medium font-display max-md:text-[5.5vw] text-left">
                   {contenTitle}
                 </h3>
-                <p>{content}</p>
+
+                </div>
+                <div
+                className='py-4 space-y-[4vw]'
+                dangerouslySetInnerHTML={{ __html: content }}
+              />
+
+             
                 <div className="w-full">
 
                 <LinkButton text={"Learn More"} href={contentLink} />

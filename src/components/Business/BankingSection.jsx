@@ -121,10 +121,10 @@ export default function Payments() {
         </Heading>
       </div>
       <div className="sticky top-0 pl-[4vw] h-screen flex items-center justify-between overflow-hidden">
-        <div className="bg-black/5 h-[19vw] w-[2px] absolute top-[32.5%] left-[4.43%]">
+        <div className="bg-black/5 h-[34%] w-[2px] absolute top-[33%] left-[4.43%]">
           <div className="w-full h-[20%] bg-primary line-banking"/>
         </div>
-        <div className="flex gap-3 w-[30vw] h-[20vw] relative z-[5]">
+        <div className="flex gap-3 w-[30vw] h-[35%] relative z-[5]">
           <svg
             className="h-full"
             width="14"

@@ -88,8 +88,8 @@ function Accordion({ question, answer, isOpen, onToggle }) {
               transition={{ duration: 0.3, ease: 'easeOut' }}
               className="overflow-hidden"
             >
-              <div className="pb-[1.5vw] w-4/5 max-sm:py-[5vw]">
-                <p>{answer}</p>
+              <div className="py-[1.5vw] pb-[3vw] w-4/5 max-sm:py-[5vw] space-y-[1.5vw]" dangerouslySetInnerHTML={{__html:answer}}>
+                
               </div>
             </motion.div>
           )}

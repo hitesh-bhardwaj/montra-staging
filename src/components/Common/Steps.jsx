@@ -150,7 +150,7 @@ const Steps = ({ stepData }) => {
             {stepData.heading}
           </h2>
         </div>
-        <div className="w-2/5 relative h-[60vw] mt-[-5vw] max-sm:w-[120vw] max-sm:h-[150vw] max-sm:left-[-25%]  fadeupanim max-md:h-[190vw] max-md:w-[150vw] max-md:left-[-30%] max-md:mt-0">
+        <div className="w-2/5 relative h-[120vh] mt-[-5vw] max-sm:w-[120vw] max-sm:h-[150vw] max-sm:left-[-25%]  fadeupanim max-md:h-[190vw] max-md:w-[150vw] max-md:left-[-30%] max-md:mt-0">
           {stepData.steps.map((s, i) => {
             const isCurrent = i === currentStep;
             const isFadingOut = i === step && isAnimating;
