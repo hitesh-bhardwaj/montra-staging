@@ -154,7 +154,7 @@ const Hero = () => {
   return (
     <section id="hero" className="w-screen overflow-hidden relative">
       <div className="h-full flex items-center justify-center text-center px-[4vw] max-md:flex-col">
-        <div className="w-[80%] mx-auto space-y-[1.2vw] pt-[14vw] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw] max-md:pt-[30vw] max-md:w-full max-md:space-y-[5vw]">
+        <div className="w-[80%] mx-auto space-y-[1.2vw] pt-[14%] py-[5vw] max-sm:w-full max-sm:pt-[30vw] max-sm:space-y-[7vw] max-md:pt-[30vw] max-md:w-full max-md:space-y-[5vw]">
           <Heading delay={0.7}>
             <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] heroAnim max-sm:text-[11.5vw] max-sm:leading-[1.2] max-sm:w-full max-md:text-[8vw] max-md:w-[80%] max-md:mx-auto">
               <span className="text-primary">Montra: </span>Building future of
@@ -179,7 +179,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="h-[120vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw] max-md:pb-[10vw] hero-content">
+      <div className="h-[125vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw] max-md:pb-[10vw] hero-content">
         <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw] max-md:flex-col max-md:items-start max-md:gap-[7vw]">
           <Heading>
             <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[27%] font-display max-sm:w-full max-sm:text-[10vw] max-md:text-[5.5vw] max-md:w-[80%]">
@@ -201,7 +201,7 @@ const Hero = () => {
 
             <div
                 ref={bgRef}
-                style={{ clipPath: 'ellipse(20vw 20vw at 50% 35%)' }}
+                style={{ clipPath: 'ellipse(19vw 19vw at 50% 35%)' }}
                 // style={{ clipPath: 'ellipse(50vw 50vw at 50% 25%)' }}
 
                 className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden fadeup">
