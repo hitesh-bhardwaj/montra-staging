@@ -26,7 +26,7 @@ export default function PaymentCopy() {
         title: 'Pay Your Way with Montra',
         desc: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards –  </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
         link: '/personal/payments',
-        image: '/assets/images/homepage/business-mobile-mockup.png',
+        image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
         title: 'Manage your Finance, on the Go',
@@ -38,7 +38,7 @@ export default function PaymentCopy() {
         title: 'Send Messages. Send & Request Money. Same Chat.',
         desc: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
         link: '/personal/chat',
-        image: '/assets/images/homepage/business-mobile-mockup.png',
+        image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
         title: 'Shopping Meets Simplicity',
@@ -52,7 +52,7 @@ export default function PaymentCopy() {
         title: 'All-in-One Banking. Built for Businesses',
         desc: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem — designed to help your business grow smarter & faster</p>',
         link: '/business/banking',
-        image: '/assets/images/homepage/business-mobile-mockup.png',
+        image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
         title: 'Accept Payments. Expand Possibilities',
@@ -64,7 +64,7 @@ export default function PaymentCopy() {
         title: 'Become a Montra Agent. Start Earning',
         desc: '<p>Offer Agency Banking services for offering Cash Deposit & Cahs withdrawal services and get paid for every transaction — it’s that simple.</p>',
         link: '/business/agency-banking',
-        image: '/assets/images/homepage/business-mobile-mockup.png',
+        image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
         title: 'Sell Smarter. Restock Faster. Pay & Get Paid Instantly. ',
@@ -76,7 +76,7 @@ export default function PaymentCopy() {
         title: 'Start Selling Online — For Free',
         desc: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
         link: '/business/montra-store',
-        image: '/assets/images/homepage/business-mobile-mockup.png',
+        image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
       {
         title: 'One Gateway. Multiple Payment Options.',
@@ -88,7 +88,7 @@ export default function PaymentCopy() {
         title: 'Tap. Accept. Get Paid.',
         desc: '<p>With Montra Tap to Pay, your phone becomes a payment terminal — no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
         link: '/business/tap-and-pay',
-        image: '/assets/images/homepage/business-mobile-mockup.png',
+        image: '/assets/images/homepage/personal-mobile-mockup.png',
       },
     ],
   };
@@ -455,8 +455,8 @@ export default function PaymentCopy() {
         </div>
 
         {/* IMAGE BLOCK */}
-        <div className="sticky top-0 right-[7%] w-[40%] h-[30vw] flex items-center justify-center">
-          <div className="relative w-full h-full">
+        <div className="sticky top-[20%] right-[7%] w-[40%] mt-[15vw] h-[80vh] flex items-start justify-center">
+          <div className="relative w-full h-[60vh]">
             {stepsData[mode].map((step, idx) => {
               const key = thresholdKeys[mode][idx];
               return (
