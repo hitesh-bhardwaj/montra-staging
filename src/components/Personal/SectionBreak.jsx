@@ -84,7 +84,7 @@ export default function SectionBreak() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen mt-[-10vw] w-screen  px-[4vw] overflow-hidden max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB] max-md:mt-0 max-md:h-[80vh] max-sm:h-screen"
+      className="relative h-screen mt-[-20vw] w-screen  px-[4vw] overflow-hidden max-sm:py-[25%] max-sm:mt-[15vw] bg-[#FBFBFB] max-md:mt-0 max-md:h-[80vh] max-sm:h-screen"
     >
       <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto">
         <h2

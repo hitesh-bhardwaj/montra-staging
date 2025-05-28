@@ -278,7 +278,7 @@ const Control = () => {
 
   return (
     <div
-      className="w-screen h-[310vw] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb]"
+      className="w-screen h-[700vh] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb]"
       id="control"
     >
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">
@@ -422,14 +422,14 @@ const Control = () => {
         </div>
       </div>
 
-      <div className="w-screen h-[80vh] flex flex-col flex-nowrap overflow-hidden absolute bottom-[4.5%] right-0 ">
-        <div className="w-full h-full relative flex justify-end ">
+      <div className="w-screen h-fit flex flex-col flex-nowrap overflow-hidden absolute bottom-[5%] right-0 ">
+        <div className="w-full h-fit relative flex justify-end ">
           <div className="w-[75%] h-[80vh] relative bottom-content flex justify-end opacity-0 pr-[4vw]  z-[200]">
             {sections.map((section) => (
               <div
                 key={section.key}
                 ref={(el) => (sectionRefs.current[section.key] = el)}
-                className={`w-full h-[80vh] flex justify-between absolute top-0 left-0 pr-[4vw] opacity-0 ${
+                className={`w-full h-auto flex justify-between absolute top-0 left-0 pr-[4vw] opacity-0 ${
                   active === section.key ? "z-20" : "z-10"
                 }`}
               >

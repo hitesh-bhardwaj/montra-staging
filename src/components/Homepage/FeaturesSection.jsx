@@ -142,13 +142,13 @@ const FeatureSection = () => {
     const startValue = deviceType === "desktop"
   ? "-10%"
   : deviceType === "tablet"
-  ? "-50%"
+  ? "-40%"
   : "-50%"; // Assuming mobile also uses -50% like tablet (you can adjust)
 
 const endValue = deviceType === "desktop"
-  ? "3%"
+  ? "14%"
   : deviceType === "tablet"
-  ? "3%"
+  ? "13%"
   : "-15%";
 
 const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
@@ -170,7 +170,7 @@ const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
                               alt="App mockup"
                               width={1200}
                               height={1400}
-                              className="w-[80%] h-[80%] object-contain absolute left-[10%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-100%] max-md:translate-y-[-120%] max-sm:translate-y-[-140%] z-[9999]"
+                              className="w-[70%] h-[70%] object-contain absolute left-[15%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-105%] max-md:translate-y-[-150%] max-sm:translate-y-[-160%] z-[9999]"
                     />
                     <Image
                         // id="hero-phone-image"
@@ -178,7 +178,7 @@ const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
                         alt="App mockup"
                         width={1200}
                         height={1400}
-                        className="w-[80%] h-auto block translate-x-[4%] max-md:translate-x-[20%] object-cover max-sm:hidden max-md:w-[55vw] max-sm:h-[110vw] relative z-[9999]"
+                        className="w-[70%] h-auto block translate-x-[13%] max-md:translate-x-[28%] object-cover max-sm:hidden max-md:w-[49vw] max-sm:h-[110vw] relative z-[9999]"
                     />
                      <Image
                         // id="hero-phone-image"

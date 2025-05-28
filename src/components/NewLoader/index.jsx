@@ -17,7 +17,7 @@ const NewLoader = () => {
         ease:"power3.inOut"
        })
        .to(".loader-phonemockup",{
-        yPercent:100,
+        yPercent:104.5,
         zIndex:100,
         duration:1.5,
         ease:"power3.inOut"
@@ -45,7 +45,7 @@ const NewLoader = () => {
        ease:"power3.inOut"
       })
       .to(".loader-phonemockup",{
-       yPercent:120,
+       yPercent:150.5,
        zIndex:100,
        duration:1.5,
        ease:"power3.inOut"
