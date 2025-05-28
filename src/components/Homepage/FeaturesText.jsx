@@ -212,7 +212,7 @@ export default function PinnedRevealSection() {
   return (
     <section
       ref={ref}
-      className="relative h-[470vh] max-md:h-[380vh] max-sm:h-[370vh]"
+      className="relative h-[500vh] max-md:h-[380vh] max-sm:h-[375vh]"
       id="feature-text"
     >
       <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB]">
@@ -265,7 +265,7 @@ export default function PinnedRevealSection() {
       </div>
 
       {/* 3) Carousel cards */}
-      <motion.div className="absolute bottom-0 w-screen z-10 h-screen max-md:h-fit max-md:pb-[7%]">
+      <motion.div className="absolute bottom-[3%] w-screen z-10 h-screen max-md:h-fit max-md:pb-[7%] max-sm:bottom-0">
         <InfoCarouselSwiper />
       </motion.div>
     </section>

@@ -84,7 +84,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={heroRef}
-      className="w-screen overflow-hidden h-full max-sm:h-screen"
+      className="w-screen overflow-hidden h-full max-sm:h-screen max-md:h-screen"
     >
       <div className="h-full flex items-start justify-center text-center px-[4vw] max-sm:pt-[40vw] max-md:pt-[20vw]">
         <div className="w-[70%] mx-auto space-y-[1.5vw] py-[14%]  max-sm:w-full  max-sm:space-y-[7vw] relative z-[50] max-sm:pt-0 max-md:space-y-[5vw] max-md:w-[85%]">

@@ -5,10 +5,10 @@
   --black-1: #111111;
   --gray: #cbcbcb;
   --primary: #215CFF;
-  --font-display: var(--font-display)
+  --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
-
+ 
 html{
   background-color: var(--black-1);
 }

@@ -17,26 +17,25 @@ const NewLoader = () => {
         ease:"power3.inOut"
        })
        .to(".loader-phonemockup",{
-        yPercent:100.5,
-        // delay:0.2,
+        yPercent:100,
+        zIndex:100,
         duration:1.5,
         ease:"power3.inOut"
        })
-       .to(".loader-phonemockup",{
-        opacity:0,
-        translateZ:-10,
-        onComplete:()=>{
-          setHidden(true)
-        }
+       .to(".mockup-container",{
+        zIndex:100,
+        delay:-0.5
        })
        .to(".overlay",{
         opacity:0,
         delay:-1.2,
-       
+       onComplete:()=>{
+        setHidden(true)
+       }
        })
 
     }
-    else{
+    if(globalThis.innerWidth<1024&&globalThis.innerWidth>541){
       const tl = gsap.timeline()
   
       tl.to(".loader-phonemockup",{
@@ -47,21 +46,51 @@ const NewLoader = () => {
       })
       .to(".loader-phonemockup",{
        yPercent:120,
-       // delay:0.2,
+       zIndex:100,
        duration:1.5,
        ease:"power3.inOut"
       })
-      .to(".loader-phonemockup",{
-       opacity:0,
-       translateZ:-10,
-       onComplete:()=>{
-         setHidden(true)
-       }
+      
+      .to(".mockup-container",{
+       zIndex:100,
+       delay:-0.5
       })
       .to(".overlay",{
        opacity:0,
        delay:-1.2,
-      
+      onComplete:()=>{
+       setHidden(true)
+      }
+      })
+    }
+    if(globalThis.innerWidth<541){
+      const tl = gsap.timeline()
+  
+      tl.to(".loader-phonemockup",{
+       scale:0.9,
+       opacity:1,
+       duration:1.5,
+       ease:"power3.inOut"
+      })
+      .to(".loader-phonemockup",{
+       yPercent:180,
+       zIndex:100,
+       duration:1.5,
+       ease:"power3.inOut"
+      })
+      .to(".loader-phonemockup",{
+        opacity:0,
+      })
+      .to(".mockup-container",{
+       zIndex:100,
+       delay:-0.5
+      })
+      .to(".overlay",{
+       opacity:0,
+       delay:-1.2,
+      onComplete:()=>{
+       setHidden(true)
+      }
       })
     }
    })
@@ -72,15 +101,15 @@ const NewLoader = () => {
       <div className="w-screen h-screen absolute top-0 left-0 bg-white overlay"/>
 
   
-      <div className="relative  z-10 w-[20.5vw] h-[30vw] translate-y-[20%] max-sm:translate-y-[30%] max-sm:w-[40vw] max-sm:h-[120vw] max-md:w-[80vw] max-md:h-[80vw]">
-        <Image
+      <div className="relative  z-10 w-[20.3vw] h-[30vw] translate-y-[20%] max-sm:translate-y-[30%] max-sm:w-[40vw] max-sm:h-[120vw] max-md:w-[80vw] max-md:h-[80vw]">
+        {/* <Image
           // id="hero-phone-image"
           src="/assets/images/montra-loader-mockup.png"
           alt="App mockup"
           width={1200}
           height={1400}
           className="w-full loader-phonemockup h-auto block max-sm:translate-x-0 scale-[1.4] opacity-0 max-sm:object-contain max-sm:w-[80vw] max-sm:h-[130vw]"
-        />
+        /> */}
       </div>
     </div>
   );

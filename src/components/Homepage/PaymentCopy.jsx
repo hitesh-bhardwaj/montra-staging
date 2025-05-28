@@ -216,14 +216,14 @@ export default function PaymentCopy() {
     >
       <div className="sticky top-0 px-[4vw] h-screen flex items-center justify-between">
         {/* MODE TOGGLE */}
-        <div className="absolute top-[10%] left-1/2 -translate-x-1/2 flex gap-2 z-30 bg-white border border-[#E2EFFF] rounded-full p-0.5">
+        <div className="absolute top-[5%] left-1/2 -translate-x-1/2 flex gap-2 bg-white border border-[#E2EFFF] rounded-full p-0.5 z-[500]">
           <motion.div
             className="absolute top-[3%] left-0 w-1/2 h-[92%] rounded-full bg-primary"
             style={{ translateX: mode === 'personal' ? '0%' : '97%' }}
           />
           <button
             onClick={() => swapMode('personal')}
-            className={`relative z-10 px-[2vw] py-[0.5vw] rounded-full ${
+            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full ${
               mode === 'personal' ? 'text-white' : ''
             }`}
           >
@@ -231,7 +231,7 @@ export default function PaymentCopy() {
           </button>
           <button
             onClick={() => swapMode('business')}
-            className={`relative z-10 px-[2vw] py-[0.5vw] rounded-full ${
+            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full ${
               mode === 'business' ? 'text-white' : ''
             }`}
           >
@@ -430,8 +430,8 @@ export default function PaymentCopy() {
 
         {/* TEXT BLOCK */}
         <div className="h-[100vh] w-[40%] overflow-clip relative bg-white">
-          <span className="absolute top-0 inset-x-0 h-[18vw] bg-gradient-to-b from-white via-50% via-white to-transparent z-10" />
-          <span className="absolute bottom-0 inset-x-0 h-[10vw] bg-gradient-to-t from-white via-white via-30% to-transparent z-10" />
+          {/* <span className="absolute top-0 inset-x-0 h-[18vw] bg-gradient-to-b from-white via-50% via-white to-transparent z-10" /> */}
+          {/* <span className="absolute bottom-0 inset-x-0 h-[10vw] bg-gradient-to-t from-white via-white via-30% to-transparent z-10" /> */}
           <motion.div
             style={{ translateY }}
             className="flex flex-col relative space-y-[10vw] pt-[30vh]"
@@ -462,7 +462,7 @@ export default function PaymentCopy() {
               return (
                 <motion.div
                   key={key}
-                  style={{ opacity: transformsMap[key] }}
+                  style={{ opacity: 1 }}
                   className="absolute inset-0"
                 >
                   <Image

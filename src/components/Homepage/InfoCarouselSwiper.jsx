@@ -89,7 +89,7 @@ export default function InfoCarouselSwiper() {
       });
 
     return (
-        <div className="text-white py-[3vw] bg-primary dark relative" id='infocarousel'>
+        <div className="text-white py-[3vw] bg-primary dark relative h-full" id='infocarousel'>
             <div className='max-md:w-full max-md:flex max-md:justify-center max-sm:justify-start'>
             <Copy>
                 <h3 className='ml-[5vw] text-white font-display font-medium text-[3vw] w-[40%] capitalize leading-[1.3] pb-[3vw] max-sm:text-[7.5vw] max-sm:w-[85%] max-sm:pb-[10vw] max-md:text-[7.5vw] max-md:w-[80%] max-md:pb-[6vw] max-md:text-center max-sm:text-left'>Sort All Your Payments And Cash Flow Needs</h3>

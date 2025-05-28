@@ -6,13 +6,11 @@ import FAQs from "@/components/Homepage/FAQs";
 import FeatureSection from "@/components/Homepage/FeaturesSection";
 import FeaturesText from "@/components/Homepage/FeaturesText";
 import Hero from "@/components/Homepage/Hero";
-import Payments from "@/components/Homepage/Payment";
-import PaymentCopy from "@/components/Homepage/PaymentCopy";
 import PaymentMobile from "@/components/Homepage/PaymentMobile";
+import PaymentSection from "@/components/Homepage/PaymentSection";
 import SectionBreak from "@/components/Homepage/SectionBreak";
 import Testimonials from "@/components/Homepage/Testimonials";
 import VisionMission from "@/components/Homepage/VisionMission";
-import Loader from "@/components/Loader";
 import NewLoader from "@/components/NewLoader";
 import { useEffect, useState } from "react";
 
@@ -53,9 +51,10 @@ export default function Home() {
       <Hero />
       <FeatureSection />
       <FeaturesText />
-      <div className="max-sm:min-h-[180vh] max-md:min-h-screen">
-      {mobileWidth ? <PaymentMobile /> : <PaymentCopy />}
-      </div>
+      {/* <div className="max-sm:min-h-[180vh] max-md:min-h-screen"> */}
+      <PaymentMobile /> 
+        <PaymentSection/>
+      {/* </div> */}
       <SectionBreak />
       <VisionMission />
       <Testimonials />

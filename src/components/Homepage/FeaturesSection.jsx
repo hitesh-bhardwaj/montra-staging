@@ -139,26 +139,54 @@ const FeatureSection = () => {
         offset: ["start end", "end start"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 0.45], ["-30%", deviceType=="desktop"?"-9%":"-7.5%"]);
+    const startValue = deviceType === "desktop"
+  ? "-10%"
+  : deviceType === "tablet"
+  ? "-50%"
+  : "-50%"; // Assuming mobile also uses -50% like tablet (you can adjust)
+
+const endValue = deviceType === "desktop"
+  ? "3%"
+  : deviceType === "tablet"
+  ? "3%"
+  : "-15%";
+
+const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
 
     return (
         <motion.section
             ref={sectionRef}
-            className="w-screen h-full flex items-end justify-center relative max-sm:pt-[50vw]"
+            className="w-screen h-full flex items-end justify-center relative max-sm:pt-[50vw] max-md:pt-[20vw]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={container}
         >
-            <div className="relative inline-block z-10 w-[55vw] h-[52vw] max-sm:translate-y-0 max-sm:w-[100vw] max-sm:h-[120vw] max-md:w-[80vw] max-md:h-[80vw]">
-                <motion.div className="overflow-hidden h-[110%]" style={{ y }}>
+            <div className="relative inline-block z-[999] w-[45vw] h-[52vw] max-sm:translate-y-0 max-sm:w-[100vw] max-sm:h-[120vw] max-md:w-[85vw] max-md:h-[80vw] mockup-container">
+                <motion.div className="h-[110%]" style={{ y }}>
+                     <Image
+                              // id="hero-phone-image"
+                              src="/assets/images/montra-loader-mockup.png"
+                              alt="App mockup"
+                              width={1200}
+                              height={1400}
+                              className="w-[80%] h-[80%] object-contain absolute left-[10%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-100%] max-md:translate-y-[-120%] max-sm:translate-y-[-140%] z-[9999]"
+                    />
                     <Image
+                        // id="hero-phone-image"
+                        src="/assets/images/homepage/hand-mockup.webp"
+                        alt="App mockup"
+                        width={1200}
+                        height={1400}
+                        className="w-[80%] h-auto block translate-x-[4%] max-md:translate-x-[20%] object-cover max-sm:hidden max-md:w-[55vw] max-sm:h-[110vw] relative z-[9999]"
+                    />
+                     <Image
                         // id="hero-phone-image"
                         src="/assets/images/homepage/phone-mockup.png"
                         alt="App mockup"
                         width={1200}
                         height={1400}
-                        className="w-full h-auto block max-sm:translate-x-0 max-sm:object-cover max-sm:w-[120vw] max-sm:h-[130vw]"
+                        className="w-[80%] h-auto translate-x-[4%] max-sm:translate-x-0 object-cover hidden max-sm:block max-sm:w-[120vw] max-sm:h-[140vw] relative z-[9999] max-md:w-[80vw]"
                     />
                 </motion.div>
                 {icons.map((icon, i) => {
