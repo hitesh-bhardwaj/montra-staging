@@ -9,11 +9,13 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useAnimatedNavigation } from "../NavigationContext";
 import { Facebook, Instagram, Linkedin, Twitter } from "../Buttons/icons";
+import { usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
   const { navigateTo } = useAnimatedNavigation();
   const [hidden, setHidden] = useState(false);
+  const pathname = usePathname()
   const [lastY, setLastY] = useState(0);
   const [isInverted, setIsInverted] = useState(false);
   const [openMenu, setopenMenu] = useState(false);
@@ -70,13 +72,13 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[300] transform transition-transform duration-300 w-screen   ${
+      className={`fixed top-0 left-0 right-0 z-[9999] transform transition-transform duration-300 w-screen   ${
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
       <div
         id="header-container"
-        className="px-[4vw] py-[1vw] header w-full max-sm:pt-[5vw] max-sm:px-[7vw] max-md:pt-[5vw]"
+        className="px-[4vw] pt-[1%] header w-full max-sm:pt-[5vw] max-sm:px-[7vw] max-md:pt-[5vw]"
       >
         <div className="flex justify-between items-center w-full ">
           <a
@@ -89,7 +91,7 @@ export default function Header() {
             <Image
               src={montraLogo}
               alt="montra logo"
-              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${
+              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${pathname==='/'?"opacity-0":""}  ${
                 openMenu ? "!brightness-[1]" : ""
               } ${isInverted ? " brightness-[16]" : ""} `}
             />

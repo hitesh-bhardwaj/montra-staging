@@ -11,6 +11,7 @@ import PaymentSection from "@/components/Homepage/PaymentSection";
 import SectionBreak from "@/components/Homepage/SectionBreak";
 import Testimonials from "@/components/Homepage/Testimonials";
 import VisionMission from "@/components/Homepage/VisionMission";
+import LoaderCopy from "@/components/LoaderCopy";
 import NewLoader from "@/components/NewLoader";
 import { useEffect, useState } from "react";
 
@@ -47,7 +48,8 @@ export default function Home() {
     <>
       {/* <Loader /> */}
       {/* <NewLoader/> */}
-      <NewLoader/>
+      {/* <NewLoader/> */}
+      <LoaderCopy/>
       <Hero />
       <FeatureSection />
       <FeaturesText />
