@@ -242,7 +242,7 @@ const benefitsData = {
       color: "bg-[#FFEAEE]",
       content:
         "Check the status of the loans you applied for.",
-      title: "Track Your Application",
+      title: "Track Loan Application",
       z: "z-[7]",
       width: "w-[22vw]",
       height: "17vw",
@@ -278,7 +278,7 @@ const benefitsData = {
       color: "bg-[#CAC5F7]",
       content:
         "Approved loan amounts are disbursed instantly once your application is submitted.",
-      title: "Instant Loan Disbursement",
+      title: "Instant Loan Disbursements",
       z: "z-[4]",
       width: "w-[25vw]",
       height: "17vw",

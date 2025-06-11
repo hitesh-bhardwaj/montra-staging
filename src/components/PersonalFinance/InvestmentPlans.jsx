@@ -111,7 +111,7 @@ const InvestmentPlans = () => {
               className={`text-[5.7vw] font-display font-medium w-[85%] capitalize max-sm:text-[11vw] max-sm:w-full leading-[1.2] max-md:text-[7.5vw] max-md:w-[95%]`}
             >
               Compare Best <span className="text-primary">Investment</span> Plans Available
-              Towards Maximise Your Returns
+              Towards Maximizing Your Returns
             </h2>
           </Heading>
           <Copy>

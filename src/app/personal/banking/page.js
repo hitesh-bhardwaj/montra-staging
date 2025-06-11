@@ -84,7 +84,7 @@ const overviewContent = {
 const whatWhyData = {
   heading:"Link your other bank accounts — pay from all your banks, all in one Montra app.",
   headingWidth:"w-[95%]",
-  top:"top-[34%]",
+  top:"top-[37%]",
   para:"",
   content:[
   {
