@@ -61,7 +61,7 @@ const WhatWhy = ({ data, height }) => {
               </div>
               <div className="flex flex-col gap-[1.5vw] w-[70%] max-sm:w-full max-sm:gap-[4vw] max-md:w-[80%]">
                 <Heading>
-                <h3 className="text-[3.4vw] font-display font-medium color max-sm:text-[7.5vw] max-md:text-[5.5vw]">
+                <h3 className="text-[3.4vw] font-display font-medium color max-sm:text-[7.5vw] max-md:text-[5.5vw] leading-[1.2]">
                   {item.title}
                 </h3>
 

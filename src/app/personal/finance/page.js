@@ -175,17 +175,17 @@ const faqContent = [
   },
 ];
 const overviewContent = {
-  icon1: "/assets/images/personal-finance/save-with-purpose.svg",
-  icon2: "/assets/images/personal-finance/access-credit.svg",
+  icon1: "/assets/images/personal-finance/overview-icon-1.svg",
+  icon2: "/assets/images/personal-finance/overview-icon-2.svg",
   mainImg: "/assets/images/personal-banking/overview-phone.png",
   bgImg: "/assets/images/personal-payments/overview-bg-icon.svg",
-  title: "Finance That Fits Your Life",
+  title: "Financial products for every step of your journey",
   content: [
     "Montra makes personal finance easy, accessible, and stress-free. Whether you're saving for something big, need quick credit, or want to protect your future with insurance, it’s all right here—in one powerful app. ",
     "No banks, no paperwork, no complicated steps. Just the tools you need to build, manage, and grow your money—with full control and total confidence.",
   ],
-  subcontent1: "Access Credit Instantly",
-  subcontent2: "Save with Purpose",
+  subcontent1: "Insure & Invest",
+  subcontent2: "Access Credit Instantly",
   cards: [
     {
       color: "bg-[#7A78FF]",
@@ -217,7 +217,7 @@ const benefitsData = {
       top: "!top-[25%]",
       color: "bg-[#EAF1FF]",
       content:
-        "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",
+        "Explore a variety of digital loan products from Montra's lending partners, compare offers, and make informed borrowing decisions.",
       title: "Compare Loan Offers",
       z: "z-[6]",
       width: "w-[21vw]",
@@ -229,7 +229,7 @@ const benefitsData = {
       top: "!top-[45%]",
       color: "bg-[#FEFFA7]",
       content:
-        "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",
+        "View statements for all loans availed through the Montra Personal App.",
       title: "View Loan Statements",
       z: "z-[5]",
       width: "w-[22vw]",
@@ -241,7 +241,7 @@ const benefitsData = {
       top: "!top-[15%]",
       color: "bg-[#FFEAEE]",
       content:
-        "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",
+        "Check the status of the loans you applied for.",
       title: "Track Your Application",
       z: "z-[7]",
       width: "w-[22vw]",
@@ -253,7 +253,7 @@ const benefitsData = {
       top: "!top-[40%]",
       color: "bg-[#D9F7C5]",
       content:
-        "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",
+        "Pay monthly installments or any other due repayments easily.",
       title: "Easy Repayments",
       z: "z-[6]",
       width: "w-[18vw]",
@@ -265,7 +265,7 @@ const benefitsData = {
       top: "!top-[67%]",
       color: "bg-[#FFD7CB]",
       content:
-        "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",
+        "Get timely alerts from Montra to pay due and overdue amounts — helps avoid penalty charges.",
       title: "Smart Payment Reminders",
       z: "z-[4]",
       width: "w-[24vw]",
@@ -277,10 +277,10 @@ const benefitsData = {
       top: "!top-[65%]",
       color: "bg-[#CAC5F7]",
       content:
-        "Stay updated in real-time. Monitor the progress of your loan applications right from your Montra app.",
-      title: "Instant Disbursement",
+        "Approved loan amounts are disbursed instantly once your application is submitted.",
+      title: "Instant Loan Disbursement",
       z: "z-[4]",
-      width: "w-[21vw]",
+      width: "w-[25vw]",
       height: "17vw",
     },
   ],
@@ -298,7 +298,7 @@ const benefitsData2 = {
       top: "!top-[25%]",
       color: "bg-[#D9F7C5]",
       content:
-        "Stay covered without the hassle. Renew your existing policies in just a few taps.",
+        "Explore and compare insurance products to choose the best fit.",
       title: "Compare Plans Easily",
       z: "z-[6]",
       width: "w-[22vw]",
@@ -310,7 +310,7 @@ const benefitsData2 = {
       top: "!top-[75%]",
       color: "bg-[#FEFFA7]",
       content:
-        "Stay covered without the hassle. Renew your existing policies in just a few taps.",
+        "View your insurance plan details anytime, from your phone.",
       title: "Access Policy Details Anytime",
       z: "z-[5]",
       width: "w-[26vw]",
@@ -322,7 +322,7 @@ const benefitsData2 = {
       top: "!top-[15%]",
       color: "bg-[#FFEAEE]",
       content:
-        "Stay covered without the hassle. Renew your existing policies in just a few taps.",
+        "Renew existing policies quickly from within the app.",
       title: "Quick Renewals",
       z: "z-[7]",
       width: "w-[18vw]",
@@ -334,7 +334,7 @@ const benefitsData2 = {
       top: "!top-[45.9%]",
       color: "bg-[#CAC5F7]",
       content:
-        "Stay covered without the hassle. Renew your existing policies in just a few taps.",
+        "Pay your premiums easily using multiple convenient payment methods.",
       title: "Flexible Payments",
       z: "z-[6]",
       width: "w-[19vw]",
@@ -356,12 +356,12 @@ const whatWhyData = {
     {
       number: "02",
       title: "Compare Offers Instantly",
-      para: "Montra instantly compares premiums and features from multiple insurance partners—so you can make an informed choice.",
+      para: "Montra lets you compare premiums and features from multiple insurance partners, helping you make informed decisions.",
     },
     {
       number: "03",
       title: "Buy Your Policy",
-      para: "Choose your preferred plan and pay securely using any of the flexible payment options on Montra.",
+      para: "Pay your premiums easily using multiple convenient payment methods.",
     },
     {
       number: "04",
@@ -395,11 +395,7 @@ const featuresData = {
       text: "Car Insurance",
       color: "bg-[#111111]",
     },
-    {
-      icon: "/assets/images/personal-finance/two-wheeler-insurance.svg",
-      text: "2-wheeler Insurance",
-      color: "bg-[#FB2F55]",
-    },
+   
     {
       icon: "/assets/images/personal-finance/travel-insurance.svg",
       text: "Travel Insurance",
@@ -413,30 +409,30 @@ const stepData = {
     {
       number: "01",
       title: "Choose a Loan Product",
-      para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+      para: "Browse loan options on Montra and select the one that fits your needs.",
       img: "/assets/images/personal-banking/steps-img-1.png",
-      tag: "Choose Plan"
+      tag: "Select Loan product"
     },
     {
       number: "02",
-      title: "Choose a Loan Product",
-      para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+      title: "Check Your Eligibility & Select a Lender",
+      para: "View your approved loan amounts from Montra’s lending partners and choose the best offer.",
       img: "/assets/images/personal-banking/steps-img-1.png",
-      tag: "Choose Plan"
+      tag: "Check Eligibility"
     },
     {
       number: "03",
-      title: "Choose a Loan Product",
-      para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+      title: "Confirm & Submit Loan Request",
+      para: "Enter your loan amount (up to your eligibility limit), agree to the terms, and authenticate with your Montra PIN to submit your application.",
       img: "/assets/images/personal-banking/steps-img-1.png",
-      tag: "Choose Plan"
+      tag: "Submit Request"
     },
     {
       number: "04",
-      title: "Choose a Loan Product",
-      para: "Browse the available loan options on Montra and pick one that fits your financial needs.",
+      title: "Receive Funds",
+      para: "Where applicable, get an instant disbursement. Otherwise, track your application for approval updates.",
       img: "/assets/images/personal-banking/steps-img-1.png",
-      tag: "Choose Plan"
+      tag: "Receive Funds"
 
     },
   ],

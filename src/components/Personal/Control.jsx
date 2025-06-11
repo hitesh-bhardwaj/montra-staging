@@ -18,11 +18,10 @@ const Control = () => {
   const sections = [
     {
       key: "Banking",
-      title: "Do More with your money. Spend & earn rewards",
+      title: "Do More with your money. Spend and earn rewards",
       points: [
-        "Open a Montra Account and get a virtual Montra Card issued instantly.",
-        "You can also link your existing Bank accounts on Montra App.",
-        "Now you can start making payments using your Montra or Linked Bank accounts and earn exciting rewards.",
+        "Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.",
+        "Link your existing bank accounts on the Montra App and manage all your payments in one place — one app for all your bank accounts.",
       ],
       image: "/assets/images/personal/personal-control-img-1.png",
       link: {
@@ -283,7 +282,7 @@ const Control = () => {
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">
         <Heading>
           <h2 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-center">
-            Take Control of Your Money. Effortlessly.
+            Take Control of Your Finances. Effortlessly.
           </h2>
         </Heading>
         <div className="w-full flex justify-between px-[6.5vw] h-[30vw]">
@@ -445,7 +444,7 @@ const Control = () => {
                   <h3 className="text-[3.4vw] leading-[1.3] font-display capitalize font-medium">
                     {section.title}
                   </h3>
-                  <ul className="list-disc ml-[1vw] w-[60%]">
+                  <ul className="list-disc ml-[1vw] w-[70%] space-y-[0.5vw]">
                     {section.points.map((point, i) => (
                       <li key={i}>{point}</li>
                     ))}
@@ -463,8 +462,8 @@ const Control = () => {
       <div className="w-screen h-[310vw] absolute top-0 left-0"></div>
 
       <p className="w-[30%] h-fit fixed bottom-[10%] left-[5%] text-[3vw] font-display font-medium control-content opacity-0">
-        Effortless
-        <br /> Money Management, Designed Around You.
+      Simple Money Management,
+Designed for You
       </p>
     </div>
   );

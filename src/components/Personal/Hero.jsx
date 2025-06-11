@@ -33,6 +33,38 @@ const Hero = () => {
           y: 30,
           delay: 1.2,
         })
+        gsap.to(".montra-logo", {
+          // filter:"brightness(1)",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "39% top",
+            // markers: true, 
+            onLeaveBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnter: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
+            onLeave: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
+          },
+        });
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#hero",
@@ -57,7 +89,7 @@ const Hero = () => {
         })
           .to(".hero-image-anim", {
             width: "105vw",
-            height: "110vh",
+            height: "120vh",
             ease: "none",
             left: "-2.5%",
             top: "-51.2%",
@@ -357,18 +389,22 @@ const Hero = () => {
             </div>
           </div>
           <div className="w-screen h-screen absolute top-0 left-0 hero-main-content opacity-0 z-[10]">
-            <div className="text-[3.2vw] font-medium w-[25%] z-[10] absolute top-[-10%] left-[5%] capitalize font-display max-sm:w-[80%] max-sm:top-[-23%] max-sm:text-[8vw] max-md:top-[-28%] max-md:text-[5.5vw] max-md:w-[50%]">
-              Empower your financial journey with Montra
+            <div className="text-[3.2vw] font-medium w-[25%] z-[10] absolute top-[-5%] left-[5%] capitalize font-display max-sm:w-[80%] max-sm:top-[-23%] max-sm:text-[8vw] max-md:top-[-28%] max-md:text-[5.5vw] max-md:w-[50%] leading-[1.2]">
+            Unlock Your Financial Potential with Montra
             </div>
-            <div className="flex flex-col gap-[1vw] absolute right-[5%] bottom-[35%] z-[10] max-sm:text-[4.1vw] max-sm:gap-[4vw] max-sm:bottom-[35%] max-md:bottom-[43%] max-md:gap-[2vw]">
-              <div className="w-[21vw] rounded-full border border-white/40 backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
-                Go cashless with ease
+            <div className="flex flex-col gap-[1vw] absolute right-[5%] bottom-[25%] z-[10] max-sm:text-[4.1vw] max-sm:gap-[4vw] max-sm:bottom-[35%] max-md:bottom-[43%] max-md:gap-[2vw]">
+              <div className="w-[23vw] rounded-full border border-white/40 backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
+              Go Cashless
               </div>
-              <div className="w-[21vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
-                Save smarter, spend better
+              <div className="w-[23vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
+              Pay Smarter
               </div>
-              <div className="w-[21vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
-                Get credit, insurance & more
+              <div className="w-[23vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
+              Shop Seamlessly
+              </div>
+              <div className="w-[23vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
+              Access Credit, Insurance &
+              Investment products
               </div>
             </div>
           </div>

@@ -187,7 +187,7 @@ const Steps = ({ stepData }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-[3.4vw] font-display mb-2 max-sm:text-[8.5vw] max-sm:font-medium max-md:text-[5.5vw]"
+              className="text-[3.4vw] font-display mb-[2vw] max-sm:text-[8.5vw] max-sm:font-medium max-md:text-[5.5vw] leading-[1.1]"
             >
               {stepData.steps[step].title}
             </motion.h3>

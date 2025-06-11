@@ -63,14 +63,14 @@ const faqContent = [
     },
   ];
 const overviewContent = {
-  icon1:"/assets/images/personal-banking/overview-icon-1.svg",
-  icon2:"/assets/images/personal-banking/overview-icon-2.svg",
+  icon1:"/assets/images/personal-payments/overview-icon-1.svg",
+  icon2:"/assets/images/personal-payments/overview-icon-2.svg",
   mainImg:"/assets/images/personal-banking/overview-phone.png",
   bgImg:"/assets/images/personal-payments/overview-bg-icon.svg",
   title:"Fast, Easy Payments—Right from Your Phone",
   content:[
     "Montra gives you a smarter way to manage your money—no cash, no complications. From sending money to friends and family, to paying bills, shopping, and more, Montra puts secure, fast, and reliable payments in your hands.",
-    "Whether you're buying airtime, paying rent, or splitting the tab, Montra keeps it simple—with just a few taps."
+    "Whether you're buying airtime, paying rent, or splitting the tab, Montra keeps it simple."
   ],
   subcontent1:"Pay Bills",
   subcontent2:"Send Money"
@@ -81,10 +81,10 @@ const  benefitsData = {
   headingWidth:"w-full",
   paraWidth:"w-full",
   cards:[
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Secure from the Start", z: "z-[5]", width:"w-[22vw]", height:"17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: " Advanced 2FA Protection", z: "z-[4]", width:"w-[24vw]", height:"17vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Built-In Payment Checks", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Your Privacy, Always", z: "z-[4]",  width:"w-[20vw]", height:"17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Your Montra App is protected by the password you set — and you can also unlock it easily using Face ID or biometric authentication on your phone.", title: "Secure from the Start", z: "z-[5]", width:"w-[22vw]", height:"17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Montra offers you a Free Soft-token service through the Verified app. When necessary, you would be prompted to enter the Soft-token code for authenticating your transaction request to protect you against fraud.", title: " Advanced 2FA Protection", z: "z-[4]", width:"w-[24vw]", height:"21vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Every payment on Montra is processed only after you successfully authenticate with your Montra PIN.", title: "Built-In Payment Checks", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "Only you and the person you’re transacting with can see the details of your payment — keeping your transactions private and secure.", title: "Your Privacy, Always", z: "z-[4]",  width:"w-[20vw]", height:"17vw" },
   ]
 }
 const rewardsData={
@@ -119,18 +119,18 @@ const cardData ={
   heading:"Send Money Your Way—Fast, Easy & Secure",
   subHeading:"The Montra App gives you multiple simple and reliable ways to send money—anytime, anywhere.",
   headingWidth:"w-[70%]",
-  icon1:"/assets/images/personal-payments/montra-account.svg",
-  icon2:"/assets/images/personal-payments/card-icon-2.svg",
-  icon3:"/assets/images/personal-payments/montra-account.svg",
-  icon4:"/assets/images/personal-payments/card-icon-4.svg",
+  icon1:"/assets/images/personal-payments/card-1.svg",
+  icon2:"/assets/images/personal-payments/card-2.svg",
+  icon3:"/assets/images/personal-payments/card-3.svg",
+  icon4:"/assets/images/personal-payments/card-4.svg",
   cardTitle1:"Montra Account",
   cardTitle2:"Linked Bank Accounts",
   cardTitle3:"Linked Cards",
   cardTitle4:"Installments",
-  cardContent1:"<p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>",
-  cardContent2:"<p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>",
-  cardContent3:"<p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>",
-  cardContent4:"<p>Use your saved debit or credit cards for quick, hassle-free transactions.</p>",
+  cardContent1:"<p>Make fast, hassle-free payments with your Montra Personal or Business Account.</p>",
+  cardContent2:"<p>Easily link your other bank accounts on the Montra app and manage all your payments in one place — one app for all your bank accounts.</p>",
+  cardContent3:"<p>Securely link your debit or credit cards on the Montra App and make seamless payments — no need to carry physical cards.</p>",
+  cardContent4:"<p>Don’t have enough cash? On Montra, you can instantly borrow money from our lending partners to complete your payment.</p>",
   
 }
 
