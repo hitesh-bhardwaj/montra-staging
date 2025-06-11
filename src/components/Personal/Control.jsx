@@ -461,7 +461,7 @@ const Control = () => {
       </div>
       <div className="w-screen h-[310vw] absolute top-0 left-0"></div>
 
-      <p className="w-[30%] h-fit fixed bottom-[10%] left-[5%] text-[3vw] font-display font-medium control-content opacity-0">
+      <p className="w-[30%] h-fit fixed bottom-[10%] left-[5%] text-[3vw] font-display font-medium control-content opacity-0 leading-[1.2]">
       Simple Money Management,
 Designed for You
       </p>

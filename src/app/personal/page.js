@@ -46,7 +46,7 @@ const faqContent = [
   {
     question: 'What is KYC Level?',
     answer:
-      "<p>KYC (Know Your Customer) levels refer to the stages of identity verification you complete on Montra.</p><ul class='list-disc pl-[2vw] space-y-[0.5vw] '><li><span class='font-semibold'>Level 1:</span> Basic sign-up with limited access and lower transaction limits.</li><li><span class='font-semibold'>Level 2:</span>Verified with BVN, unlocking higher limits and more features.</li><li><span class='font-semibold'>Level 3:</span> Fully verified with address and identity checks, providing maximum limits and full access to Montra’s services.</li></ul>",
+      "<p>KYC (Know Your Customer) levels refer to the stages of identity verification you complete on Montra.</p><ul class='list-disc pl-[2vw] space-y-[0.5vw] '><li><span class='font-semibold'>Level 1:</span> Basic sign-up with limited access and lower transaction limits.</li><li><span class='font-semibold'>Level 2:</span> Verified with BVN, unlocking higher limits and more features.</li><li><span class='font-semibold'>Level 3:</span> Fully verified with address and identity checks, providing maximum limits and full access to Montra’s services.</li></ul>",
   },
   {
     question: 'How do I find my KYC Level for this Account?',
@@ -55,7 +55,7 @@ const faqContent = [
   },
   {
     question: "What are transfer limits for various KYC Levels?",
-    answer: "<p>In-line with KYC policy from CBN, <span class='font-semibold'>Transfer Limit</span> is based on the KYC level type for the account. There are 3 level types:</p><ul class='list-disc pl-[2vw] space-y-[0.5vw]'><li><span class='font-semibold'>Level 1</span>:<ul class='list-disc pl-[2vw] space-y-[0.5vw]'><li>Daily transaction limit of ₦50,000</li><li>Maximum Balance limit on account of ₦200,000</li></ul></li><li><span class='font-semibold'>Level 2</span>:<ul class='list-disc pl-[2vw] space-y-[0.5vw]'><li>Daily transaction limit of ₦200,000</li><li>Maximum Balance limit on account of ₦500,000</li></ul></li><li><span class='font-semibold'>Level 3</span>:<ul class='list-disc pl-[2vw] space-y-[0.5vw]'><li>Daily transaction limit of ₦1,000,000</li><li>Maximum Balance limit on account of <span class='font-semibold'>Unlimited</span></li></ul></li></ul>"
+    answer: "<p>In-line with KYC policy from CBN, <span class='font-semibold'>Transfer Limit</span> is based on the KYC level type for the account. There are 3 level types:</p><ul class='list-disc pl-[2vw] space-y-[0.5vw]'><li><span class='font-semibold'>Level 1</span>:<ul class='list-disc pl-[2vw] space-y-[0.5vw]'><li>Daily transaction limit of <span class='font-semibold'>₦50,000</span></li><li>Maximum Balance limit on account of <span class='font-semibold'>₦200,000</span></li></ul></li><li><span class='font-semibold'>Level 2</span>:<ul class='list-disc pl-[2vw] space-y-[0.5vw]'><li>Daily transaction limit of <span class='font-semibold'>₦200,000</span></li><li>Maximum Balance limit on account of <span class='font-semibold'>₦500,000</span></li></ul></li><li><span class='font-semibold'>Level 3</span>:<ul class='list-disc pl-[2vw] space-y-[0.5vw]'><li>Daily transaction limit of <span class='font-semibold'>₦1,000,000</span></li><li>Maximum Balance limit on account of <span class='font-semibold'>Unlimited</span></li></ul></li></ul>"
   },
   {
     question: "How do I upgrade the KYC Level?",
