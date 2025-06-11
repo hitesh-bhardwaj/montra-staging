@@ -5,14 +5,13 @@ import React, { useEffect, useRef, useState } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { LinkButton } from "../Buttons";
 import Heading from "../Heading";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Control = () => {
   const [active, setActive] = useState("Banking");
   const [pointer, setPointer] = useState(true);
   const [pointerevent, setPointerEvent] = useState(false);
-  // const [enter, setEnter] = useState(false);
-  // const [tick, setTick] = useState(false);
   const prevActiveRef = useRef(active);
   const sectionRefs = useRef({});
 

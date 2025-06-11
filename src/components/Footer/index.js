@@ -1,96 +1,96 @@
 "use client"
 import Image from 'next/image'
 import logo from '../../../public/montra-white-logo.svg';
-import { ArrowRight, NftIcon, SellIcon, ReceiveIcon } from '../Buttons/icons'
+import { ArrowRight, NftIcon, SellIcon, PayIcon } from '../Buttons/icons'
 import React, { useEffect } from 'react'
 import { useAnimatedNavigation } from '../NavigationContext';
 import gsap from 'gsap';
 
 const iconMap = {
-    PAY: NftIcon,
-    RECEIVE: ReceiveIcon,
+    PAY: PayIcon,
+    RECEIVE: NftIcon,
     SELL: SellIcon,
 };
 
 export default function Footer() {
     const { navigateTo } = useAnimatedNavigation();
     const words = ['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL'];
-    useEffect(()=>{
-   const ctx = gsap.context(()=>{
-     if(globalThis.innerWidth<541){
-        gsap.to(".montra-logo", {
-            scrollTrigger: {
-              trigger: "#footer",
-              start: "top top",
-            //   markers: true,
-              onLeaveBack: () => {
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            if (globalThis.innerWidth < 541) {
                 gsap.to(".montra-logo", {
-                  filter: "brightness(1)",
-                  duration: 0,
+                    scrollTrigger: {
+                        trigger: "#footer",
+                        start: "top top",
+                        //   markers: true,
+                        onLeaveBack: () => {
+                            gsap.to(".montra-logo", {
+                                filter: "brightness(1)",
+                                duration: 0,
+                            });
+                        },
+                        onEnter: () => {
+                            gsap.to(".montra-logo", {
+                                filter: "brightness(16)",
+                                duration: 0,
+                            });
+                        },
+                        onLeave: () => {
+                            gsap.to(".montra-logo", {
+                                filter: "brightness(1)",
+                                duration: 0,
+                            });
+                        },
+                        onEnterBack: () => {
+                            gsap.to(".montra-logo", {
+                                filter: "brightness(16)",
+                                duration: 0,
+                            });
+                        },
+                    },
                 });
-              },
-              onEnter: () => {
-                gsap.to(".montra-logo", {
-                  filter: "brightness(16)",
-                  duration: 0,
-                });
-              },
-              onLeave: () => {
-                gsap.to(".montra-logo", {
-                  filter: "brightness(1)",
-                  duration: 0,
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(".montra-logo", {
-                  filter: "brightness(16)",
-                  duration: 0,
-                });
-              },
-            },
-          });
-          gsap.to(".ham-mobile",{
-            backgroundColor: "#215CFF",
-            duration:0,
-            scrollTrigger: {
-              trigger: "#footer",
-              start: "top top",
-            //   markers: true,
-              onEnter: () => {
                 gsap.to(".ham-mobile", {
-                  backgroundColor:"white",
-                  duration: 0,
-                });
-              },
-              onLeaveBack: () => {
-                gsap.to(".ham-mobile", {
-                  backgroundColor: "#215CFF",
-                  duration: 0,
-                });
-              },
-              onLeave: () => {
-                gsap.to(".ham-mobile", {
-                  backgroundColor: "#215CFF",
-                  duration: 0,
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(".ham-mobile", {
-                  backgroundColor: "white",
-                  duration: 0,
-                });
-              },
-            },
-          })
-     }
-   })
-   return()=>ctx.revert()
-    },[])
+                    backgroundColor: "#215CFF",
+                    duration: 0,
+                    scrollTrigger: {
+                        trigger: "#footer",
+                        start: "top top",
+                        //   markers: true,
+                        onEnter: () => {
+                            gsap.to(".ham-mobile", {
+                                backgroundColor: "white",
+                                duration: 0,
+                            });
+                        },
+                        onLeaveBack: () => {
+                            gsap.to(".ham-mobile", {
+                                backgroundColor: "#215CFF",
+                                duration: 0,
+                            });
+                        },
+                        onLeave: () => {
+                            gsap.to(".ham-mobile", {
+                                backgroundColor: "#215CFF",
+                                duration: 0,
+                            });
+                        },
+                        onEnterBack: () => {
+                            gsap.to(".ham-mobile", {
+                                backgroundColor: "white",
+                                duration: 0,
+                            });
+                        },
+                    },
+                })
+            }
+        })
+        return () => ctx.revert()
+    }, [])
 
     return (
         <>
             <footer
-            id='footer'
+                id='footer'
                 className="w-screen h-[43vw] max-sm:h-full max-sm:rounded-t-[10vw] max-sm:overflow-hidden max-md:h-[115vw] "
                 style={{ clipPath: 'rect(0px 100% 100% 0px)' }}
             >

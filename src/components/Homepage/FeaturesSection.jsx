@@ -134,34 +134,34 @@ const item = {
 const FeatureSection = () => {
     const sectionRef = useRef(null);
     const deviceType = useDeviceType();
- useEffect(()=>{
-  const ctx = gsap.context(()=>{
-     gsap.from(".phone-mockup-desktop",{
-        opacity:0,
-        yPercent:10,
-        delay:4.2,
-     })
-  })
-  return()=>ctx.revert()
- },[])
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from(".phone-mockup-desktop", {
+                opacity: 0,
+                yPercent: 10,
+                delay: 4.2,
+            })
+        })
+        return () => ctx.revert()
+    }, [])
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start end", "end start"]
     });
 
     const startValue = deviceType === "desktop"
-  ? "-10%"
-  : deviceType === "tablet"
-  ? "-60%"
-  : "-50%"; // Assuming mobile also uses -50% like tablet (you can adjust)
+        ? "-10%"
+        : deviceType === "tablet"
+            ? "-60%"
+            : "-50%"; // Assuming mobile also uses -50% like tablet (you can adjust)
 
-const endValue = deviceType === "desktop"
-  ? "19%"
-  : deviceType === "tablet"
-  ? "-21.5%"
-  : "-15%";
+    const endValue = deviceType === "desktop"
+        ? "19%"
+        : deviceType === "tablet"
+            ? "-21.5%"
+            : "-15%";
 
-const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
+    const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
 
     return (
         <motion.section
@@ -174,15 +174,15 @@ const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
         >
             <div className="relative inline-block z-[99] w-[45vw] h-[52vw] max-sm:translate-y-0 max-sm:w-[100vw] max-sm:h-[120vw] max-md:w-[85vw] max-md:h-[80vw] mockup-container">
                 <motion.div className="h-[110%]" style={{ y }}>
-                     <Image
-                              // id="hero-phone-image"
-                              src="/assets/images/montra-loader-mockup.png"
-                              alt="App mockup"
-                              width={1200}
-                              height={1400}
-                              className="w-[70%] h-[70%] object-contain absolute left-[15%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-105%] max-md:translate-y-[-150%] max-sm:translate-y-[-160%] z-[9999]"
+                    <Image
+                        // id="hero-phone-image"
+                        src="/assets/images/montra-loader-mockup.png"
+                        alt="App mockup"
+                        width={1200}
+                        height={1400}
+                        className="w-[70%] h-[70%] object-contain absolute left-[15%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-105%] max-md:translate-y-[-150%] max-sm:translate-y-[-160%] z-[9999]"
                     />
-                   <Image
+                    <Image
                         // id="hero-phone-image"
                         src="/assets/images/homepage/phone-mockup.png"
                         alt="App mockup"
@@ -190,7 +190,7 @@ const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
                         height={1400}
                         className="w-[65%] hidden max-md:block  h-auto max-sm:translate-x-0 object-cover max-sm:block max-sm:w-[120vw] max-sm:h-[140vw] relative z-[9999] max-md:w-[90vw]"
                     />
-                     <Image
+                    <Image
                         // id="hero-phone-image"
                         src="/assets/images/homepage/phone-hand-mockup.png"
                         alt="App mockup"
@@ -204,15 +204,15 @@ const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
                         deviceType === "mobile"
                             ? icon.mobileStyle
                             : deviceType === "tablet"
-                            ? icon.tabletStyle
-                            : icon.style;
+                                ? icon.tabletStyle
+                                : icon.style;
 
                     const offsets =
                         deviceType === "mobile"
                             ? { xOffset: icon.mobilexOffset, yOffset: icon.mobileyOffset }
                             : deviceType === "tablet"
-                            ? { xOffset: icon.tabletxOffset, yOffset: icon.tabletyOffset }
-                            : { xOffset: icon.xOffset, yOffset: icon.yOffset };
+                                ? { xOffset: icon.tabletxOffset, yOffset: icon.tabletyOffset }
+                                : { xOffset: icon.xOffset, yOffset: icon.yOffset };
 
                     return (
                         <motion.div

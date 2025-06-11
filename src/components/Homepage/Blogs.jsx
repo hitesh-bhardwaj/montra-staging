@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import blog1 from "../../../public/assets/images/homepage/blog-1.png";
 import blog2 from "../../../public/assets/images/homepage/blog-2.png";
@@ -11,7 +12,9 @@ import Link from "next/link";
 // import Link from "next/link";
 
 export default function Blogs() {
+
   const [active, setActive] = useState(0);
+
   return (
     <section className="p-[4vw] max-sm:py-[15%] max-sm:px-[7vw] bg-[#FBFBFB] relative max-md:py-[7%]">
       <div className="flex flex-col items-center justify-center max-sm:gap-[8vw] max-sm:items-start max-md:gap-[7vw]">

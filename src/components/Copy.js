@@ -15,75 +15,75 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
 
   useEffect(() => {
 
-      if (!containerRef.current) return;
+    if (!containerRef.current) return;
 
-      splitRefs.current = [];
-      lines.current = [];
-      elementRefs.current = [];
+    splitRefs.current = [];
+    lines.current = [];
+    elementRefs.current = [];
 
-      let elements = [];
-      if (containerRef.current.hasAttribute("data-copy-wrapper")) {
-        elements = Array.from(containerRef.current.children);
-      } else {
-        elements = [containerRef.current];
-      }
+    let elements = [];
+    if (containerRef.current.hasAttribute("data-copy-wrapper")) {
+      elements = Array.from(containerRef.current.children);
+    } else {
+      elements = [containerRef.current];
+    }
 
-      elements.forEach((element) => {
-        elementRefs.current.push(element);
+    elements.forEach((element) => {
+      elementRefs.current.push(element);
 
-        const split = SplitText.create(element, {
-          type: "lines",
-          mask: "lines",
-          linesClass: "line++",
-          lineThreshold: 0.1,
-        });
-
-        splitRefs.current.push(split);
-
-        const computedStyle = window.getComputedStyle(element);
-        const textIndent = computedStyle.textIndent;
-
-        if (textIndent && textIndent !== "0px") {
-          if (split.lines.length > 0) {
-            split.lines[0].style.paddingLeft = textIndent;
-          }
-          element.style.textIndent = "0";
-        }
-
-        lines.current.push(...split.lines);
+      const split = SplitText.create(element, {
+        type: "lines",
+        mask: "lines",
+        linesClass: "line++",
+        lineThreshold: 0.1,
       });
 
-      gsap.set(lines.current, { y: "100%" });
+      splitRefs.current.push(split);
 
-      const animationProps = {
-        y: "0%",
-        duration: 1.4,
-        stagger: 0.15,
-        ease: "power4.out",
-        delay: delay,
-      };
+      const computedStyle = window.getComputedStyle(element);
+      const textIndent = computedStyle.textIndent;
 
-      if (animateOnScroll) {
-        gsap.to(lines.current, {
-          ...animationProps,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 90%",
-            once: true,
-          },
-        });
-      } else {
-        gsap.to(lines.current, animationProps);
+      if (textIndent && textIndent !== "0px") {
+        if (split.lines.length > 0) {
+          split.lines[0].style.paddingLeft = textIndent;
+        }
+        element.style.textIndent = "0";
       }
 
-      return () => {
-        splitRefs.current.forEach((split) => {
-          if (split) {
-            split.revert();
-          }
-        });
-      };
-    }, [animateOnScroll, delay]);
+      lines.current.push(...split.lines);
+    });
+
+    gsap.set(lines.current, { y: "100%" });
+
+    const animationProps = {
+      y: "0%",
+      duration: 1.4,
+      stagger: 0.15,
+      ease: "power4.out",
+      delay: delay,
+    };
+
+    if (animateOnScroll) {
+      gsap.to(lines.current, {
+        ...animationProps,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 90%",
+          once: true,
+        },
+      });
+    } else {
+      gsap.to(lines.current, animationProps);
+    }
+
+    return () => {
+      splitRefs.current.forEach((split) => {
+        if (split) {
+          split.revert();
+        }
+      });
+    };
+  }, [animateOnScroll, delay]);
 
   if (React.Children.count(children) === 1) {
     return React.cloneElement(children, { ref: containerRef });

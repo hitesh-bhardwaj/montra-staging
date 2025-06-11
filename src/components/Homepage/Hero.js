@@ -1,14 +1,19 @@
+'use client'
 import { useEffect, useRef } from "react";
 import { AppleStoreButton, PlayStoreButton } from "../Buttons";
 import gsap from "gsap";
 import { useLenis } from "lenis/react";
 import Copy from "../Copy";
 import Heading from "../Heading";
+import { fadeUpAnim, lineAnim } from "@/components/gsapAnimations";
 
 export default function Hero() {
   const heroRef = useRef(null);
   const lenis = useLenis();
   const textRef = useRef(null);
+
+  lineAnim();
+  fadeUpAnim();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -20,10 +25,10 @@ export default function Hero() {
         ease: "power2.out",
         delay: 3.5,
       })
-      .to("#nav-container",{
-        opacity:1,
-        delay:-0.5
-      })
+        .to("#nav-container", {
+          opacity: 1,
+          delay: -0.5
+        })
         .from(
           "#hero-btn-container",
           {

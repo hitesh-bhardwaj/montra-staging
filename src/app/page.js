@@ -1,6 +1,3 @@
-"use client"
-
-import { fadeUpAnim, lineAnim } from "@/components/gsapAnimations";
 import Blogs from "@/components/Homepage/Blogs";
 import FAQs from "@/components/Homepage/FAQs";
 import FeatureSection from "@/components/Homepage/FeaturesSection";
@@ -12,50 +9,22 @@ import SectionBreak from "@/components/Homepage/SectionBreak";
 import Testimonials from "@/components/Homepage/Testimonials";
 import VisionMission from "@/components/Homepage/VisionMission";
 import LoaderCopy from "@/components/LoaderCopy";
-import NewLoader from "@/components/NewLoader";
-import { useEffect, useState } from "react";
-
+// import NewLoader from "@/components/NewLoader";
 
 export default function Home() {
-
-  const [mobileWidth, setMobileWidth] = useState(false);
-
-  useEffect(() => {
-    if (globalThis.innerWidth > 1024) {
-      setMobileWidth(false);
-    } else {
-      setMobileWidth(true);
-    }
-  }, []);
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    const handleBeforeUnload = () => {
-      window.scrollTo(0, 0);
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []);
-
-  lineAnim();
-  fadeUpAnim();
 
   return (
     <>
       {/* <Loader /> */}
       {/* <NewLoader/> */}
       {/* <NewLoader/> */}
-      <LoaderCopy/>
+      <LoaderCopy />
       <Hero />
       <FeatureSection />
       <FeaturesText />
       {/* <div className="max-sm:min-h-[180vh] max-md:min-h-screen"> */}
-      <PaymentMobile /> 
-        <PaymentSection/>
+      <PaymentMobile />
+      <PaymentSection />
       {/* </div> */}
       <SectionBreak />
       <VisionMission />

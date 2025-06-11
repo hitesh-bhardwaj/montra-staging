@@ -4,14 +4,13 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import bgImage from '../../../public/assets/images/homepage/testimonial-image.png'
-// import Swiper from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { FreeMode, Pagination } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/free-mode'
-import Heading from '../Heading'
+import bgImage from '../../../public/assets/images/homepage/testimonial-bg.png';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+import Heading from '../Heading';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger)
@@ -92,6 +91,7 @@ export default function Testimonials() {
                 placeholder="blur"
                 alt="testimonial background"
                 fill
+                quality={90}
                 className="z-0 object-cover object-top"
             />
 
@@ -128,7 +128,7 @@ export default function Testimonials() {
                             spaceBetween={20}
                             breakpoints={{
                                 768: { slidesPerView: 2, spaceBetween: 30 },
-                                1024:{slidesPerView:3,spaceBetween:30}
+                                1024: { slidesPerView: 3, spaceBetween: 30 }
                             }}
                             freeMode={true}
                             speed={500}
@@ -148,7 +148,6 @@ export default function Testimonials() {
                             ))}
                         </Swiper>
                     </div>
-
                 }
             </div>
         </section>

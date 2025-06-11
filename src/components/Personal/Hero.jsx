@@ -6,10 +6,15 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Heading from "../Heading";
 import Copy from "../Copy";
 import { useLenis } from "lenis/react";
+import img1 from "../../../public/assets/images/personal/personal-hero-1.png"
+import img2 from "../../../public/assets/images/personal/personal-hero-2.png"
+import img3 from "../../../public/assets/images/personal/personal-hero-3.png"
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const lenis = useLenis();
+
   useEffect(() => {
     lenis && lenis.stop();
 
@@ -78,7 +83,7 @@ const Hero = () => {
 
           })
       }
-      if(globalThis.innerWidth>541&&globalThis.innerWidth<1024){
+      if (globalThis.innerWidth > 541 && globalThis.innerWidth < 1024) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#hero",
@@ -89,16 +94,16 @@ const Hero = () => {
             scrub: 0.5,
           },
         });
-       
-          tl.to(".hero-image-anim", {
-            width: "105vw",
-            height: "150vw",
-            ease: "none",
-            left: "-2.5%",
-            top: "-204%",
-            delay: -0.5,
-            borderRadius: "0vw",
-          })
+
+        tl.to(".hero-image-anim", {
+          width: "105vw",
+          height: "150vw",
+          ease: "none",
+          left: "-2.5%",
+          top: "-204%",
+          delay: -0.5,
+          borderRadius: "0vw",
+        })
           .to(".hero-main-card", {
             height: "60vw",
             yPercent: -10,
@@ -117,7 +122,7 @@ const Hero = () => {
             ease: "none",
           });
       }
-      if(globalThis.innerWidth<541) {
+      if (globalThis.innerWidth < 541) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#hero",
@@ -153,76 +158,76 @@ const Hero = () => {
             delay: -0.3,
             ease: "none",
           });
-          gsap.to(".montra-logo", {
-            // filter:"brightness(1)",
-            scrollTrigger: {
-              trigger: "#hero",
-              start: "39% top",
-              // markers: true,
-              onLeaveBack: () => {
-                gsap.to(".montra-logo", {
-                  filter: "brightness(1)",
-                  duration: 0,
-                });
-              },
-              onEnter: () => {
-                gsap.to(".montra-logo", {
-                  filter: "brightness(16)",
-                  duration: 0,
-                });
-              },
-              onLeave: () => {
-                gsap.to(".montra-logo", {
-                  filter: "brightness(1)",
-                  duration: 0,
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(".montra-logo", {
-                  filter: "brightness(16)",
-                  duration: 0,
-                });
-              },
+        gsap.to(".montra-logo", {
+          // filter:"brightness(1)",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "39% top",
+            // markers: true,
+            onLeaveBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
             },
-          });
-          gsap.to(".ham-mobile",{
-            backgroundColor: "#215CFF",
-            duration:0,
-            scrollTrigger: {
-              trigger: "#hero",
-              start: "39% top",
-              // markers: true,
-              onEnter: () => {
-                gsap.to(".ham-mobile", {
-                  backgroundColor:"white",
-                  duration: 0,
-                });
-              },
-              onLeaveBack: () => {
-                gsap.to(".ham-mobile", {
-                  backgroundColor: "#215CFF",
-                  duration: 0,
-                });
-              },
-              onLeave: () => {
-                gsap.to(".ham-mobile", {
-                  backgroundColor: "#215CFF",
-                  duration: 0,
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(".ham-mobile", {
-                  backgroundColor: "white",
-                  duration: 0,
-                });
-              },
+            onEnter: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
             },
-          })
+            onLeave: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(1)",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".montra-logo", {
+                filter: "brightness(16)",
+                duration: 0,
+              });
+            },
+          },
+        });
+        gsap.to(".ham-mobile", {
+          backgroundColor: "#215CFF",
+          duration: 0,
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "39% top",
+            // markers: true,
+            onEnter: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "white",
+                duration: 0,
+              });
+            },
+            onLeaveBack: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "#215CFF",
+                duration: 0,
+              });
+            },
+            onLeave: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "#215CFF",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "white",
+                duration: 0,
+              });
+            },
+          },
+        })
       }
     });
     return () => ctx.revert();
   }, []);
-  
+
   return (
     <section className="w-screen h-[270vh] max-sm:h-[560vw] overflow-hidden max-md:h-[215vh]" id="hero">
       <div className="w-full h-full flex flex-col gap-[2vw] max-sm:gap-[12vw]">
@@ -242,14 +247,15 @@ const Hero = () => {
           </Copy>
         </div>
         <div className="w-full flex px-[10vw] h-[30vw] items-center justify-between text-white hero-image-container relative max-sm:h-[120vw]">
-          
+
           <div className="fadeUpHero w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[12%] top-[10%] hero-left-card max-sm:hidden max-md:hidden">
             <div className="relative w-full h-full">
               <div className="absolute top-[5%] right-[5%] w-fit px-[1.2vw] py-[0.5vw] bg-primary rounded-full z-[2]">
                 Account
               </div>
               <Image
-                src={"/assets/images/personal/personal-hero-1.png"}
+                src={img1}
+                placeholder="blur"
                 alt="personal-hero-1"
                 className="object-cover h-full w-full brightness-80"
                 width={1920}
@@ -257,13 +263,15 @@ const Hero = () => {
               />
               <div className="w-[85%] absolute bottom-[5%] left-[7.5%] flex flex-col gap-[0.5vw] items-center">
                 <span className="text-[3.4vw] font-bold font-display">
-                  N 10,000
+                  ₦ 10,000
                 </span>
 
                 <div className="w-full  bg-white rounded-[1.2vw] h-fit py-[0.8vw]  text-black ">
                   <div className="w-full flex justify-between px-[0.5vw] pr-[1vw]">
                     <div className="w-fit flex gap-[0.5vw] ">
-                      <div className="w-[2.5vw] h-[2.5vw] rounded-full bg-orange-400" />
+                      <div className="w-[2.5vw] h-[2.5vw] p-1.5 rounded-full bg-orange-400">
+                        <img src="/assets/icons/coffee.svg" className="h-full w-full" />
+                      </div>
                       <div className="flex flex-col">
                         <p className="text-[1.2vw] leading-[1]">Coffee</p>
                         <p className="text-[1vw] font-light">Yesterday, 9:10</p>
@@ -283,13 +291,15 @@ const Hero = () => {
                 Account
               </div>
               <span className="text-[3.4vw] font-bold font-display absolute bottom-[30%] left-[22%] max-sm:text-[14vw] max-sm:left-[12%] max-sm:bottom-[25%] max-md:text-[7.5vw] max-md:left-[15%]">
-                N 50,000
+                ₦ 50,000
               </span>
               <div className="w-[85%] absolute bottom-[5%] left-[7.5%] flex flex-col gap-[0.5vw] items-center">
                 <div className="w-full  bg-white rounded-[1.2vw] h-fit py-[0.8vw]  text-black max-sm:py-[2vw] max-sm:px-[1vw] max-sm:rounded-[4.5vw] max-md:py-[2vw] max-md:px-[2vw] max-md:rounded-[3vw] ">
                   <div className="w-full flex justify-between px-[0.5vw] pr-[1vw] max-sm:px-[2vw]">
                     <div className="w-fit flex gap-[0.5vw] max-sm:gap-[2vw] max-md:gap-[1.5vw]">
-                      <div className="w-[2.5vw] h-[2.5vw] rounded-full bg-primary max-sm:w-[10vw] max-sm:h-[10vw] max-md:w-[5.5vw] max-md:h-[5.5vw]" />
+                      <div className="w-[2.5vw] h-[2.5vw] p-1.5 rounded-full bg-primary max-sm:w-[10vw] max-sm:h-[10vw] max-md:w-[5.5vw] max-md:h-[5.5vw]">
+                        <img src="/assets/icons/house-bill.svg" className="h-full w-full" />
+                      </div>
                       <div className="flex flex-col">
                         <p className="text-[1.2vw] leading-[1] max-sm:text-[4.7vw] max-md:text-[3vw]">House Bill</p>
                         <p className="text-[1vw] font-light max-sm:text-[3.4vw] max-md:text-[2vw]">Due Today</p>
@@ -303,7 +313,8 @@ const Hero = () => {
           </div>
           <div className="fadeUpHero w-[27vw] h-[31vw] overflow-hidden rounded-[3vw] absolute z-[4] left-[36%] hero-image-anim top-0 max-sm:w-[80vw] max-sm:h-[110vw] max-sm:left-[10%] max-sm:rounded-[7vw] max-md:w-[45vw] max-md:h-[55vw] max-md:left-[27%]">
             <Image
-              src={"/assets/images/personal/personal-hero-2.png"}
+              src={img2}
+              placeholder="blur"
               alt="personal-hero-1"
               className="object-cover h-full w-full brightness-75"
               width={1920}
@@ -317,7 +328,8 @@ const Hero = () => {
             </div>
 
             <Image
-              src={"/assets/images/personal/personal-hero-3.png"}
+              src={img3}
+              placeholder="blur"
               alt="personal-hero-1"
               className="object-cover h-full w-full brightness-75"
               width={1920}
@@ -325,13 +337,15 @@ const Hero = () => {
             />
             <div className="w-[85%] absolute bottom-[5%] left-[7.5%] flex flex-col gap-[0.5vw] items-center">
               <span className="text-[3.4vw] font-bold font-display">
-                N 35,000
+                ₦ 35,000
               </span>
 
               <div className="w-full  bg-white rounded-[1.2vw] h-fit py-[0.8vw]  text-black ">
                 <div className="w-full flex justify-between px-[0.5vw] pr-[1vw]">
                   <div className="w-fit flex gap-[0.5vw] ">
-                    <div className="w-[2.5vw] h-[2.5vw] rounded-full bg-[#FB2F55]" />
+                    <div className="w-[2.5vw] h-[2.5vw] rounded-full p-1 bg-[#FB2F55]">
+                      <img src="/assets/icons/salary.svg" className="h-full w-full" />
+                    </div>
                     <div className="flex flex-col">
                       <p className="text-[1.2vw] leading-[1]">Salary</p>
                       <p className="text-[1vw] font-light">Today, 12:03</p>
