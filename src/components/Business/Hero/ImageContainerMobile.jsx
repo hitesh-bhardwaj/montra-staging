@@ -80,9 +80,11 @@ export const ImageContainerMobile = ({ img1, img2, img3, container }) => {
                     <span className="bg-primary text-white px-2 py-1 rounded-full self-end">
                         Business
                     </span>
-                    <h3 className="text-white text-4xl font-bold font-display self-center">₦ 20,000</h3>
+                    <h3 className="text-white text-4xl font-bold font-display self-center">₦ 50,000</h3>
                     <div className="bg-white p-2 rounded-2xl flex items-center gap-2 w-full">
-                        <span className="w-8 h-8 rounded-full bg-primary" />
+                        <div className="w-[10vw] h-[10vw] rounded-full bg-primary p-[1vw]" >
+                                                   <Image src={"/assets/images/business/business-total-amount.svg"} alt="amout svg" className="w-full h-full object-contain" width={100} height={100}/>
+                                                </div>
                         <div className="text-black-1">
                             <div className="text-[14px]">Total Amount Collected</div>
                             <div className="text-sm font-display">Today</div>

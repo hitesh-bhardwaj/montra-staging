@@ -97,7 +97,7 @@ const icons = [
         tabletxOffset: 250,
         tabletyOffset: 0,
         mobilexOffset: 70,
-        mobileyOffset: -200,
+        mobileyOffset: -250,
     },
     {
         poster: '/assets/images/homepage/image-5.png',
@@ -125,7 +125,7 @@ const icons = [
         tabletxOffset: 100,
         tabletyOffset: 100,
         mobilexOffset: 90,
-        mobileyOffset: -140,
+        mobileyOffset: -80,
     },
 ];
 
@@ -244,7 +244,7 @@ const FeatureSection = () => {
                                 loop
                                 autoPlay
                                 playsInline
-                                className="h-full w-full object-cover scale-[1.02]"
+                                className="h-full w-full object-cover scale-[1.02] max-md:scale-[1.03]"
                             />
                         </motion.div>
                     );

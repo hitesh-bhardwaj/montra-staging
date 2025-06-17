@@ -97,7 +97,7 @@ export default function Control({ allowMultiple = false }) {
     <section className="px-[7vw] py-[6vw] w-full ">
       <div className="flex flex-col items-center max-sm:gap-[15vw] max-md:gap-[7vw]">
         <h2 className="font-display font-medium max-sm:text-[11.5vw] leading-[1.2] max-md:text-[7.5vw]">
-          Take Control of Your Money. Effortlessly.
+          Take Control of Your Finances. Effortlessly.
         </h2>
         <div className="w-full max-sm:space-y-[2vw] max-md:space-y-0">
           {controlContent.map((f, i) => (

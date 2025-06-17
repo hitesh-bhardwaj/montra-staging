@@ -277,7 +277,7 @@ export default function Header() {
                             : "duration-700 mb-[1vw]"
                         } ${
                           openSection === section.title
-                            ? "max-h-[50vw] opacity-100"
+                            ? "max-h-[80vw] opacity-100"
                             : "max-h-0 opacity-0"
                         }`}
                       >

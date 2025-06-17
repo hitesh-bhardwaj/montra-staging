@@ -33,7 +33,7 @@ const faqContent = [
     {
       question: 'What is Montra Store and how is it different from other marketplaces? ',
       answer:
-        "<p>- Montra Store is a virtual storefront designed to help merchants sell directly to customers online—via chat, social media, or in-app browsing—while also integrating payment, inventory, and order management tools in one place. Unlike other marketplaces, it’s built into the Montra ecosystem for faster settlements and smarter control. Every store has a unique URL you can copy and share via WhatsApp, SMS, Instagram bio, or anywhere else online. You can also share individual product links directly from your dashboard.</p>",
+        "<p>Montra Store is a virtual storefront designed to help merchants sell directly to customers online—via chat, social media, or in-app browsing—while also integrating payment, inventory, and order management tools in one place. Unlike other marketplaces, it’s built into the Montra ecosystem for faster settlements and smarter control. Every store has a unique URL you can copy and share via WhatsApp, SMS, Instagram bio, or anywhere else online. You can also share individual product links directly from your dashboard.</p>",
     },
     {
       question: 'How do I set up my Montra Store? ',
@@ -81,7 +81,7 @@ const overviewContent = {
 }
 const  benefitsData = {
   heading:"Financial Infrastructure for the Modern Enterprise",
-  para:"Open your free Montra digital account in minutes.",
+  para:"Set Up Your Free Montra Store in minutes",
   headingWidth:"w-full",
   paraWidth:"w-full",
   cards:[

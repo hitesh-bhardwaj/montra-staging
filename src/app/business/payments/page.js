@@ -36,7 +36,7 @@ const faqContent = [
     {
       question: "What payment methods can my business accept on Montra?",
       answer:
-        "<p>Your Montra Business Account supports a variety of flexible, secure payment channels:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li><span class='font-semibold'>Tap & Pay:</span> Accept contactless card payments using your NFC-enabled smartphone—no extra hardware required.</li><li><span class='font-semibold'>QR Code Payments:</span> Share your unique Montra QR code so customers can scan and pay instantly.</li><li><span class='font-semibold'>POS Terminal:</span> Use Montra’s physical POS device to accept card payments and track transactions.</li><li><span class='font-semibold'>Bank Transfers:</span> Receive payments directly into your Montra Business Account using standard bank transfers.</li></ul>",
+        "<p>Your Montra Business Account supports a variety of flexible, secure payment channels:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li><span class='font-semibold'>Tap & Pay:</span> Accept contactless card payments using your NFC-enabled smartphone—no extra hardware required.</li><li><span class='font-semibold'>QR Code Payments:</span> Share your unique Montra QR code so customers can scan and pay instantly.</li><li><span class='font-semibold'>POS Terminal:</span> Use Montra’s physical POS device to accept card payments and track transactions.</li><li><span class='font-semibold'>Bank Transfers:</span> Receive payments directly into your Montra Business Account using standard bank transfers.</li></ul>",
     },
     {
       question: "Can I schedule or automate payments?",

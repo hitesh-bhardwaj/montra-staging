@@ -43,7 +43,7 @@ const faqContent = [
     {
       question: "What do I need to get started?",
       answer:
-        "<p>To become a Montra Agent, you'll need:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>A smartphone with the Montra App installed</li><li>A valid means of identification (e.g., NIN, BVN, or national ID)</li><li>A clear photo of your business location.</li><li>A Montra Business/Merchant  account for commissions and settlement.</li></ul><p>Once registered, you’ll get access to your Agent dashboard to start offering services immediately.</p>",
+        "<p>To become a Montra Agent, you'll need:</p><ul class='pl-[2vw] space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw] list-disc'><li>A smartphone with the Montra App installed</li><li>A valid means of identification (e.g., NIN, BVN, or national ID)</li><li>A clear photo of your business location.</li><li>A Montra Business/Merchant  account for commissions and settlement.</li></ul><p>Once registered, you’ll get access to your Agent dashboard to start offering services immediately.</p>",
     },
     {
       question: "How do I earn as a Montra Agent?",

@@ -43,7 +43,7 @@ const faqContent = [
     {
       question: 'How do I accept payments using Tap & Pay?',
       answer:
-        "<p>Here’s how Tap & Pay works on Montra:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Open your <span class='font-semibold'>Montra Business Account</span> and tap span class='font-semibold'>'Tap & Pay'</span> on the home screen.</li><li>Enter the payment amount.</li><li>Ask the customer to tap their <span class='font-semibold'>contactless debit or credit card</span> on the back of your NFC-enabled phone.</li><li>The customer enters their <span class='font-semibold'>card PIN</span> on your screen</li><li>The payment is processed instantly.</li><li>Share  the receipt directly from the app.</li></ul>",
+        "<p>Here’s how Tap & Pay works on Montra:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc  max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>Open your <span class='font-semibold'>Montra Business Account</span> and tap span class='font-semibold'>'Tap & Pay'</span> on the home screen.</li><li>Enter the payment amount.</li><li>Ask the customer to tap their <span class='font-semibold'>contactless debit or credit card</span> on the back of your NFC-enabled phone.</li><li>The customer enters their <span class='font-semibold'>card PIN</span> on your screen</li><li>The payment is processed instantly.</li><li>Share  the receipt directly from the app.</li></ul>",
     },
     {
       question: 'What devices can I use for Tap & Pay?',
@@ -91,9 +91,9 @@ const cardData ={
   icon2:"/assets/images/business-tapnpay/card-icon-2.svg",
   icon3:"/assets/images/business-tapnpay/card-icon-3.svg",
   icon4:"/assets/images/business-tapnpay/card-icon-4.svg",
-  cardTitle1:"Accept Contactless Card Payments",
+  cardTitle1:"Accept Contactless Card Instantly",
   cardTitle4:"Fast Setup & Activation",
-  cardTitle2:"Get Started Instantly",
+  cardTitle2:"Get Started Fast",
   cardTitle3:"Smart Dashboard ",
   cardContent1:"<p>Easily accept payments from any physical contactless debit or credit card — no extra hardware or dongles needed.</p>",
   cardContent2:"<p>Activate Tap & Pay directly in your Montra App and start accepting payments right away.</p>",

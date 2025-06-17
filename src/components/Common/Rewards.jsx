@@ -61,7 +61,7 @@ const Rewards = ({ rewardsData }) => {
         </Heading>
         {rewardsData.para ? (
           <Copy>
-            <p className="w-[50%]">{rewardsData.para}</p>
+            <p className="w-[50%] max-sm:w-[80%]">{rewardsData.para}</p>
           </Copy>
         ) : (
           <></>

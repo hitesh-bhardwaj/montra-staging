@@ -189,42 +189,42 @@ const data = [
     classPrefix: "m",
     color: "bg-[#D9F7C5]",
     content:
-      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+      "Managing Finances can be complicated. That’s why we thrive on Innovation to make things easier for our customers by providing new & easier ways to Pay, Borrow, Save, Invest, & manage money.",
     title: "Make Things Easier",
   },
   {
     classPrefix: "o",
     color: "bg-[#FFEAEE]",
     content:
-      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence.",
     title: "Operational Excellence",
   },
   {
     classPrefix: "n",
     color: "bg-[#EAF1FF]",
     content:
-      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+      "We continuously strive to improve & innovate by learning from both the things that we do well, and those needing improvement. We are ambitious & are forever looking to raise the bar.",
     title: "Never Settle",
   },
   {
     classPrefix: "t",
     color: "bg-[#CAC5F7]",
     content:
-      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+      "We are honest, reliable, transparent & committed to doing what’s best for our customers. We believe in saying only what we do.",
     title: "Trustworthiness",
   },
   {
     classPrefix: "r",
     color: "bg-[#FFD7CB]",
     content:
-      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+      "We value every employee, partner & customer we have. We treat each of them with dignity & professionalism to nurture an environment that’s transparent & ethical.",
     title: "Respect",
   },
   {
     classPrefix: "a",
     color: "bg-[#FEFFA7]",
     content:
-      "We strive for highest standards of quality & service delivery through consistent focus on improvements for achieving Operational Excellence",
+      "We accept full responsibility for our decisions, actions & their outcomes. We take ownership, focus on finding solutions &, achieving results towards getting things done.",
     title: "Accountability",
   },
 ];
