@@ -60,11 +60,13 @@ export default function TimelineSlide({  year, direction, data }) {
                 classPrefix={card.classPrefix}
                 color={card.color}
                 title={card.title}
+                h={card.h}
+                para={card.para}
                 content={card.content}
               />
             </motion.div>
           ))}
-          {data.images.map((img, i) => (
+          {data.images&&data.images.map((img, i) => (
             <motion.div
               key={`${year}0-${i}`}
               style={{ top: img.top, left: img.left }}

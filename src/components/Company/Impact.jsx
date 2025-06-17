@@ -4,6 +4,7 @@ import Heading from "../Heading";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const Impact = () => {
@@ -54,12 +55,15 @@ const Impact = () => {
         </Heading>
         <div className="grid grid-cols-3 gap-x-[6vw] max-sm:flex-col max-sm:gap-[10vw] max-sm:flex max-md:flex max-md:flex-wrap max-md:gap-[8vw] ">
           <div className="text-black-1 col-span-1 col-start-1 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[0] = el)}>
-            <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw]" />
+            {/* <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw]" /> */}
+            <div className="w-[4vw] h-[4vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw] ml-[-0.7vw]">
+              <Image src={"/assets/images/company/impact-logo-1.svg"} alt="" className="w-full h-full object-contain" width={100} height={100}/>
+
+            </div>
             <Copy>
               <p className="mb-[3vw] max-sm:mb-[8vw] max-md:mb-[8vw]">
-                We are a fintech company dedicated to connecting cash-based
-                communities with the digital economy through simple, accessible
-                financial tools.
+              We are a fintech company committed to bridging the gap between cash-based communities and the digital economy through simple, accessible, and inclusive financial tools.
+
               </p>
             </Copy>
             <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden">
@@ -67,9 +71,11 @@ const Impact = () => {
             </div>
           </div>
           <div className="text-black-1 col-span-1 col-start-2 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[1] = el)}>
-            <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]  max-md:h-[8vw] max-md:w-[8vw]  max-md:mb-[3vw]" />
+          <div className="w-[4vw] h-[4vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw] ml-[-0.7vw]">
+              <Image src={"/assets/images/company/impact-logo-2.svg"} alt="" className="w-full h-full object-contain" width={100} height={100}/>
+            </div>
             <Copy>
-              <p className="mb-[3vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">
+              <p className="mb-[5vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">
                 We equip individuals and businesses—especially in underserved
                 regions—with the tools to manage money, grow wealth, and thrive
                 financially.
@@ -80,12 +86,13 @@ const Impact = () => {
             </div>
           </div>
           <div className="text-black-1 col-span-1 col-start-3 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[2] = el)}>
-            <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]  max-md:h-[8vw] max-md:w-[8vw]  max-md:mb-[3vw]" />
+          <div className="w-[4vw] h-[4vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw] ml-[-0.7vw]">
+              <Image src={"/assets/images/company/impact-logo-3.svg"} alt="" className="w-full h-full object-contain" width={100} height={100}/>
+            </div>
             <Copy>
               <p className="mb-[3vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">
-                Our mission goes beyond access—we focus on unlocking
-                opportunity, enabling dignity, and fostering long-term financial
-                growth.
+              Our mission goes beyond access—we’re here to unlock opportunities, uphold dignity, and empower long-term financial growth for every individual and business we serve.
+
               </p>
             </Copy>
             <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden">

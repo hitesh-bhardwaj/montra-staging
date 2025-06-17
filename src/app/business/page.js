@@ -30,7 +30,7 @@ export default function Business() {
       {!mobileWidth ? <BankingSection /> : <MobileBanking />}
 
       </div>
-      <SectionBreak content={"With Montra for Business, you're in control—accept payments, manage cash flow, access credit, and grow your business without the banking complexity."} width={"w-[85%]"} />
+      <SectionBreak content={"Take control with Montra for Business—get paid, track cash flow, access credit, and scale with ease."} width={"w-[85%]"} />
       <FAQs content={faqContent} />
     </>
   );
@@ -38,35 +38,25 @@ export default function Business() {
 
 const faqContent = [
   {
-    question: 'What is the scheduled payments feature?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+    question: "Who can Open a Montra Business Account?",
+    answer: "<p><span class='font-semibold'>Any registered user with KYC Level 2 status on Montra App can choose to open a Montra Business Account, if:</span></p><ul class='pl-[2vw] space-y-[0.5vw]'><li>1. You have an existing business or a new business that requires acceptance of payments for products or services you offer.</li><li>2. You have a Physical Store / Shop or an Office</li><li>3. You have an existing Website or Mobile App to sell your products / services.</li><li>4. You neither have a Physical Store / Shop / Office nor you have an existing Website / Mobile App. You can simply set-up a Montra Store on Montra App to sell your Products / Services virtually</li></ul>"
   },
   {
-    question: 'How sending a bank transfer?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+    question: "How do I access various Montra Business Accounts I have set-up on Montra App?",
+    answer: "<ul class='space-y-[0.5vw]'><li><span class='font-semibold'>Step 1:</span> Click the top section (dropdown icon) on your Business Home Screen to view all accounts for your current country.</li><li><span class='font-semibold'>Step 2:</span> Select any of the account to view its details and features.</li><li><span class='font-semibold'>Step 3:</span> To switch countries, click the country flag at the top right and choose the country you want.</li><li><span class='font-semibold'>Step 4:</span> Once switched, follow the same steps to access and manage your Business Accounts in that country.</li></ul>"
   },
   {
-    question: 'How can I reactivate a terminated card?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+    question: "What are the various methods available for acceptance of payments in Montra Business Account for a Physical Store / Shop/ Office merchant?",
+    answer: "<p>Merchants with business registered on Montra as a Physical Store, Shop, Office, or Branch can accept payments directly into their Montra Business Account through these methods:</p><ol class='pl-[2vw] space-y-[0.5vw] list-decimal '><li><span class='font-semibold'>QR Scan:</span> Buyers using the Montra App or any mobile banking app can scan the merchant’s Montra-issued QR code — displayed in-store or on the merchant’s Montra App — and complete the payment, which is instantly settled in the merchant’s account.</li><li><span class='font-semibold'>Tap & Pay:</span> Buyers tap their debit or credit cards on the merchant’s NFC-enabled phone running the Montra App. The transaction is processed just like on a POS — after the buyer enters their credit PIN, Montra routes the request for issuer approval and instantly settles funds upon approval.</li><li><span class='font-semibold'>POS Terminal:</span> Merchants can request and purchase POS terminals from Montra, enabling them to accept card payments through a traditional POS setup.</li><li><span class='font-semibold'>Bank Transfer:</span> Buyers can transfer funds directly to the merchant’s Montra Business Account using their mobile banking apps.</li></ol>"
   },
   {
-    question: 'How can add money to my account?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
+    question: "Can I set up multiple businesses on Montra App in the same country?",
+    answer: "<p>Yes! You can set up separate Montra Business Accounts for all your businesses in the same country.</p><p> Simply click <span class='font-semibold'>“Register Another Business”</span> at the bottom of your Business Home Screen and follow the same steps you used to register your first business.</p>"
   },
   {
-    question: 'How can add money to my account?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-  {
-    question: 'How can add money to my account?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
+    question: "How do I access account statement for my Montra Business Account?",
+    answer: "<p><span class='font-semibold'>Step 1:</span> Click <span class='font-semibold'>Account Statement</span> on the Business Home Screen to view your account summary and balance.</p><p><span class='font-semibold'>Step 2:</span> Review by section:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'></ul><li><span class='font-semibold'>Transaction & Settlement History</span> - shows payments settled, service charges, fund transfers, and your net balance.</li><li><span class='font-semibold'>Payments Collected</span> - shows pending payments under HOLD until funds are received.</li><p><span class='font-semibold'>Step 3:</span> Use filters to sort by payment method (QR, Tap & Pay, POS, Bank Transfer) or by team (Till Manager/Sub-merchant).</p><p><span class='font-semibold'>Step 4:</span> Refresh or scroll to re-see or past transactions, check the mini-statement for the last 7 days, or email yourself a statement for any custom date range.</p>"
+  }
 ]
 
 

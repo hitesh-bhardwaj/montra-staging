@@ -38,66 +38,62 @@ const businessBanking = () => {
 export default businessBanking;
 const faqContent = [
   {
-    question: "What is the scheduled payments feature?",
+    question: "What is a Montra Business Account?",
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p>A Montra Business Account is a <span class='font-semibold'>free digital account</span> built to help small businesses manage their finances. You can accept and track payments, view balances in real time, manage transactions, and keep your personal and business finances separate—all from one simple dashboard.</p>",
   },
   {
-    question: "How sending a bank transfer?",
+    question: "Who can open a Montra Business Account?",
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
+      "<p>Any business owner, freelancer, or merchant in Nigeria can open a Montra Business Account—whether you’re registered or unregistered. All you need is a smartphone, a valid means of identification, and basic business details to get started.</p>",
   },
   {
-    question: "How can I reactivate a terminated card?",
+    question: "What can I do with my Montra Business Account?",
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p>Your Business Account gives you access to:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>A unique account number for bank transfers</li><li>Real-time payment tracking and transaction history</li><li>Easy access to funds collected through POS, QR, Tap & Pay, and payment links</li><li>Business-friendly tools like invoicing, inventory tracking, and expense management</li><li>A dedicated wallet for managing day-to-day operations</li></ul>",
   },
   {
-    question: "How can add money to my account?",
+    question: "Can I separate personal and business finances on Montra?",
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p>Absolutely. Having a dedicated Montra Business Account helps you track income and expenses for your business separately from your personal finances, making it easier to stay organized and make better financial decisions.</p>",
   },
   
   {
-    question: "How can add money to my account?",
+    question: "Is my money safe with Montra?",
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p>Yes. Montra uses <span class='font-semibold'>bank-grade encryption, secure authentication,</span> and complies with <span class='font-semibold'>regulatory standards</span> to ensure your funds and data are safe. You also get real-time alerts for every transaction on your account.</p>",
   },
-  {
-    question: "How can add money to my account?",
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
+ 
 ];
 const overviewContent = {
-  icon1: "/assets/images/business-banking/business-loan.svg",
-  icon2: "/assets/images/business-banking/instant-payment.svg",
+  icon1: "/assets/images/business-banking/seamless-banking.svg",
+  icon2: "/assets/images/business-banking/multiple-payments.svg",
   mainImg: "/assets/images/personal-banking/overview-phone.png",
   bgImg: "/assets/images/personal-banking/overview-banking-icon.svg",
   title: "Unlocking the Power of Digital Financial Solutions",
   content: [
     "Montra offers businesses of all sizes a seamless way to manage financial transactions, access credit, and protect assets—all in one place. Whether you’re a small business owner or an enterprise, Montra simplifies your banking needs with digital-first solutions that save time, reduce costs, and drive growth.",
   ],
-  subcontent1: "Instant Payment Links",
-  subcontent2: "Business Loans",
+  subcontent1: "Multiple Payment Methods ",
+  subcontent2: "Seamless Business Banking",
 };
 
 const whatWhyData = {
   heading:"Link Your Bank Account to Montra for Seamless Transactions",
   headingWidth:"w-[90%]",
   // height:"h-[30vw]",
-  top:"top-[31%]",
+  top:"top-[29%]",
   para:"",
   content:[
   {
     number:"01",
     title:"Select Your Bank Account",
-    para:"Choose the bank account you'd like to link with your Montra Account. Montra will verify your details and set up an eMandate for secure transactions."
+    para:"Choose the bank account you’d like to link to fund your Montra Account. This lets Montra securely verify your account details and get your consent for Montra to send your payment requests to your bank, each time you pay on Montra App using this linked account. "
   },
   {
     number:"02",
-    title:"Verify Ownership",
-    para:"Make a refundable payment from your bank account to confirm ownership. Once verified, your eMandate will be activated and your account will be ready for linking."
+    title:"Verify Account Ownership",
+    para:"To securely link your account, make a quick refundable payment from the account you’ve selected. This verifies you as the rightful owner and sets up the eMandate for smooth future transactions."
   },
   {
     number:"03",
@@ -114,14 +110,14 @@ const whatWhyData = {
 
 const  benefitsData = {
   heading:"Streamlining Your Business Finances With Ease",
-  para:"Open your free Montra digital account in minutes.",
+  para:"Open a Free Montra Business Account in Minutes.",
   headingWidth:"w-[80%]",
   paraWidth:"w-full",
   cards:[
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Rest easy knowing your funds are secure. Your deposits are never converted into risky assets.", title: "No Account Fees", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Rest easy knowing your funds are secure. Your deposits are never converted into risky assets.", title: "Risk-Free Deposits", z: "z-[4]", width:"w-[20vw]", height:"17vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#EAF1FF]", content: "Rest easy knowing your funds are secure. Your deposits are never converted into risky assets.", title: "Track Payments Seamlessly", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Rest easy knowing your funds are secure. Your deposits are never converted into risky assets.", title: "Unmatched Security", z: "z-[4]",  width:"w-[21vw]", height:"17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Enjoy the freedom of a fully digital, mobile-first account — no hidden charges, ever.", title: "No Account Fees", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Your funds stay safe and protected — we will never convert your deposits into risky assets.", title: "Risk-Free Deposits", z: "z-[4]", width:"w-[20vw]", height:"17vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#EAF1FF]", content: "Accept payments through multiple channels on the Montra App and track every collection with ease.", title: "Track Payments Seamlessly", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Your account is guarded by your personal Montra PIN and 2FA Soft Token via the VERIFYED App — keeping your money and data safe, always.", title: "Unmatched Security", z: "z-[4]",  width:"w-[21vw]", height:"17vw" },
   ]
 }
 const stepData = {
@@ -130,30 +126,30 @@ const stepData = {
       {
           number: "01",
           title: "Sign Up for Montra Business Account",
-          para: "Download the Montra App and register as an individual. Then, easily switch to BUSINESS mode using the toggle bar. Ensure your KYC Level 2 is completed to sign up for a business account.",
+          para: "Download the Montra App, register as an individual, switch to BUSINESS mode, and complete KYC Level 2.",
           img: "/assets/images/personal-banking/steps-img-1.png",
           tag:"Sign Up"
       },
       {
           number: "02",
-          title: "Sign Up for Montra Business Account",
-          para: "Download the Montra App and register as an individual. Then, easily switch to BUSINESS mode using the toggle bar. Ensure your KYC Level 2 is completed to sign up for a business account.",
+          title: "Set Up Your Profile",
+          para: "Select your business type (physical store, online store, virtual store, or agency service) and fill in key business details.",
           img: "/assets/images/personal-banking/steps-img-1.png",
-          tag:"Sign Up"
+          tag:"Switch to Business Mode"
       },
       {
           number: "03",
-          title: "Sign Up for Montra Business Account",
-          para: "Download the Montra App and register as an individual. Then, easily switch to BUSINESS mode using the toggle bar. Ensure your KYC Level 2 is completed to sign up for a business account.",
+          title: "Provide Registration Details",
+          para: "Enter your business registration number (if applicable), verify it, and optionally upload your business logo.",
           img: "/assets/images/personal-banking/steps-img-1.png",
-          tag:"Sign Up"
+          tag:"Complete Business Setup"
       },
       {
           number: "04",
-          title: "Sign Up for Montra Business Account",
-          para: "Download the Montra App and register as an individual. Then, easily switch to BUSINESS mode using the toggle bar. Ensure your KYC Level 2 is completed to sign up for a business account.",
+          title: "Activate & Start Accepting Payments",
+          para: "Access your Montra Business Account, get your QR code, and start collecting payments seamlessly.",
           img: "/assets/images/personal-banking/steps-img-1.png",
-          tag:"Sign Up"
+          tag:"Accept Payments"
       },
   ],
 };

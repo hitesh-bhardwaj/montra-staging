@@ -8,7 +8,7 @@ const Network = () => {
             <div className="flex flex-col items-center gap-[10vw] max-sm:gap-[10vw] ">
                 <Heading>
                 <h2 className="font-display w-[65%] font-medium text-[5.7vw] text-center leading-[1.2] max-sm:text-[10.5vw] max-sm:text-left max-sm:w-full max-sm:mb-[5vw] max-md:text-[7.5vw] max-md:w-full ">
-                Stronger Together: Join the Montra Network
+                Join our Strong Network of Partners 
                 </h2>
 
                 </Heading>
@@ -20,7 +20,7 @@ const Network = () => {
                             data-v-color={logo.color}
                             key={index}
                             className={`rounded-4xl w-[13.35vw] h-[13.35vw] first:col-start-2 nth-4:col-start-1 border border-black-1 group hover:bg-[var(--hover-color)] hover:border-[var(--hover-color)] duration-300 ease-out fadeupanim max-sm:h-[30vw] max-sm:w-[30vw] max-sm:bg-[var(--hover-color)] max-sm:border-[var(--hover-color)] fadeupanim max-md:bg-[var(--hover-color)] max-md:border-[var(--hover-color)] max-md:h-[20vw] max-md:w-[20vw]`}>
-                            <Image src={logo.src} alt="montra network" width={200} height={200} className="w-full h-full duration-300 group-hover:invert-100 group-hover:brightness-0 max-sm:invert-100 max-md:invert-100" />
+                            <Image src={logo.src} alt="montra network" width={200} height={200} className="w-full h-full duration-300 group-hover:invert-100 group-hover:brightness-0 max-sm:invert-100 max-md:invert-100 invert" />
                         </div>
                     ))}
                 </div>
@@ -35,34 +35,34 @@ export default Network;
 const logos = [
     {
         color: "#FF8303",
-        src: "/assets/images/company/global-investor.png",
+        src: "/assets/images/company/network-logo-1.svg",
     },
     {
         color: "#215CFF",
-        src: "/assets/images/company/qed-investor.png",
+        src: "/assets/images/company/network-logo-2.svg",
     },
     {
         color: "#35C771",
-        src: "/assets/images/company/nib.png",
+        src: "/assets/images/company/network-logo-3.svg",
     },
     {
         color: "#FB2F55",
-        src: "/assets/images/company/investor.png",
+        src: "/assets/images/company/network-logo-4.svg",
     },
     {
         color: "#7A78FF",
-        src: "/assets/images/company/qed-investor.png",
+        src: "/assets/images/company/network-logo-5.svg",
     },
     {
         color: "#FF8303",
-        src: "/assets/images/company/global-investor.png",
+        src: "/assets/images/company/network-logo-6.svg",
     },
     {
         color: "#35C771",
-        src: "/assets/images/company/qed-investor.png",
+        src: "/assets/images/company/network-logo-7.svg",
     },
     {
         color: "#FB2F55",
-        src: "/assets/images/company/nib.png",
+        src: "/assets/images/company/network-logo-8.svg",
     }
 ]

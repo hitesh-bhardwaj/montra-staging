@@ -21,7 +21,7 @@ const tapPay = () => {
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>
    <About/>
-   <SectionBreak content={"Our secure Tap & Pay service uses state-of-the-art encryption to protect your financial details. Each transaction is tokenized, ensuring your card information is never shared."} width={"w-[95%]"}/>
+   <SectionBreak content={"Secure. Encrypted. Trusted. Montra Tap & Pay usescut-edging security,  advanced encryption and tokenization to protect every transaction. Your card details are never shared—keeping your payments private, safe, and secure."} width={"w-[95%]"}/>
    <FAQs content={faqContent}/>
    </>
   )
@@ -31,35 +31,31 @@ export default tapPay
 
 const faqContent = [
     {
-      question: 'What is the scheduled payments feature?',
+      question: 'What is Tap & Pay? ',
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Tap & Pay allows you, as a merchant, to accept card payments using just your Android smartphone—no physical POS machine required. With this feature, your phone becomes a contactless POS terminal, enabling customers to tap their debit or credit cards to complete transactions.</p><p class='italic'>Note: Tap & Pay is currently only available on Android devices with NFC (Near Field Communication) capability. The Montra App will automatically detect and notify you if your device is NFC-compatible. If your current phone isn’t supported, you can log in on an NFC-enabled phone to access the feature.</p>",
     },
     {
-      question: 'How sending a bank transfer?',
+      question: 'How safe is Tap & Pay? ',
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Tap & Pay is highly secure. Montra uses <span class='font-semibold'>advanced encryption</span> and <span class='font-semibold'>tokenization</span> to protect every transaction. This means your customer’s card information is never stored, shared, or exposed. All payments are processed in real time with <span class='font-semibold'>bank-grade security.</span></p>",
     },
     {
-      question: 'How can I reactivate a terminated card?',
+      question: 'How do I accept payments using Tap & Pay?',
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Here’s how Tap & Pay works on Montra:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Open your <span class='font-semibold'>Montra Business Account</span> and tap span class='font-semibold'>'Tap & Pay'</span> on the home screen.</li><li>Enter the payment amount.</li><li>Ask the customer to tap their <span class='font-semibold'>contactless debit or credit card</span> on the back of your NFC-enabled phone.</li><li>The customer enters their <span class='font-semibold'>card PIN</span> on your screen</li><li>The payment is processed instantly.</li><li>Share  the receipt directly from the app.</li></ul>",
     },
     {
-      question: 'How can add money to my account?',
+      question: 'What devices can I use for Tap & Pay?',
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
+        "<p>Only <span class='font-semibold'>Android smartphones with NFC support</span> are eligible. Most recent Android models support NFC, but the Montra App will let you know if your device qualifies. iPhones are currently not supported due to platform restrictions.</p>",
     },
     {
-      question: 'How can add money to my account?',
+      question: 'What types of cards can be used for Tap & Pay?',
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Tap & Pay works with most Naira-denominated contactless debit and credit cards issued by Nigerian banks. Cards must support contactless. </p>",
     },
-    {
-      question: 'How can add money to my account?',
-      answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
+   
   ];
 const overviewContent = {
   icon1:"/assets/images/business-tapnpay/overview-icon-1.svg",
@@ -75,33 +71,33 @@ const overviewContent = {
   subcontent2:"Pay faster. Live smarter"
 }
 const  benefitsData = {
-  heading:"The Future of Payments— Right at Your Fingertips",
-  para:"It’s inventory management made simple, efficient, and built for growth.",
+  heading:"The Future of Payments — Tap, Pay, Done",
+  para:"Accept contactless payments instantly with your NFC-enabled phone — no extra devices, no friction, just fast, secure transactions with Montra Tap & Pay.",
   headingWidth:"w-[80%]",
   paraWidth:"w-[70%]",
   cards:[
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: " bg-[#D9F7C5]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Secure from the Start", z: "z-[5]", width:"w-[24vw]", height:"17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: " Authentication Before Payment", z: "z-[4]", width:"w-[27vw]", height:"17vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: " bg-[#EAF1FF]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Advanced 2FA Protection", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: " bg-[#D9F7C5]", content: "Process every payment with confidence, backed by Montra’s robust security standards.", title: "Secure & Reliable Transactions", z: "z-[5]", width:"w-[24vw]", height:"17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Reduce wait times in-store by letting customers tap their cards for fast, secure transactions.", title: "Quick Checkouts", z: "z-[4]", width:"w-[27vw]", height:"17vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: " bg-[#EAF1FF]", content: "Every transaction on Montra is protected by our Fraud & Risk Assessment tool, which may prompt you for a Soft Token when needed. You get free access to a Soft Token through the VERIFYED app — available to all Montra users.", title: "Advanced 2FA Protection", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
     { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: " bg-[#CAC5F7]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Your Payment Stays Private", z: "z-[4]",  width:"w-[27vw]", height:"17vw" },
   ]
 }
 
 const cardData ={
-  heading:"Turn Your Phone Into a POS with Tap & Pay on Montra App",
-  subHeading:"Offer everyday banking services to your community—all from your shop.",
+  heading:"Turn your Phone into a POS with Montra Tap & Pay",
+  subHeading:"Accepting payments has never been easier.",
   headingWidth:"w-[75%]",
   icon1:"/assets/images/business-tapnpay/card-icon-1.svg",
   icon2:"/assets/images/business-tapnpay/card-icon-2.svg",
-  icon3:"/assets/images/business-tapnpay/card-icon-1.svg",
+  icon3:"/assets/images/business-tapnpay/card-icon-3.svg",
   icon4:"/assets/images/business-tapnpay/card-icon-4.svg",
   cardTitle1:"Accept Contactless Card Payments",
-  cardTitle2:"Secure & Reliable Transactions",
-  cardTitle3:"Get Started Instantly",
-  cardTitle4:"Smart Dashboard ",
-  cardContent1:"<p>Open a free Montra Business Account and start accepting payments in minutes—right from your smartphone.</p>",
-  cardContent2:"<p>Open a free Montra Business Account and start accepting payments in minutes—right from your smartphone.</p>",
-  cardContent3:"<p>Open a free Montra Business Account and start accepting payments in minutes—right from your smartphone.</p>",
-  cardContent4:"<p>Open a free Montra Business Account and start accepting payments in minutes—right from your smartphone.</p>",
+  cardTitle4:"Fast Setup & Activation",
+  cardTitle2:"Get Started Instantly",
+  cardTitle3:"Smart Dashboard ",
+  cardContent1:"<p>Easily accept payments from any physical contactless debit or credit card — no extra hardware or dongles needed.</p>",
+  cardContent2:"<p>Activate Tap & Pay directly in your Montra App and start accepting payments right away.</p>",
+  cardContent3:"<p>Track transactions, monitor performance, and access real-time data to make better business decisions.</p>",
+  cardContent4:"<p>Enable Tap & Pay inside the Montra App with minimal setup.</p>",
   
 }

@@ -31,7 +31,7 @@ const useDeviceType = () => {
 const icons = [
     {
         poster: '/assets/images/homepage/image-1.png',
-        src: "/assets/images/homepage/video-1.mp4",
+        src: "/assets/images/homepage/feature-vid-3.mp4",
         alt: "Receive",
         style: { top: "20%", left: "30%" },
         tabletStyle: { top: "22%", left: "28%" },
@@ -45,7 +45,7 @@ const icons = [
     },
     {
         poster: '/assets/images/homepage/image-2.png',
-        src: "/assets/images/homepage/video-2.mp4",
+        src: "/assets/images/homepage/feature-vid-6.mp4",
         alt: "Pay",
         style: { top: "15%", left: "30%" },
         tabletStyle: { top: "18%", left: "15%" },
@@ -59,7 +59,7 @@ const icons = [
     },
     {
         poster: '/assets/images/homepage/image-3.png',
-        src: "/assets/images/homepage/video-3.mp4",
+        src: "/assets/images/homepage/feature-vid-4.mp4",
         alt: "Currency",
         style: { bottom: "40%", left: "30%" },
         tabletStyle: { bottom: "42%", left: "35%" },
@@ -87,7 +87,7 @@ const icons = [
     },
     {
         poster: '/assets/images/homepage/image-6.png',
-        src: "/assets/images/homepage/video-6.mp4",
+        src: "/assets/images/homepage/feature-vid-2.mp4",
         alt: "Receive",
         style: { top: "30%", right: "25%" },
         tabletStyle: { top: "32%", right: "28%" },
@@ -101,13 +101,27 @@ const icons = [
     },
     {
         poster: '/assets/images/homepage/image-5.png',
-        src: "/assets/images/homepage/video-5.mp4",
+        src: "/assets/images/homepage/feature-vid-1.mp4",
         alt: "Pay",
         style: { bottom: "35%", right: "35%" },
         tabletStyle: { bottom: "30%", right: "28%" },
         mobileStyle: { bottom: "20%", right: "30%" },
         xOffset: 400,
         yOffset: 150,
+        tabletxOffset: 100,
+        tabletyOffset: 100,
+        mobilexOffset: 90,
+        mobileyOffset: -140,
+    },
+    {
+        poster: '/assets/images/homepage/image-5.png',
+        src: "/assets/images/homepage/feature-vid-5.mp4",
+        alt: "Pay",
+        style: { top: "35%", right: "35%" },
+        tabletStyle: { top: "30%", right: "28%" },
+        mobileStyle: { top: "20%", right: "30%" },
+        xOffset: -50,
+        yOffset: -350,
         tabletxOffset: 100,
         tabletyOffset: 100,
         mobilexOffset: 90,
@@ -217,7 +231,7 @@ const FeatureSection = () => {
                     return (
                         <motion.div
                             key={i}
-                            className="absolute w-[10vw] h-[10vw] rounded-[3vw] overflow-hidden max-sm:w-[25vw] max-sm:h-[25vw] max-md:w-[15vw] max-md:h-[15vw] max-md:rounded-[4vw] max-sm:rounded-[7vw]"
+                            className="absolute w-[10vw] h-[10vw] rounded-[2.5vw] overflow-hidden max-sm:w-[25vw] max-sm:h-[25vw] max-md:w-[15vw] max-md:h-[15vw] max-md:rounded-[4vw] max-sm:rounded-[7vw]"
                             style={style}
                             variants={item}
                             custom={offsets}
@@ -230,7 +244,7 @@ const FeatureSection = () => {
                                 loop
                                 autoPlay
                                 playsInline
-                                className="h-full w-full object-cover"
+                                className="h-full w-full object-cover scale-[1.02]"
                             />
                         </motion.div>
                     );

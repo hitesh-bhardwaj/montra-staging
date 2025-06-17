@@ -7,16 +7,19 @@ export const TopContent = () => {
             <div className="space-y-[1.2vw] max-sm:space-y-[7vw] max-md:space-y-[3vw]">
                 <Heading delay={0.7}>
                     <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw] max-md:text-[7.5vw]">
-                        <span className="text-primary">Montra Business Account: </span> Go
-                        for Smarter Finance, Bigger Growth
+                        <span className="text-primary">Montra Business Account: </span> Go for Smarter Finance & Bigger Growth.
+
                     </h1>
                 </Heading>
+                <div className="w-[70%] mx-auto max-sm:w-[85%] max-md:w-[85%]">
                 <Copy delay={1}>
-                    <p className="font-body w-3/5 mx-auto max-sm:w-[85%] max-md:w-[85%]">
-                        Everyday business banking essentials, time-saving business
-                        management tools and our signature money management features.
+                    <p className="font-body w-full ">
+                    Access essential banking tools, streamline your operations, and manage money with ease - so you can focus on growing your business every day.
+
                     </p>
                 </Copy>
+
+                </div>
             </div>
         </div>
     )

@@ -125,8 +125,8 @@ export default function SectionBreak() {
                     data-split="lines"
                     className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[11vw] max-md:text-[7.5vw]"
                 >
-                    Montra helps users shift from cash to digital payments besides making credit,
-                    insurance, and investments easily accessible.
+                   Go cashless, shop & sell virtually, access credit, insurance, and investment products seamlessly with Montra.
+
                 </h2>
             </div>
         </section>

@@ -138,7 +138,7 @@ export default function PaymentSection() {
   return (
     <section
       ref={sectionRef}
-      className="h-[700vh] bg-white relative pb-[15%]  max-md:hidden "
+      className="h-[700vh] bg-white relative pb-[5%] max-md:hidden "
       id="payment"
     >
       <div className="sticky top-0 px-[4vw] h-screen flex items-center justify-between z-[300]">

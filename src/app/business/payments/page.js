@@ -17,14 +17,14 @@ const businessPayments = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra for Business: "} heading={"Digital Payments That Drive Growth"} content={"Empowering Your Business with Seamless Digital Transactions"}/>
+   <Hero primaryHeading={"Montra for Business: "} heading={"Digital Payments That Drive Growth"} content={"EWith Montra, getting paid is simple, secure, and built for scale. Empowering your Business with Seamless Digital Transactions "} paraWidth={"w-[60%]"}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>
    <Rewards rewardsData={rewardsData}/>
    <Steps stepData={stepData}/>
    <WhatWhy data={whatWhyData} height={"h-[50vw]"}/>
-   <SectionBreak content={"From seamless payments to accessible credit options, Montra empowers you to take control of your financial future."} width={"w-[85%]"}/>
+   <SectionBreak content={"Seamless payments, easy tracking, and total control — Montra helps you run your business your way."} width={"w-[85%]"}/>
    <FAQs content={faqContent}/>
    </>
   )
@@ -34,36 +34,21 @@ export default businessPayments
 
 const faqContent = [
     {
-      question: "What is the scheduled payments feature?",
+      question: "What payment methods can my business accept on Montra?",
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Your Montra Business Account supports a variety of flexible, secure payment channels:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li><span class='font-semibold'>Tap & Pay:</span> Accept contactless card payments using your NFC-enabled smartphone—no extra hardware required.</li><li><span class='font-semibold'>QR Code Payments:</span> Share your unique Montra QR code so customers can scan and pay instantly.</li><li><span class='font-semibold'>POS Terminal:</span> Use Montra’s physical POS device to accept card payments and track transactions.</li><li><span class='font-semibold'>Bank Transfers:</span> Receive payments directly into your Montra Business Account using standard bank transfers.</li></ul>",
     },
     {
-      question: "How sending a bank transfer?",
+      question: "Can I schedule or automate payments?",
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
+        "<p>Yes. With Montra, you can set <span class='font-semibold'>recurring payments</span> for subscriptions, bills, or vendor invoices—ensuring you never miss a due date.</p>",
     },
     {
-      question: "How can I reactivate a terminated card?",
+      question: "Are there fees for sending or receiving payments?",
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Basic peer-to-peer payments may be free, but certain transactions (e.g. using Escrow Pay, business tools, or international features) may carry minimal service fees. You'll always see any applicable charges before confirming a transaction.</p>",
     },
-    {
-      question: "How can add money to my account?",
-      answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
-    
-    {
-      question: "How can add money to my account?",
-      answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
-    {
-      question: "How can add money to my account?",
-      answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
+  
   ];
 const overviewContent = {
   icon1:"/assets/images/business-payments/integrated-payments.svg",
@@ -74,8 +59,8 @@ const overviewContent = {
   content:[
     "Montra offers a robust payment ecosystem tailored for businesses seeking efficient, secure, and scalable digital payment solutions. Our platform connects businesses with banks, merchants, dealers, sellers, lending institutions, and insurance companies, serving as a one-stop solution for all financial needs."
   ],
-  subcontent1:"Scalable Infrastructure",
-  subcontent2:"Integrated Payment Solutions"
+  subcontent1:"Multiple Payment Methods",
+  subcontent2:"Instant Payment Settlement"
 }
 const  benefitsData = {
   heading:"The Smarter, Safer Way to Pay",
@@ -83,10 +68,10 @@ const  benefitsData = {
   headingWidth:"w-full",
   paraWidth:"w-full",
   cards:[
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Secure from the Start", z: "z-[5]", width:"w-[22vw]", height:"17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: " Advanced 2FA Protection", z: "z-[4]", width:"w-[24vw]", height:"17vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Built-In Payment Checks", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Your Privacy, Always", z: "z-[4]",  width:"w-[20vw]", height:"17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Your Montra App is protected by the password you set — and you can also unlock it easily using Face ID or biometric authentication on your phone.", title: "Secure from the Start", z: "z-[5]", width:"w-[22vw]", height:"17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Every transaction on Montra is protected by our Fraud & Risk Assessment tool, which may prompt you for a Soft Token when needed. You get free access to a Soft Token through the VERIFYED app — available to all Montra users.", title: " Advanced 2FA Protection", z: "z-[4]", width:"w-[24vw]", height:"22vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Every payment on Montra is processed only after you successfully authenticate with your Montra PIN.", title: "Built-In Payment Checks", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "Only you and the person you’re transacting with can see the details of your payment — keeping your transactions private and secure.", title: "Your Privacy, Always", z: "z-[4]",  width:"w-[20vw]", height:"17vw" },
   ]
 }
 const rewardsData={
@@ -97,7 +82,7 @@ const rewardsData={
       {
           icon:"/assets/images/personal-payments/montra-account-statement.svg",
           title:"Business Account Statement",
-          para:"View all your incoming payments in real-time with your Montra Business Account Statement—clarity made simple."
+          para:"Track all your payment collections using Montra Business Account through Montra Account Statement."
       },
       {
           icon:"/assets/images/personal-payments/instant-alerts.svg",
@@ -112,50 +97,50 @@ const rewardsData={
       {
           icon:"/assets/images/personal-payments/easy-reward.svg",
           title:"Easy Reward Redemption",
-          para:"Redeem your points anytime and monitor it all through your Reward Point Redemption Account—track your perks with ease."
+          para:"Redeem your reward points in your Reward Point Redemption Account and track through a statement for this account on Montra App."
       },
   ]
 }
 const cardData ={
     heading:"Accept & Collect Payments Your Way",
-    subHeading:"Montra gives your business the flexibility to get paid quickly, securely, and however your customers prefer. Here’s how you can start accepting & collecting payments with ease:",
+    subHeading:"With Montra, Getting Paid Is Easy it’s Quick. Safe & Customer-friendly. Accept payments your way and keep your business moving forward.",
     headingWidth:"w-[60%]",
-    icon1:"/assets/images/business-payments/qr.svg",
-    icon2:"/assets/images/business-payments/tap-n-pay.svg",
-    icon3:"/assets/images/business-payments/qr.svg",
-    icon4:"/assets/images/business-payments/bank-transfer.svg",
+    icon1:"/assets/images/business-payments/card-icon-1.svg",
+    icon2:"/assets/images/business-payments/card-icon-2.svg",
+    icon3:"/assets/images/business-payments/card-icon-3.svg",
+    icon4:"/assets/images/business-payments/card-icon-4.svg",
     cardTitle1:"QR Scan",
     cardTitle2:"Tap & Pay",
     cardTitle3:"POS Terminal",
     cardTitle4:"Bank Transfer",
-    cardContent1:"<p>Start taking <span class='text-primary'>debit and credit card</span> payments instantly with <span class='text-primary'>Montra POS</span> —fast, secure, and perfect for any business.</p>",
-    cardContent2:"<p>Start taking <span class='text-primary'>debit and credit card</span> payments instantly with <span class='text-primary'>Montra POS</span> —fast, secure, and perfect for any business.</p>",
-    cardContent3:"<p>Start taking <span class='text-primary'>debit and credit card</span> payments instantly with <span class='text-primary'>Montra POS</span> —fast, secure, and perfect for any business.</p>",
-    cardContent4:"<p>Start taking <span class='text-primary'>debit and credit card</span> payments instantly with <span class='text-primary'>Montra POS</span> —fast, secure, and perfect for any business.</p>",
+    cardContent1:"<p>Customers scan your QR code using the Montra App or any mobile banking app to make payments.</p>",
+    cardContent2:"<p>Turn your phone into a POS — customers can tap their debit or credit cards on your Montra App for quick, contactless payments.</p>",
+    cardContent3:"<p>Use a Montra POS device to accept card payments easily and securely.</p>",
+    cardContent4:"<p>Receive payments directly into your Montra Business Account through customer bank transfers.</p>",
     
   }
 const whatWhyData = {
-    heading:"Send Invoices. Get Paid. Fast.",
+    heading:"Smart Invoicing. Instant Payments.",
     headingWidth:"w-[85%]",
-    height:"h-[90%]",
-    top:"top-[33%]",
+    height:"h-[88%]",
+    top:"top-[38%]",
     paraWidth:"w-[70%]",
-    para:"Create and send professional invoices in multiple currencies—and let your customers pay you online, instantly. With Montra, improving your cash flow has never been easier.",
+    para:"Bill in any currency, send in seconds, and get paid without the wait—Montra makes cash flow smoother than ever.",
     content:[
     {
       number:"01",
       title:"Sign In or Get Started",
-      para:"New to Montra? Download the app and open a Business account in minutes. Already onboard? Log in through the Montra App or Merchant Portal."
+      para:"New to Montra? Download the app and open a Business Account in minutes. Already registered? Simply log in via the Montra App or Merchant Portal."
     },
     {
       number:"02",
       title:"Create & Send Invoices in Seconds",
-      para:"Go to the Invoices tab and fill in your product or service details. Add your customer info, choose the currency, and send—done!"
+      para:"Head to the Invoices tab, input your product or service details, add your customer info, select a currency, and hit send—it’s that easy."
     },
     {
       number:"03",
       title:"Get Paid, Hassle-Free",
-      para:"Your customers can pay online using a variety of payment methods—from anywhere in the world. No delays. No friction."
+      para:"Your customers can pay online using multiple payment methods, from anywhere in the world. No delays. No friction. Just smooth, secure payments."
     }
   ],
   }
@@ -165,30 +150,30 @@ const whatWhyData = {
         {
             number: "01",
             title: "Sign In or Get Started",
-            para: "New to Montra? Download the Montra App and sign up for a Business account in minutes. Already registered? Just log in via the Montra App or Merchant Portal.",
+            para: "New to Montra? Download the app and set up your Business account in minutes. Already onboard? Log in through the Montra App or Merchant Portal.",
             img: "/assets/images/payment-gateway/steps-img-1.png",
             tag:"Sign In"
         },
         {
             number: "02",
-            title: "Sign In or Get Started",
-            para: "New to Montra? Download the Montra App and sign up for a Business account in minutes. Already registered? Just log in via the Montra App or Merchant Portal.",
+            title: "Enable Payment Options",
+            para: "Head to the Payment Section and activate QR scan, bank transfers, tap & pay, POS, or payment links — offer customers multiple ways to pay.",
             img: "/assets/images/payment-gateway/steps-img-1.png",
-            tag:"Sign In"
+            tag:"Activate Payments"
         },
         {
             number: "03",
-            title: "Sign In or Get Started",
-            para: "New to Montra? Download the Montra App and sign up for a Business account in minutes. Already registered? Just log in via the Montra App or Merchant Portal.",
+            title: "Accept Instant Payments",
+            para: "Start collecting payments instantly — funds land directly in your Montra Business Account, no waiting.",
             img: "/assets/images/payment-gateway/steps-img-1.png",
-            tag:"Sign In"
+            tag:"Accept Payments"
         },
         {
             number: "04",
-            title: "Sign In or Get Started",
-            para: "New to Montra? Download the Montra App and sign up for a Business account in minutes. Already registered? Just log in via the Montra App or Merchant Portal.",
+            title: "Track & Manage Earnings",
+            para: "Use your smart Montra dashboard to monitor transactions, settlements, and reports — all in real time.",
             img: "/assets/images/payment-gateway/steps-img-1.png",
-            tag:"Sign In"
+            tag:"Track Earnings"
         },
     ],
 };

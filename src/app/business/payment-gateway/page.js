@@ -19,7 +19,7 @@ const businessPaymentGateway = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra for Business: "} heading={"Boost Your Sales with our Payment Gateway"} content={"Whether you're selling on a website, app, or social media, Montra makes it easy to get paid with just a few clicks."} paraWidth={"w-[55%]"} />
+   <Hero primaryHeading={"Montra for Business: "} heading={"Power your Business with MontraPay"} content={"Whether you’re selling on a website, app or on social media, MontraPay makes it easy to get paid with just a few clicks."} paraWidth={"w-[55%]"} />
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
    <Steps stepData={stepData}/>
@@ -37,35 +37,35 @@ export default businessPaymentGateway
 
 const faqContent = [
     {
-      question: "What is the scheduled payments feature?",
+      question: "What is MontraPay and how does it work? ",
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>MontraPay is a secure payment gateway that allows you to accept payments via your website, mobile app, or social media. At checkout, customers enter their <span class='font-semibold'>Montra ID</span>, approve the payment in their Montra App, and pay using their Montra Account, linked bank, card, or installments. Payment is <span class='font-semibold'>instantly settled </span>into your Montra Business Account.</p>",
     },
     {
-      question: "How sending a bank transfer?",
+      question: "Who can use MontraPay to make payments?",
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
+        "<p>Only customers who are registered on the Montra App can use MontraPay. This ensures secure, app-authenticated transactions with lower risk of fraud or failed payments.</p>",
     },
     {
-      question: "How can I reactivate a terminated card?",
+      question: "How do I integrate MontraPay into my business?",
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Integration is flexible:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li><span class='font-semibold'>For websites or apps:</span> Use MontraPay’s developer-friendly APIs or plugins to embed the payment flow.</li><li><span class='font-semibold'>No website?</span> You can generate and share secure payment links through chat, WhatsApp, or email—no code required. You’ll find integration guides and support in your <span class='font-semibold'>Montra Merchant Dashboard.</span></li></ul>",
     },
     {
-      question: "How can add money to my account?",
+      question: "What types of payments does MontraPay support—and why are there so many options? ",
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>MontraPay is designed to meet customers where they are, making payments simple and flexible for everyone—whether they use the Montra App or not.</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li><span class='font-semibold'>For Montra Users (in-app, seamless experience):</span> These users enjoy full access to Montra’s payment features, allowing them to:<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Pay via Montra Account</li><li>Use Linked Bank Accounts</li><li>Pay with Debit/Credit Cards</li><li>Use QR code scanning or USSD</li><p>These methods ensure fast, secure, and real-time payments within the app.</p></ul></li><li><span class='font-semibold'>For Non-Montra Users (via payment link):</span> To serve a wider customer base, MontraPay also supports link-based payments:<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li><span class='font-semibold'>Pay Now </span>– immediate online payment via card or bank</li><li><span class='font-semibold'>Pay on Delivery (POD)</span> – secure link sent at delivery</li><li><span class='font-semibold'>Escrow Pay</span> – funds are held and released after delivery confirmation</li></ul></li></ul",
     },
     
     {
-      question: "How can add money to my account?",
+      question: "Why all these options? ",
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Because every customer pays differently. MontraPay helps you capture more sales by supporting both app-savvy users and those who prefer traditional or cautious payment methods—all without needing extra hardware or complex setup.</p>",
     },
     {
-      question: "How can add money to my account?",
+      question: "What is Escrow Pay? ",
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p><span class='font-semibold'>Escrow Pay</span> is a secure payment option where Montra temporarily holds your money in an <span class='font-semibold'>Escrow Account</span> until both the buyer and seller fulfill the agreed terms.</p><p>Here’s how it works:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>When you choose Escrow Pay, your funds are <span class='font-semibold'>safely held by Montra.</span></li><li>Once the product/service is delivered and you confirm satisfaction, Montra instantly releases the payment to the seller.</li><li>If the seller fails to deliver or the product doesn't meet the agreed terms, you can cancel the order, and Montra will <span class='font-semibold'>refund your money immediately.</span></li></ul><p>Escrow Pay is ideal for high-value or sensitive transactions, offering protection and peace of mind for both parties.</p>",
     },
   ];
 const overviewContent = {
@@ -73,23 +73,23 @@ const overviewContent = {
   icon2:"/assets/images/payment-gateway/secure.svg",
   mainImg:"/assets/images/personal-banking/overview-phone.png",
   bgImg:"/assets/images/personal-payments/overview-bg-icon.svg",
-  title:"Accept Payments Online, Seamlessly and Securely",
+  title:"Accept Payments Online, Seamlessly & Securely",
   content:[
-    "Montra Payment Gateway makes it easy for businesses of all sizes to accept payments online—quickly, securely, and with no tech complexity. Whether you run an eCommerce store, mobile app, or offer services via social platforms, Montra helps you collect payments from customers using a wide range of payment methods."
+    "MontraPay makes it easy for businesses of all sizes to accept payments online—quickly, securely, and with no tech complexity. Whether you run an eCommerce store, mobile app, or offer services via social platforms, Montra helps you collect payments from customers using a wide range of payment methods."
   ],
   subcontent1:"Secure Transactions",
   subcontent2:"Quick Integration"
 }
 const  benefitsData = {
-    heading:"The Smarter, Safer Way to Pay",
-    para:"Your money. Your data. Protected at every step.",
+    heading:"Powering Payments, Securing Growth",
+    para:"With flexible payments, powerful dashboards, and top-tier security, MontraPay gives your business the tools to scale confidently and get paid easily.",
     headingWidth:"w-full",
     paraWidth:"w-full",
     cards:[
-      { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Secure from the Start", z: "z-[5]", width:"w-[22vw]", height:"17vw" },
-      { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: " Advanced 2FA Protection", z: "z-[4]", width:"w-[24vw]", height:"17vw" },
-      { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Built-In Payment Checks", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
-      { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Your Privacy, Always", z: "z-[4]",  width:"w-[20vw]", height:"17vw" },
+      { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Access detailed reports on payments, settlements, and refunds — giving you the insights you need to make smarter business decisions.", title: "Powerful Dashboard", z: "z-[5]", width:"w-[22vw]", height:"17vw" },
+      { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Stay protected with PCI DSS compliance, regular third-party audits, and a dedicated internal security team keeping your data safe.", title: "Robust Security", z: "z-[4]", width:"w-[20vw]", height:"17vw" },
+      { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Let customers pay their way with flexible options like Pay on Delivery (POD), Pay Now, Escrow Pay, and even USSD.", title: "Multiple payment options", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
+      { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "MontraPay helps your business grow confidently with a secure payment system that safeguards your money and customer data from fraud.", title: "Secure revenue growth", z: "z-[4]",  width:"w-[24vw]", height:"17vw" },
     ]
   }
   const featuresData = {
@@ -118,17 +118,17 @@ const rewardsData={
       {
           icon:"/assets/images/payment-gateway/pay-on-delivery.svg",
           title:"Pay on Delivery (POD)",
-          para:" Enable POD and send customers a payment link via email, allowing them to pay upon delivery."
+          para:"As a merchant, you can enable Pay on Delivery, allowing Montra to send a secure payment link to customers email. Payment is made once the order is delivered."
       },
       {
           icon:"/assets/images/payment-gateway/pay-now.svg",
           title:"Pay Now",
-          para:"Customers can pay instantly using their Montra account, linked bank accounts, or cards."
+          para:"Customers can pay instantly using their Montra Account, or any linked bank account or card—fast, simple, and secure."
       },
       {
           icon:"/assets/images/payment-gateway/escrow.svg",
           title:"Escrow Pay",
-          para:"Ensure secure transactions by holding funds in an escrow account until the product or service is delivered, based on agreed terms and conditions."
+          para:"For added security, customers can opt for Escrow Pay. Funds are held safely until the product or service is delivered as agreed. If terms aren’t met, the payment is refunded."
       },
      
   ]
@@ -137,40 +137,40 @@ const cardData ={
     heading:"Simplify Payment Acceptance with Flexible Methods",
     subHeading:"MontraPay offers a variety of payment acceptance methods for seamless transactions",
     headingWidth:"w-[80%]",
-    icon1:"/assets/images/business-payments/qr.svg",
-    icon2:"/assets/images/business-payments/tap-n-pay.svg",
-    icon3:"/assets/images/business-payments/qr.svg",
-    icon4:"/assets/images/business-payments/bank-transfer.svg",
+    icon1:"/assets/images/payment-gateway/card-icon-1.svg",
+    icon2:"/assets/images/payment-gateway/card-icon-2.svg",
+    icon3:"/assets/images/payment-gateway/card-icon-3.svg",
+    icon4:"/assets/images/payment-gateway/card-icon-4.svg",
     cardTitle1:"QR Scan",
     cardTitle2:"New & Saved Cards",
     cardTitle3:"Pay using Montra App",
     cardTitle4:"USSD",
-    cardContent1:"<p>Customers can complete payments through their Montra app, using available options like Montra account, linked accounts, linked cards, and installments.</p>",
-    cardContent2:"<p>Customers can complete payments through their Montra app, using available options like Montra account, linked accounts, linked cards, and installments.</p>",
-    cardContent3:"<p>Customers can complete payments through their Montra app, using available options like Montra account, linked accounts, linked cards, and installments.</p>",
-    cardContent4:"<p>Customers can complete payments through their Montra app, using available options like Montra account, linked accounts, linked cards, and installments.</p>",
+    cardContent1:"<p>Customers can scan the QR code displayed on your web page using any mobile banking app to pay directly into your business account.</p>",
+    cardContent2:"<p>Customers can pay using a new debit or credit card or choose a saved card on the Montra platform — no need to re-enter card details.</p>",
+    cardContent3:"<p>Registered Montra users receive a notification in their app to complete payments using Montra Account, linked bank accounts, saved cards, or installments. Once done, they get instant confirmation on the web page where the transaction was initiated.</p>",
+    cardContent4:"<p>Customers can securely complete payments from their bank accounts using a USSD code.</p>",
     
   }
   const whatWhyData = {
     heading:"Get Paid Instantly with Montra Payment Links",
     headingWidth:"w-[85%]",
     top:"top-[37.5%]",
-    para:"Start selling online without the need for a website or app. Just create and share a payment link in minutes—no technical setup required.",
+    para:"Just create and share a payment link in minutes—no technical setup required.",
     content:[
     {
       number:"01",
-      title:"Sign In to Your Montra App or Merchant Portal",
-      para:"Download the Montra App and sign up for a free Business Account, or log in if you're already registered."
+      title:"Sign In or Get Started",
+      para:"Download the Montra App and open a free Business Account or log in through the app or Merchant Portal if you're already registered."
     },
     {
       number:"02",
-      title:"Create Your Payment Link",
-      para:"Easily generate a Payment Link for the product or service you’re offering—straight from the app or portal."
+      title:"Create a Payment Link",
+      para:"Quickly generate a secure Payment Link for any product or service—right from the Montra App or Portal."
     },
     {
       number:"03",
-      title:"Share & Get Paid",
-      para:"Send the link via SMS, Email, WhatsApp, or any other channel. Customers can pay instantly, and you get notified as soon as the payment is completed."
+      title:"Share & Receive Payment",
+      para:"Send the link via SMS, WhatsApp, Email, or any preferred channel. Your customer pays instantly, and you get notified in real time."
     }
   ],
   }
@@ -180,32 +180,32 @@ const cardData ={
         {
             number: "01",
             title: "Add to Cart",
-            para: "Customers browse through your products or services and simply add their selected items to the checkout cart—just like shopping anywhere else, but faster and easier.",
+            para: "Customers can browse your products or services and add selected items to the checkout cart — quick, smooth, and familiar.",
             img: "/assets/images/payment-gateway/steps-img-1.png",
             tag:"Add to cart"
         },
         {
             number: "02",
-            title: "Add to Cart",
-            para: "Customers browse through your products or services and simply add their selected items to the checkout cart—just like shopping anywhere else, but faster and easier.",
+            title: "Confirm Order Details",
+            para: "They review their order details, check quantities, and confirm everything before proceeding.",
             img: "/assets/images/payment-gateway/steps-img-1.png",
-            tag:"Add to cart"
+            tag:"Confirm details"
 
         },
         {
             number: "03",
-            title: "Add to Cart",
-            para: "Customers browse through your products or services and simply add their selected items to the checkout cart—just like shopping anywhere else, but faster and easier.",
+            title: "Select Payment Option & Method",
+            para: "At checkout, customers choose how they want to pay (Pay Now, Pay on Delivery, Escrow) and complete payment using Montra Account, linked bank, saved cards, installments, or USSD.",
             img: "/assets/images/payment-gateway/steps-img-1.png",
-            tag:"Add to cart"
+            tag:"Choose a Payment Method"
 
         },
         {
             number: "04",
-            title: "Add to Cart",
-            para: "Customers browse through your products or services and simply add their selected items to the checkout cart—just like shopping anywhere else, but faster and easier.",
+            title: "Instant Payment Settlement",
+            para: "Payments are securely processed and settled in real time, giving you and your customer immediate confirmation.",
             img: "/assets/images/payment-gateway/steps-img-1.png",
-            tag:"Add to cart"
+            tag:"Payment Settled"
 
         },
     ],

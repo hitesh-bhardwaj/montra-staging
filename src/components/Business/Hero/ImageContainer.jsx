@@ -11,6 +11,8 @@ export const ImageContainer = ({ img1, img2, img3, img4, img5, img6, container }
     const img2Ref = useRef(null);
     const img3Ref = useRef(null);
     const img4Ref = useRef(null);
+    const img1RefHeading = useRef(null);
+    const img6RefHeading = useRef(null);
     const mainImgContainer = useRef(null);
     const img5Ref = useRef(null);
     const img6Ref = useRef(null);
@@ -39,7 +41,7 @@ export const ImageContainer = ({ img1, img2, img3, img4, img5, img6, container }
                 scrollTrigger: {
                     trigger: container.current,
                     start: "top top",
-                    end: "bottom bottom",
+                    end: "bottom 90%",
                     scrub: true,
                 },
                 defaults: {
@@ -81,6 +83,14 @@ export const ImageContainer = ({ img1, img2, img3, img4, img5, img6, container }
                     delay: 2,
                     duration: 1
                 })
+                .to(img1RefHeading.current,{
+                    opacity:0,
+                    delay:-0.5,
+                })
+                .to(img6RefHeading.current,{
+                    opacity:1,
+                    delay:-0.5,
+                })
                 .to(img6Ref.current, {
                     opacity: 1,
                     duration: 1,
@@ -108,15 +118,23 @@ export const ImageContainer = ({ img1, img2, img3, img4, img5, img6, container }
             </div>
 
             <div ref={mainImgContainer} className="shadow-2xl relative z-10 w-[43vw] h-[30vw] rounded-[2vw] overflow-hidden border-0 bg-black-1 flex flex-col justify-between">
+                <div className="w-full h-full absolute top-0 left-0">
                 <Image ref={img1Ref} placeholder="blur" src={img1} alt="Main Business" className="w-full h-full object-cover absolute top-0 left-0" />
+                <h3 ref={img1RefHeading} className="text-white text-[3.4vw] font-bold font-display self-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2]">₦ 50,000</h3>
+                </div>
+                <div className="w-full h-full absolute top-0 left-0">
                 <Image ref={img6Ref} placeholder="blur" src={img6} alt="Main Business" className="w-full h-full object-cover opacity-0 absolute top-0 left-0" />
+                <h3  ref={img6RefHeading} className="text-white text-[3.4vw] font-bold font-display self-center z-[2] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0">₦ 100,000</h3>
+                </div>
                 <div className="relative top-0 left-0 w-full h-full bg-black/20 flex flex-col justify-between p-[1.5vw]">
                     <span className="bg-primary text-white px-[1vw] py-[0.5vw] rounded-full self-end font-medium">
                         Business
                     </span>
-                    <h3 className="text-white text-[3.4vw] font-bold font-display self-center">₦ 20,000</h3>
+                    {/* <h3 className="text-white text-[3.4vw] font-bold font-display self-center">₦ 50,000</h3> */}
                     <div className="bg-white p-[1vw] rounded-[1.5vw] flex items-center gap-[1vw] w-fit">
-                        <span className="w-[3vw] h-[3vw] rounded-full bg-primary" />
+                        <div className="w-[3vw] h-[3vw] rounded-full bg-primary p-[0.2vw]" >
+                           <Image src={"/assets/images/business/business-total-amount.svg"} alt="amout svg" className="w-full h-full object-contain" width={100} height={100}/>
+                        </div>
                         <div className="pr-[2vw]">
                             <div className="">Total Amount Collected</div>
                             <div className="text-[1vw] font-display">Today</div>

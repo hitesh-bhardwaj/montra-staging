@@ -2,7 +2,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, content }) => {
+const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, content,para,h }) => {
   const tlRef = useRef(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, cont
           ease: "power3.inOut"
         })
         .to(`.${classPrefix}-circle`, {
-          height: "15vw",
+          height: `${h}`,
           ease: "power3.inOut",
           delay: -0.3,
         })
@@ -115,8 +115,12 @@ const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, cont
               </div>
               <div className={`text-[1vw] ${classPrefix}-content font-normal max-sm:mt-[5vw] max-md:pt-[4vw]`}>
                 <ul className="space-y-2  max-sm:text-[4.5vw] max-sm:pl-[3vw] max-md:text-[3.5vw] max-md:pl-[4vw]">
-                  {content.map((text, index) => (
+                 {para&& <p>{para}</p>  } 
+                  {content&&content.map((text, index) => (
+                    
                     <li key={index} className="list-disc ml-2">{text}</li>
+                    
+                    
                   ))}
                 </ul>
               </div>

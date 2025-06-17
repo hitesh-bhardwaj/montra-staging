@@ -163,7 +163,7 @@ export default function Hero() {
             )}
           </div>
 
-          <BottomContent img6={img6} />
+          <BottomContent img6={img6} imgAmount={"₦ 100,000"} />
         </div>
       </section>
     </>

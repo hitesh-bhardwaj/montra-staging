@@ -188,12 +188,8 @@ const Hero = () => {
           </Heading>
           <Copy>
             <p className="w-1/2 max-sm:w-full max-md:w-[80%]">
-              Montra offers a comprehensive suite of digital products and
-              platforms that serve both individuals and businesses. From
-              easy-to-use apps for payments & account management to powerful
-              tools for accessing credit, making investment, and buying
-              insurance, we help users benefit the transition they make from
-              Cash to instant & secure Digital Payments
+            <span className="font-semibold">We offer more than just payments. </span>
+            At Montra, we provide a full suite of digital tools designed for both individuals and businesses. From easy-to-use apps for payments and account management to powerful features that give you access to credit, investments, and insurance, we help you make a smooth shift from cash to fast, secure digital payments.
             </p>
           </Copy>
         </div>

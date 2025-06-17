@@ -2,40 +2,50 @@ import Copy from "@/components/Copy"
 import Heading from "@/components/Heading"
 import Image from "next/image"
 
-export const BottomContent = ({ img6 }) => {
+export const BottomContent = ({ img6,imgAmount }) => {
     return (
-        <div className=" w-screen p-[4vw] flex flex-col gap-[20vw] h-fit absolute bottom-0 text-white max-sm:p-[8vw] max-sm:gap-12 max-sm:static max-md:static max-md:gap-10 max-md:pb-[10vw] dark">
+        <div className=" w-screen p-[4vw] flex flex-col gap-[40vh] h-fit absolute bottom-0 text-white max-sm:p-[8vw] max-sm:gap-12 max-sm:static max-md:static max-md:gap-10 max-md:pb-[10vw] dark">
             <div className="h-[65vw] hidden max-sm:block mt-12 max-md:block" />
             <div className="w-[42%] self-end text-left space-y-[2vw] max-sm:w-full max-sm:space-y-[6vw] max-md:w-full max-md:space-y-[4vw]">
                 <Heading>
                     <h2 className="text-[3.4vw] font-display font-medium leading-[1.2] max-sm:text-[7.2vw] max-md:text-[5.5vw]">
-                        Boost Growth With Smart Payments & Tools
+                    Boost Growth By Accepting Payments & Using a variety of  our Business Management Tools
+
                     </h2>
                 </Heading>
                 <div className="space-y-[2vw] max-sm:space-y-[6vw] max-md:space-y-[4vw]">
                     <Copy>
-                        <p>Montra enables you to Accept Payments easily from everyone, anywhere. Our Merchants can offer payment acceptance to their customers  using:</p>
+                        <p>Montra makes it easy for merchants to accept digital payments using:
+                        </p>
                     </Copy>
                     <ul className="list-disc space-y-[2vw] pl-5 max-sm:space-y-[6vw] max-md:space-y-[4vw]">
                         <Copy>
-                            <li>Interoperable QR Code - customers can simply scan QR Code using any Mobile Banking App to pay from their bank accounts digitally. Customers using their Montra App can pay from their Montra Account as well as from any Card they may have linked to Montra App.</li>
+                            <li>Interoperable QR Code - Customers scan your QR code using any mobile banking app to pay directly from their bank accounts or use the Montra App to pay from their Montra Account or linked cards</li>
                         </Copy>
                         <Copy>
-                            <li>Soft-POS (Tap & Pay) - open the Tap & Pay feature on your Montra App to enter payment amount. Customer can simply Tap any Card on your NFC enabled phone and complete the payment steps on your phone, similar to how they pay on POS.</li>
+                            <li>Soft-POS (Tap & Pay) - Activate Tap & Pay in the Montra App, enter the payment amount, and customers simply tap any contactless card on your NFC-enabled android phone — just like a POS terminal.
+                            </li>
                         </Copy>
                         <Copy>
-                            <li>POS - get a POS issued from Montra to start accepting card payments</li>
+                            <li>POS - Start accepting secure  in-store card payments  with a Montra POS device.
+                            </li>
                         </Copy>
                     </ul>
                     <div className="space-y-[1.5vw] w-[78%] max-sm:space-y-[4vw] max-sm:w-full max-md:w-[80%] max-md:space-y-[4vw] max-sm:mt-[10vw]">
                         <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-white text-black max-sm:px-[4vw] max-sm:py-[3vw] max-md:px-[5vw] max-md:py-[2vw]">
-                            Accept cashless payments with ease
+                        Accept Payments from any Account/Card
+
                         </div>
                         <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-[#FFEAEE] text-black max-sm:px-[4vw] max-sm:py-[3vw] max-md:px-[5vw] max-md:py-[2vw]">
-                            Access working capital and credit
+                        Accept payments using Interoperable QR Code 
+
                         </div>
                         <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-[#EAF1FF] text-black max-sm:px-[4vw] max-sm:py-[3vw] max-md:px-[5vw] max-md:py-[2vw]">
-                            Get business insights in real-time
+                        Accept payments using your phone as a POS
+
+                        </div>
+                        <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-[#FFEAEE] text-black max-sm:px-[4vw] max-sm:py-[3vw] max-md:px-[5vw] max-md:py-[2vw]">
+                        Access working capital and credit
                         </div>
                     </div>
                 </div>
@@ -47,7 +57,7 @@ export const BottomContent = ({ img6 }) => {
                     <span className="bg-primary text-white px-2 py-1 rounded-full self-end">
                         Business
                     </span>
-                    <h3 className="text-white text-4xl font-bold font-display self-center">₦ 20,000</h3>
+                    <h3 className="text-white text-4xl font-bold font-display self-center">{imgAmount}</h3>
                     <div className="bg-white p-2 rounded-2xl flex items-center gap-2 w-full">
                         <span className="w-8 h-8 rounded-full bg-primary" />
                         <div className="text-black-1">
@@ -76,7 +86,7 @@ export const BottomContent = ({ img6 }) => {
                             Voice & Text notifications for payment confirmation
                         </div>
                         <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-[#EAF1FF] text-black max-sm:px-[4vw] max-sm:py-[5vw] max-sm:rounded-[5vw] max-md:px-[5vw] max-md:py-[2vw]">
-                            Set up a Montra Store on Montra App & start selling your products & services virtually
+                        Integrate Payment Gateway on your website & mobile app for accepting payments
                         </div>
                     </div>
                 </div>

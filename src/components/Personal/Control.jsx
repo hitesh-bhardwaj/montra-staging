@@ -28,7 +28,7 @@ const Control = () => {
         text: "Learn More",
         href: "/personal/banking",
       },
-      icon: "/assets/images/personal/personal-icon-1.png",
+      icon: "/assets/images/personal/personal-icon-1.svg",
       iconColor: "#FF8100",
     },
     {
@@ -44,7 +44,7 @@ const Control = () => {
         text: "Learn More",
         href: "/personal/finance",
       },
-      icon: "/assets/images/personal/personal-icon-2.png",
+      icon: "/assets/images/personal/personal-icon-2.svg",
       iconColor: "#35C771",
     },
     {
@@ -60,7 +60,7 @@ const Control = () => {
         text: "Learn More",
         href: "/personal/shop",
       },
-      icon: "/assets/images/personal/personal-icon-3.png",
+      icon: "/assets/images/personal/personal-icon-3.svg",
       iconColor: "#111111",
     },
     {
@@ -76,7 +76,7 @@ const Control = () => {
         text: "Learn More",
         href: "/personal/chat",
       },
-      icon: "/assets/images/personal/personal-icon-4.png",
+      icon: "/assets/images/personal/personal-icon-4.svg",
       iconColor: "#FB2F55",
     },
     {
@@ -92,7 +92,7 @@ const Control = () => {
         text: "Learn More",
         href: "/personal/payments",
       },
-      icon: "/assets/images/personal/personal-icon-5.png",
+      icon: "/assets/images/personal/personal-icon-5.svg",
       iconColor: "#4F46E5",
     },
   ];
@@ -305,11 +305,11 @@ const Control = () => {
                 }}
               >
                 <Image
-                  src="/assets/images/personal/personal-icon-1.png"
+                  src="/assets/images/personal/personal-icon-1.svg"
                   alt="perosnal-icons"
                   className="w-full h-full object-contain"
-                  height={200}
-                  width={200}
+                  height={400}
+                  width={400}
                 />
                 <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-[#FF8100]">Banking</div>
@@ -330,11 +330,11 @@ const Control = () => {
                 }}
               >
                 <Image
-                  src="/assets/images/personal/personal-icon-2.png"
+                  src="/assets/images/personal/personal-icon-2.svg"
                   alt="perosnal-icons"
                   className="w-full h-full object-contain"
-                  height={200}
-                  width={200}
+                  height={400}
+                  width={400}
                 />
                 <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-[#35C771]">Finance</div>
@@ -355,11 +355,11 @@ const Control = () => {
                 }}
               >
                 <Image
-                  src="/assets/images/personal/personal-icon-3.png"
+                  src="/assets/images/personal/personal-icon-3.svg"
                   alt="perosnal-icons"
                   className="w-full h-full object-contain"
-                  height={200}
-                  width={200}
+                  height={400}
+                  width={400}
                 />
                 <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-[#111111]">shop</div>
@@ -380,11 +380,11 @@ const Control = () => {
                 }}
               >
                 <Image
-                  src="/assets/images/personal/personal-icon-4.png"
+                  src="/assets/images/personal/personal-icon-4.svg"
                   alt="perosnal-icons"
                   className="w-full h-full object-contain"
-                  height={200}
-                  width={200}
+                  height={400}
+                  width={400}
                 />
                 <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-[#FB2F55]">Chat</div>
@@ -405,11 +405,11 @@ const Control = () => {
                 }}
               >
                 <Image
-                  src="/assets/images/personal/personal-icon-5.png"
+                  src="/assets/images/personal/personal-icon-5.svg"
                   alt="perosnal-icons"
                   className="w-full h-full object-contain"
-                  height={200}
-                  width={200}
+                  height={400}
+                  width={400}
                 />
                 <div className="absolute left-[130%] top-[-5%] opacity-0 icon-content text-[10vw] font-bold font-display uppercase">
                   <div className="text-primary">Payments</div>
