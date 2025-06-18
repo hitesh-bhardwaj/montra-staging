@@ -17,7 +17,7 @@ const businessPayments = () => {
   return (
    <>
    <Header/>
-   <Hero primaryHeading={"Montra for Business: "} heading={"Digital Payments That Drive Growth"} content={"EWith Montra, getting paid is simple, secure, and built for scale. Empowering your Business with Seamless Digital Transactions "} paraWidth={"w-[60%]"}/>
+   <Hero primaryHeading={"Montra for Business: "} heading={"Digital Payments That Drive Growth"} content={"With Montra, getting paid is simple, secure, and built for scale. Empowering your Business with Seamless Digital Transactions "} paraWidth={"w-[60%]"}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>
@@ -121,10 +121,10 @@ const cardData ={
   }
 const whatWhyData = {
     heading:"Smart Invoicing. Instant Payments.",
-    headingWidth:"w-[85%]",
+    headingWidth:"w-[55%] max-md:w-[80%]",
     height:"h-[88%]",
     top:"top-[38%]",
-    paraWidth:"w-[70%]",
+    paraWidth:"w-[55%]",
     para:"Bill in any currency, send in seconds, and get paid without the wait—Montra makes cash flow smoother than ever.",
     content:[
     {

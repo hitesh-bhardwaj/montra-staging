@@ -189,6 +189,7 @@ const Hero = () => {
           <Copy>
             <p className="w-1/2 max-sm:w-full max-md:w-[80%]">
             <span className="font-semibold">We offer more than just payments. </span>
+            <br/>
             At Montra, we provide a full suite of digital tools designed for both individuals and businesses. From easy-to-use apps for payments and account management to powerful features that give you access to credit, investments, and insurance, we help you make a smooth shift from cash to fast, secure digital payments.
             </p>
           </Copy>

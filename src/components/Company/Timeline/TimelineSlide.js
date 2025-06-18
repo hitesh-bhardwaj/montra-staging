@@ -61,6 +61,7 @@ export default function TimelineSlide({  year, direction, data }) {
                 color={card.color}
                 title={card.title}
                 h={card.h}
+                mobileh={card.mobileh}
                 para={card.para}
                 content={card.content}
               />

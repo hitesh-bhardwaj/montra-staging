@@ -50,7 +50,7 @@ const faqContent = [
   {
     question: "What can I do with my Montra Business Account?",
     answer:
-      "<p>Your Business Account gives you access to:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>A unique account number for bank transfers</li><li>Real-time payment tracking and transaction history</li><li>Easy access to funds collected through POS, QR, Tap & Pay, and payment links</li><li>Business-friendly tools like invoicing, inventory tracking, and expense management</li><li>A dedicated wallet for managing day-to-day operations</li></ul>",
+      "<p>Your Business Account gives you access to:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>A unique account number for bank transfers</li><li>Real-time payment tracking and transaction history</li><li>Easy access to funds collected through POS, QR, Tap & Pay, and payment links</li><li>Business-friendly tools like invoicing, inventory tracking, and expense management</li><li>A dedicated wallet for managing day-to-day operations</li></ul>",
   },
   {
     question: "Can I separate personal and business finances on Montra?",

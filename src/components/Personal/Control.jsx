@@ -276,7 +276,7 @@ const Control = () => {
 
   return (
     <div
-      className="w-screen h-[700vh] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb]"
+      className="w-screen h-[700vh] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb] max-md:hidden"
       id="control"
     >
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">

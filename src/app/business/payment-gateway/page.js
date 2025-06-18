@@ -83,8 +83,8 @@ const overviewContent = {
 const  benefitsData = {
     heading:"Powering Payments, Securing Growth",
     para:"With flexible payments, powerful dashboards, and top-tier security, MontraPay gives your business the tools to scale confidently and get paid easily.",
-    headingWidth:"w-full",
-    paraWidth:"w-full",
+    headingWidth:"w-[70%]",
+    paraWidth:"w-[70%]",
     cards:[
       { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Access detailed reports on payments, settlements, and refunds — giving you the insights you need to make smarter business decisions.", title: "Powerful Dashboard", z: "z-[5]", width:"w-[22vw]", height:"17vw" },
       { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Stay protected with PCI DSS compliance, regular third-party audits, and a dedicated internal security team keeping your data safe.", title: "Robust Security", z: "z-[4]", width:"w-[20vw]", height:"17vw" },

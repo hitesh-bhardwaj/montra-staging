@@ -10,6 +10,7 @@ export const timelineData = [
                 top: 'top-[25%]',
                 color: '#D9f7c5',
                 h:"20vw",
+                mobileh:"90vw",
                 content: [
                     'Big Idea - Dual Transaction Service (DTS) Conceptualized to offer usage of Credit Card from existing Debit Cards ',
                     'DTS platform was created for Credit Card Issuance, Activation, Transaction switching & mirroring services',
@@ -23,6 +24,7 @@ export const timelineData = [
                 left: 'left-[25%]',
                 top: 'top-[45%]',
                 h:"17vw",
+                mobileh:"80vw",
                 color: '#FFEAEE',
                 content: [
                     'Access Bank, one of the leading banks in Africa signed the MOU to launch DTS.',
@@ -38,6 +40,7 @@ export const timelineData = [
                 left: 'left-[60%]',
                 top: 'top-[40%]',
                 h:"15vw",
+                mobileh:"70vw",
                 color: '#CAC5F7',
                 content: [
                     'Montra Technology Solutions Limited was founded in Nigeria.',
@@ -70,6 +73,7 @@ export const timelineData = [
                 top: 'top-[20%]',
                 color: '#D9f7c5',
                 h:"17vw",
+                mobileh:"70vw",
                 content: [
                     'DTS launched',
                     'Over 300,000 DTS Credit Cards Issued',
@@ -86,6 +90,7 @@ export const timelineData = [
                 top: 'top-[55%]',
                 color: '#FFEAEE',
                 h:"15vw",
+                mobileh:"60vw",
                 content: [
                     'Partnership with Mastercard for issuance of DTS credit cards. Mastercard Preferred Partner across Africa',
                 ],
@@ -99,6 +104,7 @@ export const timelineData = [
                 top: 'top-[35%]',
                 color: '#CAC5F7',
                 h:"16vw",
+                mobileh:"70vw",
                 content: [
                     'Montra Technology Solutions Limited was founded in Nigeria.',
                     'Dual Service Transaction (DTS) was Patented ',
@@ -128,6 +134,7 @@ export const timelineData = [
                 title: 'DUO',
                 left: 'left-[20%]',
                 top: 'top-[25%]',
+                mobileh:"90vw",
                 para:"DUO Solution development milestones achieved:",
                 color: '#D9f7c5',
                 h:"22vw",
@@ -148,6 +155,7 @@ export const timelineData = [
                 top: 'top-[45%]',
                 color: '#FFEAEE',
                 h:"13vw",
+                mobileh:"60vw",
                 content: [
                     'Cloud based Loan Management System (LMS) was developed for Digital Lending',
                 ],
@@ -161,6 +169,7 @@ export const timelineData = [
                 top: 'top-[35%]',
                 color: '#CAC5F7',
                 h:"20vw",
+                mobileh:"90vw",
                 para:"Montra App & Platform development, milestones achieved:",
                 content: [
                     'QR code',
@@ -195,6 +204,7 @@ export const timelineData = [
                 top: 'top-[20%]',
                 color: '#D9f7c5',
                 h:"20vw",
+                mobileh:"80vw",
                 para:"DUO Solution development milestones achieved:",
                 content: [
                     'DUO Collections application',
@@ -211,6 +221,7 @@ export const timelineData = [
                 top: 'top-[25%]',
                 color: '#EAF1FF',
                 h:"12vw",
+                mobileh:"50vw",
                para:"Developed Verifyed Authentication App",
                 classPrefix: 'b',
                 letter: "V",
@@ -222,6 +233,7 @@ export const timelineData = [
                 top: 'top-[60%]',
                 color: '#FFEAEE',
                 h:"13vw",
+                mobileh:"60vw",
                para:"Cloud based Loan Management System (LMS) was developed for Digital Lending",
                 classPrefix: 'c',
                 letter: "M",
@@ -232,8 +244,9 @@ export const timelineData = [
                 left: 'left-[75%]',
                 top: 'top-[40%]',
                 para:"Montra App & Platform development, milestones achieved:",
-                color: '#FFEAEE',
+                color: '#D9f7c5',
                 h:"18vw",
+                mobileh:"70vw",
                 content: [
                     'Payment Gateway Application',
                     'Integrations with Mastercard, Visa & NIBSS',
@@ -248,6 +261,7 @@ export const timelineData = [
                 top: 'top-[50%]',
                 color: '#CAC5F7',
                 h:"14vw",
+                mobileh:"60vw",
                 content: [
                     'Partnership with NIBSS (Nigeria Inter-Bank Settlement System) for Payment processing',
                 ],
@@ -259,8 +273,9 @@ export const timelineData = [
                 title: 'Montra Licenses',
                 left: 'left-[30%]',
                 top: 'top-[25%]',
-                color: '#CAC5F7',
+                color: '#FFEAEE',
                 h:"20vw",
+                mobileh:"90vw",
                 content: [
                     'AIP (Approval in Principle) as PSSP & Super-agent received from CBN (Central Bank of Nigeria) ',
                     'Obtained PCI DSS certification for global data security standard for accepting card payments',
@@ -294,6 +309,7 @@ export const timelineData = [
                 top: 'top-[20%]',
                 color: '#D9f7c5',
                 h:"23vw",
+                mobileh:"95vw",
                 para:"DUO Solution development milestones achieved:",
                 content: [
                     'DUO customer onboarding & Dynamic Limit Management Modules launched',
@@ -309,7 +325,8 @@ export const timelineData = [
                 left: 'left-[75%]',
                 top: 'top-[55%]',
                 color: '#EAF1FF',
-                h:"20vw",
+                h:"17vw",
+                mobileh:"80vw",
                 content: [
                     'Liveness Verification capability',
                     'Facematch capability',
@@ -326,6 +343,7 @@ export const timelineData = [
                 top: 'top-[50%]',
                 color: '#FFEAEE',
                 h:"17vw",
+                mobileh:"75vw",
                 content: [
                     'Account Management System',
                     'Card Issuing, Management & Processing Platform',
@@ -341,8 +359,9 @@ export const timelineData = [
                 left: 'left-[48%]',
                 top: 'top-[20%]',
                 para:"Montra App & Platform development, milestones achieved:",
-                color: '#FFEAEE',
+                color: '#D9f7c5',
                 h:"34vw",
+                mobileh:"140vw",
                 content: [
                     'Integration with Interswitch.',
                     'Audio Notification Delivery',
@@ -364,6 +383,7 @@ export const timelineData = [
                 top: 'top-[55%]',
                 color: '#CAC5F7',
                 h:"12vw",
+                mobileh:"50vw",
                 content: [
                     'Partnership with Mastercard, Visa & Interswitch',
                 ],
@@ -375,11 +395,11 @@ export const timelineData = [
                 title: 'Montra Licenses',
                 left: 'left-[25%]',
                 top: 'top-[30%]',
-                color: '#CAC5F7',
-                h:"20vw",
+                color: '#EAF1FF',
+                h:"12vw",
+                mobileh:"50vw",
                 content: [
-                    'AIP (Approval in Principle) as PSSP & Super-agent received from CBN (Central Bank of Nigeria) ',
-                    'Obtained PCI DSS certification for global data security standard for accepting card payments',
+                    'Obtained PSSP & Super-agent from CBN (Central Bank of Nigeria) ',
                 ],
                 classPrefix: 'e',
                 // letter: "M",
@@ -389,8 +409,9 @@ export const timelineData = [
                 title: 'Supplychain',
                 left: 'left-[5%]',
                 top: 'top-[65%]',
-                color: '#CAC5F7',
+                color: '#FFEAEE',
                 h:"12vw",
+                mobileh:"50vw",
                 para:"Completed Development of Montra Supply Chain Solution",
                 classPrefix: 'g',
                 // letter: "M",
@@ -409,6 +430,7 @@ export const timelineData = [
                 top: 'top-[25%]',
                 color: '#D9f7c5',
                 h:"14vw",
+                mobileh:"60vw",
                 content: [
                     'Over 2,000,000 DTS Credit Cards Issued',
                     'Over 98% of market share of Credit Cards issued in Nigeria',
@@ -423,6 +445,7 @@ export const timelineData = [
                 top: 'top-[25%]',
                 color: '#EAF1FF',
                 h:"13vw",
+                mobileh:"40vw",
                 content: [
                     'Partnership with Prophius, eTranzact',
                 ],
@@ -436,6 +459,7 @@ export const timelineData = [
                 top: 'top-[50%]',
                 color: '#FFEAEE',
                 h:"12vw",
+                mobileh:"40vw",
                 content: [
                     'Completed development of Debt collection System',
                 ],
@@ -449,6 +473,7 @@ export const timelineData = [
                 top: 'top-[50%]',
                 color: '#CAC5F7',
                 h:"17vw",
+                mobileh:"70vw",
                 para:"Montra App & Platform development, milestones achieved:",
                 content: [
                     'Chat & Social Feeds',

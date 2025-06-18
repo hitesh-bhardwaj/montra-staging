@@ -2,7 +2,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, content,para,h }) => {
+const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, content,para,h ,mobileh }) => {
   const tlRef = useRef(null);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, cont
             ease: "power3.inOut",
           })
           .to(`.${classPrefix}-circle`, {
-            height: "80vw",
+            height: `${mobileh}`,
             ease: "power3.inOut",
             delay: -0.3,
           })
@@ -110,12 +110,12 @@ const AnimatedOpeners = ({ letter, classPrefix, left, top, color, title, z, cont
               <div className="h-[3vw] max-sm:text-[4.5vw] max-sm:h-fit max-sm:pt-[3.5vw] max-sm:pl-[3vw] max-md:h-fit max-md:text-[3.5vw] max-md:pt-[1.5vw] max-md:pl-[4vw]">
                 {title}
               </div> 
-              <div className='absolute right-[8%] cursor-pointer max-sm:top-[5%] max-md:top-[6%]' >
-                <Image className='w-[2vw] h-[2vw] object-contain invert max-sm:w-[5vw] max-sm:h-[5vw] max-md:w-[5vw] max-md:h-[5vw]' alt='cross' src="/assets/icons/cross-icon.svg" width={50} height={50} onClick={handleMouseLeave} />
+              <div className='absolute right-[8%] cursor-pointer max-md:mt-[2vw] max-sm:mt-[3vw]' >
+                <Image className='w-[2vw] h-[2vw] object-contain invert max-sm:w-[7vw] max-sm:h-[7vw] max-md:w-[5vw] max-md:h-[5vw]' alt='cross' src="/assets/icons/cross-icon.svg" width={50} height={50} onClick={handleMouseLeave} />
               </div>
               <div className={`text-[1vw] ${classPrefix}-content font-normal max-sm:mt-[5vw] max-md:pt-[4vw]`}>
-                <ul className="space-y-2  max-sm:text-[4.5vw] max-sm:pl-[3vw] max-md:text-[3.5vw] max-md:pl-[4vw]">
-                 {para&& <p>{para}</p>  } 
+                 {para&& <p className="max-sm:text-[4.5vw] max-md:text-[3.5vw] max-sm:pl-[2vw] max-sm:w-[80%] max-sm:mb-[2vw]">{para}</p>  } 
+                <ul className="space-y-2  max-sm:text-[4.5vw] max-sm:pl-[5vw] max-md:text-[3.5vw] max-md:pl-[4vw] max-sm:w-[90%]">
                   {content&&content.map((text, index) => (
                     
                     <li key={index} className="list-disc ml-2">{text}</li>

@@ -58,7 +58,7 @@ const faqContent = [
     {
       question: 'How do I manage inventory on Montra Store? ',
       answer:
-        "<p>Go to the Inventory tab in your merchant dashboard. You can update stock levels, enable out-of-stock alerts, and view sales history. Inventory syncs in real time with your store and order management.</p>",
+        "<p>Go to the <span class='font-semibold'>Inventory</span> tab in your merchant dashboard. You can update stock levels, enable out-of-stock alerts, and view sales history. Inventory syncs in real time with your store and order management.</p>",
     },
     {
       question: 'Is there a commission or fee to use Montra Store? ',
@@ -85,9 +85,9 @@ const  benefitsData = {
   headingWidth:"w-full",
   paraWidth:"w-full",
   cards:[
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Bring your idea to life with Montra Store & start selling. You can set-up your store using Montra App & Montra Store Web Portal & scale your business faster with built-in, reliable data—no setup required.", title: "Build your Store", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Customers can make payments using their Montra Account, Debit or Credit Cards, Linked Bank Accounts as well as in Instalments and you would collect this payment instantly in your Montra Business Accounts", title: "Accept payment through variety of payment methods", z: "z-[4]", width:"w-[41vw]", height:"17vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Scale without limits. Montra can help you open Stores in countries Montra is acquiring. Montra can also help businesses who have a valid company registration, accept global payments from any customer anywhere in the world.", title: "Sell Across Borders", z: "z-[5]",  width:"w-[22vw]", height:"17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Bring your idea to life with Montra Store & start selling. You can set-up your store using Montra App & Montra Store Web Portal & scale your business faster with built-in, reliable data—no setup required.", title: "Build your Store", z: "z-[5]", width:"w-[20vw]", height:"22vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Customers can make payments using their Montra Account, Debit or Credit Cards, Linked Bank Accounts as well as in Instalments and you would collect this payment instantly in your Montra Business Accounts", title: "Accept payment through variety of payment methods", z: "z-[4]", width:"w-[40vw]", height:"17vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Scale without limits. Montra can help you open Stores in countries Montra is acquiring. Montra can also help businesses who have a valid company registration, accept global payments from any customer anywhere in the world.", title: "Sell Across Borders", z: "z-[5]",  width:"w-[22vw]", height:"23vw" },
     { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "Make checkout your own using customizable features that fit your unique business needs. You can enable or disable from the available options of accepting Payment on Delivery (POD), Pay Now & Escrow Pay", title: "The best checkout with Montra Pay", z: "z-[4]",  width:"w-[31vw]", height:"17vw" },
   ]
 }

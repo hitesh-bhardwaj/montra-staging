@@ -94,7 +94,7 @@ export default function Control({ allowMultiple = false }) {
   }
 
   return (
-    <section className="px-[7vw] py-[6vw] w-full ">
+    <section className="px-[7vw] py-[6vw] w-full hidden max-md:block ">
       <div className="flex flex-col items-center max-sm:gap-[15vw] max-md:gap-[7vw]">
         <h2 className="font-display font-medium max-sm:text-[11.5vw] leading-[1.2] max-md:text-[7.5vw]">
           Take Control of Your Finances. Effortlessly.

@@ -110,7 +110,7 @@ const AnimatedOpeners = ({
             opacity: 1,
             delay: -0.3,
             ease: "power3.inOut",
-          });
+          })
 
         tlRef.current = tl;
       }
@@ -220,12 +220,12 @@ const AnimatedOpeners = ({
             <div
               className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[6vw] max-sm:gap-[10vw] max-md:gap-[7vw]  max-md:px-[5vw] ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] max-md:w-[70vw] max-md:rounded-[5vw] `}
             >
-              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4vw] max-sm:h-fit max-md:text-[3.2vw] max-sm:mt-[0.5vw] max-md:mt-[1.2vw]  ">
+              <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4vw] max-sm:h-fit max-md:text-[2.8vw] max-sm:mt-[0.5vw] max-md:mt-[1.6vw] max-md:leading-[1.1] max-sm:w-[85%] max-md:text-left  ">
                 {title}
               </div>
-              <div className="absolute right-[8%] cursor-pointer max-md:pt-[1.5vw] max-sm:pt-0">
+              <div className="absolute right-[5%] cursor-pointer max-md:pt-[1.5vw] max-sm:pt-0">
                 <Image
-                  className="w-[2vw] h-[2vw] object-contain invert max-sm:w-[7vw] max-sm:h-[7vw] max-md:w-[4.5vw] max-md:h-[4.5vw]"
+                  className="w-[2vw] h-[2vw] object-contain invert max-sm:w-[7vw] max-sm:h-[7vw] max-md:w-[4.5vw] max-md:h-[4.5vw] "
                   alt="cross"
                   src="/assets/icons/cross-icon.svg"
                   width={50}
@@ -234,7 +234,7 @@ const AnimatedOpeners = ({
                 />
               </div>
               <div
-                className={`text-[1.2vw] ${classPrefix}-content font-normal text-left opacity-0 max-sm:text-[4.5vw] max-md:text-[2.8vw]`}
+                className={`text-[1.2vw] ${classPrefix}-content font-normal text-left opacity-0 max-sm:text-[4.5vw] max-md:text-[2.8vw] normal-case`}
               >
                 {content}
               </div>

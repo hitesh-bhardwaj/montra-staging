@@ -137,12 +137,12 @@ const Hero = () => {
           borderRadius: "0vw",
         })
           .to(".hero-main-card", {
-            height: "60vw",
+            height: "45vw",
             yPercent: -10,
             delay: -0.4,
           })
           .to(".hero-main-border", {
-            height: "60vw",
+            height: "45vw",
             top: "0%",
             delay: -0.5,
             opacity: 1,

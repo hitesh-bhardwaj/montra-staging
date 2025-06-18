@@ -5,27 +5,19 @@ import Control from "@/components/Personal/Control";
 import ControlMobile from "@/components/Personal/ControlMobile";
 import Hero from "@/components/Personal/Hero";
 import SectionBreak from "@/components/Personal/SectionBreak";
-import { useEffect, useState } from "react";
 
 export default function Personal() {
-  const [mobileWidth, setMobileWidth] = useState(false);
 
-  useEffect(() => {
-    if (globalThis.innerWidth > 1024) {
-      setMobileWidth(false);
-    } else {
-      setMobileWidth(true);
-    }
-  }, []);
 
   fadeUpAnim();
 
   return (
     <>
       <Hero />
-      <div className="max-sm:h-[180vh] max-md:min-h-[190vh]">
-        {!mobileWidth ? <Control /> : <ControlMobile />}
-      </div>
+     
+        <Control />
+        <ControlMobile />
+      
       <SectionBreak />
       <FAQs content={faqContent} />
     </>
@@ -36,12 +28,12 @@ const faqContent = [
   {
     question: 'How do I open a Montra Personal Account?',
     answer:
-      "<p>You can open a Montra Personal Account in 4 easy steps:</p><ol class='pl-[2vw] list-decimal space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>Download the Montra App from Google Play or the Apple App Store.</li><li>Sign up with your phone number, date of birth, and set a password.</li><li>Verify your identity using your BVN or NIN, complete face capture, and confirm your email.</li><li>Set your Montra PIN and accept the terms — your account is ready to go!</li></ol>",
+      "<p>You can open a Montra Personal Account in 4 easy steps:</p><ol class='pl-[2vw] list-decimal space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw] max-md:pl-[3vw]'><li>Download the Montra App from Google Play or the Apple App Store.</li><li>Sign up with your phone number, date of birth, and set a password.</li><li>Verify your identity using your BVN or NIN, complete face capture, and confirm your email.</li><li>Set your Montra PIN and accept the terms — your account is ready to go!</li></ol>",
   },
   {
     question: 'How do I access & use Montra Debit Card?',
     answer:
-      "<ol class='pl-[2vw] list-decimal space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>Open the Montra App and tap the <span class='font-semibold'>Instacard Digital Wallet</span> icon.</li><li><span class='font-semibold'>Select your Montra Debit Card</span> (or any other linked card).</li><li><span class='font-semibold'>Enter your Card PIN</span> to unlock and view card details.</li><li><span class='font-semibold'>Use your Montra Debit Card</span> for online or contactless payments.</li><li><span class='font-semibold'>Adjust Card Controls </span>to set transaction limits, temporarily block, or permanently delete the card.</li><li><span class='font-semibold'>Link your Virtual Montra Debit Card</span> to your Universal (Physical) Card to enable international use at any POS or ATM.</li></ol>",
+      "<ol class='pl-[2vw] list-decimal space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw] max-md:pl-[3vw]'><li>Open the Montra App and tap the <span class='font-semibold'>Instacard Digital Wallet</span> icon.</li><li><span class='font-semibold'>Select your Montra Debit Card</span> (or any other linked card).</li><li><span class='font-semibold'>Enter your Card PIN</span> to unlock and view card details.</li><li><span class='font-semibold'>Use your Montra Debit Card</span> for online or contactless payments.</li><li><span class='font-semibold'>Adjust Card Controls </span>to set transaction limits, temporarily block, or permanently delete the card.</li><li><span class='font-semibold'>Link your Virtual Montra Debit Card</span> to your Universal (Physical) Card to enable international use at any POS or ATM.</li></ol>",
   },
   {
     question: 'What is KYC Level?',
