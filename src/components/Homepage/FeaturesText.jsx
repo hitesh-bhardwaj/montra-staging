@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import InfoCarouselSwiper from "./InfoCarouselSwiper";
 import gsap from "gsap";
-// import ScrollTrigger from 'gsap-trial/dist/ScrollTrigger';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 

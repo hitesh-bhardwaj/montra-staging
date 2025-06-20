@@ -20,10 +20,8 @@ export default function Home() {
       <Hero />
       <FeatureSection />
       <FeaturesText />
-      {/* <div className="max-sm:min-h-[180vh] max-md:min-h-screen"> */}
       <PaymentMobile />
       <PaymentSection />
-      {/* </div> */}
       <SectionBreak />
       <VisionMission />
       <Testimonials />

@@ -44,7 +44,7 @@ const icons = [
         mobileyOffset: -250,
     },
     {
-        poster: '/assets/images/homepage/image-2.png',
+        poster: '/assets/images/homepage/image-2.webp',
         src: "/assets/images/homepage/feature-vid-6.mp4",
         alt: "Pay",
         style: { top: "15%", left: "30%" },
@@ -72,7 +72,7 @@ const icons = [
         mobileyOffset: 100,
     },
     {
-        poster: '/assets/images/homepage/image-4.png',
+        poster: '/assets/images/homepage/image-4.webp',
         src: "/assets/images/homepage/video-4.mp4",
         alt: "Scan",
         style: { top: "10%", right: "30%" },
@@ -100,7 +100,7 @@ const icons = [
         mobileyOffset: -250,
     },
     {
-        poster: '/assets/images/homepage/image-5.png',
+        poster: '/assets/images/homepage/image-5.webp',
         src: "/assets/images/homepage/feature-vid-1.mp4",
         alt: "Pay",
         style: { bottom: "35%", right: "35%" },
@@ -192,24 +192,24 @@ const FeatureSection = () => {
                         // id="hero-phone-image"
                         src="/assets/images/montra-loader-mockup.png"
                         alt="App mockup"
-                        width={1200}
-                        height={1400}
-                        className="w-[70%] h-[70%] object-contain absolute left-[15%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-105%] max-md:translate-y-[-150%] max-sm:translate-y-[-160%] z-[9999]"
+                        width={800}
+                        height={1000}
+                        className="w-[70%] h-[70%] object-contain absolute left-[15%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-105%] max-sm:hidden z-[9999]"
                     />
                     <Image
                         // id="hero-phone-image"
                         src="/assets/images/homepage/phone-mockup.png"
                         alt="App mockup"
-                        width={1200}
-                        height={1400}
+                        width={800}
+                        height={1000}
                         className="w-[65%] hidden max-md:block  h-auto max-sm:translate-x-0 object-cover max-sm:block max-sm:w-[120vw] max-sm:h-[140vw] relative z-[9999] max-md:w-[90vw]"
                     />
                     <Image
                         // id="hero-phone-image"
                         src="/assets/images/homepage/phone-hand-mockup.png"
                         alt="App mockup"
-                        width={1200}
-                        height={1400}
+                        width={800}
+                        height={1000}
                         className="w-[65%] translate-x-[19%] max-md:hidden phone-mockup-desktop h-auto max-sm:translate-x-0 object-cover  relative z-[9999] max-md:w-[80vw]"
                     />
                 </motion.div>

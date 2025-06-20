@@ -34,6 +34,7 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
       const split = SplitText.create(element, {
         type: "lines",
         mask: "lines",
+        aria: false ,
         linesClass: "line++",
         lineThreshold: 0.1,
       });

@@ -33,6 +33,7 @@ export default function Heading({ children, animateOnScroll = true, delay = 0 })
         const split = SplitText.create(element, {
           type: "lines",
           linesClass: "single-line",
+          aria: false,
           lineThreshold: 0.1,
         });
 
