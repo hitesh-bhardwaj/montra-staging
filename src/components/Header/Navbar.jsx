@@ -218,6 +218,7 @@ export default function Navbar({ navigateTo, hidden }) {
         }}
       >
         <div
+        aria-hidden={true}
           className={`w-full rounded-[2vw] bg-[#FAFBFF] border border-black/10 flex justify-end overflow-hidden transition-all duration-300 ease-out ${
             openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
           }`}
