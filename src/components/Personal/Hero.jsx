@@ -9,10 +9,12 @@ import { useLenis } from "lenis/react";
 import img1 from "../../../public/assets/images/personal/personal-hero-1.png"
 import img2 from "../../../public/assets/images/personal/personal-hero-2.png"
 import img3 from "../../../public/assets/images/personal/personal-hero-3.png"
+import { fadeUpAnim } from "../gsapAnimations";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  fadeUpAnim();
   const lenis = useLenis();
 
   useEffect(() => {

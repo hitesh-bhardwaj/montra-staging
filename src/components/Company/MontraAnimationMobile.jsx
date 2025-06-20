@@ -3,8 +3,12 @@ import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import Heading from "../Heading";
+import UseMobile from "../UseMobile";
 
 const MontraAnimationMobile = () => {
+  const isMobile = UseMobile();
+
+  if (!isMobile) return null;
   return (
     <section
       className="w-screen h-full px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-md:h-full"

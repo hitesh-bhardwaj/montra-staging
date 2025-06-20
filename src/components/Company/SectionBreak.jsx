@@ -1,5 +1,4 @@
-'use client'
-
+"use client"
 import { useEffect, useRef } from 'react'
 import { initSplitLines } from '@/utils/splitText'
 import gsap from 'gsap'

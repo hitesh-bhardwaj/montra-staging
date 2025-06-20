@@ -1,18 +1,30 @@
-"use client"
 import Benefits from '@/components/Common/Benefits'
 import Features from '@/components/Common/Features'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
-import { fadeUpAnim } from '@/components/gsapAnimations'
 import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
+import { WebpageJsonLd } from '@/lib/json-ld'
 import React from 'react'
+import { homepage } from '@/lib/util'
+import { generateMetadata } from '@/components/Metadata'
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Chat – Instant In‑App Payments & Secure Messaging",
+  description: "Use Montra Chat to send money, split bills, and chat with friends—all in one secure, real‑time messaging experience. Fast payments, group chats, voice & video.",
+  url:"personal/chat",
+  image: "personal-chat.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
+
 
 const personalChat = () => {
-  fadeUpAnim();
   return (
     <>
+    <WebpageJsonLd metadata={metadata}/>
       <Header />
       <Hero primaryHeading={"Montra Chat:"} heading={" Send Money Like a Message"} content={"Chat, send money, split bills, and stay connected—without ever leaving the conversation."} titleWidth={"w-[65%]"} paraWidth={"w-full"} />
       <Overview content={overviewContent} />

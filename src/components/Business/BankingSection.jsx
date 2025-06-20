@@ -5,12 +5,14 @@ import gsap from "gsap";
 import Banking from "./Banking";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Heading from "../Heading";
+import UseMobile from "../UseMobile";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Payments() {
   const sectionRef = useRef(null);
   const containerRef = useRef();
   const itemsRef = useRef([]);
+  const isMobile = UseMobile();
   const scrollToStep = (index) => {
     if (!sectionRef.current) return;
 
@@ -108,6 +110,7 @@ export default function Payments() {
     });
   }, [data]);
 
+  if (isMobile) return null;
   return (
     <section
       ref={sectionRef}

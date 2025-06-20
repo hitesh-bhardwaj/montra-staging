@@ -1,34 +1,36 @@
-'use client'
 import BankingSection from "@/components/Business/BankingSection";;
 import MobileBanking from "@/components/Business/MobileBanking";
 // import SectionBreak from "@/components/Business/SectionBreak";
 import FAQs from "@/components/Homepage/FAQs";
-import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { fadeUpAnim } from "@/components/gsapAnimations";
 import Hero from "@/components/Business/Hero";
 import SectionBreak from "@/components/Common/SectionBreak";
-
+import { WebpageJsonLd } from "@/lib/json-ld";
+import { homepage } from '@/lib/util'
+import { generateMetadata } from "@/components/Metadata";
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Business() {
-  const [mobileWidth, setMobileWidth] = useState(false);
-  useEffect(() => {
-    if (globalThis.innerWidth > 1024) {
-      setMobileWidth(false);
-    } else {
-      setMobileWidth(true);
-    }
-  }, []);
-  fadeUpAnim();
 
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Business Account: Smarter Finance & Growth Tools for Merchants",
+  description: "Empower your business with Montra's digital solutions: open a business account to accept payments via QR, Tap & Pay, POS, gateways; manage inventory, invoices, cash flow & access credit—all-in-one platform.",
+  url:"business",
+  image: "business.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
+
+
+export default function Business() {
   return (
     <>
+    <WebpageJsonLd metadata={metadata}/>
       <Hero />
       <div className="max-sm:h-fit max-md:min-h-screen">
-      {!mobileWidth ? <BankingSection /> : <MobileBanking />}
-
+       <MobileBanking /> 
+        <BankingSection />
       </div>
       <SectionBreak content={"Take control with Montra for Business—get paid, track cash flow, access credit, and scale with ease."} width={"w-[85%]"} />
       <FAQs content={faqContent} />

@@ -1,4 +1,3 @@
-"use client";
 import Benefits from "@/components/Common/Benefits";
 import Features from "@/components/Common/Features";
 import Hero from "@/components/Common/Hero";
@@ -9,59 +8,29 @@ import WhatWhy from "@/components/Common/WhatWhy";
 import Header from "@/components/Header";
 import FAQs from "@/components/Homepage/FAQs";
 import InvestmentPlans from "@/components/PersonalFinance/InvestmentPlans";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-
+import ScrollTrigger from "gsap/dist/ScrollTrigger";import { WebpageJsonLd } from "@/lib/json-ld";
+import { homepage } from '@/lib/util'
+import { generateMetadata } from "@/components/Metadata";
 gsap.registerPlugin(ScrollTrigger);
 
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Finance – Manage Banking, Loans, Investments & Expenses",
+  description: "Track your spending, manage investments, apply for loans, and monitor financial goals—all within Montra’s secure, all-in-one Personal Finance app.",
+  url:"personal/finance",
+  image: "personal-finance.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
+
+
 const PersonalFinance = () => {
-  const [activeNav, setActiveNav] = useState(0);
-  const [color, setcolor] = useState(false);
-
-  useEffect(() => {
-    const triggers = [];
-
-    triggers.push(
-      ScrollTrigger.create({
-        trigger: "#benefits-second",
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => setActiveNav(1),
-        onLeaveBack: () => setActiveNav(0),
-      })
-    );
-    triggers.push(
-      ScrollTrigger.create({
-        trigger: "#steps",
-        start: "top center",
-        end: "bottom center",
-        // markers: true,
-        onEnter: () => setcolor(true),
-        onLeave: () => setcolor(false),
-        onEnterBack: () => setcolor(true),
-        onLeaveBack: () => setcolor(false),
-      })
-    );
-
-    triggers.push(
-      ScrollTrigger.create({
-        trigger: "#whatwhy",
-        start: "top center",
-        end: "bottom center",
-        onLeave: () => setActiveNav(2),
-        onEnterBack: () => setActiveNav(1),
-        onLeaveBack: () => setActiveNav(1),
-      })
-    );
-
-    return () => {
-      triggers.forEach((trigger) => trigger.kill());
-    };
-  }, []);
-  // fadeUpAnim();
+  
   return (
     <>
+    <WebpageJsonLd metadata={metadata}/>
       <Header />
       <Hero
         primaryHeading={"Montra Personal Account: "}
@@ -72,54 +41,6 @@ const PersonalFinance = () => {
       />
       <Overview content={overviewContent} />
       <div className="w-full relative">
-        <div className="sticky z-10 h-screen flex w-fit justify-start items-start pt-[28vw] top-0 px-[2vw] max-md:hidden">
-          <div className="flex gap-[1vw] font-display text-[1vw] ">
-            <span
-              className={` opacity-100 transition-colors duration-500  ease-in-out ${color ? "text-white" : "text-primary"
-                }`}
-            >
-              Finance:
-            </span>
-            <div
-              className={`flex flex-col gap-[0.3vw] h-full w-full transition-transform duration-500 ease-in-out ${activeNav == 0 ? "translate-y-0" : ""
-                } ${activeNav == 1 ? "translate-y-[-33%]" : ""} ${activeNav == 2 ? "translate-y-[-70%]" : ""
-                }`}
-            >
-              <span
-                className={`${activeNav == 0 ? "text-primary" : "opacity-35"
-                  } transition-colors duration-500 ease-in-out ${color ? "text-white" : ""
-                  } cursor-pointer`}
-                onClick={() => {
-                  document
-                    .getElementById("benefits")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Loans
-              </span>
-              <span
-                className={`${activeNav == 1 ? "text-primary" : "opacity-35"
-                  } transition-colors duration-500 ease-in-out ${color ? "text-white" : ""
-                  } cursor-pointer`}
-                onClick={() => {
-                  document.getElementById("benefits-second")?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Insurance
-              </span>
-              <span
-                className={`${activeNav == 2 ? "text-primary" : "opacity-35"
-                  } transition-colors duration-500 ease-in-out ${color ? "text-white" : ""
-                  } cursor-pointer`}
-                onClick={() => {
-                  document.getElementById("investmentplan")?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Investment
-              </span>
-            </div>
-          </div>
-        </div>
         <div className="mt-[-100vh] max-md:mt-0">
           <Benefits data={benefitsData} id={"benefits"} />
         </div>

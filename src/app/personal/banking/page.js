@@ -1,4 +1,3 @@
-"use client";
 import Hero from "@/components/Common/Hero";
 import Overview from "@/components/Common/Overview";
 import SectionBreak from "@/components/Common/SectionBreak";
@@ -7,13 +6,27 @@ import Benefits from "@/components/Common/Benefits";
 import Steps from "@/components/Common/Steps";
 import WhatWhy from "@/components/Common/WhatWhy";
 import React from "react";
-import { fadeUpAnim } from "@/components/gsapAnimations";
+import { WebpageJsonLd } from "@/lib/json-ld";
+import { homepage } from '@/lib/util'
+import { generateMetadata } from "@/components/Metadata";
+
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Personal Banking – Instant Digital Account & Virtual Debit Card",
+  description: "Open a free Montra Personal digital account in minutes. Get a virtual debit card, link your bank, make fast & secure payments—manage all your finances in one app.",
+  url:"personal/banking",
+  image: "personal-banking.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
+
+
 
 const personalBanking = () => {
- 
-    fadeUpAnim();
   return (
     <>
+    <WebpageJsonLd metadata={metadata}/>
       <Hero
         primaryHeading={"Montra Personal Account: "}
         titleWidth={"w-full"}

@@ -1,4 +1,3 @@
-"use client"
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
@@ -8,13 +7,26 @@ import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
 import BenefitCards from '@/components/Common/BenefitCards'
-import { fadeUpAnim } from '@/components/gsapAnimations'
+import { WebpageJsonLd } from '@/lib/json-ld'
+import { homepage } from '@/lib/util'
+import { generateMetadata } from '@/components/Metadata'
+
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra for Business: Earn as a Montra Agent",
+  description: "Empowering you to grow your income and expand your impact with seamless digital transactions and community banking services.",
+  url:"business/agency-banking",
+  image: "business-agency-banking.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
 
 
 const businessAgencyBanking = () => {
-  fadeUpAnim();
   return (
    <>
+   <WebpageJsonLd metadata={metadata}/>
    <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Earn as a Montra Agent"} content={"Empowering you to grow your income and expand your impact with seamless digital transactions and community banking services."} paraWidth={"w-[70%]"} titleWidth={"w-[70%]"}/>
    <Overview content={overviewContent}/>

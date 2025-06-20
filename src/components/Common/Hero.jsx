@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import Copy from "../Copy";
 import Heading from "../Heading";
 import { useAnimatedNavigation } from "../NavigationContext";
+import { fadeUpAnim } from "../gsapAnimations";
 
 export default function Hero({
   primaryHeading,
@@ -15,6 +16,7 @@ export default function Hero({
   titleWidth,
   paraWidth,
 }) {
+  fadeUpAnim();
   const heroRef = useRef(null);
   const pathname = usePathname();
   const pathArray = pathname.split("/").filter(Boolean);

@@ -7,6 +7,8 @@ import Layout from "@/components/Layout";
 import Footer from "@/components/Footer";
 import { ViewTransitions } from "next-view-transitions";
 import { NavigationProvider } from "@/components/NavigationContext";
+import { ImageObjectJsonLd, LocalBusiness, OrganizationJsonLd, WebsiteJsonLd } from "@/lib/json-ld";
+import Head from "next/head";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -45,13 +47,17 @@ const standerd = localFont({
 
 export const metadata = {
   title: "Montra for Personal: Your All-in-One Digital Wallet",
-  description:
-    "From everyday payments to long-term goals, Montra for Personal helps you manage, move, and grow your money—right from your phone.",
+  description:"From everyday payments to long-term goals, Montra for Personal helps you manage, move, and grow your money—right from your phone.",
+  path: "",
+  img: "homepage.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
 };
 
 export default function RootLayout({ children }) {
   return (
     <>
+   
       <LenisSmoothScroll />
       <html lang="en">
         <body

@@ -1,20 +1,28 @@
-"use client";
-import { fadeUpAnim } from "@/components/gsapAnimations";
 import FAQs from "@/components/Homepage/FAQs";
+import { generateMetadata } from "@/components/Metadata";
 import Control from "@/components/Personal/Control";
 import ControlMobile from "@/components/Personal/ControlMobile";
 import Hero from "@/components/Personal/Hero";
 import SectionBreak from "@/components/Personal/SectionBreak";
+import { WebpageJsonLd } from "@/lib/json-ld";
+import { homepage } from '@/lib/util'
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Personal – All‑in‑One Digital Wallet & Finance App",
+  description: "Montra Personal is your go‑to digital wallet and finance app. Open an account in minutes, get a virtual debit card, manage banking, payments, shopping, chat & finance in one secure app.",
+  url:"personal",
+  image: "personal.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
+
 
 export default function Personal() {
-
-
-  fadeUpAnim();
-
   return (
     <>
+    <WebpageJsonLd metadata={metadata}/>
       <Hero />
-     
         <Control />
         <ControlMobile />
       

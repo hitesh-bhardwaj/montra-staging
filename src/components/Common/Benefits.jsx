@@ -1,19 +1,109 @@
 "use client";
 import gsap from "gsap";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Heading from "../Heading";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Copy from "../Copy";
-// import { scale } from "motion";
 gsap.registerPlugin(ScrollTrigger);
 
 const Benefits = ({ data, id }) => {
+  // const [activeNav, setActiveNav] = useState(0);
+  // const [color, setcolor] = useState(false);
+
+  // useEffect(() => {
+  //   const triggers = [];
+
+  //   triggers.push(
+  //     ScrollTrigger.create({
+  //       trigger: "#benefits-second",
+  //       start: "top center",
+  //       end: "bottom center",
+  //       onEnter: () => setActiveNav(1),
+  //       onLeaveBack: () => setActiveNav(0),
+  //     })
+  //   );
+  //   triggers.push(
+  //     ScrollTrigger.create({
+  //       trigger: "#steps",
+  //       start: "top center",
+  //       end: "bottom center",
+  //       // markers: true,
+  //       onEnter: () => setcolor(true),
+  //       onLeave: () => setcolor(false),
+  //       onEnterBack: () => setcolor(true),
+  //       onLeaveBack: () => setcolor(false),
+  //     })
+  //   );
+
+  //   triggers.push(
+  //     ScrollTrigger.create({
+  //       trigger: "#whatwhy",
+  //       start: "top center",
+  //       end: "bottom center",
+  //       onLeave: () => setActiveNav(2),
+  //       onEnterBack: () => setActiveNav(1),
+  //       onLeaveBack: () => setActiveNav(1),
+  //     })
+  //   );
+
+  //   return () => {
+  //     triggers.forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
   return (
     <section
       className="w-screen h-[120vh] px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-md:h-full max-md:pb-[15%]  "
       id={id ? id : "benefits"}
     >
+      {/* <div className="sticky z-10 h-screen flex w-fit justify-start items-start pt-[28vw] top-0 px-[2vw] max-md:hidden">
+          <div className="flex gap-[1vw] font-display text-[1vw] ">
+            <span
+              className={` opacity-100 transition-colors duration-500  ease-in-out ${color ? "text-white" : "text-primary"
+                }`}
+            >
+              Finance:
+            </span>
+            <div
+              className={`flex flex-col gap-[0.3vw] h-full w-full transition-transform duration-500 ease-in-out ${activeNav == 0 ? "translate-y-0" : ""
+                } ${activeNav == 1 ? "translate-y-[-33%]" : ""} ${activeNav == 2 ? "translate-y-[-70%]" : ""
+                }`}
+            >
+              <span
+                className={`${activeNav == 0 ? "text-primary" : "opacity-35"
+                  } transition-colors duration-500 ease-in-out ${color ? "text-white" : ""
+                  } cursor-pointer`}
+                onClick={() => {
+                  document
+                    .getElementById("benefits")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Loans
+              </span>
+              <span
+                className={`${activeNav == 1 ? "text-primary" : "opacity-35"
+                  } transition-colors duration-500 ease-in-out ${color ? "text-white" : ""
+                  } cursor-pointer`}
+                onClick={() => {
+                  document.getElementById("benefits-second")?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Insurance
+              </span>
+              <span
+                className={`${activeNav == 2 ? "text-primary" : "opacity-35"
+                  } transition-colors duration-500 ease-in-out ${color ? "text-white" : ""
+                  } cursor-pointer`}
+                onClick={() => {
+                  document.getElementById("investmentplan")?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Investment
+              </span>
+            </div>
+          </div>
+        </div>  */}
       <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw] max-md:gap-[7vw]  ">
         <div className="w-full flex flex-col items-center gap-[1.5vw] max-sm:gap-[4vw] max-sm:items-start max-md:gap-[3vw] ">
           <Heading>

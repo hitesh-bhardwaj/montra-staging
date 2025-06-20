@@ -1,4 +1,3 @@
-"use client"
 import BenefitCards from '@/components/Common/BenefitCards'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
@@ -8,12 +7,25 @@ import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
-import { fadeUpAnim } from '@/components/gsapAnimations'
+import { WebpageJsonLd } from '@/lib/json-ld'
+import { homepage } from '@/lib/util'
+import { generateMetadata } from '@/components/Metadata'
+
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Store – Launch Your Free Online Shop Within the App",
+  description: "Create a custom Montra Store in minutes—no website needed. Accept global payments, manage inventory, orders, chat support, deliveries, appointments & more.",
+  url:"business/montra-store",
+  image: "business-montra-store.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
 
 const montraStore = () => {
-  fadeUpAnim();
   return (
    <>
+   <WebpageJsonLd metadata={metadata}/>
    <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Start Selling Online — No Website Required"} content={"Create your free, customized Montra Store to showcase your products, reach more customers, accept payments seamlessly, and grow your business — all within the Montra App."}/>
    <Overview content={overviewContent}/>

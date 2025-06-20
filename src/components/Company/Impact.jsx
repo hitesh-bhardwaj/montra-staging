@@ -1,3 +1,4 @@
+"use client"
 import { NftIcon } from "../Buttons/icons";
 import Copy from "../Copy";
 import Heading from "../Heading";

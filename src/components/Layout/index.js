@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Header from "../Header";
 import usePageVisibilityTitle from "../userPageVisibilityTitle";
 import FooterCta from "../Footer/FooterCta";
+import { ImageObjectJsonLd, LocalBusiness, OrganizationJsonLd, WebsiteJsonLd } from "@/lib/json-ld";
 
 const Layout = ({ children }) => {
 
@@ -26,6 +27,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
+    <LocalBusiness/>
+    <OrganizationJsonLd/>
+    <ImageObjectJsonLd/>
+    <WebsiteJsonLd/>
       <Header />
       {children}
       <FooterCta />

@@ -6,10 +6,12 @@ import { useRef, useEffect, useState } from "react";
 import Heading from "../Heading";
 import Copy from "../Copy";
 import { useLenis } from "lenis/react";
+import { fadeUpAnim } from "../gsapAnimations";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  fadeUpAnim();
   const sectionRef = useRef(null);
   const bgRef = useRef(null);
   const imgRef = useRef(null);

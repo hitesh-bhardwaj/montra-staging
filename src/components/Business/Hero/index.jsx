@@ -13,10 +13,12 @@ import { BottomContent } from "./BottomContent";
 import { ImageContainer } from "./ImageContainer";
 import { ImageContainerMobile } from "./ImageContainerMobile";
 import { useLenis } from "lenis/react";
+import { fadeUpAnim } from "@/components/gsapAnimations";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  fadeUpAnim();
   const targetRef = useRef(null);
   const lenis = useLenis();
   const [isMobileWidth, setMobileWidth] = useState(false);

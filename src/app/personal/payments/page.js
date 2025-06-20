@@ -1,4 +1,3 @@
-"use client"
 import BenefitCards from '@/components/Common/BenefitCards'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
@@ -9,12 +8,25 @@ import Benefits from '@/components/Common/Benefits'
 import Discover from '@/components/PersonalPayments/Discover'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
-import { fadeUpAnim } from '@/components/gsapAnimations'
+import { WebpageJsonLd } from '@/lib/json-ld'
+import { homepage } from '@/lib/util'
+import { generateMetadata } from '@/components/Metadata'
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Personal Payments – Secure, Instant Money Transfers",
+  description: "Send money instantly, pay bills, request funds, and split bills securely—all within the Montra Personal app. Fast, safe and seamless digital payments.",
+  url:"personal/payments",
+  image: "personal-payments.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
+
 
 const personalPayments = () => {
-  fadeUpAnim();
   return (
    <>
+   <WebpageJsonLd metadata={metadata}/>
    <Header/>
    <Hero primaryHeading={"Montra Personal Account: "} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."}/>
    <Overview content={overviewContent}/>

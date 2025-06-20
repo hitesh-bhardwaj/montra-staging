@@ -1,18 +1,30 @@
-"use client"
 import Benefits from '@/components/Common/Benefits'
 import Features from '@/components/Common/Features'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
-import { fadeUpAnim } from '@/components/gsapAnimations'
 import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
+import { WebpageJsonLd } from '@/lib/json-ld'
 import React from 'react'
+import { homepage } from '@/lib/util'
+import { generateMetadata } from '@/components/Metadata'
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Shop – In-App Marketplace for Essentials & Services",
+  description: "Shop essentials, airtime, bills, subscriptions & gifts seamlessly via Montra’s in-app marketplace. Chat, call sellers, pay securely—all in one convenient app.",
+  url:"personal/shop",
+  image: "personal-shop.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
+
 
 const personalShop = () => {
-  fadeUpAnim();
   return (
    <>
+   <WebpageJsonLd metadata={metadata}/>
    <Header/>
    <Hero primaryHeading={"Montra Shop:"} heading={" Everything You Need, All in One App"} content={"Discover a smarter way to shop—right from your Montra App. Whether it's daily essentials, airtime, bill payments, or gifting, Montra brings the marketplace to your fingertips with seamless, secure transactions."} titleWidth={"w-[75%]"} paraWidth={"w-full"} />
    <Overview content={overviewContent}/>

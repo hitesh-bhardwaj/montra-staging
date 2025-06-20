@@ -1,4 +1,3 @@
-"use client"
 import BenefitCards from '@/components/Common/BenefitCards'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
@@ -8,13 +7,25 @@ import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import About from '@/components/BusinessTapnPay/About'
-import { fadeUpAnim } from '@/components/gsapAnimations'
+import { WebpageJsonLd } from '@/lib/json-ld'
+import { homepage } from '@/lib/util'
+import { generateMetadata } from '@/components/Metadata'
 
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Business: Tap. Pay. Go.",
+  description: "Experience next-gen payment convenience. Our contactless Tap & Pay system is designed for speed, security, and simplicity",
+  url:"business/tap-and-pay",
+  image: "business-tap-and-pay.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
 
 const tapPay = () => {
-  fadeUpAnim();
   return (
    <>
+   <WebpageJsonLd metadata={metadata}/>
    <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Tap. Pay. Go. It’s That Simple."} content={"Experience next-gen payment convenience. Our contactless Tap & Pay system is designed for speed, security, and simplicity—so you can pay in seconds, without the hassle."}/>
    <Overview content={overviewContent}/>

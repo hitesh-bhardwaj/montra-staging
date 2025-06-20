@@ -1,4 +1,3 @@
-"use client"
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
@@ -10,12 +9,25 @@ import Rewards from '@/components/Common/Rewards'
 import BenefitCards from '@/components/Common/BenefitCards'
 import Steps from '@/components/Common/Steps'
 import WhatWhy from '@/components/Common/WhatWhy'
-import { fadeUpAnim } from '@/components/gsapAnimations'
+import { WebpageJsonLd } from '@/lib/json-ld'
+import { homepage } from '@/lib/util'
+import { generateMetadata } from '@/components/Metadata'
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Business: Digital Payments That Drive Growth",
+  description: "With Montra, getting paid is simple, secure, and built for scale. Empowering your Business with Seamless Digital Transactions",
+  url:"business/payments",
+  image: "business-payments.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
+
 
 const businessPayments = () => {
-  fadeUpAnim();
   return (
    <>
+   <WebpageJsonLd metadata={metadata}/>
    <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Digital Payments That Drive Growth"} content={"With Montra, getting paid is simple, secure, and built for scale. Empowering your Business with Seamless Digital Transactions "} paraWidth={"w-[60%]"}/>
    <Overview content={overviewContent}/>

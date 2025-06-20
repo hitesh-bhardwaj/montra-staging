@@ -1,8 +1,10 @@
+"use client"
 import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from 'next/image';
 import { LinkButton } from '../Buttons';
+import UseMobile from '../UseMobile';
 
 
 const BankingCard = ({ color, link, title, para, icon, field }) => {
@@ -29,6 +31,7 @@ const BankingCard = ({ color, link, title, para, icon, field }) => {
 const MobileBanking = () => {
   const swiperRef = useRef(null);
   const [activeButton, setActiveButton] = useState("");
+  const isMobile = UseMobile();
 
   const handleNext = () => {
     if (swiperRef.current) {
@@ -43,6 +46,8 @@ const MobileBanking = () => {
       setActiveButton("prev");
     }
   };
+
+  if (!isMobile) return null;
   return (
     <section  className="h-fit w-screen px-[7vw] relative bg-white max-sm:py-[10%] max-md:py-[7%]">
       <div className='space-y-[5vw]'>

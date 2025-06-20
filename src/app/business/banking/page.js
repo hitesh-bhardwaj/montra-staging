@@ -1,4 +1,3 @@
-"use client";
 import Hero from "@/components/Common/Hero";
 import Overview from "@/components/Common/Overview";
 import SectionBreak from "@/components/Common/SectionBreak";
@@ -7,12 +6,26 @@ import Benefits from "@/components/Common/Benefits";
 import Steps from "@/components/Common/Steps";
 import WhatWhy from "@/components/Common/WhatWhy";
 import React from "react";
-import { fadeUpAnim } from "@/components/gsapAnimations";
+import { WebpageJsonLd } from "@/lib/json-ld";
+import { homepage } from '@/lib/util'
+import { generateMetadata } from "@/components/Metadata";
+
+export const metadata = generateMetadata({
+  homepage,
+  title: "Montra Business Account:Simplifying Your Business Banking",
+  description: "Montra revolutionizes the way businesses handle their financial needs. We offer a range of tailored solutions that streamline your payment processing, improve cash flow, and ensure that you stay ahead in today’s fast-paced market.",
+  url:"business/banking",
+  image: "business-banking.png",
+  date_published: "2025-06-20T00:00",
+  date_modified: "2025-06-20T00:00",
+});
+
+
 
 const businessBanking = () => {
-  fadeUpAnim();
   return (
     <>
+    <WebpageJsonLd metadata={metadata}/>
       <Hero
         primaryHeading={"Montra Business Account:  "}
         titleWidth={"w-[95%]"}

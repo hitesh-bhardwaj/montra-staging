@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import TimelineSlide from "./TimelineSlide";

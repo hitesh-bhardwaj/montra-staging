@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
+import { useMotion } from "@react-three/drei";
+import UseMobile from "../UseMobile";
 gsap.registerPlugin(ScrollTrigger);
 
 const lettersData = [
@@ -103,6 +105,9 @@ const MontraAnimation = () => {
   const [pointer, setPointer] = useState(false);
   // Will hold one hover-tl per letter
   const hoverTims = useRef({});
+  const isMobile = UseMobile();
+  
+  if (isMobile) return null;
 
   // Build hover timelines
   useEffect(() => {
