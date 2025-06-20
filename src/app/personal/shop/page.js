@@ -26,11 +26,11 @@ const personalShop = () => {
    <>
    <WebpageJsonLd metadata={metadata}/>
    <Header/>
-   <Hero primaryHeading={"Montra Shop:"} heading={" Everything You Need, All in One App"} content={"Discover a smarter way to shop—right from your Montra App. Whether it's daily essentials, airtime, bill payments, or gifting, Montra brings the marketplace to your fingertips with seamless, secure transactions."} titleWidth={"w-[75%]"} paraWidth={"w-full"} />
+   <Hero primaryHeading={"Montra Shop:"} heading={"Your One-Stop Shop for Every Need - Delivered to Your Doorstep"} content={"Montra Marketplace recreates the feel of shopping in the real world—compare products across sellers, chat, negotiate, and pay—all in one seamless platform."} titleWidth={"w-[75%]"} paraWidth={"w-full"} />
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
   <Features featuresData={featuresData}/>
-   <SectionBreak content={"Shop Smarter, Safer, and Seamlessly with Montra. Download the Montra App and discover a marketplace designed for your lifestyle."} width={"w-[89%]"}/>
+   <SectionBreak content={"Shop seamlessly with Montra – A smarter, safer, and faster way to buy what you need. Download the Montra App and discover a marketplace designed for your lifestyle."} width={"w-[89%]"}/>
    <FAQs content={faqContent}/>
    </>
   )
@@ -74,7 +74,7 @@ const overviewContent = {
   icon1:"/assets/images/personal-shop/no-queues.svg",
   icon2:"/assets/images/personal-shop/access.svg",
   mainImg:"/assets/images/personal-banking/overview-phone.png",
-  bgImg:"/assets/images/personal-chat/overview-bg-icon.svg",
+  bgImg:"/assets/images/personal-shop/shop.svg",
   title:"A Smarter Way to Shop, Right from Your Montra App",
   content:[
     "Montra Shop brings everyday essentials and digital services to your fingertips. From airtime and data top-ups to bill payments, subscriptions, and gifting, you can browse, buy, and pay—all in one seamless, secure experience. No lines. No stress. Just simple, convenient shopping built for your lifestyle."
@@ -88,10 +88,10 @@ const  benefitsData = {
   headingWidth:"w-[80%]",
   paraWidth:"w-[65%]",
   cards:[
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Chat directly with sellers, jump on a voice or video call, and even make payments—all while staying in the conversation.", title: "One stop shop", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
-    { classPrefix: "b", left: "!left-[20%]", top: "!top-[62.9%]", color: "bg-[#FEFFA7]", content: "Chat directly with sellers, jump on a voice or video call, and even make payments—all while staying in the conversation.", title: "Multiple Ways to Pay", z: "z-[4]", width:"w-[22vw]", height:"17vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Chat directly with sellers, jump on a voice or video call, and even make payments—all while staying in the conversation.", title: "Connect & Shop Smarter", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[65.9%]", color: "bg-[#CAC5F7]", content: "Chat directly with sellers, jump on a voice or video call, and even make payments—all while staying in the conversation.", title: "Flexible Delivery Options", z: "z-[4]",  width:"w-[23vw]", height:"17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Compare products for every needs across sellers on the Montra app to make informed decisions.", title: "Your One-Stop Shop ", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
+    { classPrefix: "b", left: "!left-[20%]", top: "!top-[62.9%]", color: "bg-[#FEFFA7]", content: "Choose Pay on Delivery via a secure payment link or use Escrow Pay  where your money stays protected with Montra until the seller fulfills the agreed terms.", title: "Multiple Ways to Pay", z: "z-[4]", width:"w-[22vw]", height:"20vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Engage sellers for your queries to start conversations using Chat, audio and video call features on the Montra app.", title: "Connect & Shop Smarter", z: "z-[5]",  width:"w-[24vw]", height:"18vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[65.9%]", color: "bg-[#CAC5F7]", content: "Stay updated with categories you love and stores you follow through feeds shared by sellers on the Montra app", title: "Smart Feeds, Just for You", z: "z-[4]",  width:"w-[23vw]", height:"18vw" },
   ]
 }
 const featuresData = {
