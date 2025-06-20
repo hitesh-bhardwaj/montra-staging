@@ -51,9 +51,9 @@ const personalBanking = () => {
 export default personalBanking;
 const faqContent = [
   {
-    question: "What is the scheduled payments feature?",
+    question: "What banking services can I use with my Montra Account?",
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p>Your Montra Account offers a range of everyday banking services, including:</p><ul class='list-disc pl-[2vw] space-y-[0.5vw]'><li><span class='font-semibold'>Send & Receive Money</span> - Instantly transfer funds to/from other Montra users or linked bank accounts.</li><li><span class='font-semibold'>Pay Bills & Merchants</span>- Settle utility bills, pay at stores using Scan & Pay, or pay online.</li><li><span class='font-semibold'>Add & Withdraw Funds</span> - Fund your account through bank transfers, cards, or QR-based methods.</li><li><span class='font-semibold'>Track Transactions </span>Access real-time account statements and download/email them as needed.</li><li><span class='font-semibold'>Multi-Mode Payments</span>Use Montra balance, linked bank accounts, cards, or installment options.</li><li><span class='font-semibold'>Account Security </span>Manage with secure PIN, token authentication, and real-time payment alerts. With Montra, you get seamless control over your digital finances—fast, flexible, and secure.</li></ul>",
   },
   {
     question: "How sending a bank transfer?",
