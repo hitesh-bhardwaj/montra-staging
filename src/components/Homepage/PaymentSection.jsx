@@ -72,7 +72,7 @@ export default function PaymentSection() {
     if (next) next.scrollIntoView({ behavior: "smooth" });
   };
 
-  const inactiveColor = "#EEEEEE";
+  const inactiveColor = "#D2D2D2";
   const activeColor = "#215CFF";
   const makeColor = (t) =>
     useTransform(scrollYProgress, [t - RAMP, t], [inactiveColor, activeColor]);
