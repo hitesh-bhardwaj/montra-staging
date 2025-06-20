@@ -53,10 +53,10 @@ export default function Blogs() {
               </div>
               <div className="px-[1.5vw] py-[2vw] w-[45%] flex flex-col justify-between max-sm:w-full max-sm:py-[4vw] max-sm:px-[4vw] max-md:w-full max-md:px-[3vw] max-md:py-[4vw]">
                 <div>
-                  <h5 className="mb-[1vw] max-sm:text-[4.5vw] max-sm:mb-[3vw] max-md:text-[3.2vw]">
+                  <h4 className="mb-[1vw] max-sm:text-[4.5vw] max-sm:mb-[3vw] max-md:text-[3.2vw]">
                     Beyond Faster Payments: A Guide to Complex International
                     Pension Transfers
-                  </h5>
+                  </h4>
                   <span className="text-[1vw] mb-[4vw] block max-sm:text-[3.4vw] max-md:text-[2.2vw]">
                     19, June 2024
                   </span>
@@ -95,9 +95,9 @@ export default function Blogs() {
               </div>
               <div className="px-[1.5vw] py-[1.5vw] flex flex-col justify-between max-sm:w-full max-sm:py-[4vw] max-sm:px-[4vw] max-md:px-[3vw] max-md:py-[3vw]">
                 <div>
-                  <h5 className="mb-[1vw] max-sm:text-[4.5vw] max-sm:mb-[3vw] max-md:text-[3.2vw]">
+                  <h4 className="mb-[1vw] max-sm:text-[4.5vw] max-sm:mb-[3vw] max-md:text-[3.2vw]">
                     A Guide to Complex International Pension Transfers
-                  </h5>
+                  </h4>
                   <span className="text-[1vw] mb-[2vw] block font-display max-sm:text-[3.4vw] max-md:text-[2.2vw]">
                     19, June 2024
                   </span>
@@ -136,9 +136,9 @@ export default function Blogs() {
               </div>
               <div className="px-[1.5vw] py-[1.5vw] flex flex-col justify-between max-sm:w-full max-sm:py-[4vw] max-sm:px-[4vw] max-md:px-[3vw] max-md:py-[3vw]">
                 <div>
-                  <h5 className="mb-[1vw] max-sm:text-[4.5vw] max-sm:mb-[3vw] max-md:text-[3.2vw]">
+                  <h4 className="mb-[1vw] max-sm:text-[4.5vw] max-sm:mb-[3vw] max-md:text-[3.2vw]">
                     A Guide to Complex International Pension Transfers
-                  </h5>
+                  </h4>
                   <span className="text-[1vw] mb-[2vw] block max-sm:text-[3.4vw] max-md:text-[2.2vw]">
                     19, June 2024
                   </span>
@@ -157,10 +157,10 @@ export default function Blogs() {
             {Array.from({ length: 3 }).map((_, index) => (
               <div key={index} className="group flex flex-col gap-[1vw]">
                 <Copy>
-                  <h5 className="group-hover:text-primary">
+                  <h4 className="group-hover:text-primary">
                     Beyond Faster Payments: A Guide to Complex International
                     Pension Transfers
-                  </h5>
+                  </h4>
                 </Copy>
                 <Copy>
                   <span className="text-[1vw] block font-display">
@@ -171,6 +171,7 @@ export default function Blogs() {
                   <Link
                     className={`group w-fit group-hover:text-primary block duration-300 `}
                     href={"/"}
+                    aria-label="to more blogs"
                     onClick={(e) => {
                       e.preventDefault();
                       navigateTo("/");

@@ -282,7 +282,10 @@ export default function Navbar({ navigateTo, hidden }) {
               </div>
               <div className="w-full flex gap-[0.5vw] items-center text-[1vw] fadeup-navpolicy">
                 <Link href="/" className="link-line text-black-1">
+                <div>
                   Privacy Policy
+
+                </div>
                 </Link>
                 <Image
                   src="/assets/icons/circle.svg"
@@ -292,7 +295,9 @@ export default function Navbar({ navigateTo, hidden }) {
                   className="w-[0.4vw] h-[0.4vw] brightness-0"
                 />
                 <Link href="/" className="link-line text-black-1">
+                <div>
                   Cookie Policy
+                </div>
                 </Link>
               </div>
             </div>
@@ -314,6 +319,7 @@ export default function Navbar({ navigateTo, hidden }) {
                   >
                     <a
                       href="/"
+                      aria-label="to the social links"
                       className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
                     >
                       <Icon className="text-black-1 group-hover:text-white transition-all duration-300" />

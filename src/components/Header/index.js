@@ -358,6 +358,7 @@ export default function Header() {
               <div className="flex items-start justify-start gap-[3vw]">
                 <Link
                   href={"/"}
+                  aria-label="to facebook"
                   className=" rounded-full border border-primary max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw] "
                   onClick={() => {
                     setopenMenu(false);
@@ -369,6 +370,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href={"/"}
+                  aria-label="to instagram"
                   className="h-fit w-fit rounded-full border border-primary max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                   onClick={() => {
                     setopenMenu(false);
@@ -380,6 +382,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href={"/"}
+                  aria-label="to Linkedin"
                   className="h-fit w-fit rounded-full border border-primary  max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                   onClick={() => {
                     setopenMenu(false);
