@@ -25,7 +25,7 @@ export default function Home() {
       <SectionBreak />
       <VisionMission />
       <Testimonials />
-      <Blogs />
+      {/* <Blogs /> */}
       <FAQs content={faqContent} />
     </>
   );

@@ -393,6 +393,7 @@ export default function Header() {
                   />
                 </Link>
                 <Link
+                  aria-label="to twitter"
                   href={"/"}
                   className="h-fit w-fit rounded-full border border-primary max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                   onClick={() => {

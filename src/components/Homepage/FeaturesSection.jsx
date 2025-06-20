@@ -114,7 +114,7 @@ const icons = [
         mobileyOffset: -140,
     },
     {
-        poster: '/assets/images/homepage/image-5.png',
+        poster: '/assets/images/homepage/image-5.webp',
         src: "/assets/images/homepage/feature-vid-5.mp4",
         alt: "Pay",
         style: { top: "35%", right: "35%" },

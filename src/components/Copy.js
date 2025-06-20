@@ -35,9 +35,11 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
         type: "lines",
         mask: "lines",
         aria: false ,
-        
         linesClass: "line++",
         lineThreshold: 0.1,
+      });
+      gsap.utils.toArray(split.lines).forEach(el => {
+        el.removeAttribute("aria-hidden");
       });
 
       splitRefs.current.push(split);
