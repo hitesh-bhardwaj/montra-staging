@@ -11,15 +11,15 @@ export const TopContent = () => {
 
                     </h1>
                 </Heading>
-                <div className="w-[70%] mx-auto max-sm:w-[85%] max-md:w-[85%]">
+               
                 <Copy delay={1}>
-                    <p className="font-body w-full ">
+                    <p className="font-body w-[70%] mx-auto max-sm:w-[85%] max-md:w-[85%] ">
                     Access essential banking tools, streamline your operations, and manage money with ease - so you can focus on growing your business every day.
 
                     </p>
                 </Copy>
 
-                </div>
+               
             </div>
         </div>
     )

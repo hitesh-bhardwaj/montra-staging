@@ -302,7 +302,7 @@ const Hero = () => {
                   <div className="w-full flex justify-between px-[0.5vw] pr-[1vw]">
                     <div className="w-fit flex gap-[0.5vw] ">
                       <div className="w-[2.5vw] h-[2.5vw] p-1.5 rounded-full bg-orange-400">
-                        <img src="/assets/icons/coffee.svg" className="h-full w-full" />
+                        <img src="/assets/icons/coffee.svg" alt="coffee svg" className="h-full w-full" />
                       </div>
                       <div className="flex flex-col">
                         <p className="text-[1.2vw] leading-[1]">Coffee</p>
@@ -330,7 +330,7 @@ const Hero = () => {
                   <div className="w-full flex justify-between px-[0.5vw] pr-[1vw] max-sm:px-[2vw]">
                     <div className="w-fit flex gap-[0.5vw] max-sm:gap-[2vw] max-md:gap-[1.5vw]">
                       <div className="w-[2.5vw] h-[2.5vw] p-1.5 rounded-full bg-primary max-sm:w-[10vw] max-sm:h-[10vw] max-md:w-[5.5vw] max-md:h-[5.5vw]">
-                        <img src="/assets/icons/house-bill.svg" className="h-full w-full" />
+                        <img src="/assets/icons/house-bill.svg" alt="house bill svg" className="h-full w-full" />
                       </div>
                       <div className="flex flex-col">
                         <p className="text-[1.2vw] leading-[1] max-sm:text-[4.7vw] max-md:text-[3vw]">House Bill</p>
@@ -376,7 +376,7 @@ const Hero = () => {
                 <div className="w-full flex justify-between px-[0.5vw] pr-[1vw]">
                   <div className="w-fit flex gap-[0.5vw] ">
                     <div className="w-[2.5vw] h-[2.5vw] rounded-full p-1 bg-[#FB2F55]">
-                      <img src="/assets/icons/salary.svg" className="h-full w-full" />
+                      <img src="/assets/icons/salary.svg" alt="salary svg" className="h-full w-full" />
                     </div>
                     <div className="flex flex-col">
                       <p className="text-[1.2vw] leading-[1]">Salary</p>
