@@ -1,13 +1,15 @@
-"use client"
+"use client";
 import React, { useRef, useEffect } from 'react';
 
 export default function InteractiveBackground() {
   const canvasRef = useRef(null);
 
-  // 2D canvas + trail
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
+
+    // Detect Safari
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
     // raw & smoothed mouse
     let mouse = { x: undefined, y: undefined };
@@ -23,7 +25,7 @@ export default function InteractiveBackground() {
     let idleWaitTime = 0;
     const idleMinDelay = 2000;   // ms
     const idleMaxDelay = 4000;   // ms
-    const idleLerpFactor = 0.02; // faster than before
+    const idleLerpFactor = 0.02;
     let idleTarget = { x: 0, y: 0 };
 
     // trail params
@@ -47,6 +49,7 @@ export default function InteractiveBackground() {
     function lerp(a, b, t) {
       return a + (b - a) * Math.max(0, Math.min(1, t));
     }
+
     function parseRgba(str) {
       const m = str.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
       return m
@@ -56,14 +59,15 @@ export default function InteractiveBackground() {
 
     class Dot {
       constructor(x, y) {
-        this.x = x; this.y = y;
+        this.x = x;
+        this.y = y;
         this.radius = dotConfig.radius;
         this.baseColor = parseRgba(dotConfig.baseColor);
         this.activeColor = parseRgba(dotConfig.activeColor);
         this.currentColor = { ...this.baseColor };
         this.targetColor = { ...this.baseColor };
-        this.holdTime = 0;         // ms
-        this.holdDuration = 1000;  // 1s
+        this.holdTime = 0;
+        this.holdDuration = 1000;
         this.radiusLerp = 0.5;
         this.colorLerp = 0.8;
       }
@@ -114,6 +118,7 @@ export default function InteractiveBackground() {
     }
 
     let lastTime = performance.now();
+
     function canvasLoop(now = performance.now()) {
       const delta = now - lastTime;
       lastTime = now;
@@ -130,7 +135,7 @@ export default function InteractiveBackground() {
         if (mouseHistory.length > maxTrailLength) mouseHistory.shift();
       }
 
-      // idle
+      // idle movement
       if (idle) {
         if (idlePhase === 'waiting') {
           idleWaitTime -= delta;
@@ -158,20 +163,18 @@ export default function InteractiveBackground() {
         }
       }
 
-      // clear
+      // clear canvas
       ctx.fillStyle = canvasClearStyle;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // draw blur trail
-      if (mouseHistory.length > 1) {
+      // draw blur trail (except Safari)
+      if (!isSafari && mouseHistory.length > 1) {
         ctx.filter = `blur(${trailBlur}px)`;
         ctx.beginPath();
         ctx.moveTo(mouseHistory[0].x, mouseHistory[0].y);
         for (let i = 1; i < mouseHistory.length; i++) {
           const age = i / (mouseHistory.length - 1);
-          const alpha = idle
-            ? (0.4 * age)         // stronger when idle
-            : (0.4 * age);
+          const alpha = idle ? 0.4 * age : 0.4 * age;
           ctx.lineWidth = Math.max(1, trailBaseWidth * age);
           ctx.strokeStyle = `rgba(67,202,255,${alpha.toFixed(2)})`;
           ctx.lineTo(mouseHistory[i].x, mouseHistory[i].y);
@@ -180,12 +183,12 @@ export default function InteractiveBackground() {
         ctx.filter = 'none';
       }
 
-      // fade only when truly off
+      // fade history if inactive
       if (!isMouseActive && !idle && mouseHistory.length > 0) {
         mouseHistory.shift();
       }
 
-      // dots
+      // update dots
       dots.forEach(dot => {
         const dx = (smoothedMouse.x || -9999) - dot.x;
         const dy = (smoothedMouse.y || -9999) - dot.y;
@@ -224,12 +227,21 @@ export default function InteractiveBackground() {
   }, []);
 
   return (
-    <>
-      <div id='canvas-18971' className='max-sm:hidden max-md:hidden' style={{ position: 'sticky', top: 0, left: 0, zIndex: 0, overflow: 'hidden', marginLeft: 'auto', marginRight: 'auto', height: '100vh'}}>
-        <canvas
-          ref={canvasRef}
-        />
-      </div>
-    </>
+    <div
+      id="canvas-18971"
+      className="max-sm:hidden max-md:hidden"
+      style={{
+        position: 'sticky',
+        top: 0,
+        left: 0,
+        zIndex: 0,
+        overflow: 'hidden',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        height: '100vh',
+      }}
+    >
+      <canvas ref={canvasRef} />
+    </div>
   );
 }

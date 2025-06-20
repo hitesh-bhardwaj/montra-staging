@@ -291,7 +291,7 @@ const Control = () => {
               pointerevent ? "pointer-events-auto" : "pointer-events-none"
             }`}
           >
-            <div className="w-[20%] h-[85%] control-icon icon-1 absolute top-[65%] z-[10]">
+            <div className="w-[20%] h-[30vh] control-icon icon-1 absolute top-[65%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"
@@ -316,7 +316,7 @@ const Control = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[20%] h-[85%] control-icon icon-2 absolute top-[65%] left-[21%] z-[10]">
+            <div className="w-[20%] h-[30vh] control-icon icon-2 absolute top-[65%] left-[21%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"
@@ -341,7 +341,7 @@ const Control = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[20%] h-[85%] control-icon icon-3 absolute top-[65%] left-[42%] z-[10]">
+            <div className="w-[20%] h-[30vh] control-icon icon-3 absolute top-[65%] left-[42%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"
@@ -366,7 +366,7 @@ const Control = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[20%] h-[85%] control-icon icon-4 absolute top-[65%] left-[63%] z-[10]">
+            <div className="w-[20%] h-[30vh] control-icon icon-4 absolute top-[65%] left-[63%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"
@@ -391,7 +391,7 @@ const Control = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[20%] h-[85%] control-icon icon-5 absolute top-[65%] left-[84%] z-[10]">
+            <div className="w-[20%] h-[30vh] control-icon icon-5 absolute top-[65%] left-[84%] z-[10]">
               <div
                 className={`relative w-full h-full ${
                   pointer ? "cursor-pointer" : "pointer-events-none"

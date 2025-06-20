@@ -273,3 +273,30 @@ li .link-line::after {
 }
 
 
+/* breath animation */
+.breath-container {
+  display: inline-block;
+}
+
+.breath-char {
+  display: inline-block;
+
+  animation: breathe 0.8s ease-in-out infinite alternate;
+}
+
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    /* font-weight: 400; */
+    font-variation-settings: "wght" 400;
+   
+  }
+  100% {
+    transform: scale(1.1);
+    /* font-weight: 700; */
+    font-variation-settings: "wght" 700;
+
+    
+  }
+}

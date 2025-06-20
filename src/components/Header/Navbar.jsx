@@ -310,7 +310,7 @@ export default function Navbar({ navigateTo, hidden }) {
                 {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
                   <div
                     key={i}
-                    className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden hover:scale-[0.95] transition-all duration-300"
+                    className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden transition-all duration-300"
                   >
                     <a
                       href="/"
