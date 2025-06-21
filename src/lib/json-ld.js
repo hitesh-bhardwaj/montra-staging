@@ -159,7 +159,7 @@ export function LocalBusiness() {
 
   return (
     <script
-  async
+    async
     type="application/ld+json"
     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
   />
