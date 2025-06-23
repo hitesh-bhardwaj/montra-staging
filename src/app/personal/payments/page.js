@@ -44,35 +44,26 @@ export default personalPayments
 
 const faqContent = [
     {
-      question: 'What is the scheduled payments feature?',
+      question: 'What are the various options available for making payments on the Montra App?',
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Montra users can make payments using Scan & Pay or choose from any four of the available payment methods on the app:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li><span class='font-semibold'>Montra Account </span>- Directly from your Montra Account.</li><li><span class='font-semibold'>Linked Bank Account</span> - From any bank account you've linked to Montra.</li><li><span class='font-semibold'>Linked Cards</span> - Use any linked debit or credit card from your Montra App</li><li><span class='font-semibold'>Installments</span> - Instantly borrow from Montra's lending partners and pay using the loaned amount. (T&Cs apply)</li></ul><p>Payments are secured through Payments are secured through <span class='font-semibold'>Montra PIN</span> and <span class='font-semibold'>Soft Token</span> (if prompted).Montra PIN and Soft Token (if prompted).</p>",
     },
     {
-      question: 'How sending a bank transfer?',
+      question: 'Is it safe for me to link my bank cards on the Montra App?',
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>Yes, it's safe. Montra is <span class='font-semibold'>PCI DSS certified</span>, adhering to global security standards.</p><p> Your linked <span class='font-semibold'>debit and credit cards are tokenized</span>, ensuring your identity and data always remain protected.</p>",
     },
     {
-      question: 'How can I reactivate a terminated card?',
+      question: 'How can I fund my Montra Account?',
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+        "<p>You can add money to your Montra Account using any of these secure methods:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li><span class='font-semibold'>Linked Bank Accounts</span> – Use any linked or newly added bank account.</li><li><span class='font-semibold'>Linked Debit/Credit Cards</span> – Use a saved card or add a new one.</li><li><span class='font-semibold'>Direct Bank Transfer</span> – Use your online/mobile banking to send money directly to your Montra Account.</li></ul>",
     },
     {
-      question: 'How can add money to my account?',
+      question: 'How can I access my Montra Personal Account Statement?',
       answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
+        "<p>To view your account statement:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>Tap <span class='font-semibold'>“Account Statement”</span> on the Personal Home Screen.</li><li>View your <span class='font-semibold'>available balance</span> and recent<span class='font-semibold'> 7-day transaction</span> history with inflow/outflow details.</li><li>Tap <span class='font-semibold'>“Refresh”</span> for the latest updates.</li><li>Scroll down to load more historical transactions in 7-day increments.</li><li>Tap <span class='font-semibold'>“Mini Statement”</span> to view transactions from the last 30 days.</li><li>You can also <span class='font-semibold'>email your statement</span> for a chosen or custom time range.</li></ul>",
     },
-    {
-      question: 'How can add money to my account?',
-      answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
-    {
-      question: 'How can add money to my account?',
-      answer:
-        "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-    },
+   
   ];
 const overviewContent = {
   icon1:"/assets/images/personal-payments/overview-icon-1.svg",

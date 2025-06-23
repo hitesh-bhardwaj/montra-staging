@@ -40,36 +40,37 @@ export default personalChat
 
 const faqContent = [
   {
-    question: 'What is the scheduled payments feature?',
+    question: 'What is Montra Chat?',
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p><span class='font-semibold'>Montra Chat</span> is an integrated communication feature within the Montra app, designed to enhance interactions between businesses and their customers or any two users on the Montra app. It enables real-time messaging, voice, and video calls directly through the app, allowing for seamless communication without the need to switch platforms. By consolidating communication and payment functionalities, Montra Chat simplifies customer engagement, reduces friction in transactions, and supports businesses in delivering efficient and personalized service.</p>",
   },
   {
-    question: 'How sending a bank transfer?',
+    question: 'How is Montra Chat different from other chat platforms?',
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p>Montra is not a social media platform. <span class='font-semibold'>Montra Chat</span> is designed to enable real-time conversations between users—whether they’re buyers, sellers, or business partners. These chats can naturally lead to payment agreements, after which one user can send or request money directly within the conversation. It mirrors how transactions happen in the physical world—you talk, agree, and pay—but in a more seamless, secure, and digital way.</p>",
   },
   {
-    question: 'How can I reactivate a terminated card?',
+    question: 'Who can chat on Montra?',
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p>Any <span class='font-semibold'>Montra user</span>—whether they’re a merchant, vendor, customer, or friend. The Montra app automatically syncs your phone contacts to help you identify those who use the Montra platform, making it easy to start a conversation. You can also <span class='font-semibold'>add contacts</span> or <span class='font-semibold'>invite new users</span> to join Montra and start chatting right away. Whether you're buying, selling, or just staying connected, Montra Chat keeps communication seamless.</p>",
   },
   {
-    question: 'How can add money to my account?',
+    question: 'How can I “Pay” or “Request” payment on Montra Chat?',
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
+      "<p>While chatting with someone on the Montra app, you’ll see a <span class='font-semibold'>“Pay” & “Request” button</span> right at the bottom of the chat. Tap it to:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li><span class='font-semibold'>Send Money:</span> Just enter the amount you want to pay, followed by PIN authentication to send it instantly. The payment confirmation will travel as a message to the other user you’re chatting with, which can be clicked to view the transaction receipt.</li><li><span class='font-semibold'>Request Money:</span> Just enter the amount you want to request for payment. Your request will be sent to the other user as a message within the chat. The user can simply click on <span class='font-semibold'>“Accept”</span> to initiate a payment followed by a PIN authentication to send this money to your Montra account. The payment confirmation will travel as a message to the other user you’re chatting with, which can be clicked to view the transaction receipt.</li></ul><p>It's a simple, secure way to handle payments without leaving the conversation.</p>",
   },
   {
-    question: 'How can add money to my account?',
+    question: 'How do I choose which Montra account to use when sending or receiving money in Chat?',
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p>At the bottom of every Montra Chat window, you'll see a default, preselected Montra account displayed. This is the account currently set for sending or receiving payments during that conversation. If you have multiple Montra accounts (e.g. personal, business, or agency), simply tap the displayed account to view your full list. From there, you can select a different account to use as your preferred payment method for that chat. Once selected, the new account becomes your default for that conversation, making future payments quicker and more seamless.</p>",
   },
   {
-    question: 'How can add money to my account?',
+    question: 'How Secure is Montra Chat?',
     answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
+      "<p>Montra Chat employs <span class='font-semibold'>end-to-end encryption</span>, ensuring that only you and the person you're communicating with can read the messages—no one else, not even Montra. Furthermore, Montra adheres to strict data privacy standards, ensuring that your personal information and communication data are handled with the utmost confidentiality and integrity.</p>",
   },
 ];
+
 const overviewContent = {
   icon1: "/assets/images/personal-chat/overview-icon-1.svg",
   icon2: "/assets/images/personal-banking/overview-icon-2.svg",

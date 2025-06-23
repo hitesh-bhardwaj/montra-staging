@@ -88,7 +88,7 @@ const  benefitsData = {
   paraWidth:"w-[70%]",
   cards:[
     { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: " bg-[#D9F7C5]", content: "Process every payment with confidence, backed by Montra’s robust security standards.", title: "Secure & Reliable Transactions", z: "z-[5]", width:"w-[27vw]", height:"14vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Reduce wait times in-store by letting customers tap their cards for fast, secure transactions.", title: "Quick Checkouts", z: "z-[4]", width:"w-[27vw]", height:"14vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Reduce wait times in-store by letting customers tap their cards for fast, secure transactions.", title: "Quick Checkouts", z: "z-[4]", width:"w-[20vw]", height:"14vw" },
     { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: " bg-[#EAF1FF]", content: "Every transaction on Montra is protected by our Fraud & Risk Assessment tool, which may prompt you for a Soft Token when needed. You get free access to a Soft Token through the VERIFYED app — available to all Montra users.", title: "Advanced 2FA Protection", z: "z-[5]",  width:"w-[24vw]", height:"23vw" },
     { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: " bg-[#CAC5F7]", content: "No payment goes through without your personal Montra PIN. It's your final word on every transaction.", title: "Your Payment Stays Private", z: "z-[4]",  width:"w-[27vw]", height:"14vw" },
   ]
