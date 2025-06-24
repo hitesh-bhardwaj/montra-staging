@@ -6,7 +6,7 @@ import Benefits from "@/components/Common/Benefits";
 import Steps from "@/components/Common/Steps";
 import WhatWhy from "@/components/Common/WhatWhy";
 import React from "react";
-import { WebpageJsonLd } from "@/lib/json-ld";
+import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from "@/lib/seo.config";
 
@@ -38,6 +38,8 @@ const personalBanking = () => {
   return (
     <>
     <WebpageJsonLd metadata={metadata}/>
+    <BreadcrumbsJSONLD pathname={metadata.url}/>
+    <FAQJSONLD faqs={faqContent}/>
       <Hero
         primaryHeading={"Montra Personal Account: "}
         titleWidth={"w-full"}

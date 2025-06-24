@@ -7,7 +7,7 @@ import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
 import BenefitCards from '@/components/Common/BenefitCards'
-import { WebpageJsonLd } from '@/lib/json-ld'
+import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
 
@@ -39,6 +39,8 @@ const businessAgencyBanking = () => {
   return (
    <>
    <WebpageJsonLd metadata={metadata}/>
+   <FAQJSONLD faqs={faqContent}/>
+   <BreadcrumbsJSONLD pathname={metadata.url}/>
    <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Earn as a Montra Agent"} content={"Empowering you to grow your income and expand your impact with seamless digital transactions and community banking services."} paraWidth={"w-[70%]"} titleWidth={"w-[70%]"}/>
    <Overview content={overviewContent}/>

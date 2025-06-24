@@ -5,7 +5,7 @@ import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
 import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
-import { WebpageJsonLd } from '@/lib/json-ld'
+import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import React from 'react'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
@@ -38,6 +38,8 @@ const personalShop = () => {
   return (
    <>
    <WebpageJsonLd metadata={metadata}/>
+   <FAQJSONLD faqs={faqContent}/>
+   <BreadcrumbsJSONLD pathname={metadata.url}/>
    <Header/>
    <Hero primaryHeading={"Montra Shop:"} heading={"Your One-Stop Shop for Every Need - Delivered to Your Doorstep"} content={"Montra Marketplace recreates the feel of shopping in the real world—compare products across sellers, chat, negotiate, and pay—all in one seamless platform."} titleWidth={"w-[75%]"} paraWidth={"w-full"} />
    <Overview content={overviewContent}/>

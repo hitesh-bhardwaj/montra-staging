@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Heading from '../Heading'
+import { FAQJSONLD } from '@/lib/json-ld'
 
 
 export default function FAQs({ allowMultiple = false , content}) {
@@ -23,6 +24,8 @@ export default function FAQs({ allowMultiple = false , content}) {
   }
 
   return (
+    <>
+    <FAQJSONLD faqs={content}/>
     <section className="px-[4vw] py-[6vw] w-full max-sm:px-[7vw] bg-[#FBFBFB] relative max-sm:pb-[10%] max-sm:min-h-[70vh] max-md:min-h-[50vh]">
       <div className="flex flex-col items-center gap-[5vw] max-sm:gap-[10vw] max-md:justify-center max-sm:items-start">
         <Heading>
@@ -43,6 +46,7 @@ export default function FAQs({ allowMultiple = false , content}) {
         </div>
       </div>
     </section>
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ import MobileBanking from "@/components/Business/MobileBanking";
 import FAQs from "@/components/Homepage/FAQs";
 import Hero from "@/components/Business/Hero";
 import SectionBreak from "@/components/Common/SectionBreak";
-import { WebpageJsonLd } from "@/lib/json-ld";
+import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from "@/lib/seo.config";
 
@@ -35,6 +35,7 @@ export default function Business() {
   return (
     <>
     <WebpageJsonLd metadata={metadata}/>
+    <FAQJSONLD faqs={faqContent}/>
       <Hero />
       <div className="max-sm:h-fit max-md:min-h-screen">
        <MobileBanking /> 

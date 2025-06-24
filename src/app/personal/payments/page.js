@@ -8,7 +8,7 @@ import Benefits from '@/components/Common/Benefits'
 import Discover from '@/components/PersonalPayments/Discover'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
-import { WebpageJsonLd } from '@/lib/json-ld'
+import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
 
@@ -40,6 +40,8 @@ const personalPayments = () => {
   return (
    <>
    <WebpageJsonLd metadata={metadata}/>
+   <FAQJSONLD faqs={faqContent}/>
+   <BreadcrumbsJSONLD pathname={metadata.url}/>
    <Header/>
    <Hero primaryHeading={"Montra Personal Account: "} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."}/>
    <Overview content={overviewContent}/>

@@ -9,7 +9,7 @@ import Rewards from '@/components/Common/Rewards'
 import BenefitCards from '@/components/Common/BenefitCards'
 import Steps from '@/components/Common/Steps'
 import WhatWhy from '@/components/Common/WhatWhy'
-import { WebpageJsonLd } from '@/lib/json-ld'
+import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
 
@@ -41,6 +41,8 @@ const businessPayments = () => {
   return (
     <>
       <WebpageJsonLd metadata={metadata} />
+      <FAQJSONLD faqs={faqContent}/>
+      <BreadcrumbsJSONLD pathname={metadata.url}/>
       <Header />
       <Hero primaryHeading={"Montra for Business: "} heading={"Digital Payments That Drive Growth"} content={"With Montra, getting paid is simple, secure, and built for scale. Empowering your Business with Seamless Digital Transactions "} paraWidth={"w-[60%]"} />
       <Overview content={overviewContent} />

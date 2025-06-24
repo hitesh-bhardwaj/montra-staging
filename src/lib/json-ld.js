@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import Script from 'next/script';
 import { homepage, faviconPath } from './util';
+// import { usePathname } from 'next/navigation';
 
 export function OrganizationJsonLd() {
   const jsonLd = {
@@ -183,5 +184,61 @@ export function WebpageJsonLd({ metadata = {} }) {
     >
       {JSON.stringify(jsonLd)}
     </Script>
+  );
+}
+
+
+export function BreadcrumbsJSONLD({ pathname}) {
+  const segments = pathname.split('/').filter(Boolean);
+
+  const itemListElements = segments.map((segment, index) => {
+    const url = '/' + segments.slice(0, index + 1).join('/');
+    return {
+      '@type': 'ListItem',
+      position: index + 1,
+      name: decodeURIComponent(segment.replace(/-/g, ' ')),
+      item: `${homepage}${url}`
+    };
+  });
+
+  const breadcrumbsJSONLD = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: itemListElements,
+  };
+
+  return (
+    <Script
+      id="breadcrumbs-jsonld"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(breadcrumbsJSONLD),
+      }}
+    />
+  );
+}
+
+export function FAQJSONLD({ faqs }) {
+  const faqJSONLD = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faqs[0].question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  };
+
+  return (
+    <Script
+      id="faq-jsonld"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(faqJSONLD),
+      }}
+    />
   );
 }

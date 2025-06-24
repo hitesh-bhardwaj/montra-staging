@@ -10,7 +10,7 @@ import BenefitCards from '@/components/Common/BenefitCards'
 import Steps from '@/components/Common/Steps'
 import Features from '@/components/Common/Features'
 import WhatWhy from '@/components/Common/WhatWhy'
-import { WebpageJsonLd } from '@/lib/json-ld'
+import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
 
@@ -42,6 +42,8 @@ const businessPaymentGateway = () => {
   return (
    <>
    <WebpageJsonLd metadata={metadata}/>
+   <FAQJSONLD faqs={faqContent}/>
+   <BreadcrumbsJSONLD pathname={metadata.url}/>
    <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Power your Business with MontraPay"} content={"Whether you’re selling on a website, app or on social media, MontraPay makes it easy to get paid with just a few clicks."} paraWidth={"w-[55%]"} />
    <Overview content={overviewContent}/>

@@ -7,7 +7,7 @@ import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
 import BenefitCards from '@/components/Common/BenefitCards'
-import { WebpageJsonLd } from '@/lib/json-ld'
+import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
 
@@ -39,6 +39,8 @@ const businessInventory = () => {
   return (
    <>
    <WebpageJsonLd metadata={metadata}/>
+   <FAQJSONLD faqs={faqContent}/>
+   <BreadcrumbsJSONLD pathname={metadata.url}/>
    <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Smart Inventory Management - Stronger Business"} content={"Montra’s Inventory Management gives you control—track stock, minimize losses, and improve profitability with ease."}/>
    <Overview content={overviewContent}/>

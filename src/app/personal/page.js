@@ -3,7 +3,7 @@ import Control from "@/components/Personal/Control";
 import ControlMobile from "@/components/Personal/ControlMobile";
 import Hero from "@/components/Personal/Hero";
 import SectionBreak from "@/components/Personal/SectionBreak";
-import { WebpageJsonLd } from "@/lib/json-ld";
+import { FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { getPageMetadata } from "@/lib/seo.config";
 import { homepage } from '@/lib/util'
 
@@ -35,6 +35,7 @@ export default function Personal() {
   return (
     <>
       <WebpageJsonLd metadata={metadata} />
+      <FAQJSONLD faqs={faqContent}/>
       <Hero />
       <Control />
       <ControlMobile />

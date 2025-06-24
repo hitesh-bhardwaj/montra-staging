@@ -7,7 +7,7 @@ import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
-import { WebpageJsonLd } from '@/lib/json-ld'
+import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
 
@@ -39,6 +39,8 @@ const montraStore = () => {
   return (
    <>
    <WebpageJsonLd metadata={metadata}/>
+   <FAQJSONLD faqs={faqContent}/>
+   <BreadcrumbsJSONLD pathname={metadata.url}/>
    <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Start Selling Online — No Website Required"} content={"Create your free, customized Montra Store to showcase your products, reach more customers, accept payments seamlessly, and grow your business — all within the Montra App."}/>
    <Overview content={overviewContent}/>

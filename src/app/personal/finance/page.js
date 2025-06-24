@@ -4,7 +4,7 @@ import SectionBreak from "@/components/Common/SectionBreak";
 import Header from "@/components/Header";
 import FAQs from "@/components/Homepage/FAQs";
 import React from "react";
-import { WebpageJsonLd } from "@/lib/json-ld";
+import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from '@/lib/util'
 import NavFinance from "@/components/PersonalFinance/NavFinance";
 import { getPageMetadata } from "@/lib/seo.config";
@@ -38,6 +38,8 @@ const PersonalFinance = () => {
   return (
     <>
       <WebpageJsonLd metadata={metadata} />
+      <FAQJSONLD faqs={faqContent}/>
+      <BreadcrumbsJSONLD pathname={metadata.url}/>
       <Header />
       <Hero
         primaryHeading={"Montra Personal Account: "}

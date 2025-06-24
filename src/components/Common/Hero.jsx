@@ -8,6 +8,7 @@ import Copy from "../Copy";
 import Heading from "../Heading";
 import { useAnimatedNavigation } from "../NavigationContext";
 import { fadeUpAnim } from "../gsapAnimations";
+import { BreadcrumbsJSONLD } from "@/lib/json-ld";
 
 export default function Hero({
   primaryHeading,
@@ -52,6 +53,7 @@ export default function Hero({
   }, []);
 
   return (
+    <>
     <section
       id="hero"
       ref={heroRef}
@@ -123,5 +125,6 @@ export default function Hero({
         </div>
       </div>
     </section>
+    </>
   );
 }
