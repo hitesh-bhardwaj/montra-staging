@@ -10,18 +10,31 @@ import React from 'react'
 import Rewards from '@/components/Common/Rewards'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
-import { generateMetadata } from '@/components/Metadata'
+import { getPageMetadata } from '@/lib/seo.config'
 
-export const metadata = generateMetadata({
-  homepage,
+export const metadata = getPageMetadata({
   title: "Montra Personal Payments – Secure, Instant Money Transfers",
   description: "Send money instantly, pay bills, request funds, and split bills securely—all within the Montra Personal app. Fast, safe and seamless digital payments.",
   url:"personal/payments",
-  image: "personal-payments.png",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/personal/payments",
+    languages: {
+      "x-default": "/personal/payments",
+    },
+  },
+  openGraph: {
+    url: "personal/payments",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/personal-payments.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
-
 
 const personalPayments = () => {
   return (

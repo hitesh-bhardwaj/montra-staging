@@ -1,10 +1,12 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
+import Script from 'next/script';
 import { homepage, faviconPath } from './util';
 
 export function OrganizationJsonLd() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${homepage}/#organization`,
+    '@id': `${homepage}#organization`,
     name: "Montra",
     description: "Montra is a fintech innovator driving financial inclusion in emerging markets by transitioning users from cash to digital payments. Its unified platform offers consumer and merchant apps, a powerful payment gateway, and advanced card & loan-processing solutions ",
     url: homepage,
@@ -27,11 +29,13 @@ export function OrganizationJsonLd() {
   };
 
   return (
-    <script
-    async
+    <Script
+      id="organization-jsonld"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
+      strategy="beforeInteractive"
+    >
+      {JSON.stringify(jsonLd)}
+    </Script>
   );
 }
 
@@ -52,11 +56,13 @@ export function WebsiteJsonLd() {
   };
 
   return (
-    <script
-    async
+    <Script
+      id="website-jsonld"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
+      strategy="beforeInteractive"
+    >
+      {JSON.stringify(jsonLd)}
+    </Script>
   );
 }
 
@@ -72,49 +78,13 @@ export function ImageObjectJsonLd() {
   };
 
   return (
-    <script
-    async
+    <Script
+      id="image-object-jsonld"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
-}
-
-export function WebpageJsonLd({ metadata = {} }) {
-  const { title, url, description, date_published, date_modified } = metadata;
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${homepage}/${url}#webpage`,
-    url: `${homepage}/${url}`,
-    name: `${title}`,
-    description: `${description}`,
-    datePublished: `${date_published}`,
-    dateModified: `${date_modified}`,
-    publisher: {
-      "@type": "Organization",
-      name: "Montra",
-      logo: {
-        "@type": "ImageObject",
-        url: `${homepage}/${faviconPath}`,
-      }
-    },
-    "about": {
-      "@id": `${homepage}/${url}#organization`
-    },
-    "isPartOf": {
-      "@id": `${homepage}/${url}#website`
-    },
-    "inLanguage": "en_US",
-  };
-
-  return (
-    <script
-      async
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
+      strategy="beforeInteractive"
+    >
+      {JSON.stringify(jsonLd)}
+    </Script>
   );
 }
 
@@ -158,10 +128,60 @@ export function LocalBusiness() {
   };
 
   return (
-    <script
-    async
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-  />
+    <Script
+      id="local-business-jsonld"
+      type="application/ld+json"
+      strategy="beforeInteractive"
+    >
+      {JSON.stringify(jsonLd)}
+    </Script>
+  );
+}
+
+export function WebpageJsonLd({ metadata = {} }) {
+  const {
+    title,
+    url = "/",
+    description,
+    date_published,
+    date_modified,
+    metadataBase,
+    openGraph,
+  } = metadata;
+
+  const name = typeof title === "string" ? title : title.default;
+  const base = metadataBase?.href || homepage;
+  const fullUrl = new URL(url, base).toString();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${fullUrl}#webpage`,
+    url: fullUrl,
+    name,
+    description,
+    datePublished: date_published,
+    dateModified: date_modified,
+    publisher: {
+      "@type": "Organization",
+      name: "Montra",
+      logo: {
+        "@type": "ImageObject",
+        url: `${homepage}/${faviconPath}`,
+      },
+    },
+    about: { "@id": `${fullUrl}#organization` },
+    isPartOf: { "@id": `${fullUrl}#website` },
+    inLanguage: openGraph?.locale || "en_US",
+  };
+
+  return (
+    <Script
+      id="webpage-jsonld"
+      type="application/ld+json"
+      strategy="beforeInteractive"
+    >
+      {JSON.stringify(jsonLd)}
+    </Script>
   );
 }

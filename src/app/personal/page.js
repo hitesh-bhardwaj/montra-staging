@@ -1,30 +1,43 @@
 import FAQs from "@/components/Homepage/FAQs";
-import { generateMetadata } from "@/components/Metadata";
 import Control from "@/components/Personal/Control";
 import ControlMobile from "@/components/Personal/ControlMobile";
 import Hero from "@/components/Personal/Hero";
 import SectionBreak from "@/components/Personal/SectionBreak";
 import { WebpageJsonLd } from "@/lib/json-ld";
+import { getPageMetadata } from "@/lib/seo.config";
 import { homepage } from '@/lib/util'
 
-export const metadata = generateMetadata({
-  homepage,
-  title: "Montra Personal – All‑in‑One Digital Wallet & Finance App",
-  description: "Montra Personal is your go‑to digital wallet and finance app. Open an account in minutes, get a virtual debit card, manage banking, payments, shopping, chat & finance in one secure app.",
-  url:"personal",
-  image: "personal.png",
+export const metadata = getPageMetadata({
+  title: "Montra Personal - All-in-One Digital Wallet & Finance App.",
+  description: "Montra Personal is a secure, feature-rich digital wallet app that helps users manage banking, payments, marketplace, loans and investments in one place.",
+  url: "personal",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/personal",
+    languages: {
+      "x-default": "/personal",
+    },
+  },
+  openGraph: {
+    url: "personal",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/personal.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
-
 
 export default function Personal() {
   return (
     <>
-    <WebpageJsonLd metadata={metadata}/>
+      <WebpageJsonLd metadata={metadata} />
       <Hero />
-        <Control />
-        <ControlMobile />
+      <Control />
+      <ControlMobile />
       <SectionBreak />
       <FAQs content={faqContent} />
     </>

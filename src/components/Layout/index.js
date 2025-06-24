@@ -8,8 +8,7 @@ import { ImageObjectJsonLd, LocalBusiness, OrganizationJsonLd, WebsiteJsonLd } f
 const Layout = ({ children }) => {
 
   usePageVisibilityTitle({
-    activeTitle: 'Montra for Personal: Your All-in-One Digital Wallet',
-    inactiveTitle: 'Seriously...? 😤',
+    inactiveTitle: 'Hey, We Miss You!',
   });
 
   useEffect(() => {
@@ -27,8 +26,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <LocalBusiness />
       <OrganizationJsonLd />
+      <LocalBusiness />
       <ImageObjectJsonLd />
       <WebsiteJsonLd />
       <Header />

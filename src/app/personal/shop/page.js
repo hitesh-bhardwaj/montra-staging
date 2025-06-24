@@ -8,18 +8,31 @@ import FAQs from '@/components/Homepage/FAQs'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import React from 'react'
 import { homepage } from '@/lib/util'
-import { generateMetadata } from '@/components/Metadata'
+import { getPageMetadata } from '@/lib/seo.config'
 
-export const metadata = generateMetadata({
-  homepage,
-  title: "Montra Shop – In-App Marketplace for Essentials & Services",
+export const metadata = getPageMetadata({
+  title: "Montra Shop - In-App Marketplace for Essentials & Services",
   description: "Shop essentials, airtime, bills, subscriptions & gifts seamlessly via Montra’s in-app marketplace. Chat, call sellers, pay securely—all in one convenient app.",
   url:"personal/shop",
-  image: "personal-wshop.png",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/personal/shop",
+    languages: {
+      "x-default": "/personal/shop",
+    },
+  },
+  openGraph: {
+    url: "personal/shop",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/personal-shop.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
-
 
 const personalShop = () => {
   return (

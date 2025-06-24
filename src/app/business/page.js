@@ -1,27 +1,35 @@
 import BankingSection from "@/components/Business/BankingSection";;
 import MobileBanking from "@/components/Business/MobileBanking";
-// import SectionBreak from "@/components/Business/SectionBreak";
 import FAQs from "@/components/Homepage/FAQs";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Hero from "@/components/Business/Hero";
 import SectionBreak from "@/components/Common/SectionBreak";
 import { WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from '@/lib/util'
-import { generateMetadata } from "@/components/Metadata";
-gsap.registerPlugin(ScrollTrigger);
+import { getPageMetadata } from "@/lib/seo.config";
 
-
-export const metadata = generateMetadata({
-  homepage,
+export const metadata = getPageMetadata({
   title: "Montra Business Account: Smarter Finance & Growth Tools for Merchants",
   description: "Empower your business with Montra's digital solutions: open a business account to accept payments via QR, Tap & Pay, POS, gateways; manage inventory, invoices, cash flow & access credit—all-in-one platform.",
   url:"business",
-  image: "business.png",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/business",
+    languages: {
+      "x-default": "/business",
+    },
+  },
+  openGraph: {
+    url: "business",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/business.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
-
 
 export default function Business() {
   return (

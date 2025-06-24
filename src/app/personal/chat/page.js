@@ -8,18 +8,31 @@ import FAQs from '@/components/Homepage/FAQs'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import React from 'react'
 import { homepage } from '@/lib/util'
-import { generateMetadata } from '@/components/Metadata'
+import { getPageMetadata } from '@/lib/seo.config'
 
-export const metadata = generateMetadata({
-  homepage,
-  title: "Montra Chat – Instant In‑App Payments & Secure Messaging",
+export const metadata = getPageMetadata({
+  title: "Montra Chat - Instant In-App Payments & Secure Messaging",
   description: "Use Montra Chat to send money, split bills, and chat with friends—all in one secure, real‑time messaging experience. Fast payments, group chats, voice & video.",
-  url:"personal/chat",
-  image: "personal-chat.png",
+  url: "personal/chat",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/personal/chat",
+    languages: {
+      "x-default": "/personal/chat",
+    },
+  },
+  openGraph: {
+    url: "personal/chat",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/personal-chat.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
-
 
 const personalChat = () => {
   return (

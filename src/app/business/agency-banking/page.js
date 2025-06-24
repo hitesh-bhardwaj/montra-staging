@@ -9,19 +9,31 @@ import Rewards from '@/components/Common/Rewards'
 import BenefitCards from '@/components/Common/BenefitCards'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
-import { generateMetadata } from '@/components/Metadata'
+import { getPageMetadata } from '@/lib/seo.config'
 
-
-export const metadata = generateMetadata({
-  homepage,
+export const metadata = getPageMetadata({
   title: "Montra for Business: Earn as a Montra Agent",
   description: "Empowering you to grow your income and expand your impact with seamless digital transactions and community banking services.",
   url:"business/agency-banking",
-  image: "business-agency-banking.png",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/business/agency-banking",
+    languages: {
+      "x-default": "/business/agency-banking",
+    },
+  },
+  openGraph: {
+    url: "business/agency-banking",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/business-agency-banking.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
-
 
 const businessAgencyBanking = () => {
   return (

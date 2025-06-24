@@ -9,17 +9,30 @@ import React from 'react'
 import Rewards from '@/components/Common/Rewards'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
-import { generateMetadata } from '@/components/Metadata'
+import { getPageMetadata } from '@/lib/seo.config'
 
-
-export const metadata = generateMetadata({
-  homepage,
+export const metadata = getPageMetadata({
   title: "Montra Store – Launch Your Free Online Shop Within the App",
   description: "Create a custom Montra Store in minutes—no website needed. Accept global payments, manage inventory, orders, chat support, deliveries, appointments & more.",
   url:"business/montra-store",
-  image: "business-montra-store.png",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/business/montra-store",
+    languages: {
+      "x-default": "/business/montra-store",
+    },
+  },
+  openGraph: {
+    url: "business/montra-store",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/business-montra-store.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
 
 const montraStore = () => {

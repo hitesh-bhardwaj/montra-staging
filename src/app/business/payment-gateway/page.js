@@ -12,19 +12,31 @@ import Features from '@/components/Common/Features'
 import WhatWhy from '@/components/Common/WhatWhy'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
-import { generateMetadata } from '@/components/Metadata'
+import { getPageMetadata } from '@/lib/seo.config'
 
-
-export const metadata = generateMetadata({
-  homepage,
+export const metadata = getPageMetadata({
   title: "Montra Business: Power your Business with MontraPay",
   description: "Whether you’re selling on a website, app or on social media, MontraPay makes it easy to get paid with just a few clicks",
   url:"business/payment-gateway",
-  image: "business-payment-gateway.png",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/business/payment-gateway",
+    languages: {
+      "x-default": "/business/payment-gateway",
+    },
+  },
+  openGraph: {
+    url: "business/payment-gateway",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/business-payment-gateway.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
-
 
 const businessPaymentGateway = () => {
   return (

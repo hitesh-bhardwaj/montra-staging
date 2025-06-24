@@ -1,4 +1,3 @@
-import Blogs from "@/components/Homepage/Blogs";
 import FAQs from "@/components/Homepage/FAQs";
 import FeatureSection from "@/components/Homepage/FeaturesSection";
 import FeaturesText from "@/components/Homepage/FeaturesText";
@@ -9,28 +8,21 @@ import SectionBreak from "@/components/Homepage/SectionBreak";
 import Testimonials from "@/components/Homepage/Testimonials";
 import VisionMission from "@/components/Homepage/VisionMission";
 import LoaderCopy from "@/components/LoaderCopy";
-import { generateMetadata } from "@/components/Metadata";
 import { WebpageJsonLd } from "@/lib/json-ld";
-// import NewLoader from "@/components/NewLoader";
-import { homepage } from "@/lib/util";
-
-
-export const metadata = generateMetadata({
-  homepage,
-  title: "Montra Personal – All‑in‑One Digital Wallet for Banking, Payments, Loans & Investments",
-  description: "Montra Personal is a secure, feature-rich digital wallet app that shifts users from cash to digital finance. Manage banking, payments, marketplace purchases, loans, insurance, and investments in one place—secured with 2FA and soft-token protection.",
-  image: "homepage.png",
-  url:"",
-  date_published: "2025-06-20T00:00",
-  date_modified: "2025-06-20T00:00",
-});
-
 
 export default function Home() {
 
+  const metadata = {
+    title: "Montra Personal - All-in-One Digital Wallet for Banking, Payments, Loans.",
+    description: "Montra Personal is a secure, feature-rich digital wallet app that helps users to manage banking, payments, marketplace, loans and investments in one place.",
+    url: "",
+    date_published: "2025-06-20T00:00",
+    date_modified: "2025-06-20T00:00",
+  }
+
   return (
     <>
-    <WebpageJsonLd metadata={metadata} />
+      <WebpageJsonLd metadata={metadata} />
       <LoaderCopy />
       <Hero />
       <FeatureSection />
@@ -40,7 +32,6 @@ export default function Home() {
       <SectionBreak />
       <VisionMission />
       <Testimonials />
-      {/* <Blogs /> */}
       <FAQs content={faqContent} />
     </>
   );

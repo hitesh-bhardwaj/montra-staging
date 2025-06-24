@@ -9,17 +9,30 @@ import React from 'react'
 import About from '@/components/BusinessTapnPay/About'
 import { WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
-import { generateMetadata } from '@/components/Metadata'
+import { getPageMetadata } from '@/lib/seo.config'
 
-
-export const metadata = generateMetadata({
-  homepage,
+export const metadata = getPageMetadata({
   title: "Montra Business: Tap. Pay. Go.",
   description: "Experience next-gen payment convenience. Our contactless Tap & Pay system is designed for speed, security, and simplicity",
   url:"business/tap-and-pay",
-  image: "business-tap-and-pay.png",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/business/tap-and-pay",
+    languages: {
+      "x-default": "/business/tap-and-pay",
+    },
+  },
+  openGraph: {
+    url: "business/tap-and-pay",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/business-tap-and-pay.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
 
 const tapPay = () => {

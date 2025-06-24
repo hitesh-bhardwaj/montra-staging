@@ -8,19 +8,31 @@ import WhatWhy from "@/components/Common/WhatWhy";
 import React from "react";
 import { WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from '@/lib/util'
-import { generateMetadata } from "@/components/Metadata";
+import { getPageMetadata } from "@/lib/seo.config";
 
-export const metadata = generateMetadata({
-  homepage,
+export const metadata = getPageMetadata({
   title: "Montra Business Account:Simplifying Your Business Banking",
   description: "Montra revolutionizes the way businesses handle their financial needs. We offer a range of tailored solutions that streamline your payment processing, improve cash flow, and ensure that you stay ahead in today’s fast-paced market.",
   url:"business/banking",
-  image: "business-banking.png",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/business/banking",
+    languages: {
+      "x-default": "/business/banking",
+    },
+  },
+  openGraph: {
+    url: "business/banking",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/business-banking.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
-
-
 
 const businessBanking = () => {
   return (

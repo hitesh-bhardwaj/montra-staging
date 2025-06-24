@@ -1,37 +1,43 @@
-import Benefits from "@/components/Common/Benefits";
-import Features from "@/components/Common/Features";
 import Hero from "@/components/Common/Hero";
 import Overview from "@/components/Common/Overview";
 import SectionBreak from "@/components/Common/SectionBreak";
-import Steps from "@/components/Common/Steps";
-import WhatWhy from "@/components/Common/WhatWhy";
 import Header from "@/components/Header";
 import FAQs from "@/components/Homepage/FAQs";
-import InvestmentPlans from "@/components/PersonalFinance/InvestmentPlans";
 import React from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";import { WebpageJsonLd } from "@/lib/json-ld";
+import { WebpageJsonLd } from "@/lib/json-ld";
 import { homepage } from '@/lib/util'
-import { generateMetadata } from "@/components/Metadata";
 import NavFinance from "@/components/PersonalFinance/NavFinance";
-gsap.registerPlugin(ScrollTrigger);
+import { getPageMetadata } from "@/lib/seo.config";
 
-export const metadata = generateMetadata({
-  homepage,
+export const metadata = getPageMetadata({
   title: "Montra Finance – Manage Banking, Loans, Investments & Expenses",
   description: "Track your spending, manage investments, apply for loans, and monitor financial goals—all within Montra’s secure, all-in-one Personal Finance app.",
-  url:"personal/finance",
-  image: "personal-finance.png",
+  url: "personal/finance",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
+  alternates: {
+    canonical: "/personal/finance",
+    languages: {
+      "x-default": "/personal/finance",
+    },
+  },
+  openGraph: {
+    url: "personal/finance",
+    images: [
+      {
+        url: `${homepage}/assets/images/seo/personal-finance.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 });
 
-
 const PersonalFinance = () => {
-  
+
   return (
     <>
-    <WebpageJsonLd metadata={metadata}/>
+      <WebpageJsonLd metadata={metadata} />
       <Header />
       <Hero
         primaryHeading={"Montra Personal Account: "}
@@ -41,7 +47,7 @@ const PersonalFinance = () => {
         }
       />
       <Overview content={overviewContent} />
-     <NavFinance/>
+      <NavFinance />
       <SectionBreak
         content={
           "Whether you're borrowing, insuring, or investing, our app brings everything together in one seamless experience."
