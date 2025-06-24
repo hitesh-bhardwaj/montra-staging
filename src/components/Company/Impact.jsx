@@ -58,7 +58,7 @@ const Impact = () => {
           <div className="text-black-1 col-span-1 col-start-1 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[0] = el)}>
             {/* <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw]" /> */}
             <div className="w-[4vw] h-[4vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw] ml-[-0.7vw]">
-              <Image src={"/assets/images/company/impact-logo-1.svg"} alt="" className="w-full h-full object-contain" width={100} height={100}/>
+              <Image src={"/assets/images/company/impact-logo-1.svg"} alt="impact-logo" className="w-full h-full object-contain" width={100} height={100}/>
 
             </div>
             <Copy>
@@ -73,7 +73,7 @@ const Impact = () => {
           </div>
           <div className="text-black-1 col-span-1 col-start-2 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[1] = el)}>
           <div className="w-[4vw] h-[4vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw] ml-[-0.7vw]">
-              <Image src={"/assets/images/company/impact-logo-2.svg"} alt="" className="w-full h-full object-contain" width={100} height={100}/>
+              <Image src={"/assets/images/company/impact-logo-2.svg"} alt="impact-logo" className="w-full h-full object-contain" width={100} height={100}/>
             </div>
             <Copy>
               <p className="mb-[5vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">
@@ -88,7 +88,7 @@ const Impact = () => {
           </div>
           <div className="text-black-1 col-span-1 col-start-3 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[2] = el)}>
           <div className="w-[4vw] h-[4vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw] ml-[-0.7vw]">
-              <Image src={"/assets/images/company/impact-logo-3.svg"} alt="" className="w-full h-full object-contain" width={100} height={100}/>
+              <Image src={"/assets/images/company/impact-logo-3.svg"} alt="impact-logo" className="w-full h-full object-contain" width={100} height={100}/>
             </div>
             <Copy>
               <p className="mb-[3vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">

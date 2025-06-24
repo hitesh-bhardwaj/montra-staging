@@ -17,7 +17,7 @@ const About = () => {
         <div className="w-[68vw] h-[28vw] relative max-sm:h-[200vw] max-sm:w-[200vw] max-sm:left-[-50%] max-sm:absolute max-sm:top-[22%] max-md:w-[90vw] max-md:h-[50vw] fadeupanim ">
           <Image
             src={"/assets/images/business-tapnpay/about-ticket.png"}
-            alt=""
+            alt="about-ticket"
             width={700}
             height={400}
             className="w-full h-full object-contain drop-shadow-xl max-sm:rotate-[90deg]"

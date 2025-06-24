@@ -415,7 +415,7 @@ const Control = () => {
                 <div className="w-[35%]">
                   <Image
                     src={section.image}
-                    alt={section.key}
+                    alt="personal-icon-img"
                     className="w-full h-full object-contain"
                     width={500}
                     height={900}

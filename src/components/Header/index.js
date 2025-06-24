@@ -346,7 +346,7 @@ export default function Header() {
                   <span>
                     <Image
                       src={"/assets/icons/circle.svg"}
-                      alt=""
+                      alt="circle"
                       width={40}
                       height={40}
                       className="max-sm:w-[2vw] max-sm:h-[2vw] brightness-[1] max-md:w-[1.5vw] max-md:h-[1.5vw]"

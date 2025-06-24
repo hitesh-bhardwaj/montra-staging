@@ -244,7 +244,7 @@ export default function Navbar({ navigateTo, hidden }) {
                       <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block">
                         <Image
                           src="/assets/icons/diagonal-arrow.svg"
-                          alt=""
+                          alt="diagonal-arrow"
                           width={40}
                           height={40}
                           className="w-[0.7vw] h-[0.7vw] scale-[0.7] translate-y-[100%] translate-x-[-100%] group-hover:translate-y-0 group-hover:translate-x-0 group-hover:scale-[1] transition-all duration-300 ease-in-out"
@@ -271,7 +271,7 @@ export default function Navbar({ navigateTo, hidden }) {
                       <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block">
                         <Image
                           src="/assets/icons/diagonal-arrow.svg"
-                          alt=""
+                          alt="diagonal-arrow"
                           width={40}
                           height={40}
                           className="w-[0.7vw] h-[0.7vw] scale-[0.7] translate-y-[100%] translate-x-[-100%] group-hover:translate-y-0 group-hover:translate-x-0 group-hover:scale-[1] transition-all duration-300 ease-in-out"
@@ -289,7 +289,7 @@ export default function Navbar({ navigateTo, hidden }) {
                 </Link>
                 <Image
                   src="/assets/icons/circle.svg"
-                  alt=""
+                  alt="circle"
                   width={40}
                   height={40}
                   className="w-[0.4vw] h-[0.4vw] brightness-0"
@@ -305,7 +305,7 @@ export default function Navbar({ navigateTo, hidden }) {
               <div className="w-[90%] h-[70%] rounded-[2vw] overflow-hidden fadeup-navimg">
                 <Image
                   src={`${active==1?"/assets/images/header/personal-nav.png":"/assets/images/header/business-nav.png"}`}
-                  alt=""
+                  alt="personal-nav"
                   width={300}
                   height={400}
                   className="w-full h-full object-cover"
