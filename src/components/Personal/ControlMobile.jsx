@@ -13,11 +13,7 @@ const controlContent = [
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
     link: "/personal/banking",
-    content: [
-      "Open a Montra Account and get a virtual Montra Card issued instantly.",
-      "You can also link your existing Bank accounts on Montra App",
-      " Now you can start making payments using your Montra or Linked Bank accounts and earn exciting rewards.",
-    ],
+    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.</li><li>Link your existing bank accounts on the Montra App and manage all your payments in one place — one app for all your bank accounts. </li></ul>",
   },
   {
     src: "/assets/images/personal/personal-icon-5.png",
@@ -27,11 +23,7 @@ const controlContent = [
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
     link: "/personal/payments",
-    content: [
-      "Open a Montra Account and get a virtual Montra Card issued instantly.",
-      "You can also link your existing Bank accounts on Montra App",
-      " Now you can start making payments using your Montra or Linked Bank accounts and earn exciting rewards.",
-    ],
+    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Enjoy multiple payment methods using your Montra Account, Linked Bank Accounts, Cards, or even via Installments.</li><li>Scan & Pay instantly at Merchants stores</li><li>Every transaction is protected with a Montra PIN and Soft Token authentication.</li></ul><p>With Montra, managing your money is fast, secure, and always in your control.</p>",
   },
   {
     src: "/assets/images/personal/personal-icon-2.png",
@@ -41,11 +33,7 @@ const controlContent = [
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
     link: "/personal/finance",
-    content: [
-      "Open a Montra Account and get a virtual Montra Card issued instantly.",
-      "You can also link your existing Bank accounts on Montra App",
-      " Now you can start making payments using your Montra or Linked Bank accounts and earn exciting rewards.",
-    ],
+    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Access loans, buy insurance, and invest—all from one powerful app.</li><li>View your transactions in real-time and monitor your financial activity.</li><li>Get intelligent insights to help you plan, save, and spend wisely.</li></ul>",
   },
   {
     src: "/assets/images/personal/personal-icon-4.png",
@@ -55,11 +43,7 @@ const controlContent = [
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
     link: "/personal/chat",
-    content: [
-      "Open a Montra Account and get a virtual Montra Card issued instantly.",
-      "You can also link your existing Bank accounts on Montra App",
-      " Now you can start making payments using your Montra or Linked Bank accounts and earn exciting rewards.",
-    ],
+    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Turn conversations into transactions </li><li>Send, Request Payments while you chat and receive instant payment confirmations </li><li>Secure & Instant—no app-switching!</li></ul>",
   },
   {
     src: "/assets/images/personal/personal-icon-3.png",
@@ -69,11 +53,7 @@ const controlContent = [
     contenTitle: "Do More with your money. Spend & earn rewards",
     contentImg: "/assets/images/personal/personal-control-img-1.png",
     link: "/personal/shop",
-    content: [
-      "Open a Montra Account and get a virtual Montra Card issued instantly.",
-      "You can also link your existing Bank accounts on Montra App",
-      " Now you can start making payments using your Montra or Linked Bank accounts and earn exciting rewards.",
-    ],
+    content:"<p>Your everyday shopping, powered by Montra:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li><span class='font-semibold'>Browse products & deals</span> right within the Montra app</li><li><span class='font-semibold'>Compare prices across partners</span> for better value</li><li><span class='font-semibold'>Instant payment checkout</span> using Montra’s multiple payment options</li><li><span class='font-semibold'>Earn rewards & track purchases</span> with ease</li></ul><p>Shop confidently, pay flexibly</p>",
   },
 ];
 
@@ -106,6 +86,7 @@ export default function Control({ allowMultiple = false }) {
               src={f.src}
               iconText={f.iconText}
               color={f.color}
+
               contentImg={f.contentImg}
               contentLink={f.link}
               contenTitle={f.contenTitle}
@@ -180,11 +161,7 @@ function Accordion({
                 <h3 className="max-sm:text-[7.5vw] capitalize font-medium font-display max-md:text-[5.5vw]">
                   {contenTitle}
                 </h3>
-                <ul className="list-disc pl-[4vw] space-y-[2vw] mb-[2vw]">
-                  {content.map((content, idx) => (
-                    <li key={idx}>{content}</li>
-                  ))}
-                </ul>
+                     <div className="w-full max-sm:space-y-[2vw] max-sm:my-[5vw] " dangerouslySetInnerHTML={{__html:content}}/>
                 <LinkButton text={"Learn More"} href={contentLink} />
               </div>
             </motion.div>

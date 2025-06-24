@@ -6,7 +6,6 @@ import Network from "@/components/Company/Network";
 import SectionBreak from "@/components/Company/SectionBreak";
 import TextBreak from "@/components/Company/TextBreak";
 import Timeline from "@/components/Company/Timeline";
-import FAQs from "@/components/Homepage/FAQs";
 import VisionMission from "@/components/Homepage/VisionMission";
 import { generateMetadata } from "@/components/Metadata";
 import { WebpageJsonLd } from "@/lib/json-ld";
@@ -39,40 +38,7 @@ export default function CompanyPage() {
       <TextBreak />
       <Timeline />
       <SectionBreak />
-      <FAQs content={faqContent} />
+      
     </>
   )
 }
-
-const faqContent = [
-  {
-    question: 'What is the scheduled payments feature?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-  {
-    question: 'How sending a bank transfer?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-  {
-    question: 'What is unique about Montra?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-  {
-    question: 'How do we Sign-Up on Montra?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM. Choosing between different options such as online banking.",
-  },
-  {
-    question: 'How do we Sign-In on Montra?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-  {
-    question: 'Is enabling Face / Touch / Fingerprint ID safe?',
-    answer:
-      "Choosing between different options such as online banking, mobile apps, in-person transfers at a bank branch, or using a bank's ATM.",
-  },
-]

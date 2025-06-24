@@ -304,7 +304,7 @@ export default function Navbar({ navigateTo, hidden }) {
             <div className="w-[55%] h-full flex flex-col py-[2vw] justify-between">
               <div className="w-[90%] h-[70%] rounded-[2vw] overflow-hidden fadeup-navimg">
                 <Image
-                  src="/assets/images/header/business-nav.png"
+                  src={`${active==1?"/assets/images/header/personal-nav.png":"/assets/images/header/business-nav.png"}`}
                   alt=""
                   width={300}
                   height={400}

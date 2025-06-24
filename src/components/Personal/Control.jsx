@@ -18,11 +18,8 @@ const Control = () => {
   const sections = [
     {
       key: "Banking",
-      title: "Do More with your money. Spend and earn rewards",
-      points: [
-        "Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.",
-        "Link your existing bank accounts on the Montra App and manage all your payments in one place — one app for all your bank accounts.",
-      ],
+      title: "Do More with Your Money. Spend and Earn Rewards",
+      content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.</li><li>Link your existing bank accounts on the Montra App and manage all your payments in one place — one app for all your bank accounts. </li></ul>",
       image: "/assets/images/personal/personal-control-img-1.png",
       link: {
         text: "Learn More",
@@ -33,12 +30,8 @@ const Control = () => {
     },
     {
       key: "Finance",
-      title: "Finance Management Simplified for Everyone",
-      points: [
-        "Track expenses in real-time.",
-        "Set financial goals and budgets.",
-        "Receive smart insights for better decisions.",
-      ],
+      title: "Invest, Insure & Borrow with Montra",
+      content:"<ul class='pl-[2vw] list-disc space-y-[0.5vw]'><li>Access loans, buy insurance, and invest—all from one powerful app.</li><li>View your transactions in real-time and monitor your financial activity.</li><li>Get intelligent insights to help you plan, save, and spend wisely.</li></ul>",
       image: "/assets/images/personal/personal-control-img-1.png",
       link: {
         text: "Learn More",
@@ -49,12 +42,8 @@ const Control = () => {
     },
     {
       key: "Shop",
-      title: "Smart Shopping with Rewards",
-      points: [
-        "Exclusive deals from partner brands.",
-        "Pay later with flexible EMIs.",
-        "Earn cashback on every purchase.",
-      ],
+      title: "Montra Shop: Discover. Compare. Pay Smarter.",
+      content:"<p>Your everyday shopping, powered by Montra:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li><span class='font-semibold'>Browse products & deals</span> right within the Montra app</li><li><span class='font-semibold'>Compare prices across partners</span> for better value</li><li><span class='font-semibold'>Instant payment checkout</span> using Montra’s multiple payment options</li><li><span class='font-semibold'>Earn rewards & track purchases</span> with ease</li></ul><p>Shop confidently, pay flexibly</p>",
       image: "/assets/images/personal/personal-control-img-1.png",
       link: {
         text: "Learn More",
@@ -65,12 +54,8 @@ const Control = () => {
     },
     {
       key: "Chat",
-      title: "Chat and Transact Instantly",
-      points: [
-        "Send money through chat.",
-        "Split bills with a tap.",
-        "Group chats for shared expenses.",
-      ],
+      title: "Send Money like a Message",
+      content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Turn conversations into transactions </li><li>Send, Request Payments while you chat and receive instant payment confirmations </li><li>Secure & Instant—no app-switching!</li></ul>",
       image: "/assets/images/personal/personal-control-img-1.png",
       link: {
         text: "Learn More",
@@ -81,12 +66,8 @@ const Control = () => {
     },
     {
       key: "Payments",
-      title: "Make Fast & Secure Payments",
-      points: [
-        "UPI, cards & net banking supported.",
-        "Instant refunds and smart alerts.",
-        "Auto-reminders for bills & subscriptions.",
-      ],
+      title: "Make Fast, Flexible & Secure Payments",
+      content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Enjoy multiple payment methods using your Montra Account, Linked Bank Accounts, Cards, or even via Installments.</li><li>Scan & Pay instantly at Merchants stores</li><li>Every transaction is protected with a Montra PIN and Soft Token authentication.</li></ul><p>With Montra, managing your money is fast, secure, and always in your control.</p>",
       image: "/assets/images/personal/personal-control-img-1.png",
       link: {
         text: "Learn More",
@@ -444,11 +425,8 @@ const Control = () => {
                   <h3 className="text-[3.4vw] leading-[1.3] font-display capitalize font-medium">
                     {section.title}
                   </h3>
-                  <ul className="list-disc ml-[1vw] w-[70%] space-y-[0.5vw]">
-                    {section.points.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
+                  
+                  <div className="w-[80%] space-y-[1vw] pl-[1vw]" dangerouslySetInnerHTML={{__html:section.content}}/>
                   <LinkButton
                     text={section.link.text}
                     href={section.link.href}
