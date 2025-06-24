@@ -11,7 +11,7 @@ export function generateMetadata({
 
   return {
     title,
-    metaDescription: description,
+    description,
     path: `${url}`,
     img: image || 'homepage.png',
     date_published,
@@ -20,7 +20,6 @@ export function generateMetadata({
       canonical: `${homepage}/${url}`,
       languages: {
         hrefLang: 'x-default',
-        href: `${homepage}/${url}`,
       },
     },
     openGraph: {

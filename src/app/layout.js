@@ -7,8 +7,6 @@ import Layout from "@/components/Layout";
 import Footer from "@/components/Footer";
 import { ViewTransitions } from "next-view-transitions";
 import { NavigationProvider } from "@/components/NavigationContext";
-import { ImageObjectJsonLd, LocalBusiness, OrganizationJsonLd, WebsiteJsonLd } from "@/lib/json-ld";
-import Head from "next/head";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -57,7 +55,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <>
-   
       <LenisSmoothScroll />
       <html lang="en">
         <body

@@ -60,6 +60,7 @@ export const LinkButton = ({ text, href, className = "", ...props }) => {
     >
       <div className="flex items-center justify-start gap-2">
         <span className="link-line">{text}</span>
+        <span className="h-[1px] w-[1px] inline-block overflow-hidden"> About {href}</span>
         <ArrowRight className="group-hover:-rotate-45 transition-transform duration-300 w-[1vw] h-[1vw] max-sm:w-[4vw] max-sm:h-[4vw] max-md:w-[2.5vw] max-md:h-[2.5vw]" />
       </div>
     </Link>

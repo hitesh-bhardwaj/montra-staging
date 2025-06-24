@@ -81,15 +81,15 @@ export function ImageObjectJsonLd() {
 }
 
 export function WebpageJsonLd({ metadata = {} }) {
-  const { title, path, metaDescription, date_published, date_modified } = metadata;
+  const { title, url, description, date_published, date_modified } = metadata;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${homepage}/${path}#webpage`,
-    url: `${homepage}/${path}`,
+    "@id": `${homepage}/${url}#webpage`,
+    url: `${homepage}/${url}`,
     name: `${title}`,
-    description: `${metaDescription}`,
+    description: `${description}`,
     datePublished: `${date_published}`,
     dateModified: `${date_modified}`,
     publisher: {
@@ -101,10 +101,10 @@ export function WebpageJsonLd({ metadata = {} }) {
       }
     },
     "about": {
-      "@id": `${homepage}/${path}#organization`
+      "@id": `${homepage}/${url}#organization`
     },
     "isPartOf": {
-      "@id": `${homepage}/${path}#website`
+      "@id": `${homepage}/${url}#website`
     },
     "inLanguage": "en_US",
   };

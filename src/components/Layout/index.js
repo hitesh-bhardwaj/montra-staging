@@ -27,10 +27,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-    <LocalBusiness/>
-    <OrganizationJsonLd/>
-    <ImageObjectJsonLd/>
-    <WebsiteJsonLd/>
+      <LocalBusiness />
+      <OrganizationJsonLd />
+      <ImageObjectJsonLd />
+      <WebsiteJsonLd />
       <Header />
       {children}
       <FooterCta />

@@ -81,7 +81,8 @@ export default function Header() {
         className="px-[4vw] pt-[1%] header w-full max-sm:pt-[5vw] max-sm:px-[7vw] max-md:pt-[5vw]"
       >
         <div className="flex justify-between items-center w-full ">
-          <a
+          <button
+          aria-label="Go to homepage"
             onClick={(e) => {
               e.preventDefault();
               navigateTo("/");
@@ -95,7 +96,7 @@ export default function Header() {
                 openMenu ? "!brightness-[1]" : ""
               } ${isInverted ? " brightness-[16]" : ""} `}
             />
-          </a>
+          </button>
           <Navbar navigateTo={navigateTo} hidden={hidden} />
           <div
             className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]"

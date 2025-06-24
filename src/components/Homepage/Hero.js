@@ -39,15 +39,6 @@ export default function Hero() {
           },
           "<"
         )
-        .from(
-          "#hero-phone-image",
-          {
-            duration: 1.5,
-            y: 20,
-            opacity: 0,
-          },
-          "<"
-        );
     });
     return () => ctx.revert();
   }, []);

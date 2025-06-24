@@ -86,7 +86,7 @@ export default function Navbar({ navigateTo, hidden }) {
       gsap.fromTo(
         ".fadeup-navlink",
         { yPercent: 100 },
-        { yPercent: 0 , delay:0.3,}
+        { yPercent: 0, delay: 0.3, }
       );
       gsap.fromTo(
         ".fadeup-navimg",
@@ -121,7 +121,7 @@ export default function Navbar({ navigateTo, hidden }) {
   }, [pathname]);
 
   return (
-    <nav className={`bg-black rounded-full h-[4.1vw] max-sm:hidden max-md:hidden relative z-[500] ${pathname==='/'?"opacity-0":""} `} id="nav-container">
+    <nav className={`bg-black rounded-full h-[4.1vw] max-sm:hidden max-md:hidden relative z-[500] ${pathname === '/' ? "opacity-0" : ""} `} id="nav-container">
       <div
         ref={navRef}
         className="relative w-full inline-flex h-full items-center overflow-hidden z-[54] bg-black rounded-full px-[0.5vw]"
@@ -158,10 +158,10 @@ export default function Navbar({ navigateTo, hidden }) {
                 isActive
                   ? "true"
                   : link.name === "Personal"
-                  ? "personal"
-                  : link.name === "Business"
-                  ? "business"
-                  : undefined
+                    ? "personal"
+                    : link.name === "Business"
+                      ? "business"
+                      : undefined
               }
               aria-label={link.name}
               className="relative z-10 flex text-[1.05vw] min-w-[5vw] h-full items-center px-[2vw] justify-center text-white whitespace-nowrap font-display gap-[0.5vw]"
@@ -180,11 +180,10 @@ export default function Navbar({ navigateTo, hidden }) {
             >
               {link.icon || link.name}
               <div
-                className={`w-[1.2vw] h-[1.2vw] flex justify-center font-bold items-center rounded-full border text-[0.8vw] border-white bg-white absolute top-[20%] left-[76%] text-primary ${
-                  link.name === "Personal" || link.name === "Business"
+                className={`w-[1.2vw] h-[1.2vw] flex justify-center font-bold items-center rounded-full border text-[0.8vw] border-white bg-white absolute top-[20%] left-[76%] text-primary ${link.name === "Personal" || link.name === "Business"
                     ? ""
                     : "hidden"
-                }`}
+                  }`}
               >
                 {link.name === "Personal" ? <p>5</p> : <p>7</p>}
               </div>
@@ -210,18 +209,17 @@ export default function Navbar({ navigateTo, hidden }) {
         onMouseLeave={() => {
           setOpenMenu(false);
           if (!navRef.current) return;
-          
-          
-            const el = navRef.current.querySelector('a[data-active="true"]');
-            movePill(el);
-          
+
+
+          const el = navRef.current.querySelector('a[data-active="true"]');
+          movePill(el);
+
         }}
       >
         <div
-        aria-hidden={true}
-          className={`w-full rounded-[2vw] bg-[#FAFBFF] border border-black/10 flex justify-end overflow-hidden transition-all duration-300 ease-out ${
-            openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
-          }`}
+          aria-hidden={true}
+          className={`w-full rounded-[2vw] bg-[#FAFBFF] border border-black/10 flex justify-end overflow-hidden transition-all duration-300 ease-out ${openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
+            }`}
         >
           <div className="w-[82.5%] flex gap-[1vw] h-full font-display text-primary">
             <div className="w-[60%] h-full py-[2vw] flex flex-col justify-between">
@@ -233,6 +231,7 @@ export default function Navbar({ navigateTo, hidden }) {
                       className="w-fit flex gap-[0.5vw] items-center group overflow-hidden"
                     >
                       <Link
+                        aria-label={`Go to ${personal.name}`}
                         href={personal.link}
                         className="link-line fadeup-navlink font-medium"
                         onClick={(e) => {
@@ -283,10 +282,10 @@ export default function Navbar({ navigateTo, hidden }) {
               </div>
               <div className="w-full flex gap-[0.5vw] items-center text-[1vw] fadeup-navpolicy">
                 <Link href="/" className="link-line text-black-1">
-                <div>
-                  Privacy Policy
+                  <div>
+                    Privacy Policy
 
-                </div>
+                  </div>
                 </Link>
                 <Image
                   src="/assets/icons/circle.svg"
@@ -296,9 +295,9 @@ export default function Navbar({ navigateTo, hidden }) {
                   className="w-[0.4vw] h-[0.4vw] brightness-0"
                 />
                 <Link href="/" className="link-line text-black-1">
-                <div>
-                  Cookie Policy
-                </div>
+                  <div>
+                    Cookie Policy
+                  </div>
                 </Link>
               </div>
             </div>

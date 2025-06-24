@@ -25,7 +25,6 @@ export default function Personal() {
       <Hero />
         <Control />
         <ControlMobile />
-      
       <SectionBreak />
       <FAQs content={faqContent} />
     </>

@@ -15,7 +15,7 @@ export default function PaymentSection() {
   });
   const [mode, setMode] = useState("personal");
   const itemsRef = useRef([]);
-  
+
   // 4) Your scroll thresholds
   const thresholds = {
     banking: 0.0,
@@ -97,42 +97,42 @@ export default function PaymentSection() {
   );
 
   useEffect(() => {
-    const ctx = gsap.context(()=>{
-        itemsRef.current = itemsRef.current.slice(0, stepsData[mode].length);
-        const totalItems = stepsData[mode].length;
-        const sectionHeight = 98 / totalItems;
-      
-        itemsRef.current.forEach((el, index) => {
-          const start = `${sectionHeight * index + 4}% 70%`;
-          const end = `${sectionHeight * (index + 1.2)}% 70%`;
-         
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start,
-                end,
-                // markers:true,
-                scrub: true,
-              },
-            })
-            .fromTo(
-              el,
-              { opacity: 0, yPercent: 7, duration: 1, ease: "none",  },
-              { opacity: 1, yPercent: 0, duration: 1, ease: "none",zIndex:5 }
-            )
-            .to(el, {
-              opacity: 0,
-              yPercent: -7,
-              duration: 1,
-              ease: "none",
-              zIndex:1
+    const ctx = gsap.context(() => {
+      itemsRef.current = itemsRef.current.slice(0, stepsData[mode].length);
+      const totalItems = stepsData[mode].length;
+      const sectionHeight = 98 / totalItems;
+
+      itemsRef.current.forEach((el, index) => {
+        const start = `${sectionHeight * index + 4}% 70%`;
+        const end = `${sectionHeight * (index + 1.2)}% 70%`;
+
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start,
+              end,
+              // markers:true,
+              scrub: true,
+            },
+          })
+          .fromTo(
+            el,
+            { opacity: 0, yPercent: 7, duration: 1, ease: "none", },
+            { opacity: 1, yPercent: 0, duration: 1, ease: "none", zIndex: 5 }
+          )
+          .to(el, {
+            opacity: 0,
+            yPercent: -7,
+            duration: 1,
+            ease: "none",
+            zIndex: 1
             //   delay: 0.2,
-            });
-        });
+          });
+      });
 
     })
-    return()=>ctx.revert()
+    return () => ctx.revert()
   }, [mode]);
 
   return (
@@ -150,17 +150,15 @@ export default function PaymentSection() {
           />
           <button
             onClick={() => swapMode("personal")}
-            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1vw] ${
-              mode === "personal" ? "text-white" : ""
-            }`}
+            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1vw] ${mode === "personal" ? "text-white" : ""
+              }`}
           >
             Personal
           </button>
           <button
             onClick={() => swapMode("business")}
-            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1vw] ${
-              mode === "business" ? "text-white" : ""
-            }`}
+            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1vw] ${mode === "business" ? "text-white" : ""
+              }`}
           >
             Business
           </button>
@@ -357,23 +355,25 @@ export default function PaymentSection() {
         )}
 
         {/* TEXT BLOCK */}
-         <div ref={containerRef} className="relative h-full">
-                 <div className="sticky top-0 h-screen w-[40vw] flex items-center justify-start text-left ml-[1vw]">
-                   {stepsData[mode].map((item, index) => (
-                     <div
-                       key={index}
-                       ref={(el) => (itemsRef.current[index] = el)}
-                       className="absolute text-left w-[40vw]"
-                     >
-                       <h2 className="text-[3.4vw] font-display font-medium leading-[1.2] w-[80%]">
-                         {item.title}
-                       </h2>
-                       <div className="space-y-[1.5vw] py-[2vw]" dangerouslySetInnerHTML={{__html:item.desc}}/>
-                       <LinkButton text="Learn More" href={item.link} />
-                     </div>
-                   ))}
-                 </div>
-               </div>
+        <div ref={containerRef} className="relative h-full">
+          <div className="sticky top-0 h-screen w-[40vw] flex items-center justify-start text-left ml-[1vw]">
+            {stepsData[mode].map((item, index) => (
+              <div
+                key={index}
+                ref={(el) => (itemsRef.current[index] = el)}
+                className="absolute text-left w-[40vw]"
+              >
+                <h2 className="text-[3.4vw] font-display font-medium leading-[1.2] w-[80%]">
+                  {item.title}
+                </h2>
+                <div className="space-y-[1.5vw] py-[2vw]" dangerouslySetInnerHTML={{ __html: item.desc }} />
+                <div>
+                  <LinkButton text="Learn More" href={item.link} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         {/* IMAGE BLOCK */}
         <div className="sticky top-[20%] right-[7%] w-[40%] mt-[15vw] h-[80vh] flex items-start justify-center">
           <div className="relative w-full h-[60vh]">
@@ -402,93 +402,106 @@ export default function PaymentSection() {
 }
 
 
-  // 1) Your per-step data with individual image URLs
-  const stepsData = {
-    personal: [
-      {
-        title: "Secure way of accessing World of Banking",
-        desc: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>",
-        link: "/personal/banking",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "Pay Your Way with Montra",
-        desc: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards –  </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
-        link: "/personal/payments",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "Manage your Finance, on the Go",
-        desc: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul><p>Because your money should move as smartly as you do.</p> ',
-        link: "/personal/finance",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "Send Messages. Send & Request Money. Same Chat.",
-        desc: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
-        link: "/personal/chat",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "Shopping Meets Simplicity",
-        desc: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands— everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
-        link: "/personal/shop",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-    ],
-    business: [
-      {
-        title: "All-in-One Banking. Built for Businesses",
-        desc: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem — designed to help your business grow smarter & faster</p>',
-        link: "/business/banking",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "Accept Payments. Expand Possibilities",
-        desc: '<p>Open a Montra Business Account to start receiving payments from anyone — anytime, anywhere. Accept payments using<ul class="pl-[1vw] space-y-[0.3vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
-        link: "/business/payments",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "Become a Montra Agent. Start Earning",
-        desc: "<p>Offer Agency Banking services for offering Cash Deposit & Cahs withdrawal services and get paid for every transaction — it’s that simple.</p>",
-        link: "/business/agency-banking",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "Sell Smarter. Restock Faster. Pay & Get Paid Instantly. ",
-        desc: '<p>Manage orders, send invoices, and track stock.With Montra, every part of your business just flows.<ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
-        link: "/business/inventory-management",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "Start Selling Online — For Free",
-        desc: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
-        link: "/business/montra-store",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "One Gateway. Multiple Payment Options.",
-        desc: '<p>Integrate <span class="font-semibold">Montra Payment Gateway</span> into your app or website and accept payments via:</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Debit & Credit Cards</li><li>Bank Transfers via QR</li><li>Montra App </li><li>USSD Payments </li></ul> <p class="font-semibold">More ways to get paid. Fast integration. Instant settlement.</p>',
-        link: "/business/payment-gateway",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-      {
-        title: "Tap. Accept. Get Paid.",
-        desc: '<p>With Montra Tap to Pay, your phone becomes a payment terminal — no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
-        link: "/business/tap-and-pay",
-        image: "/assets/images/homepage/personal-mobile-mockup.png",
-      },
-    ],
-  };
+// 1) Your per-step data with individual image URLs
+const stepsData = {
+  personal: [
+    {
+      title: "Secure way of accessing World of Banking",
+      desc: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>",
+      link: "/personal/banking",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "Pay Your Way with Montra",
+      desc: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards –  </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
+      link: "/personal/payments",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "Manage your Finance, on the Go",
+      desc: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul><p>Because your money should move as smartly as you do.</p> ',
+      link: "/personal/finance",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "Send Messages. Send & Request Money. Same Chat.",
+      desc: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
+      link: "/personal/chat",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "Shopping Meets Simplicity",
+      desc: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands— everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
+      link: "/personal/shop",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+  ],
+  business: [
+    {
+      title: "All-in-One Banking. Built for Businesses",
+      desc: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem — designed to help your business grow smarter & faster</p>',
+      link: "/business/banking",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "Accept Payments. Expand Possibilities",
+      desc: '<p>Open a Montra Business Account to start receiving payments from anyone — anytime, anywhere. Accept payments using<ul class="pl-[1vw] space-y-[0.3vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
+      link: "/business/payments",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "Become a Montra Agent. Start Earning",
+      desc: "<p>Offer Agency Banking services for offering Cash Deposit & Cahs withdrawal services and get paid for every transaction — it’s that simple.</p>",
+      link: "/business/agency-banking",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "Sell Smarter. Restock Faster. Pay & Get Paid Instantly. ",
+      desc: '<p>Manage orders, send invoices, and track stock.With Montra, every part of your business just flows.<ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
+      link: "/business/inventory-management",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "Start Selling Online — For Free",
+      desc: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
+      link: "/business/montra-store",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "One Gateway. Multiple Payment Options.",
+      desc: '<p>Integrate <span class="font-semibold">Montra Payment Gateway</span> into your app or website and accept payments via:</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Debit & Credit Cards</li><li>Bank Transfers via QR</li><li>Montra App </li><li>USSD Payments </li></ul> <p class="font-semibold">More ways to get paid. Fast integration. Instant settlement.</p>',
+      link: "/business/payment-gateway",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+    {
+      title: "Tap. Accept. Get Paid.",
+      desc: '<p>With Montra Tap to Pay, your phone becomes a payment terminal — no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
+      link: "/business/tap-and-pay",
+      image: "/assets/images/homepage/personal-mobile-mockup.png",
+    },
+  ],
+};
 
-  // 2) Master list of all keys (hook count stays constant)
-  const allThresholdKeys = [
-    "banking",
-    "payment",
-    "finance",
-    "chat",
-    "shop",
+// 2) Master list of all keys (hook count stays constant)
+const allThresholdKeys = [
+  "banking",
+  "payment",
+  "finance",
+  "chat",
+  "shop",
+  "businessBanking",
+  "businessPayments",
+  "agency",
+  "inventory",
+  "montra",
+  "businessPaymentGateway",
+  "tap",
+];
+
+// 3) Which subset applies to each mode
+const thresholdKeys = {
+  personal: ["banking", "payment", "finance", "chat", "shop"],
+  business: [
     "businessBanking",
     "businessPayments",
     "agency",
@@ -496,18 +509,5 @@ export default function PaymentSection() {
     "montra",
     "businessPaymentGateway",
     "tap",
-  ];
-
-  // 3) Which subset applies to each mode
-  const thresholdKeys = {
-    personal: ["banking", "payment", "finance", "chat", "shop"],
-    business: [
-      "businessBanking",
-      "businessPayments",
-      "agency",
-      "inventory",
-      "montra",
-      "businessPaymentGateway",
-      "tap",
-    ],
-  };
+  ],
+};
