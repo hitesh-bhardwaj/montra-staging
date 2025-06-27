@@ -280,8 +280,11 @@ export default function Navbar({ navigateTo, hidden }) {
                     </div>
                   ))}
               </div>
-              <div className="w-full flex gap-[0.5vw] items-center text-[1vw] fadeup-navpolicy">
-                <Link href="/" className="link-line text-black-1">
+              <div className="w-full flex gap-[0.5vw] items-center text-[1vw] fadeup-navpolicy ml-[-3vw]">
+                <Link href="/privacy-policy" className="link-line text-black-1" onClick={(e) => {
+                          e.preventDefault();
+                          navigateTo("/privacy-policy");
+                        }}>
                   <div>
                     Privacy Policy
 
@@ -294,14 +297,17 @@ export default function Navbar({ navigateTo, hidden }) {
                   height={40}
                   className="w-[0.4vw] h-[0.4vw] brightness-0"
                 />
-                <Link href="/" className="link-line text-black-1">
+                <Link href="/terms-and-conditions" className="link-line text-black-1" onClick={(e) => {
+                          e.preventDefault();
+                          navigateTo("/terms-and-conditions");
+                        }}>
                   <div>
-                    Cookie Policy
+                   Terms And Conditions
                   </div>
                 </Link>
               </div>
             </div>
-            <div className="w-[55%] h-full flex flex-col py-[2vw] justify-between">
+            <div className="w-[45%] h-full flex flex-col py-[2vw] justify-between">
               <div className="w-[90%] h-[70%] rounded-[2vw] overflow-hidden fadeup-navimg">
                 <Image
                   src={`${active==1?"/assets/images/header/personal-nav.png":"/assets/images/header/business-nav.png"}`}

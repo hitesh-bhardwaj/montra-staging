@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Copy from "../Copy";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,7 +52,7 @@ export default function Hero() {
         backgroundColor: "#215CFF",
         duration: 0,
         scrollTrigger: {
-          trigger: "#steps",
+          trigger: "#hero",
           start: "top top",
           // markers: true,
           onEnter: () => {
@@ -84,10 +85,12 @@ export default function Hero() {
         id="hero"
         className="h-[70vh] max-sm:h-[45vh]  rounded-b-[3vw] max-sm:rounded-b-[9vw] flex items-center justify-center bg-[#215CFF] w-full max-md:h-[50vh]"
       >
+        <Copy>
         <h1 className="flex flex-col items-center max-sm:text-[10vw] justify-center text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-white">
           <span>Montra</span>
           <span>Terms and Conditions</span>
         </h1>
+        </Copy>
       </div>
     </>
   );

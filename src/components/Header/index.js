@@ -339,8 +339,13 @@ export default function Header() {
                 
               </div>
               <div className="flex flex-col gap-[7vw]">
-              <div className="w-full flex gap-[2vw] items-center max-sm:text-[4.5vw] max-md:text-[3vw] fadeup-navpolicy">
-                  <Link href={"/"} className="link-line text-primary">
+              <div className="w-full flex gap-[2vw] items-center max-sm:text-[4.5vw] max-md:text-[2.5vw] fadeup-navpolicy">
+                  <Link href={"/privacy-policy"} className="link-line text-primary" onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo("/privacy-policy");
+                    setopenMenu(false);
+                    setIsInverted(false);
+                  }}>
                     Privacy Policy
                   </Link>
                   <span>
@@ -352,8 +357,13 @@ export default function Header() {
                       className="max-sm:w-[2vw] max-sm:h-[2vw] brightness-[1] max-md:w-[1.5vw] max-md:h-[1.5vw]"
                     />
                   </span>
-                  <Link href={"/"} className="link-line text-primary">
-                    Cookie Policy
+                  <Link href={"/terms-and-conditions"} className="link-line text-primary" onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo("/terms-and-conditions");
+                    setopenMenu(false);
+                    setIsInverted(false);
+                  }}>
+                    Terms and Conditions
                   </Link>
                 </div>
               <div className="flex items-start justify-start gap-[3vw]">
