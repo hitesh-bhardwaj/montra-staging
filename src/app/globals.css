@@ -16,7 +16,7 @@ html{
 @theme inline {
   --breakpoint-*: initial;
   --breakpoint-sm: 640px;
-  --breakpoint-md: 1024px;
+  --breakpoint-md: 1025px;
   --color-background: var(--background);
   --color-black-1: var(--black-1);
   --color-gray: var(--gray);
