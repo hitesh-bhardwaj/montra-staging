@@ -72,7 +72,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[9999] transform transition-transform duration-300 w-screen   ${
+      className={`fixed top-0 left-0 right-0 z-[999] transform transition-transform duration-300 w-screen   ${
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
@@ -92,7 +92,7 @@ export default function Header() {
             <Image
               src={montraLogo}
               alt="montra logo"
-              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${pathname==='/'?"opacity-0":""}  ${
+              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${pathname==='/'?"opacity-0 translate-y-[-140%]":""}  ${
                 openMenu ? "!brightness-[1]" : ""
               } ${isInverted ? " brightness-[16]" : ""} `}
             />

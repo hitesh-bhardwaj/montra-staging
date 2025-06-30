@@ -50,7 +50,7 @@ const icons = [
         style: { top: "15%", left: "30%" },
         tabletStyle: { top: "18%", left: "15%" },
         mobileStyle: { top: "10%", left: "30%" },
-        xOffset: -500,
+        xOffset: -450,
         yOffset: 100,
         tabletxOffset: -100,
         tabletyOffset: 0,
@@ -121,7 +121,7 @@ const icons = [
         tabletStyle: { top: "30%", right: "28%" },
         mobileStyle: { top: "20%", right: "30%" },
         xOffset: -50,
-        yOffset: -350,
+        yOffset: -390,
         tabletxOffset: 100,
         tabletyOffset: 100,
         mobilexOffset: 90,
@@ -194,7 +194,7 @@ const FeatureSection = () => {
                         alt="App mockup"
                         width={800}
                         height={1000}
-                        className="w-[70%] h-[70%] object-contain absolute left-[15%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-105%] max-sm:hidden z-[9999]"
+                        className="w-[65%] h-[65%] object-contain absolute left-[18%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-105%] max-sm:hidden z-[9999]"
                     />
                     <Image
                         // id="hero-phone-image"
@@ -206,7 +206,7 @@ const FeatureSection = () => {
                     />
                     <Image
                         // id="hero-phone-image"
-                        src="/assets/images/homepage/phone-hand-mockup.png"
+                        src="/assets/images/homepage/hand-mockup.png"
                         alt="App mockup"
                         width={800}
                         height={1000}

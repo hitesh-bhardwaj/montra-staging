@@ -47,7 +47,7 @@ const businessInventory = () => {
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>
    <Rewards rewardsData={rewardsData}/>
-   <SectionBreak content={"Built to Empower & Designed for Simplicity.Whether you're running a business or handling personal payments, our fintech tools make it all smoother, faster, and more inclusive."} width={"w-[90%]"}/>
+   <SectionBreak content={"Built to Empower & Designed for Simplicity. Whether you're running a business or handling personal payments, our fintech tools make it all smoother, faster, and more inclusive."} width={"w-[90%]"}/>
    <FAQs content={faqContent}/>
    </>
   )
