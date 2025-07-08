@@ -121,7 +121,7 @@ export default function Navbar({ navigateTo, hidden }) {
   }, [pathname]);
 
   return (
-    <nav className={`bg-black rounded-full h-[4.1vw] max-sm:hidden max-md:hidden relative z-[500] ${pathname === '/' ? "opacity-0" : ""} `} id="nav-container">
+    <nav className={`bg-black rounded-full h-[4.1vw] max-sm:hidden max-md:hidden relative z-[500]`} id="nav-container">
       <div
         ref={navRef}
         className="relative w-full inline-flex h-full items-center overflow-hidden z-[54] bg-black rounded-full px-[0.5vw]"

@@ -70,7 +70,7 @@ const Overview = ({ content }) => {
             <Image
               src={content.mainImg}
               alt="overview-phone-image"
-              className="object-cover w-full h-[60vw]  z-[2] relative max-sm:h-[180vw] max-sm:left-[-15%] max-md:h-[120vw] max-md:left-[-5%]"
+              className="object-cover w-full h-[60vw]  z-[2] relative max-sm:h-[180vw] max-sm:left-[0%] max-md:h-[120vw] max-md:left-[-5%]"
               width={700}
               height={1080}
             />
@@ -78,7 +78,7 @@ const Overview = ({ content }) => {
               <Image
                 src={content.bgImg}
                 alt="overview-banking-image"
-                className="w-full h-[35vw] object-cover max-sm:h-[100vw] max-md:h-[80vw] max-md:object-contain"
+                className="w-full h-[31vw] object-cover max-sm:h-[100vw] max-md:h-[80vw] max-md:object-contain"
                 width={400}
                 height={800}
               />
@@ -103,7 +103,7 @@ const Overview = ({ content }) => {
               className="w-fit h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#FFEAEE] absolute top-[30%] left-[10%] z-[7] flex gap-[1vw] max-sm:px-[5vw] max-sm:gap-[2vw] max-sm:rounded-[3vw] max-sm:py-[3vw] items-center max-sm:left-0 max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw]"
             >
               <div className="w-[2vw] h-[2vw] max-sm:w-[7vw] max-sm:h-[7vw] max-md:w-[5vw] max-md:h-[5vw]">
-                <Image
+                <Image 
                   src={content.icon1}
                   width={100}
                   height={100}

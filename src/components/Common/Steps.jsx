@@ -150,14 +150,14 @@ const Steps = ({ stepData }) => {
             {stepData.heading}
           </h2>
         </div>
-        <div className="w-2/5 relative h-[120vh] mt-[-5vw] max-sm:w-[120vw] max-sm:h-[150vw] max-sm:left-[-25%]  fadeupanim max-md:h-[190vw] max-md:w-[150vw] max-md:left-[-30%] max-md:mt-0">
+        <div className="w-[50%] relative h-[120vh] mt-[-5vw] max-sm:w-[100vw] max-sm:h-[150vw] max-sm:left-[-10%] fadeupanim max-md:h-[190vw] max-md:w-[150vw] max-md:left-[-30%] max-md:mt-0">
           {stepData.steps.map((s, i) => {
             const isCurrent = i === currentStep;
             const isFadingOut = i === step && isAnimating;
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 1 }}
                 animate={{
                   opacity: isCurrent && !isAnimating ? 1 : 0,
                   pointerEvents: isCurrent && !isAnimating ? "auto" : "none",
@@ -167,11 +167,10 @@ const Steps = ({ stepData }) => {
                 className="absolute inset-0"
                 style={{ zIndex: isCurrent ? 10 : 0 }}
               >
-                <Image
+                <Image  
                   src={s.img}
                   alt={s.title}
                   layout="fill"
-                  // objectFit="cover"
                   className="object-contain h-full w-full max-sm:w-full max-sm:h-full max-sm:object-contain max-md:object-contain"
                 />
               </motion.div>

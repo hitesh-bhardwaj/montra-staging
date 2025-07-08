@@ -97,7 +97,7 @@ const faqContent = [
 const overviewContent = {
   icon1: "/assets/images/personal-finance/overview-icon-1.svg",
   icon2: "/assets/images/personal-finance/overview-icon-2.svg",
-  mainImg: "/assets/images/personal-banking/overview-phone.png",
+  mainImg: "/assets/images/personal-finance/overview-phone.png",
   bgImg: "/assets/images/personal-payments/overview-bg-icon.svg",
   title: "Financial products for every step of your journey",
   content: [

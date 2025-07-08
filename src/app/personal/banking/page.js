@@ -50,7 +50,7 @@ const personalBanking = () => {
         }
       />
       <Overview
-       content={overviewContent}
+        content={overviewContent}
       />
       <Benefits data={benefitsData} />
       <Steps stepData={stepData}/>
@@ -88,17 +88,15 @@ const faqContent = [
     answer:
       "<p>Montra is currently not issuing a Physical Debit Card. You can withdraw Cash from your Montra Account using our Agency Banking network. Also, for online payments, we are offering a Virtual Montra Personal Card on Montra App.</p>",
   },
-
 ];
+
 const overviewContent = {
   icon1: "/assets/images/personal-banking/overview-icon-1.svg",
   icon2: "/assets/images/personal-banking/overview-icon-2.svg",
   mainImg: "/assets/images/personal-banking/overview-phone.png",
   bgImg: "/assets/images/personal-banking/overview-banking-icon.svg",
   title: "Your Digital Gateway To Financial Empowerment",
-  content: [
-    "Montra gives you a smarter way to manage your money—no cash, no complications. From sending money to friends and family, to paying bills, shopping, and more, Montra puts secure, fast, and reliable payments in your hands. Whether you're buying airtime, paying rent, or splitting the tab, Montra keeps it simple—with just a few taps.",
-  ],
+  content: ["Montra gives you a smarter way to manage your money—no cash, no complications. From sending money to friends and family, to paying bills, shopping, and more, Montra puts secure, fast, and reliable payments in your hands. Whether you're buying airtime, paying rent, or splitting the tab, Montra keeps it simple—with just a few taps." ],
   subcontent1: "Fast Payments",
   subcontent2: "Secure Banking",
 };
@@ -152,21 +150,21 @@ const stepData = {
           number: "02",
           title: "Sign Up",
           para: "Enter your details to register on the Montra App.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
+          img: "/assets/images/personal-banking/steps-img-2.png",
           tag:"Sign Up"
       },
       {
           number: "03",
           title: "Verify your Account",
           para: "Complete your verification and fund your account to get started.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
+          img: "/assets/images/personal-banking/steps-img-3.png",
           tag:"Verify Account"
       },
       {
           number: "04",
           title: "Start Transacting",
           para: "Your bank account is now fully ready to send and receive funds.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
+          img: "/assets/images/personal-banking/steps-img-4.png",
           tag:"Transact"
       },
   ],

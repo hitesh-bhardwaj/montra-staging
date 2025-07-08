@@ -95,7 +95,7 @@ const faqContent = [
 const overviewContent = {
   icon1:"/assets/images/payment-gateway/quick-integration.svg",
   icon2:"/assets/images/payment-gateway/secure.svg",
-  mainImg:"/assets/images/personal-banking/overview-phone.png",
+  mainImg:"/assets/images/payment-gateway/overview-phone.png",
   bgImg:"/assets/images/personal-payments/overview-bg-icon.svg",
   title:"Accept Payments Online, Seamlessly & Securely",
   content:[
@@ -205,14 +205,14 @@ const cardData ={
             number: "01",
             title: "Add to Cart",
             para: "Customers can browse your products or services and add selected items to the checkout cart — quick, smooth, and familiar.",
-            img: "/assets/images/payment-gateway/steps-img-1.png",
+            img: "/assets/images/payment-gateway/add-to-cart.png",
             tag:"Add to cart"
         },
         {
             number: "02",
             title: "Confirm Order Details",
             para: "They review their order details, check quantities, and confirm everything before proceeding.",
-            img: "/assets/images/payment-gateway/steps-img-1.png",
+            img: "/assets/images/payment-gateway/confirm-details.png",
             tag:"Confirm details"
 
         },
@@ -220,7 +220,7 @@ const cardData ={
             number: "03",
             title: "Select Payment Option & Method",
             para: "At checkout, customers choose how they want to pay (Pay Now, Pay on Delivery, Escrow) and complete payment using Montra Account, linked bank, saved cards, installments, or USSD.",
-            img: "/assets/images/payment-gateway/steps-img-1.png",
+            img: "/assets/images/payment-gateway/choose-a-payment-method.png",
             tag:"Choose a Payment Method"
 
         },
@@ -228,7 +228,7 @@ const cardData ={
             number: "04",
             title: "Instant Payment Settlement",
             para: "Payments are securely processed and settled in real time, giving you and your customer immediate confirmation.",
-            img: "/assets/images/payment-gateway/steps-img-1.png",
+            img: "/assets/images/payment-gateway/payment-settled.png",
             tag:"Payment Settled"
 
         },

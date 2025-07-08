@@ -12,7 +12,8 @@ const controlContent = [
     color: "text-[#FF8100]",
     PersonalTitle: "Secure way of accessing World of Banking",
     BusinessTitle: "All-in-One Banking. Built for Businesses",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    personalImg: "/assets/images/homepage/personal-banking.png",
+    businessImg: "/assets/images/homepage/business-banking.png",
     personalLink: "/personal/banking",
     businessLink:"/business/banking",
     contentPersonal: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>",
@@ -25,8 +26,8 @@ const controlContent = [
     color: "text-primary",
     PersonalTitle: "Pay Your Way with Montra",
     BusinessTitle: "Accept Payments. Expand Possibilities",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
-    personalLink: "/personal/payments",
+    personalImg: "/assets/images/homepage/personal-payment.png",
+    businessImg: "/assets/images/homepage/business-payment.png",    personalLink: "/personal/payments",
     businessLink:"/business/payments",
     contentPersonal: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[5vw] space-y-[1vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards – </span>Use your saved debit or credit cards on Montra App</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
     contentBusiness: '<p>Open a Montra Business Account to start receiving payments from anyone — anytime, anywhere. Accept payments using<ul class="pl-[5vw] space-y-[1vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
@@ -38,7 +39,8 @@ const controlContent = [
     color: "text-[#35C771]",
     PersonalTitle: "Manage your Finance, on the Go",
     BusinessTitle: "Become a Montra Agent. Start Earning",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    personalImg: "/assets/images/homepage/personal-finance.png",
+    businessImg: "/assets/images/homepage/business-agency-banking.png",
     personalLink: "/personal/finance",
     businessLink:"/business/agency-banking",
     contentPersonal: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[5vw] space-y-[1vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul>',
@@ -51,11 +53,12 @@ const controlContent = [
     color: "text-[#FB2F55]",
     PersonalTitle: "Send Messages. Send & Request Money. Same Chat.",
     BusinessTitle: "Sell Smarter. Restock Faster. Pay & Get Paid Instantly.",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    personalImg: "/assets/images/homepage/personal-chat.png",
+    businessImg: "/assets/images/homepage/business-inventory-management.png",
     personalLink: "/personal/chat",
     businessLink:"/business/inventory-management",
     contentPersonal: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
-    contentBusiness: '<p>Manage orders, send invoices, and track stock.With Montra, every part of your business just flows.<ul class="pl-[5vw] list-disc space-y-[1vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
+    contentBusiness: '<p>Manage orders, send invoices, and track stock. With Montra, every part of your business just flows.<ul class="pl-[5vw] list-disc space-y-[1vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
   },
   {
    
@@ -64,7 +67,8 @@ const controlContent = [
     color: "text-[#111111]",
     PersonalTitle: "Shopping Meets Simplicity",
     BusinessTitle: "Start Selling Online — For Free",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    personalImg: "/assets/images/homepage/personal-shop.png",
+    businessImg: "/assets/images/homepage/business-montra-store.png",
     personalLink: "/personal/shop",
     businessLink:"/business/montra-store",
     contentPersonal: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands— everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
@@ -75,7 +79,7 @@ const controlContent = [
     businessIconText: "Payment Gateway",
     color: "text-[#111111]",
     BusinessTitle: "One Gateway. Multiple Payment Options.",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    businessImg: "/assets/images/homepage/business-payment-gateway.png",
     businessLink:"/business/payment-gateway",
     contentBusiness: '<p>Integrate <span class="font-semibold">Montra Payment Gateway</span> into your app or website and accept payments via:</p><ul class="pl-[5vw] list-disc space-y-[1.5vw]"><li>Debit & Credit Cards</li><li>Bank Transfers via QR</li><li>Montra App </li><li>USSD Payments </li></ul> <p class="font-semibold">More ways to get paid. Fast integration. Instant settlement.</p>',
   },
@@ -84,11 +88,10 @@ const controlContent = [
     businessIconText: "Tap & Pay",
     color: "text-[#111111]",
     BusinessTitle: "Tap. Accept. Get Paid.",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    businessImg: "/assets/images/homepage/business-tap-&-pay.png",
     businessLink:"/business/tap-and-pay",
     contentBusiness: '<p>With Montra Tap to Pay, your phone becomes a payment terminal — no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
   },
-  
 ];
 
 export default function PaymentMobile({ allowMultiple = false }) {
@@ -167,7 +170,7 @@ export default function PaymentMobile({ allowMultiple = false }) {
             // src={f.src}
             iconText={mode=="personal"?f.personalIconText:f.businessIconText}
             color={f.color}
-            contentImg={f.contentImg}
+            contentImg={mode=="personal"?f.personalImg:f.businessImg}
             contentLink={mode=="personal"?f.personalLink:f.businessLink}
             contenTitle={mode=="personal"?f.PersonalTitle:f.BusinessTitle}
             content={mode=="personal"?f.contentPersonal:f.contentBusiness}
@@ -204,13 +207,10 @@ function Accordion({
           <div className="w-full flex justify-between">
             <h3 className="max-sm:text-[8.5vw] font-display capitalize max-md:text-[5.5vw] text-left">
               {iconText}
-
             </h3>
             <div
               className={`max-sm:w-[13vw] max-sm:h-[12vw] border border-primary relative flex items-center justify-center max-sm:rounded-[3vw] transition-all duration-500 max-md:w-[9vw] max-md:h-[8vw] max-md:rounded-[1.5vw] ${isOpen ? "bg-primary" : "bg-white"}`}
-
             >
-
               <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${isOpen ? "!rotate-45 bg-white " : "bg-primary"}`} />
               <span className={` absolute block  w-[1.5px] max-sm:h-[5.5vw] transition-all duration-500 max-md:h-[4vw] ${isOpen ? "rotate-[135deg] bg-white" : "rotate-90 bg-primary"}`} />
             </div>
@@ -228,7 +228,7 @@ function Accordion({
               className="overflow-hidden"
             >
               <div className="w-full flex flex-col max-sm:gap-[2vw] max-sm:pb-[10vw] max-md:items-center max-md:pb-[5vw] max-md:gap-[3vw]">
-                <div className="max-sm:w-[80%] max-sm:h-[100vw] max-md:w-[45%] max-md:h-[50vw] max-md:ml-[-10vw] max-sm:ml-0">
+                <div className="max-sm:w-auto max-sm:h-[80vw] max-md:w-[45%] max-md:h-[50vw] max-md:ml-[-10vw] max-sm:ml-0">
                   <Image
                     src={contentImg}
                     alt=""
@@ -241,16 +241,12 @@ function Accordion({
                 <h3 className="max-sm:text-[7.5vw] capitalize font-medium font-display max-md:text-[5.5vw] text-left">
                   {contenTitle}
                 </h3>
-
                 </div>
                 <div
                 className='py-4 space-y-[4vw]'
                 dangerouslySetInnerHTML={{ __html: content }}
               />
-
-             
                 <div className="w-full">
-
                 <LinkButton text={"Learn More"} href={contentLink} />
                 </div>
               </div>

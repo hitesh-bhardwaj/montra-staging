@@ -4,12 +4,12 @@
   --background: #ffffff;
   --black-1: #111111;
   --gray: #cbcbcb;
-  --primary: #215CFF;
+  --primary: #215cff;
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
- 
-html{
+
+html {
   background-color: var(--black-1);
 }
 
@@ -23,8 +23,8 @@ html{
   --color-primary: var(--primary);
   --font-body: var(--font-body);
   --font-display: var(--font-display);
-  --color-gray-100: #D2D2D2;
-  --ease-link-line: cubic-bezier(.62, .05, .01, .99);
+  --color-gray-100: #d2d2d2;
+  --ease-link-line: cubic-bezier(0.62, 0.05, 0.01, 0.99);
 }
 
 body {
@@ -63,36 +63,36 @@ body {
   animation: none !important;
 }
 
-#hero{
+#hero {
   margin-top: -100vh;
 }
 
-.perspective-box{
+.perspective-box {
   transform: perspective(1204.82px) translate3d(0px, 0px, 0px) rotateY(30deg);
 }
-.perspective-box-2{
+.perspective-box-2 {
   transform: perspective(904.82px) translate3d(0px, 0px, 0px) rotateY(20deg);
 }
-.perspective-box-4{
+.perspective-box-4 {
   transform: perspective(1204.82px) translate3d(0px, 0px, 0px) rotateY(-30deg);
 }
-.perspective-box-3{
+.perspective-box-3 {
   transform: perspective(904.82px) translate3d(0px, 0px, 0px) rotateY(-20deg);
 }
-.font-display{
+.font-display {
   letter-spacing: 0.5px;
 }
 .swiper-pagination {
   padding: 0 5vw !important;
   text-align: right !important;
 }
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   background-color: white !important;
   opacity: 1 !important;
   position: relative !important;
   margin: 0 6px !important;
 }
-.swiper-pagination-bullet-active::after{
+.swiper-pagination-bullet-active::after {
   content: "";
   height: 13px;
   width: 13px;
@@ -105,10 +105,9 @@ body {
   transform: translateX(-50%) translateY(-50%);
 }
 
-
 /* Section Break Background */
 .text-break .single-line {
-  mask-image: linear-gradient(90deg,#111111 50%, #11111130 50%);
+  mask-image: linear-gradient(90deg, #111111 50%, #11111130 50%);
   mask-size: 800% 300%;
   mask-position: 60% 100%;
 }
@@ -122,7 +121,6 @@ body {
   }
 }
 
-
 .fade-in-delay {
   animation: fadeInDelayed 1s ease forwards;
   animation-delay: 6s;
@@ -130,8 +128,12 @@ body {
 
 /* Marquee */
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-51.24%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-51.24%);
+  }
 }
 .marquee {
   /* length should match the total width of one loop of items */
@@ -139,8 +141,12 @@ body {
 }
 
 @keyframes marqueeCompany {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-42.5%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-42.5%);
+  }
 }
 
 .animate-marquee {
@@ -148,14 +154,18 @@ body {
 }
 
 .single-line {
-  mask-image: linear-gradient(150deg,#111111 33.3%,#1a1a1a00 66.6%);
+  mask-image: linear-gradient(150deg, #111111 33.3%, #1a1a1a00 66.6%);
   mask-size: 500% 100%;
   mask-position: 100% 100%;
 }
 
 @keyframes marqueeVertical {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-51.4%); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-51.4%);
+  }
 }
 .marquee-vertical {
   animation: marqueeVertical 8s linear infinite;
@@ -215,44 +225,57 @@ li .link-line::after {
   transform: scaleX(1);
 }
 
-
+/* Tablet Responsive CSS */
 @media screen and (max-width: 1024px) {
-  #hero{
+  #hero {
     margin-top: 0;
   }
 
-  body{
+  body {
     font-size: 2.5vw !important;
   }
   .card-front,
   .card-back {
-  border-radius: 5vw;
-  padding: 4vw;
-  padding-bottom: 5vw;
+    border-radius: 5vw;
+    padding: 4vw;
+    padding-bottom: 5vw;
   }
 }
+
+/* Mobile Responsive CSS */
 @media screen and (max-width: 541px) {
-  #hero{
+  #hero {
     margin-top: 0;
   }
 
-  body{
+  body {
     font-size: 4.1vw !important;
   }
   .card-front,
   .card-back {
-  border-radius: 9vw;
-  padding: 7vw;
-  padding-bottom: 10vw;
+    border-radius: 9vw;
+    padding: 7vw;
+    padding-bottom: 10vw;
   }
   @keyframes marqueeVertical {
-    from { transform: translateY(0); }
-    to   { transform: translateY(-50.55%); }
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50.55%);
+    }
+  }
+  .swiper-pagination {
+    text-align: center !important;
   }
 }
 
 /* Company Page */
 .card-wrapper {
+  animation: floating 3s infinite ease-in-out;
+}
+
+.animate-float {
   animation: floating 3s infinite ease-in-out;
 }
 
@@ -272,7 +295,6 @@ li .link-line::after {
   }
 }
 
-
 /* breath animation */
 .breath-container {
   display: inline-block;
@@ -284,18 +306,15 @@ li .link-line::after {
   animation: breathe 0.8s ease-in-out infinite alternate;
 }
 
-
 @keyframes breathe {
   0% {
     transform: scale(1);
     /* font-weight: 400; */
     font-variation-settings: "wght" 400;
-   
   }
   100% {
     transform: scale(1.1);
     /* font-weight: 700; */
     font-variation-settings: "wght" 700;
-
   }
 }

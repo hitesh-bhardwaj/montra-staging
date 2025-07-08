@@ -93,7 +93,7 @@ const faqContent = [
 const overviewContent = {
   icon1:"/assets/images/business-montra-store/overview-icon-1.svg",
   icon2:"/assets/images/business-montra-store/overview-icon-2.svg",
-  mainImg:"/assets/images/personal-banking/overview-phone.png",
+  mainImg:"/assets/images/business-montra-store/overview-phone.png",
   bgImg:"/assets/images/business-montra-store/overview-bg-icon.svg",
   title:"Your Online Store, Smarter and Simple",
   content:[

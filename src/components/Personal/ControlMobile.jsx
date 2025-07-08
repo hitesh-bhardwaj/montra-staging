@@ -10,8 +10,8 @@ const controlContent = [
     src: "/assets/images/personal/personal-icon-1.png",
     iconText: "banking",
     color: "text-[#FF8100]",
-    contenTitle: "Do More with your money. Spend & earn rewards",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    contenTitle: "Do More with Your Money. Spend and Earn Rewards",
+    contentImg: "/assets/images/personal/Banking.png",
     link: "/personal/banking",
     content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.</li><li>Link your existing bank accounts on the Montra App and manage all your payments in one place — one app for all your bank accounts. </li></ul>",
   },
@@ -20,8 +20,8 @@ const controlContent = [
     question: "Is Montra licensed?",
     iconText: "payments",
     color: "text-primary",
-    contenTitle: "Do More with your money. Spend & earn rewards",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    contenTitle: "Make Fast, Flexible & Secure Payments",
+    contentImg: "/assets/images/personal/Payment.png",
     link: "/personal/payments",
     content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Enjoy multiple payment methods using your Montra Account, Linked Bank Accounts, Cards, or even via Installments.</li><li>Scan & Pay instantly at Merchants stores</li><li>Every transaction is protected with a Montra PIN and Soft Token authentication.</li></ul><p>With Montra, managing your money is fast, secure, and always in your control.</p>",
   },
@@ -30,8 +30,8 @@ const controlContent = [
     question: "What is unique about Montra?",
     iconText: "finance",
     color: "text-[#35C771]",
-    contenTitle: "Do More with your money. Spend & earn rewards",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    contenTitle: "Invest, Insure & Borrow with Montra",
+    contentImg: "/assets/images/personal/Finance.png",
     link: "/personal/finance",
     content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Access loans, buy insurance, and invest—all from one powerful app.</li><li>View your transactions in real-time and monitor your financial activity.</li><li>Get intelligent insights to help you plan, save, and spend wisely.</li></ul>",
   },
@@ -40,8 +40,8 @@ const controlContent = [
     question: "How do we Sign-Up on Montra?",
     iconText: "chat",
     color: "text-[#FB2F55]",
-    contenTitle: "Do More with your money. Spend & earn rewards",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    contenTitle: "Send Money like a Message",
+    contentImg: "/assets/images/personal/Chat.png",
     link: "/personal/chat",
     content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Turn conversations into transactions </li><li>Send, Request Payments while you chat and receive instant payment confirmations </li><li>Secure & Instant—no app-switching!</li></ul>",
   },
@@ -50,8 +50,8 @@ const controlContent = [
     question: "How do we Sign-In on Montra?",
     iconText: "Shop",
     color: "text-[#111111]",
-    contenTitle: "Do More with your money. Spend & earn rewards",
-    contentImg: "/assets/images/personal/personal-control-img-1.png",
+    contenTitle: "Montra Shop: Discover. Compare. Pay Smarter.",
+    contentImg: "/assets/images/personal/Shop.png",
     link: "/personal/shop",
     content:"<p>Your everyday shopping, powered by Montra:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li><span class='font-semibold'>Browse products & deals</span> right within the Montra app</li><li><span class='font-semibold'>Compare prices across partners</span> for better value</li><li><span class='font-semibold'>Instant payment checkout</span> using Montra’s multiple payment options</li><li><span class='font-semibold'>Earn rewards & track purchases</span> with ease</li></ul><p>Shop confidently, pay flexibly</p>",
   },
@@ -149,7 +149,7 @@ function Accordion({
               className="overflow-hidden"
             >
               <div className="w-full flex flex-col gap-[5vw] pb-[10vw]">
-                <div className="w-[80%] max-sm:h-[100vw] max-md:h-[50vw]">
+                <div className="w-[80%] mx-auto max-sm:h-[100vw] max-md:h-[50vw]">
                   <Image
                     src={contentImg}
                     alt=""

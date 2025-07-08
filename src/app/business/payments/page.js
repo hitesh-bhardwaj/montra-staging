@@ -78,7 +78,7 @@ const faqContent = [
 const overviewContent = {
   icon1: "/assets/images/business-payments/integrated-payments.svg",
   icon2: "/assets/images/business-payments/scalable-infrastructure.svg",
-  mainImg: "/assets/images/personal-banking/overview-phone.png",
+  mainImg: "/assets/images/business-payments/overview-phone.png",
   bgImg: "/assets/images/personal-payments/overview-bg-icon.svg",
   title: "Empowering Your Business with Seamless Digital Transactions",
   content: [
@@ -176,28 +176,28 @@ const stepData = {
       number: "01",
       title: "Sign In or Get Started",
       para: "New to Montra? Download the app and set up your Business account in minutes. Already onboard? Log in through the Montra App or Merchant Portal.",
-      img: "/assets/images/payment-gateway/steps-img-1.png",
+      img: "/assets/images/payment-gateway/add-to-cart.png",
       tag: "Sign In"
     },
     {
       number: "02",
       title: "Enable Payment Options",
       para: "Head to the Payment Section and activate QR scan, bank transfers, tap & pay, POS, or payment links — offer customers multiple ways to pay.",
-      img: "/assets/images/payment-gateway/steps-img-1.png",
+      img: "/assets/images/payment-gateway/add-to-cart.png",
       tag: "Activate Payments"
     },
     {
       number: "03",
       title: "Accept Instant Payments",
       para: "Start collecting payments instantly — funds land directly in your Montra Business Account, no waiting.",
-      img: "/assets/images/payment-gateway/steps-img-1.png",
+      img: "/assets/images/payment-gateway/add-to-cart.png",
       tag: "Accept Payments"
     },
     {
       number: "04",
       title: "Track & Manage Earnings",
       para: "Use your smart Montra dashboard to monitor transactions, settlements, and reports — all in real time.",
-      img: "/assets/images/payment-gateway/steps-img-1.png",
+      img: "/assets/images/payment-gateway/add-to-cart.png",
       tag: "Track Earnings"
     },
   ],

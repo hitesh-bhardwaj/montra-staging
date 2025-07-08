@@ -9,13 +9,11 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useAnimatedNavigation } from "../NavigationContext";
 import { Facebook, Instagram, Linkedin, Twitter } from "../Buttons/icons";
-import { usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
   const { navigateTo } = useAnimatedNavigation();
   const [hidden, setHidden] = useState(false);
-  const pathname = usePathname()
   const [lastY, setLastY] = useState(0);
   const [isInverted, setIsInverted] = useState(false);
   const [openMenu, setopenMenu] = useState(false);
@@ -38,7 +36,7 @@ export default function Header() {
     document.querySelectorAll(".dark").forEach((section) => {
       const trigger = ScrollTrigger.create({
         trigger: section,
-        start: "top top", // Equivalent to threshold: 0.7
+        start: "top top",
         end: "bottom top",
         onEnter: () => setIsInverted(true),
         onEnterBack: () => setIsInverted(true),
@@ -92,7 +90,7 @@ export default function Header() {
             <Image
               src={montraLogo}
               alt="montra logo"
-              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${pathname==='/'?"opacity-0 translate-y-[-140%]":""}  ${
+              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${
                 openMenu ? "!brightness-[1]" : ""
               } ${isInverted ? " brightness-[16]" : ""} `}
             />
@@ -137,7 +135,7 @@ export default function Header() {
             }`}
           >
             <div
-              className={`max-sm:w-screen max-sm:h-screen overflow-hidden !opacity-100 bg-[#FAFBFF] text-primary flex flex-col max-sm:justify-between px-[7vw] font-display font-medium max-sm:text-[6vw] absolute top-0 z-[160] right-0 max-sm:pt-[30vw]  max-sm:space-y-[5vw] max-sm:pb-[15vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${
+              className={`max-sm:w-screen max-sm:h-dvh overflow-hidden !opacity-100 bg-[#FAFBFF] text-black flex flex-col max-sm:justify-between px-[7vw] font-display font-medium max-sm:text-[6vw] absolute top-0 z-[160] right-0 max-sm:pt-[30vw]  max-sm:space-y-[5vw] max-sm:pb-[15vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${
                 openMenu ? "translate-x-0 " : "translate-x-[100%]"
               }`}
             >
@@ -154,7 +152,7 @@ export default function Header() {
                 >
                   Home
                 </Link>
-                <span className="bg-primary h-[1px] w-full"></span>
+                <span className="bg-black/25 h-[1px] w-full"></span>
 
                 <div className="w-full">
                   {/* Sections */}
@@ -255,7 +253,7 @@ export default function Header() {
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="max-sm:h-[5vw] max-sm:w-[5vw] max-md:w-[3vw] max-md:h-[3vw] group-hover:rotate-[-180deg] ease-in-out transition-all duration-700 "
+                            className="max-sm:h-[5vw] max-sm:w-[5vw] text-primary max-md:w-[3vw] max-md:h-[3vw] group-hover:rotate-[-180deg] ease-in-out transition-all duration-700 "
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -282,7 +280,7 @@ export default function Header() {
                             : "max-h-0 opacity-0"
                         }`}
                       >
-                        <ul className="max-sm:text-[4.5vw] max-md:text-[3.5vw] pt-[7vw]  pb-[7vw] flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw]">
+                        <ul className="max-sm:text-[4.5vw] max-md:text-[3.5vw] py-[5vw] pl-4 flex flex-col items-start justify-center max-sm:gap-[1.5vw] max-md:gap-[1vw]">
                           {section.links.map((link, idx) => (
                             <li key={idx}>
                               <Link
@@ -304,14 +302,14 @@ export default function Header() {
 
                       {/* Separator Line */}
                       <div
-                        className={`w-full h-[1.1px] bg-primary  ${
+                        className={`w-full h-[1px] bg-black/25  ${
                           section.title == "Business" ? "hidden" : ""
                         }`}
                       ></div>
                     </div>
                   ))}
                 </div>
-                <span className="bg-primary h-[1px] w-full"></span>
+                <span className="bg-black/25 h-[1px] w-full"></span>
                 <Link
                   href={"#"}
                   className="link-text"
@@ -322,7 +320,7 @@ export default function Header() {
                 >
                   Platform
                 </Link>
-                <span className="bg-primary h-[1px] w-full"></span>
+                <span className="bg-black/25 h-[1px] w-full"></span>
                 <Link
                   href={"/company"}
                   className="link-text"
@@ -335,12 +333,12 @@ export default function Header() {
                 >
                   Company
                 </Link>
-                <span className="bg-primary h-[1px] w-full"></span>
+                <span className="bg-black/25 h-[1px] w-full"></span>
                 
               </div>
               <div className="flex flex-col gap-[7vw]">
               <div className="w-full flex gap-[2vw] items-center max-sm:text-[4.5vw] max-md:text-[2.5vw] fadeup-navpolicy">
-                  <Link href={"/privacy-policy"} className="link-line text-primary" onClick={(e) => {
+                  <Link href={"/privacy-policy"} className="link-line text-black" onClick={(e) => {
                     e.preventDefault();
                     navigateTo("/privacy-policy");
                     setopenMenu(false);
@@ -354,10 +352,10 @@ export default function Header() {
                       alt="circle"
                       width={40}
                       height={40}
-                      className="max-sm:w-[2vw] max-sm:h-[2vw] brightness-[1] max-md:w-[1.5vw] max-md:h-[1.5vw]"
+                      className="max-sm:w-[2vw] max-sm:h-[2vw] brightness-[1] max-md:w-[1.5vw] max-md:h-[1.5vw] opacity-50"
                     />
                   </span>
-                  <Link href={"/terms-and-conditions"} className="link-line text-primary" onClick={(e) => {
+                  <Link href={"/terms-and-conditions"} className="link-line text-black" onClick={(e) => {
                     e.preventDefault();
                     navigateTo("/terms-and-conditions");
                     setopenMenu(false);
@@ -370,49 +368,49 @@ export default function Header() {
                 <Link
                   href={"/"}
                   aria-label="to facebook"
-                  className=" rounded-full border border-primary max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw] "
+                  className=" rounded-full border border-primary/50 max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw] "
                   onClick={() => {
                     setopenMenu(false);
                   }}
                 >
                   <Facebook
-                    className={"text-primary  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
+                    className={"text-gray-600 transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
                   />
                 </Link>
                 <Link
                   href={"/"}
                   aria-label="to instagram"
-                  className="h-fit w-fit rounded-full border border-primary max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
+                  className="h-fit w-fit rounded-full border border-primary/50 max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                   onClick={() => {
                     setopenMenu(false);
                   }}
                 >
                   <Instagram
-                    className={"text-primary  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
+                    className={"text-gray-600  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
                   />
                 </Link>
                 <Link
                   href={"/"}
                   aria-label="to Linkedin"
-                  className="h-fit w-fit rounded-full border border-primary  max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
+                  className="h-fit w-fit rounded-full border border-primary/50  max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                   onClick={() => {
                     setopenMenu(false);
                   }}
                 >
                   <Linkedin
-                    className={"text-primary  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
+                    className={"text-gray-600  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
                   />
                 </Link>
                 <Link
                   aria-label="to twitter"
                   href={"/"}
-                  className="h-fit w-fit rounded-full border border-primary max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
+                  className="h-fit w-fit rounded-full border border-primary/50 max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                   onClick={() => {
                     setopenMenu(false);
                   }}
                 >
                   <Twitter
-                    className={"text-primary  transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
+                    className={"text-gray-600 transition-all duration-300 max-sm:w-full max-sm:h-full max-md:w-[8vw] max-md:h-[8vw]"}
                   />
                 </Link>
               </div>

@@ -94,7 +94,7 @@ const faqContent = [
 const overviewContent = {
   icon1: "/assets/images/business-banking/seamless-banking.svg",
   icon2: "/assets/images/business-banking/multiple-payments.svg",
-  mainImg: "/assets/images/personal-banking/overview-phone.png",
+  mainImg: "/assets/images/business-banking/overview-phone.png",
   bgImg: "/assets/images/personal-banking/overview-banking-icon.svg",
   title: "Unlocking the Power of Digital Financial Solutions",
   content: [

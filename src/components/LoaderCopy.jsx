@@ -51,15 +51,21 @@ const LoaderCopy = () => {
             duration: 0,
             delay: -1,
           })
-          .to(".loader-phonemockup", {
+          .fromTo(".loader-phonemockup", {
+          scale: 1.2,
+          opacity: 0,
+        }, {
           scale: 1,
           opacity: 1,
           duration: 1.5,
           delay: -0.85,
           ease: "power4.inOut",
         })
-          .to(".loader-phonemockup", {
-            yPercent: 104.5,
+          .fromTo(".loader-phonemockup", {
+            yPercent: -80,
+            zIndex: 100,
+          }, {
+            yPercent: 0,
             zIndex: 100,
             duration: 1.8,
             delay:-0.5,
@@ -138,14 +144,12 @@ const LoaderCopy = () => {
             delay: 0.5,
             duration:0.5,
             opacity: 1,
-            //  ease: "myBezier",
             xPercent: -120,
           }
         )
 
           .to(".svg-arrow", {
             xPercent: -50,
-            //   delay:0.3,
             duration: 1.2,
             ease: "myBezier",
           })
@@ -183,28 +187,6 @@ const LoaderCopy = () => {
     });
     return () => ctx.revert();
   }, []);
-  // useEffect(() => {
-  //   // Build the animation timeline once when component mounts
-
-  //   timeline.current
-  //     .from(charsRef.current, {
-  //       opacity: 1,
-  //       scale: 1,
-
-  //       duration: 0.5,
-  //       ease: "back",
-  //     })
-  //     .to(charsRef.current, {
-  //       fontWeight: 700,
-  //       ease: "power1.inOut",
-  //       duration: 1,
-  //       stagger: {
-  //         each: 0.2,
-  //         repeat: -1,
-  //         yoyo: true,
-  //       },
-  //     });
-  // }, []);
 
   const letters = "Loading...".split("");
   return (
@@ -214,7 +196,6 @@ const LoaderCopy = () => {
       }`}
       id="loader-copy"
     >
-      {/* <div className="w-screen h-screen absolute top-0 left-0 bg-primary bg-overlay"/> */}
       <div className="w-screen h-[50vh] bg-primary absolute top-0 left-0 upper-overlay" />
       <div className="w-screen h-[50vh] bg-primary absolute bottom-0 left-0 lower-overlay overflow-hidden">
         <div className="breath-container absolute bottom-[5%] left-[5%]">

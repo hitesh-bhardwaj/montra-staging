@@ -166,14 +166,14 @@ const FeatureSection = () => {
     const startValue = deviceType === "desktop"
         ? "-10%"
         : deviceType === "tablet"
-            ? "-60%"
-            : "-50%"; // Assuming mobile also uses -50% like tablet (you can adjust)
+            ? "-50%"
+            : "-35";
 
     const endValue = deviceType === "desktop"
-        ? "19%"
+        ? "10%"
         : deviceType === "tablet"
-            ? "-21.5%"
-            : "-15%";
+            ? "-18%"
+            : "-0%";
 
     const y = useTransform(scrollYProgress, [0, 0.45], [startValue, endValue]);
 
@@ -188,30 +188,37 @@ const FeatureSection = () => {
         >
             <div className="relative inline-block z-[99] w-[45vw] h-[52vw] max-sm:translate-y-0 max-sm:w-[100vw] max-sm:h-[120vw] max-md:w-[85vw] max-md:h-[80vw] mockup-container">
                 <motion.div className="h-[110%]" style={{ y }}>
-                    <Image
-                        // id="hero-phone-image"
-                        src="/assets/images/montra-loader-mockup.png"
+                    <div className="relative translate-x-[-10%] max-md:translate-x-[-4%] max-sm:translate-x-[-10%]">
+                        <Image
+                            src="/assets/images/homepage/hand-mockup-phone.png"
+                            alt="App mockup"
+                            width={800}
+                            height={1000}
+                            className="opacity-0 loader-phonemockup object-contain z-[9999] absolute w-[40vw] h-auto top-0 left-0 max-md:opacity-100 max-md:w-[70vw] max-sm:w-[90vw]"
+                        />
+                        <Image
+                            src="/assets/images/homepage/hand-mockup-hand.png"
+                            alt="App mockup"
+                            width={800}
+                            height={1000}
+                            className="phone-mockup-desktop object-contain absolute w-[40vw] h-auto top-0 left-0 max-md:w-[70vw] max-sm:w-[90vw]"
+                        />
+                    </div>
+                    
+                    {/* <Image
+                        src="/assets/images/homepage/hand-mockup-hand.png"
                         alt="App mockup"
                         width={800}
                         height={1000}
-                        className="w-[65%] h-[65%] object-contain absolute left-[18%] top-[2%] opacity-0 loader-phonemockup scale-[1.4]  translate-y-[-105%] max-sm:hidden z-[9999]"
+                        className="w-[100%] translate-x-[19%] max-md:hidden phone-mockup-desktop h-auto max-sm:translate-x-0 object-cover  relative z-[9999] max-md:w-[80vw]"
                     />
                     <Image
-                        // id="hero-phone-image"
                         src="/assets/images/homepage/phone-mockup.png"
                         alt="App mockup"
                         width={800}
                         height={1000}
                         className="w-[65%] hidden max-md:block  h-auto max-sm:translate-x-0 object-cover max-sm:block max-sm:w-[120vw] max-sm:h-[140vw] relative z-[9999] max-md:w-[90vw]"
-                    />
-                    <Image
-                        // id="hero-phone-image"
-                        src="/assets/images/homepage/hand-mockup.png"
-                        alt="App mockup"
-                        width={800}
-                        height={1000}
-                        className="w-[65%] translate-x-[19%] max-md:hidden phone-mockup-desktop h-auto max-sm:translate-x-0 object-cover  relative z-[9999] max-md:w-[80vw]"
-                    />
+                    /> */}
                 </motion.div>
                 {icons.map((icon, i) => {
                     const style =

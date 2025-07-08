@@ -36,11 +36,9 @@ const Hero = () => {
           delay: 1.2,
         })
         gsap.to(".montra-logo", {
-          // filter:"brightness(1)",
           scrollTrigger: {
             trigger: "#hero",
             start: "39% top",
-            // markers: true, 
             onLeaveBack: () => {
               gsap.to(".montra-logo", {
                 filter: "brightness(1)",
@@ -270,7 +268,7 @@ const Hero = () => {
             <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw] max-md:text-[8vw]">
               <span className="text-primary">Montra Personal Account:</span>{" "}
               <br />
-              Your All-in-One Digital Account
+                Your All-in-One Digital Account
             </h1>
           </Heading>
           <Copy delay={1}>

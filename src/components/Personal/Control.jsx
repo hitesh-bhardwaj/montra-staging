@@ -20,7 +20,7 @@ const Control = () => {
       key: "Banking",
       title: "Do More with Your Money. Spend and Earn Rewards",
       content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.</li><li>Link your existing bank accounts on the Montra App and manage all your payments in one place — one app for all your bank accounts. </li></ul>",
-      image: "/assets/images/personal/personal-control-img-1.png",
+      image: "/assets/images/personal/Banking.png",
       link: {
         text: "Learn More",
         href: "/personal/banking",
@@ -32,7 +32,7 @@ const Control = () => {
       key: "Finance",
       title: "Invest, Insure & Borrow with Montra",
       content:"<ul class='pl-[2vw] list-disc space-y-[0.5vw]'><li>Access loans, buy insurance, and invest—all from one powerful app.</li><li>View your transactions in real-time and monitor your financial activity.</li><li>Get intelligent insights to help you plan, save, and spend wisely.</li></ul>",
-      image: "/assets/images/personal/personal-control-img-1.png",
+      image: "/assets/images/personal/Finance.png",
       link: {
         text: "Learn More",
         href: "/personal/finance",
@@ -44,7 +44,7 @@ const Control = () => {
       key: "Shop",
       title: "Montra Shop: Discover. Compare. Pay Smarter.",
       content:"<p>Your everyday shopping, powered by Montra:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li><span class='font-semibold'>Browse products & deals</span> right within the Montra app</li><li><span class='font-semibold'>Compare prices across partners</span> for better value</li><li><span class='font-semibold'>Instant payment checkout</span> using Montra’s multiple payment options</li><li><span class='font-semibold'>Earn rewards & track purchases</span> with ease</li></ul><p>Shop confidently, pay flexibly</p>",
-      image: "/assets/images/personal/personal-control-img-1.png",
+      image: "/assets/images/personal/Shop.png",
       link: {
         text: "Learn More",
         href: "/personal/shop",
@@ -56,7 +56,7 @@ const Control = () => {
       key: "Chat",
       title: "Send Money like a Message",
       content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Turn conversations into transactions </li><li>Send, Request Payments while you chat and receive instant payment confirmations </li><li>Secure & Instant—no app-switching!</li></ul>",
-      image: "/assets/images/personal/personal-control-img-1.png",
+      image: "/assets/images/personal/Chat.png",
       link: {
         text: "Learn More",
         href: "/personal/chat",
@@ -68,7 +68,7 @@ const Control = () => {
       key: "Payments",
       title: "Make Fast, Flexible & Secure Payments",
       content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Enjoy multiple payment methods using your Montra Account, Linked Bank Accounts, Cards, or even via Installments.</li><li>Scan & Pay instantly at Merchants stores</li><li>Every transaction is protected with a Montra PIN and Soft Token authentication.</li></ul><p>With Montra, managing your money is fast, secure, and always in your control.</p>",
-      image: "/assets/images/personal/personal-control-img-1.png",
+      image: "/assets/images/personal/Payment.png",
       link: {
         text: "Learn More",
         href: "/personal/payments",
@@ -403,16 +403,16 @@ const Control = () => {
 
       <div className="w-screen h-fit flex flex-col flex-nowrap overflow-hidden absolute bottom-[5%] right-0 ">
         <div className="w-full h-fit relative flex justify-end ">
-          <div className="w-[75%] h-[80vh] relative bottom-content flex justify-end opacity-0 pr-[4vw]  z-[200]">
+          <div className="w-[70%] h-[80vh] relative bottom-content flex justify-end opacity-0 pr-[4vw]  z-[200]">
             {sections.map((section) => (
               <div
                 key={section.key}
                 ref={(el) => (sectionRefs.current[section.key] = el)}
-                className={`w-full h-auto flex justify-between absolute top-0 left-0 pr-[4vw] opacity-0 ${
+                className={`w-full h-auto flex justify-end gap-[5vw] items-center absolute top-0 left-0 pr-[4vw] opacity-0 ${
                   active === section.key ? "z-20" : "z-10"
                 }`}
               >
-                <div className="w-[35%]">
+                <div className="w-[25%]">
                   <Image
                     src={section.image}
                     alt="personal-icon-img"
@@ -421,7 +421,7 @@ const Control = () => {
                     height={900}
                   />
                 </div>
-                <div className="w-[55%] flex flex-col gap-[3vw] h-full justify-center">
+                <div className="w-[60%] flex flex-col gap-[3vw] h-full justify-center">
                   <h3 className="text-[3.4vw] leading-[1.3] font-display capitalize font-medium">
                     {section.title}
                   </h3>
@@ -440,8 +440,7 @@ const Control = () => {
       <div className="w-screen h-[310vw] absolute top-0 left-0"></div>
 
       <p className="w-[30%] h-fit fixed bottom-[10%] left-[5%] text-[3vw] font-display font-medium control-content opacity-0 leading-[1.2]">
-      Simple Money Management,
-Designed for You
+        Simple Money Management, Designed for You
       </p>
     </div>
   );

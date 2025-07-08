@@ -211,7 +211,7 @@ export default function PinnedRevealSection() {
   return (
     <section
       ref={ref}
-      className="relative h-[500vh] max-md:h-[380vh] max-sm:h-[375vh]"
+      className="relative h-[500vh] max-md:h-[380vh] max-sm:h-[375vh] z-[101]"
       id="feature-text"
     >
       <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB]">
