@@ -5,7 +5,6 @@ import { getPageMetadata } from '@/lib/seo.config';
 import { homepage } from '@/lib/util';
 import React from 'react'
 
-
 export const metadata = getPageMetadata({
   title: "Montra Privacy Policy",
   description: "How Montra collects, uses, protects, and retains your data under NDPR 2019; your rights, cookie use, data transfers & contact info of the Data Protection Officer.",
@@ -32,11 +31,10 @@ export const metadata = getPageMetadata({
 
 export default function page() {
   return (
-  <>
-  <WebpageJsonLd metadata={metadata}/>
-  <Hero />
-  <Content />
-  </>
-
+    <>
+      <WebpageJsonLd metadata={metadata} />
+      <Hero />
+      <Content />
+    </>
   )
 }

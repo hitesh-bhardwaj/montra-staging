@@ -1,7 +1,6 @@
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
-import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
@@ -44,7 +43,6 @@ const businessPaymentGateway = () => {
    <WebpageJsonLd metadata={metadata}/>
    <FAQJSONLD faqs={faqContent}/>
    <BreadcrumbsJSONLD pathname={metadata.url}/>
-   <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Power your Business with MontraPay"} content={"Whether you’re selling on a website, app or on social media, MontraPay makes it easy to get paid with just a few clicks."} paraWidth={"w-[55%]"} />
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />

@@ -3,7 +3,6 @@ import Features from '@/components/Common/Features'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
-import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import React from 'react'
@@ -40,7 +39,6 @@ const personalChat = () => {
     <WebpageJsonLd metadata={metadata}/>
     <FAQJSONLD faqs={faqContent}/>
     <BreadcrumbsJSONLD pathname={metadata.url}/>
-      <Header />
       <Hero primaryHeading={"Montra Chat:"} heading={" Send Money Like a Message"} content={"Chat, Send Money, Request Payments & stay Connected – without ever leaving the conversation"} titleWidth={"w-[65%]"} paraWidth={"w-full"} />
       <Overview content={overviewContent} />
       <Benefits data={benefitsData} />

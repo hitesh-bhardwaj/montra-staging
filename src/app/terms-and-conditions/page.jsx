@@ -32,11 +32,9 @@ export const metadata = getPageMetadata({
 const page = () => {
   return (
     <>
-    <WebpageJsonLd metadata={metadata}/>
-    {/* <div className='dark'> */}
-        <Hero />
-        <Content />
-    {/* </div> */}
+      <WebpageJsonLd metadata={metadata} />
+      <Hero />
+      <Content />
     </>
   )
 }

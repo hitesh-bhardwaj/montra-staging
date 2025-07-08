@@ -1,7 +1,6 @@
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
-import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
@@ -43,7 +42,6 @@ const businessPayments = () => {
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqContent}/>
       <BreadcrumbsJSONLD pathname={metadata.url}/>
-      <Header />
       <Hero primaryHeading={"Montra for Business: "} heading={"Digital Payments That Drive Growth"} content={"With Montra, getting paid is simple, secure, and built for scale. Empowering your Business with Seamless Digital Transactions "} paraWidth={"w-[60%]"} />
       <Overview content={overviewContent} />
       <Benefits data={benefitsData} />

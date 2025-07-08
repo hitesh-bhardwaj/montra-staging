@@ -2,7 +2,6 @@ import BenefitCards from '@/components/Common/BenefitCards'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
-import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import Discover from '@/components/PersonalPayments/Discover'
@@ -42,7 +41,6 @@ const personalPayments = () => {
    <WebpageJsonLd metadata={metadata}/>
    <FAQJSONLD faqs={faqContent}/>
    <BreadcrumbsJSONLD pathname={metadata.url}/>
-   <Header/>
    <Hero primaryHeading={"Montra Personal Account: "} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />

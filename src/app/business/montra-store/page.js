@@ -2,7 +2,6 @@ import BenefitCards from '@/components/Common/BenefitCards'
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
-import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
@@ -41,13 +40,11 @@ const montraStore = () => {
    <WebpageJsonLd metadata={metadata}/>
    <FAQJSONLD faqs={faqContent}/>
    <BreadcrumbsJSONLD pathname={metadata.url}/>
-   <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Start Selling Online — No Website Required"} content={"Create your free, customized Montra Store to showcase your products, reach more customers, accept payments seamlessly, and grow your business — all within the Montra App."}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
    <BenefitCards cardData={cardData}/>
    <Rewards rewardsData={rewardsData}/>
-   {/* <Discover/> */}
    <SectionBreak content={"Our fintech solutions are designed to empower individuals and businesses—making everyday transactions effortless, digital wallets seamless, and payment systems more accessible."} width={"w-[95%]"}/>
    <FAQs content={faqContent}/>
    </>

@@ -1,7 +1,6 @@
 import Hero from '@/components/Common/Hero'
 import Overview from '@/components/Common/Overview'
 import SectionBreak from '@/components/Common/SectionBreak'
-import Header from '@/components/Header'
 import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
@@ -41,7 +40,6 @@ const businessInventory = () => {
    <WebpageJsonLd metadata={metadata}/>
    <FAQJSONLD faqs={faqContent}/>
    <BreadcrumbsJSONLD pathname={metadata.url}/>
-   <Header/>
    <Hero primaryHeading={"Montra for Business: "} heading={"Smart Inventory Management - Stronger Business"} content={"Montra’s Inventory Management gives you control—track stock, minimize losses, and improve profitability with ease."}/>
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />

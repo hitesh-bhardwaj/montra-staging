@@ -52,7 +52,6 @@ const businessBanking = () => {
       <Overview
        content={overviewContent}
       />
-      
       <Benefits data={benefitsData} />
       <Steps stepData={stepData}/>
       <WhatWhy height={"h-[63vw]"} data={whatWhyData}/>

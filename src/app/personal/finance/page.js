@@ -1,7 +1,6 @@
 import Hero from "@/components/Common/Hero";
 import Overview from "@/components/Common/Overview";
 import SectionBreak from "@/components/Common/SectionBreak";
-import Header from "@/components/Header";
 import FAQs from "@/components/Homepage/FAQs";
 import React from "react";
 import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from "@/lib/json-ld";
@@ -40,7 +39,6 @@ const PersonalFinance = () => {
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqContent}/>
       <BreadcrumbsJSONLD pathname={metadata.url}/>
-      <Header />
       <Hero
         primaryHeading={"Montra Personal Account: "}
         heading={"Take Charge of Your Financial Future"}

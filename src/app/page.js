@@ -8,7 +8,6 @@ import SectionBreak from "@/components/Homepage/SectionBreak";
 import Testimonials from "@/components/Homepage/Testimonials";
 import VisionMission from "@/components/Homepage/VisionMission";
 import LoaderCopy from "@/components/LoaderCopy";
-// import NewLoader from "@/components/NewLoader";
 import { WebpageJsonLd } from "@/lib/json-ld";
 
 export default function Home() {
@@ -25,7 +24,6 @@ export default function Home() {
     <>
       <WebpageJsonLd metadata={metadata} />
       <LoaderCopy />
-      {/* <NewLoader/> */}
       <Hero />
       <FeatureSection />
       <FeaturesText />
