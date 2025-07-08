@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { LinkButton } from "../Buttons";
 import Image from "next/image";
-// import Heading from "../Heading";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function PaymentSection() {
   const sectionRef = useRef(null);
@@ -15,6 +17,7 @@ export default function PaymentSection() {
   });
   const [mode, setMode] = useState("personal");
   const itemsRef = useRef([]);
+  const imageRefs = useRef([]);
 
   // 4) Your scroll thresholds
   const thresholds = {
@@ -99,6 +102,7 @@ export default function PaymentSection() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       itemsRef.current = itemsRef.current.slice(0, stepsData[mode].length);
+      imageRefs.current = imageRefs.current.slice(0, stepsData[mode].length);
       const totalItems = stepsData[mode].length;
       const sectionHeight = 98 / totalItems;
 
@@ -112,27 +116,28 @@ export default function PaymentSection() {
               trigger: sectionRef.current,
               start,
               end,
-              // markers:true,
               scrub: true,
             },
           })
           .fromTo(
             el,
-            { opacity: 0, yPercent: 7, duration: 1, ease: "none", },
-            { opacity: 1, yPercent: 0, duration: 1, ease: "none", zIndex: 5 }
+            { opacity: 0, yPercent: 7, zIndex: 1, },
+            { opacity: 1, yPercent: 0, zIndex: 5, duration: 1, delay: 0.5, ease: "none" }
           )
-          .to(el, {
-            opacity: 0,
-            yPercent: -7,
-            duration: 1,
-            ease: "none",
-            zIndex: 1
-            //   delay: 0.2,
-          });
+          .fromTo(
+            imageRefs.current[index],
+            { opacity: 0, scale: 0.98, zIndex: 1 },
+            { opacity: 1, scale: 1, zIndex: 5, duration: 1 }, "<"
+          )
+          .to(el, { opacity: 0, yPercent: -7, zIndex: 1, duration: 1, delay: 0.5, ease: "none" }
+          )
+          .to(imageRefs.current[index], { opacity: 0, scale: 1.02, zIndex: 1, duration: 1 }, '<');
       });
-
     })
-    return () => ctx.revert()
+    return () => {
+      ctx.revert();
+    };
+
   }, [mode]);
 
   return (
@@ -375,21 +380,24 @@ export default function PaymentSection() {
           </div>
         </div>
         {/* IMAGE BLOCK */}
-        <div className="sticky top-[20%] right-[7%] w-[40%] mt-[15vw] h-[80vh] flex items-start justify-center">
-          <div className="relative w-full h-[60vh]">
+        <div className="sticky top-[18%] right-[7%] w-[40%] mt-[10%] h-[80vh] flex items-start justify-center">
+          <div className="relative w-full h-[70vh]">
             {stepsData[mode].map((step, idx) => {
               const key = thresholdKeys[mode][idx];
               return (
                 <motion.div
                   key={key}
-                  style={{ opacity: 1 }}
+                  ref={(el) => (imageRefs.current[idx] = el)}
                   className="absolute inset-0"
+                  style={{ opacity: 1 }}
                 >
                   <Image
                     src={step.image}
                     alt={step.title}
-                    fill
-                    className="object-contain"
+                    width={415}
+                    height={750}
+                    quality={100}
+                    className="object-contain w-auto h-[40vw] ml-auto pr-10"
                   />
                 </motion.div>
               );
@@ -409,32 +417,31 @@ const stepsData = {
       title: "Secure way of accessing World of Banking",
       desc: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>",
       link: "/personal/banking",
-      image: "/assets/images/homepage/personal-mobile-mockup.png",
-      // image: "/screen-1.png"
+      image: "/assets/images/homepage/personal-banking.png",
     },
     {
       title: "Pay Your Way with Montra",
       desc: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards –  </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
       link: "/personal/payments",
-      image: "/assets/images/homepage/personal-mobile-mockup.png",
+      image: "/assets/images/homepage/personal-payment.png",
     },
     {
       title: "Manage your Finance, on the Go",
       desc: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul><p>Because your money should move as smartly as you do.</p> ',
       link: "/personal/finance",
-      image: "/assets/images/homepage/personal-mobile-mockup.png",
+      image: "/assets/images/homepage/personal-finance.png",
     },
     {
       title: "Send Messages. Send & Request Money. Same Chat.",
       desc: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
       link: "/personal/chat",
-      image: "/assets/images/homepage/personal-mobile-mockup.png",
+      image: "/assets/images/homepage/personal-chat.png",
     },
     {
       title: "Shopping Meets Simplicity",
       desc: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands— everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
       link: "/personal/shop",
-      image: "/assets/images/homepage/personal-mobile-mockup.png",
+      image: "/assets/images/homepage/personal-shop.png",
     },
   ],
   business: [
