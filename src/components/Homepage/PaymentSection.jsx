@@ -410,6 +410,7 @@ const stepsData = {
       desc: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>",
       link: "/personal/banking",
       image: "/assets/images/homepage/personal-mobile-mockup.png",
+      // image: "/screen-1.png"
     },
     {
       title: "Pay Your Way with Montra",
