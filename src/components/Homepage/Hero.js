@@ -75,7 +75,7 @@ export default function Hero() {
         tl.to(textRef.current, {
           duration: 0.5,
           yPercent: 100,
-          delay: 6,
+          delay: 7,
           onComplete: () => {
             current = (current + 1) % phrases.length;
             textRef.current.innerText = phrases[current];

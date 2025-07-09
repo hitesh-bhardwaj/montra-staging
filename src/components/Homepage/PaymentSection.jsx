@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { LinkButton } from "../Buttons";
 import Image from "next/image";
@@ -18,6 +18,7 @@ export default function PaymentSection() {
   const [mode, setMode] = useState("personal");
   const itemsRef = useRef([]);
   const imageRefs = useRef([]);
+  const image2Refs = useRef([]);
 
   // 4) Your scroll thresholds
   const thresholds = {
@@ -103,6 +104,7 @@ export default function PaymentSection() {
     const ctx = gsap.context(() => {
       itemsRef.current = itemsRef.current.slice(0, stepsData[mode].length);
       imageRefs.current = imageRefs.current.slice(0, stepsData[mode].length);
+      image2Refs.current = image2Refs.current.slice(0, stepsData[mode].length);
       const totalItems = stepsData[mode].length;
       const sectionHeight = 98 / totalItems;
 
@@ -126,12 +128,18 @@ export default function PaymentSection() {
           )
           .fromTo(
             imageRefs.current[index],
-            { opacity: 0, scale: 0.98, zIndex: 1 },
-            { opacity: 1, scale: 1, zIndex: 5, duration: 1 }, "<"
+            { opacity: 1, xPercent: -100, zIndex: index * 1 },
+            { opacity: 1, xPercent: 0, zIndex: index * 1, duration: 1 }, "<"
+          )
+          .fromTo(
+            image2Refs.current[index],
+            { opacity: 0, scale: 1.2, },
+            { opacity: 1, scale: 1, duration: 1, delay: 0.3 }, "<"
           )
           .to(el, { opacity: 0, yPercent: -7, zIndex: 1, duration: 1, delay: 0.5, ease: "none" }
           )
-          .to(imageRefs.current[index], { opacity: 0, scale: 1.02, zIndex: 1, duration: 1 }, '<');
+          // .to(imageRefs.current[index], { filter: 'brightness(0.9)', zIndex: 1, duration: 1 }, '<')
+          .to(image2Refs.current[index], { opacity: 0, duration: 0.5 }, '<');
       });
     })
     return () => {
@@ -366,7 +374,7 @@ export default function PaymentSection() {
               <div
                 key={index}
                 ref={(el) => (itemsRef.current[index] = el)}
-                className="absolute text-left w-[40vw]"
+                className="absolute text-left w-[40vw] h-screen flex flex-col justify-center"
               >
                 <h2 className="text-[3.4vw] font-display font-medium leading-[1.2] w-[80%]">
                   {item.title}
@@ -380,26 +388,40 @@ export default function PaymentSection() {
           </div>
         </div>
         {/* IMAGE BLOCK */}
-        <div className="sticky top-[18%] right-[7%] w-[40%] mt-[10%] h-[80vh] flex items-start justify-center">
-          <div className="relative w-full h-[70vh]">
+        <div className="sticky top-[18%] right-[0%] w-[40%] mt-[10%] h-[80vh] flex items-start justify-center">
+          <div className="relative w-full h-[70vh] overflow-hidden fadeupanim">
+            <Image className="absolute inset-0 object-contain top-0 left-0 h-full w-full z-20" alt="mobile frame" src="/assets/animation/frame.png" width={500} height={800} quality={100} />
             {stepsData[mode].map((step, idx) => {
               const key = thresholdKeys[mode][idx];
               return (
-                <motion.div
-                  key={key}
-                  ref={(el) => (imageRefs.current[idx] = el)}
-                  className="absolute inset-0"
-                  style={{ opacity: 1 }}
-                >
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    width={415}
-                    height={750}
-                    quality={100}
-                    className="object-contain w-auto h-[40vw] ml-auto pr-10"
-                  />
-                </motion.div>
+                <React.Fragment key={key}>
+                  <motion.div
+                    key={key}
+                    className="absolute top-0 left-0 h-full w-full"
+                    style={{ opacity: 1, clipPath: 'rect(0% 100% 100% 28% round 14%)' }}
+                  >
+                    <Image
+                      ref={(el) => (imageRefs.current[idx] = el)}
+                      src={step.image}
+                      alt={step.title}
+                      width={415}
+                      height={750}
+                      quality={100}
+                      className="w-full h-full absolute top-0 left-0 object-contain"
+                    />
+                  </motion.div>
+                  <div className="absolute top-0 left-0 h-full w-full z-30">
+                    <Image
+                      ref={(el) => (image2Refs.current[idx] = el)}
+                      src={step.highlightImg}
+                      alt={step.title}
+                      width={415}
+                      height={750}
+                      quality={100}
+                      className="w-full h-full absolute top-0 left-0 object-contain"
+                    />
+                  </div>
+                </React.Fragment>
               );
             })}
           </div>
@@ -409,7 +431,6 @@ export default function PaymentSection() {
   );
 }
 
-
 // 1) Your per-step data with individual image URLs
 const stepsData = {
   personal: [
@@ -417,31 +438,36 @@ const stepsData = {
       title: "Secure way of accessing World of Banking",
       desc: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>",
       link: "/personal/banking",
-      image: "/assets/images/homepage/personal-banking.png",
+      image: "/assets/animation/1-ss.png",
+      highlightImg: "/assets/animation/1-pop.png"
     },
     {
       title: "Pay Your Way with Montra",
       desc: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards –  </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
       link: "/personal/payments",
-      image: "/assets/images/homepage/personal-payment.png",
+      image: "/assets/animation/2-ss.png",
+      highlightImg: "/assets/animation/2-pop.png"
     },
     {
       title: "Manage your Finance, on the Go",
       desc: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul><p>Because your money should move as smartly as you do.</p> ',
       link: "/personal/finance",
-      image: "/assets/images/homepage/personal-finance.png",
+      image: "/assets/animation/3-ss.png",
+      highlightImg: "/assets/animation/3-pop.png"
     },
     {
       title: "Send Messages. Send & Request Money. Same Chat.",
       desc: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
       link: "/personal/chat",
-      image: "/assets/images/homepage/personal-chat.png",
+      image: "/assets/animation/4-ss.png",
+      highlightImg: "/assets/animation/4-pop.png"
     },
     {
       title: "Shopping Meets Simplicity",
       desc: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands— everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
       link: "/personal/shop",
-      image: "/assets/images/homepage/personal-shop.png",
+      image: "/assets/animation/5-ss.png",
+      highlightImg: "/assets/animation/5-pop.png"
     },
   ],
   business: [

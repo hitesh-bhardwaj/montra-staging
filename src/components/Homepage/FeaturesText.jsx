@@ -48,12 +48,12 @@ export default function PinnedRevealSection() {
   });
 
   const thresholds = [
-    [0.0, 0.08],
+    [0.0, 0.12],
     [0.05, 0.16],
     [0.1, 0.24],
     [0.15, 0.32],
-    [0.2, 0.4],
-    [0.25, 0.48],
+    [0.2, 0.36],
+    [0.25, 0.42],
   ];
 
   const transforms = thresholds.map(([from, to]) => ({
@@ -64,10 +64,10 @@ export default function PinnedRevealSection() {
 
   const arrowTranslateX = useTransform(
     scrollYProgress,
-    [0.48, 0.665],
+    [0.42, 0.58],
     ["-100%", "0%"]
   );
-  const arrowScale = useTransform(scrollYProgress, [0.48, 0.665], [1, 4.2]);
+  const arrowScale = useTransform(scrollYProgress, [0.42, 0.58], [1, 4.2]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -75,8 +75,8 @@ export default function PinnedRevealSection() {
         gsap.to(".montra-logo", {
           scrollTrigger: {
             trigger: "#feature-text",
-            start: "50% top",
-          //   markers: true,
+            start: "36% top",
+            // markers: true,
             onLeaveBack: () => {
               gsap.to(".montra-logo", {
                 filter: "brightness(1)",
@@ -103,46 +103,12 @@ export default function PinnedRevealSection() {
             },
           },
         });
-        gsap.to(".ham-mobile",{
-          backgroundColor: "#215CFF",
-          duration:0,
-          scrollTrigger: {
-            trigger: "#feature-text",
-            start: "50% top",
-            // markers: true,
-            onEnter: () => {
-              gsap.to(".ham-mobile", {
-                backgroundColor:"white",
-                duration: 0,
-              });
-            },
-            onLeaveBack: () => {
-              gsap.to(".ham-mobile", {
-                backgroundColor: "#215CFF",
-                duration: 0,
-              });
-            },
-            onLeave: () => {
-              gsap.to(".ham-mobile", {
-                backgroundColor: "#215CFF",
-                duration: 0,
-              });
-            },
-            onEnterBack: () => {
-              gsap.to(".ham-mobile", {
-                backgroundColor: "white",
-                duration: 0,
-              });
-            },
-          },
-        })
-
       }
       else{
         gsap.to(".montra-logo", {
           scrollTrigger: {
             trigger: "#feature-text",
-            start: "45% top",
+            start: "35% top",
             // markers: true,
             onLeaveBack: () => {
               gsap.to(".montra-logo", {
@@ -175,8 +141,8 @@ export default function PinnedRevealSection() {
           duration:0,
           scrollTrigger: {
             trigger: "#feature-text",
-            start: "45% top",
-            // markers: true,
+            start: "38% top",
+            markers: true,
             onEnter: () => {
               gsap.to(".ham-mobile", {
                 backgroundColor:"white",
@@ -211,7 +177,7 @@ export default function PinnedRevealSection() {
   return (
     <section
       ref={ref}
-      className="relative h-[500vh] max-md:h-[380vh] max-sm:h-[375vh] z-[101]"
+      className="relative h-[400vh] max-md:h-[280vh] max-sm:h-[300vh] z-[101]"
       id="feature-text"
     >
       <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#FBFBFB]">
