@@ -398,7 +398,7 @@ export default function PaymentSection() {
                   <motion.div
                     key={key}
                     className="absolute top-0 left-0 h-full w-full"
-                    style={{ opacity: 1, clipPath: 'rect(0% 100% 100% 28% round 14%)' }}
+                    style={{ opacity: 1, clipPath: 'rect(0% 100% 100% 28% round 20%)' }}
                   >
                     <Image
                       ref={(el) => (imageRefs.current[idx] = el)}
@@ -410,17 +410,19 @@ export default function PaymentSection() {
                       className="w-full h-full absolute top-0 left-0 object-contain"
                     />
                   </motion.div>
-                  <div className="absolute top-0 left-0 h-full w-full z-30">
-                    <Image
-                      ref={(el) => (image2Refs.current[idx] = el)}
-                      src={step.highlightImg}
-                      alt={step.title}
-                      width={415}
-                      height={750}
-                      quality={100}
-                      className="w-full h-full absolute top-0 left-0 object-contain"
-                    />
-                  </div>
+                  {step.highlightImg && (
+                    <div className="absolute top-0 left-0 h-full w-full z-30">
+                      <Image
+                        ref={(el) => (image2Refs.current[idx] = el)}
+                        src={step.highlightImg}
+                        alt={step.title}
+                        width={415}
+                        height={750}
+                        quality={100}
+                        className="w-full h-full absolute top-0 left-0 object-contain"
+                      />
+                    </div>
+                  )}
                 </React.Fragment>
               );
             })}
@@ -475,43 +477,49 @@ const stepsData = {
       title: "All-in-One Banking. Built for Businesses",
       desc: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem — designed to help your business grow smarter & faster</p>',
       link: "/business/banking",
-      image: "/assets/images/homepage/business-banking.png",
+      image: "/assets/animation/6-ss.png",
+      highlightImg: "/assets/animation/6-pop.png"
     },
     {
       title: "Accept Payments. Expand Possibilities",
       desc: '<p>Open a Montra Business Account to start receiving payments from anyone — anytime, anywhere. Accept payments using<ul class="pl-[1vw] space-y-[0.3vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
       link: "/business/payments",
-      image: "/assets/images/homepage/business-payment.png",
+      image: "/assets/animation/7-ss.png",
+      highlightImg: "/assets/animation/7-pop.png"
     },
     {
       title: "Become a Montra Agent. Start Earning",
       desc: "<p>Offer Agency Banking services for offering Cash Deposit & Cahs withdrawal services and get paid for every transaction — it’s that simple.</p>",
       link: "/business/agency-banking",
-      image: "/assets/images/homepage/business-agency-banking.png",
+      image: "/assets/animation/8-ss.png",
+      highlightImg: "/assets/animation/8-pop.png"
     },
     {
       title: "Sell Smarter. Restock Faster. Pay & Get Paid Instantly. ",
       desc: '<p>Manage orders, send invoices, and track stock. With Montra, every part of your business just flows.<ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
       link: "/business/inventory-management",
-      image: "/assets/images/homepage/business-inventory-management.png",
+      image: "/assets/animation/9-ss.png",
+      highlightImg: "/assets/animation/9-pop.png"
     },
     {
       title: "Start Selling Online — For Free",
       desc: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
       link: "/business/montra-store",
-      image: "/assets/images/homepage/business-montra-store.png",
+      image: "/assets/animation/10-ss.png",
     },
     {
       title: "One Gateway. Multiple Payment Options.",
       desc: '<p>Integrate <span class="font-semibold">Montra Payment Gateway</span> into your app or website and accept payments via:</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Debit & Credit Cards</li><li>Bank Transfers via QR</li><li>Montra App </li><li>USSD Payments </li></ul> <p class="font-semibold">More ways to get paid. Fast integration. Instant settlement.</p>',
       link: "/business/payment-gateway",
-      image: "/assets/images/homepage/business-payment-gateway.png",
+      image: "/assets/animation/11-ss.png",
+      highlightImg: "/assets/animation/11-pop.png"
     },
     {
       title: "Tap. Accept. Get Paid.",
       desc: '<p>With Montra Tap to Pay, your phone becomes a payment terminal — no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
       link: "/business/tap-and-pay",
-      image: "/assets/images/homepage/business-tap-&-pay.png",
+      image: "/assets/animation/12-ss.png",
+      highlightImg: "/assets/animation/12-pop.png"
     },
   ],
 };
