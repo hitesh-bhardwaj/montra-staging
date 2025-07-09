@@ -198,7 +198,7 @@ const LoaderCopy = () => {
     >
       <div className="w-screen h-[50vh] bg-primary absolute top-0 left-0 upper-overlay" />
       <div className="w-screen h-[50vh] bg-primary absolute bottom-0 left-0 lower-overlay overflow-hidden">
-        <div className="breath-container absolute bottom-[5%] left-[5%]">
+        {/* <div className="breath-container absolute bottom-[5%] left-[5%]">
           {letters.map((char, index) => (
             <span
               key={index}
@@ -210,7 +210,7 @@ const LoaderCopy = () => {
               {char}
             </span>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="w-[120vw] h-full flex justify-center items-center">

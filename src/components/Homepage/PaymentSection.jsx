@@ -106,7 +106,11 @@ export default function PaymentSection() {
       imageRefs.current = imageRefs.current.slice(0, stepsData[mode].length);
       image2Refs.current = image2Refs.current.slice(0, stepsData[mode].length);
       const totalItems = stepsData[mode].length;
-      const sectionHeight = 98 / totalItems;
+      const sectionHeight = 100 / totalItems;
+
+      // const snapPoints = Array(stepsData[mode].length + 1)
+      //   .fill(0)
+      //   .map((_, i) => i / stepsData[mode].length);
 
       itemsRef.current.forEach((el, index) => {
         const start = `${sectionHeight * index + 4}% 70%`;
@@ -119,6 +123,7 @@ export default function PaymentSection() {
               start,
               end,
               scrub: true,
+              // snap: { snapTo: snapPoints, duration: 0.4, ease: "power1.inOut" }
             },
           })
           .fromTo(
@@ -147,6 +152,84 @@ export default function PaymentSection() {
     };
 
   }, [mode]);
+
+  //   useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     // grab the right set of items for this mode
+  //     const steps = stepsData[mode];
+  //     itemsRef.current  = itemsRef.current.slice(0, steps.length);
+  //     imageRefs.current  = imageRefs.current.slice(0, steps.length);
+  //     image2Refs.current = image2Refs.current.slice(0, steps.length);
+
+  //     // how many seconds we'll allocate per step
+  //     const segmentDuration = 2;
+
+  //     // build one master timeline
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: sectionRef.current,
+  //         start:   "top top",
+  //         end:     "bottom bottom",
+  //         scrub:   true,
+  //         snap: {
+  //           // snap to the nearest of the (steps.length + 1) positions: 0/steps..1
+  //           snapTo: (progress) => {
+  //             // multiply by number of steps, round to nearest integer, then normalize back to [0–1]
+  //             const idx = Math.round(progress * steps.length);
+  //             return idx / steps.length;
+  //           },
+  //           duration: 0.4,
+  //           ease:     "power1.inOut"
+  //         }
+  //       }
+  //     });
+
+  //     // sequence each step into its own “slot” in the timeline
+  //     steps.forEach((_, i) => {
+  //       const label = `step${i}`;
+  //       tl.addLabel(label, i * segmentDuration);
+
+  //       // text in
+  //       tl.fromTo(
+  //         itemsRef.current[i],
+  //         { opacity: 0,  yPercent: 7,  zIndex: 1 },
+  //         { opacity: 1,  yPercent: 0,  zIndex: 5, duration: 1 },
+  //         label
+  //       );
+
+  //       // image slide in
+  //       tl.fromTo(
+  //         imageRefs.current[i],
+  //         { opacity: 1,  xPercent: -100,  zIndex: i },
+  //         { opacity: 1,  xPercent:   0,   zIndex: i, duration: 1 },
+  //         label
+  //       );
+
+  //       // highlight fade+scale
+  //       tl.fromTo(
+  //         image2Refs.current[i],
+  //         { opacity: 0,  scale: 1.2 },
+  //         { opacity: 1,  scale: 1,     duration: 1 },
+  //         `${label}+=0.3`
+  //       );
+
+  //       // then fade out text + highlight
+  //       tl.to(
+  //         itemsRef.current[i],
+  //         { opacity: 0,  yPercent: -7, duration: 1 },
+  //         `${label}+=1.5`
+  //       );
+  //       tl.to(
+  //         image2Refs.current[i],
+  //         { opacity: 0,             duration: 0.5 },
+  //         `${label}+=1.5`
+  //       );
+  //     });
+  //   });
+
+  //   return () => ctx.revert();
+  // }, [mode]);
+
 
   return (
     <section

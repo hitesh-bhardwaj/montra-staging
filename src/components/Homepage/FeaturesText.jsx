@@ -142,7 +142,7 @@ export default function PinnedRevealSection() {
           scrollTrigger: {
             trigger: "#feature-text",
             start: "38% top",
-            markers: true,
+            // markers: true,
             onEnter: () => {
               gsap.to(".ham-mobile", {
                 backgroundColor:"white",
