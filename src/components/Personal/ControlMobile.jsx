@@ -7,7 +7,7 @@ import { LinkButton } from "../Buttons";
 
 const controlContent = [
   {
-    src: "/assets/images/personal/personal-icon-1.png",
+    src: "/assets/images/personal/personal-icon-1.svg",
     iconText: "banking",
     color: "text-[#FF8100]",
     contenTitle: "Do More with Your Money. Spend and Earn Rewards",
@@ -16,7 +16,7 @@ const controlContent = [
     content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.</li><li>Link your existing bank accounts on the Montra App and manage all your payments in one place — one app for all your bank accounts. </li></ul>",
   },
   {
-    src: "/assets/images/personal/personal-icon-5.png",
+    src: "/assets/images/personal/personal-icon-5.svg",
     question: "Is Montra licensed?",
     iconText: "payments",
     color: "text-primary",
@@ -26,7 +26,7 @@ const controlContent = [
     content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Enjoy multiple payment methods using your Montra Account, Linked Bank Accounts, Cards, or even via Installments.</li><li>Scan & Pay instantly at Merchants stores</li><li>Every transaction is protected with a Montra PIN and Soft Token authentication.</li></ul><p>With Montra, managing your money is fast, secure, and always in your control.</p>",
   },
   {
-    src: "/assets/images/personal/personal-icon-2.png",
+    src: "/assets/images/personal/personal-icon-2.svg",
     question: "What is unique about Montra?",
     iconText: "finance",
     color: "text-[#35C771]",
@@ -36,7 +36,7 @@ const controlContent = [
     content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Access loans, buy insurance, and invest—all from one powerful app.</li><li>View your transactions in real-time and monitor your financial activity.</li><li>Get intelligent insights to help you plan, save, and spend wisely.</li></ul>",
   },
   {
-    src: "/assets/images/personal/personal-icon-4.png",
+    src: "/assets/images/personal/personal-icon-4.svg",
     question: "How do we Sign-Up on Montra?",
     iconText: "chat",
     color: "text-[#FB2F55]",
@@ -46,7 +46,7 @@ const controlContent = [
     content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Turn conversations into transactions </li><li>Send, Request Payments while you chat and receive instant payment confirmations </li><li>Secure & Instant—no app-switching!</li></ul>",
   },
   {
-    src: "/assets/images/personal/personal-icon-3.png",
+    src: "/assets/images/personal/personal-icon-3.svg",
     question: "How do we Sign-In on Montra?",
     iconText: "Shop",
     color: "text-[#111111]",
