@@ -82,7 +82,7 @@ const faqContent = [
 const overviewContent = {
   icon1:"/assets/images/personal-shop/no-queues.svg",
   icon2:"/assets/images/personal-shop/access.svg",
-  mainImg:"/assets/images/personal-shop/overview-phone.png",
+  mainImg:"/assets/images/personal-shop/personal-shop.png",
   bgImg:"/assets/images/personal-shop/shop.svg",
   title:"A Smarter Way to Shop, Right from Your Montra App",
   content:[

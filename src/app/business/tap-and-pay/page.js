@@ -84,7 +84,7 @@ const faqContent = [
 const overviewContent = {
   icon1:"/assets/images/business-tapnpay/overview-icon-1.svg",
   icon2:"/assets/images/business-tapnpay/overview-icon-2.svg",
-  mainImg:"/assets/images/business-tapnpay/overview-phone.png",
+  mainImg:"/assets/images/business-tapnpay/business-tap-n-pay.png",
   bgImg:"/assets/images/business-montra-store/overview-bg-icon.svg",
   title:"Tap & Pay makes everyday purchases quick, easy, and totally stress-free.",
   content:[

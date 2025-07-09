@@ -85,7 +85,7 @@ const faqContent = [
 const overviewContent = {
   icon1: "/assets/images/business-agency-banking/reliable-banking.svg",
   icon2: "/assets/images/business-agency-banking/steady-income.svg",
-  mainImg: "/assets/images/business-agency-banking/overview-phone.png",
+  mainImg: "/assets/images/business-agency-banking/business-agency-banking.png",
   bgImg: "/assets/images/personal-payments/overview-bg-icon.svg",
   title: "Empowering Local Agents with Digital Banking",
   content: [

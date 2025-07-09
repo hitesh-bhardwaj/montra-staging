@@ -94,7 +94,7 @@ const faqContent = [
 const overviewContent = {
   icon1: "/assets/images/business-banking/seamless-banking.svg",
   icon2: "/assets/images/business-banking/multiple-payments.svg",
-  mainImg: "/assets/images/business-banking/overview-phone.png",
+  mainImg: "/assets/images/business-banking/business-banking.png",
   bgImg: "/assets/images/personal-banking/overview-banking-icon.svg",
   title: "Unlocking the Power of Digital Financial Solutions",
   content: [
@@ -153,28 +153,28 @@ const stepData = {
           number: "01",
           title: "Sign Up for Montra Business Account",
           para: "Download the Montra App, register as an individual, switch to BUSINESS mode, and complete KYC Level 2.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
+          img: "/assets/images/business-banking/sign-up.png",
           tag:"Sign Up"
       },
       {
           number: "02",
           title: "Set Up Your Profile",
           para: "Select your business type (physical store, online store, virtual store, or agency service) and fill in key business details.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
+          img: "/assets/images/business-banking/set-up-profile.png",
           tag:"Switch to Business Mode"
       },
       {
           number: "03",
           title: "Provide Registration Details",
           para: "Enter your business registration number (if applicable), verify it, and optionally upload your business logo.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
+          img: "/assets/images/business-banking/business-verification.png",
           tag:"Complete Business Setup"
       },
       {
           number: "04",
           title: "Activate & Start Accepting Payments",
           para: "Access your Montra Business Account, get your QR code, and start collecting payments seamlessly.",
-          img: "/assets/images/personal-banking/steps-img-1.png",
+          img: "/assets/images/business-banking/accept-payment.png",
           tag:"Accept Payments"
       },
   ],

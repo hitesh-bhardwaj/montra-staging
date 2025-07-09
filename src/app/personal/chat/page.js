@@ -87,7 +87,7 @@ const faqContent = [
 const overviewContent = {
   icon1: "/assets/images/personal-chat/overview-icon-1.svg",
   icon2: "/assets/images/personal-banking/overview-icon-2.svg",
-  mainImg: "/assets/images/personal-chat/overview-phone.png",
+  mainImg: "/assets/images/personal-chat/personal-chat.png",
   bgImg: "/assets/images/personal-chat/overview-bg-icon.svg",
   title: "Chat Meets Finance",
   content: [

@@ -81,7 +81,7 @@ const faqContent = [
 const overviewContent = {
   icon1:"/assets/images/personal-payments/overview-icon-1.svg",
   icon2:"/assets/images/personal-payments/overview-icon-2.svg",
-  mainImg:"/assets/images/personal-payments/overview-phone.png",
+  mainImg:"/assets/images/personal-payments/personal-payment.png",
   bgImg:"/assets/images/personal-payments/overview-bg-icon.svg",
   title:"Fast, Easy Payments—Right from Your Phone",
   content:[

@@ -94,7 +94,7 @@ const faqContent = [
 const overviewContent = {
   icon1:"/assets/images/business-inventory/overview-1.svg",
   icon2:"/assets/images/business-inventory/overview-2.svg",
-  mainImg:"/assets/images/business-inventory/overview-phone.png",
+  mainImg:"/assets/images/business-inventory/business-inventory-management.png",
   bgImg:"/assets/images/personal-payments/overview-bg-icon.svg",
   title:"Effortless Inventory Management for Modern Businesses",
   content:[

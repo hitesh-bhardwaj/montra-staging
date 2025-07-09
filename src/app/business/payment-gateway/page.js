@@ -95,7 +95,7 @@ const faqContent = [
 const overviewContent = {
   icon1:"/assets/images/payment-gateway/quick-integration.svg",
   icon2:"/assets/images/payment-gateway/secure.svg",
-  mainImg:"/assets/images/payment-gateway/overview-phone.png",
+  mainImg:"/assets/images/payment-gateway/business-payment-gateway.png",
   bgImg:"/assets/images/personal-payments/overview-bg-icon.svg",
   title:"Accept Payments Online, Seamlessly & Securely",
   content:[
