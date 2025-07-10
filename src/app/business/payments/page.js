@@ -84,8 +84,8 @@ const overviewContent = {
   content: [
     "Montra offers a robust payment ecosystem tailored for businesses seeking efficient, secure, and scalable digital payment solutions. Our platform connects businesses with banks, merchants, dealers, sellers, lending institutions, and insurance companies, serving as a one-stop solution for all financial needs."
   ],
-  subcontent1: "Multiple Payment Methods",
-  subcontent2: "Instant Payment Settlement"
+  subcontent1: "Multiple Payment Acceptance Methods",
+  subcontent2: "Send Invoices & Payment Links"
 }
 const benefitsData = {
   heading: "The Smarter, Safer Way to Pay",
@@ -183,14 +183,14 @@ const stepData = {
       number: "02",
       title: "Enable Payment Options",
       para: "Head to the Payment Section and activate QR scan, bank transfers, tap & pay, POS, or payment links — offer customers multiple ways to pay.",
-      img: "/assets/images/business-payments/create-link.png",
+      img: "/assets/images/business-payments/Create-Link.png",
       tag: "Activate Payments"
     },
     {
       number: "03",
       title: "Accept Instant Payments",
       para: "Start collecting payments instantly — funds land directly in your Montra Business Account, no waiting.",
-      img: "/assets/images/business-payments/get-paid.png",
+      img: "/assets/images/business-payments/Get-Paid.png",
       tag: "Accept Payments"
     },
     {

@@ -44,7 +44,6 @@ export default function Payments() {
         start:"top top",
         end:"bottom 80%",
         scrub: true,
-        // markers:true,
       },
      })
     itemsRef.current.forEach((el, index) => {

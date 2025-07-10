@@ -4,6 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { LinkButton } from "../Buttons";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const controlContent = [
   {
@@ -147,6 +151,9 @@ function Accordion({
               exit={{ height: 0, opacity: 0, y: 20 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="overflow-hidden"
+              onAnimationComplete={() => {
+                ScrollTrigger.refresh();
+              }}
             >
               <div className="w-full flex flex-col gap-[5vw] pb-[10vw]">
                 <div className="w-[80%] mx-auto max-sm:h-[100vw] max-md:h-[50vw]">

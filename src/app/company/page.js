@@ -13,7 +13,7 @@ import { homepage } from '@/lib/util'
 
 export const metadata = getPageMetadata({
   title: "Montra – Inclusive Fintech for Emerging Markets | Digital Wallet & Financial Ecosystem",
-  description: "Montra is an all‑in‑one digital wallet and fintech platform designed for emerging markets. We empower individuals and businesses to manage payments, banking, credit, investments, and insurance—with simplicity, security, and accessibility to bridge the cash‑to‑digital transition. Join us in building a more inclusive financial future.",
+  description: "Montra is an all-in-one digital wallet and fintech platform designed for emerging markets. We empower individuals and businesses to manage payments, banking, credit, investments, and insurance—with simplicity, security, and accessibility to bridge the cash‑to‑digital transition. Join us in building a more inclusive financial future.",
   url: "company",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",

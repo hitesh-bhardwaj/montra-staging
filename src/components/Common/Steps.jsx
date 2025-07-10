@@ -14,6 +14,7 @@ const Steps = ({ stepData }) => {
   const controlsArray = useRef(stepData.steps.map(() => useAnimation()));
   const ref = useRef(null);
   const inView = useInView(ref, { amount: 0.5 });
+  
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".montra-logo", {

@@ -100,8 +100,8 @@ const overviewContent = {
   content: [
     "Montra offers businesses of all sizes a seamless way to manage financial transactions, access credit, and protect assets—all in one place. Whether you’re a small business owner or an enterprise, Montra simplifies your banking needs with digital-first solutions that save time, reduce costs, and drive growth.",
   ],
-  subcontent1: "Multiple Payment Methods ",
-  subcontent2: "Seamless Business Banking",
+  subcontent1: "QR, Soft-POS & POS acceptance",
+  subcontent2: "Instant Voice & Text Notifications",
 };
 
 const whatWhyData = {

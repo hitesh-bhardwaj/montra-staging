@@ -100,8 +100,8 @@ const overviewContent = {
     "Montra Store lets you set up a free, customized online storefront — no website or hosting fees required.  You can reach more customers, accept flexible and manage products, orders, and sales effortlessly, all within the Montra App. Selling online has never been this easy.",
  
   ],
-  subcontent1:"Customizable Storefront",
-  subcontent2:"Free Set Up "
+  subcontent1:"Free Store, Free Marketing",
+  subcontent2:"Seamless In-app payments"
 }
 const  benefitsData = {
   heading:"Financial Infrastructure for the Modern Enterprise",

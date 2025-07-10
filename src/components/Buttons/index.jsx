@@ -17,7 +17,7 @@ export const AppleStoreButton = () => {
         <span className="text-[0.83vw] h-[0.8vw] max-sm:text-[3vw] max-sm:h-auto max-md:text-[2vw] max-md:h-[2.5vw]">
           Download on the
         </span>
-        <p className="text-[1.5vw] leading-8 max-sm:text-[6vw] max-sm:leading-[1.2] max-md:text-[3.2vw] max-md:leading-[1.2]">
+        <p className="text-[1.5vw] font-medium leading-8 max-sm:text-[6vw] max-sm:leading-[1.2] max-md:text-[3.2vw] max-md:leading-[1.2]">
           App Store
         </p>
       </div>
@@ -38,7 +38,7 @@ export const PlayStoreButton = () => {
         <span className="text-[0.83vw] h-[0.8vw] max-sm:text-[3vw] max-sm:h-auto max-md:text-[2vw] max-md:h-[2.5vw]">
           Get it on
         </span>
-        <p className="text-[1.5vw] leading-8 max-sm:text-[6vw] max-sm:leading-[1.2] max-md:text-[3.2vw] max-md:leading-[1.2]">
+        <p className="text-[1.5vw] font-medium leading-8 max-sm:text-[6vw] max-sm:leading-[1.2] max-md:text-[3.2vw] max-md:leading-[1.2]">
           Google Play
         </p>
       </div>
