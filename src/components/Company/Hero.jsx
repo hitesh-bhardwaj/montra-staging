@@ -197,22 +197,23 @@ const Hero = () => {
           </Copy>
         </div>
       </div>
-
             <div
-                ref={bgRef}
-                style={{ clipPath: 'ellipse(19vw 19vw at 50% 35%)' }}
-                // style={{ clipPath: 'ellipse(50vw 50vw at 50% 25%)' }}
-
-                className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden fadeup">
-                  <video  muted playsInline loop autoPlay
-                   src={videoSrc} 
-                   poster="/assets/images/company/poster.webp"
-                    ref={imgRef} 
-                     className="w-full h-full object-cover absolute"/>
+              ref={bgRef}
+              style={{ clipPath: 'ellipse(19vw 19vw at 50% 35%)' }}
+              className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden fadeup">
+              <video  
+                muted 
+                playsInline 
+                loop 
+                autoPlay
+                src={videoSrc} 
+                poster="/assets/images/company/poster.webp"
+                ref={imgRef} 
+                className="w-full h-full object-cover absolute"
+              />
             </div>
-            <div
-                className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block max-md:block">
-                     <video src={videoSrc} muted playsInline loop autoPlay ref={imgRef}  className="w-full h-full object-cover absolute"/>
+            <div className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block max-md:block">
+              <video src={videoSrc} muted playsInline loop autoPlay ref={imgRef} poster="/assets/images/company/company-video-poster.webp" className="w-full h-full object-cover absolute"/>
             </div>
         </section>
     );
