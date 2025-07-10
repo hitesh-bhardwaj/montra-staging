@@ -142,7 +142,7 @@ const Steps = ({ stepData }) => {
   return (
     <section
       ref={ref}
-      className="w-screen h-screen bg-primary px-[4vw] py-[5%] text-white max-sm:py-[15%] max-sm:px-[7vw] relative max-sm:h-fit overflow-hidden"
+      className="w-screen h-screen bg-primary px-[4vw] py-[5%] text-white max-sm:py-[15%] max-sm:px-[7vw] relative max-sm:h-fit overflow-hidden max-sm:min-h-[100vh]"
       id="steps"
     >
       <div className="flex h-full items-start max-sm:flex-col max-md:flex-col">
@@ -202,11 +202,11 @@ const Steps = ({ stepData }) => {
               {stepData.steps[step].para}
             </motion.p>
           </div>
-          <div className="flex items-center gap-[1vw] max-sm:z-[10]">
+          <div className="flex items-center gap-[1vw] max-sm:z-[10] max-sm:flex-wrap max-sm:space-y-[2vw]">
             {stepData.steps.map((s, i) => (
               <div
                 key={i}
-                className="flex items-center gap-[0.8vw] text-[1vw] cursor-pointer max-sm:gap-[3vw] max-md:gap-[2vw]"
+                className="flex items-center gap-[0.8vw] text-[1vw] cursor-pointer max-sm:gap-[3vw] max-md:gap-[2vw] "
                 onClick={() => {
                   const prevStep = prevStepRef.current;
                   controlsArray.current[prevStep].stop();
