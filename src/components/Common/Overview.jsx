@@ -65,12 +65,12 @@ const Overview = ({ content }) => {
         className="w-screen h-full bg-[#fbfbfb] overflow-hidden max-sm:pb-[15%] max-md:pb-[10%]"
         id="overview"
       >
-        <div className="w-full h-full flex items-start justify-between px-[4vw] max-sm:flex-col max-sm:px-[7vw] max-md:flex-col ">
+        <div className="w-full h-full flex items-center justify-between px-[4vw] max-sm:flex-col max-sm:px-[7vw] max-md:flex-col">
           <div ref={containerRef} className="w-[40%] relative max-sm:w-full fadeupanim max-md:w-full">
             <Image
               src={content.mainImg}
               alt="overview-phone-image"
-              className="object-cover w-full h-[43vw] z-[2] mt-[4vw] relative max-sm:h-[180vw] max-sm:left-[0%] max-md:h-[120vw] max-md:left-[-5%]"
+              className="object-cover w-auto h-[43vw] z-[2] my-auto relative max-sm:h-[120vw] max-sm:left-[0%] max-md:h-[120vw] max-md:left-[-5%]"
               width={700}
               height={1080}
             />
@@ -85,9 +85,9 @@ const Overview = ({ content }) => {
             </div>
             <div
               ref={block1}
-              className="!w-fit  h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#F1FFE8] absolute top-[82%] left-[5%] z-[7] flex gap-[1vw] max-sm:px-[5vw] max-sm:gap-[2vw] max-sm:rounded-[3vw] max-sm:py-[3vw] max-sm:top-[70%] max-sm:right-[10%] max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw] items-center"
+              className="!w-fit h-fit rounded-xl shadow-md drop-shadow-md p-3 bg-[#F1FFE8] absolute top-[82%] left-[5%] z-[7] flex gap-[1vw] max-sm:p-2 max-sm:gap-[2vw] max-sm:rounded-[3vw] max-sm:top-[70%] max-sm:right-[10%] max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw] items-center"
             >
-              <div className="w-[2vw] h-[2vw] max-sm:w-[7vw] max-sm:h-[7vw] max-md:w-[5vw] max-md:h-[5vw]">
+              <div className="w-[2vw] h-[2vw] max-sm:w-6 max-sm:h-6 max-md:w-[5vw] max-md:h-[5vw]">
                 <Image
                   src={content.icon2}
                   width={100}
@@ -96,13 +96,13 @@ const Overview = ({ content }) => {
                   alt="overview-icon"
                 />
               </div>
-              <div className="capitalize">{content.subcontent1}</div>
+              <div className="capitalize text-xs leading-[1.1] max-sm:text-sm max-w-48">{content.subcontent1}</div>
             </div>
             <div
               ref={block2}
-              className="w-fit h-fit rounded-[1.2vw] shadow-md drop-shadow-md py-[1vw] px-[1vw] bg-[#FFEAEE] absolute top-[45%] left-[40%] z-[7] flex gap-[1vw] max-sm:px-[5vw] max-sm:gap-[2vw] max-sm:rounded-[3vw] max-sm:py-[3vw] items-center max-sm:left-0 max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw]"
+              className="w-fit h-fit rounded-xl shadow-md drop-shadow-md p-3 bg-[#FFEAEE] absolute top-[45%] left-[40%] z-[7] flex gap-[1vw] max-sm:p-2 max-sm:gap-[2vw] max-sm:rounded-[3vw] items-center max-sm:left-0 max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw]"
             >
-              <div className="w-[2vw] h-[2vw] max-sm:w-[7vw] max-sm:h-[7vw] max-md:w-[5vw] max-md:h-[5vw]">
+              <div className="w-[2vw] h-[2vw] max-sm:w-6 max-sm:h-6 max-md:w-[5vw] max-md:h-[5vw]">
                 <Image 
                   src={content.icon1}
                   width={100}
@@ -111,7 +111,7 @@ const Overview = ({ content }) => {
                   alt="overview-icon"
                 />
               </div>
-              <div className="capitalize">{content.subcontent2}</div>
+              <div className="capitalize text-xs leading-[1.1] max-sm:text-sm max-w-48">{content.subcontent2}</div>
             </div>
           </div>
           <div className="w-[45%] h-[60vw] justify-center flex flex-col  space-y-[3vw] max-sm:w-full max-sm:h-full max-sm:gap-[10vw] max-sm:items-start max-md:w-full max-md:h-full max-md:space-y-[7vw]">

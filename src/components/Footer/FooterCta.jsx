@@ -39,7 +39,7 @@ const FooterCta = () => {
             <div className="z-[1] relative" id="footer-cta">
                 <div className="py-[5vw] pt-[10vw] px-[4vw] max-sm:px-[7vw] max-sm:py-[15%] max-md:py-[10vw]">
                     <div className="flex items-center justify-center max-sm:flex-col max-md:flex-col max-md:items-center">
-                        <div className="w-[35%] max-sm:w-full fadeupanim max-md:w-[60%] animate-float">
+                        <div className="w-[35%] max-sm:w-full fadeupanim max-md:w-[60%]">
                             <Image src={mockupImage} alt="phone mockup" className="w-full h-full object-contain" />
                         </div>
                         <div className="w-[65%] flex flex-col items-center text-center max-sm:w-full max-md:w-full">

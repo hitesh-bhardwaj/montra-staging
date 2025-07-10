@@ -91,8 +91,8 @@ const overviewContent = {
   content: [
     "Montra’s Agency Banking solution enables individuals and businesses to become local banking agents, extending essential financial services to underserved communities. With just a smartphone and the Montra App, agents can perform cash-in, cash-out, transfers, bill payments, and more—bringing modern banking to people where traditional banks can’t reach."
   ],
-  subcontent1: "Steady Income",
-  subcontent2: "Reliable Banking Tools"
+  subcontent1: "Cash Deposit & Withdrawal",
+  subcontent2: "Bill Payments & Transfers"
 }
 const benefitsData = {
   heading: "Become a Montra Agent. Simple Setup. Real Earnings.",

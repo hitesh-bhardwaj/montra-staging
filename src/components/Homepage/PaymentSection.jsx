@@ -108,25 +108,20 @@ export default function PaymentSection() {
       const totalItems = stepsData[mode].length;
       const sectionHeight = 100 / totalItems;
 
-      // const snapPoints = Array(stepsData[mode].length + 1)
-      //   .fill(0)
-      //   .map((_, i) => i / stepsData[mode].length);
-
       itemsRef.current.forEach((el, index) => {
         const start = `${sectionHeight * index + 4}% 70%`;
         const end = `${sectionHeight * (index + 1.2)}% 70%`;
 
-        gsap
-          .timeline({
+        const tl = gsap.timeline({
             scrollTrigger: {
               trigger: sectionRef.current,
               start,
               end,
               scrub: true,
-              // snap: { snapTo: snapPoints, duration: 0.4, ease: "power1.inOut" }
             },
           })
-          .fromTo(
+
+          tl.fromTo(
             el,
             { opacity: 0, yPercent: 7, zIndex: 1, },
             { opacity: 1, yPercent: 0, zIndex: 5, duration: 1, delay: 0.5, ease: "none" }
@@ -141,9 +136,9 @@ export default function PaymentSection() {
             { opacity: 0, scale: 1.2, },
             { opacity: 1, scale: 1, duration: 1, delay: 0.3 }, "<"
           )
-          .to(el, { opacity: 0, yPercent: -7, zIndex: 1, duration: 1, delay: 0.5, ease: "none" }
+          
+          tl.to(el, { opacity: 0, yPercent: -7, zIndex: 1, duration: 1, delay: 0.5, ease: "none" }
           )
-          // .to(imageRefs.current[index], { filter: 'brightness(0.9)', zIndex: 1, duration: 1 }, '<')
           .to(image2Refs.current[index], { opacity: 0, duration: 0.5 }, '<');
       });
     })
@@ -229,7 +224,6 @@ export default function PaymentSection() {
 
   //   return () => ctx.revert();
   // }, [mode]);
-
 
   return (
     <section
@@ -481,7 +475,7 @@ export default function PaymentSection() {
                   <motion.div
                     key={key}
                     className="absolute top-0 left-0 h-full w-full"
-                    style={{ opacity: 1, clipPath: 'rect(0% 100% 100% 28% round 20%)' }}
+                    style={{ opacity: 1, clipPath: 'rect(0% 100% 100% 28% round 7vw)' }}
                   >
                     <Image
                       ref={(el) => (imageRefs.current[idx] = el)}

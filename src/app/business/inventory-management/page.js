@@ -100,8 +100,8 @@ const overviewContent = {
   content:[
     "Keep your business running smoothly with Montra’s easy-to-use inventory management system. Whether you’re managing a retail store, running a service business, or operating multiple outlets, Montra helps you stay organized and in control—right from your phone."
   ],
-  subcontent1:"Track, manage, and grow",
-  subcontent2:"Get Stock Alerts"
+  subcontent1:"Buy & Sell Inventory",
+  subcontent2:"Track Inventory, Accurate Billing"
 }
 const  benefitsData = {
   heading:"Why Choose Montra’s Inventory Tool?",
