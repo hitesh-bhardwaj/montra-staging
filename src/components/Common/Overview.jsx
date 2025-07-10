@@ -87,7 +87,7 @@ const Overview = ({ content }) => {
               ref={block1}
               className="!w-fit h-fit rounded-xl shadow-md drop-shadow-md p-3 bg-[#F1FFE8] absolute top-[82%] left-[5%] z-[7] flex gap-[1vw] max-sm:p-2 max-sm:gap-[2vw] max-sm:rounded-[3vw] max-sm:top-[70%] max-sm:right-[10%] max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw] items-center"
             >
-              <div className="w-[2vw] h-[2vw] max-sm:w-4 max-sm:h-4 max-md:w-[5vw] max-md:h-[5vw]">
+              <div className="w-[2vw] h-[2vw] max-sm:w-6 max-sm:h-6 max-md:w-[5vw] max-md:h-[5vw]">
                 <Image
                   src={content.icon2}
                   width={100}
@@ -96,7 +96,7 @@ const Overview = ({ content }) => {
                   alt="overview-icon"
                 />
               </div>
-              <div className="capitalize text-xs leading-[1.1] max-sm:text-sm w-48">{content.subcontent1}</div>
+              <div className="capitalize text-xs leading-[1.1] max-sm:text-sm max-w-48">{content.subcontent1}</div>
             </div>
             <div
               ref={block2}
@@ -111,7 +111,7 @@ const Overview = ({ content }) => {
                   alt="overview-icon"
                 />
               </div>
-              <div className="capitalize text-xs leading-[1.1] max-sm:text-sm w-48">{content.subcontent2}</div>
+              <div className="capitalize text-xs leading-[1.1] max-sm:text-sm max-w-48">{content.subcontent2}</div>
             </div>
           </div>
           <div className="w-[45%] h-[60vw] justify-center flex flex-col  space-y-[3vw] max-sm:w-full max-sm:h-full max-sm:gap-[10vw] max-sm:items-start max-md:w-full max-md:h-full max-md:space-y-[7vw]">
