@@ -5,10 +5,10 @@ import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
-import BenefitCards from '@/components/Common/BenefitCards'
 import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
+import Cards from '@/components/Common/Cards'
 
 export const metadata = getPageMetadata({
   title: "Montra for Business: Earn as a Montra Agent",
@@ -43,7 +43,7 @@ const businessAgencyBanking = () => {
       <Hero primaryHeading={"Montra for Business: "} heading={"Earn as a Montra Agent"} content={"Empowering you to grow your income and expand your impact with seamless digital transactions and community banking services."} paraWidth={"w-[70%]"} titleWidth={"w-[70%]"} />
       <Overview content={overviewContent} />
       <Benefits data={benefitsData} />
-      <BenefitCards cardData={cardData} />
+      <Cards cardData={cardData} />
       <Rewards rewardsData={rewardsData} />
       <SectionBreak content={"Start small. Dream big. Montra’s Agency Banking supports your journey with the tools and rewards to help you thrive—your way."} width={"w-[95%]"} />
       <FAQs content={faqContent} />
@@ -137,17 +137,26 @@ const cardData = {
   heading: "Empower Your Community with Montra Services",
   subHeading: "Offer everyday banking services to your community—all from your shop.",
   headingWidth: "w-[70%]",
-  icon1: "/assets/images/business-agency-banking/card-icon-1.svg",
-  icon2: "/assets/images/business-agency-banking/card-icon-2.svg",
-  icon3: "/assets/images/business-agency-banking/card-icon-3.svg",
-  icon4: "/assets/images/business-agency-banking/card-icon-4.svg",
-  cardTitle1: "Cash Deposit",
-  cardTitle2: "Recharge & Bill Payments",
-  cardTitle3: "Cash Withdrawal",
-  cardTitle4: "Bank Transfer",
-  cardContent1: "<p>Anyone — whether a Montra customer or not — can visit a Montra Agent to deposit cash directly into a Montra account or bank account.</p>",
-  cardContent2: "<p>Collect cash and process electricity bills, airtime top-ups, and other payments for your customers.</p>",
-  cardContent3: "<p>Let customers withdraw cash from their Montra or bank accounts right at your location.</p>",
-  cardContent4: "<p>Take cash from customers and transfer it to any bank account they choose — safely and easily.</p>",
-
+  cards: [
+    {
+      icon: '/assets/images/business-agency-banking/card-icon-1.svg',
+      title: 'Cash Deposit',
+      para: '<p>Anyone — whether a Montra customer or not — can visit a Montra Agent to deposit cash directly into a Montra account or bank account.</p>',
+    },
+    {
+      icon: '/assets/images/business-agency-banking/card-icon-2.svg',
+      title: 'Recharge & Bill Payments',
+      para: '<p>Collect cash and process electricity bills, airtime top-ups, and other payments for your customers.</p>',
+    },
+    {
+      icon: '/assets/images/business-agency-banking/card-icon-3.svg',
+      title: 'Cash Withdrawal',
+      para: '<p>Let customers withdraw cash from their Montra or bank accounts right at your location.</p>',
+    },
+    {
+      icon: '/assets/images/business-agency-banking/card-icon-4.svg',
+      title: 'Bank Transfer',
+      para: '<p>Take cash from customers and transfer it to any bank account they choose — safely and easily.</p>',
+    },
+  ],
 }

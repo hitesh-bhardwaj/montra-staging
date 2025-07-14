@@ -1,15 +1,16 @@
+import PaymentsHomepage from "@/components/Extras/PaymentsHomepage";
 import FeaturesText from "@/components/Homepage/FeaturesText";
 import PaymentTrial from "@/components/Homepage/PaymentsTrial";
-import SectionBreak from "@/components/Homepage/SectionBreak";
 
 
 export default function Home() {
   return (
     <>
-      {/* <FeaturesText /> */}
+      <div className="bg-white h-screen mt-[-100vh]" />
       <PaymentTrial/>
-      {/* <SectionBreak /> */}
-      
+      <div className="bg-white h-screen" />
+      {/* <PaymentsHomepage /> */}
+      <div className="bg-white h-screen" />
     </>
   );
 }

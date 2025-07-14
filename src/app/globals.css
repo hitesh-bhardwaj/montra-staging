@@ -271,12 +271,22 @@ li .link-line::after {
 }
 
 /* Company Page */
-.card-wrapper {
+.card-wrapper, .inner-card-main .card-inner {
   animation: floating 3s infinite ease-in-out;
 }
 
 .animate-float {
   animation: floating 3s infinite ease-in-out;
+}
+
+#card-2 .card-inner {
+  animation-delay: 0.2s;
+}
+#card-3 .card-inner {
+  animation-delay: 0.4s;
+}
+#card-4 .card-inner {
+  animation-delay: 0.6s;
 }
 
 #card-2 .card-wrapper {
@@ -319,5 +329,9 @@ li .link-line::after {
   }
 }
 
-
+@media screen and (max-width: 1024px) {
+  .inner-card-main .card-inner {
+    animation: none;
+  }
+}
 

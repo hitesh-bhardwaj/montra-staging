@@ -5,13 +5,13 @@ import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
-import BenefitCards from '@/components/Common/BenefitCards'
 import Steps from '@/components/Common/Steps'
 import Features from '@/components/Common/Features'
 import WhatWhy from '@/components/Common/WhatWhy'
 import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
+import Cards from '@/components/Common/Cards'
 
 export const metadata = getPageMetadata({
   title: "Montra Business: Power your Business with MontraPay",
@@ -37,7 +37,7 @@ export const metadata = getPageMetadata({
   },
 });
 
-const businessPaymentGateway = () => {
+const BusinessPaymentGateway = () => {
   return (
    <>
    <WebpageJsonLd metadata={metadata}/>
@@ -49,7 +49,7 @@ const businessPaymentGateway = () => {
    <Steps stepData={stepData}/>
    <Features featuresData={featuresData}/>
    <Rewards rewardsData={rewardsData}/>
-   <BenefitCards cardData={cardData}/>
+   <Cards cardData={cardData}/>
    <WhatWhy data={whatWhyData} height={"h-[47vw]"}/>
    <SectionBreak content={"MontraPay makes it simple for businesses of all sizes to accept secure payments online or offline"} width={"w-[90%]"}/>
    <FAQs content={faqContent}/>
@@ -57,7 +57,7 @@ const businessPaymentGateway = () => {
   )
 }
 
-export default businessPaymentGateway
+export default BusinessPaymentGateway;
 
 const faqContent = [
     {
@@ -161,20 +161,30 @@ const cardData ={
     heading:"Simplify Payment Acceptance with Flexible Methods",
     subHeading:"MontraPay offers a variety of payment acceptance methods for seamless transactions",
     headingWidth:"w-[80%]",
-    icon1:"/assets/images/payment-gateway/card-icon-1.svg",
-    icon2:"/assets/images/payment-gateway/card-icon-2.svg",
-    icon3:"/assets/images/payment-gateway/card-icon-3.svg",
-    icon4:"/assets/images/payment-gateway/card-icon-4.svg",
-    cardTitle1:"QR Scan",
-    cardTitle2:"New & Saved Cards",
-    cardTitle3:"Pay using Montra App",
-    cardTitle4:"USSD",
-    cardContent1:"<p>Customers can scan the QR code displayed on your web page using any mobile banking app to pay directly into your business account.</p>",
-    cardContent2:"<p>Customers can pay using a new debit or credit card or choose a saved card on the Montra platform — no need to re-enter card details.</p>",
-    cardContent3:"<p>Registered Montra users receive a notification in their app to complete payments using Montra Account, linked bank accounts, saved cards, or installments. Once done, they get instant confirmation on the web page where the transaction was initiated.</p>",
-    cardContent4:"<p>Customers can securely complete payments from their bank accounts using a USSD code.</p>",
-    
+    cards:[
+      {
+        icon:"/assets/images/payment-gateway/card-icon-1.svg",
+        title:"QR Scan",
+        para:"<p>Customers can scan the QR code displayed on your web page using any mobile banking app to pay directly into your business account.</p>",
+      },
+      {
+        icon: "/assets/images/payment-gateway/card-icon-2.svg",
+        title: "New & Saved Cards",
+        para: "<p>Customers can pay using a new debit or credit card or choose a saved card on the Montra platform — no need to re-enter card details.</p>",
+      },
+      {
+        icon: "/assets/images/payment-gateway/card-icon-3.svg",
+        title: "Pay using Montra App",
+        para: "<p>Registered Montra users receive a notification in their app to complete payments using Montra Account, linked bank accounts, saved cards, or installments. Once done, they get instant confirmation on the web page where the transaction was initiated.</p>",
+      },
+      {
+        icon: "/assets/images/payment-gateway/card-icon-4.svg",
+        title: "USSD",
+        para: "<p>Customers can securely complete payments from their bank accounts using a USSD code.</p>",
+      },
+    ]
   }
+  
   const whatWhyData = {
     heading:"Get Paid Instantly with Montra Payment Links",
     headingWidth:"w-[85%]",

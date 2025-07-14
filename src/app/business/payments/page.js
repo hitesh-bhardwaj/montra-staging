@@ -5,12 +5,12 @@ import FAQs from '@/components/Homepage/FAQs'
 import Benefits from '@/components/Common/Benefits'
 import React from 'react'
 import Rewards from '@/components/Common/Rewards'
-import BenefitCards from '@/components/Common/BenefitCards'
 import Steps from '@/components/Common/Steps'
 import WhatWhy from '@/components/Common/WhatWhy'
 import { BreadcrumbsJSONLD, FAQJSONLD, WebpageJsonLd } from '@/lib/json-ld'
 import { homepage } from '@/lib/util'
 import { getPageMetadata } from '@/lib/seo.config'
+import Cards from '@/components/Common/Cards'
 
 export const metadata = getPageMetadata({
   title: "Montra Business: Digital Payments That Drive Growth",
@@ -45,7 +45,7 @@ const businessPayments = () => {
       <Hero primaryHeading={"Montra for Business: "} heading={"Digital Payments That Drive Growth"} content={"With Montra, getting paid is simple, secure, and built for scale. Empowering your Business with Seamless Digital Transactions "} paraWidth={"w-[60%]"} />
       <Overview content={overviewContent} />
       <Benefits data={benefitsData} />
-      <BenefitCards cardData={cardData} />
+      <Cards cardData={cardData} />
       <Rewards rewardsData={rewardsData} />
       <Steps stepData={stepData} />
       <WhatWhy data={whatWhyData} height={"h-[50vw]"} />
@@ -130,20 +130,30 @@ const cardData = {
   heading: "Accept & Collect Payments Your Way",
   subHeading: "With Montra, Getting Paid Is Easy it’s Quick. Safe & Customer-friendly. Accept payments your way and keep your business moving forward.",
   headingWidth: "w-[60%]",
-  icon1: "/assets/images/business-payments/card-icon-1.svg",
-  icon2: "/assets/images/business-payments/card-icon-2.svg",
-  icon3: "/assets/images/business-payments/card-icon-3.svg",
-  icon4: "/assets/images/business-payments/card-icon-4.svg",
-  cardTitle1: "QR Scan",
-  cardTitle2: "Tap & Pay",
-  cardTitle3: "POS Terminal",
-  cardTitle4: "Bank Transfer",
-  cardContent1: "<p>Customers scan your QR code using the Montra App or any mobile banking app to make payments.</p>",
-  cardContent2: "<p>Turn your phone into a POS — customers can tap their debit or credit cards on your Montra App for quick, contactless payments.</p>",
-  cardContent3: "<p>Use a Montra POS device to accept card payments easily and securely.</p>",
-  cardContent4: "<p>Receive payments directly into your Montra Business Account through customer bank transfers.</p>",
-
+  cards: [
+    {
+      icon: "/assets/images/business-payments/card-icon-1.svg",
+      title: "QR Scan",
+      para: "<p>Customers scan your QR code using the Montra App or any mobile banking app to make payments.</p>",
+    },
+    {
+      icon: "/assets/images/business-payments/card-icon-2.svg",
+      title: "Tap & Pay",
+      para: "<p>Turn your phone into a POS — customers can tap their debit or credit cards on your Montra App for quick, contactless payments.</p>",
+    },
+    {
+      icon: "/assets/images/business-payments/card-icon-3.svg",
+      title: "POS Terminal",
+      para: "<p>Use a Montra POS device to accept card payments easily and securely.</p>",
+    },
+    {
+      icon: "/assets/images/business-payments/card-icon-4.svg",
+      title: "Bank Transfer",
+      para: "<p>Receive payments directly into your Montra Business Account through customer bank transfers.</p>",
+    },
+  ],
 }
+
 const whatWhyData = {
   heading: "Smart Invoicing. Instant Payments.",
   headingWidth: "w-[55%] max-md:w-[80%]",

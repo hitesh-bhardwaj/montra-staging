@@ -8,7 +8,7 @@ import { ImageObjectJsonLd, LocalBusiness, OrganizationJsonLd, WebsiteJsonLd } f
 const Layout = ({ children }) => {
 
   usePageVisibilityTitle({
-    inactiveTitle: 'Hey, We Miss You!',
+    inactiveTitle: 'Hey, We Miss You 🥲!',
   });
 
   useEffect(() => {
