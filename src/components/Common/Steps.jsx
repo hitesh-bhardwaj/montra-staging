@@ -202,7 +202,7 @@ const Steps = ({ stepData }) => {
               {stepData.steps[step].para}
             </motion.p>
           </div>
-          <div className="flex items-center gap-[1vw] max-sm:z-[10] max-sm:flex-wrap max-sm:space-y-[2vw]">
+          <div className="flex items-center gap-[1vw] max-sm:z-[10] max-sm:flex-wrap max-sm:gap-y-[2vw]">
             {stepData.steps.map((s, i) => (
               <div
                 key={i}
@@ -222,12 +222,12 @@ const Steps = ({ stepData }) => {
                   prevStepRef.current = i;
                 }}
               >
-                <div className="relative w-[2.5vw] h-[2.5vw] border border-white rounded-full p-2 max-sm:w-[9vw]  max-sm:h-[9vw] max-md:w-[7vw] max-md:h-[7vw]">
+                <div className="relative w-[2.5vw] h-[2.5vw] border border-white rounded-full p-2 max-sm:w-[9vw]  max-sm:h-[9vw] max-md:w-[7vw] max-md:h-[7vw] overflow-hidden">
                   <span className="absolute inset-0 flex justify-center items-center font-display max-sm:text-[4vw] max-md:text-[2.5vw]">
                     {s.number}
                   </span>
                   <svg
-                    className="absolute inset-0 -rotate-[90deg]"
+                    className="absolute inset-0 -rotate-[90deg] h-full w-full"
                     viewBox="0 0 40 40"
                   >
                     <motion.circle
