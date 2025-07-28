@@ -10,7 +10,7 @@ const Network = () => {
                         Join our Strong Network of Partners
                     </h2>
                 </Heading>
-                <div className="max-sm:w-[100vw] max-sm:overflow-scroll  max-sm:pb-[5vw] ">
+                <div className="max-sm:w-[100vw] max-sm:overflow-scroll  max-sm:pb-[5vw]">
                     <div className="grid grid-cols-5 gap-[1vw] max-sm:flex max-sm:gap-[4vw] max-sm:flex-nowrap max-sm:w-fit max-sm:px-[5vw] max-md:flex max-md:flex-wrap max-md:justify-center max-md:gap-[3vw]">
                         {logos.map((logo, index) => (
                             <div

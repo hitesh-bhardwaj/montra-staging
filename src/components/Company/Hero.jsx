@@ -181,7 +181,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="h-[125vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw] max-md:pb-[10vw] hero-content">
+      <div className="h-[125vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw] max-md:pb-[10vw] hero-content max-sm:h-[110vh]">
         <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw] max-md:flex-col max-md:items-start max-md:gap-[7vw]">
           <Heading>
             <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[27%] font-display max-sm:w-full max-sm:text-[10vw] max-md:text-[5.5vw] max-md:w-[80%]">

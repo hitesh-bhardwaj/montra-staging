@@ -155,7 +155,7 @@ export default function Footer() {
                                     ))}
                                 </ul>
 
-                                <div className="flex flex-col justify-between items-center">
+                                <div className="flex flex-col justify-between items-center ">
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw]'>
                                         <a
                                             href="/platform"
@@ -175,11 +175,11 @@ export default function Footer() {
                                     </div>
 
                                     {/* Social Media Links */}
-                                    <div className='space-y-[0.5vw] max-sm:space-y-[2vw] max-sm:mt-[10vw]'>
+                                    <div className='space-y-[0.5vw] max-sm:space-y-[2vw] max-sm:mt-[10vw] '>
                                         {socialLinks.map((link, index) => (
-                                            <a key={index} href={link.href} target='_blank' aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3 '>
-                                                <span className='link-line'>{link.name}</span>
-                                                <div className='h-[0.8vw] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw]'>
+                                            <a key={index} href={link.href} target='_blank' aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3  '>
+                                                <span className='link-line '>{link.name}</span>
+                                                <div className='h-[0.8vw] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw] '>
                                                     <span className='inline-flex w-[200%] h-full duration-300 group-hover:translate-x-1/2'>
                                                         <ArrowRight className='h-[0.8vw] w-[1vw] inline-block scale-0 group-hover:scale-100 duration-300 max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw]' />
                                                         <ArrowRight className='h-[0.8vw] w-[1vw] inline-block group-hover:scale-0 duration-300  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw]' />

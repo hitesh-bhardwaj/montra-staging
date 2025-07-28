@@ -393,16 +393,16 @@ const Hero = () => {
             Unlock Your Financial Potential with Montra
             </div>
             <div className="flex flex-col gap-[1vw] absolute right-[5%] bottom-[25%] z-[10] max-sm:text-[4.1vw] max-sm:gap-[4vw] max-sm:bottom-[35%] max-md:bottom-[43%] max-md:gap-[2vw]">
-              <div className="w-[23vw] rounded-full border border-white/40 backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
+              <div className="w-[23vw] rounded-full border border-white/40 backdrop-blur-lg bg-white/10 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw] max-sm:bg-black/30">
               Go Cashless
               </div>
-              <div className="w-[23vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
+              <div className="w-[23vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/10 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw] max-sm:bg-black/30">
               Pay Smarter
               </div>
-              <div className="w-[23vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
+              <div className="w-[23vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/10 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw] max-sm:bg-black/30">
               Shop Seamlessly
               </div>
-              <div className="w-[23vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/20 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw]">
+              <div className="w-[23vw] rounded-full border border-white/40  backdrop-blur-lg bg-white/10 py-[0.7vw] px-[1.5vw] max-sm:w-[90vw] max-sm:py-[3vw] max-sm:px-[7vw] max-md:w-[45vw] max-md:py-[1.5vw] max-md:px-[3.5vw] max-sm:bg-black/30">
               Access Credit, Insurance &
               Investment products
               </div>
