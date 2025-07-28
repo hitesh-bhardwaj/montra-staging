@@ -59,7 +59,6 @@ export default function Hero() {
             },
             "<"
           )
-
       }
     });
     return () => ctx.revert();
@@ -69,16 +68,19 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const phrases = ["personal", "business"];
       let current = 0;
+      let isFirstRun = true;
 
       const fadeInOut = () => {
         const tl = gsap.timeline();
         tl.to(textRef.current, {
           duration: 0.5,
           yPercent: 100,
-          delay: 7,
+          opacity: 0,
+          delay: isFirstRun ? 9 : 4.5,
           onComplete: () => {
             current = (current + 1) % phrases.length;
             textRef.current.innerText = phrases[current];
+            isFirstRun = false;
           },
         });
         tl.to(textRef.current, {
@@ -116,7 +118,7 @@ export default function Hero() {
               <span className="text-primary">One app</span> to manage all your{" "}
               <span className="text-primary leading-[1] w-[22vw] max-sm:w-[44.5vw] max-sm:mb-[-1.2vw] h-full mb-[-0.75vw] inline-block overflow-hidden max-md:w-[31vw]">
                 <span style={{ display: "inline-block" }} ref={textRef}>
-                  Personal
+                  personal
                 </span>
               </span>{" "}
               finances

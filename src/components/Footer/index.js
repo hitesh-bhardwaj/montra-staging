@@ -5,6 +5,7 @@ import { ArrowRight, NftIcon, SellIcon, PayIcon } from '../Buttons/icons'
 import React, { useEffect } from 'react'
 import { useAnimatedNavigation } from '../NavigationContext';
 import gsap from 'gsap';
+import Link from 'next/link';
 
 const iconMap = {
     PAY: PayIcon,
@@ -14,7 +15,7 @@ const iconMap = {
 
 export default function Footer() {
     const { navigateTo } = useAnimatedNavigation();
-    const words = ['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL'];
+    const words = ['PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE', 'SELL', 'PAY', 'RECEIVE',];
     useEffect(() => {
         const ctx = gsap.context(() => {
             if (globalThis.innerWidth < 541) {
@@ -22,7 +23,6 @@ export default function Footer() {
                     scrollTrigger: {
                         trigger: "#footer",
                         start: "top top",
-                        //   markers: true,
                         onLeaveBack: () => {
                             gsap.to(".montra-logo", {
                                 filter: "brightness(1)",
@@ -91,12 +91,12 @@ export default function Footer() {
         <>
             <footer
                 id='footer'
-                className="w-screen h-[43vw] max-sm:h-full max-sm:rounded-t-[10vw] max-sm:overflow-hidden max-md:h-[115vw] "
+                className="w-screen h-[38vw] max-sm:h-full max-sm:rounded-t-[10vw] max-sm:overflow-hidden max-md:h-[115vw] "
                 style={{ clipPath: 'rect(0px 100% 100% 0px)' }}
             >
-                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[45vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-lg z-0 max-sm:h-full max-sm:static max-sm:pb-[0vw] max-md:h-[115vw]' >
+                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[42vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-lg z-0 max-sm:h-full max-sm:static max-sm:pb-[0vw] max-md:h-[115vw]' >
                     {/* Top Content */}
-                    <div className="flex flex-row mb-[5vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw]  max-md:flex-col max-md:gap-[10vw] max-md:px-[7vw]">
+                    <div className="flex flex-row mb-[4vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw]  max-md:flex-col max-md:gap-[10vw] max-md:px-[7vw]">
                         {/* Logo */}
                         <div className="w-fit max-sm:w-full max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-sm:gap-[7vw] max-md:w-full max-md:justify-center max-md:flex max-md:flex-col max-md:gap-[3vw] ">
                             <Image className='w-[30vw] max-sm:w-[85%] mb-[2vw]' src={logo} alt="Montra Logo" width={600} height={126} />
@@ -128,7 +128,6 @@ export default function Footer() {
                                                 onClick={(e) => {
                                                     e.preventDefault();
                                                     navigateTo(link.href);
-                                                    window.scrollTo(0, 0);
                                                 }}
                                                 className='link-line'
                                             >
@@ -147,7 +146,6 @@ export default function Footer() {
                                                 onClick={(e) => {
                                                     e.preventDefault();
                                                     navigateTo(link.href);
-                                                    window.scrollTo(0, 0);
                                                 }}
                                                 className='link-line'
                                             >
@@ -166,13 +164,14 @@ export default function Footer() {
                                                 navigateTo("/platform");
                                             }}
                                             className="uppercase block w-fit link-line" >Platform</a>
-                                        <a
+                                        <Link
                                             href="/company"
+                                            scroll={false}
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 navigateTo("/company");
                                             }}
-                                            className="uppercase block w-fit link-line">Company</a>
+                                            className="uppercase block w-fit link-line">Company</Link>
                                     </div>
 
                                     {/* Social Media Links */}
@@ -196,13 +195,13 @@ export default function Footer() {
 
                     {/* Marquee */}
                     <div className="overflow-hidden whitespace-nowrap text-nowrap max-sm:h-[20vw] bg-primary max-sm:hidden max-md:py-[5vw]">
-                        <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[7vw] leading-0 font-semibold text-white gap-[5vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
+                        <div className="py-[2vw] marquee whitespace-nowrap flex items-center text-[6vw] leading-0 font-semibold text-white gap-[4vw] w-max max-sm:text-[7vw] max-sm:py-[4.5vw]">
                             {words.map((word, i) => {
-                                const IconComponent = iconMap[word]; // dynamically pick icon
+                                const IconComponent = iconMap[word];
                                 return (
                                     <React.Fragment key={i}>
                                         <span>{word}</span>
-                                        <IconComponent className="w-[6vw] h-[6vw] mt-2" />
+                                        <IconComponent className="w-[5vw] h-[5vw] mt-2" />
                                     </React.Fragment>
                                 );
                             })}

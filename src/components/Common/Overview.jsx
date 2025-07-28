@@ -74,7 +74,7 @@ const Overview = ({ content }) => {
               width={700}
               height={1080}
             />
-            <div className="absolute top-[25%] left-[10%] w-full h-full max-sm:left-0 max-md:left-0 max-md:top-[15%]">
+            <div className="absolute top-1/2 -translate-y-1/2 left-[10%] w-full h-auto max-sm:left-0 max-md:left-0 max-md:top-[15%]">
               <Image
                 src={content.bgImg}
                 alt="overview-banking-image"
@@ -85,7 +85,7 @@ const Overview = ({ content }) => {
             </div>
             <div
               ref={block1}
-              className="!w-fit h-fit rounded-xl shadow-md drop-shadow-md p-3 bg-[#F1FFE8] absolute top-[82%] left-[5%] z-[7] flex gap-[1vw] max-sm:p-2 max-sm:gap-[2vw] max-sm:rounded-[3vw] max-sm:top-[70%] max-sm:right-[10%] max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw] items-center"
+              className="!w-fit h-fit rounded-xl shadow-md drop-shadow-md p-3 bg-[#F1FFE8] absolute top-[75%] left-[10%] z-[7] flex gap-[1vw] max-sm:p-2 max-sm:gap-[2vw] max-sm:rounded-[3vw] max-sm:top-[70%] max-sm:right-[10%] max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw] items-center"
             >
               <div className="w-[2vw] h-[2vw] max-sm:w-6 max-sm:h-6 max-md:w-[5vw] max-md:h-[5vw]">
                 <Image
@@ -100,7 +100,7 @@ const Overview = ({ content }) => {
             </div>
             <div
               ref={block2}
-              className="w-fit h-fit rounded-xl shadow-md drop-shadow-md p-3 bg-[#FFEAEE] absolute top-[45%] left-[40%] z-[7] flex gap-[1vw] max-sm:p-2 max-sm:gap-[2vw] max-sm:rounded-[3vw] items-center max-sm:left-[35%] max-sm:top-[20%] max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw]"
+              className="w-fit h-fit rounded-xl shadow-md drop-shadow-md p-3 bg-[#FFEAEE] absolute top-[25%] left-[60%] z-[7] flex gap-[1vw] max-sm:p-2 max-sm:gap-[2vw] max-sm:rounded-[3vw] items-center max-sm:left-[35%] max-sm:top-[20%] max-md:px-[3vw] max-md:py-[2vw] max-md:rounded-[3vw]"
             >
               <div className="w-[2vw] h-[2vw] max-sm:w-6 max-sm:h-6 max-md:w-[5vw] max-md:h-[5vw]">
                 <Image 

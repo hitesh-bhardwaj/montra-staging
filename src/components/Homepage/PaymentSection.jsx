@@ -240,14 +240,14 @@ export default function PaymentSection() {
           />
           <button
             onClick={() => swapMode("personal")}
-            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1vw] ${mode === "personal" ? "text-white" : ""
+            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1.2vw] ${mode === "personal" ? "text-white" : ""
               }`}
           >
             Personal
           </button>
           <button
             onClick={() => swapMode("business")}
-            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1vw] ${mode === "business" ? "text-white" : ""
+            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1.2vw] ${mode === "business" ? "text-white" : ""
               }`}
           >
             Business
@@ -282,7 +282,7 @@ export default function PaymentSection() {
 
         {/* PERSONAL NAV */}
         {mode === "personal" && (
-          <div className="flex gap-4 w-[15vw]">
+          <div className="flex gap-4 w-[13vw]">
             <motion.svg
               className="h-[15vw]"
               width="14"
@@ -359,7 +359,7 @@ export default function PaymentSection() {
 
         {/* BUSINESS NAV */}
         {mode === "business" && (
-          <div className="flex gap-4 w-[15vw]">
+          <div className="flex gap-4 w-[13vw]">
             <motion.svg
               className="h-[20vw]"
               width="20"
@@ -475,7 +475,7 @@ export default function PaymentSection() {
                   <motion.div
                     key={key}
                     className="absolute top-0 left-0 h-full w-full"
-                    style={{ opacity: 1, clipPath: 'rect(0% 100% 100% 28% round 7vw)' }}
+                    style={{ opacity: 1, clipPath: 'rect(0% 80% 100% 28% round 6.2vw)' }}
                   >
                     <Image
                       ref={(el) => (imageRefs.current[idx] = el)}
