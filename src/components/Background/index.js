@@ -229,7 +229,7 @@ export default function InteractiveBackground() {
   return (
     <div
       id="canvas-18971"
-      className="max-sm:hidden max-md:hidden"
+      className="max-sm:hidden max-md:hidden bg-white"
       style={{
         position: 'sticky',
         top: 0,

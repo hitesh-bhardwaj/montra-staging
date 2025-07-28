@@ -73,9 +73,9 @@ const Rewards = ({ rewardsData }) => {
             <div
               key={index}
               ref={(el) => (cards.current[index] = el)}
-              className="flex flex-col gap-[7vw]  group max-md:w-[45%] max-md:gap-[6vw] max-sm:w-full"
+              className="flex flex-col gap-[3vw]  group max-md:w-[45%] max-md:gap-[6vw] max-sm:w-full"
             >
-              <div className="flex flex-col gap-[1.5vw] h-[19vw] max-sm:h-fit max-sm:gap-[6vw] max-md:h-full max-md:gap-[3vw]">
+              <div className="flex flex-col gap-[1.5vw] h-auto max-sm:h-fit max-sm:gap-[6vw] max-md:h-full max-md:gap-[3vw]">
                 <Image
                   src={item.icon}
                   height={40}
@@ -88,7 +88,7 @@ const Rewards = ({ rewardsData }) => {
                 </p>
                 <p className="text-start">{item.para}</p>
               </div>
-              <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden">
+              <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden mt-auto">
                 <span className="block scale-x-0 bg-primary h-full origin-[100%] group-hover:scale-x-100 transition-transform duration-700 ease-link-line group-hover:origin-[0]" />
               </div>
             </div>

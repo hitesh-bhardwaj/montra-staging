@@ -122,7 +122,6 @@ const Control = () => {
           trigger: "#control",
           start: "5% 90%",
           end: "20% 90%",
-          // markers:true,
           scrub: true,
         },
       });
@@ -132,9 +131,7 @@ const Control = () => {
           trigger: "#control",
           pin: ".icon-container",
           start: "+150 top",
-          // end: "+3750 top",
-          end: "80% top",
-          // markers:true,
+          end: "78% top",
           scrub: true,
         },
       });
@@ -229,22 +226,19 @@ const Control = () => {
           opacity: 0,
           delay: -1.2,
           duration: 0.2,
-        
         });
       const bl = gsap.timeline({
         scrollTrigger: {
           trigger: "#control",
-          start: "65% top",
-          end: "81% top",
+          start: "55% top",
+          end: "70% top",
           scrub: true,
-          // markers:true,
         },
       });
       bl.to(".bottom-content", {
         opacity: 1,
         duration: 0.7,
-        delay: 1,
-        onStart: () => {
+        onComplete: () => {
           setPointerEvent(true);
         },
         onReverseComplete: () => {
@@ -257,7 +251,7 @@ const Control = () => {
 
   return (
     <div
-      className="w-screen h-[700vh] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb] max-md:hidden"
+      className="w-screen h-[600vh] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb] max-md:hidden"
       id="control"
     >
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">

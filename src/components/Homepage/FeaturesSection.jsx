@@ -204,21 +204,6 @@ const FeatureSection = () => {
                             className="phone-mockup-desktop object-contain absolute w-[40vw] h-auto top-0 left-0 max-md:w-[70vw] max-sm:w-[90vw]"
                         />
                     </div>
-                    
-                    {/* <Image
-                        src="/assets/images/homepage/hand-mockup-hand.png"
-                        alt="App mockup"
-                        width={800}
-                        height={1000}
-                        className="w-[100%] translate-x-[19%] max-md:hidden phone-mockup-desktop h-auto max-sm:translate-x-0 object-cover  relative z-[9999] max-md:w-[80vw]"
-                    />
-                    <Image
-                        src="/assets/images/homepage/phone-mockup.png"
-                        alt="App mockup"
-                        width={800}
-                        height={1000}
-                        className="w-[65%] hidden max-md:block  h-auto max-sm:translate-x-0 object-cover max-sm:block max-sm:w-[120vw] max-sm:h-[140vw] relative z-[9999] max-md:w-[90vw]"
-                    /> */}
                 </motion.div>
                 {icons.map((icon, i) => {
                     const style =
