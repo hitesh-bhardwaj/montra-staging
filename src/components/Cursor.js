@@ -57,7 +57,7 @@ function Cursor() {
     }, [])
     return (
         <>
-            <div id='cursor' className='cursor fixed top-[-2%] left-[-2%] scale-0 h-[3vw] w-[8vw] rounded-[2vw] pointer-events-none z-[999] flex justify-center items-center bg-white'>
+            <div id='cursor' className='cursor fixed top-[-2%] left-[-2%] scale-0 h-[3vw] w-[8vw] rounded-[2vw] pointer-events-none z-[999] flex justify-center items-center bg-white max-md:hidden max-sm:hidden'>
                 <span className='cursor-text tracking-wider text-[1.2vw] font-display text-black bg-transparent font-semibold drop-shadow-2xl'>Drag</span>
             </div>
         </>

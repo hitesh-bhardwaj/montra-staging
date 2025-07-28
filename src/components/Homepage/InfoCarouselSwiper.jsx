@@ -137,11 +137,11 @@ export default function InfoCarouselSwiper() {
 
 const Card = ({ img, bgColor, text }) => {
   return (
-    <div style={{ background: bgColor }} className="overflow-hidden group min-h-[38vw] rounded-[3vw] hover:scale-[0.99] duration-500 transition-transform max-sm:rounded-[9vw] max-md:h-[65vw] max-sm:h-fit max-md:rounded-[5vw]">
+    <div style={{ background: bgColor }} className="overflow-hidden group min-h-[38vw] rounded-[3vw] hover:scale-[0.99] duration-500 transition-transform max-sm:rounded-[9vw] max-md:h-fit max-sm:h-fit max-md:rounded-[5vw]">
       <div className='relative h-[27vw] w-full rounded-b-[3vw] overflow-hidden max-sm:h-[100vw] max-sm:rounded-[9vw] max-md:h-[40vw]'>
         <Image quality={100} src={img} placeholder='blur' alt='feature image' fill className='object-cover group-hover:scale-[1.05] duration-500' />
       </div>
-      <p className='text-black-1 py-7 px-6 max-sm:pt-4'>{text}</p>
+      <p className='text-black-1 py-7 px-6 max-sm:pt-4 max-md:pt-3'>{text}</p>
     </div>
   )
 }
