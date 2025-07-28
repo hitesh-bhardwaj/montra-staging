@@ -138,21 +138,25 @@ const cardData = {
   cards: [
     {
       icon: "/assets/images/personal-payments/card-1.svg",
+      icon2:"/assets/images/personal-payments/montra-accounts.svg",
       title: "Montra Account",
       para: "<p>Make fast, hassle-free payments with your Montra Personal or Business Account.</p>",
     },
     {
       icon: "/assets/images/personal-payments/card-2.svg",
+      icon2:"/assets/images/personal-payments/linked-bank.svg",
       title: "Linked Bank Accounts",
       para: "<p>Easily link your other bank accounts on the Montra app and manage all your payments in one place — one app for all your bank accounts.</p>",
     },
     {
       icon: "/assets/images/personal-payments/card-3.svg",
+      icon2:"/assets/images/personal-payments/linked-cards.svg",
       title: "Linked Cards",
       para: "<p>Securely link your debit or credit cards on the Montra App and make seamless payments — no need to carry physical cards.</p>",
     },
     {
       icon: "/assets/images/personal-payments/card-4.svg",
+      icon2:"/assets/images/personal-payments/installments-blue.svg",
       title: "Installments",
       para: "<p>Don’t have enough cash? On Montra, you can instantly borrow money from our lending partners to complete your payment.</p>",
     }

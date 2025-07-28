@@ -114,21 +114,25 @@ const cardData = {
   cards: [
     {
       icon: "/assets/images/business-tapnpay/card-icon-1.svg",
+      icon2:"/assets/images/business-tapnpay/accept.svg",
       title: "Accept Contactless Card Instantly",
       para: "<p>Easily accept payments from any physical contactless debit or credit card — no extra hardware or dongles needed.</p>",
     },
     {
-      icon: "/assets/images/business-tapnpay/card-icon-2.svg",
+      icon: "/assets/images/business-tapnpay/card-icon-4.svg",
+      icon2:"/assets/images/business-tapnpay/fast-setup.svg",
       title: "Fast Setup & Activation",
       para: "<p>Activate Tap & Pay directly in your Montra App and start accepting payments right away.</p>",
     },
     {
-      icon: "/assets/images/business-tapnpay/card-icon-3.svg",
+      icon: "/assets/images/business-tapnpay/card-icon-2.svg",
+      icon2:"/assets/images/business-tapnpay/get-started.svg",
       title: "Get Started Fast",
       para: "<p>Track transactions, monitor performance, and access real-time data to make better business decisions.</p>",
     },
     {
-      icon: "/assets/images/business-tapnpay/card-icon-4.svg",
+      icon: "/assets/images/business-tapnpay/card-icon-3.svg",
+      icon2:"/assets/images/business-tapnpay/smart-dashboard.svg",
       title: "Smart Dashboard",
       para: "<p>Enable Tap & Pay inside the Montra App with minimal setup.</p>",
     },

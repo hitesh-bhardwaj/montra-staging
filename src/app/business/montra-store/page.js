@@ -150,21 +150,25 @@ const cardData = {
   cards: [
     {
       icon: '/assets/images/business-montra-store/card-icon-1.svg',
+      icon2:"/assets/images/business-montra-store/delivery.svg",
       title: 'Delivery/ Takeout/ Rentals',
       para: '<p>Sell your products on Montra Store and set the model that fits your business. Activate Rentals if you only offer items for rent, Delivery if you ship products to customers’ addresses, or Takeout if customers will pick up orders from your location.</p>',
     },
     {
       icon: '/assets/images/business-montra-store/card-icon-2.svg',
+      icon2:"/assets/images/business-montra-store/dine-in.svg",
       title: 'Dine-in',
       para: '<p>Restaurants can create a Montra Store to let customers book tables for dine-in. Share your menu online so customers can easily make reservations or place orders for food delivery.</p>',
     },
     {
       icon: '/assets/images/business-montra-store/card-icon-3.svg',
+      icon2:"/assets/images/business-montra-store/home-services.svg",
       title: 'Home Services',
       para: '<p>Offer home services like cleaning, pest control, electrical work, plumbing, carpentry, salon and spa treatments, painting, appliance repairs, or healthcare. Montra helps you reach customers who need services delivered right to their doorstep.</p>',
     },
     {
       icon: '/assets/images/business-montra-store/card-icon-4.svg',
+      icon2:"/assets/images/business-montra-store/appointments.svg",
       title: 'Appointments',
       para: '<p>For professional services offered in-office or virtually — like doctors, consultants, beauty services, or home improvement experts —  customers can book appointments directly through your Montra Store.</p>',
     },

@@ -164,21 +164,25 @@ const cardData ={
     cards:[
       {
         icon:"/assets/images/payment-gateway/card-icon-1.svg",
+        icon2:"/assets/images/payment-gateway/qr-scan.svg",
         title:"QR Scan",
         para:"<p>Customers can scan the QR code displayed on your web page using any mobile banking app to pay directly into your business account.</p>",
       },
       {
         icon: "/assets/images/payment-gateway/card-icon-2.svg",
+        icon2:"/assets/images/payment-gateway/new-and-saved-cards.svg",
         title: "New & Saved Cards",
         para: "<p>Customers can pay using a new debit or credit card or choose a saved card on the Montra platform — no need to re-enter card details.</p>",
       },
       {
         icon: "/assets/images/payment-gateway/card-icon-3.svg",
+        icon2:"/assets/images/payment-gateway/pay.svg",
         title: "Pay using Montra App",
         para: "<p>Registered Montra users receive a notification in their app to complete payments using Montra Account, linked bank accounts, saved cards, or installments. Once done, they get instant confirmation on the web page where the transaction was initiated.</p>",
       },
       {
         icon: "/assets/images/payment-gateway/card-icon-4.svg",
+        icon2:"/assets/images/payment-gateway/ussd.svg",
         title: "USSD",
         para: "<p>Customers can securely complete payments from their bank accounts using a USSD code.</p>",
       },

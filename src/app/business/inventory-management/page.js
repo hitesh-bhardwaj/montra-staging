@@ -151,21 +151,25 @@ const cardData = {
   cards: [
     {
       icon: '/assets/images/business-inventory/card-icon-1.svg',
+      icon2:"/assets/images/business-inventory/buy-inventory.svg",
       title: 'Buy Inventory',
       para: '<p>Purchase stock from other businesses on Montra, receive their invoices, and pay instantly using your Montra Business Account.</p>',
     },
     {
       icon: '/assets/images/business-inventory/card-icon-2.svg',
+      icon2:"/assets/images/business-inventory/manage-stock.svg",
       title: 'Manage Your Stock',
       para: '<p>Track what you buy and sell through the Montra App to keep your inventory updated. Even your tertiary sales (to consumers) are factored in, and you can edit stock levels anytime to support accurate invoicing and smart restocking decisions.</p>',
     },
     {
       icon: '/assets/images/business-inventory/card-icon-3.svg',
+      icon2:"/assets/images/business-inventory/sell-inventory.svg",
       title: 'Sell Inventory',
       para: '<p>Send invoices to other businesses on Montra and receive payments instantly, streamlining your sales process.</p>',
     },
     {
       icon: '/assets/images/business-inventory/card-icon-4.svg',
+      icon2:"/assets/images/business-inventory/place-orders-blue.svg",
       title: 'Place Orders with Linked Distributors',
       para: '<p>Easily place orders with distributors you’ve linked to on the Montra App, simplifying your supply chain.</p>',
     },

@@ -133,21 +133,25 @@ const cardData = {
   cards: [
     {
       icon: "/assets/images/business-payments/card-icon-1.svg",
+      icon2:"/assets/images/business-payments/qr-code.svg",
       title: "QR Scan",
       para: "<p>Customers scan your QR code using the Montra App or any mobile banking app to make payments.</p>",
     },
     {
       icon: "/assets/images/business-payments/card-icon-2.svg",
+      icon2:"/assets/images/business-payments/tap-and-pay.svg",
       title: "Tap & Pay",
       para: "<p>Turn your phone into a POS — customers can tap their debit or credit cards on your Montra App for quick, contactless payments.</p>",
     },
     {
       icon: "/assets/images/business-payments/card-icon-3.svg",
+      icon2:"/assets/images/business-payments/pos-terminal.svg",
       title: "POS Terminal",
       para: "<p>Use a Montra POS device to accept card payments easily and securely.</p>",
     },
     {
       icon: "/assets/images/business-payments/card-icon-4.svg",
+      icon2:"/assets/images/business-payments/bank-transfer-blue.svg",
       title: "Bank Transfer",
       para: "<p>Receive payments directly into your Montra Business Account through customer bank transfers.</p>",
     },

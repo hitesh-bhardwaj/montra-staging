@@ -5,6 +5,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Heading from "@/components/Heading";
 import Copy from "@/components/Copy";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -132,6 +133,7 @@ export default function Cards({ cardData }) {
                             key={index}
                             id={`card-${index + 1}`}
                             icon={item.icon}
+                            icon2={item.icon2}
                             cardTitle={item.title}
                             cardContent={item.para}
                             ref={(el) => (cardRefs.current[index] = el)}

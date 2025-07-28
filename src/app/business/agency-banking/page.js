@@ -140,21 +140,25 @@ const cardData = {
   cards: [
     {
       icon: '/assets/images/business-agency-banking/card-icon-1.svg',
+      icon2: '/assets/images/business-agency-banking/cash-deposit.svg',
       title: 'Cash Deposit',
       para: '<p>Anyone — whether a Montra customer or not — can visit a Montra Agent to deposit cash directly into a Montra account or bank account.</p>',
     },
     {
       icon: '/assets/images/business-agency-banking/card-icon-2.svg',
+      icon2: '/assets/images/business-agency-banking/recharge.svg',
       title: 'Recharge & Bill Payments',
       para: '<p>Collect cash and process electricity bills, airtime top-ups, and other payments for your customers.</p>',
     },
     {
       icon: '/assets/images/business-agency-banking/card-icon-3.svg',
+      icon2: '/assets/images/business-agency-banking/cash-withdrawl.svg',
       title: 'Cash Withdrawal',
       para: '<p>Let customers withdraw cash from their Montra or bank accounts right at your location.</p>',
     },
     {
       icon: '/assets/images/business-agency-banking/card-icon-4.svg',
+      icon2: '/assets/images/business-agency-banking/bank-transfer.svg',
       title: 'Bank Transfer',
       para: '<p>Take cash from customers and transfer it to any bank account they choose — safely and easily.</p>',
     },
