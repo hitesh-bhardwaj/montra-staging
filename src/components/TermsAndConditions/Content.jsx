@@ -121,13 +121,13 @@ export default function Content() {
         <p>
           Please read the following terms and conditions carefully before
           registering on, accessing, browsing, downloading or using the Montra
-          website located at <Link href='/' className='text-primary'>Montra.org</Link>, and all associated sites linked to  <Link href='/' className='text-primary'>Montra.org</Link>
+          website located at <span className='font-medium'>Montra.org</span>, and all associated sites linked to  <span className='font-medium'>Montra.org</span>
           , or the Montra mobile application or any similar platform
           (hereinafter collectively referred to as , the Montra Platform) run by
-          Montra Technology Solutions Limited(formerly ArthaFintech Limited),
+          Montra Technology Solutions Limited (formerly ArthaFintech Limited),
           having its registered office at Plot 20 The Quad, Layi Yusuf Crescent,
           Off Admiralty Way, Lagos, Nigeria (hereinafter referred to as “ MONTRA
-          ”,) on any device and/or before availing any services offered by
+          ”) on any device and/or before availing any services offered by
           Montra on the Montra Platform which may include services such as funds
           transfer, cash transactions, recharge or bill payment, digital
           products, semi-closed wallet service, and marketplace service or any
@@ -135,8 +135,7 @@ export default function Content() {
           (hereinafter individually, and collectively, referred to as theMontra
           Services). For the avoidance of doubt, it is clarified that these
           terms and conditions shall apply to all Montra Services, whether
-          offered by Montra MONTRATechnology Solutions Limited (formerly Artha
-          Fintech Limited)or its affiliates.
+          offered by <span className="font-medium">MONTRA</span> or its affiliates.
         </p>
         </div>
         <div className="divWrapper" id="acceptance">
@@ -148,7 +147,7 @@ export default function Content() {
               By registering on, accessing, browsing, downloading or using the
               Montra Platform for any general purpose or for the specific
               purpose of availing any Montra Service, you agree to be bound by
-              the sSingle-sSign-oOn ID (hereinafter referred to as SSOID) terms
+              the Single-Sign-On ID (hereinafter referred to as SSOID) terms
               and conditions set forth below as well as by the service-specific
               terms and conditions applicable to each Montra Service
               (hereinafter collectively, referred to as the T&Cs).{" "}
@@ -168,8 +167,8 @@ export default function Content() {
               applicable) the Montra Platform or availing any Montra Service or
               the SSOID, You automatically and immediately agree to all the
               T&Cs. If at any time You do not accept or agree with any of the
-              T&Cs or do not wish to be bound by the T&Cs, Youmay not access,
-              browse or use the Montra Platform and immediately terminate yYour
+              T&Cs or do not wish to be bound by the T&Cs, You may not access,
+              browse or use the Montra Platform and immediately terminate your
               availing the Montra Services.
             </li>
 
@@ -182,8 +181,6 @@ export default function Content() {
               using Montra Services. Alternatively, where you (the user) is not
               an individual, your agree that you are a corporate personality
               duly registered in compliance with the relevant laws of Nigeria.
-              and an individual user of the Montra Platform or a customer or
-              beneficiary of the Montra Services, and Montra.{" "}
             </li>
 
             <li>
@@ -192,7 +189,7 @@ export default function Content() {
               thereof). Consequently, all the rights, benefits, liabilities and
               obligations under the T&Cs shall, as the case may be, accrue to
               the benefit of, or incurred by,Montra, regarding Your use of
-              Montra’s digital services (which includes but may not be limited
+              Montra&apos;s digital services (which includes but may not be limited
               to funds transfer, cash transactions prepaid recharge, bill
               payment, booking movie tickets, bus tickets, hotel rooms or flight
               tickets), the semi closed wallet service, the marketplace service
@@ -236,7 +233,7 @@ export default function Content() {
             </li>
 
             <li>
-              Furthermore,Finally,Youshall not impersonate any person or entity,
+              Furthermore, You shall not impersonate any person or entity,
               or falsely state or otherwise misrepresent Your identity, age or
               affiliation with any person or entity. Also, eligibility to use
               Montra Services or the Montra Platform means implies that you
@@ -318,7 +315,7 @@ export default function Content() {
             <li>
               {" "}
               After successfully registering for the SSOID Service, the user can
-              log-in via each Participating Platform with thiertheirhis SSOID
+              log-in via each Participating Platform with thier SSOID
               access credentials. Moreover, if already logged in to one of the
               Participating Platforms, the user can immediately use all other
               Participating Platforms without additional log-in procedures
@@ -413,7 +410,7 @@ export default function Content() {
               transferred/surrendered/deactivated due to any reason, it shall be
               your responsibility to contact Montra and have the number/email
               address duly updated in Montra records before it is
-              transferred/surrendered/deactivated. In case the eventof any
+              transferred/surrendered/deactivated. In the event of any
               failure to have the updatingpromptly request a data update or to
               follow up on such update duly raised with Montra, Montra shall not
               be liable for any misuse of Your account.
@@ -446,8 +443,8 @@ export default function Content() {
               {" "}
               Montra will make best efforts to provide alerts via
               SMS/e-mail/push notifications and it shall be deemed that You
-              mustshall have received the information sent from Montra as an
-              alert on the mobile phone number or e-mail IDid provided during
+              must have received the information sent from Montra as an
+              alert on the mobile phone number or e-mail ID provided during
               the course of, or in relation to, using the Montra Platform or
               availing any Montra Services. Montra shall not be under any
               obligation to confirm the authenticity of the person(s) receiving
@@ -498,16 +495,16 @@ export default function Content() {
               out of, any of the following:
               <ol className="ol-roman">
                 <li>
-                  Mmisuse by You or improper or fraudulent information provided
-                  by You;
+                  Misuse by You or improper or fraudulent information provided
+                  by You.
                 </li>
 
                 <li>
-                  incorrect phone number or a phone number that belongs to an
-                  unrelated third party provided by You; and/or
+                  Incorrect phone number or a phone number that belongs to an
+                  unrelated third party provided by You.
                 </li>
                 <li>
-                  the customer receiving any message relating to the reservation
+                  The customer receiving any message relating to the reservation
                   number, travel itinerary information, booking confirmation,
                   modification to a ticket, cancellation of ticket, change in
                   bus schedule, delay, and/or rescheduling from Montra and/or
@@ -542,24 +539,24 @@ export default function Content() {
           </p>
 
           <ul className="">
-            <li>vViolate the T&Cs; </li>
+            <li>Violate the T&Cs; </li>
 
             <li>
               {" "}
-              impersonate any person or entity;, falsely claim or otherwise
-              misrepresent Your affiliation with any person or entity;, or
-              access the accounts of others without permission;, forge another
-              person’s digital signature;, misrepresent the source,, identity,
-              or content of information transmitted via the Montra Services;,
+              Impersonate any person or entity; falsely claim or otherwise
+              misrepresent Your affiliation with any person or entity; or
+              access the accounts of others without permission; forge another
+              person&apos;s digital signature;, misrepresent the source, identity,
+              or content of information transmitted via the Montra Services;
               perform any other similar fraudulent activity or otherwise avail
               Montra Services with what we reasonably believe to be potentially
-              fraudulent funds;{" "}
+              fraudulent funds.{" "}
             </li>
 
             <li>
               {" "}
-              infringe our or any third party’s intellectual property rights,
-              rights of publicity or privacy;{" "}
+              Infringe our or any third party&apos;s intellectual property rights,
+              rights of publicity or privacy.{" "}
             </li>
 
             <li>
@@ -571,122 +568,122 @@ export default function Content() {
 
             <li>
               {" "}
-              use the Montra Services if You are under the age of 18 years
+              Use the Montra Services if You are under the age of 18 years
               without a parental sponsor or, in any event, use the Montra
               Services if You are under the age of 13 years old even with a
               parental sponsor and in accordance contravention of with
-              applicable law;
+              applicable law.
             </li>
 
             <li>
-              post or transmit any message, data, image or program which is
-              pornographic, vulgar or offensive in nature;
+              Post or transmit any message, data, image or program which is
+              pornographic, vulgar or offensive in nature.
             </li>
 
             <li>
-              refuse to cooperate in an investigation or provide confirmation of
-              Your identity or any other information provide by You to Montra;
+              Refuse to cooperate in an investigation or provide confirmation of
+              Your identity or any other information provide by You to Montra.
             </li>
 
             <li>
-              remove, circumvent, disable, damage or otherwise interfere with
+             Remove, circumvent, disable, damage or otherwise interfere with
               security-related features of the Montra Services and the Montra
               Platform or features that enforce limitations on the use of the
-              Montra Services or the Montra Platform;
+              Montra Services or the Montra Platform.
             </li>
 
             <li>
-              reverse engineer, decompile, disassemble or otherwise attempt to
+              Reverse engineer, decompile, disassemble or otherwise attempt to
               discover the source code of as regards Montra Services or
-              theMontra Platform or any part thereof, except and only to the
-              extent this is expressly permissible by applicable law;
+              th eMontra Platform or any part thereof, except and only to the
+              extent this is expressly permissible by applicable law.
             </li>
 
             <li>
-              use the Montra Services or the Montra Platform in any manner that
+              Use the Montra Services or the Montra Platform in any manner that
               could damage, disable, overburden, or impair it, including,
               without limitation, using the Montra Services or the Montra
-              Platform in an automated manner;
+              Platform in an automated manner.
             </li>
 
             <li>
-              modify, adapt, translate or create derivative works based upon the
+              Modify, adapt, translate or create derivative works based upon the
               Montra Services and the Montra Platform or any part thereof,
               except and only to the extent that that this is permissible by
-              applicable law;
+              applicable law.
             </li>
 
             <li>
               Intentionally interfere with or damage operation of the Montra
-              Services or the Montra Platform or any other user’s enjoyment of
+              Services or the Montra Platform or any other user&apos;s enjoyment of
               it, by any means, including uploading or otherwise disseminating
               viruses, adware, spyware, worms, or other malicious code or file
-              with contaminating or destructive features;
+              with contaminating or destructive features.
             </li>
             <li>
               Use any robot, spider, other automatic device, or manual process
               to monitor or copy the Montra Platform without prior written
-              permission;
+              permission.
             </li>
             <li>
               Interfere or disrupt the Montra Platform, or networks connected to
-              the Montra Platform;
+              the Montra Platform.
             </li>
             <li>
               Take any action that imposes an unreasonably or disproportionately
-              large load on Montra’s infrastructure/network;
+              large load on Montra&apos;s infrastructure/network.
             </li>
             <li>
               Use any device, software or routine to bypass the Montra
-              Platform’s robot exclusion headers, or interfere or attempt to
-              interfere, with the Montra Services;
+              Platform&apos;s robot exclusion headers, or interfere or attempt to
+              interfere, with the Montra Services.
             </li>
             <li>
               Forge headers or manipulate identifiers or other data in order to
               disguise the origin of any content transmitted through the Montra
-              Platform or to manipulate Your presence on the Montra Platform;
+              Platform or to manipulate Your presence on the Montra Platform.
             </li>
             <li>
               Sell the Montra Services, information, or software associated with
-              or derived from it;
+              or derived from it.
             </li>
             <li>
               Use the facilities and capabilities of the Montra Platform to
               conduct any activity or solicit the performance of any illegal
-              activity or other activity which infringes the rights of others;
+              activity or other activity which infringes the rights of others.
             </li>
             <li>
               Breach this Agreement, the SSOID Agreement or any other agreement
-              or policy as may be applicable pursuant to the T&amp;Cs;
+              or policy as may be applicable pursuant to the T&amp;Cs.
             </li>
-            <li>Provide false, inaccurate or misleading information;</li>
+            <li>Provide false, inaccurate or misleading information.</li>
             <li>
               Use the Montra Platform to collect or obtain personal information,
               including without limitation, financial information, about other
               users of the Montra Platform, except and only as expressly
-              provided in the T&amp;Cs;
+              provided in the T&amp;Cs.
             </li>
             <li>
               Avail Montra Services with what Montra reasonably believes to be
               potentially fraudulent funds, or pay for any services on Montra
-              Platform with funds obtained from illegal transactions;
+              Platform with funds obtained from illegal transactions.
             </li>
             <li>
               Knowingly use the Montra Services in a manner that results in or
               may result in complaints, disputes, reversals, chargebacks, fees,
               fines, penalties and other liability to Montra, a third party or
-              You;
+              You.
             </li>
             <li>
               Use the Montra Services in a manner that Montra or any payment
               card network reasonably believe to be an abuse of the payment card
-              system or a violation of payment card network rules;
+              system or a violation of payment card network rules.
             </li>
             <li>
               Take any action that may cause Montra to lose any of the Montra
               Services from its service providers or lose any of its recharge
               partners or business partners, including mobile operators or
-              telecom companies, payment processors or other suppliers;
+              telecom companies, payment processors or other suppliers.
             </li>
             <li>
               Send automated request of any kind to the Montra Platform without
@@ -737,11 +734,11 @@ export default function Content() {
             profits or any other pecuniary or non-pecuniary loss or damage of
             any nature whatsoever) arising out of or relating to:
             <ol className="ol-roman pb-[1.5vw]">
-              <li>this Agreement;</li>
+              <li>This Agreement.</li>
 
-              <li>the SSOID Agreement;</li>
+              <li>The SSOID Agreement.</li>
               <li>
-                the Montra Services, the Montra Platform or any reference
+                The Montra Services, the Montra Platform or any reference
                 site/app/platform/service; or
               </li>
               <li>
@@ -751,11 +748,11 @@ export default function Content() {
               </li>
 
               <li>
-                any other interactions with Montra, however caused and whether
+                Any other interactions with Montra, however caused and whether
                 arising in contract, tort including negligence, warranty or
                 otherwise, beyond or in excess of the amount paid by You, if
                 any, for using the portion of the Montra Service or the Montra
-                Platform giving rise to the cause of action, or beyond, .even if
+                Platform giving rise to the cause of action, or beyond, even if
                 Montra or a Montra authorized representative has been advised of
                 the possibility of such damages.
               </li>
@@ -765,7 +762,7 @@ export default function Content() {
                 You acknowledge and agree that Montra has offered its products
                 and services, set its prices, and entered into this Agreement in
                 reliance upon the warranty disclaimers and the limitations of
-                liability set forth herein;, that the warranty disclaimers and
+                liability set forth herein; that the warranty disclaimers and
                 the limitations of liability set forth herein reflect a
                 reasonable and fair allocation of risk between You and Montra,
                 and that the warranty disclaimers and the limitations of
@@ -802,15 +799,15 @@ export default function Content() {
             </li>
 
             <li>
-              any violation by You of this Agreement or the SSOID Agreement; or
+              Any violation by You of this Agreement or the SSOID Agreement; or
             </li>
 
             <li>
-              any breach of the representations, warranties, and covenants made
+              Any breach of the representations, warranties, and covenants made
               by You herein. Montra reserves the right, at Your expense, to
               assume the exclusive defense and control of any matter for which
               You are required to indemnify Montra, including rights to settle,
-              and You agree to cooperate with Montra’s defense and settlement of
+              and You agree to cooperate with Montra&apos;s defense and settlement of
               these claims. Montra will use reasonable efforts to notify You of
               any claim, action, or proceeding brought by a third party that is
               subject to the foregoing indemnification upon becoming aware of
@@ -881,7 +878,7 @@ export default function Content() {
           className="divWrapper"
           id="ownership-proprietary-rights"
         >
-          <h2 className="">Ownership; Propritary Rights</h2>
+          <h2 className="">Ownership; Proprietary Rights</h2>
 
           <p>
             The Montra Services and the Montra Platform are owned and operated
@@ -889,7 +886,7 @@ export default function Content() {
             information, computer code (including source code and object code),
             products, software, services, and all other elements of the Montra
             Services and the Montra Platform provided by Montra (hereafter
-            Materials) are protected by Indian Nigeriancopyright, trade dress,
+            Materials) are protected by  Nigerian copyright, trade dress,
             patent, and trademark laws, international conventions, and all other
             relevant intellectual property and proprietary rights, and
             applicable laws. As between You and Montra, all Materials,
@@ -1001,7 +998,7 @@ export default function Content() {
 
           <p>
             Subject to the Dispute Resolution section above, You agree that any
-            claim or disputerecourseYou may have against Montra must be resolved
+            claim or recourse You may have against Montra must be resolved
             by a court having jurisdiction in Lagos, Nigeria. You agree to
             submit to the personal jurisdiction of the courts located within
             Lagos, for the purpose of litigating all such claims or disputes.
@@ -1061,7 +1058,7 @@ export default function Content() {
           <p>
             Please read the following terms and conditions carefully before
             registering on, accessing, browsing, downloading or using the Montra
-            website located at <Link href='/' className='text-primary'>Montra.org</Link>, and all associated sites linked to org <Link href='/' className='text-primary'>Montra.org</Link>
+            website located at <span className='font-medium'>Montra.org</span>, and all associated sites linked to org <span className='font-medium'>Montra.org</span>
             , or the Montra mobile application or any similar platform
             (hereinafter collectively, the Montra Platform) run by Montra
             Technology Solutions Ltd (Formerly Artha Fintech Limited), having
@@ -1203,24 +1200,24 @@ export default function Content() {
           </p>
 
           <ol className="ol-roman">
-            <li>the specific features of the service may differ;</li>
+            <li>The specific features of the service may differ.</li>
 
             <li>
-              the number of billers available over the service may differ;
+              The number of billers available over the service may differ.
             </li>
 
             <li>
-              the type and range of payment accounts that can be used to issue a
-              payment instructions may differ;
+              The type and range of payment accounts that can be used to issue a
+              payment instructions may differ.
             </li>
 
             <li>
-              the modes/devices over which the service can be accessed may
-              differ; and
+              The modes/devices over which the service can be accessed may
+              differ. 
             </li>
 
             <li>
-              the charges, fees for availing the service or any aspect of the
+              The charges, fees for availing the service or any aspect of the
               service may differ. Specific details related to these aspects
               would be available with the Montra business partner on their
               channel/portal/website over which the service is being availed.
@@ -1234,15 +1231,15 @@ export default function Content() {
               payment can be made to a biller can differ depending on whether a
               card or a bank account is used to issue the payment instruction.
               Further, depending on the specific facilities allowed by a Montra
-              business partner, payments to a biller can be made either
+              business partner, payments to a biller can be made either:
               <ol className="ol-alpha">
                 <li>
-                  by issuing a payment instruction for an online debit/charge to
+                  By issuing a payment instruction for an online debit/charge to
                   a payment account or
                 </li>
 
                 <li>
-                  by scheduling an automated debit to a payment account. In
+                  By scheduling an automated debit to a payment account. In
                   using the bill payment service, You agree to:
                 </li>
               </ol>
@@ -1250,13 +1247,13 @@ export default function Content() {
           </ol>
           <ul>
             <li>
-              provide true, accurate, current and complete information about
+              Provide true, accurate, current and complete information about
               Yourself (“RegistrationData”), Your payment account details
               (“PaymentData”), Your biller details (“BillerData”); and
             </li>
 
             <li>
-              maintain and promptly update the Registration Data, Payment Data
+              Maintain and promptly update the Registration Data, Payment Data
               and Biller Data to keep it true, accurate, current and complete at
               all times. If You provide any information that is untrue,
               inaccurate, not current or incomplete, or Montra has reasonable

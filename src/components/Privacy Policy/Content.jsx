@@ -91,37 +91,14 @@ export default function Content() {
         ))}
       </div>
       <div className="w-[60%] h-fit  max-sm:px-[5vw] max-md:w-full max-sm:w-full  max-sm:gap-[10vw] max-md:gap-[6vw] max-md:px-[5vw]  gap-[5vw] flex flex-col ">
+        <div className="space-y-[2vw]">
         <p>
-          Montra Technology Solutions Limited is a private limited liability
-          company (“Montra”, “Company”, “we”, “us” or “our”) licensed by the
-          Central Bank of Nigeria to provide electronic payment systems services
-          and registered office at 20 Layi Yusuf Crescent, Lekki Phase 1, Lagos
-          State. Montra offers an online payment platform that allows customers
-          to make seamless digital payments. The Montra Privacy Policy (“Privacy
-          Policy”) describes how we treat your personal information as private
-          and confidential, how we collect, use, store, share, and protect
-          personal data from our website, merchants, customers and vendors who
-          engage with our services. It also applies to our website, mobile
-          applications and payment platforms ("Services") provided by Montra.
-          Our Services are intended for and provided to businesses (Merchants).
-          This Privacy Policy does not apply to services that are not owned or
-          controlled by Montra, including third-party websites and the services
-          of Montra Merchants. We process personal data at the direction of and
-          on behalf of Merchants. We do not control these third-party websites
-          and are not responsible for their privacy statements. Please consult
-          such third parties’ privacy statements. We are committed to protecting
-          your personal in accordance with this Privacy Policy and in compliance
-          with the Nigeria Data Protection Regulation (NDPR) 2019. By using or
-          accessing our Services, you agree to the collection, use, and
-          disclosure of your personal data as described in this Privacy Policy.
-          We may need to update, modify or amend our Privacy Policy as our
-          technology evolves and as required by law. We reserve the right to
-          post any revisions we make to our Privacy Policy on this page and such
-          revised policy becomes effective as at the time it is posted. We will
-          notify you when any changes to our privacy policy have been made. We
-          also encourage you to check this page from time to time for updates to
-          this policy.
+        Montra Technology Solutions Limited is a private limited liability company (“Montra”, “Company”, “we”, “us” or “our”) licensed by the Central Bank of Nigeria to provide electronic payment systems services and registered office at 20 Layi Yusuf Crescent, Lekki Phase 1, Lagos State. Montra offers an online payment platform that allows customers to make seamless digital payments. The Montra Privacy Policy (“Privacy Policy”) describes how we treat your personal information as private and confidential, how we collect, use, store, share, and protect personal data from our website, merchants, customers and vendors who engage with our services. It also applies to our website, mobile applications and payment platforms ("Services") provided by Montra.
         </p>
+        <p>Our Services are intended for and provided to businesses (Merchants). This Privacy Policy does not apply to services that are not owned or controlled by Montra, including third-party websites and the services of Montra Merchants. We process personal data at the direction of and on behalf of Merchants. We do not control these third-party websites and are not responsible for their privacy statements. Please consult such third parties&apos;privacy statements.</p>
+        <p>We are committed to protecting your personal in accordance with this Privacy Policy and in compliance with the Nigeria Data Protection Regulation (NDPR) 2019. By using or accessing our Services, you agree to the collection, use, and disclosure of your personal data as described in this Privacy Policy.</p>
+        <p>We may need to update, modify or amend our Privacy Policy as our technology evolves and as required by law. We reserve the right to post any revisions we make to our Privacy Policy on this page and such revised policy becomes effective as at the time it is posted. We will notify you when any changes to our privacy policy have been made. We also encourage you to check this page from time to time for updates to this policy.</p>
+        </div>
         <div id="data-information" className="divWrapper">
           <h2>Data/Information We May Collect From You</h2>
           <p>
@@ -130,21 +107,21 @@ export default function Content() {
           </p>
           <ul>
             <li>
-              Your Consent: Where you have agreed for us to to process your
+              <span className="font-medium">Your Consent:</span> Where you have agreed for us to to process your
               personal data/information by using our Services.
             </li>
             <li>
-              Contractual Obligation: Our services are only provided to you when
+            <span className="font-medium">Contractual Obligation:</span> Our services are only provided to you when
               there is a contractual obligation. Without your personal
               information we cannot provide the service to you.
             </li>
             <li>
-              Legal Obligation: We are required to collect and store your
+            <span className="font-medium">Legal Obligation:</span> We are required to collect and store your
               personal information to prevent fraud and money laundering as well
               as to ensure that we are fully compliant with all applicable
               financial legislations. By Law, we are required to retain certain
               information of an account opened with us and the data of customers
-              beyond the date when they cease to be our customers
+              beyond the date when they cease to be our customers.
             </li>
           </ul>
           <p>
@@ -163,28 +140,28 @@ export default function Content() {
           </p>
           <ul>
             <li>
-              Identity data: Information such as: First name, middle name, last
+            <span className="font-medium">Identity data:</span> Information such as: First name, middle name, last
               name, email, marital status, title, date of birth and gender.
             </li>
             <li>
-              Identification documents: Your government-issued identity number,
+            <span className="font-medium"> Identification documents:</span> Your government-issued identity number,
               passport photograph and other registration information.
             </li>
             <li>
-              Contact data: contact and billing address email, telephone numbers
+            <span className="font-medium"> Contact data:</span> contact and billing address email, telephone numbers
               and details of the device you use.
             </li>
             <li>
-              Financial and Payment data: bank account, Bank Verification Number
+            <span className="font-medium">Financial and Payment data:</span> bank account, Bank Verification Number
               (BVN), Amount, financial account information, and other payment
               details.
             </li>
             <li>
-              Transaction data: Payment information other details of products
+            <span className="font-medium">Transaction data:</span> Payment information other details of products
               and Services you have subscribed to.
             </li>
             <li>
-              Technical data: your geo-location, internet protocol (IP) address,
+            <span className="font-medium"> Technical data:</span> your geo-location, internet protocol (IP) address,
               your login data, browser type and version, length of visit on
               certain pages, device identifier, log-in information, time zone
               setting and location, browser plug-in types and versions,
@@ -192,17 +169,17 @@ export default function Content() {
               you use to access this website.
             </li>
             <li>
-              Profile data: Information placed on your personal profile (e.g.,
+            <span className="font-medium"> Profile data:</span> Information placed on your personal profile (e.g.,
               personal description or passport photograph). Your username and
               password, your interests, preferences, feedback and survey
               responses.
             </li>
             <li>
-              Usage data: information about how you use our website, products
+            <span className="font-medium"> Usage data: </span> Information about how you use our website, products
               and services.
             </li>
             <li>
-              Marketing and communications data: records of your preferences in
+            <span className="font-medium">  Marketing and communications data: </span> Records of your preferences in
               receiving marketing materials from us and our third parties.
               Communication details provided when you contact us.
             </li>
@@ -225,14 +202,14 @@ export default function Content() {
           </p>
           <ul>
             <li>
-              Direct Engagement: When you choose to use any of our services
+            <span className="font-medium">Direct Engagement:</span> When you choose to use any of our services
               through our website, mobile app, sign-up for an account, upload
               any documentation, send any communication by email or phone call,
               fill-out any form, make an enquiry, or any other communication
               received directly or indirectly from you.
             </li>
             <li>
-              Automatically: As you browse our websites certain information
+            <span className="font-medium"> Automatically: </span> As you browse our websites certain information
               relating to your browsing patterns and technical data about the
               equipment you are using to access the website is automatically
               collected using cookies, server logs and other similar
@@ -240,7 +217,7 @@ export default function Content() {
               information.
             </li>
             <li>
-              From third parties/public sources: We utilise third-party service
+            <span className="font-medium">From third parties/public sources: </span> We utilise third-party service
               providers to secure information related to financial crime, fraud,
               sanctions and Politically Exposed Persons. Also technical data may
               be obtained from analytics providers, advertising networks, search
@@ -261,7 +238,7 @@ export default function Content() {
             </li>
             <li>Managing our relationship with you.</li>
             <li>
-              For Pricing, designing and reviewing our products and services
+              For pricing, designing and reviewing our products and services
             </li>
             <li>
               Process your payment transactions including authorization,
@@ -313,17 +290,17 @@ export default function Content() {
             the extent permitted by law, with the following:
           </p>
           <ul>
-            <li>Affiliated Businesses;</li>
+            <li>Affiliated Businesses.</li>
             <li>Strategic partners / Third-Party Service Providers.</li>
             <li>
-              Financial institutions, Financial Services and Payment Processing;
+              Financial institutions, Financial Services and Payment Processing.
             </li>
-            <li>Agents, suppliers, subcontractors;</li>
-            <li>Companies providing analytics services;</li>
-            <li>External Auditors;</li>
-            <li>Employees of Montra;</li>
+            <li>Agents, suppliers, subcontractors.</li>
+            <li>Companies providing analytics services.</li>
+            <li>External Auditors.</li>
+            <li>Employees of Montra.</li>
             <li>
-              Regulatory/Law enforcement bodies/Government Agencies or Court
+              Regulatory/Law enforcement bodies/Government Agencies or Court.
             </li>
           </ul>
           <p>
@@ -350,27 +327,27 @@ export default function Content() {
           </p>
           <ul>
             <li>
-              we have Your Consent: In case you have expressly consented to your
+            <span className="font-medium"> We Have Your Consent:</span> In case you have expressly consented to your
               data being shared with specific third parties. The use of your
               Personal Information by an authorized third party is subject to
               the third party's privacy policy and we shall bear no liability
-              for any breach which may arise from such authorization by you;
+              for any breach which may arise from such authorization by you.
             </li>
             <li>
-              the processing is necessary for the performance of a contract to
+              The processing is necessary for the performance of a contract to
               which you are a party or in order to take steps at your request
-              prior to entering into a contract;
+              prior to entering into a contract.
             </li>
             <li>
-              processing is necessary for compliance with a legal obligation to
-              which Montra is subject;
+              Processing is necessary for compliance with a legal obligation to
+              which Montra is subject.
             </li>
             <li>
-              processing is necessary in order to protect your vital information
-              or of another natural person; and
+              Processing is necessary in order to protect your vital information
+              or of another natural person. 
             </li>
             <li>
-              processing is necessary for the performance of a task carried out
+              Processing is necessary for the performance of a task carried out
               in the public interest or in exercise of official public mandate
               vested in Montra.
             </li>
@@ -401,7 +378,7 @@ export default function Content() {
               personal information retain by us and only grant access to
               personal data to employees who require it to fulfil their job
               responsibilities. We also use Role-based access control (RBAC) as
-              an internal security measure, permission to access customers’ data
+              an internal security measure, permission to access customers&apos; data
               is given to certain roles within the organization.
             </li>
             <li>
@@ -462,7 +439,7 @@ export default function Content() {
           <p>
             When we determine that personal data can no longer be retained or
             where you request that we delete your data in accordance with your
-            right to do so as contained in the Nigeria Data Protection Act(NDPA)
+            right to do so as contained in the Nigeria Data Protection Act (NDPA)
             2023, we ensure that this data is securely deleted or destroyed.
           </p>
         </div>
@@ -473,36 +450,36 @@ export default function Content() {
             to reach out to exercise the following rights:
           </p>
           <ul>
-            <li>Right to access your personal information retain by us;</li>
+            <li>Right to access your personal information retain by us.</li>
             <li>
               Right to correct or rectify any Personal Information. That is, the
-              right to change inaccurate or incomplete information;
+              right to change inaccurate or incomplete information.
             </li>
-            <li>Right to remove yourself from our mailing list;</li>
-            <li>Right to object to direct marketing;</li>
-            <li>Restrict or object to processing of your personal data;</li>
+            <li>Right to remove yourself from our mailing list.</li>
+            <li>Right to object to direct marketing.</li>
+            <li>Restrict or object to processing of your personal data.</li>
             <li>
               Request that your personal data be made available to you in a
               common electronic format and/or request that such data be sent to
-              a third party;
+              a third party.
             </li>
             <li>
               Request that your information be erased. We might continue to
               retain such data if there are valid legal, regulatory or
-              operational reasons;
+              operational reasons.
             </li>
-            <li>Right to revoke consent;</li>
-            <li>Right to objection or request for restriction;</li>
+            <li>Right to revoke consent.</li>
+            <li>Right to objection or request for restriction.</li>
             <li>
-              Right to object to automated decision making and processing;
+              Right to object to automated decision making and processing.
             </li>
             <li>
               Right to be informed about appropriate safeguards in place where
-              data is transferred abroad;
+              data is transferred abroad.
             </li>
             <li>
               Right to request rectification and modification of Personal
-              Information retained by us and
+              Information retained by us.
             </li>
             <li>
               Right to request the movement of data to a third party; this is
@@ -512,14 +489,14 @@ export default function Content() {
           <p>If you would like to exercise any of the above rights, please:</p>
           <ul>
             <li>
-              put your request in writing and send it to us through your usual
-              registered channel (e.g. registered e-mail);
+              Put your request in writing and send it to us through your usual
+              registered channel (e.g. registered e-mail).
             </li>
-            <li>specify the right you wish to exercise.</li>
+            <li>Specify the right you wish to exercise.</li>
           </ul>
           <p>
             Your request will be reviewed and answered by our Data Protection
-            Officer within a 30-day period. and if any further extension is
+            Officer within a 30-day period. And if any further extension is
             required, we will communicate same through existing consented
             channels. However, please note that you may continue to receive
             existing communications for a transitional period whilst we update
@@ -548,18 +525,11 @@ export default function Content() {
             visit a website.
           </p>
           <p>
-            Cookies have many uses, such as identifying you as a user and
-            memorizing your preferences to tailor your experiences while on our
-            site– or to help us analyze our website traffic. Cookies are small
-            text files stored on your computer or mobile devices whenever you
-            visit a website.
-          </p>
-          <p>
             We use cookies and similar technologies on our website to help
             collect information and operate the site. We use cookies to remember
-            Users and make your user experience easier; customise our services,
-            content and advertising; help you ensure that your account security
-            is not compromised, mitigate risk and prevent fraud; and to promote
+            Users and make your user experience easier, customise our services,
+            content and advertising, help you ensure that your account security
+            is not compromised, mitigate risk and prevent fraud, and to promote
             trust and safety on our website.
           </p>
         </div>
@@ -634,10 +604,12 @@ export default function Content() {
             For any further queries, our Data Protection Officer, may be reached
             at the following address:{" "}
           </p>
+          <div className="space-y-[0.5vw]">
           <p>20 Layi Yusuf Crescent,</p>
           <p>Off Admiralty Way, </p>
           <p>Lekki Phase 1, </p>
           <p>Lagos, Nigeria.</p>
+          </div>
         </div>
 
         <div>

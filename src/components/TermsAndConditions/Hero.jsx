@@ -85,7 +85,7 @@ export default function Hero() {
         id="hero"
         className="h-[70vh] max-sm:h-[45vh]  rounded-b-[3vw] max-sm:rounded-b-[9vw] flex items-center justify-center bg-[#215CFF] w-full max-md:h-[50vh]"
       >
-        <Copy>
+        <Copy delay={0.6}>
         <h1 className="flex flex-col items-center max-sm:text-[10vw] justify-center text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-white">
           <span>Montra</span>
           <span>Terms and Conditions</span>
