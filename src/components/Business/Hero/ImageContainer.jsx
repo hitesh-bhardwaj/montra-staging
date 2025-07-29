@@ -130,7 +130,6 @@ export const ImageContainer = ({ img1, img2, img3, img4, img5, img6, container }
                     <span className="bg-primary text-white px-[1vw] py-[0.5vw] rounded-full self-end font-medium">
                         Business
                     </span>
-                    {/* <h3 className="text-white text-[3.4vw] font-bold font-display self-center">₦ 50,000</h3> */}
                     <div className="bg-white p-[1vw] rounded-[1.5vw] flex items-center gap-[1vw] w-fit">
                         <div className="w-[3vw] h-[3vw] rounded-full bg-primary p-[0.2vw]" >
                            <Image src={"/assets/images/business/business-total-amount.svg"} alt="amout svg" className="w-full h-full object-contain" width={100} height={100}/>

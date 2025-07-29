@@ -102,6 +102,8 @@ export default function PaymentSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+
+      if (globalThis.innerWidth > 1024) {
       itemsRef.current = itemsRef.current.slice(0, stepsData[mode].length);
       imageRefs.current = imageRefs.current.slice(0, stepsData[mode].length);
       image2Refs.current = image2Refs.current.slice(0, stepsData[mode].length);
@@ -113,19 +115,19 @@ export default function PaymentSection() {
         const end = `${sectionHeight * (index + 1.2)}% 70%`;
 
         const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start,
-              end,
-              scrub: true,
-            },
-          })
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start,
+            end,
+            scrub: true,
+          },
+        })
 
-          tl.fromTo(
-            el,
-            { opacity: 0, yPercent: 7, zIndex: 1, },
-            { opacity: 1, yPercent: 0, zIndex: 5, duration: 1, delay: 0.5, ease: "none" }
-          )
+        tl.fromTo(
+          el,
+          { opacity: 0, yPercent: 7, zIndex: 1, },
+          { opacity: 1, yPercent: 0, zIndex: 5, duration: 1, delay: 0.5, ease: "none" }
+        )
           .fromTo(
             imageRefs.current[index],
             { opacity: 1, xPercent: -100, zIndex: index * 1 },
@@ -136,94 +138,34 @@ export default function PaymentSection() {
             { opacity: 0, scale: 1.2, },
             { opacity: 1, scale: 1, duration: 1, delay: 0.3 }, "<"
           )
-          
-          tl.to(el, { opacity: 0, yPercent: -7, zIndex: 1, duration: 1, delay: 0.5, ease: "none" }
-          )
+
+        tl.to(el, { opacity: 0, yPercent: -7, zIndex: 1, duration: 1, delay: 0.5, ease: "none" }
+        )
           .to(image2Refs.current[index], { opacity: 0, duration: 0.5 }, '<');
       });
-    })
+
+      const snapPoints = thresholdKeys[mode].map(key => thresholds[key]);
+
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        snap: {
+          snapTo: snapPoints,
+          duration: { min: 0.2, max: 1 },
+          delay: 0.1,
+          ease: "power1.inOut",
+          directional: true,
+        },
+      });
+      }
+    });
+
     return () => {
       ctx.revert();
     };
 
   }, [mode]);
-
-  //   useEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     // grab the right set of items for this mode
-  //     const steps = stepsData[mode];
-  //     itemsRef.current  = itemsRef.current.slice(0, steps.length);
-  //     imageRefs.current  = imageRefs.current.slice(0, steps.length);
-  //     image2Refs.current = image2Refs.current.slice(0, steps.length);
-
-  //     // how many seconds we'll allocate per step
-  //     const segmentDuration = 2;
-
-  //     // build one master timeline
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: sectionRef.current,
-  //         start:   "top top",
-  //         end:     "bottom bottom",
-  //         scrub:   true,
-  //         snap: {
-  //           // snap to the nearest of the (steps.length + 1) positions: 0/steps..1
-  //           snapTo: (progress) => {
-  //             // multiply by number of steps, round to nearest integer, then normalize back to [0–1]
-  //             const idx = Math.round(progress * steps.length);
-  //             return idx / steps.length;
-  //           },
-  //           duration: 0.4,
-  //           ease:     "power1.inOut"
-  //         }
-  //       }
-  //     });
-
-  //     // sequence each step into its own “slot” in the timeline
-  //     steps.forEach((_, i) => {
-  //       const label = `step${i}`;
-  //       tl.addLabel(label, i * segmentDuration);
-
-  //       // text in
-  //       tl.fromTo(
-  //         itemsRef.current[i],
-  //         { opacity: 0,  yPercent: 7,  zIndex: 1 },
-  //         { opacity: 1,  yPercent: 0,  zIndex: 5, duration: 1 },
-  //         label
-  //       );
-
-  //       // image slide in
-  //       tl.fromTo(
-  //         imageRefs.current[i],
-  //         { opacity: 1,  xPercent: -100,  zIndex: i },
-  //         { opacity: 1,  xPercent:   0,   zIndex: i, duration: 1 },
-  //         label
-  //       );
-
-  //       // highlight fade+scale
-  //       tl.fromTo(
-  //         image2Refs.current[i],
-  //         { opacity: 0,  scale: 1.2 },
-  //         { opacity: 1,  scale: 1,     duration: 1 },
-  //         `${label}+=0.3`
-  //       );
-
-  //       // then fade out text + highlight
-  //       tl.to(
-  //         itemsRef.current[i],
-  //         { opacity: 0,  yPercent: -7, duration: 1 },
-  //         `${label}+=1.5`
-  //       );
-  //       tl.to(
-  //         image2Refs.current[i],
-  //         { opacity: 0,             duration: 0.5 },
-  //         `${label}+=1.5`
-  //       );
-  //     });
-  //   });
-
-  //   return () => ctx.revert();
-  // }, [mode]);
 
   return (
     <section

@@ -43,8 +43,8 @@ const Banking = () => {
                 duration: images.length,
                 scrollTrigger: {
                     trigger: sliderContainer.current,
-                    start: "top top",
-                    end: "630% top",
+                    start: "center center",
+                    end: "630% center",
                     scrub: true,
                     invalidateOnRefresh: true,
                 },
@@ -60,7 +60,7 @@ const Banking = () => {
         <section
             id="products"
             ref={sliderContainer}
-            className={`relative h-[100vh]  ${styles.sliderContainer} mobile:h-full tablet:h-full pb-[5%] mobile:py-[15%]`}
+            className={`relative h-[100vh] ${styles.sliderContainer} mobile:h-full tablet:h-full pb-[5%] mobile:py-[15%]`}
         >
             <div className="flex flex-col w-[48vw] h-full items-center justify-end pb-[4%] -rotate-90 ">
                 <div className={`${styles.sliderSection} `}>

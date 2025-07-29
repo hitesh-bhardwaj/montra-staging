@@ -244,7 +244,7 @@ const Steps = ({ stepData }) => {
                   </svg>
                 </div>
                 <motion.div
-                  className="inline-block overflow-hidden whitespace-nowrap font-display max-sm:text-[4vw] max-md:text-[2.5vw] "
+                  className="inline-block overflow-hidden whitespace-nowrap font-display max-sm:text-[4vw] max-md:text-[2.8vw] "
                   animate={{
                     width: i === step ? "auto" : 0,
                     opacity: i === step ? 1 : 0,
@@ -262,20 +262,20 @@ const Steps = ({ stepData }) => {
         </div>
         {showRestart && (
           <motion.div
-            className="ml-4 font-display cursor-pointer opacity-0  group absolute bottom-[5%] right-[5%] rounded-[4vw] flex items-center gap-2 text-[1vw] max-sm:text-[4vw] max-sm:bottom-[3%] max-sm:right-[5%]"
+            className="ml-4 font-display cursor-pointer opacity-0  group absolute bottom-[5%] right-[5%] rounded-[4vw] flex items-center gap-2 text-[1vw] max-sm:text-[4vw] max-md:text-[3vw] max-sm:bottom-[3%] max-sm:right-[5%]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             onClick={() => setStep(0)}
           >
             Restart
-            <span>
+            <span className="inline-block">
               <Image
                 src={"/assets/icons/restart-icon.svg"}
                 height={12}
                 width={12}
                 alt="restart-icon"
-                className="group-hover:rotate-[360deg] duration-1000"
+                className="group-hover:rotate-[360deg] duration-1000 max-md:w-[2vw] max-md:h-[2vw]"
               />
             </span>
           </motion.div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const BottomContent = ({ img6, imgAmount }) => {
   return (
-    <div className=" w-screen p-[4vw] flex flex-col gap-[40vh] h-fit absolute bottom-0 text-white max-sm:p-[8vw] max-sm:gap-12 max-sm:static max-md:static max-md:gap-10 max-md:pb-[10vw] dark">
+    <div className=" w-screen p-[4vw] flex flex-col gap-[60vh] h-fit absolute bottom-0 text-white max-sm:p-[8vw] max-sm:gap-12 max-sm:static max-md:static max-md:gap-10 max-md:pb-[10vw] dark">
       <div className="h-[65vw] hidden max-sm:block mt-12 max-md:block" />
       <div className="w-[42%] self-end text-left space-y-[2vw] max-sm:w-full max-sm:space-y-[6vw] max-md:w-full max-md:space-y-[4vw]">
         <Heading>
@@ -44,7 +44,7 @@ export const BottomContent = ({ img6, imgAmount }) => {
               </li>
             </Copy>
           </ul>
-          <div className="space-y-[1.5vw] w-[78%] max-sm:space-y-[4vw] max-sm:w-full max-md:w-[80%] max-md:space-y-[4vw] max-sm:mt-[10vw]">
+          <div className="space-y-[1.5vw] w-[85%] max-sm:space-y-[4vw] max-sm:w-full max-md:w-[80%] max-md:space-y-[4vw] max-sm:mt-[10vw]">
             <div className="fadeupanim shadow-lg rounded-full px-[2vw] py-[1vw] bg-white text-black max-sm:px-[4vw] max-sm:rounded-[4vw] max-sm:py-[3vw] max-md:px-[5vw] max-md:py-[2vw]">
               Accept Payments from any Account/Card
             </div>

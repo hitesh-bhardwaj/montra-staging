@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { LinkButton } from '../Buttons';
 import UseMobile from '../UseMobile';
 
-
 const BankingCard = ({ color, link, title, para, icon, field }) => {
   return (
     <>
@@ -18,7 +17,7 @@ const BankingCard = ({ color, link, title, para, icon, field }) => {
         </div>
         <div className='space-y-[6vw] pt-[8vw] pb-[4vw] px-[1vw] max-sm:space-y-[3vw]'>
           <h2 className='text-[7vw] font-display w-[90%] capitalize font-medium'>{title}</h2>
-          <div className='pb-[4vw] space-y-[2vw]' dangerouslySetInnerHTML={{__html:para}}/>
+          <div className='pb-[4vw] space-y-[2vw]' dangerouslySetInnerHTML={{ __html: para }} />
           {/* <p className='max-sm:w-full max-md:w-[85%]'>{para}</p> */}
           <LinkButton href={link} text={"Learn More"} />
 
@@ -48,21 +47,22 @@ const MobileBanking = () => {
   };
 
   if (!isMobile) return null;
+  
   return (
-    <section  className="h-fit w-screen px-[7vw] relative bg-white max-sm:py-[10%] max-sm:pb-[5%] max-md:py-[7%]">
+    <section className="h-fit w-screen px-[7vw] relative bg-white max-sm:py-[10%] max-md:py-[7%]">
       <div className='space-y-[5vw]'>
-    <div className='w-full text-left flex items-center justify-center '>
-  <h2 className='max-sm:text-[11vw] font-display font-medium  capitalize leading-[1.15] mb-[7vw] max-md:text-[8vw]'>Smart Business Management Tools For Smarter Businesses</h2>
-</div>
-<div className=' max-sm:mt-[20%]'>
-<Swiper onSwiper={(swiper) => (swiperRef.current = swiper)} spaceBetween={30}
- className="mySwiper max-sm:h-full" >
-  {data.map((item,index)=>(
- <SwiperSlide key={index}><BankingCard color={item.color} title={item.title} para={item.para} icon={item.icon} field={item.field} link={item.link}/></SwiperSlide>
-  ))}
-      </Swiper>
-      <div
-          className={`absolute z-[5] w-[10vw] h-[10vw] top-[100%] right-[20%]  border border-black overflow-hidden group  transition-all duration-500 rounded-full prev-button cursor-pointer max-sm:top-[22%] max-sm:w-fit max-sm:h-fit max-sm:p-[1vw]  max-sm:right-[25%] max-md:w-fit max-md:h-fit max-md:right-[20%] max-md:top-[95%] hover:text-white hover:bg-primary hover:border-primary group ease
+        <div className='w-full text-left flex items-center justify-center '>
+          <h2 className='max-sm:text-[11vw] font-display font-medium  capitalize leading-[1.15] mb-[7vw] max-md:text-[8vw]'>Smart Business Management Tools For Smarter Businesses</h2>
+        </div>
+        <div className=' '>
+          <Swiper onSwiper={(swiper) => (swiperRef.current = swiper)} spaceBetween={30}
+            className="mySwiper max-sm:h-full" >
+            {data.map((item, index) => (
+              <SwiperSlide key={index}><BankingCard color={item.color} title={item.title} para={item.para} icon={item.icon} field={item.field} link={item.link} /></SwiperSlide>
+            ))}
+          </Swiper>
+          <div
+            className={`absolute z-[5] w-[10vw] h-[10vw] top-[100%] right-[20%]  border border-black overflow-hidden group  transition-all duration-500 rounded-full prev-button cursor-pointer max-sm:top-[92%] max-sm:w-fit max-sm:h-fit max-sm:p-[1vw]  max-sm:right-[25%] max-md:w-fit max-md:h-fit max-md:right-[20%] max-md:top-[92%] hover:text-white hover:bg-primary hover:border-primary group ease
                 ${activeButton === "prev"
                 ? " text-black group-hover:text-white"
                 : "bg-transparent "
@@ -79,7 +79,7 @@ const MobileBanking = () => {
             </div>
           </div>
           <div
-            className={`absolute z-[5] top-[100%] right-[7%] w-[10vw] h-[10vw] overflow-hidden rounded-full next-button hover:bg-primary duration-500 transitiona-all ease cursor-pointer border border-black max-sm:top-[22%] max-sm:w-fit max-sm:h-fit max-sm:p-[1vw]  max-sm:right-[10%] max-md:w-fit max-md:h-fit max-md:right-[10%] max-md:top-[95%] hover:text-white  group ease
+            className={`absolute z-[5] top-[100%] right-[7%] w-[10vw] h-[10vw] overflow-hidden rounded-full next-button hover:bg-primary duration-500 transitiona-all ease cursor-pointer border border-black max-sm:top-[22%] max-sm:w-fit max-sm:h-fit max-sm:p-[1vw]  max-sm:right-[10%] max-md:w-fit max-md:h-fit max-md:right-[10%] max-md:top-[92%] hover:text-white  group ease
                 ${activeButton === "next" ? " text-black hover:text-white" : "bg-transparent"
               } transition-colors duration-300`}
             onClick={handleNext}
@@ -93,7 +93,6 @@ const MobileBanking = () => {
               </span>
             </div>
           </div>
-
         </div>
       </div>
     </section>

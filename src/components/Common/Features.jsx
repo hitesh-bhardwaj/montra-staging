@@ -13,14 +13,20 @@ const Features = ({ featuresData }) => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#investors",
-            start: "top 40%",
+            start: "top 60%",
           },
         });
-        tl.to(".icon ", {
+        tl.from(".icon", {
+          scale: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "elastic.out(1,0.3)"
+        }).to(".icon ", {
           scale: 1,
           borderRadius: "3vw",
           ease: "elastic.inOut",
           duration: 1,
+          delay: -0.5,
           stagger: {
             amount: 0.5,
             from: "random",

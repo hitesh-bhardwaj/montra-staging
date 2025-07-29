@@ -53,7 +53,7 @@ const personalPayments = () => {
   )
 }
 
-export default personalPayments
+export default personalPayments;
 
 const faqContent = [
   {

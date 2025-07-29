@@ -15,19 +15,19 @@ const Hero = () => {
   const sectionRef = useRef(null);
   const bgRef = useRef(null);
   const imgRef = useRef(null);
-   const lenis = useLenis();
+  const lenis = useLenis();
 
-   const [videoSrc, setVideoSrc] = useState(null); 
+  const [videoSrc, setVideoSrc] = useState(null);
 
-   useEffect(() => {
-     const timeout = setTimeout(() => {
-       setVideoSrc("/assets/images/company/company-page-background.mp4");
-     }, 3000);
- 
-     return () => clearTimeout(timeout);
-   }, []);
- 
-   useEffect(() => {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setVideoSrc("/assets/images/company/company-page-background.mp4");
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".montra-logo", {
         duration: 0,
@@ -53,7 +53,7 @@ const Hero = () => {
               duration: 0,
             });
           },
-          onLeaveBack:()=>{
+          onLeaveBack: () => {
             gsap.to(".montra-logo", {
               filter: "brightness(1)",
               duration: 0,
@@ -67,16 +67,16 @@ const Hero = () => {
           },
         },
       });
-      gsap.to(".ham-mobile",{
+      gsap.to(".ham-mobile", {
         backgroundColor: "#215CFF",
-        duration:0,
+        duration: 0,
         scrollTrigger: {
           trigger: "#hero",
           start: "40% top",
           // markers: true,
           onEnter: () => {
             gsap.to(".ham-mobile", {
-              backgroundColor:"white",
+              backgroundColor: "white",
               duration: 0,
             });
           },
@@ -104,7 +104,7 @@ const Hero = () => {
     return () => ctx.revert();
   });
 
-   useEffect(() => {
+  useEffect(() => {
     lenis && lenis.stop();
 
     const timeout = setTimeout(() => {
@@ -114,44 +114,44 @@ const Hero = () => {
     return () => clearTimeout(timeout)
   }, [lenis]);
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            if(globalThis.innerWidth>1024){
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: bgRef.current,
-                    start: "top 80%",
-                    end: "70% 80%",
-                    scrub: 0.25,
-                }
-            });
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (globalThis.innerWidth > 1024) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: bgRef.current,
+            start: "top 80%",
+            end: "70% 80%",
+            scrub: 0.25,
+          }
+        });
 
-            tl.to(bgRef.current, {
-                clipPath: 'ellipse(70vw 90vh at 50% 80%)',
-                duration: 2,
-                ease: "none",
-            })
-                .to(bgRef.current, {
-                    clipPath: 'ellipse(100vw 100vh at 50% 80%)',
-                    duration: 1,
-                    ease: "none",
-                })
-            }
-        }, sectionRef);
-    
-        return () => ctx.revert();
-    }, []);
-    useEffect(()=>{
-      const ctx = gsap.context(()=>{
-       gsap.from(".fadeup",{
-        y:30,
-        opacity:0,
-        delay:1,
-       })
+        tl.to(bgRef.current, {
+          clipPath: 'ellipse(70vw 90vh at 50% 80%)',
+          duration: 2,
+          ease: "none",
+        })
+          .to(bgRef.current, {
+            clipPath: 'ellipse(100vw 100vh at 50% 80%)',
+            duration: 1,
+            ease: "none",
+          })
+      }
+    }, sectionRef);
 
+    return () => ctx.revert();
+  }, []);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".fadeup", {
+        y: 30,
+        opacity: 0,
+        delay: 1,
       })
-      return()=>ctx.revert()
-    },[])
+
+    })
+    return () => ctx.revert()
+  }, [])
 
   return (
     <section id="hero" className="w-screen overflow-hidden relative">
@@ -182,41 +182,42 @@ const Hero = () => {
         </div>
       </div>
       <div className="h-[125vh] flex items-end px-[4vw] py-[5vw] relative z-10  max-sm:pb-[15vw] max-sm:px-[6vw] max-md:pb-[10vw] hero-content max-sm:h-[110vh]">
-        <div className="w-full text-white flex h-auto items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw] max-md:flex-col max-md:items-start max-md:gap-[7vw]">
+        <div className="w-full text-white flex h-auto items-end justify-between max-sm:flex-col max-sm:items-start max-sm:gap-[10vw] max-md:flex-col max-md:items-start max-md:gap-[7vw]">
           <Heading>
             <h2 className="text-[2.85vw] font-medium leading-[1.3] w-[27%] font-display max-sm:w-full max-sm:text-[10vw] max-md:text-[5.5vw] max-md:w-[80%]">
               How We&apos;re Changing the Game
             </h2>
           </Heading>
-          <Copy>
-            <p className="w-1/2 max-sm:w-full max-md:w-[80%]">
-            <span className="font-semibold">We offer more than just payments. </span>
-            <br/>
-            At Montra, we provide a full suite of digital tools designed for both individuals and businesses. From easy-to-use apps for payments and account management to powerful features that give you access to credit, investments, and insurance, we help you make a smooth shift from cash to fast, secure digital payments.
-            </p>
-          </Copy>
+          <div className="w-1/2 max-sm:w-full max-md:w-[80%]">
+            <Copy>
+              <p className="font-medium text-[120%] mb-4">We offer more than just payments.</p>
+              <p className="">
+                At Montra, we provide a full suite of digital tools designed for both individuals and businesses. From easy-to-use apps for payments and account management to powerful features that give you access to credit, investments, and insurance, we help you make a smooth shift from cash to fast, secure digital payments.
+              </p>
+            </Copy>
+          </div>
         </div>
       </div>
-            <div
-              ref={bgRef}
-              style={{ clipPath: 'ellipse(19vw 19vw at 50% 35%)' }}
-              className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden fadeup">
-              <video  
-                muted 
-                playsInline 
-                loop 
-                autoPlay
-                src={videoSrc} 
-                poster="/assets/images/company/poster.webp"
-                ref={imgRef} 
-                className="w-full h-full object-cover absolute"
-              />
-            </div>
-            <div className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block max-md:block">
-              <video src={videoSrc} muted playsInline loop autoPlay ref={imgRef} poster="/assets/images/company/company-video-poster.webp" className="w-full h-full object-cover absolute"/>
-            </div>
-        </section>
-    );
+      <div
+        ref={bgRef}
+        style={{ clipPath: 'ellipse(19vw 19vw at 50% 35%)' }}
+        className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden fadeup">
+        <video
+          muted
+          playsInline
+          loop
+          autoPlay
+          src={videoSrc}
+          poster="/assets/images/company/poster.webp"
+          ref={imgRef}
+          className="w-full h-full object-cover absolute"
+        />
+      </div>
+      <div className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block max-md:block">
+        <video src={videoSrc} muted playsInline loop autoPlay ref={imgRef} poster="/assets/images/company/company-video-poster.webp" className="w-full h-full object-cover absolute" />
+      </div>
+    </section>
+  );
 }
 
 export default Hero;

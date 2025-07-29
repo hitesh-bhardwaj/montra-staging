@@ -8,18 +8,13 @@ export const TopContent = () => {
                 <Heading delay={0.7}>
                     <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw] max-md:text-[7.5vw]">
                         <span className="text-primary">Montra Business Account: </span> Go for Smarter Finance & Bigger Growth.
-
                     </h1>
                 </Heading>
-               
                 <Copy delay={1}>
                     <p className="font-body w-[70%] mx-auto max-sm:w-[85%] max-md:w-[85%] ">
                     Access essential banking tools, streamline your operations, and manage money with ease <br/> - so you can focus on growing your business every day.
-
                     </p>
                 </Copy>
-
-               
             </div>
         </div>
     )

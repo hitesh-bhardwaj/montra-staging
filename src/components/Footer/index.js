@@ -177,7 +177,7 @@ export default function Footer() {
                                     {/* Social Media Links */}
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw] max-sm:mt-[10vw] '>
                                         {socialLinks.map((link, index) => (
-                                            <a key={index} href={link.href} target='_blank' aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3  '>
+                                            <a key={index} href={link.href} target='_blank' aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3 max-sm:w-fit max-sm:mx-auto'>
                                                 <span className='link-line '>{link.name}</span>
                                                 <div className='h-[0.8vw] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw] '>
                                                     <span className='inline-flex w-[200%] h-full duration-300 group-hover:translate-x-1/2'>
@@ -211,7 +211,7 @@ export default function Footer() {
                     {/* Copyright Statement */}
                     <div className="px-[4vw] py-4 flex items-center justify-between max-sm:py-[8vw] ">
                         <span className="text-[1vw] max-sm:text-[3.8vw] max-md:text-[2vw] ">Copyright © Montra 2025</span>
-                        <span className="text-[1vw] max-sm:text-[3.8vw] max-md:text-[2vw]">By: <a target='_blank' href='https://weareenigma.com/'>Enigma Digital</a></span>
+                        <span className="text-[1vw] max-sm:text-[3.8vw] max-md:text-[2vw]">By: <a target='_blank' className='link-line pb-1' href='https://weareenigma.com/'><span>Enigma Digital</span></a></span>
                     </div>
                 </div>
             </footer>

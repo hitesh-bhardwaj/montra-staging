@@ -159,7 +159,7 @@ const cardData = {
       icon: '/assets/images/business-inventory/card-icon-2.svg',
       icon2:"/assets/images/business-inventory/manage-stock.svg",
       title: 'Manage Your Stock',
-      para: '<p>Track what you buy and sell through the Montra App to keep your inventory updated. Even your tertiary sales (to consumers) are factored in, and you can edit stock levels anytime to support accurate invoicing and smart restocking decisions.</p>',
+      para: '<p>Track what you buy and sell through the Montra App to keep your inventory updated. Even your tertiary sales are factored in, and you can edit stock levels anytime to support smart restocking decisions.</p>',
     },
     {
       icon: '/assets/images/business-inventory/card-icon-3.svg',

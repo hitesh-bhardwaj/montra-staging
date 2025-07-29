@@ -104,7 +104,7 @@ const InvestmentPlans = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className="w-screen h-full bg-white p-[4vw] max-sm:px-[7vw] max-sm:py-[15%] max-md:py-[10%]" id="investmentplan">
+    <section className="w-screen h-full bg-white py-[6vw] p-[4vw] max-sm:px-[7vw] max-sm:py-[15%] max-md:py-[10%]" id="investmentplan">
       <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw] max-md:gap-[7vw]">
         <div className="w-full flex flex-col gap-[1.5vw] items-center max-sm:items-start max-sm:gap-[7vw] max-md:gap-[3vw]">
           <Heading>

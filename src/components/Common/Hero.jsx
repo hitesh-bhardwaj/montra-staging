@@ -92,7 +92,7 @@ export default function Hero({
             </div>
           </div>
         </div>
-        <div className="breadcrumbs w-full flex items-start justify-start text-[1.15vw] text-[#D2D2D2] !tracking-normal font-display max-sm:text-[4vw] absolute left-[5%] bottom-[8%] max-sm:bottom-[5%] max-md:text-[2.2vw] ">
+        <div className="breadcrumbs w-full flex items-start justify-start text-[1.15vw] text-[#D2D2D2] !tracking-normal font-display max-sm:text-[4vw] absolute left-[5%] bottom-[8%] max-sm:bottom-[5%] max-md:text-[3vw] ">
           <div className="flex gap-3  ">
             <a onClick={(e) => {
               e.preventDefault();

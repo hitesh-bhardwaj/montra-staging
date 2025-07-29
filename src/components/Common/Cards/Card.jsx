@@ -8,7 +8,7 @@ const Card = forwardRef(({ id, icon, cardTitle, cardContent,icon2 }, ref) => {
       <div
         id={id} 
         ref={ref}
-        className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[100vw] max-md:w-[43vw] max-md:h-[60vw] max-md:static inner-card-main max-md:mx-auto"
+        className="card w-[22.5vw] h-[35vw] absolute max-sm:static max-sm:w-[85vw] max-sm:h-[120vw] max-md:w-[43vw] max-md:h-[70vw] max-md:static inner-card-main max-md:mx-auto"
         style={{ perspective: "1500px" }}
       >
         <div className="card-inner">

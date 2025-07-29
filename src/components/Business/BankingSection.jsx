@@ -13,13 +13,13 @@ export default function Payments() {
   const containerRef = useRef();
   const itemsRef = useRef([]);
   const isMobile = UseMobile();
+
   const scrollToStep = (index) => {
     if (!sectionRef.current) return;
 
     const totalItems = data.length;
-    const sectionHeight = 98 / totalItems; // matches the logic in useEffect
-    const targetY = (window.innerHeight * index)+495;
-    // console.log(sectionHeight)
+    const sectionHeight = 95 / totalItems;
+    const targetY = (window.innerHeight * index) + 330;
     const scrollTop = sectionRef.current.offsetTop + targetY;
 
     window.scrollTo({
@@ -29,87 +29,94 @@ export default function Payments() {
   };
 
   useEffect(() => {
-    itemsRef.current = itemsRef.current.slice(0, data.length);
-    const totalItems = data.length;
-    const sectionHeight = 98 / totalItems;
-    const circles = document.querySelectorAll(".svg-circle");
-    const labels = document.querySelectorAll(".indicator-label");
-    gsap.fromTo(".line-banking",{
-      height:"0%"
-     },{
-      height:"100%",
-      ease:"none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start:"top top",
-        end:"bottom 80%",
-        scrub: true,
-      },
-     })
-    itemsRef.current.forEach((el, index) => {
-      const start = `${sectionHeight * index + 4}% 30%`;
-      const end = `${sectionHeight * (index + 1.1)}% 30%`;
-     
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start,
-            end,
-            scrub: true,
-            onEnter: () => {
-              // Set zIndex higher
-              itemsRef.current.forEach((item, i) => {
-                gsap.set(item, { zIndex: i === index ? 10 : 0 });
-              });
+    const ctx = gsap.context(() => {
 
-              gsap.to(circles[index], {
-                fill: "#215CFF",
-                stroke: "#215CFF",
-                duration: 0.3,
-              });
-              gsap.to(labels[index], { color: "#215CFF", duration: 0.3 });
-            },
-            onEnterBack: () => {
-              // Same as onEnter for reverse scroll
-              itemsRef.current.forEach((item, i) => {
-                gsap.set(item, { zIndex: i === index ? 10 : 0 });
-              });
+      if (globalThis.innerWidth > 1024) {
+        itemsRef.current = itemsRef.current.slice(0, data.length);
+        const totalItems = data.length;
+        const sectionHeight = 95 / totalItems;
+        const circles = document.querySelectorAll(".svg-circle");
+        const labels = document.querySelectorAll(".indicator-label");
 
-              gsap.to(circles[index], {
-                fill: "#215CFF",
-                stroke: "#215CFF",
-                duration: 0.3,
-              });
-              gsap.to(labels[index], { color: "#215CFF", duration: 0.3 });
+        // line fill
+        gsap.fromTo(
+          ".line-banking",
+          { height: "0%" },
+          {
+            height: "100%",
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "7% top",
+              end: "95% bottom",
+              scrub: true,
             },
-          
-            onLeaveBack: () => {
-              gsap.to(circles[index], {
-                fill: "white",
-                stroke: "#D2D2D2",
-                duration: 0.3,
-              });
-              gsap.to(labels[index], { color: "#D2D2D2", duration: 0.3 });
-            },
-          },
-        })
-        .fromTo(
-          el,
-          { opacity: 0, yPercent: 5, duration: 1, ease: "none" },
-          { opacity: 1, yPercent: 0, duration: 1, ease: "none" }
-        )
-        .to(el, {
-          opacity: 0,
-          yPercent: -5,
-          duration: 1,
-          ease: "none",
-          delay: 0.2,
+          }
+        );
+
+        itemsRef.current.forEach((el, index) => {
+
+          const start = `${sectionHeight * index + 4}% 30%`;
+          const end = `${sectionHeight * (index + 1.1)}% 30%`;
+
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start,
+                end,
+                scrub: true,
+                onEnter: () => {
+                  itemsRef.current.forEach((item, i) =>
+                    gsap.set(item, { zIndex: i === index ? 10 : 0 })
+                  );
+                  gsap.to(circles[index], { fill: "#215CFF", stroke: "#215CFF", duration: 0.3 });
+                  gsap.to(labels[index], { color: "#215CFF", duration: 0.3 });
+                },
+                onEnterBack: () => {
+                  itemsRef.current.forEach((item, i) =>
+                    gsap.set(item, { zIndex: i === index ? 10 : 0 })
+                  );
+                  gsap.to(circles[index], { fill: "#215CFF", stroke: "#215CFF", duration: 0.3 });
+                  gsap.to(labels[index], { color: "#215CFF", duration: 0.3 });
+                },
+                onLeaveBack: () => {
+                  gsap.to(circles[index], { fill: "white", stroke: "#D2D2D2", duration: 0.3 });
+                  gsap.to(labels[index], { color: "#D2D2D2", duration: 0.3 });
+                },
+              },
+            })
+            .fromTo(el,
+              { opacity: 0, yPercent: 5, ease: "none" },
+              { opacity: 1, yPercent: 0, ease: "none" }
+            )
+            .to(el, {
+              opacity: 0,
+              yPercent: -5,
+              ease: "none",
+              delay: 0.2,
+            });
         });
-    });
+
+        const snapPoints = data.map((_, i) => i / (data.length - 1));
+        ScrollTrigger.create({
+          trigger: sectionRef.current,
+          start: "7% top",
+          end: "95% bottom",
+          snap: {
+            snapTo: snapPoints,
+            duration: 0.5,
+            ease: "power1.inOut",
+          },
+        });
+      }
+    }, sectionRef);
+
+    return () => {
+      ctx.revert();
+    };
   }, [data]);
 
-  if (isMobile) return null;
   return (
     <section
       ref={sectionRef}
@@ -124,7 +131,7 @@ export default function Payments() {
       </div>
       <div className="sticky top-0 pl-[4vw] h-screen flex items-center justify-between overflow-hidden">
         <div className="bg-black/5 h-[34%] w-[2px] absolute top-[33%] left-[4.43%]">
-          <div className="w-full h-[20%] bg-primary line-banking"/>
+          <div className="w-full h-[20%] bg-primary line-banking" />
         </div>
         <div className="flex gap-3 w-[30vw] h-[35%] relative z-[5]">
           <svg
@@ -222,9 +229,7 @@ export default function Payments() {
                 <h2 className="text-[3.4vw] font-display font-medium leading-[1.2] w-[80%]">
                   {item.title}
                 </h2>
-                <div className="space-y-[1.5vw] my-[2vw] w-[90%]" dangerouslySetInnerHTML={{__html:item.para}}/>
-             
-               
+                <div className="space-y-[1.5vw] my-[2vw] w-[90%]" dangerouslySetInnerHTML={{ __html: item.para }} />
                 <LinkButton text="Learn More" href={item.link} />
               </div>
             ))}

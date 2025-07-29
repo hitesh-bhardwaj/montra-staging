@@ -5,7 +5,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Heading from "@/components/Heading";
 import Copy from "@/components/Copy";
-import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +20,7 @@ export default function Cards({ cardData }) {
                 const positions = [-160, -53, 53, 160];
                 const rotations = [-12, -6, 6, 12];
 
-                // pin cards section
+                // Pin cards section
                 ScrollTrigger.create({
                     trigger: container.current.querySelector(".cards"),
                     start: "top top",
@@ -30,55 +29,50 @@ export default function Cards({ cardData }) {
                     pinSpacing: true,
                 });
 
-                // spread cards
-                cards.forEach((card, index) => {
-                    gsap.to(card, {
-                        x: `${positions[index]}%`,
-                        rotation: `${rotations[index]}`,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: container.current.querySelector(".cards"),
-                            start: "top top",
-                            end: () => `+=${window.innerHeight}`,
-                            scrub: 0.5,
-                            id: `spread-${index}`,
-                        },
-                    });
-                });
-
-                // flip cards and reset rotation with staggered effect
-                cards.forEach((card, index) => {
-                    const frontEl = card.querySelector(".flip-card-front");
-                    const backEl = card.querySelector(".flip-card-back");
-
-                    const staggerOffset = index * 0.05;
-                    const startOffset = 1 / 3 + staggerOffset;
-                    const endOffset = 2 / 3 + staggerOffset;
-
-                    ScrollTrigger.create({
+                // Create a main timeline for all animations
+                const mainTl = gsap.timeline({
+                    scrollTrigger: {
                         trigger: container.current.querySelector(".cards"),
                         start: "top top",
                         end: () => `+=${totalScrollHeight}`,
                         scrub: 0.5,
-                        id: `rotate-flip-${index}`,
-                        onUpdate: (self) => {
-                            const progress = self.progress;
-                            if (progress >= startOffset && progress <= endOffset) {
-                                const animationProgress = (progress - startOffset) / (1 / 3);
-                                const frontRotation = -180 * animationProgress;
-                                const backRotation = 180 - 180 * animationProgress;
-                                const cardRotation = rotations[index] * (1 - animationProgress);
-
-                                gsap.to(frontEl, { rotateY: frontRotation, ease: "power1.out" });
-                                gsap.to(backEl, { rotateY: backRotation, ease: "power1.out" });
-                                gsap.to(card, {
-                                    rotate: cardRotation,
-                                    ease: "power1.out",
-                                });
-                            }
-                        },
-                    });
+                    }
                 });
+
+                // Add spread animations (all at the start of the timeline, duration 1 unit ~ first viewport)
+                cards.forEach((card, index) => {
+                    mainTl.to(card, {
+                        x: `${positions[index]}%`,
+                        rotation: `${rotations[index]}`,
+                        ease: "none",
+                        duration: 1 // Corresponds to first third
+                    }, 0); // All start at time 0
+                });
+
+                // Add flip animations (staggered, starting at timeline position 1 ~ second viewport)
+                cards.forEach((card, index) => {
+                    const frontEl = card.querySelector(".flip-card-front");
+                    const backEl = card.querySelector(".flip-card-back");
+                    const staggerOffset = index * 0.05;
+
+                    mainTl.to(frontEl, {
+                        rotateY: -180,
+                        ease: "power1.out",
+                        duration: 1 // Corresponds to middle third
+                    }, 1 + staggerOffset)
+                        .to(backEl, {
+                            rotateY: 0, // Assuming back starts at 180, ends at 0
+                            ease: "power1.out",
+                            duration: 1
+                        }, 1 + staggerOffset, "<") // Simultaneous with front
+                        .to(card, {
+                            rotation: 0,
+                            ease: "power1.out",
+                            duration: 1
+                        }, 1 + staggerOffset, "<"); // Simultaneous reset rotation
+                });
+
+                // The last third (from time 2 to 3) is idle by default
             } else {
                 const cards = cardRefs.current;
 

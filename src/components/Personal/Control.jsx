@@ -120,8 +120,8 @@ const Control = () => {
         stagger: 0.1,
         scrollTrigger: {
           trigger: "#control",
-          start: "5% 90%",
-          end: "20% 90%",
+          start: "20% bottom",
+          end: "30% bottom",
           scrub: true,
         },
       });
@@ -131,7 +131,7 @@ const Control = () => {
           trigger: "#control",
           pin: ".icon-container",
           start: "+150 top",
-          end: "78% top",
+          end: "90% bottom",
           scrub: true,
         },
       });
@@ -230,8 +230,8 @@ const Control = () => {
       const bl = gsap.timeline({
         scrollTrigger: {
           trigger: "#control",
-          start: "55% top",
-          end: "70% top",
+          start: "40% top",
+          end: "50% top",
           scrub: true,
         },
       });
@@ -251,7 +251,7 @@ const Control = () => {
 
   return (
     <div
-      className="w-screen h-[600vh] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb] max-md:hidden"
+      className="w-screen h-[400vh] px-[4vw] py-[5%] relative overflow-hidden bg-[#fbfbfb] max-md:hidden"
       id="control"
     >
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">
@@ -395,7 +395,7 @@ const Control = () => {
         </div>
       </div>
 
-      <div className="w-screen h-fit flex flex-col flex-nowrap overflow-hidden absolute bottom-[5%] right-0 ">
+      <div className="w-screen h-fit flex flex-col flex-nowrap overflow-hidden absolute bottom-[9%] right-0 ">
         <div className="w-full h-fit relative flex justify-end ">
           <div className="w-[70%] h-[80vh] relative bottom-content flex justify-end opacity-0 pr-[4vw]  z-[200]">
             {sections.map((section) => (

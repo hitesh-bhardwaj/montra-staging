@@ -62,26 +62,22 @@ const Overview = ({ content }) => {
   return (
     <>
       <section
-        className="w-screen h-full bg-[#fbfbfb] overflow-hidden max-sm:pb-[15%] max-md:pb-[10%] max-sm:pt-[10%]"
+        className="w-screen h-full bg-[#fbfbfb] overflow-hidden max-sm:pb-[15%] max-md:py-[10%]"
         id="overview"
       >
-        <div className="w-full h-full flex items-center justify-between px-[4vw] max-sm:flex-col max-sm:px-[7vw] max-md:flex-col">
+        <div className="w-full h-full flex items-center justify-between px-[4vw] max-sm:flex-col max-sm:px-[7vw] max-md:flex-col max-md:gap-10">
           <div ref={containerRef} className="w-[40%] relative max-sm:w-full fadeupanim max-md:w-full">
             <Image
               src={content.mainImg}
               alt="overview-phone-image"
-              className="object-cover w-auto h-[43vw] z-[2] my-auto relative max-sm:h-[120vw] max-sm:left-[0%] max-md:h-[120vw] max-md:left-[-5%] max-sm:pb-[5%]"
+              className="object-cover w-auto h-[43vw] z-[2] my-auto relative max-sm:h-[120vw] max-md:h-[80vw] max-md:mx-auto"
               width={700}
               height={1080}
             />
-            <div className="absolute top-1/2 -translate-y-1/2 left-[10%] w-full h-auto max-sm:left-0 max-md:left-0 max-md:top-[15%]">
-              <Image
-                src={content.bgImg}
-                alt="overview-banking-image"
-                className="w-full h-[31vw] object-cover max-sm:h-[100vw] max-md:h-[80vw] max-md:object-contain max-sm:hidden"
-                width={400}
-                height={800}
-              />
+            <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex items-center justify-center w-full h-full ping_item">
+              <div className="absolute h-[25vw] w-[25vw] border-white rounded-full bg-transparent border-4 animate-ping max-md:w-[50vw] max-md:h-[50vw] max-sm:border-2" />
+              <div className="absolute h-[20vw] w-[20vw] border-white rounded-full bg-transparent border-4 animate-ping ping_item2 max-md:w-[45vw] max-md:h-[45vw] max-sm:border-2" />
+              <div className="absolute h-[15vw] w-[15vw] border-white rounded-full bg-transparent border-4 animate-ping ping_item3 max-md:w-[40vw] max-md:h-[40vw] max-sm:border-2" />
             </div>
             <div
               ref={block1}
