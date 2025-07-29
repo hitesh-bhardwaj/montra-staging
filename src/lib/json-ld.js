@@ -93,7 +93,7 @@ export function LocalBusiness() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Montra",
-    "image": `https://montra.org/montra-logo.png`,
+    "image": `https://www.montra.app/montra-logo.png`,
     "@id": "",
     "url": `${homepage}`,
     "telephone": "",
