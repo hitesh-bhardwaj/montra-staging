@@ -4,4 +4,4 @@ Allow: /
 Disallow: /_next/static/
 
 # Sitemaps
-Sitemap: https://m4cs.vercel.app/sitemap.xml
+Sitemap: https://montra.org/sitemap.xml

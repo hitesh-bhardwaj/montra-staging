@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import Script from 'next/script';
 import { homepage, faviconPath } from './util';
-// import { usePathname } from 'next/navigation';
 
 export function OrganizationJsonLd() {
   const jsonLd = {
@@ -94,7 +93,7 @@ export function LocalBusiness() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Montra",
-    "image": `https://www.m4cs.vercel.app/montra-logo.png`,
+    "image": `https://montra.org/montra-logo.png`,
     "@id": "",
     "url": `${homepage}`,
     "telephone": "",
