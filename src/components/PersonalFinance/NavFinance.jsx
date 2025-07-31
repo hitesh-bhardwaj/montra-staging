@@ -131,7 +131,7 @@ const benefitsData = {
       top: "!top-[25%]",
       color: "bg-[#EAF1FF]",
       content:
-        "Explore a variety of digital loan products from Montra's lending partners, compare offers, and make informed borrowing decisions.",
+        "On Montra, you can explore a variety of digital loan products from our lending partners, compare offers, and make informed borrowing decisions.",
       title: "Compare Loan Offers",
       z: "z-[6]",
       width: "w-[21vw]",
@@ -143,7 +143,7 @@ const benefitsData = {
       top: "!top-[45%]",
       color: "bg-[#FEFFA7]",
       content:
-        "View statements for all loans availed through the Montra Personal App.",
+        "You can view Loan Statements for all the loans you been have availed on the Montra Personal App.",
       title: "View Loan Statements",
       z: "z-[5]",
       width: "w-[22vw]",
@@ -155,8 +155,8 @@ const benefitsData = {
       top: "!top-[15%]",
       color: "bg-[#FFEAEE]",
       content:
-        "Check the status of the loans you applied for.",
-      title: "Track Loan Application",
+        "Track the status of the loans you applied for.",
+      title: " Track Loan Applications",
       z: "z-[7]",
       width: "w-[22vw]",
       height: "17vw",
@@ -167,7 +167,7 @@ const benefitsData = {
       top: "!top-[40%]",
       color: "bg-[#D9F7C5]",
       content:
-        "Pay monthly installments or any other due repayments easily.",
+        "You can easily pay your monthly instalments or any other Due repayments.",
       title: "Easy Repayments",
       z: "z-[6]",
       width: "w-[18vw]",
@@ -179,7 +179,7 @@ const benefitsData = {
       top: "!top-[67%]",
       color: "bg-[#FFD7CB]",
       content:
-        "Get timely alerts from Montra to pay due and overdue amounts — helps avoid penalty charges.",
+        "Montra sends you timely alerts to remind you to pay your due and overdue amounts, helping you avoid penal charges.",
       title: "Smart Payment Reminders",
       z: "z-[4]",
       width: "w-[24vw]",
@@ -191,7 +191,7 @@ const benefitsData = {
       top: "!top-[65%]",
       color: "bg-[#CAC5F7]",
       content:
-        "Approved loan amounts are disbursed instantly once your application is submitted.",
+        "Once you submit a loan request, Montra and your chosen lending partner ensure the approved amount is disbursed instantly.",
       title: "Instant Loan Disbursements",
       z: "z-[4]",
       width: "w-[25vw]",
@@ -224,7 +224,7 @@ const benefitsData2 = {
       top: "!top-[75%]",
       color: "bg-[#FEFFA7]",
       content:
-        "View your insurance plan details anytime, from your phone.",
+        "Access all your insurance plan details anytime, right from your phone.",
       title: "Access Policy Details Anytime",
       z: "z-[5]",
       width: "w-[26vw]",
@@ -236,7 +236,7 @@ const benefitsData2 = {
       top: "!top-[15%]",
       color: "bg-[#FFEAEE]",
       content:
-        "Renew existing policies quickly from within the app.",
+        "Easily renew your existing policies right in the app.",
       title: "Quick Renewals",
       z: "z-[7]",
       width: "w-[18vw]",
@@ -270,7 +270,7 @@ const whatWhyData = {
     {
       number: "02",
       title: "Compare Offers Instantly",
-      para: "Montra lets you compare premiums and features from multiple insurance partners, helping you make informed decisions.",
+      para: "Montra enables you to compare premiums and features from multiple insurance partners—so you can make an informed choice.",
     },
     {
       number: "03",

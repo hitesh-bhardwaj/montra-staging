@@ -64,29 +64,28 @@ const personalBanking = () => {
 export default personalBanking;
 const faqContent = [
   {
-    question: "What banking services can I use with my Montra Account?",
-    answer:
-      "<p>Your Montra Account offers a range of everyday banking services, including:</p><ul class='list-disc pl-[2vw] space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li><span class='font-semibold'>Send & Receive Money</span> - Instantly transfer funds to/from other Montra users or linked bank accounts.</li><li><span class='font-semibold'>Pay Bills & Merchants</span>- Settle utility bills, pay at stores using Scan & Pay, or pay online.</li><li><span class='font-semibold'>Add & Withdraw Funds</span> - Fund your account through bank transfers, cards, or QR-based methods.</li><li><span class='font-semibold'>Track Transactions </span>Access real-time account statements and download/email them as needed.</li><li><span class='font-semibold'>Multi-Mode Payments</span>Use Montra balance, linked bank accounts, cards, or installment options.</li><li><span class='font-semibold'>Account Security </span>Manage with secure PIN, token authentication, and real-time payment alerts. With Montra, you get seamless control over your digital finances—fast, flexible, and secure.</li></ul>",
-  },
-  {
-    question: "How do I sign in to Montra?",
-    answer:
-      "<p>You can sign in using either biometric or manual credentials:<ul class='pl-[2vw] space-y-[1.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>With Face/Fingerprint ID (if enabled):<ul class='pl-[2vw] space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw] list-disc'><li>Tap Sign-In</li><li>Verify your identity using Face or Fingerprint ID</li><li>Access your account instantly</li></ul></li><li>Without Face/Fingerprint ID:<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>Tap Sign-In</li><li>Enter your Montra ID (e.g., 9876543210@montra) and Password</li><li>Authenticate and gain access to your Montra App</li></ul></li></ul></p>",
-  },
-  {
     question: "How do I use my Montra Personal Card?",
-    answer:
-      "<p>You can use your Montra Personal Card in following easy steps:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li><span class='font-semibold'>Access</span> your virtual <span class='font-semibold'>Montra Card</span> on your Montra App</li><li>Enter the <span class='font-semibold'>Debit Card Number, Expiry & CVV</span> (you can access CVV by taping on your Virtual Montra Card on the Montra App) details on the website or mobile app where you are using your Montra Personal Card for initiating payment request.</li><li>You would be asked to enter an OTP on the next screen on the website / Mobile App where you have initiated this payment. Please enter your <span class='font-semibold'>Montra Soft Token</span> as your OTP (you have previously set-up on VERIFYED App)</li><li>Montra would authenticate the Soft Token entered by you to <span class='font-semibold'>approve your transaction request</span>. Once your transaction is approved, your Montra Personal Account would be instantly Debited for sending the payment to the merchant (website / mobile app where you initiated this payment request)</li></ul>",
+    answer: "<p>You can use your Montra Personal Card in following easy steps:</p><ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li><span class='font-semibold'>Access</span> your virtual <span class='font-semibold'>Montra Card</span> on your Montra App</li><li>Enter the <span class='font-semibold'>Debit Card Number, Expiry & CVV</span> (you can access CVV by taping on your Virtual Montra Card on the Montra App) details on the website or mobile app where you are using your Montra Personal Card for initiating payment request.</li><li>You would be asked to enter an OTP on the next screen on the website / Mobile App where you have initiated this payment. Please enter your <span class='font-semibold'>Montra Soft Token</span> as your OTP (you have previously set-up on VERIFYED App)</li><li>Montra would authenticate the Soft Token entered by you to <span class='font-semibold'>approve your transaction request</span>. Once your transaction is approved, your Montra Personal Account would be instantly Debited for sending the payment to the merchant (website / mobile app where you initiated this payment request)</li></ul>",
   },
   {
     question: "Is it safe for me to use my Montra Card online?",
-    answer:
-      "<p>It is as safe using Montra Card online as it is using any Physical Debit or Credit card. Your access to virtual Montra Card is protected by your sign-in credentials followed by Montra PIN authentication. Further your usage of Montra Card online is protected by authentication of your Montra Soft Token.</p>",
+    answer: "<p>It is as safe using Montra Card online as it is using any Physical Debit or Credit card. Your access to virtual Montra Card is protected by your sign-in credentials followed by Montra PIN authentication. Further your usage of Montra Card online is protected by authentication of your Montra Soft Token.</p>",
+  },
+  {
+    question: "What is my Limit for usage on my Virtual Montra Debit Card?",
+    answer: "<p>Your Daily Transaction Limit on your Virtual Montra Card is in line with your KYC Daily Transaction Limit allowed based on your KYC Level.</p>"
+  },
+  {
+    question: "Do I need to activate my Montra Card before first use?",
+    answer: "<p>Yes. You need to activate your Montra Personal Card to agree on the Terms of its use & activate the card.</p>"
   },
   {
     question: "Can I request issuance of a Physical Montra Card as well?",
-    answer:
-      "<p>Montra is currently not issuing a Physical Debit Card. You can withdraw Cash from your Montra Account using our Agency Banking network. Also, for online payments, we are offering a Virtual Montra Personal Card on Montra App.</p>",
+    answer: "<p>Montra is currently not issuing a Physical Debit Card. You can withdraw Cash from your Montra Account using our Agency Banking network. Also, for online payments, we are offering a Virtual Montra Personal Card on Montra App.</p>",
+  },
+  {
+    question: "What is the Fee on Montra Personal Card?",
+    answer: "<p>Currently, Montra Personal Card is being offered as FREE on the Montra App.</p>"
   },
 ];
 
@@ -102,7 +101,7 @@ const overviewContent = {
 };
 
 const whatWhyData = {
-  heading:"Link your other bank accounts — pay from all your banks, all in one Montra app.",
+  heading:"Link your other Bank Accounts– one app to pay from all your bank accounts.",
   headingWidth:"w-[95%]",
   top:"top-[37%]",
   para:"",

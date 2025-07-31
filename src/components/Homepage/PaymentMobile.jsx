@@ -14,7 +14,7 @@ const controlContent = [
     personalIconText: "banking",
     businessIconText: "banking",
     color: "text-[#FF8100]",
-    PersonalTitle: "Secure way of accessing World of Banking",
+    PersonalTitle: "Secure Way Of Accessing A World Of Banking",
     BusinessTitle: "All-in-One Banking. Built for Businesses",
     personalImg: "/assets/images/homepage/personal-banking.png",
     businessImg: "/assets/images/homepage/business-banking.png",
@@ -37,7 +37,6 @@ const controlContent = [
     contentBusiness: '<p>Open a Montra Business Account to start receiving payments from anyone — anytime, anywhere. Accept payments using<ul class="pl-[5vw] space-y-[1vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
   },
   {
-
     personalIconText: "finance",
     businessIconText: "Agency Banking",
     color: "text-[#35C771]",
@@ -51,7 +50,6 @@ const controlContent = [
     contentBusiness: "<p>Offer Agency Banking services for offering Cash Deposit & Cash withdrawal services and get paid for every transaction — it’s that simple.</p>",
   },
   {
-
     personalIconText: "chat",
     businessIconText: "Inventory Management",
     color: "text-[#FB2F55]",

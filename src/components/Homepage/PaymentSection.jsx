@@ -1,202 +1,375 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
-import { LinkButton } from "../Buttons";
+'use client';
 import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+import { LinkButton } from "../Buttons";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-export default function PaymentSection() {
+const PaymentSection = () => {
   const sectionRef = useRef(null);
-  const containerRef = useRef();
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-  const [mode, setMode] = useState("personal");
-  const itemsRef = useRef([]);
+  const progressLineRef = useRef(null);
+
+  // content blocks
+  const contentRefs = useRef([]);
+  contentRefs.current = [];
   const imageRefs = useRef([]);
+  imageRefs.current = [];
   const image2Refs = useRef([]);
+  image2Refs.current = [];
 
-  // 4) Your scroll thresholds
-  const thresholds = {
-    banking: 0.0,
-    payment: 0.23,
-    finance: 0.47,
-    chat: 0.7,
-    shop: 0.91,
-    businessBanking: 0.0,
-    businessPayments: 0.18,
-    agency: 0.33,
-    inventory: 0.50,
-    montra: 0.65,
-    businessPaymentGateway: 0.82,
-    tap: 0.97,
-  };
+  // nav circles & labels
+  const navCircleRefs = useRef([]);
+  navCircleRefs.current = [];
+  const navLabelRefs = useRef([]);
+  navLabelRefs.current = [];
 
-  const RAMP = 0.01;
+  const timelineRef = useRef(null);
 
-  // 5) Build one useTransform per key, unconditionally
-  const transformsMap = {};
-  allThresholdKeys.forEach((key, i) => {
-    const start = thresholds[key];
-    const nextKey = allThresholdKeys[i + 1];
-    const end = nextKey ? thresholds[nextKey] : 1;
-    transformsMap[key] = useTransform(
-      scrollYProgress,
-      [start - RAMP, start, end - RAMP],
-      [0, 1, 0]
-    );
-  });
+  const addContentRef = el => el && contentRefs.current.push(el);
+  const addImageRef = el => el && imageRefs.current.push(el);
+  const addImage2Ref = el => el && image2Refs.current.push(el);
+  const addNavCircle = el => el && navCircleRefs.current.push(el);
+  const addNavLabel = el => el && navLabelRefs.current.push(el);
 
-  // 6) Other utilities (scrollToStep, swapMode, handleSkip, colors…)
-
-  const scrollToStep = (index) => {
-    if (!sectionRef.current) return;
-    const vh = window.innerHeight * (mode === "personal" ? 1.45 : 1.0);
-    const offset = sectionRef.current.offsetTop + index * vh;
-    window.scrollTo({ top: offset, behavior: "smooth" });
-  };
-
-  const swapMode = (newMode) => {
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ block: "start" });
-    }
-    if (document.startViewTransition) {
-      document.startViewTransition(() => setMode(newMode));
-    } else {
-      setMode(newMode);
-    }
-  };
-
-  const handleSkip = () => {
-    const next = document.getElementById("section-break");
-    if (next) next.scrollIntoView({ behavior: "smooth" });
-  };
-
+  const [mode, setMode] = useState("personal");
   const inactiveColor = "#C2C2C2";
   const activeColor = "#215CFF";
-  const makeColor = (t) =>
-    useTransform(scrollYProgress, [t - RAMP, t], [inactiveColor, activeColor]);
 
-  const colorBanking = makeColor(thresholds.banking);
-  const colorPayment = makeColor(thresholds.payment);
-  const colorFinance = makeColor(thresholds.finance);
-  const colorChat = makeColor(thresholds.chat);
-  const colorShop = makeColor(thresholds.shop);
-  const colorBusinessBanking = makeColor(thresholds.businessBanking);
-  const colorBusinessPayments = makeColor(thresholds.businessPayments);
-  const colorBusinessAgency = makeColor(thresholds.agency);
-  const colorBusinessInventory = makeColor(thresholds.inventory);
-  const colorBusinessMontra = makeColor(thresholds.montra);
-  const colorBusinessPayment = makeColor(thresholds.businessPaymentGateway);
-  const colorBusinessTap = makeColor(thresholds.tap);
-
-  const scaleY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, mode === "personal" ? 1 : 0.60]
-  );
+  const personalSnaps = [0, .30, .55, .75, 1]
+  const businessSnaps = [0, .22, .38, .53, .69, .85, 1]
 
   useEffect(() => {
+    const snaps = mode === "personal" ? personalSnaps : businessSnaps;
+
+    gsap.set(progressLineRef.current, { scaleY: 0 });
+    navCircleRefs.current.forEach(c =>
+      gsap.set(c, { fill: inactiveColor, stroke: inactiveColor })
+    );
+    navLabelRefs.current.forEach(lbl =>
+      gsap.set(lbl, { color: inactiveColor })
+    );
+    contentRefs.current.forEach(c =>
+      gsap.set(c, { opacity: 0, yPercent: 0, zIndex: 0 })
+    );
+    if (contentRefs.current[0]) {
+      gsap.set(contentRefs.current[0], { opacity: 1, y: 0, zIndex: 1 });
+      gsap.set(navCircleRefs.current[0], { fill: activeColor, stroke: activeColor });
+      gsap.set(navLabelRefs.current[0], { color: activeColor });
+    }
+
+    // 3) build a fresh GSAP context & timeline
     const ctx = gsap.context(() => {
-
       if (globalThis.innerWidth > 1024) {
-      itemsRef.current = itemsRef.current.slice(0, stepsData[mode].length);
-      imageRefs.current = imageRefs.current.slice(0, stepsData[mode].length);
-      image2Refs.current = image2Refs.current.slice(0, stepsData[mode].length);
-      const totalItems = stepsData[mode].length;
-      const sectionHeight = 100 / totalItems;
-
-      itemsRef.current.forEach((el, index) => {
-        const start = `${sectionHeight * index + 4}% 70%`;
-        const end = `${sectionHeight * (index + 1.2)}% 70%`;
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start,
-            end,
+            start: "top top",
+            end: "bottom bottom",
             scrub: true,
-          },
-        })
+            snap: {
+              snapTo: snaps,
+              duration: { min: 0.3, max: 0.5 },
+              ease: "power1.out"
+            },
+            onUpdate(self) {
+              gsap.set(progressLineRef.current, { scaleY: self.progress });
+            }
+          }
+        });
 
-        tl.fromTo(
-          el,
-          { opacity: 0, yPercent: 7, zIndex: 1, },
-          { opacity: 1, yPercent: 0, zIndex: 5, duration: 1, delay: 0.5, ease: "none" }
-        )
-          .fromTo(
-            imageRefs.current[index],
-            { opacity: 1, xPercent: -100, zIndex: index * 1 },
-            { opacity: 1, xPercent: 0, zIndex: index * 1, duration: 1 }, "<"
-          )
-          .fromTo(
-            image2Refs.current[index],
-            { opacity: 0, scale: 1.2, },
-            { opacity: 1, scale: 1, duration: 1, delay: 0.3 }, "<"
-          )
+        // 4) step‐by‐step content + image animations
+        for (let i = 1; i < contentRefs.current.length; i++) {
+          tl
+            .to(contentRefs.current[i - 1], {
+              opacity: 0,
+              yPercent: -7,
+              zIndex: 1,
+              duration: 1,
+              delay: 1,
+              ease: "none"
+            }, "<")
+            .to(image2Refs.current[i - 1], {
+              opacity: 0,
+              duration: 0.5,
+              ease: "none"
+            }, "<")
+            .fromTo(
+              contentRefs.current[i],
+              { opacity: 0, yPercent: 7, zIndex: 1 },
+              {
+                opacity: 1,
+                yPercent: 0,
+                zIndex: 5,
+                duration: 1,
+                delay: 1,
+                ease: "none"
+              },
+              "<"
+            )
+            .fromTo(
+              imageRefs.current[i],
+              { xPercent: -100 },
+              { xPercent: 0, duration: 1, ease: "none" },
+              "<"
+            )
+            .fromTo(
+              image2Refs.current[i],
+              { opacity: 0, scale: 1.2 },
+              {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                delay: 0.3,
+                ease: "none"
+              },
+              "<"
+            )
+            .fromTo(
+              navCircleRefs.current[i],
+              { fill: inactiveColor, stroke: inactiveColor },
+              {
+                fill: activeColor,
+                stroke: activeColor,
+                duration: 0.3,
+                ease: "none"
+              },
+            )
+            .fromTo(
+              navLabelRefs.current[i],
+              { color: inactiveColor },
+              { color: activeColor, duration: 0.3, ease: "none" },
+            );
+        }
 
-        tl.to(el, { opacity: 0, yPercent: -7, zIndex: 1, duration: 1, delay: 0.5, ease: "none" }
-        )
-          .to(image2Refs.current[index], { opacity: 0, duration: 0.5 }, '<');
-      });
+        // 5) stash the timeline for skip & click handlers
+        timelineRef.current = tl;
+      }
+    }, sectionRef);
+    // 7) cleanup on mode change
+    return () => ctx.revert();
+  }, [mode]);
 
-      const snapPoints = thresholdKeys[mode].map(key => thresholds[key]);
-
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "bottom bottom",
-        snap: {
-          snapTo: snapPoints,
-          duration: { min: 0.2, max: 1 },
-          delay: 0.1,
-          ease: "power1.inOut",
-          directional: true,
+  const handleSkip = () => {
+    if (timelineRef.current) {
+      const st = timelineRef.current.scrollTrigger;
+      gsap.to(window, {
+        scrollTo: { y: st.end, autoKill: true },
+        duration: 1,
+        onComplete: () => {
+          timelineRef.current.progress(1);
         },
       });
-      }
+    }
+  };
+
+  const scrollToStep = (index) => {
+    const snaps = mode === "personal" ? personalSnaps : businessSnaps;
+    const st = timelineRef.current.scrollTrigger;
+    const targetY = st.start + (st.end - st.start) * snaps[index];
+    gsap.to(window, {
+      duration: 0.6,
+      ease: "power1.out",
+      scrollTo: { y: targetY, autoKill: true }
     });
+  };
 
-    return () => {
-      ctx.revert();
-    };
-
-  }, [mode]);
+  const swapMode = (newMode) => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ block: "start", behavior: "auto" });
+    }
+    setMode(newMode);
+  };
 
   return (
     <section
       ref={sectionRef}
-      className="h-[700vh] bg-white relative pb-[5%] max-md:hidden "
-      id="payment"
+      className="h-[500vh] bg-white relative max-md:hidden"
+      id="h_payment_section"
     >
-      <div className="sticky top-0 px-[4vw] h-screen flex items-center justify-between z-[300]">
+      <div className="sticky top-0 h-screen flex items-center justify-between w-full px-[4vw]">
+
         {/* MODE TOGGLE */}
-        <div className="absolute top-[8%] left-1/2 -translate-x-1/2 flex gap-2 bg-white border border-[#E2EFFF] rounded-full p-0.5 z-[999]">
-          <motion.div
-            className="absolute top-[6%] left-0 w-1/2 h-[88%] rounded-full bg-primary "
-            style={{ translateX: mode === "personal" ? "2%" : "98%" }}
-          />
+        <div className="absolute top-[8%] left-1/2 -translate-x-1/2 flex gap-2 bg-white border border-[#E2EFFF] rounded-full z-[999]">
+          <div className={`absolute inset-[5%] left-[1%] w-1/2 rounded-full bg-primary transition-transform duration-300 ${mode === "personal" ? "translate-x-0" : "translate-x-full !-left-[1%]"}`} />
           <button
             onClick={() => swapMode("personal")}
-            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1.2vw] ${mode === "personal" ? "text-white" : ""
+            className={`relative cursor-pointer z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1.2vw] duration-300 ${mode === "personal" ? "text-white" : ""
               }`}
           >
             Personal
           </button>
           <button
             onClick={() => swapMode("business")}
-            className={`relative z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1.2vw] ${mode === "business" ? "text-white" : ""
+            className={`relative cursor-pointer z-10 px-[1.2vw] py-[0.5vw] rounded-full text-[1.2vw] duration-300 ${mode === "business" ? "text-white" : ""
               }`}
           >
             Business
           </button>
         </div>
 
-        {/* SKIP */}
+        {/* SVG NAVIGATION */}
+        <div className="absolute top-1/2 left-[4vw] -translate-y-1/2">
+          {mode === "personal" && (
+            <div className="flex gap-4 w-[13vw]">
+              <svg className="h-[15vw]" width="14" height="328" viewBox="0 0 14 328" fill="none">
+                {/* inactive background line */}
+                <line x1="6.958" y1="5.5" x2="6.958" y2="328"
+                  stroke={inactiveColor} strokeWidth="2" />
+
+                {/* active progress line */}
+                <line
+                  ref={progressLineRef}
+                  x1="6.958" y1="5.5" x2="6.958" y2="328"
+                  stroke={activeColor} strokeWidth="2"
+                  style={{ transformOrigin: "top center", scaleY: 0 }}
+                />
+
+                {/* nav circles */}
+                {["Banking", "Payments", "Finance", "Chat", "Shop"].map((_, i) => (
+                  <circle
+                    key={i}
+                    ref={addNavCircle}
+                    cx="6.958" cy={[6, 83, 162, 240, 321][i]}
+                    r="5.5"
+                    fill={inactiveColor}
+                    stroke={inactiveColor}
+                    strokeWidth="2"
+                    onClick={() => scrollToStep(i)}
+                    className="cursor-pointer"
+                  />
+                ))}
+              </svg>
+
+              {/* nav labels */}
+              <div className="flex flex-col justify-between text-[1vw] font-display leading-[0.5] pb-1">
+                {["Banking", "Payments", "Finance", "Chat", "Shop"].map((label, i) => (
+                  <span
+                    key={i}
+                    ref={addNavLabel}
+                    onClick={() => scrollToStep(i)}
+                    className="cursor-pointer"
+                    style={{ color: inactiveColor }}
+                  >
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {mode === "business" && (
+            <div className="flex gap-4 w-[13vw]">
+              <svg className="h-[20vw]" width="20" height="328" viewBox="0 0 14 328" fill="none">
+                {/* inactive background line */}
+                <line x1="6.958" y1="5.5" x2="6.958" y2="328"
+                  stroke={inactiveColor} strokeWidth="2" />
+
+                {/* active progress line */}
+                <line
+                  ref={progressLineRef}
+                  x1="6.958" y1="5.5" x2="6.958" y2="328"
+                  stroke={activeColor} strokeWidth="2"
+                  style={{ transformOrigin: "top center", scaleY: 0 }}
+                />
+
+                {/* nav circles */}
+                {["Banking", "Payments", "Agency Banking", "Inventory Management", "Montra Store", "Payment Gateway", "Tap & Pay"].map((_, i) => (
+                  <circle
+                    key={i}
+                    ref={addNavCircle}
+                    cx="6.958" cy={[5.5, 57, 110, 164, 215, 267, 323][i]}
+                    r="4"
+                    fill={inactiveColor}
+                    stroke={inactiveColor}
+                    strokeWidth="2"
+                    onClick={() => scrollToStep(i)}
+                    className="cursor-pointer"
+                  />
+                ))}
+              </svg>
+
+              {/* nav labels */}
+              <div className="flex flex-col justify-between text-[1vw] font-display leading-[0.5] pb-1">
+                {["Banking", "Payments", "Agency Banking", "Inventory Management", "Montra Store", "Payment Gateway", "Tap & Pay"].map((label, i) => (
+                  <span
+                    key={i}
+                    ref={addNavLabel}
+                    onClick={() => scrollToStep(i)}
+                    className="cursor-pointer"
+                    style={{ color: inactiveColor }}
+                  >
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Content Block & SVG */}
+        <div className="h-screen flex items-center relative w-[40vw] justify-start text-left ml-[15vw]">
+          {stepsData[mode].map((item, index) => (
+            <div
+              key={index}
+              ref={addContentRef}
+              className="absolute step-block"
+            >
+              <h2 className="text-[3.4vw] font-display font-medium leading-[1.2] w-[80%]">
+                {item.title}
+              </h2>
+              <div className="space-y-[1.5vw] py-[2vw]" dangerouslySetInnerHTML={{ __html: item.desc }} />
+              <div>
+                <LinkButton text="Learn More" href={item.link} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* IMAGE BLOCK */}
+        <div className="sticky top-[18%] right-[0%] w-[40%] mt-[10%] h-[80vh] flex items-start justify-center">
+          <div className="relative w-full h-[70vh] overflow-hidden fadeupanim">
+            <Image className="absolute inset-0 object-contain top-0 left-0 h-full w-full z-20" alt="mobile frame" src="/assets/animation/frame.png" width={500} height={800} quality={100} />
+            {stepsData[mode].map((step, idx) => {
+              return (
+                <React.Fragment key={idx}>
+                  <div
+                    key={idx}
+                    className="absolute top-0 left-0 h-full w-full"
+                    style={{ opacity: 1, clipPath: 'rect(0% 80% 100% 28%)' }}
+                  >
+                    <Image
+                      ref={addImageRef}
+                      src={step.image}
+                      alt={step.title}
+                      width={415}
+                      height={750}
+                      quality={100}
+                      className="w-full h-full absolute top-0 left-0 object-contain"
+                    />
+                  </div>
+                  {step.highlightImg && (
+                    <div className="absolute top-0 left-0 h-full w-full z-30">
+                      <Image
+                        ref={addImage2Ref}
+                        src={step.highlightImg}
+                        alt={step.title}
+                        width={415}
+                        height={750}
+                        quality={100}
+                        className="w-full h-full absolute top-0 left-0 object-contain"
+                      />
+                    </div>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </div>
+        </div>
+
         <button
           onClick={handleSkip}
           className="absolute bottom-10 right-10 z-30 text-[1vw] font-display flex items-center gap-1 group hover:text-primary cursor-pointer"
@@ -221,243 +394,18 @@ export default function PaymentSection() {
             </svg>
           </div>
         </button>
-
-        {/* PERSONAL NAV */}
-        {mode === "personal" && (
-          <div className="flex gap-4 w-[13vw]">
-            <motion.svg
-              className="h-[15vw]"
-              width="14"
-              height="428"
-              viewBox="0 0 14 328"
-              fill="none"
-            >
-              <line
-                x1="6.95801"
-                y1="5.5"
-                x2="6.95799"
-                y2="345"
-                stroke={inactiveColor}
-                strokeWidth="3"
-              />
-              <motion.line
-                x1="6.95801"
-                y1="5.5"
-                x2="6.95799"
-                y2="345"
-                stroke={activeColor}
-                strokeWidth="3"
-                style={{ scaleY }}
-                className="!origin-top"
-              />
-              {thresholdKeys.personal.map((key, i) => {
-                const colors = [
-                  colorBanking,
-                  colorPayment,
-                  colorFinance,
-                  colorChat,
-                  colorShop,
-                ];
-                const posY = [6, 83, 162, 240, 321][i];
-                return (
-                  <motion.circle
-                    key={key}
-                    cx="6.95801"
-                    cy={posY}
-                    r="5.5"
-                    fill={colors[i]}
-                    stroke={colors[i]}
-                    strokeWidth="2"
-                    onClick={() => scrollToStep(i)}
-                    className="cursor-pointer"
-                  />
-                );
-              })}
-            </motion.svg>
-            <div className="flex flex-col justify-between text-[1vw] font-display leading-[0.5] pb-1">
-              {["Banking", "Payment", "Finance", "Chat", "Shop"].map(
-                (label, i) => (
-                  <motion.span
-                    key={label}
-                    style={{
-                      color: [
-                        colorBanking,
-                        colorPayment,
-                        colorFinance,
-                        colorChat,
-                        colorShop,
-                      ][i],
-                    }}
-                    onClick={() => scrollToStep(i)}
-                    className="cursor-pointer"
-                  >
-                    {label}
-                  </motion.span>
-                )
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* BUSINESS NAV */}
-        {mode === "business" && (
-          <div className="flex gap-4 w-[13vw]">
-            <motion.svg
-              className="h-[20vw]"
-              width="20"
-              height="928"
-              viewBox="0 0 14 328"
-              fill="none"
-            >
-              <line
-                x1="6.95801"
-                y1="5.5"
-                x2="6.95799"
-                y2="545"
-                stroke={inactiveColor}
-                strokeWidth="2"
-              />
-              <motion.line
-                x1="6.95801"
-                y1="5.5"
-                x2="6.95799"
-                y2="545"
-                stroke={activeColor}
-                strokeWidth="2"
-                style={{ scaleY }}
-                className="!origin-top"
-              />
-              {thresholdKeys.business.map((key, i) => {
-                const colors = [
-                  colorBusinessBanking,
-                  colorBusinessPayments,
-                  colorBusinessAgency,
-                  colorBusinessInventory,
-                  colorBusinessMontra,
-                  colorBusinessPayment,
-                  colorBusinessTap,
-                ];
-                const posY = [5.5, 57, 110, 164, 215, 267, 323][i];
-                return (
-                  <motion.circle
-                    key={key}
-                    cx="6.95801"
-                    cy={posY}
-                    r="4"
-                    fill={colors[i]}
-                    stroke={colors[i]}
-                    strokeWidth="2"
-                    onClick={() => scrollToStep(i)}
-                    className="cursor-pointer"
-                  />
-                );
-              })}
-            </motion.svg>
-            <div className="flex flex-col justify-between text-[1vw] font-display leading-[0.5] pb-1 h-[20vw]">
-              {[
-                "Banking",
-                "Payments",
-                "Agency Banking",
-                "Inventory Management",
-                "Montra Store",
-                "Payment Gateway",
-                "Tap & Pay",
-              ].map((label, i) => (
-                <motion.span
-                  key={label}
-                  style={{
-                    color: [
-                      colorBusinessBanking,
-                      colorBusinessPayments,
-                      colorBusinessAgency,
-                      colorBusinessInventory,
-                      colorBusinessMontra,
-                      colorBusinessPayment,
-                      colorBusinessTap,
-                    ][i],
-                  }}
-                  onClick={() => scrollToStep(i)}
-                  className="cursor-pointer"
-                >
-                  {label}
-                </motion.span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* TEXT BLOCK */}
-        <div ref={containerRef} className="relative h-full">
-          <div className="sticky top-0 h-screen w-[40vw] flex items-center justify-start text-left ml-[1vw]">
-            {stepsData[mode].map((item, index) => (
-              <div
-                key={index}
-                ref={(el) => (itemsRef.current[index] = el)}
-                className="absolute text-left w-[40vw] h-screen flex flex-col justify-center"
-              >
-                <h2 className="text-[3.4vw] font-display font-medium leading-[1.2] w-[80%]">
-                  {item.title}
-                </h2>
-                <div className="space-y-[1.5vw] py-[2vw]" dangerouslySetInnerHTML={{ __html: item.desc }} />
-                <div>
-                  <LinkButton text="Learn More" href={item.link} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* IMAGE BLOCK */}
-        <div className="sticky top-[18%] right-[0%] w-[40%] mt-[10%] h-[80vh] flex items-start justify-center">
-          <div className="relative w-full h-[70vh] overflow-hidden fadeupanim">
-            <Image className="absolute inset-0 object-contain top-0 left-0 h-full w-full z-20" alt="mobile frame" src="/assets/animation/frame.png" width={500} height={800} quality={100} />
-            {stepsData[mode].map((step, idx) => {
-              const key = thresholdKeys[mode][idx];
-              return (
-                <React.Fragment key={key}>
-                  <motion.div
-                    key={key}
-                    className="absolute top-0 left-0 h-full w-full"
-                    style={{ opacity: 1, clipPath: 'rect(0% 80% 100% 28% round 6.2vw)' }}
-                  >
-                    <Image
-                      ref={(el) => (imageRefs.current[idx] = el)}
-                      src={step.image}
-                      alt={step.title}
-                      width={415}
-                      height={750}
-                      quality={100}
-                      className="w-full h-full absolute top-0 left-0 object-contain"
-                    />
-                  </motion.div>
-                  {step.highlightImg && (
-                    <div className="absolute top-0 left-0 h-full w-full z-30">
-                      <Image
-                        ref={(el) => (image2Refs.current[idx] = el)}
-                        src={step.highlightImg}
-                        alt={step.title}
-                        width={415}
-                        height={750}
-                        quality={100}
-                        className="w-full h-full absolute top-0 left-0 object-contain"
-                      />
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </section>
   );
-}
+};
 
-// 1) Your per-step data with individual image URLs
+export default PaymentSection;
+
 const stepsData = {
   personal: [
     {
-      title: "Secure way of accessing World of Banking",
-      desc: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>",
+      title: "Secure Way Of Accessing A World Of Banking",
+      desc: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers.</p>",
       link: "/personal/banking",
       image: "/assets/animation/1-ss.png",
       highlightImg: "/assets/animation/1-pop.png"
@@ -508,7 +456,7 @@ const stepsData = {
     },
     {
       title: "Become a Montra Agent. Start Earning",
-      desc: "<p>Offer Agency Banking services for offering Cash Deposit & Cahs withdrawal services and get paid for every transaction — it’s that simple.</p>",
+      desc: "<p>Offer Agency Banking services for offering Cash Deposit & Cash withdrawal services and get paid for every transaction — it’s that simple.</p>",
       link: "/business/agency-banking",
       image: "/assets/animation/8-ss.png",
       highlightImg: "/assets/animation/8-pop.png"
@@ -525,6 +473,7 @@ const stepsData = {
       desc: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
       link: "/business/montra-store",
       image: "/assets/animation/10-ss.png",
+      highlightImg: "/assets/animation/10-pop.png"
     },
     {
       title: "One Gateway. Multiple Payment Options.",
@@ -540,35 +489,5 @@ const stepsData = {
       image: "/assets/animation/12-ss.png",
       highlightImg: "/assets/animation/12-pop.png"
     },
-  ],
-};
-
-// 2) Master list of all keys (hook count stays constant)
-const allThresholdKeys = [
-  "banking",
-  "payment",
-  "finance",
-  "chat",
-  "shop",
-  "businessBanking",
-  "businessPayments",
-  "agency",
-  "inventory",
-  "montra",
-  "businessPaymentGateway",
-  "tap",
-];
-
-// 3) Which subset applies to each mode
-const thresholdKeys = {
-  personal: ["banking", "payment", "finance", "chat", "shop"],
-  business: [
-    "businessBanking",
-    "businessPayments",
-    "agency",
-    "inventory",
-    "montra",
-    "businessPaymentGateway",
-    "tap",
   ],
 };

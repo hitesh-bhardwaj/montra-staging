@@ -301,7 +301,6 @@ export const timelineData = [
     },
     {
         year: 2023,
-        openCard:["Completed Development of Montra Supply Chain Solution","Obtained PSSP & Super-agent from CBN (Central Bank of Nigeria)"],
         cards: [
             {
                 title: 'DUO',
@@ -339,8 +338,8 @@ export const timelineData = [
             },
             {
                 title: 'Monielink',
-                left: 'left-[15%]',
-                top: 'top-[50%]',
+                left: 'left-[72%]',
+                top: 'top-[30%]',
                 color: '#FFEAEE',
                 h:"17vw",
                 mobileh:"75vw",
@@ -352,7 +351,7 @@ export const timelineData = [
                para:"Completed Development of:",
                 classPrefix: 'c',
                 letter: "M",
-                z: "z-[4]"
+                z: "z-[8]"
             },
             {
                 title: 'Montra',

@@ -80,7 +80,7 @@ const faqContent = [
   },
   {
     question: "How can I fund my Montra Personal Account?",
-    answer: "<ul class='list-disc pl-[2vw] space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li><span class='font-semibold'>Linked Bank Accounts</span> — Add money directly from your connected bank accounts.</li><li><span class='font-semibold'>Linked Debit/Credit Cards</span> — Fund your account using your saved cards.</li><li><span class='font-semibold'>Bank Transfer</span> — Transfer funds directly from any other bank account to your Montra Personal Account.</li></ul>"
+    answer: "<p>Ways to Fund Your Montra Account</p><ul class='list-disc pl-[2vw] space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li><span class='font-semibold'>Linked Bank Accounts</span> — Add money directly from your connected bank accounts.</li><li><span class='font-semibold'>Linked Debit/Credit Cards</span> — Fund your account using your saved cards.</li><li><span class='font-semibold'>Bank Transfer</span> — Transfer funds directly from any other bank account to your Montra Personal Account.</li></ul>"
   },
   {
     question: "How to access Account Statement of my Montra Personal Account?",

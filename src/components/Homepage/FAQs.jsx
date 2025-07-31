@@ -97,7 +97,7 @@ function Accordion({ question, answer, isOpen, onToggle }) {
               }}
               className="overflow-hidden"
             >
-              <div className="py-[1.5vw] pb-[3vw] w-4/5 max-sm:py-[8vw] max-sm:w-[90%] space-y-[1.5vw] max-sm:space-y-[2.5vw]" dangerouslySetInnerHTML={{ __html: answer }} />
+              <div className="py-[1.5vw] pb-[3vw] w-[90%] max-sm:py-[8vw] max-sm:w-[90%] space-y-[1.5vw] max-sm:space-y-[2.5vw]" dangerouslySetInnerHTML={{ __html: answer }} />
             </motion.div>
           )}
         </AnimatePresence>

@@ -146,7 +146,7 @@ const cardData = {
       icon: "/assets/images/personal-payments/card-2.svg",
       icon2:"/assets/images/personal-payments/linked-bank.svg",
       title: "Linked Bank Accounts",
-      para: "<p>Easily link your other bank accounts on the Montra app and manage all your payments in one place — one app for all your bank accounts.</p>",
+      para: "<p>Easily link your other  bank accounts on the Montra app and manage all your payments in one place — one app for all your bank accounts.</p>",
     },
     {
       icon: "/assets/images/personal-payments/card-3.svg",
@@ -158,7 +158,7 @@ const cardData = {
       icon: "/assets/images/personal-payments/card-4.svg",
       icon2:"/assets/images/personal-payments/installments-blue.svg",
       title: "Installments",
-      para: "<p>Don’t have enough cash? On Montra, you can instantly borrow money from our lending partners to complete your payment.</p>",
+      para: "<p>Don’t have enough cash to make a purchase? On Montra, you can instantly borrow money from our lending partners to complete your payment.</p>",
     }
   ],
 }

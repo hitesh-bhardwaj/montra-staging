@@ -31,7 +31,7 @@ const VisionMission = () => {
     }, []);
 
     return (
-        <section ref={section} className="relative h-[600vh] bg-[#fbfbfb] max-sm:h-full max-sm:px-[7vw] max-sm:py-[15%] max-md:h-full max-md:px-[5vw] max-md:py-[10%]">
+        <section ref={section} className="relative h-[300vh] bg-[#fbfbfb] max-sm:h-full max-sm:px-[7vw] max-sm:py-[15%] max-md:h-full max-md:px-[5vw] max-md:py-[10%]">
             <div className="w-full h-screen sticky top-0 flex items-center justify-center max-sm:h-fit max-sm:static max-sm:items-start max-sm:justify-start max-md:h-fit max-md:static max-md:items-center max-md:justify-center">
                 <Heading>
                     <h2 className="text-[5.7vw] text-center font-display font-medium w-[80%] max-sm:text-[11vw] max-sm:text-left max-sm:leading-[1.2] max-md:text-[7.5vw] max-md:w-full ">
@@ -80,7 +80,7 @@ function initVisionMissionAnimations({ container, section }) {
         ScrollTrigger.create({
             animation: tl,
             trigger: section,
-            start: "20% center",
+            start: "40% center",
             end: "80% center",
             scrub: 0.25,
         });
