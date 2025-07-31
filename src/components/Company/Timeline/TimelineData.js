@@ -331,7 +331,6 @@ export const timelineData = [
                     'Facematch capability',
                     'KYC verifications'
                 ],
-               para:"Developed Verifyed Authentication App",
                 classPrefix: 'b',
                 letter: "V",
                 z: "z-[8]"

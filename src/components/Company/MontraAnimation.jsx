@@ -231,7 +231,7 @@ const MontraAnimation = () => {
                     className={`h-[3.85vw] w-[3.8vw] rounded-full flex justify-center items-center ${color}`}
                   />
                   <div
-                    className={`h-full rounded-[3vw] ${innerWidth} px-[3vw] flex flex-col justify-start py-[1vw] capitalize text-[1.4vw] font-medium gap-[2vw] ${color}`}
+                    className={`h-full rounded-[3vw] ${innerWidth} px-[3vw] flex flex-col justify-start py-[1vw] text-[1.4vw] font-medium gap-[2vw] ${color}`}
                   >
                     <div className="w-full flex gap-[2vw]">
                     <div className="h-[2vw]">{title}</div> <div className={`absolute right-[8%] cursor-pointer opacity-0 ${key}-cross`} >

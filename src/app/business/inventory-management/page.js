@@ -45,7 +45,7 @@ const businessInventory = () => {
       <Benefits data={benefitsData} />
       <Cards cardData={cardData} />
       <Rewards rewardsData={rewardsData} />
-      <SectionBreak content={"Built to Empower & Designed for Simplicity. Whether you're running a business or handling personal payments, our fintech tools make it all smoother, faster, and more inclusive."} width={"w-[90%]"} />
+      <SectionBreak content={"Whether you're buying, selling or tracking inventory, Montra gives you the tools to manage it all in one place."} width={"w-[90%]"} />
       <FAQs content={faqContent} />
     </>
   )

@@ -45,7 +45,7 @@ const montraStore = () => {
       <Benefits data={benefitsData} />
       <Cards cardData={cardData} />
       <Rewards rewardsData={rewardsData} />
-      <SectionBreak content={"Our fintech solutions are designed to empower individuals and businesses—making everyday transactions effortless, digital wallets seamless, and payment systems more accessible."} width={"w-[95%]"} />
+      <SectionBreak content={"Built to Empower & Designed for Simplicity. Whether you're running a business or handling personal payments, our fintech tools make it all smoother, faster, and more inclusive."} width={"w-[95%]"} />
       <FAQs content={faqContent} />
     </>
   )

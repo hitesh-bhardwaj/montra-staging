@@ -10,7 +10,7 @@ import { getPageMetadata } from "@/lib/seo.config";
 export const metadata = getPageMetadata({
   title: "Montra Business Account: Smarter Finance & Growth Tools for Merchants",
   description: "Empower your business with Montra's digital solutions: open a business account to accept payments via QR, Tap & Pay, POS, gateways; manage inventory, invoices, cash flow & access credit—all-in-one platform.",
-  url:"business",
+  url: "business",
   date_published: "2025-06-20T00:00",
   date_modified: "2025-06-20T00:00",
   alternates: {
@@ -34,11 +34,11 @@ export const metadata = getPageMetadata({
 export default function Business() {
   return (
     <>
-    <WebpageJsonLd metadata={metadata}/>
-    <FAQJSONLD faqs={faqContent}/>
+      <WebpageJsonLd metadata={metadata} />
+      <FAQJSONLD faqs={faqContent} />
       <Hero />
       <div className="max-sm:h-fit max-md:min-h-screen">
-       <MobileBanking /> 
+        <MobileBanking />
         <BankingSection />
       </div>
       <SectionBreak content={"Take control with Montra for Business—get paid, track cash flow, access credit, and scale with ease."} width={"w-[85%]"} />
@@ -50,11 +50,11 @@ export default function Business() {
 const faqContent = [
   {
     question: "Who can Open a Montra Business Account?",
-    answer: "<p><span class='font-semibold'>Any registered user with KYC Level 2 status on Montra App can choose to open a Montra Business Account, if:</span></p><ul class='pl-[2vw] space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>1. You have an existing business or a new business that requires acceptance of payments for products or services you offer.</li><li>2. You have a Physical Store / Shop or an Office</li><li>3. You have an existing Website or Mobile App to sell your products / services.</li><li>4. You neither have a Physical Store / Shop / Office nor you have an existing Website / Mobile App. You can simply set-up a Montra Store on Montra App to sell your Products / Services virtually</li></ul>"
+    answer: "<p><span class='font-semibold'>Any registered user with KYC Level 2 status on Montra App can choose to open a Montra Business Account, if:</span></p><ul class='pl-[2vw] space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>1. You have an existing business or a new business that requires acceptance of payments for products or services you offer.</li><li>2. You have a Physical Store / Shop or an Office</li><li>3. You have an existing Website or Mobile App to sell your products / services.</li><li>4. You neither have a Physical Store / Shop / Office nor you have an existing Website / Mobile App. You can simply set-up a Montra Store on Montra App for selling your Products / Services virtually.</li></ul>",
   },
   {
     question: "How do I access various Montra Business Accounts I have set-up on Montra App?",
-    answer: "<ul class='space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw] list-disc '><li><span class='font-semibold'>Step 1:</span> Click the top section (dropdown icon) on your Business Home Screen to view all accounts for your current country.</li><li><span class='font-semibold'>Step 2:</span> Select any of the account to view its details and features.</li><li><span class='font-semibold'>Step 3:</span> To switch countries, click the country flag at the top right and choose the country you want.</li><li><span class='font-semibold'>Step 4:</span> Once switched, follow the same steps to access and manage your Business Accounts in that country.</li></ul>"
+    answer: "<ul class='space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw] list-disc'><li><span class='font-semibold'>Step 1:</span> Click the top section (dropdown icon) on your Business Home Screen to view all accounts for your current country.</li><li><span class='font-semibold'>Step 2:</span> Select any account from the list to view its details and features.</li><li><span class='font-semibold'>Step 3:</span> To switch countries, click the country flag at the top right and choose the country you want.</li><li><span class='font-semibold'>Step 4:</span> Once switched, follow the same steps to access and manage your Business Accounts in that country.</li></ul>"
   },
   {
     question: "What are the various methods available for acceptance of payments in Montra Business Account for a Physical Store / Shop/ Office merchant?",

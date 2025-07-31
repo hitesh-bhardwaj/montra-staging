@@ -178,7 +178,7 @@ const cardData ={
         icon: "/assets/images/payment-gateway/card-icon-3.svg",
         icon2:"/assets/images/payment-gateway/pay.svg",
         title: "Pay using Montra App",
-        para: "<p>Registered Montra users receive a notification in their app to complete payments using Montra Account, linked bank accounts, saved cards, or installments.</p>",
+        para: "<p>Registered Montra users receive an in-app prompt to pay—via Montra Account, linked bank accounts, saved cards, or installments—and see instant confirmation on the originating webpage.</p>",
       },
       {
         icon: "/assets/images/payment-gateway/card-icon-4.svg",
