@@ -46,7 +46,7 @@ const controlContent = [
     businessImg: "/assets/images/homepage/business-agency-banking.png",
     personalLink: "/personal/finance",
     businessLink: "/business/agency-banking",
-    contentPersonal: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[5vw] space-y-[1vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul>',
+    contentPersonal: '<p>Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[5vw] space-y-[1vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul><p>Because your money should move as smartly as you do.</p>',
     contentBusiness: "<p>Offer Agency Banking services for offering Cash Deposit & Cash withdrawal services and get paid for every transaction — it’s that simple.</p>",
   },
   {
@@ -63,7 +63,6 @@ const controlContent = [
     contentBusiness: '<p>Manage orders, send invoices, and track stock. With Montra, every part of your business just flows.<ul class="pl-[5vw] list-disc space-y-[1vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
   },
   {
-
     personalIconText: "Shop",
     businessIconText: "Montra Store",
     color: "text-[#111111]",
@@ -77,7 +76,6 @@ const controlContent = [
     contentBusiness: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[5vw] list-disc space-y-[1vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
   },
   {
-
     businessIconText: "Payment Gateway",
     color: "text-[#111111]",
     BusinessTitle: "One Gateway. Multiple Payment Options.",
@@ -86,7 +84,6 @@ const controlContent = [
     contentBusiness: '<p>Integrate <span class="font-semibold">Montra Payment Gateway</span> into your app or website and accept payments via:</p><ul class="pl-[5vw] list-disc space-y-[1.5vw]"><li>Debit & Credit Cards</li><li>Bank Transfers via QR</li><li>Montra App </li><li>USSD Payments </li></ul> <p class="font-semibold">More ways to get paid. Fast integration. Instant settlement.</p>',
   },
   {
-
     businessIconText: "Tap & Pay",
     color: "text-[#111111]",
     BusinessTitle: "Tap. Accept. Get Paid.",
