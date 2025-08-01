@@ -51,7 +51,7 @@ const BusinessPaymentGateway = () => {
    <Rewards rewardsData={rewardsData}/>
    <Cards cardData={cardData}/>
    <WhatWhy data={whatWhyData} height={"h-[47vw]"}/>
-   <SectionBreak content={"MontraPay makes it simple for businesses of all sizes to accept secure payments online or offline"} width={"w-[90%]"}/>
+   <SectionBreak content={"Montra Payment Gateway makes it simple for businesses of all sizes to accept secure payments online or offline."} width={"w-[85%]"}/>
    <FAQs content={faqContent}/>
    </>
   )
@@ -147,7 +147,7 @@ const rewardsData={
       {
           icon:"/assets/images/payment-gateway/pay-now.svg",
           title:"Pay Now",
-          para:"Customers can pay instantly using their Montra Account, or any linked bank account or card—fast, simple, and secure."
+          para:"Customers can pay instantly using their Montra Account, or any linked bank account or card fast, simple, and secure."
       },
       {
           icon:"/assets/images/payment-gateway/escrow.svg",
@@ -172,13 +172,13 @@ const cardData ={
         icon: "/assets/images/payment-gateway/card-icon-2.svg",
         icon2:"/assets/images/payment-gateway/new-and-saved-cards.svg",
         title: "New & Saved Cards",
-        para: "<p>Customers can pay using a new debit or credit card or choose a saved card on the Montra platform — no need to re-enter card details.</p>",
+        para: "<p>Customers can pay using a new debit or credit card or choose a saved card on the Montra platform. No need to re-enter card details.</p>",
       },
       {
         icon: "/assets/images/payment-gateway/card-icon-3.svg",
         icon2:"/assets/images/payment-gateway/pay.svg",
         title: "Pay using Montra App",
-        para: "<p>Registered Montra users receive an in-app prompt to pay—via Montra Account, linked bank accounts, saved cards, or installments—and see instant confirmation on the originating webpage.</p>",
+        para: "<p>Registered Montra users receive a notification in their app to complete payments using Montra Account, linked bank accounts, saved cards, or instalments. Once done, they get instant confirmation on the web page where the transaction was initiated.</p>",
       },
       {
         icon: "/assets/images/payment-gateway/card-icon-4.svg",
@@ -193,7 +193,7 @@ const cardData ={
     heading:"Get Paid Instantly with Montra Payment Links",
     headingWidth:"w-[85%]",
     top:"top-[37.5%]",
-    para:"Just create and share a payment link in minutes—no technical setup required.",
+    para:"Just create and share a payment link in minutes. No technical setup required.",
     content:[
     {
       number:"01",
@@ -203,7 +203,7 @@ const cardData ={
     {
       number:"02",
       title:"Create a Payment Link",
-      para:"Quickly generate a secure Payment Link for any product or service—right from the Montra App or Portal."
+      para:"Quickly generate a secure Payment Link for any product or service, right from the Montra App or Portal."
     },
     {
       number:"03",
@@ -218,7 +218,7 @@ const cardData ={
         {
             number: "01",
             title: "Add to Cart",
-            para: "Customers can browse your products or services and add selected items to the checkout cart — quick, smooth, and familiar.",
+            para: "Customers can browse your products or services and add selected items to the checkout cart - quick, smooth, and familiar.",
             img: "/assets/images/payment-gateway/add-to-cart.png",
             tag:"Add to cart"
         },

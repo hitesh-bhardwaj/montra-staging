@@ -56,7 +56,7 @@ const faqContent = [
   {
     question: 'How do I Sign-Up on Montra?',
     answer:
-      "<ol class='list-decimal pl-[2vw] space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>Download the Montra App from Google Play Store or Apple App Store.</li><li>Enter your phone number and date of birth.</li><li>Verify your phone with a 6-digit code.</li><li>Set up your password, Face/Fingerprint ID, and create your Montra PIN.</li><li>Complete KYC by providing your BVN or NIN</li></ol><p>You’ll get your Montra Personal Account instantly — and can upgrade your KYC later for higher limits.</p><p> Montra Personal Account users can further set up a Montra Business Account, if they have an existing business where they would like to start accepting payments using variety of payment acceptance methods offered by Montra such as QR scan, Soft-POS & POS terminals.</p>",
+      "<ol class='list-decimal pl-[2vw] space-y-[0.5vw] max-sm:pl-[5vw] max-sm:space-y-[1vw]'><li>Download the Montra App from Google Play Store or Apple App Store.</li><li>Enter your phone number and date of birth.</li><li>Verify your phone with a 6-digit code.</li><li>Set up your password, Face/Fingerprint ID, and create your Montra PIN.</li><li>Complete KYC by providing your BVN or NIN</li></ol><p>You’ll get your Montra Personal Account instantly and can upgrade your KYC later for higher limits.</p><p> Montra Personal Account users can further set up a Montra Business Account, if they have an existing business where they would like to start accepting payments using variety of payment acceptance methods offered by Montra such as QR scan, Soft-POS & POS terminals.</p>",
   },
   {
     question: 'How do we Sign-In on Montra?',

@@ -31,10 +31,7 @@ export const BottomContent = ({ img6, imgAmount }) => {
             </Copy>
             <Copy>
               <li>
-                Soft-POS (Tap & Pay) - Activate Tap & Pay in the Montra App,
-                enter the payment amount, and customers simply tap any
-                contactless card on your NFC-enabled android phone — just like a
-                POS terminal.
+                Soft-POS (Tap & Pay) - Activate Tap & Pay in the Montra App, enter the payment amount, and customers simply tap any contactless card on your NFC-enabled phone, just like a POS terminal.
               </li>
             </Copy>
             <Copy>
@@ -102,9 +99,10 @@ export const BottomContent = ({ img6, imgAmount }) => {
         <div className="space-y-[2vw] max-sm:space-y-[6vw] max-md:space-y-[4vw]">
           <Copy>
             <p>
-              Whether it's accepting digital payments, managing operations, or
-              unlocking credit and insurance, Montra helps businesses grow with
-              confidence—no matter their size or stage.
+            Whether it's accepting digital payments, managing operations,
+or unlocking credit and insurance, Montra helps businesses
+grow with confidence, no matter their size or stage.
+
             </p>
           </Copy>
           <div className="space-y-[1.5vw] w-[95%] max-sm:space-y-[4vw] max-sm:w-full max-md:w-[80%] max-md:space-y-[4vw]">

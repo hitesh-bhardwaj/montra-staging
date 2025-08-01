@@ -412,7 +412,7 @@ const stepsData = {
     },
     {
       title: "Pay Your Way with Montra",
-      desc: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards –  </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
+      desc: '<p>One app. Multiple payment options, all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts - </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards - </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments - </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
       link: "/personal/payments",
       image: "/assets/animation/2-ss.png",
       highlightImg: "/assets/animation/2-pop.png"
@@ -426,14 +426,14 @@ const stepsData = {
     },
     {
       title: "Send Messages. Send & Request Money. Same Chat.",
-      desc: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
+      desc: '<p>Introducing <span class="font-semibold">CHAT to PAY, </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
       link: "/personal/chat",
       image: "/assets/animation/4-ss.png",
       highlightImg: "/assets/animation/4-pop.png"
     },
     {
       title: "Shopping Meets Simplicity",
-      desc: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands— everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
+      desc: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands, everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
       link: "/personal/shop",
       image: "/assets/animation/5-ss.png",
       highlightImg: "/assets/animation/5-pop.png"
@@ -442,21 +442,21 @@ const stepsData = {
   business: [
     {
       title: "All-in-One Banking. Built for Businesses",
-      desc: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem — designed to help your business grow smarter & faster</p>',
+      desc: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem, designed to help your business grow smarter & faster.</p>',
       link: "/business/banking",
       image: "/assets/animation/6-ss.png",
       highlightImg: "/assets/animation/6-pop.png"
     },
     {
       title: "Accept Payments. Expand Possibilities",
-      desc: '<p>Open a Montra Business Account to start receiving payments from anyone — anytime, anywhere. Accept payments using<ul class="pl-[1vw] space-y-[0.3vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
+      desc: '<p>Open a Montra Business Account to start receiving payments from anyone anytime, anywhere. Accept payments using:<ul class="pl-[1vw] space-y-[0.3vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
       link: "/business/payments",
       image: "/assets/animation/7-ss.png",
       highlightImg: "/assets/animation/7-pop.png"
     },
     {
       title: "Become a Montra Agent. Start Earning",
-      desc: "<p>Offer Agency Banking services for offering Cash Deposit & Cash withdrawal services and get paid for every transaction — it’s that simple.</p>",
+      desc: "<p>Offer Agency Banking services for offering Cash Deposit & Cash withdrawal services and get paid for every transaction.  It’s that simple.</p>",
       link: "/business/agency-banking",
       image: "/assets/animation/8-ss.png",
       highlightImg: "/assets/animation/8-pop.png"
@@ -469,7 +469,7 @@ const stepsData = {
       highlightImg: "/assets/animation/9-pop.png"
     },
     {
-      title: "Start Selling Online — For Free",
+      title: "Start Selling Online for Free",
       desc: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
       link: "/business/montra-store",
       image: "/assets/animation/10-ss.png",
@@ -484,7 +484,7 @@ const stepsData = {
     },
     {
       title: "Tap. Accept. Get Paid.",
-      desc: '<p>With Montra Tap to Pay, your phone becomes a payment terminal — no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
+      desc: '<p>With Montra Tap to Pay, your phone becomes a payment terminal, no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
       link: "/business/tap-and-pay",
       image: "/assets/animation/12-ss.png",
       highlightImg: "/assets/animation/12-pop.png"

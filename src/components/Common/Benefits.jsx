@@ -11,7 +11,7 @@ const Benefits = ({ data, id }) => {
 
   return (
     <section
-      className="w-screen h-[120vh] px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-md:h-full max-md:pb-[15%]  "
+      className="w-screen h-[130vh] px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-md:h-full max-md:pb-[15%]  "
       id={id ? id : "benefits"}
     >
      

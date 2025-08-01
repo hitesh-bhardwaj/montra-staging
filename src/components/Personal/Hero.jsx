@@ -295,7 +295,7 @@ const Hero = () => {
               />
               <div className="w-[85%] absolute bottom-[5%] left-[7.5%] flex flex-col gap-[0.5vw] items-center">
                 <span className="text-[3.4vw] font-bold font-display">
-                  ₦ 10,000
+                  ₦ 5,000
                 </span>
 
                 <div className="w-full  bg-white rounded-[1.2vw] h-fit py-[0.8vw]  text-black ">
@@ -305,7 +305,7 @@ const Hero = () => {
                         <img src="/assets/icons/coffee.svg" alt="coffee svg" className="h-full w-full" />
                       </div>
                       <div className="flex flex-col">
-                        <p className="text-[1.2vw] leading-[1]">Coffee</p>
+                        <p className="text-[1.2vw] leading-[1]">Breakfast</p>
                         <p className="text-[1vw] font-light">Yesterday, 9:10</p>
                       </div>
                     </div>
@@ -323,7 +323,7 @@ const Hero = () => {
                 Account
               </div>
               <span className="text-[3.4vw] font-bold font-display absolute bottom-[30%] left-[22%] max-sm:text-[14vw] max-sm:left-[12%] max-sm:bottom-[25%] max-md:text-[7.5vw] max-md:left-[15%]">
-                ₦ 50,000
+                ₦ 15,000
               </span>
               <div className="w-[85%] absolute bottom-[5%] left-[7.5%] flex flex-col gap-[0.5vw] items-center">
                 <div className="w-full  bg-white rounded-[1.2vw] h-fit py-[0.8vw]  text-black max-sm:py-[2vw] max-sm:px-[1vw] max-sm:rounded-[4.5vw] max-md:py-[2vw] max-md:px-[2vw] max-md:rounded-[3vw] ">
@@ -356,7 +356,7 @@ const Hero = () => {
 
           <div className="fadeUpHero w-[23vw] h-[27vw] rounded-[3vw] border border-black/10 overflow-hidden absolute left-[64%] top-[10%] hero-right-card max-sm:hidden max-md:hidden">
             <div className="absolute top-[5%] right-[5%] w-fit px-[1.2vw] py-[0.5vw] bg-primary rounded-full z-[2]">
-              Account
+              Personal
             </div>
 
             <Image
@@ -369,7 +369,7 @@ const Hero = () => {
             />
             <div className="w-[85%] absolute bottom-[5%] left-[7.5%] flex flex-col gap-[0.5vw] items-center">
               <span className="text-[3.4vw] font-bold font-display">
-                ₦ 35,000
+                ₦ 20,000
               </span>
 
               <div className="w-full  bg-white rounded-[1.2vw] h-fit py-[0.8vw]  text-black ">

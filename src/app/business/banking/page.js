@@ -54,8 +54,8 @@ const businessBanking = () => {
       />
       <Benefits data={benefitsData} />
       <Steps stepData={stepData}/>
-      <WhatWhy height={"h-[63vw]"} data={whatWhyData}/>
-      <SectionBreak content={"Whether you're tracking payments, linking accounts, or accepting digital transactions, Montra has everything you need to grow your business with ease."} width={"w-[95%]"}/>
+      {/* <WhatWhy height={"h-[63vw]"} data={whatWhyData}/> */}
+      <SectionBreak content={"Whether you’re accepting and tracking payments, or offering Agency Banking services , Montra gives you the tools to run and grow your business effortlessly."} width={"w-[95%]"}/>
       <FAQs content={faqContent} />
     </>
   );
@@ -140,10 +140,10 @@ const  benefitsData = {
   headingWidth:"w-[80%]",
   paraWidth:"w-full",
   cards:[
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Enjoy the freedom of a fully digital, mobile-first account — no hidden charges, ever.", title: "No Account Fees", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Your funds stay safe and protected — we will never convert your deposits into risky assets.", title: "Risk-Free Deposits", z: "z-[4]", width:"w-[20vw]", height:"17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Enjoy the freedom of a fully digital, mobile-first account, no hidden charges, ever", title: "No Account Fees", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Montra equips your business with multiple payment acceptance solutions such as POS, QR codes, and Soft-POS, so your customers can pay however they choose.", title: "Multiple Payment acceptance solutions ", z: "z-[4]", width:"w-[32vw]", height:"17vw" },
     { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#EAF1FF]", content: "Accept payments through multiple channels on the Montra App and track every collection with ease.", title: "Track Payments Seamlessly", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Your account is guarded by your personal Montra PIN and 2FA Soft Token via the VERIFYED App — keeping your money and data safe, always.", title: "Unmatched Security", z: "z-[4]",  width:"w-[21vw]", height:"17vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Your account is guarded by your personal Montra PIN and 2FA Soft Token via the VERIFYED App,  keeping your money and data safe, always.", title: "Unmatched Security", z: "z-[4]",  width:"w-[21vw]", height:"17vw" },
   ]
 }
 const stepData = {
@@ -160,14 +160,14 @@ const stepData = {
           number: "02",
           title: "Set Up Your Profile",
           para: "Select your business type (physical store, online store, virtual store, or agency service) and fill in key business details.",
-          img: "/assets/images/business-banking/set-up-profile.png",
-          tag:"Switch to Business Mode"
+          img: "/assets/images/business-banking/business-verification.png",
+          tag:"Set Up Profile"
       },
       {
           number: "03",
           title: "Provide Registration Details",
-          para: "Enter your business registration number (if applicable), verify it, and optionally upload your business logo.",
-          img: "/assets/images/business-banking/business-verification.png",
+          para: "Enter your business registration number (if applicable), address and location for instant verification.  And optionally upload your business logo.",
+          img: "/assets/images/business-banking/set-up-profile.png",
           tag:"Complete Business Setup"
       },
       {

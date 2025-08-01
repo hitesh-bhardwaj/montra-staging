@@ -49,7 +49,7 @@ const businessPayments = () => {
       <Rewards rewardsData={rewardsData} />
       <Steps stepData={stepData} />
       <WhatWhy data={whatWhyData} height={"h-[50vw]"} />
-      <SectionBreak content={"Seamless payments, easy tracking, and total control — Montra helps you run your business your way."} width={"w-[85%]"} />
+      <SectionBreak content={"From seamless payment acceptance to powerful business tools, Montra gives you everything you need to manage, move, and grow your money."} width={"w-[85%]"} />
       <FAQs content={faqContent} />
     </>
   )
@@ -88,19 +88,19 @@ const overviewContent = {
   subcontent2: "Send Invoices & Payment Links"
 }
 const benefitsData = {
-  heading: "The Smarter, Safer Way to Pay",
+  heading: "The Smarter, Safer Way to get Paid",
   para: "Your money. Your data. Protected at every step.",
   headingWidth: "w-full",
   paraWidth: "w-full",
   cards: [
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Your Montra App is protected by the password you set — and you can also unlock it easily using Face ID or biometric authentication on your phone.", title: "Secure from the Start", z: "z-[5]", width: "w-[22vw]", height: "17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Every transaction on Montra is protected by our Fraud & Risk Assessment tool, which may prompt you for a Soft Token when needed. You get free access to a Soft Token through the VERIFYED app — available to all Montra users.", title: " Advanced 2FA Protection", z: "z-[4]", width: "w-[24vw]", height: "22vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Every payment on Montra is processed only after you successfully authenticate with your Montra PIN.", title: "Built-In Payment Checks", z: "z-[5]", width: "w-[24vw]", height: "17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "Only you and the person you’re transacting with can see the details of your payment — keeping your transactions private and secure.", title: "Your Privacy, Always", z: "z-[4]", width: "w-[20vw]", height: "17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Receive instant voice and text notifications when customers pay via your Montra QR code.", title: "Instant Voice & Text Notification ", z: "z-[5]", width: "w-[28vw]", height: "17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Send payment links via email, or social media to receive instant payments from anyone—for any product or service.", title: "Get paid with Ease", z: "z-[4]", width: "w-[20vw]", height: "17vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Easily monitor your payment collections, view account statements, and stay in control of your cash flow.", title: "Track Every Transactions ", z: "z-[5]", width: "w-[24vw]", height: "17vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "Create and send professional invoices to other Montra users and enjoy quicker settlements for your business.", title: "Faster Invoicing, Faster Payments", z: "z-[4]", width: "w-[28vw]", height: "17vw" },
   ]
 }
 const rewardsData = {
-  heading: "Track Your Earnings & Rewards—All in One Place",
+  heading: "Track your Earnings & Rewards, all in One  Place",
   headingWidth: "w-[70%]",
   gridCols: "grid-cols-4",
   cards: [
@@ -112,12 +112,12 @@ const rewardsData = {
     {
       icon: "/assets/images/personal-payments/instant-alerts.svg",
       title: "Instant Alerts",
-      para: "Get voice and text notifications on your Montra App every time you receive a payment—so you’re always in the loop."
+      para: "Get voice and text notifications on your Montra App every time you receive a payment, so you’re always in the loop."
     },
     {
       icon: "/assets/images/personal-payments/reward-points.svg",
       title: "Reward Points Tracker",
-      para: "Keep tabs on every reward point earned with a dedicated Reward Point Account Statement—no surprises, just benefits."
+      para: "Keep tabs on every reward point earned with a dedicated Reward Point Account Statement. No surprises, just benefits."
     },
     {
       icon: "/assets/images/personal-payments/easy-reward.svg",
@@ -128,7 +128,7 @@ const rewardsData = {
 }
 const cardData = {
   heading: "Accept & Collect Payments Your Way",
-  subHeading: "With Montra, Getting Paid Is Easy it’s Quick. Safe & Customer-friendly. Accept payments your way and keep your business moving forward.",
+  subHeading: "With Montra, getting paid is easy. It’s quick, safe & customer-friendly. Accept payments your way and keep your business moving forward.",
   headingWidth: "w-[60%]",
   cards: [
     {
@@ -141,7 +141,7 @@ const cardData = {
       icon: "/assets/images/business-payments/card-icon-2.svg",
       icon2:"/assets/images/business-payments/tap-and-pay.svg",
       title: "Tap & Pay",
-      para: "<p>Turn your phone into a POS — customers can tap their debit or credit cards on your Montra App for quick, contactless payments.</p>",
+      para: "<p>Turn your phone into a POS, customers can tap their debit or credit cards on your Montra App for quick, contactless payments.</p>",
     },
     {
       icon: "/assets/images/business-payments/card-icon-3.svg",
@@ -164,7 +164,7 @@ const whatWhyData = {
   height: "h-[88%]",
   top: "top-[38%]",
   paraWidth: "w-[55%]",
-  para: "Bill in any currency, send in seconds, and get paid without the wait—Montra makes cash flow smoother than ever.",
+  para: "Bill in any currency, send in seconds, and get paid without the wait, Montra makes cash flow smoother than ever.",
   content: [
     {
       number: "01",
@@ -174,7 +174,7 @@ const whatWhyData = {
     {
       number: "02",
       title: "Create & Send Invoices in Seconds",
-      para: "Head to the Invoices tab, input your product or service details, add your customer info, select a currency, and hit send—it’s that easy."
+      para: "Head to the Invoices tab, input your product or service details, add your customer info, select a currency, and hit send. It’s that easy."
     },
     {
       number: "03",
@@ -184,33 +184,34 @@ const whatWhyData = {
   ],
 }
 const stepData = {
-  heading: "Get Paid Instantly ",
+  heading: "Get Paid Instantly using Payment Links ",
+  width:"w-[50%]",
   steps: [
     {
       number: "01",
       title: "Sign In or Get Started",
-      para: "New to Montra? Download the app and set up your Business account in minutes. Already onboard? Log in through the Montra App or Merchant Portal.",
+      para: "New to Montra? Download the app and set up your Business account in minutes. Already onboard? Log in through the Montra App and Set up your Montra Business Account under the Physical Store / Shop / Office category.",
       img: "/assets/images/business-payments/sign-in.png",
       tag: "Sign In"
     },
     {
       number: "02",
-      title: "Enable Payment Options",
-      para: "Head to the Payment Section and activate QR scan, bank transfers, tap & pay, POS, or payment links — offer customers multiple ways to pay.",
+      title: "Create a Payment Link",
+      para: "Generate a Payment Link for the product or service you're offering—directly from the app.",
       img: "/assets/images/business-payments/Create-Link.png",
-      tag: "Activate Payments"
+      tag: "Create Link"
     },
     {
       number: "03",
-      title: "Accept Instant Payments",
-      para: "Start collecting payments instantly — funds land directly in your Montra Business Account, no waiting.",
+      title: "Share and Get Paid",
+      para: "Send the link via Email, WhatsApp, or any preferred channel. Once the customer pays, the funds are instantly settled into your Montra Business Account.",
       img: "/assets/images/business-payments/Get-Paid.png",
-      tag: "Accept Payments"
+      tag: "Get Paid"
     },
     {
       number: "04",
       title: "Track & Manage Earnings",
-      para: "Use your smart Montra dashboard to monitor transactions, settlements, and reports — all in real time.",
+      para: "Use your smart Montra dashboard to monitor transactions, settlements, and reports, all in real time.",
       img: "/assets/images/business-payments/track-earning.png",
       tag: "Track Earnings"
     },

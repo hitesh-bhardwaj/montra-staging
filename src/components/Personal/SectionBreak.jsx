@@ -88,8 +88,8 @@ export default function SectionBreak() {
           data-split="lines"
           className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw]"
         >
-          With Montra Personal, You're in Charge – send, spend, and manage your
-          finances right from your phone.
+         With Montra Personal, you're in Charge.  
+Send, spend, and manage your finances right from your phone.
         </h2>
       </div>
     </section>

@@ -121,7 +121,7 @@ export default NavFinance
 const benefitsData = {
   heading:
     "Compare <span class='text-primary'>Loan </span> Offers. Get Funded Instantly.",
-  para: "Explore personalized loan options from trusted lending partners and receive funds in minutes—right from your Montra App.",
+  para: "Explore personalized loan options from trusted lending partners and receive funds in minutes, right from your Montra App",
   headingWidth: "w-[60%]",
   paraWidth: "w-[45%]",
   cards: [
@@ -260,7 +260,7 @@ const whatWhyData = {
   heading: "Get Insured in Minutes on the Montra App",
   headingWidth: "w-[85%]",
   top: "top-[34%]",
-  para: "Secure the right coverage quickly and easily—just follow these simple steps:",
+  para: "Secure the right coverage quickly and easily with these simple steps: ",
   content: [
     {
       number: "01",
@@ -270,7 +270,7 @@ const whatWhyData = {
     {
       number: "02",
       title: "Compare Offers Instantly",
-      para: "Montra enables you to compare premiums and features from multiple insurance partners—so you can make an informed choice.",
+      para: "Montra lets you compare premiums and features from multiple insurance partners, helping you make informed decisions. ",
     },
     {
       number: "03",

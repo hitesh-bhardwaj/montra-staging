@@ -45,7 +45,7 @@ const businessAgencyBanking = () => {
       <Benefits data={benefitsData} />
       <Cards cardData={cardData} />
       <Rewards rewardsData={rewardsData} />
-      <SectionBreak content={"Start small. Dream big. Montra’s Agency Banking supports your journey with the tools and rewards to help you thrive—your way."} width={"w-[95%]"} />
+      <SectionBreak content={"Start small. Dream big. Montra’s Agency Banking supports your journey with the tools and rewards to help you thrive, your way."} width={"w-[95%]"} />
       <FAQs content={faqContent} />
     </>
   )
@@ -95,15 +95,15 @@ const overviewContent = {
   subcontent2: "Bill Payments & Transfers"
 }
 const benefitsData = {
-  heading: "Become a Montra Agent. Simple Setup. Real Earnings.",
-  para: "Get stated in Minutes. Open a Free Montra Business Account",
-  headingWidth: "w-[80%]",
+  heading: "Become a Montra Agent & Earn More, offering Cash Deposit & Withdrawal Services. ",
+  para: "Get stated in Minutes. Get Onboarded Easily ",
+  headingWidth: "w-[95%]",
   paraWidth: "w-full",
   cards: [
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Enjoy the freedom of managing your money without worrying about hidden fees or surprise charges.", title: "No Account Fees", z: "z-[5]", width: "w-[20vw]", height: "17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Your funds stay safe — Montra never converts your deposits into risky assets, giving you full peace of mind.", title: " Risk-Free Deposits", z: "z-[4]", width: "w-[20vw]", height: "17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Enjoy the freedom of managing your money without worrying about hidden fees or surprise charges", title: "No Account Fees", z: "z-[5]", width: "w-[20vw]", height: "17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[55.9%]", color: "bg-[#FFEAEE]", content: "Get commissions on every transaction; deposits, withdrawals, transfers, airtime, bills, and more. The more services you provide, the more you earn. No sales pressure, just steady income from everyday financial services.", title: " Earn as an Agent ", z: "z-[4]", width: "w-[20vw]", height: "22vw" },
     { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#EAF1FF]", content: "Effortlessly monitor all your incoming payments and transactions in one place, so you always know where your money is.", title: "Track Payments Seamlessly", z: "z-[5]", width: "w-[25vw]", height: "17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "With Montra’s multi-layered security — including PIN, biometric login, 2FA Soft Token, and fraud monitoring — your account stays protected, every step of the way.", title: "Unmatched Security", z: "z-[4]", width: "w-[20vw]", height: "20vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Getting started as a Montra Agent is quick and hassle-free. All you need is a smartphone and access to the internet. Simply download the Montra App, register as a business or individual agent, and complete the basic KYC requirements such as a valid ID, photo, and proof of address. Once verified, you can start transacting in minutes using simple tools like your phone, with no complicated setup or waiting period.", title: "Easy Onboarding ", z: "z-[4]", width: "w-[27vw]", height: "30vw" },
   ]
 }
 const rewardsData = {
@@ -119,12 +119,12 @@ const rewardsData = {
     {
       icon: "/assets/images/personal-payments/instant-alerts.svg",
       title: "Instant Alerts",
-      para: "Get voice and text notifications on your Montra App every time you receive a payment—so you’re always in the loop."
+      para: "Get voice and text notifications on your Montra App every time you receive a payment, so you’re always in the loop."
     },
     {
       icon: "/assets/images/personal-payments/reward-points.svg",
       title: "Reward Points Tracker",
-      para: "Keep tabs on every reward point earned with a dedicated Reward Point Account Statement—no surprises, just benefits."
+      para: "Keep tabs on every reward point earned with a dedicated Reward Point Account Statement, no surprises, just benefits."
     },
     {
       icon: "/assets/images/personal-payments/easy-reward.svg",
@@ -142,7 +142,7 @@ const cardData = {
       icon: '/assets/images/business-agency-banking/card-icon-1.svg',
       icon2: '/assets/images/business-agency-banking/cash-deposit.svg',
       title: 'Cash Deposit',
-      para: '<p>Anyone — whether a Montra customer or not — can visit a Montra Agent to deposit cash directly into a Montra account or bank account.</p>',
+      para: '<p>Anyone, whether a Montra customer or not  can visit a Montra Agent to deposit cash directly into a Montra account or bank account.</p>',
     },
     {
       icon: '/assets/images/business-agency-banking/card-icon-2.svg',
@@ -160,7 +160,7 @@ const cardData = {
       icon: '/assets/images/business-agency-banking/card-icon-4.svg',
       icon2: '/assets/images/business-agency-banking/bank-transfer.svg',
       title: 'Bank Transfer',
-      para: '<p>Take cash from customers and transfer it to any bank account they choose — safely and easily.</p>',
+      para: '<p>Take cash from customers and transfer it to any bank account they choose  safely and easily.</p>',
     },
   ],
 }

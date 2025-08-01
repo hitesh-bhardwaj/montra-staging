@@ -109,7 +109,7 @@ export default function Cards({ cardData }) {
                 <div className="w-full text-center flex flex-col gap-[2vw] items-center justify-center max-sm:items-start max-sm:text-left max-sm:gap-[4vw] max-sm:pb-0 max-md:gap-[3vw]">
                     <Heading>
                         <h2
-                            className={`text-[5.7vw] font-display font-medium  capitalize leading-[1.15] max-sm:text-[11vw] max-sm:w-full max-md:text-[7.5vw] max-md:w-[95%] ${cardData.headingWidth}`}
+                            className={`text-[5.7vw] font-display font-medium leading-[1.15] max-sm:text-[11vw] max-sm:w-full max-md:text-[7.5vw] max-md:w-[95%] ${cardData.headingWidth}`}
                         >
                             {cardData.heading}
                         </h2>

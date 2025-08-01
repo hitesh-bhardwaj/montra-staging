@@ -40,12 +40,12 @@ const tapPay = () => {
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqContent} />
       <BreadcrumbsJSONLD pathname={metadata.url} />
-      <Hero primaryHeading={"Montra for Business: "} heading={"Tap. Pay. Go. It’s That Simple."} content={"Experience next-gen payment convenience. Our contactless Tap & Pay system is designed for speed, security, and simplicity—so you can pay in seconds, without the hassle."} />
+      <Hero primaryHeading={"Montra for Business: "} heading={"Tap. Pay. Go. It’s That Simple."} content={"Experience next-gen payment convenience. Our contactless Tap & Pay system is designed for speed, security, and simplicity. So, you can pay in seconds, without the hassle."} />
       <Overview content={overviewContent} />
       <Benefits data={benefitsData} />
       <Cards cardData={cardData} />
       <About />
-      <SectionBreak content={"Secure. Encrypted. Trusted. Montra Tap & Pay usescut-edging security,  advanced encryption and tokenization to protect every transaction. Your card details are never shared—keeping your payments private, safe, and secure."} width={"w-[95%]"} />
+      <SectionBreak content={"Montra Tap & Pay uses cutting-edge security, advanced encryption and tokenization to protect every transaction. Your card details are never shared, keeping payments private, safe, and secure."} width={"w-[95%]"} />
       <FAQs content={faqContent} />
     </>
   )
@@ -95,14 +95,15 @@ const overviewContent = {
 }
 
 const benefitsData = {
-  heading: "The Future of Payments — Tap, Pay, Done",
-  para: "Accept contactless payments instantly with your NFC-enabled phone — no extra devices, no friction, just fast, secure transactions with Montra Tap & Pay.",
+  heading: "The Future of Payments. Tap, Pay, Done",
+  para: "Accept contactless payments instantly with your NFC-enabled phone . No extra devices, no friction, just fast, secure transactions with Montra Tap & Pay.",
   headingWidth: "w-[80%]",
   paraWidth: "w-[70%]",
   cards: [
     { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: " bg-[#D9F7C5]", content: "Process every payment with confidence, backed by Montra’s robust security standards.", title: "Secure & Reliable Transactions", z: "z-[5]", width: "w-[27vw]", height: "14vw" },
-    { classPrefix: "b", left: "!left-[68%]", top: "!top-[50.9%]", color: "bg-[#FFEAEE]", content: "Reduce wait times in-store by letting customers tap their cards for fast, secure transactions.", title: "Quick Checkouts", z: "z-[4]", width: "w-[20vw]", height: "14vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: " bg-[#EAF1FF]", content: "Every transaction on Montra is protected by our Fraud & Risk Assessment tool, which may prompt you for a Soft Token when needed. You get free access to a Soft Token through the VERIFYED app — available to all Montra users.", title: "Advanced 2FA Protection", z: "z-[5]", width: "w-[24vw]", height: "23vw" },
+    { classPrefix: "b", left: "!left-[68%]", top: "!top-[50.9%]", color: "bg-[#FFEAEE]", content: "With Tap to Pay solution, you can accept contactless payments from any physical cards. No extra hardware required.", title: "Accept Contactless Payments ", z: "z-[4]", width: "w-[25vw]", height: "14vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: " bg-[#EAF1FF]", content: "Access detailed reports on payments, settlements, and refunds, giving you the insights you need to make smarter business decisions.", title: "Powerful Dashboard ", z: "z-[5]", width: "w-[24vw]", height: "20vw" },
+    { classPrefix: "d", left: "!left-[28%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "With Montra’s Tap to Pay, your smartphone becomes a POS device. Accept contactless card payments by simply letting customers tap their cards on your phone. Available on Android devices with NFC", title: "Make your phone a POS ", z: "z-[4]", width: "w-[28vw]", height: "17vw" },
   ]
 }
 
@@ -115,7 +116,7 @@ const cardData = {
       icon: "/assets/images/business-tapnpay/card-icon-1.svg",
       icon2:"/assets/images/business-tapnpay/accept.svg",
       title: "Accept Contactless Cards Instantly",
-      para: "<p>Easily accept payments from any physical contactless debit or credit card — no extra hardware or dongles needed.</p>",
+      para: "<p>Easily accept payments from any physical contactless debit or credit card. No extra hardware or dongles needed.</p>",
     },
     {
       icon: "/assets/images/business-tapnpay/card-icon-2.svg",

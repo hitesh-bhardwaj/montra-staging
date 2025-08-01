@@ -41,7 +41,7 @@ export default function Business() {
         <MobileBanking />
         <BankingSection />
       </div>
-      <SectionBreak content={"Take control with Montra for Business—get paid, track cash flow, access credit, and scale with ease."} width={"w-[85%]"} />
+      <SectionBreak content={"Take control with Montra for Business. Get paid, track cash flow, access credit, and scale with ease."} width={"w-[85%]"} />
       <FAQs content={faqContent} />
     </>
   );

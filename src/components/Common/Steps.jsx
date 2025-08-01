@@ -142,16 +142,17 @@ const Steps = ({ stepData }) => {
   return (
     <section
       ref={ref}
-      className="w-screen h-screen bg-primary px-[4vw] py-[5%] text-white max-sm:py-[15%] max-sm:px-[7vw] relative max-sm:h-fit overflow-hidden max-sm:min-h-[100vh]"
+      className="w-screen h-full bg-primary px-[4vw] py-[5%] text-white max-sm:py-[15%] max-sm:px-[7vw] relative max-sm:h-fit overflow-hidden max-sm:min-h-[100vh]"
       id="steps"
     >
-      <div className="flex h-full items-start max-sm:flex-col max-md:flex-col">
-        <div className="w-2/5 flex items-center max-sm:w-full max-md:w-full ">
+      <div className="flex flex-col h-full items-start max-sm:flex-col max-md:flex-col">
+        <div className={` flex items-center max-sm:w-full max-md:w-full ${stepData.width ? stepData.width : "w-2/5"}`}>
           <h2 className="text-[5vw] font-display leading-[1.1] max-sm:text-[11vw] max-sm:font-medium max-md:text-[7.5vw] max-md:leading-[1.2] max-md:font-medium">
             {stepData.heading}
           </h2>
         </div>
-        <div className="w-[50%] relative h-[120vh] mt-[-5vw] max-sm:w-[100vw] max-sm:h-[100vw] max-sm:left-[-10%] fadeupanim max-md:h-[190vw] max-md:w-[150vw] max-md:left-[-30%] max-md:mt-0">
+        <div className="w-[75%] flex items-end justify-end ml-[25vw]">
+        <div className="w-[50%] relative h-[70vh]  max-sm:w-[100vw] max-sm:h-[100vw] max-sm:left-[-10%] fadeupanim max-md:h-[190vw] max-md:w-[150vw] max-md:left-[-30%] max-md:mt-0">
           {stepData.steps.map((s, i) => {
             const isCurrent = i === currentStep;
             const isFadingOut = i === step && isAnimating;
@@ -259,6 +260,7 @@ const Steps = ({ stepData }) => {
               </div>
             ))}
           </div>
+        </div>
         </div>
         {showRestart && (
           <motion.div

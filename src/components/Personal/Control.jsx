@@ -19,7 +19,7 @@ const Control = () => {
     {
       key: "Banking",
       title: "Do More with Your Money. Spend and Earn Rewards",
-      content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.</li><li>Link your existing bank accounts on the Montra App and manage all your payments in one place — one app for all your bank accounts. </li></ul>",
+      content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.</li><li>Link your existing bank accounts on the Montra App and manage all your payments in one place. One app for all your bank accounts.</li></ul>",
       image: "/assets/images/personal/Banking.png",
       link: {
         text: "Learn More",
@@ -31,7 +31,7 @@ const Control = () => {
     {
       key: "Finance",
       title: "Invest, Insure & Borrow with Montra",
-      content:"<ul class='pl-[2vw] list-disc space-y-[0.5vw]'><li>Access loans, buy insurance, and invest—all from one powerful app.</li><li>View your transactions in real-time and monitor your financial activity.</li><li>Get intelligent insights to help you plan, save, and spend wisely.</li></ul>",
+      content:"<ul class='pl-[2vw] list-disc space-y-[0.5vw]'><li>Access loans, buy insurance, and invest. All from one powerful app.</li><li>View your transactions in real-time and monitor your financial activity.</li><li>Get intelligent insights to help you plan, save, and spend wisely.</li></ul>",
       image: "/assets/images/personal/Finance.png",
       link: {
         text: "Learn More",
@@ -55,7 +55,7 @@ const Control = () => {
     {
       key: "Chat",
       title: "Send Money like a Message",
-      content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Turn conversations into transactions </li><li>Send, Request Payments while you chat and receive instant payment confirmations </li><li>Secure & Instant—no app-switching!</li></ul>",
+      content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc'><li>Turn conversations into transactions </li><li>Send, Request Payments while you chat and receive instant payment confirmations </li><li>Secure & Instant. No app-switching!</li></ul>",
       image: "/assets/images/personal/Chat.png",
       link: {
         text: "Learn More",
@@ -256,8 +256,8 @@ const Control = () => {
     >
       <div className="w-full h-[60vh] flex flex-col justify-between relative z-[28]">
         <Heading>
-          <h2 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] text-center">
-            Take Control of Your Finances. Effortlessly.
+          <h2 className="text-[5.7vw] font-display font-medium  leading-[1.15] text-center">
+            Take Control of Your Finances, Effortlessly.
           </h2>
         </Heading>
         <div className="w-full flex justify-between px-[6.5vw] h-[30vw]">
@@ -416,7 +416,7 @@ const Control = () => {
                   />
                 </div>
                 <div className="w-[60%] flex flex-col gap-[3vw] h-full justify-center">
-                  <h3 className="text-[3.4vw] leading-[1.3] font-display capitalize font-medium">
+                  <h3 className="text-[3.4vw] leading-[1.3] font-display  font-medium">
                     {section.title}
                   </h3>
                   

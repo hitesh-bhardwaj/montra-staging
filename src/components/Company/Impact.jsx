@@ -43,7 +43,7 @@ const Impact = () => {
         start: "top 80%",
       },
     });
-    
+
   }, []);
 
   return (
@@ -55,15 +55,15 @@ const Impact = () => {
           </h2>
         </Heading>
         <div className="grid grid-cols-3 gap-x-[6vw] max-sm:flex-col max-sm:gap-[10vw] max-sm:flex max-md:flex max-md:flex-wrap max-md:gap-[8vw] ">
-          <div className="text-black-1 col-span-1 col-start-1 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[0] = el)}>
+          <div className="text-black-1 col-span-1 col-start-1 group max-md:w-[45%]  max-sm:w-full" ref={(el) => (cards.current[0] = el)}>
             {/* <NftIcon className="w-[3vw] h-[3vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw]" /> */}
             <div className="w-[5vw] h-[5vw] mb-[1.5vw] max-sm:h-[14vw] max-sm:w-[14vw] max-sm:mb-[6vw]   max-md:h-[9vw] max-md:w-[9vw] max-md:mb-[3vw] ml-[-0.7vw]">
-              <Image src={"/assets/images/company/impact-logo-1.svg"} alt="impact-logo" className="w-full h-full object-contain" width={100} height={100}/>
+              <Image src={"/assets/images/company/impact-logo-1.svg"} alt="impact-logo" className="w-full h-full object-contain" width={100} height={100} />
 
             </div>
             <Copy>
               <p className="mb-[3vw] max-sm:mb-[8vw] max-md:mb-[8vw]">
-              We are a fintech company committed to bridging the gap between cash-based communities and the digital economy through simple, accessible, and inclusive financial tools.
+                We are a fintech company committed to bridging the gap between cash-based communities and the digital economy through simple, accessible, and inclusive financial tools.
 
               </p>
             </Copy>
@@ -71,29 +71,29 @@ const Impact = () => {
               <span className="block scale-x-0 bg-primary h-full origin-[100%] group-hover:scale-x-100 transition-transform duration-700 ease-link-line group-hover:origin-[0]" />
             </div>
           </div>
-          <div className="text-black-1 col-span-1 col-start-2 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[1] = el)}>
-          <div className="w-[5vw] h-[5vw] mb-[1.5vw] max-sm:h-[14vw] max-sm:w-[14vw] max-sm:mb-[6vw]   max-md:h-[9vw] max-md:w-[9vw] max-md:mb-[3vw] ml-[-0.7vw]">
-              <Image src={"/assets/images/company/impact-logo-2.svg"} alt="impact-logo" className="w-full h-full object-contain" width={100} height={100}/>
+          <div className="text-black-1 col-span-1 col-start-2 group max-md:w-[45%]  max-sm:w-full" ref={(el) => (cards.current[1] = el)}>
+            <div className="w-[5vw] h-[5vw] mb-[1.5vw] max-sm:h-[14vw] max-sm:w-[14vw] max-sm:mb-[6vw]   max-md:h-[9vw] max-md:w-[9vw] max-md:mb-[3vw] ml-[-0.7vw]">
+              <Image src={"/assets/images/company/impact-logo-2.svg"} alt="impact-logo" className="w-full h-full object-contain" width={100} height={100} />
             </div>
             <Copy>
               <p className="mb-[5vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">
-                We equip individuals and businesses—especially in underserved
-                regions—with the tools to manage money, grow wealth, and thrive
-                financially.
+                We equip individuals and
+                Businesses especially in underserved regions with the tools to manage money,
+                grow wealth and thrive financially.
+
               </p>
             </Copy>
             <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden">
               <span className="block scale-x-0 bg-primary h-full origin-[100%] group-hover:scale-x-100 transition-transform duration-700 ease-link-line group-hover:origin-[0]" />
             </div>
           </div>
-          <div className="text-black-1 col-span-1 col-start-3 group max-md:w-[45%]  max-sm:w-full"  ref={(el) => (cards.current[2] = el)}>
-          <div className="w-[4vw] h-[4vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw] ml-[-0.7vw]">
-              <Image src={"/assets/images/company/impact-logo-3.svg"} alt="impact-logo" className="w-full h-full object-contain" width={100} height={100}/>
+          <div className="text-black-1 col-span-1 col-start-3 group max-md:w-[45%]  max-sm:w-full" ref={(el) => (cards.current[2] = el)}>
+            <div className="w-[4vw] h-[4vw] mb-[1.5vw] max-sm:h-[12vw] max-sm:w-[12vw] max-sm:mb-[6vw]   max-md:h-[8vw] max-md:w-[8vw] max-md:mb-[3vw] ml-[-0.7vw]">
+              <Image src={"/assets/images/company/impact-logo-3.svg"} alt="impact-logo" className="w-full h-full object-contain" width={100} height={100} />
             </div>
             <Copy>
-              <p className="mb-[3vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">
-              Our mission goes beyond access—we’re here to unlock opportunities, uphold dignity, and empower long-term financial growth for every individual and business we serve.
-
+              <p className="mb-[4.2vw] max-sm:mb-[8vw]  max-md:mb-[8vw]">
+              Our mission goes beyond access, we&apos;re here to unlock opportunities, uphold dignity, and empower long-term financial growth for every individual and business we serve.
               </p>
             </Copy>
             <div className="w-full h-[1.5px] bg-gray lineDraw overflow-hidden">

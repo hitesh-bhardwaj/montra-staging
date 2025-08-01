@@ -39,11 +39,11 @@ const personalShop = () => {
    <WebpageJsonLd metadata={metadata}/>
    <FAQJSONLD faqs={faqContent}/>
    <BreadcrumbsJSONLD pathname={metadata.url}/>
-   <Hero primaryHeading={"Montra Shop:"} heading={"Your One-Stop Shop for Every Need - Delivered to Your Doorstep"} content={"Montra Marketplace recreates the feel of shopping in the real world—compare products across sellers, chat, negotiate, and pay—all in one seamless platform."} titleWidth={"w-[75%]"} paraWidth={"w-full"} />
+   <Hero primaryHeading={"Montra Shop: "} heading={"Your One-Stop Shop for Every Need, Delivered to Your Doorstep"} content={"Montra Marketplace recreates the feel of shopping in the real world. Compare products across sellers, chat, negotiate, and pay, all in one seamless platform"} titleWidth={"w-[75%]"} paraWidth={"w-full"} />
    <Overview content={overviewContent}/>
    <Benefits data={benefitsData} />
   <Features featuresData={featuresData}/>
-   <SectionBreak content={"Shop seamlessly with Montra – A smarter, safer, and faster way to buy what you need. Download the Montra App and discover a marketplace designed for your lifestyle."} width={"w-[89%]"}/>
+   <SectionBreak content={"A smarter, safer, and faster way to buy what you need. Download the Montra App and discover a marketplace designed for your lifestyle."} width={"w-[89%]"}/>
    <FAQs content={faqContent}/>
    </>
   )
@@ -86,21 +86,21 @@ const overviewContent = {
   bgImg:"/assets/images/personal-shop/shop.svg",
   title:"A Smarter Way to Shop, Right from Your Montra App",
   content:[
-    "Montra Shop brings everyday essentials and digital services to your fingertips. From airtime and data top-ups to bill payments, subscriptions, and gifting, you can browse, buy, and pay—all in one seamless, secure experience. No lines. No stress. Just simple, convenient shopping built for your lifestyle."
+    "Montra Shop brings everyday essentials and digital services to your fingertips. From airtime and data top-ups to bill payments, subscriptions, and gifting, you can browse, buy, and pay, all in one seamless, secure experience. No lines. No stress. Just simple, convenient shopping built for your lifestyle."
   ],
   subcontent1:"24/7 Access",
   subcontent2:"No Queues, No Hassles"
 }
 const  benefitsData = {
   heading:"Why Shop on Montra?",
-  para:"Discover a wide range of products and services across multiple categories—right from your Montra app. From daily essentials to specialized services, shopping has never been easier.",
+  para:"Discover a wide range of products and services across multiple categories, right from your Montra app. From daily essentials to specialized services.",
   headingWidth:"w-[80%]",
   paraWidth:"w-[65%]",
   cards:[
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Compare products for every needs across sellers on the Montra app to make informed decisions.", title: "Your One-Stop Shop ", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
-    { classPrefix: "b", left: "!left-[20%]", top: "!top-[62.9%]", color: "bg-[#FEFFA7]", content: "Choose Pay on Delivery via a secure payment link or use Escrow Pay  where your money stays protected with Montra until the seller fulfills the agreed terms.", title: "Multiple Ways to Pay", z: "z-[4]", width:"w-[22vw]", height:"20vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Engage sellers for your queries to start conversations using Chat, audio and video call features on the Montra app.", title: "Connect & Shop Smarter", z: "z-[5]",  width:"w-[24vw]", height:"18vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[65.9%]", color: "bg-[#CAC5F7]", content: "Stay updated with categories you love and stores you follow through feeds shared by sellers on the Montra app", title: "Smart Feeds, Just for You", z: "z-[4]",  width:"w-[23vw]", height:"18vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Enjoy the convenience of accessing products and services across a wide range of business categories, all through the Montra App.", title: "Your One-Stop Shop ", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
+    { classPrefix: "b", left: "!left-[20%]", top: "!top-[62.9%]", color: "bg-[#FEFFA7]", content: "Choose Pay on Delivery via a secure payment link or use Escrow Pay  where your money stays protected with Montra until the seller fulfills the agreed terms.", title: "Multiple Ways to Pay with Montra", z: "z-[4]", width:"w-[28vw]", height:"20vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Message sellers, make voice or video calls, and even send payments  all while chatting on the Montra App.", title: "Connect & Shop Smarter", z: "z-[5]",  width:"w-[24vw]", height:"18vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[65.9%]", color: "bg-[#CAC5F7]", content: "Montra merchants offer products and services for home delivery, take-out, or by appointment, all at your convenience.", title: "Flexible Delivery Options ", z: "z-[4]",  width:"w-[23vw]", height:"18vw" },
   ]
 }
 const featuresData = {

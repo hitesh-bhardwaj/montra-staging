@@ -113,7 +113,7 @@ const Overview = ({ content }) => {
           <div className="w-[45%] h-[60vw] justify-center flex flex-col  space-y-[3vw] max-sm:w-full max-sm:h-full max-sm:gap-[10vw] max-sm:items-start max-md:w-full max-md:h-full max-md:space-y-[7vw]">
             <div className="w-full flex flex-col gap-[2vw] pr-[3vw] max-sm:gap-[7vw] max-md:gap-[4vw]">
               <Heading>
-                <h2 className="text-[3.2vw] leading-[1.2] font-display font-medium capitalize max-sm:text-[7.5vw] max-sm:leading-[1.4] max-md:text-[5.5vw]">
+                <h2 className="text-[3.2vw] leading-[1.2] font-display font-medium  max-sm:text-[7.5vw] max-sm:leading-[1.4] max-md:text-[5.5vw]">
                   {content.title}
                 </h2>
               </Heading>

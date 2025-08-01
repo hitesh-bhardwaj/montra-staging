@@ -41,13 +41,13 @@ const personalPayments = () => {
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqContent} />
       <BreadcrumbsJSONLD pathname={metadata.url} />
-      <Hero primaryHeading={"Montra Personal Account: "} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones—Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."} />
+      <Hero primaryHeading={"Montra Personal Account: "} heading={"The Easiest Way to Pay, Anywhere"} content={"Whether you're paying bills, splitting dinner, or sending money to loved ones, Montra makes it effortless. Say goodbye to cash and long queues. With Montra, your phone becomes your wallet."} />
       <Overview content={overviewContent} />
       <Benefits data={benefitsData} />
       <Cards cardData={cardData} />
       <Rewards rewardsData={rewardsData} />
       <Discover />
-      <SectionBreak content={"Whether you're paying bills, sending money, or shopping online—do it all in one place, with complete peace of mind."} width={"w-[85%]"} />
+      <SectionBreak content={"Whether you're paying bills, sending money, or shopping online, do it all in one place, with complete peace of mind."} width={"w-[85%]"} />
       <FAQs content={faqContent} />
     </>
   )
@@ -83,9 +83,9 @@ const overviewContent = {
   icon2: "/assets/images/personal-payments/overview-icon-2.svg",
   mainImg: "/assets/images/personal-payments/personal-payment.png",
   bgImg: "/assets/images/personal-payments/overview-bg-icon.svg",
-  title: "Fast, Easy Payments—Right from Your Phone",
+  title: "Fast, Easy Payments, Right from your Phone",
   content: [
-    "Montra gives you a smarter way to manage your money—no cash, no complications. From sending money to friends and family, to paying bills, shopping, and more, Montra puts secure, fast, and reliable payments in your hands.",
+    "Montra gives you a smarter way to manage your Money, no cash, no complications. From sending money to friends and family, to paying bills, shopping, and more, Montra puts secure, fast, and reliable payments in your hands.",
     "Whether you're buying airtime, paying rent, or splitting the tab, Montra keeps it simple."
   ],
   subcontent1: "Pay Bills",
@@ -97,14 +97,14 @@ const benefitsData = {
   headingWidth: "w-full",
   paraWidth: "w-full",
   cards: [
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Your Montra App is protected by the password you set — and you can also unlock it easily using Face ID or biometric authentication on your phone.", title: "Secure from the Start", z: "z-[5]", width: "w-[22vw]", height: "17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Montra offers you a Free Soft-token service through the Verified app. When necessary, you would be prompted to enter the Soft-token code for authenticating your transaction request to protect you against fraud.", title: " Advanced 2FA Protection", z: "z-[4]", width: "w-[24vw]", height: "21vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Your Montra App is protected by the password you set; you can also unlock it easily using Face ID or biometric authentication on your phone.", title: "Secure from the Start", z: "z-[5]", width: "w-[22vw]", height: "17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Montra offers you a Free Soft-token service through the Verifyed app. When necessary, you would be prompted to enter the Soft-token code for authenticating your transaction request to protect you against fraud.", title: " Advanced 2FA Protection", z: "z-[4]", width: "w-[24vw]", height: "21vw" },
     { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Every payment on Montra is processed only after you successfully authenticate with your Montra PIN.", title: "Built-In Payment Checks", z: "z-[5]", width: "w-[24vw]", height: "17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "Only you and the person you’re transacting with can see the details of your payment — keeping your transactions private and secure.", title: "Your Privacy, Always", z: "z-[4]", width: "w-[20vw]", height: "17vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "Only you and the person you’re transacting with can see the details of your payment, keeping your transactions private and secure.", title: "Your Privacy, Always", z: "z-[4]", width: "w-[20vw]", height: "17vw" },
   ]
 }
 const rewardsData = {
-  heading: "Track Your & Rewards-All in One Place",
+  heading: "Track your Rewards, all in One  Place",
   headingWidth: "w-[70%]",
   gridCols: "grid-cols-4",
 
@@ -112,28 +112,28 @@ const rewardsData = {
     {
       icon: "/assets/images/personal-payments/montra-account-statement.svg",
       title: "Montra Account Statement",
-      para: "View all your payments in real-time with your Montra  Account Statement—clarity made simple."
+      para: "View all your payments in real-time with your Montra Account Statement. Clarity made simple."
     },
     {
       icon: "/assets/images/personal-payments/instant-alerts.svg",
       title: "Instant Alerts",
-      para: "Get voice and text notifications on your Montra App every time you receive a payment—so you’re always in the loop."
+      para: "Get voice and text notifications on your Montra App every time you receive a payment so you’re always in the loop."
     },
     {
       icon: "/assets/images/personal-payments/reward-points.svg",
       title: "Reward Points Tracker",
-      para: "Keep tabs on every reward point earned with a dedicated Reward Point Account Statement—no surprises, just benefits."
+      para: "Keep tabs on every reward point earned with a dedicated Reward Point Account Statement no surprises, just benefits."
     },
     {
       icon: "/assets/images/personal-payments/easy-reward.svg",
       title: "Easy Reward Redemption",
-      para: "Redeem your points anytime and monitor it all through your Reward Point Redemption Account—track your perks with ease."
+      para: "Redeem your points anytime and monitor it all through your Reward Point Redemption Account. Track your perks with ease."
     },
   ]
 }
 const cardData = {
-  heading: "Send Money Your Way—Fast, Easy & Secure",
-  subHeading: "The Montra App gives you multiple simple and reliable ways to send money—anytime, anywhere.",
+  heading: "Send Money your Way. Fast, Easy & Secure",
+  subHeading: "The Montra App gives you multiple simple and reliable ways to send money, anytime, anywhere.",
   headingWidth: "w-[70%]",
   cards: [
     {
@@ -146,13 +146,13 @@ const cardData = {
       icon: "/assets/images/personal-payments/card-2.svg",
       icon2:"/assets/images/personal-payments/linked-bank.svg",
       title: "Linked Bank Accounts",
-      para: "<p>Easily link your other  bank accounts on the Montra app and manage all your payments in one place — one app for all your bank accounts.</p>",
+      para: "<p>Easily link your other  bank accounts on the Montra app and manage all your payments in one place. One  one app for all your bank accounts. </p>",
     },
     {
       icon: "/assets/images/personal-payments/card-3.svg",
       icon2:"/assets/images/personal-payments/linked-cards.svg",
       title: "Linked Cards",
-      para: "<p>Securely link your debit or credit cards on the Montra App and make seamless payments — no need to carry physical cards.</p>",
+      para: "<p>Securely link your debit or credit cards on the Montra App and make seamless payments,  no need to carry physical cards.</p>",
     },
     {
       icon: "/assets/images/personal-payments/card-4.svg",

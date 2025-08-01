@@ -126,9 +126,7 @@ export default function Hero() {
           </Heading>
           <Copy delay={isMobile ? 2.6 : 5.3}>
             <p className="font-body w-[70%] mx-auto heroAnim max-sm:w-[95%] max-md:w-[90%]">
-              Simply download Montra App to set-up your Personal & Business
-              accounts to send money, accept payments, shop in marketplaces and
-              access financial products— all in one place.
+            Simply download the Montra App to set-up your Personal & Business accounts to send money, accept payments, shop in marketplaces and access financial products, all in one place.
             </p>
           </Copy>
           <div

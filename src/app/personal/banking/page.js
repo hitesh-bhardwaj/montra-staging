@@ -94,14 +94,14 @@ const overviewContent = {
   icon2: "/assets/images/personal-banking/overview-icon-2.svg",
   mainImg: "/assets/images/personal-banking/personal-Banking.png",
   bgImg: "/assets/images/personal-banking/overview-banking-icon.svg",
-  title: "Your Digital Gateway To Financial Empowerment",
-  content: ["Montra gives you a smarter way to manage your money—no cash, no complications. From sending money to friends and family, to paying bills, shopping, and more, Montra puts secure, fast, and reliable payments in your hands. Whether you're buying airtime, paying rent, or splitting the tab, Montra keeps it simple—with just a few taps." ],
+  title: "Your Digital Gateway to Financial Empowerment",
+  content: ["Montra gives you a smarter way to manage your Money, no cash, no complications. From sending money to friends and family, to paying bills, shopping, and more, Montra puts secure, fast, and reliable payments in your hands. Whether you're buying airtime, paying rent, or splitting the tab, Montra keeps it simple with just a few taps." ],
   subcontent1: "Fast Payments",
   subcontent2: "Secure Banking",
 };
 
 const whatWhyData = {
-  heading:"Link your other Bank Accounts– one app to pay from all your bank accounts.",
+  heading:"Link your other bank accounts. Pay from all your banks, all in one Montra app.",
   headingWidth:"w-[95%]",
   top:"top-[37%]",
   para:"",
@@ -119,7 +119,7 @@ const whatWhyData = {
   {
     number:"03",
     title:"Add Funds to Your Montra Account",
-    para:"After verification, simply use the same bank account to load money into your Montra Wallet. With this final step, your account link is complete — and you’re all set to request payments right from the app!"
+    para:"After verification, simply use the same bank account to load money into your Montra Wallet. With this final step, your account link is complete, and you’re all set to request payments right from the app!"
   }],
 }
 
@@ -130,9 +130,9 @@ const  benefitsData = {
   paraWidth:"w-full",
   cards:[
     { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Enjoy the convenience of mobile banking with your free Montra digital account and Virtual Debit Card.", title: "No Fees, No Hassle", z: "z-[5]", width:"w-[20vw]", height:"17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Your money stays safe with Montra — none of your deposits are converted into risky assets.", title: "Safe & Sound ", z: "z-[4]", width:"w-[18vw]", height:"17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Your money stays safe with Montra. None of your deposits are converted into risky assets.", title: "Safe & Sound ", z: "z-[4]", width:"w-[18vw]", height:"17vw" },
     { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#EAF1FF]", content: "Get a Virtual Debit Card that is ready to use for online shopping, payments and subscriptions, anytime.", title: "Instant Virtual Debit Card", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Your account on Montra app is protected with a Password, PIN and a Soft Token (for OTP / 2FA verification using a FREE Montra Soft Token account set up on the VERIFYED App) — ensuring your account stays safe at all times.", title: "Locked with Extra Security", z: "z-[4]",  width:"w-[24.5vw]", height:"22vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Your account on Montra app is protected with a Password, PIN and a Soft Token (for OTP / 2FA verification using a FREE Montra  Soft Token account set up on the VERIFYED App) ensuring your account stays safe at all times.", title: "Locked with Extra Security", z: "z-[4]",  width:"w-[24.5vw]", height:"22vw" },
   ]
 }
 const stepData = {

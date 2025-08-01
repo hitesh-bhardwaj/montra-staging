@@ -219,9 +219,9 @@ export default function TextBreak() {
       <div className="h-screen flex  justify-center text-center overflow-hidden w-screen mx-auto  max-sm:mt-0 sticky top-0 pt-[17%] max-md:pt-[55%]">
         <h2
           data-split="lines"
-          className="text-[5.7vw] w-[88%] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw] "
+          className="text-[5.7vw] w-[75%] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw] "
         >
-          We're not just building products—we're building possibilities.
+        We’re not just building products, we’re building possibilities. 
         </h2>
 
         <motion.svg

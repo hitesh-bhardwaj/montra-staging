@@ -40,12 +40,12 @@ const montraStore = () => {
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqContent} />
       <BreadcrumbsJSONLD pathname={metadata.url} />
-      <Hero primaryHeading={"Montra for Business: "} heading={"Start Selling Online — No Website Required"} content={"Create your free, customized Montra Store to showcase your products, reach more customers, accept payments seamlessly, and grow your business — all within the Montra App."} />
+      <Hero primaryHeading={"Montra For Business: "} heading={"Start Selling Online,  No Website Required"} content={"Create your free, customized Montra Store to showcase your products, reach more customers, accept payments seamlessly, and grow your business, all within the Montra App."} />
       <Overview content={overviewContent} />
       <Benefits data={benefitsData} />
       <Cards cardData={cardData} />
       <Rewards rewardsData={rewardsData} />
-      <SectionBreak content={"Built to Empower & Designed for Simplicity. Whether you're running a business or handling personal payments, our fintech tools make it all smoother, faster, and more inclusive."} width={"w-[95%]"} />
+      <SectionBreak content={"Built to empower, designer for simplicity. Whether you’re running a business or handling personal payments, our fintech tools make it all smoother, faster and more inclusive."} width={"w-[95%]"} />
       <FAQs content={faqContent} />
     </>
   )
@@ -97,7 +97,7 @@ const overviewContent = {
   bgImg: "/assets/images/business-montra-store/overview-bg-icon.svg",
   title: "Your Online Store, Smarter and Simple",
   content: [
-    "Montra Store lets you set up a free, customized online storefront — no website or hosting fees required.  You can reach more customers, accept flexible and manage products, orders, and sales effortlessly, all within the Montra App. Selling online has never been this easy.",
+    "Montra Store lets you set up a free, no website or hosting fees required.  You can reach more customers, accept flexible and manage products, orders, and sales effortlessly, all within the Montra App. Selling online has never been this easy.",
 
   ],
   subcontent1: "Free Store, Free Marketing",
@@ -117,7 +117,7 @@ const benefitsData = {
 }
 const rewardsData = {
   heading: "Smarter Commerce. Deeper Control.",
-  para: "From insights to fulfillment, Montra gives you the tools to run your business better—every step of the way.",
+  para: "From insights to fulfillment, Montra gives you the tools to run your business better, every step of the way.",
   headingWidth: "w-[60%]",
   gridCols: "grid-cols-4",
   cards: [
@@ -128,24 +128,24 @@ const rewardsData = {
     },
     {
       icon: "/assets/images/business-montra-store/reward-icon-2.svg",
-      title: "Chat, Call & Get Paid—all in one place",
-      para: "With Montra Chat, customers can message sellers, make voice or video calls, and even complete payments—all without leaving the conversation."
+      title: "Chat, Call & Get Paid. All in one place",
+      para: "With Montra Chat, customers can message sellers, make voice or video calls, and even complete payments, all without leaving the conversation."
     },
     {
       icon: "/assets/images/business-montra-store/reward-icon-3.svg",
       title: "Flexible & Secure Payment Options",
-      para: "Let customers choose how they pay—via secure Pay on Delivery links or Escrow Pay. Funds are safely held until products or services are delivered based on agreed terms."
+      para: "Let customers choose how they pay via secure Pay on Delivery links or Escrow Pay. Funds are safely held until products or services are delivered based on agreed terms."
     },
     {
       icon: "/assets/images/business-montra-store/reward-icon-4.svg",
       title: "Simplify Fulfillment with Centralized Order Management",
-      para: "Seamlessly manage inventory, orders, returns, and refunds from one place—ensuring your products reach the right hands with ease and efficiency."
+      para: "Seamlessly manage inventory, orders, returns, and refunds from one place ensuring your products reach the right hands with ease and efficiency."
     },
   ]
 }
 const cardData = {
-  heading: "Your Business, Your Way — Powered by Montra Store",
-  subHeading: "From rentals and deliveries to takeout, bookings, and home or professional services, Montra Store helps you sell and manage it all — reaching more customers, all in one simple platform.",
+  heading: "Your Business, Your Way. Powered by Montra Store",
+  subHeading: "From rentals and deliveries to takeout, bookings, and home or professional services, Montra Store helps you sell and manage it all,  reaching more customers, all in one simple platform.",
   headingWidth: "w-[70%]",
   cards: [
     {
@@ -170,7 +170,7 @@ const cardData = {
       icon: '/assets/images/business-montra-store/card-icon-4.svg',
       icon2:"/assets/images/business-montra-store/appointments.svg",
       title: 'Appointments',
-      para: '<p>For professional services offered in-office or virtually — like doctors, consultants, beauty services, or home improvement experts —  customers can book appointments directly through your Montra Store.</p>',
+      para: '<p>For professional services offered in-office or virtually, like doctors, consultants, beauty services, or home improvement experts.   Customers can book appointments directly through your Montra Store.</p>',
     },
   ]
 }

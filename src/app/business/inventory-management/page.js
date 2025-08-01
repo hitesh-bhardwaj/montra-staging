@@ -40,12 +40,12 @@ const businessInventory = () => {
       <WebpageJsonLd metadata={metadata} />
       <FAQJSONLD faqs={faqContent} />
       <BreadcrumbsJSONLD pathname={metadata.url} />
-      <Hero primaryHeading={"Montra for Business: "} heading={"Smart Inventory Management - Stronger Business"} content={"Montra’s Inventory Management gives you control—track stock, minimize losses, and improve profitability with ease."} />
+      <Hero primaryHeading={"Montra for Business: "} heading={"Smart Inventory Management, Stronger Business "} content={"Montra’s Inventory Management gives you control whether it is buying inventory or selling inventory you already have, you can now track your stock with ease. "} />
       <Overview content={overviewContent} />
       <Benefits data={benefitsData} />
       <Cards cardData={cardData} />
       <Rewards rewardsData={rewardsData} />
-      <SectionBreak content={"Whether you're buying, selling or tracking inventory, Montra gives you the tools to manage it all in one place."} width={"w-[90%]"} />
+      <SectionBreak content={"Whether you're buying, selling or tracking inventory, Montra gives you the tools to manage it all in one place."} width={"w-[85%]"} />
       <FAQs content={faqContent} />
     </>
   )
@@ -109,10 +109,10 @@ const benefitsData = {
   headingWidth: "w-[60%]",
   paraWidth: "w-[40%]",
   cards: [
-    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Buy or sell inventory with instant B2B payments — funds move instantly between Montra Business Accounts, no delays.", title: "Instant Payments, Always", z: "z-[5]", width: "w-[24vw]", height: "17vw" },
+    { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Buy or sell inventory with instant B2B payments, funds move instantly between Montra Business Accounts, no delays.", title: "Instant Payments, Always", z: "z-[5]", width: "w-[24vw]", height: "17vw" },
     { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#FFEAEE]", content: "Offer credit to other businesses confidently. Montra tracks credit invoices and helps you manage and collect overdue payments smoothly.", title: "Easily Sell on Credit", z: "z-[4]", width: "w-[22vw]", height: "19vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#EAF1FF]", content: "Enjoy flexible credit terms from sellers on Montra — get the inventory you need now and pay in easy installments.", title: "Buy Now, Pay Later", z: "z-[5]", width: "w-[22vw]", height: "17vw" },
-    { classPrefix: "d", left: "!left-[64%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Once a distributor links to your business, you can place and manage orders directly through the Montra App — making supply chain management simple.", title: "Place Orders with Linked Distributors", z: "z-[4]", width: "w-[32vw]", height: "22vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#EAF1FF]", content: "Enjoy flexible credit terms from sellers on Montra and get the inventory you need now and pay in easy installments.", title: "Buy Now, Pay Later", z: "z-[5]", width: "w-[22vw]", height: "17vw" },
+    { classPrefix: "d", left: "!left-[64%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Once a distributor links to your business, you can place and manage orders directly through the Montra App, making supply chain management simple.", title: "Place Orders with Linked Distributors", z: "z-[4]", width: "w-[32vw]", height: "22vw" },
   ]
 }
 const rewardsData = {
@@ -123,18 +123,18 @@ const rewardsData = {
   cards: [
     {
       icon: "/assets/images/business-inventory/instant-payments.svg",
-      title: "Instant Payments for Buying & Selling",
-      para: "B2B transactions on Montra are fast and frictionless. Whether you’re buying or selling inventory, payments are made instantly between Montra Business Accounts—no delays, no stress."
+      title: "Instant Payments for Buying & Selling ",
+      para: "B2B transactions on Montra are fast and frictionless. Whether you’re buying or selling inventory, payments are made instantly between Montra Business Account, no delays, no stress."
     },
     {
       icon: "/assets/images/business-inventory/sell-on-credit.svg",
       title: "Sell on Credit, Easily",
-      para: "Need to offer flexible payment terms? Montra lets you sell inventory to other businesses on credit. We’ll help you track outstanding invoices and follow up on overdue payments after the agreed due date—so you can focus on business, not chasing funds."
+      para: "Need to offer flexible payment terms? Montra lets you sell inventory to other businesses on credit. We’ll help you track outstanding invoices and follow up on overdue payments after the agreed due date, so you can focus on business, not chasing funds."
     },
     {
       icon: "/assets/images/business-inventory/buy-now.svg",
-      title: "Buy Now, Pay Later",
-      para: "Enjoy flexibility when purchasing inventory. Accept credit terms from sellers on the Montra App and split your payments into easy installments. Buy what you need today—pay when it works for you."
+      title: "Buy Now, Pay Later ",
+      para: "Enjoy flexibility when purchasing inventory. Accept credit terms from sellers on the Montra App and split your payments into easy installments. Buy what you need today. Pay when it works for you."
     },
     {
       icon: "/assets/images/business-inventory/order.svg",
@@ -145,8 +145,8 @@ const rewardsData = {
 }
 
 const cardData = {
-  heading: "Smarter Inventory Management on Montra App",
-  subHeading: "Smarter Inventory Management on Montra App.",
+  heading: "Smarter inventory management on the Montra App ",
+  subHeading: "Track, restock, and sell effortlessly.",
   headingWidth: "w-[75%]",
   cards: [
     {

@@ -43,7 +43,7 @@ const PersonalFinance = () => {
         primaryHeading={"Montra Personal Account: "}
         heading={"Take Charge of Your Financial Future"}
         content={
-          "Managing your finances shouldn’t be complicated. With Montra, you get powerful yet simple tools to save, borrow, insure, and invest—right from your phone."
+          "Managing your finances shouldn’t be complicated. With Montra, you get powerful yet simple tools to save, borrow, insure, and invest right from your phone."
         }
       />
       <Overview content={overviewContent} />
@@ -101,8 +101,8 @@ const overviewContent = {
   bgImg: "/assets/images/personal-payments/overview-bg-icon.svg",
   title: "Financial products for every step of your journey",
   content: [
-    "Montra makes personal finance easy, accessible, and stress-free. Whether you're saving for something big, need quick credit, or want to protect your future with insurance, it’s all right here—in one powerful app. ",
-    "No banks, no paperwork, no complicated steps. Just the tools you need to build, manage, and grow your money—with full control and total confidence.",
+    "Montra makes personal finance easy, accessible, and stress-free. Whether you're saving for something big, need quick credit, or want to protect your future with insurance, it’s all right here in one powerful app.",
+    "No banks, no paperwork, no complicated steps. Just the tools you need to build, manage, and grow your money with full control and total confidence.",
   ],
   subcontent1: "Insure & Invest",
   subcontent2: "Access Credit Instantly",
