@@ -91,25 +91,32 @@ export default function Footer() {
         <>
             <footer
                 id='footer'
-                className="w-screen h-[38vw] max-sm:h-full max-sm:rounded-t-[10vw] max-sm:overflow-hidden max-md:h-[115vw] "
+                className="w-screen h-[46vw] max-sm:h-full max-sm:rounded-t-[10vw] max-sm:overflow-hidden max-md:h-[130vw] "
                 style={{ clipPath: 'rect(0px 100% 100% 0px)' }}
             >
-                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[42vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-lg z-0 max-sm:h-full max-sm:static max-sm:pb-[0vw] max-md:h-[115vw]' >
+                <div className='text-white fixed bottom-0 bg-primary flex flex-col justify-end w-screen h-[50vw] mx-auto pt-[4vw] pb-[1vw] max-sm:w-screen max-sm:pt-[15vw] font-display text-[1.1vw] max-sm:text-lg z-0 max-sm:h-full max-sm:static max-sm:pb-[0vw] max-md:h-[130vw]' >
                     {/* Top Content */}
                     <div className="flex flex-row mb-[4vw] justify-between max-sm:flex-col px-[4vw] max-sm:px-[7vw]  max-md:flex-col max-md:gap-[10vw] max-md:px-[7vw]">
                         {/* Logo */}
                         <div className="w-fit max-sm:w-full max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-sm:gap-[7vw] max-md:w-full max-md:justify-center max-md:flex max-md:flex-col max-md:gap-[3vw] ">
                             <Image className='w-[30vw] max-sm:w-[85%] mb-[2vw]' src={logo} alt="Montra Logo" width={600} height={126} />
-                            <p className="w-[30vw] mb-[2vw] text-[1vw] max-sm:text-lg max-sm:w-full max-sm:text-center max-md:text-[2.5vw] max-md:w-[80%]">
+                            <p className="w-[30vw] mb-[2vw] text-[1vw] max-sm:text-lg max-sm:w-full max-sm:text-center max-md:text-[2.5vw] max-md:w-[100%]">
                                 Montra delivers innovative products and solutions that drive
                                 financial inclusion in emerging economies - enabling a smooth shift
                                 from cash to digital payments and making credit more accessible
                                 for all.
                             </p>
+                            <div className='flex gap-4 items-baseline mb-[1vw] max-md:mb-0'>
+                                <Image className='h-[5vw] aspect-auto max-md:h-[10vw] max-sm:h-[18vw]' width={100} height={100} src={"/assets/images/cbn-logo.svg"} alt='CBN Logo' />
+                                <Image className='h-[3vw] w-auto max-md:h-[7vw] max-sm:h-[10vw]' width={100} height={100} src={"/assets/images/indc-logo.png"} alt='INDC Logo' />
+                            </div>
+                            <p className='text-[1vw] max-sm:text-lg max-md:text-[2.5vw] mb-[1.5vw] max-md:mb-0 max-sm:mt-[-5vw]'>Licensed by CBN, Insured by NDIC</p>
                             <p className='font-semibold max-sm:font-medium max-md:text-[2.5vw] max-sm:text-[4.5vw]'>
                                 Connect with us:{' '}
                                 <a target='_blank' href="mailto:info@montra.org" className="">
-                                    info@montra.org
+                                    <span className='link-line inline-block'>
+                                        info@montra.org
+                                    </span>
                                 </a>
                             </p>
                         </div>
@@ -122,7 +129,7 @@ export default function Footer() {
                                 {/* Personal Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
                                     {personalLinks.map((link, index) => (
-                                        <li key={index} className='first:uppercase'>
+                                        <li key={index} className='first:uppercase first:font-medium'>
                                             <a
                                                 href={link.href}
                                                 onClick={(e) => {
@@ -140,7 +147,7 @@ export default function Footer() {
                                 {/* Business Links */}
                                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
                                     {businessLinks.map((link, index) => (
-                                        <li key={index} className='first:uppercase'>
+                                        <li key={index} className='first:uppercase first:font-medium'>
                                             <a
                                                 href={link.href}
                                                 onClick={(e) => {
@@ -155,30 +162,47 @@ export default function Footer() {
                                     ))}
                                 </ul>
 
-                                <div className="flex flex-col justify-between items-center ">
-                                    <div className='space-y-[0.5vw] max-sm:space-y-[2vw]'>
-                                        <a
-                                            href="/platform"
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                navigateTo("/platform");
-                                            }}
-                                            className="uppercase block w-fit link-line" >Platform</a>
+                                <div className="flex flex-col justify-between items-start">
+                                    <div className='space-y-[0.5vw] max-sm:space-y-[2vw] mb-[2vw]'>
                                         <Link
-                                            href="/company"
+                                            href="/terms-and-conditions"
                                             scroll={false}
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                navigateTo("/company");
+                                                navigateTo("/terms-and-conditions");
                                             }}
-                                            className="uppercase block w-fit link-line">Company</Link>
+                                            className="font-medium block w-fit link-line" >PLATFORM</Link>
+                                        <Link
+                                            href="/privacy-policy"
+                                            scroll={false}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                navigateTo("/privacy-policy");
+                                            }}
+                                            className=" font-medium block w-fit link-line">COMPANY</Link>
+                                        {/* <Link
+                                            href="/terms-and-conditions"
+                                            scroll={false}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                navigateTo("/terms-and-conditions");
+                                            }}
+                                            className=" block w-fit link-line" >Terms & Conditions</Link>
+                                        <Link
+                                            href="/privacy-policy"
+                                            scroll={false}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                navigateTo("/privacy-policy");
+                                            }}
+                                            className=" block w-fit link-line">Privacy Policy</Link> */}
                                     </div>
 
                                     {/* Social Media Links */}
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw] max-sm:mt-[10vw] '>
                                         {socialLinks.map((link, index) => (
                                             <a key={index} href={link.href} target='_blank' aria-label='Facebook' className='flex items-center gap-1 group max-sm:gap-3 max-sm:w-fit max-sm:mx-auto'>
-                                                <span className='link-line '>{link.name}</span>
+                                                <span className='link-line'>{link.name}</span>
                                                 <div className='h-[0.8vw] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw] '>
                                                     <span className='inline-flex w-[200%] h-full duration-300 group-hover:translate-x-1/2'>
                                                         <ArrowRight className='h-[0.8vw] w-[1vw] inline-block scale-0 group-hover:scale-100 duration-300 max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw]' />
@@ -219,8 +243,6 @@ export default function Footer() {
     )
 }
 
-
-
 const socialLinks = [
     {
         name: "Facebook",
@@ -231,13 +253,13 @@ const socialLinks = [
         href: "#",
     },
     {
-        name: "Instagram",
+        name: "LinkedIn",
         href: "#",
     },
     {
-        name: "Youtube",
-        href: "#"
-    }
+        name: "Instagram",
+        href: "#",
+    },
 ]
 
 const personalLinks = [

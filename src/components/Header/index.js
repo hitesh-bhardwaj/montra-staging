@@ -3,7 +3,7 @@ import Link from "next/link";
 import montraLogo from "../../../public/montra-logo.png";
 import Image from "next/image";
 import Navbar from "./Navbar";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLenis } from "lenis/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -16,25 +16,34 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Header() {
   const { navigateTo } = useAnimatedNavigation();
   const [hidden, setHidden] = useState(false);
-  const [lastY, setLastY] = useState(0);
   const [isInverted, setIsInverted] = useState(false);
-  const [openMenu, setopenMenu] = useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const lenis = useLenis();
   const [openSection, setOpenSection] = useState(null);
   const pathname = usePathname();
+  const [openMenu, setOpenMenu] = useState(false);
+  const prevScrollY = useRef(0);
 
   const toggleSection = (section) => {
     setOpenSection((prev) => (prev === section ? null : section));
   };
 
   useEffect(() => {
-    if (openMenu) {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    }
+  }, [lenis, pathname]);
+
+  useEffect(() => {
+    if (openMobileMenu) {
       lenis && lenis.stop();
     } else {
       lenis && lenis.start();
       setOpenSection(null);
     }
-  }, [openMenu, lenis]);
+  }, [openMobileMenu, lenis]);
 
   useEffect(() => {
     setOpenSection(null);
@@ -53,7 +62,6 @@ export default function Header() {
         onLeave: () => setIsInverted(false),
         onLeaveBack: () => setIsInverted(false),
       });
-
       triggers.push(trigger);
     });
 
@@ -64,20 +72,23 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentY = window.scrollY;
+      // 1) If the menu is open, do nothing
+      if (openMenu) return;
 
-      if (currentY > lastY && currentY > 100) {
+      const currentY = window.pageYOffset;
+      // 2) Hide header when scrolling down
+      if (currentY > prevScrollY.current) {
         setHidden(true);
-      } else if (currentY < lastY) {
+      } else {
+        // 3) Show header when scrolling up
         setHidden(false);
       }
-
-      setLastY(currentY);
+      prevScrollY.current = currentY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastY]);
+  }, [openMenu]);
 
   return (
     <header
@@ -100,31 +111,31 @@ export default function Header() {
             <Image
               src={montraLogo}
               alt="montra logo"
-              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${openMenu ? "!brightness-[1]" : ""
+              className={`w-[10vw] max-sm:w-[30vw] logo max-md:w-[20vw] montra-logo ${openMobileMenu ? "!brightness-[1]" : ""
                 } ${isInverted ? " brightness-[16]" : ""} `}
             />
           </button>
-          <Navbar navigateTo={navigateTo} hidden={hidden} />
+          <Navbar navigateTo={navigateTo} hidden={hidden} openMenu={openMenu} setOpenMenu={setOpenMenu} />
           <div
             className="hidden max-sm:flex max-sm:flex-col gap-[1.5vw] w-[8vw] relative z-[150] max-md:flex max-md:flex-col max-md:w-[4.5vw] max-md:gap-[1vw] max-sm:w-[7vw]"
             onClick={() => {
-              setopenMenu((prev) => !prev);
+              setOpenMobileMenu((prev) => !prev);
             }}
           >
             <div
               className={`w-full h-[2.5px]  rounded-full line-1 transition-all duration-500 origin-center ham-mobile ${isInverted ? "bg-white" : "bg-primary"
-                } ${openMenu
+                } ${openMobileMenu
                   ? "rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px] !bg-primary "
                   : "bg-primary"
                 }`}
             />
             <div
               className={`w-full h-[2.5px] bg-primary rounded-full line-2 transition-all duration-500 ham-mobile ${isInverted ? "bg-white" : "bg-primary"
-                } ${openMenu ? "opacity-0 bg-white " : "bg-primary"}`}
+                } ${openMobileMenu ? "opacity-0 bg-white " : "bg-primary"}`}
             />
             <div
               className={`w-full h-[2.5px] bg-primary rounded-full line-3 transition-all duration-500 origin-center ham-mobile ${isInverted ? "bg-white" : "bg-primary"
-                } ${openMenu
+                } ${openMobileMenu
                   ? "-rotate-45 max-sm:-translate-y-[6px] max-md:-translate-y-[10px] !bg-primary"
                   : "bg-primary"
                 }`}
@@ -132,13 +143,13 @@ export default function Header() {
           </div>
 
           <div
-            className={`w-screen h-screen fixed top-0 left-0  bg-black/20 transition-all duration-500 ${openMenu
+            className={`w-screen h-screen fixed top-0 left-0  bg-black/20 transition-all duration-500 ${openMobileMenu
               ? "opacity-100 backdrop-blur-sm"
               : " opacity-0 pointer-events-none"
               }`}
           >
             <div
-              className={`max-sm:w-screen max-sm:h-dvh overflow-hidden !opacity-100 bg-[#FAFBFF] text-black flex flex-col max-sm:justify-between px-[7vw] font-display font-medium max-sm:text-[6vw] absolute top-0 z-[160] right-0 max-sm:pt-[30vw]  max-sm:space-y-[5vw] max-sm:pb-[15vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${openMenu ? "translate-x-0 " : "translate-x-[100%]"
+              className={`max-sm:w-screen max-sm:h-dvh overflow-hidden !opacity-100 bg-[#FAFBFF] text-black flex flex-col max-sm:justify-between px-[7vw] font-display font-medium max-sm:text-[6vw] absolute top-0 z-[160] right-0 max-sm:pt-[30vw]  max-sm:space-y-[5vw] max-sm:pb-[15vw] max-md:py-[8vw] transition-all duration-500 origin-top-right max-md:w-[60vw] max-md:h-screen max-md:text-[4vw] max-md:space-y-[7vw] ${openMobileMenu ? "translate-x-0 " : "translate-x-[100%]"
                 }`}
             >
               <div className="flex flex-col max-sm:gap-[4vw] items-start max-md:gap-[3vw]">
@@ -148,7 +159,7 @@ export default function Header() {
                   onClick={(e) => {
                     e.preventDefault();
                     navigateTo("/");
-                    setopenMenu(false);
+                    setOpenMobileMenu(false);
                     setIsInverted(false);
                   }}
                 >
@@ -236,7 +247,7 @@ export default function Header() {
                           onClick={(e) => {
                             e.preventDefault();
                             navigateTo(section.link);
-                            setopenMenu(false);
+                            setOpenMobileMenu(false);
                             setIsInverted(false);
                           }}
                         >
@@ -287,7 +298,7 @@ export default function Header() {
                                 onClick={(e) => {
                                   e.preventDefault();
                                   navigateTo(link.href);
-                                  setopenMenu(false);
+                                  setOpenMobileMenu(false);
                                   setIsInverted(false);
                                 }}
                               >
@@ -311,7 +322,7 @@ export default function Header() {
                   href={"#"}
                   className="link-text"
                   onClick={() => {
-                    setopenMenu(false);
+                    setOpenMobileMenu(false);
                     setIsInverted(false);
                   }}
                 >
@@ -324,7 +335,7 @@ export default function Header() {
                   onClick={(e) => {
                     e.preventDefault();
                     navigateTo("/company");
-                    setopenMenu(false);
+                    setOpenMobileMenu(false);
                     setIsInverted(false);
                   }}
                 >
@@ -338,7 +349,7 @@ export default function Header() {
                   <Link href={"/privacy-policy"} className="link-line text-black" onClick={(e) => {
                     e.preventDefault();
                     navigateTo("/privacy-policy");
-                    setopenMenu(false);
+                    setOpenMobileMenu(false);
                     setIsInverted(false);
                   }}>
                     Privacy Policy
@@ -355,7 +366,7 @@ export default function Header() {
                   <Link href={"/terms-and-conditions"} className="link-line text-black" onClick={(e) => {
                     e.preventDefault();
                     navigateTo("/terms-and-conditions");
-                    setopenMenu(false);
+                    setOpenMobileMenu(false);
                     setIsInverted(false);
                   }}>
                     Terms and Conditions
@@ -367,7 +378,7 @@ export default function Header() {
                     aria-label="to facebook"
                     className=" rounded-full border border-primary/50 max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw] "
                     onClick={() => {
-                      setopenMenu(false);
+                      setOpenMobileMenu(false);
                     }}
                   >
                     <Facebook
@@ -379,7 +390,7 @@ export default function Header() {
                     aria-label="to instagram"
                     className="h-fit w-fit rounded-full border border-primary/50 max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                     onClick={() => {
-                      setopenMenu(false);
+                      setOpenMobileMenu(false);
                     }}
                   >
                     <Instagram
@@ -391,7 +402,7 @@ export default function Header() {
                     aria-label="to Linkedin"
                     className="h-fit w-fit rounded-full border border-primary/50  max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                     onClick={() => {
-                      setopenMenu(false);
+                      setOpenMobileMenu(false);
                     }}
                   >
                     <Linkedin
@@ -403,7 +414,7 @@ export default function Header() {
                     href={"/"}
                     className="h-fit w-fit rounded-full border border-primary/50 max-sm:h-fit max-sm:w-fit max-md:w-[8vw] max-md:h-[8vw]"
                     onClick={() => {
-                      setopenMenu(false);
+                      setOpenMobileMenu(false);
                     }}
                   >
                     <Twitter

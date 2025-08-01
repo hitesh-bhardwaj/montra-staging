@@ -64,12 +64,11 @@ const navLinkArray = [
   },
 ];
 
-export default function Navbar({ navigateTo, hidden }) {
+export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
   const pathname = usePathname();
   const navRef = useRef(null);
   const [active, setActive] = useState(null);
   const [highlight, setHighlight] = useState({ left: 0, width: 0 });
-  const [openMenu, setOpenMenu] = useState(false);
 
   const movePill = (el) => {
     if (!el || !navRef.current) return;
