@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useInView } from "framer-motion";
 import gsap from "gsap";
 
-const Steps = ({ stepData }) => {
+const  Steps = ({ stepData }) => {
   const [step, setStep] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -151,8 +151,8 @@ const Steps = ({ stepData }) => {
             {stepData.heading}
           </h2>
         </div>
-        <div className="w-[75%] flex items-end justify-end ml-[25vw]">
-        <div className="w-[50%] relative h-[70vh]  max-sm:w-[100vw] max-sm:h-[100vw] max-sm:left-[-10%] fadeupanim max-md:h-[190vw] max-md:w-[150vw] max-md:left-[-30%] max-md:mt-0">
+        <div className="w-[75%] flex items-end justify-end ml-[25vw] max-sm:flex-col max-md:flex-col max-sm:ml-0  max-md:ml-0 max-sm:w-full max-md:w-full">
+        <div className="w-[50%] relative h-[70vh]  max-sm:w-[100vw] max-sm:h-[100vw] max-sm:left-[-10%] fadeupanim max-md:h-[90vw] max-md:w-[100vw] max-md:left-[0%] max-md:mt-0">
           {stepData.steps.map((s, i) => {
             const isCurrent = i === currentStep;
             const isFadingOut = i === step && isAnimating;
@@ -180,7 +180,7 @@ const Steps = ({ stepData }) => {
           })}
         </div>
 
-        <div className="w-3/5 flex flex-col h-full justify-end items-start gap-[10vw] pl-[5vw] pb-[3vw] max-sm:w-full max-sm:pl-0 max-sm:justify-center max-sm:h-fit fadeupanim max-md:w-full max-md:justify-center  ">
+        <div className="w-3/5 flex flex-col h-full justify-end items-start gap-[10vw] pl-[5vw] pb-[3vw] max-sm:w-full max-sm max-sm:pl-0 max-sm:justify-center max-sm:h-fit max-mD:pl-0 fadeupanim max-md:w-full max-md:justify-center  ">
           <div>
             <motion.h3
               key={step}

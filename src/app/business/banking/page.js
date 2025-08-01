@@ -168,7 +168,7 @@ const stepData = {
           title: "Provide Registration Details",
           para: "Enter your business registration number (if applicable), address and location for instant verification.  And optionally upload your business logo.",
           img: "/assets/images/business-banking/set-up-profile.png",
-          tag:"Complete Business Setup"
+          tag:"Verify Business"
       },
       {
           number: "04",

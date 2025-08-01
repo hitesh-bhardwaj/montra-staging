@@ -128,7 +128,7 @@ const AnimatedOpeners = ({
             ease: "power3.inOut",
           })
           .to(`.${classPrefix}-circle`, {
-            height: "40vw",
+            height: "52vw",
             ease: "power3.inOut",
             delay: -0.3,
           })
@@ -153,7 +153,7 @@ const AnimatedOpeners = ({
             ease: "power3.inOut",
           })
           .to(`.${classPrefix}-circle`, {
-            height: "80vw",
+            height: "100vw",
             ease: "power3.inOut",
             delay: -0.3,
           })
@@ -219,7 +219,7 @@ const AnimatedOpeners = ({
               />
             </span>
             <div
-              className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[6vw] max-sm:gap-[10vw] max-md:gap-[7vw]  max-md:px-[5vw] ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] max-md:w-[70vw] max-md:rounded-[5vw] `}
+              className={`h-full rounded-[3vw] ${width} px-[2vw] flex flex-col items-start py-[1vw] capitalize relative max-sm:py-[4vw] max-sm:px-[6vw] max-sm:gap-[3vw] max-md:gap-[4vw]  max-md:px-[5vw] ${color} max-sm:w-[85vw] max-sm:rounded-[9vw] max-md:w-[70vw] max-md:rounded-[5vw] `}
             >
               <div className="h-[4vw] mt-[0.1vw] max-sm:text-[4vw] max-sm:h-fit max-md:text-[2.8vw] max-sm:mt-[0.5vw] max-md:mt-[1.6vw] max-md:leading-[1.1] max-sm:w-[85%] max-md:text-left  ">
                 {title}
@@ -236,9 +236,7 @@ const AnimatedOpeners = ({
               </div>
               <div
                 className={`text-[1.2vw] ${classPrefix}-content font-normal text-left opacity-0 max-sm:text-[4.5vw] max-md:text-[2.8vw] normal-case`}
-              >
-                {content}
-              </div>
+              dangerouslySetInnerHTML={{__html: content}}/>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ const controlContent = [
     personalLink: "/personal/banking",
     businessLink: "/business/banking",
     contentPersonal: "<p>Set-up your Montra Personal Account instantly for FREE. Secured with 2FA using Montra Soft Token, you can start making payments & transfers</p>",
-    contentBusiness: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem — designed to help your business grow smarter & faster.</p>',
+    contentBusiness: '<p>From accepting payments and finance to operations and growth tools, <span class="font-semibold">Montra</span> is your complete ecosystem, designed to help your business grow smarter & faster.</p>',
   },
   {
     personalIconText: "payment",
@@ -33,8 +33,8 @@ const controlContent = [
     businessImg: "/assets/images/homepage/business-payment.png",
      personalLink: "/personal/payments",
     businessLink: "/business/payments",
-    contentPersonal: '<p>One app. Multiple payment options — all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[5vw] space-y-[1vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards – </span>Use your saved debit or credit cards on Montra App</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
-    contentBusiness: '<p>Open a Montra Business Account to start receiving payments from anyone — anytime, anywhere. Accept payments using<ul class="pl-[5vw] space-y-[1vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
+    contentPersonal: '<p>One app. Multiple payment options, all built for ease, speed, and control. With Montra, you can pay using your: </p><ul class="list-disc pl-[5vw] space-y-[1vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts – </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards – </span>Use your saved debit or credit cards on Montra App</li><li><span class="font-semibold">Installments –  </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
+    contentBusiness: '<p>Open a Montra Business Account to start receiving payments from anyone anytime, anywhere. Accept payments using: <ul class="pl-[5vw] space-y-[1vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
   },
   {
     personalIconText: "finance",
@@ -47,7 +47,7 @@ const controlContent = [
     personalLink: "/personal/finance",
     businessLink: "/business/agency-banking",
     contentPersonal: '<p>Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[5vw] space-y-[1vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul><p>Because your money should move as smartly as you do.</p>',
-    contentBusiness: "<p>Offer Agency Banking services for offering Cash Deposit & Cash withdrawal services and get paid for every transaction — it’s that simple.</p>",
+    contentBusiness: "<p>Offer Agency Banking services for offering Cash Deposit & Cahs withdrawal services and get paid for every transaction.  It’s that simple.</p>",
   },
   {
     personalIconText: "chat",
@@ -59,7 +59,7 @@ const controlContent = [
     businessImg: "/assets/images/homepage/business-inventory-management.png",
     personalLink: "/personal/chat",
     businessLink: "/business/inventory-management",
-    contentPersonal: '<p>Introducing <span class="font-semibold">CHAT to PAY — </span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
+    contentPersonal: '<p>Introducing <span class="font-semibold">CHAT to PAY,</span>  Montra’s game-changing feature that lets you send or request money without ever leaving your conversation with other Montra users / Merchants.</p>',
     contentBusiness: '<p>Manage orders, send invoices, and track stock. With Montra, every part of your business just flows.<ul class="pl-[5vw] list-disc space-y-[1vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
   },
   {
@@ -67,12 +67,12 @@ const controlContent = [
     businessIconText: "Montra Store",
     color: "text-[#111111]",
     PersonalTitle: "Shopping Meets Simplicity",
-    BusinessTitle: "Start Selling Online — For Free",
+    BusinessTitle: "Start Selling Online for Free",
     personalImg: "/assets/images/homepage/personal-shop.png",
     businessImg: "/assets/images/homepage/business-montra-store.png",
     personalLink: "/personal/shop",
     businessLink: "/business/montra-store",
-    contentPersonal: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands— everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
+    contentPersonal: '<p>With <span class="font-semibold">Montra Store</span>, sellers showcase. Buyers discover.</p><p>From local sellers to online brands, everyone gets a place to sell, share, chat, deliver and get paid.</p><p>Easy shopping. Instant payments. Real connections.</p>',
     contentBusiness: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[5vw] list-disc space-y-[1vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
   },
   {
@@ -89,7 +89,7 @@ const controlContent = [
     BusinessTitle: "Tap. Accept. Get Paid.",
     businessImg: "/assets/images/homepage/business-tap-&-pay.png",
     businessLink: "/business/tap-and-pay",
-    contentBusiness: '<p>With Montra Tap to Pay, your phone becomes a payment terminal — no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
+    contentBusiness: '<p>With Montra Tap to Pay, your phone becomes a payment terminal, no extra hardware, no limits.</p><p>Accept contactless payments from cards and grow your business with every tap. <span class="italic">(available on NFC enabled Android devices)*</span></p><p class="font-semibold">It’s fast. It’s secure. And it’s all in your hands.</p>',
   },
 ];
 

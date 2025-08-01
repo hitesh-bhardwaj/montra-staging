@@ -57,7 +57,7 @@ const faqContent = [
   {
     question: "What is Montra Agency Banking?",
     answer:
-      "<p>Montra Agency Banking  is the typical POS business we have today, it allows individuals and small business owners to act as financial service providers in their communities. As a Montra Agent, you can offer services like cash deposits, withdrawals, bill payments, and account onboarding—bringing essential banking services closer to underserved areas.</p>",
+      "<p>Montra Agency Banking  allows individuals and small business owners to act as financial service providers in their communities. As a Montra Agent, you can offer services like cash deposits, withdrawals, bill payments, and fund transfers—bringing essential banking services closer to underserved areas.</p>",
   },
   {
     question: "Who can become a Montra Agent?",
@@ -103,7 +103,7 @@ const benefitsData = {
     { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#D9F7C5]", content: "Enjoy the freedom of managing your money without worrying about hidden fees or surprise charges", title: "No Account Fees", z: "z-[5]", width: "w-[20vw]", height: "17vw" },
     { classPrefix: "b", left: "!left-[27%]", top: "!top-[55.9%]", color: "bg-[#FFEAEE]", content: "Get commissions on every transaction; deposits, withdrawals, transfers, airtime, bills, and more. The more services you provide, the more you earn. No sales pressure, just steady income from everyday financial services.", title: " Earn as an Agent ", z: "z-[4]", width: "w-[20vw]", height: "22vw" },
     { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#EAF1FF]", content: "Effortlessly monitor all your incoming payments and transactions in one place, so you always know where your money is.", title: "Track Payments Seamlessly", z: "z-[5]", width: "w-[25vw]", height: "17vw" },
-    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Getting started as a Montra Agent is quick and hassle-free. All you need is a smartphone and access to the internet. Simply download the Montra App, register as a business or individual agent, and complete the basic KYC requirements such as a valid ID, photo, and proof of address. Once verified, you can start transacting in minutes using simple tools like your phone, with no complicated setup or waiting period.", title: "Easy Onboarding ", z: "z-[4]", width: "w-[27vw]", height: "30vw" },
+    { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#CAC5F7]", content: "Becoming a Montra Agent is fast and easy. Just download the Montra App, sign up as a business or individual, and complete basic KYC with a valid ID, photo, and address proof. Once verified, you can start transacting in minutes using just your phone no. setup or delays.", title: "Easy Onboarding ", z: "z-[4]", width: "w-[27vw]", height: "30vw" },
   ]
 }
 const rewardsData = {

@@ -321,7 +321,7 @@ const PaymentSection = () => {
               <h2 className="text-[3.4vw] font-display font-medium leading-[1.2] w-[80%]">
                 {item.title}
               </h2>
-              <div className="space-y-[1.5vw] py-[2vw]" dangerouslySetInnerHTML={{ __html: item.desc }} />
+              <div className="space-y-[0.5vw] py-[2vw]" dangerouslySetInnerHTML={{ __html: item.desc }} />
               <div>
                 <LinkButton text="Learn More" href={item.link} />
               </div>
@@ -412,14 +412,14 @@ const stepsData = {
     },
     {
       title: "Pay Your Way with Montra",
-      desc: '<p>One app. Multiple payment options, all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts - </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards - </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments - </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
+      desc: '<p>One app. Multiple payment options, all built for ease, speed, and control. With Montra, you can pay using your:</p><ul class="list-disc pl-[2vw] space-y-[0.3vw]"><li class="font-semibold">Montra Account</li><li><span class="font-semibold">Linked Bank Accounts - </span>Pay using your other bank accounts linked to Montra App.</li><li><span class="font-semibold">Linked Cards - </span>Use your saved debit or credit cards on Montra App.</li><li><span class="font-semibold">Installments - </span>Borrow instantly to Buy Now and pay overtime.</li></ul><p>Simple. Secure. Seamless.</p>',
       link: "/personal/payments",
       image: "/assets/animation/2-ss.png",
       highlightImg: "/assets/animation/2-pop.png"
     },
     {
       title: "Manage your Finance, on the Go",
-      desc: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[1vw] space-y-[0.3vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul><p>Because your money should move as smartly as you do.</p> ',
+      desc: '<p >Wherever life takes you, Montra’s got your back on your Finances.</p> <p>From unexpected expenses to future planning, we offer smart, secure solutions through all major Partner Institutions :</p><ul class="list-disc pl-[2vw] space-y-[0.3vw]"><li><span class="font-semibold">Loans </span></li><li><span class="font-semibold">Insurance Plans</span></li><li><span class="font-semibold">Investment Plans</span></li></ul><p>Because your money should move as smartly as you do.</p> ',
       link: "/personal/finance",
       image: "/assets/animation/3-ss.png",
       highlightImg: "/assets/animation/3-pop.png"
@@ -449,7 +449,7 @@ const stepsData = {
     },
     {
       title: "Accept Payments. Expand Possibilities",
-      desc: '<p>Open a Montra Business Account to start receiving payments from anyone anytime, anywhere. Accept payments using:<ul class="pl-[1vw] space-y-[0.3vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
+      desc: '<p>Open a Montra Business Account to start receiving payments from anyone anytime, anywhere. Accept payments using:<ul class="pl-[2vw] space-y-[0.3vw] list-disc"><li>QR codes </li> <li>Bank Transfers </li><li>Tap & Pay (Soft POS)</li><li>POS</li></ul></p>',
       link: "/business/payments",
       image: "/assets/animation/7-ss.png",
       highlightImg: "/assets/animation/7-pop.png"
@@ -463,21 +463,21 @@ const stepsData = {
     },
     {
       title: "Sell Smarter. Restock Faster. Pay & Get Paid Instantly. ",
-      desc: '<p>Manage orders, send invoices, and track stock. With Montra, every part of your business just flows.<ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
+      desc: '<p>Manage orders, send invoices, and track stock. With Montra, every part of your business just flows.<ul class="pl-[2vw] list-disc space-y-[0.3vw]"><li>Send & receive Invoices</li><li>Track Inventory</li><li>Pay & Receive Instant & Credit based Payments</li></ul></p><p class="font-semibold">One flow. Zero friction!</p>',
       link: "/business/inventory-management",
       image: "/assets/animation/9-ss.png",
       highlightImg: "/assets/animation/9-pop.png"
     },
     {
       title: "Start Selling Online for Free",
-      desc: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
+      desc: '<p>No website? No problem.</p><p>Build your dream Virtual Store for free to start selling online.</p><ul class="pl-[2vw] list-disc space-y-[0.3vw]"><li>List your products</li><li>Send feeds to build awareness</li><li>Chat with those interested in buying</li><li>Build relationships with those who follow your store </li><li>Offer tailormade payment methods to boost your business</li><li>Track your Payments</li></ul><p class="font-semibold">Your ready-to-use shop at no cost.</p>',
       link: "/business/montra-store",
       image: "/assets/animation/10-ss.png",
       highlightImg: "/assets/animation/10-pop.png"
     },
     {
       title: "One Gateway. Multiple Payment Options.",
-      desc: '<p>Integrate <span class="font-semibold">Montra Payment Gateway</span> into your app or website and accept payments via:</p><ul class="pl-[1vw] list-disc space-y-[0.3vw]"><li>Debit & Credit Cards</li><li>Bank Transfers via QR</li><li>Montra App </li><li>USSD Payments </li></ul> <p class="font-semibold">More ways to get paid. Fast integration. Instant settlement.</p>',
+      desc: '<p>Integrate <span class="font-semibold">Montra Payment Gateway</span> into your app or website and accept payments via:</p><ul class="pl-[2vw] list-disc space-y-[0.3vw]"><li>Debit & Credit Cards</li><li>Bank Transfers via QR</li><li>Montra App </li><li>USSD Payments </li></ul> <p class="font-semibold">More ways to get paid. Fast integration. Instant settlement.</p>',
       link: "/business/payment-gateway",
       image: "/assets/animation/11-ss.png",
       highlightImg: "/assets/animation/11-pop.png"

@@ -17,7 +17,7 @@ const controlContent = [
     contenTitle: "Do More with Your Money. Spend and Earn Rewards",
     contentImg: "/assets/images/personal/Banking.png",
     link: "/personal/banking",
-    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend.</li><li>Link your existing bank accounts on the Montra App and manage all your payments in one place — one app for all your bank accounts. </li></ul>",
+    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Open a Montra Account, get your free virtual debit card, and start earning rewards when you spend. </li><li>Link your existing bank accounts on the Montra App and manage all your payments in one place. One app for all your bank accounts. </li></ul>",
   },
   {
     src: "/assets/images/personal/personal-icon-5.svg",
@@ -37,7 +37,7 @@ const controlContent = [
     contenTitle: "Invest, Insure & Borrow with Montra",
     contentImg: "/assets/images/personal/Finance.png",
     link: "/personal/finance",
-    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Access loans, buy insurance, and invest—all from one powerful app.</li><li>View your transactions in real-time and monitor your financial activity.</li><li>Get intelligent insights to help you plan, save, and spend wisely.</li></ul>",
+    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Access loans, buy insurance, and invest. All from one powerful app.</li><li>View your transactions in real-time and monitor your financial activity.</li><li>Get intelligent insights to help you plan, save, and spend wisely.</li></ul>",
   },
   {
     src: "/assets/images/personal/personal-icon-4.svg",
@@ -47,7 +47,7 @@ const controlContent = [
     contenTitle: "Send Money like a Message",
     contentImg: "/assets/images/personal/Chat.png",
     link: "/personal/chat",
-    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Turn conversations into transactions </li><li>Send, Request Payments while you chat and receive instant payment confirmations </li><li>Secure & Instant—no app-switching!</li></ul>",
+    content:"<ul class='pl-[2vw] space-y-[0.5vw] list-disc max-sm:pl-[5vw] max-sm:space-y-[1.5vw]'><li>Turn conversations into transactions </li><li>Send, Request Payments while you chat and receive instant payment confirmations.</li><li>Secure & Instant. No app-switching! </li></ul>",
   },
   {
     src: "/assets/images/personal/personal-icon-3.svg",
@@ -81,7 +81,7 @@ export default function Control({ allowMultiple = false }) {
     <section className="px-[7vw] py-[6vw] w-full hidden max-md:block ">
       <div className="flex flex-col items-center max-sm:gap-[15vw] max-md:gap-[7vw]">
         <h2 className="font-display font-medium max-sm:text-[11.5vw] leading-[1.2] max-md:text-[7.5vw]">
-          Take Control of Your Finances. Effortlessly.
+          Take Control of Your Finances, Effortlessly.
         </h2>
         <div className="w-full max-sm:space-y-[2vw] max-md:space-y-0">
           {controlContent.map((f, i) => (

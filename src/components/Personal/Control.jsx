@@ -415,16 +415,18 @@ const Control = () => {
                     height={900}
                   />
                 </div>
-                <div className="w-[60%] flex flex-col gap-[3vw] h-full justify-center">
+                <div className="w-[60%] flex flex-col gap-[2vw] h-full justify-center">
                   <h3 className="text-[3.4vw] leading-[1.3] font-display  font-medium">
                     {section.title}
                   </h3>
                   
                   <div className="w-[80%] space-y-[1vw] pl-[1vw]" dangerouslySetInnerHTML={{__html:section.content}}/>
-                  <LinkButton
+                  <div className="pl-[1.2vw]">
+                  <LinkButton 
                     text={section.link.text}
                     href={section.link.href}
                   />
+                  </div>
                 </div>
               </div>
             ))}
