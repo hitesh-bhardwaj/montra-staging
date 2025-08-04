@@ -50,7 +50,7 @@ export default function Timeline() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".montra-logo", {
-       
+
         scrollTrigger: {
           trigger: "#timeline",
           start: "top top",
@@ -73,7 +73,7 @@ export default function Timeline() {
               duration: 0,
             });
           },
-          onLeaveBack:()=>{
+          onLeaveBack: () => {
             gsap.to(".montra-logo", {
               filter: "brightness(1)",
               duration: 0,
@@ -87,20 +87,20 @@ export default function Timeline() {
           },
         },
       });
-      gsap.to(".ham-mobile",{
+      gsap.to(".ham-mobile", {
         backgroundColor: "#215CFF",
-        duration:0,
+        duration: 0,
         scrollTrigger: {
           trigger: "#timeline",
           start: "50% top",
           // markers: true,
           onEnter: () => {
             gsap.to(".ham-mobile", {
-              backgroundColor:"white",
+              backgroundColor: "white",
               duration: 0,
             });
           },
-          
+
           onLeave: () => {
             gsap.to(".ham-mobile", {
               backgroundColor: "#215CFF",
@@ -118,7 +118,7 @@ export default function Timeline() {
     });
     return () => ctx.revert();
   });
-  
+
 
   return (
     <section
@@ -126,11 +126,11 @@ export default function Timeline() {
       id="timeline"
     >
       <div className="absolute top-[5%] text-center left-1/2 -translate-x-1/2 w-full max-sm:w-[100%] max-sm:static max-sm:translate-x-0 max-sm:text-left max-md:w-full max-md:text-center max-md:static max-md:translate-x-0 max-md:order-0">
-      <Heading>
-        <h3 className="leading-[1.2] font-medium font-display text-[5.7vw] max-sm:text-[10.5vw] max-md:text-[7.5vw] max-md:w-[70%] max-md:text-center max-md:mx-auto max-sm:w-full max-sm:text-center max-sm:mx-auto ">
-          Our Story from Vision to Impact
-        </h3>
-      </Heading>
+        <Heading>
+          <h3 className="leading-[1.2] font-medium font-display text-[5.7vw] max-sm:text-[10.5vw] max-md:text-[7.5vw] max-md:w-[70%] max-md:text-center max-md:mx-auto max-sm:w-full max-sm:text-center max-sm:mx-auto ">
+            Our Story from Vision to Impact
+          </h3>
+        </Heading>
       </div>
       <div className="absolute z-[100] bottom-[7%] left-1/2 -translate-x-1/2 flex space-x-[2vw] max-sm:static max-sm:translate-x-0 max-sm:items-center max-sm:justify-center max-sm:pt-[15%] max-md:items-center max-md:justify-center max-md:static max-md:translate-x-0  max-md:order-2  max-sm:order-1">
         <button
@@ -182,17 +182,16 @@ export default function Timeline() {
         </button>
       </div>
       <div className="max-sm:pb-[15%] max-md:h-full max-md:w-full max-md:order-1 max-sm:order-2">
-      <MarqueeBackground year={years[activeIndex]} />
-      <AnimatePresence custom={direction} mode="wait">
-        <TimelineSlide
-        // openCard={openCard}
-          key={years[activeIndex]}
-          year={years[activeIndex]}
-          direction={direction}
-          data={timelineData[activeIndex]}
-        />
-      </AnimatePresence>
-
+        <MarqueeBackground year={years[activeIndex]} />
+        <AnimatePresence custom={direction} mode="wait">
+          <TimelineSlide
+            // openCard={openCard}
+            key={years[activeIndex]}
+            year={years[activeIndex]}
+            direction={direction}
+            data={timelineData[activeIndex]}
+          />
+        </AnimatePresence>
       </div>
     </section>
   );

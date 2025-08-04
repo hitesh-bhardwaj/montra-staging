@@ -372,7 +372,6 @@ export const timelineData = [
                     'KYC module',
                 ],
                 classPrefix: 'd',
-                // letter: "M",
                 z: "z-[8]"
             },
             {
@@ -386,7 +385,6 @@ export const timelineData = [
                     'Partnership with Mastercard, Visa & Interswitch',
                 ],
                 classPrefix: 'f',
-                // letter: "M",
                 z: "z-[5]"
             },
             {
@@ -400,24 +398,27 @@ export const timelineData = [
                     'Obtained PSSP & Super-agent from CBN (Central Bank of Nigeria) ',
                 ],
                 classPrefix: 'e',
-                // letter: "M",
                 z: "z-[7]"
             },
             {
                 title: 'Supplychain',
-                left: 'left-[5%]',
-                top: 'top-[65%]',
+                left: 'left-[23%]',
+                top: 'top-[70%]',
                 color: '#FFEAEE',
                 h:"12vw",
                 mobileh:"50vw",
                 para:"Completed Development of Montra Supply Chain Solution",
                 classPrefix: 'g',
-                // letter: "M",
                 z: "z-[3]"
             },
-
         ],
-      
+        images: [
+            {
+                src: '/assets/images/company/timeline/2023-2.png',
+                top: '50%',
+                left: '5%',
+            },
+        ]
     },
     {
         year: 2024,
