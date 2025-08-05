@@ -32,24 +32,24 @@ export default Network;
 
 const logos = [
     {
-        color: "#FF8303",
-        src: "/assets/images/company/network-logo-1.svg",
-    },
-    {
-        color: "#215CFF",
-        src: "/assets/images/company/network-logo-2.svg",
+        color: "#7A78FF",
+        src: "/assets/images/company/network-logo-9.svg",
     },
     {
         color: "#35C771",
         src: "/assets/images/company/network-logo-3.svg",
     },
     {
-        color: "#FB2F55",
-        src: "/assets/images/company/network-logo-4.svg",
+        color: "#215CFF",
+        src: "/assets/images/company/network-logo-2.svg",
     },
     {
-        color: "#7A78FF",
-        src: "/assets/images/company/network-logo-9.svg",
+        color: "#FF8303",
+        src: "/assets/images/company/network-logo-1.svg",
+    },
+    {
+        color: "#FB2F55",
+        src: "/assets/images/company/network-logo-4.svg",
     },
     {
         color: "#FF8303",
