@@ -3,15 +3,12 @@ import gsap from "gsap";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import Heading from "../Heading";
-import UseMobile from "../UseMobile";
 
 const MontraAnimationMobile = () => {
-  const isMobile = UseMobile();
 
-  if (!isMobile) return null;
   return (
     <section
-      className="w-screen h-full px-[4vw] py-[7%] bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-md:h-full"
+      className="w-screen hidden h-full px-[4vw] py-[7%] max-md:block bg-white max-sm:px-[7vw] max-sm:py-[15%] max-sm:h-full max-md:h-full"
       id="benefits"
     >
       <div className="w-full h-full flex flex-col gap-[1.2vw] text-center max-sm:text-left max-sm:gap-[10vw] max-md:gap-[8vw]">
@@ -54,30 +51,6 @@ const AnimatedOpeners = ({ classPrefix, color, title, content }) => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if (globalThis.innerWidth > 1024) {
-        const tl = gsap.timeline({ paused: true });
-        tl.to(`.${classPrefix}-container`, {
-          x: "-4vw",
-          ease: "power3.inOut",
-        })
-          .to(`.${classPrefix}-alpha`, {
-            x: "-4vw",
-            delay: -0.5,
-            ease: "power3.inOut",
-          })
-          .to(`.${classPrefix}-circle`, {
-            height: height,
-            ease: "power3.inOut",
-            delay: -0.3,
-          })
-          .to(`.${classPrefix}-content`, {
-            opacity: 1,
-            delay: -0.3,
-            ease: "power3.inOut",
-          });
-
-        tlRef.current = tl;
-      }
       if (globalThis.innerWidth > 541 && globalThis.innerWidth < 1024) {
         const tl = gsap.timeline({ paused: true });
         tl.to(`.${classPrefix}-container`, {

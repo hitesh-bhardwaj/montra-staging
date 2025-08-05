@@ -11,11 +11,11 @@ export const AppleStoreButton = () => {
       <div>
         <AppleIcon className="w-[2.2vw] h-[2.4vw] mt-[-0.5vw] max-sm:w-[8vw] max-sm:h-[8vw] max-md:w-[4.5vw] max-md:h-[4.5vw]" />
       </div>
-      <div className="text-left flex flex-col">
+      <div className="text-left flex flex-col gap-1.5">
         <span className="text-[0.83vw] h-[0.8vw] font-medium max-sm:text-[3vw] max-sm:h-auto max-md:text-[2vw] max-md:h-[2.5vw]">
           Download on the
         </span>
-        <p className="text-[1.5vw] font-semibold leading-8 max-sm:text-[6vw] max-sm:leading-[1.2] max-md:text-[3.2vw] max-md:leading-[1.2]">
+        <p className="text-[1.5vw] font-semibold leading-[1] max-sm:text-[6vw]  max-md:text-[3.2vw] mb-1.5">
           App Store
         </p>
       </div>
@@ -32,11 +32,11 @@ export const PlayStoreButton = () => {
       <div>
         <GooglePlay className="w-[2.2vw] h-[2.2vw] max-sm:w-[8vw] max-sm:h-[8vw] max-md:w-[4.5vw] max-md:h-[4.5vw]" />
       </div>
-      <div className="text-left flex flex-col">
+      <div className="text-left flex flex-col gap-1.5">
         <span className="text-[0.83vw] h-[0.8vw] font-medium max-sm:text-[3vw] max-sm:h-auto max-md:text-[2vw] max-md:h-[2.5vw]">
           Get it on
         </span>
-        <p className="text-[1.5vw] font-semibold leading-8 max-sm:text-[6vw] max-sm:leading-[1.2] max-md:text-[3.2vw] max-md:leading-[1.2]">
+        <p className="text-[1.5vw] text-nowrap font-semibold leading-[1] max-sm:text-[6vw]  max-md:text-[3.2vw] mb-1.5">
           Google Play
         </p>
       </div>
