@@ -100,18 +100,13 @@ export default function Footer() {
                         {/* Logo */}
                         <div className="w-fit max-sm:w-full max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-sm:gap-[7vw] max-md:w-full max-md:justify-center max-md:flex max-md:flex-col max-md:gap-[3vw] ">
                             <Image className='w-[30vw] max-sm:w-[85%] mb-[2vw]' src={logo} alt="Montra Logo" width={600} height={126} />
-                            <p className="w-[30vw] mb-[2vw] text-[1vw] max-sm:text-lg max-sm:w-full max-sm:text-center max-md:text-[2.5vw] max-md:w-[100%]">
+                            <p className="w-[30vw] mb-[1vw] text-[1vw] max-sm:text-lg max-sm:w-full max-sm:text-center max-md:text-[2.5vw] max-md:w-[100%]">
                                 Montra delivers innovative products and solutions that drive
                                 financial inclusion in emerging economies - enabling a smooth shift
                                 from cash to digital payments and making credit more accessible
                                 for all.
                             </p>
-                            <div className='flex gap-4 items-baseline mb-[1vw] max-md:mb-0'>
-                                <Image className='h-[5vw] aspect-auto max-md:h-[10vw] max-sm:h-[18vw]' width={100} height={100} src={"/assets/images/cbn-logo.svg"} alt='CBN Logo' />
-                                <Image className='h-[3vw] w-auto max-md:h-[7vw] max-sm:h-[10vw]' width={100} height={100} src={"/assets/images/indc-logo.png"} alt='INDC Logo' />
-                            </div>
-                            <p className='text-[1vw] max-sm:text-lg max-md:text-[2.5vw] mb-[1.5vw] max-md:mb-0 max-sm:mt-[-5vw]'>Licensed by CBN, Insured by NDIC</p>
-                            <p className='font-semibold max-sm:font-medium max-md:text-[2.5vw] max-sm:text-[4.5vw]'>
+                            <p className='font-semibold max-sm:font-medium max-md:text-[2.5vw] max-sm:text-[4.5vw] mb-[1.5vw]'>
                                 Connect with us:{' '}
                                 <a target='_blank' href="mailto:info@montra.org" className="">
                                     <span className='link-line inline-block'>
@@ -119,6 +114,11 @@ export default function Footer() {
                                     </span>
                                 </a>
                             </p>
+                            <div className='flex gap-6 items-end mb-[1vw] max-md:mb-0'>
+                                <Image className='h-[5vw] w-auto aspect-auto max-md:h-[10vw] max-sm:h-[18vw]' width={100} height={100} src={"/assets/images/cbn-logo.svg"} alt='CBN Logo' />
+                                <Image className='h-[3.3vw] w-auto max-md:h-[7vw] max-sm:h-[12vw]' width={100} height={100} src={"/assets/images/ndic-logo.svg"} alt='NDIC Logo' />
+                            </div>
+                            <p className='text-[1vw] max-sm:text-lg max-md:text-[2.5vw]'>Licensed by CBN, Insured by NDIC</p>
                         </div>
 
                         {/* Intro + Link Columns */}
