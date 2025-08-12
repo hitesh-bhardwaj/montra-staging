@@ -1,30 +1,32 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { initSplitLines } from "@/utils/splitText";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import SplitText from 'gsap/SplitText';
 import { motion, useScroll, useTransform } from "motion/react";
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, SplitText);
 }
 
 export default function TextBreak() {
-    const useIsMobile = (breakpoint = 1024) => {
-      const [isMobile, setIsMobile] = useState(false);
-  
-      useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < breakpoint);
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
-      }, [breakpoint]);
-  
-      return isMobile;
-    };
-  
-    const isMobile = useIsMobile();
+  const useIsMobile = (breakpoint = 1024) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const checkMobile = () => setIsMobile(window.innerWidth < breakpoint);
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
+    }, [breakpoint]);
+
+    return isMobile;
+  };
+
+  const isMobile = useIsMobile();
   const sectionRef = useRef(null);
+  const textRef = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -32,18 +34,17 @@ export default function TextBreak() {
 
   const arrowTranslateX = useTransform(
     scrollYProgress,
-    [isMobile?0.38:0.27, 0.7],
+    [isMobile ? 0.38 : 0.27, 0.7],
     ["-150%", "0%"]
   );
-  const arrowScale = useTransform(scrollYProgress, [isMobile?0.38:0.27, 0.7], [0.1, 5]);
+  const arrowScale = useTransform(scrollYProgress, [isMobile ? 0.38 : 0.27, 0.7], [0.1, 5]);
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if(globalThis.innerWidth>1024){
+      if (globalThis.innerWidth > 1024) {
         gsap.to(".montra-logo", {
           scrollTrigger: {
             trigger: "#text-break",
             start: "20% top",
-            // markers: true,
             onLeaveBack: () => {
               gsap.to(".montra-logo", {
                 filter: "brightness(1)",
@@ -78,12 +79,11 @@ export default function TextBreak() {
         });
 
       }
-      else{
+      else {
         gsap.to(".montra-logo", {
           scrollTrigger: {
             trigger: "#text-break",
             start: "30% top",
-            // markers: true,
             onLeaveBack: () => {
               gsap.to(".montra-logo", {
                 filter: "brightness(1)",
@@ -122,90 +122,93 @@ export default function TextBreak() {
   });
 
   useEffect(() => {
-    initSplitLines();
-
-    const lines = sectionRef.current.querySelectorAll(".single-line");
-
-    if (globalThis.innerWidth > 1024) {
-      gsap.to(".gradient", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: ".gradient",
-          start: "top 70%",
-          end: "bottom bottom",
-          scrub: true,
-          // markers: true,
-        },
+    const ctx = gsap.context(() => {
+      const sectionBreakSplit = SplitText.create(textRef.current, {
+        type: "words chars",
+        aria: false,
+        tag: 'span',
+        charsClass: 'split-chars'
       });
+      const t = Array.from(textRef.current.querySelectorAll(".split-chars"));
 
-      gsap
-        .timeline({
+      if (globalThis.innerWidth > 1024) {
+        gsap.to(".gradient", {
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 30%",
-            end: "center 30%",
-            scrub: 0.25,
-            //   markers:true,
+            pin: ".gradient",
+            start: "top 70%",
+            end: "bottom bottom",
+            scrub: true,
           },
-        })
-        .to(lines, {
-          maskPosition: "0% 100%",
-          stagger: 0.1,
-          ease: "none",
         });
-    } else {
-      gsap.to(".ham-mobile",{
-        backgroundColor: "#215CFF",
-        duration:0,
-        scrollTrigger: {
-          trigger: "#text-break",
-          start: "30% top",
-          // markers: true,
-          onEnter: () => {
-            gsap.to(".ham-mobile", {
-              backgroundColor:"white",
-              duration: 0,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(".ham-mobile", {
-              backgroundColor: "#215CFF",
-              duration: 0,
-            });
-          },
-          onLeave: () => {
-            gsap.to(".ham-mobile", {
-              backgroundColor: "#215CFF",
-              duration: 0,
-            });
-          },
-          onEnterBack: () => {
-            gsap.to(".ham-mobile", {
-              backgroundColor: "white",
-              duration: 0,
-            });
-          },
-        },
-      })
-      gsap
-        .timeline({
+
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 30%",
+              end: "center 70%",
+              scrub: 0.25,
+            },
+          })
+          .to(t, {
+            className: "split-chars show",
+            duration: 0.4,
+            stagger: 0.05,
+            ease: "power2.inOut"
+          }, 0)
+      } else {
+        gsap.to(".ham-mobile", {
+          backgroundColor: "#215CFF",
+          duration: 0,
           scrollTrigger: {
             trigger: "#text-break",
-            start: "top 90%",
-            end: "bottom 50%",
-            scrub: 0.25,
+            start: "30% top",
             // markers: true,
+            onEnter: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "white",
+                duration: 0,
+              });
+            },
+            onLeaveBack: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "#215CFF",
+                duration: 0,
+              });
+            },
+            onLeave: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "#215CFF",
+                duration: 0,
+              });
+            },
+            onEnterBack: () => {
+              gsap.to(".ham-mobile", {
+                backgroundColor: "white",
+                duration: 0,
+              });
+            },
           },
         })
-        .to(lines, {
-          maskPosition: "0% 100%",
-          stagger: 0.1,
-          ease: "none",
-        });
-    }
-    return () => {
-      gsap.killTweensOf("*");
-    };
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: "#text-break",
+              start: "top 90%",
+              end: "bottom 50%",
+              scrub: 0.25,
+            },
+          })
+          .to(t, {
+            className: "split-chars show",
+            duration: 0.4,
+            stagger: 0.05,
+            ease: "power2.inOut"
+          }, 0)
+      }
+    })
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -214,14 +217,12 @@ export default function TextBreak() {
       className="relative h-[160vh] w-screen  bg-[#FBFBFB] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-start max-sm:h-[180vh]"
       id="text-break"
     >
-      {/* <div className="w-screen h-[20vw] absolute gradient left-0 top-0 z-[10] bg-gradient-to-b from-transparemt via-white to-white max-sm:hidden" /> */}
-
-      <div className="h-screen flex  justify-center text-center overflow-hidden w-screen mx-auto  max-sm:mt-0 sticky top-0 pt-[17%] max-md:pt-[55%]">
+      <div className="split__wrapper h-screen flex  justify-center text-center overflow-hidden w-screen mx-auto  max-sm:mt-0 sticky top-0 pt-[17%] max-md:pt-[55%]">
         <h2
-          data-split="lines"
+          ref={textRef}
           className="text-[5.7vw] w-[75%] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw] "
         >
-        We’re not just building products, we’re building possibilities. 
+          We’re not just building products, we’re building possibilities.
         </h2>
 
         <motion.svg

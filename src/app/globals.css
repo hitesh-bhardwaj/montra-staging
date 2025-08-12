@@ -4,6 +4,7 @@
   --background: #ffffff;
   --black-1: #111111;
   --gray: #cbcbcb;
+  --light-gray: #ddd;
   --primary: #215cff;
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -27,7 +28,6 @@ html {
   --ease-link-line: cubic-bezier(0.62, 0.05, 0.01, 0.99);
 
   --animate-ping: ping 4s cubic-bezier(0, 0, 0.2, 1) infinite;
-  
 }
 
 body {
@@ -344,5 +344,28 @@ li .link-line::after {
 @media screen and (max-width: 1024px) {
   .inner-card-main .card-inner {
     animation: none;
+  }
+}
+
+/* New Section Break Animation */
+.split__wrapper .split-chars {
+  transition: color 0.4s;
+  color: var(--light-gray);
+}
+
+.split__wrapper .split-chars.show {
+  animation: color-transition 0.5s;
+  color: var(--black-1);
+}
+
+@keyframes color-transition {
+  0% {
+    color: var(--light-gray);
+  }
+  30% {
+    color: #012891;
+  }
+  100% {
+    color: var(--black-1);
   }
 }

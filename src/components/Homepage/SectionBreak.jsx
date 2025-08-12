@@ -1,54 +1,67 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { initSplitLines } from '@/utils/splitText'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import SplitText from 'gsap/SplitText';
 
 if (typeof window !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger, SplitText);
 }
+
 export default function SectionBreak() {
-    const sectionRef = useRef(null)
-    const iconsContainer = useRef(null)
+    const sectionRef = useRef(null);
+    const iconsContainer = useRef(null);
+    const textRef = useRef(null);
 
     useEffect(() => {
-        initSplitLines();
-        const lines = sectionRef.current.querySelectorAll('.single-line')
-        if (globalThis.innerWidth > 1024) {
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 60%',
-                    end: 'bottom 60%',
-                    scrub: 0.25,
-                    // markers: true,
-                }
-            })
-                .to(lines, {
-                    maskPosition: "40% 100%",
-                    stagger: 0.25,
-                    ease: 'none'
-                })
-        }
-        else{
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 80%',
-                    end: 'bottom 80%',
-                    scrub: 0.25,
-                    // markers: true,
-                }
-            })
-                .to(lines, {
-                    maskPosition: "40% 100%",
-                    stagger: 0.25,
-                    ease: 'none'
-                })
-        }
-      
+        const ctx = gsap.context(() => {
+            const sectionBreakSplit = SplitText.create(textRef.current, {
+                type: "words chars",
+                aria: false,
+                tag: 'span',
+                charsClass: 'split-chars'
+            });
+            const t = Array.from(textRef.current.querySelectorAll(".split-chars"));
 
+            if (globalThis.innerWidth > 1024) {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 60%',
+                        end: 'bottom 60%',
+                        scrub: 0.25,
+                    }
+                })
+                    .to(t, {
+                        className: "split-chars show",
+                        duration: 0.4,
+                        stagger: 0.05,
+                        ease: "power2.inOut"
+                    }, 0)
+            }
+            else {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 80%',
+                        end: 'bottom 80%',
+                        scrub: 0.25,
+                    }
+                })
+                    .to(t, {
+                        className: "split-chars show",
+                        duration: 0.4,
+                        stagger: 0.05,
+                        ease: "power2.inOut"
+                    }, 0)
+            }
+        })
+        return () => ctx.revert();
+    }, [])
+
+
+    useEffect(() => {
         // — now the floating icons logic
         const iconPaths = [
             '/assets/images/homepage/pay.svg',
@@ -119,15 +132,13 @@ export default function SectionBreak() {
                 ref={iconsContainer}
                 className="absolute inset-0 pointer-events-none overflow-hidden"
             />
-            <div className="h-full flex items-center justify-center relative text-center w-[88%] mx-auto max-sm:w-[95%]">
+            <div className="split__wrapper h-full flex items-center justify-center relative text-center w-[88%] mx-auto max-sm:w-[95%]">
                 <h2
-                    data-split="lines"
+                    ref={textRef}
                     className="text-[5.7vw] font-medium font-display leading-[1.2] text-break text-black-1 max-sm:text-[10.5vw] max-md:text-[7.5vw]"
                 >
-                   Go cashless, shop & sell virtually, access credit, insurance, and investment products seamlessly with Montra.
-
+                    Go cashless, shop & sell virtually, access credit, insurance, and investment products seamlessly with Montra.
                 </h2>
-               
             </div>
         </section>
     )

@@ -13,16 +13,12 @@ const BankingCard = ({ color, link, title, para, icon, field }) => {
         <div className={` max-sm:h-[60vw] max-sm:w-full rounded-[6vw] flex  items-center justify-center gap-[3vw] text-white max-md:h-[50vw] max-md:w-[100%]`} style={{ backgroundColor: color }}>
           <Image src={icon} height={70} width={70} alt='banking-icon' />
           <p className='max-sm:text-[6.5vw] font-display font-medium max-sm:w-[40%] max-sm:text-center max-md:text-[5.5vw] max-md:w-[50%]'>{field}</p>
-
         </div>
         <div className='space-y-[6vw] pt-[8vw] pb-[4vw] px-[1vw] max-sm:space-y-[3vw]'>
           <h2 className='text-[7vw] font-display w-[90%] capitalize font-medium'>{title}</h2>
           <div className='pb-[4vw] space-y-[2vw]' dangerouslySetInnerHTML={{ __html: para }} />
-          {/* <p className='max-sm:w-full max-md:w-[85%]'>{para}</p> */}
           <LinkButton href={link} text={"Learn More"} />
-
         </div>
-
       </div>
     </>
   )
@@ -47,7 +43,7 @@ const MobileBanking = () => {
   };
 
   if (!isMobile) return null;
-  
+
   return (
     <section className="h-fit w-screen px-[7vw] relative bg-white max-sm:py-[10%] max-md:py-[7%]">
       <div className='space-y-[5vw]'>

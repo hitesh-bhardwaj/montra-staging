@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import { ViewTransitions } from "next-view-transitions";
 import { NavigationProvider } from "@/components/NavigationContext";
 import { defaultMetadata } from "@/lib/seo.config";
+import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -49,6 +51,7 @@ export const metadata = defaultMetadata;
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-5ZFSNX75" />
       <body className={`${workSans.variable} ${standerd.variable} antialiased bg-primary`}>
         <LenisSmoothScroll />
         <ViewTransitions>
@@ -65,6 +68,7 @@ export default function RootLayout({ children }) {
           </NavigationProvider>
         </ViewTransitions>
       </body>
+      <GoogleAnalytics gaId="G-69J9CLR1T2" />
     </html>
   );
 }

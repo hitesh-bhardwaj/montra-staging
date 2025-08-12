@@ -6,8 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
-import "../../components/Privacy Policy/styles.css";
-
+import "./styles.css";
 
 const navLinks = [
   { id: "#data-information", text: "Data/Information We May Collect From You" },

@@ -34,12 +34,12 @@ const PaymentSection = () => {
   const addNavCircle = el => el && navCircleRefs.current.push(el);
   const addNavLabel = el => el && navLabelRefs.current.push(el);
 
-  const [mode, setMode] = useState("personal");
+  const [mode, setMode] = useState("business");
   const inactiveColor = "#C2C2C2";
   const activeColor = "#215CFF";
 
-  const personalSnaps = [0, .30, .55, .75, 1]
-  const businessSnaps = [0, .22, .38, .53, .69, .85, 1]
+  const personalSnaps = [0, .27, .52, .75, 1]
+  const businessSnaps = [0, .18, .35, .50, .68, .84, 1]
 
   useEffect(() => {
     const snaps = mode === "personal" ? personalSnaps : businessSnaps;
@@ -217,13 +217,13 @@ const PaymentSection = () => {
             <div className="flex gap-4 w-[13vw]">
               <svg className="h-[15vw]" width="14" height="328" viewBox="0 0 14 328" fill="none">
                 {/* inactive background line */}
-                <line x1="6.958" y1="5.5" x2="6.958" y2="328"
+                <line x1="6.958" y1="5.5" x2="6.958" y2="320"
                   stroke={inactiveColor} strokeWidth="2" />
 
                 {/* active progress line */}
                 <line
                   ref={progressLineRef}
-                  x1="6.958" y1="5.5" x2="6.958" y2="328"
+                  x1="6.958" y1="5.5" x2="6.958" y2="320"
                   stroke={activeColor} strokeWidth="2"
                   style={{ transformOrigin: "top center", scaleY: 0 }}
                 />
@@ -233,7 +233,7 @@ const PaymentSection = () => {
                   <circle
                     key={i}
                     ref={addNavCircle}
-                    cx="6.958" cy={[6, 83, 162, 240, 321][i]}
+                    cx="6.958" cy={[7, 83, 162, 240, 321][i]}
                     r="5.5"
                     fill={inactiveColor}
                     stroke={inactiveColor}
@@ -265,13 +265,13 @@ const PaymentSection = () => {
             <div className="flex gap-4 w-[13vw]">
               <svg className="h-[20vw]" width="20" height="328" viewBox="0 0 14 328" fill="none">
                 {/* inactive background line */}
-                <line x1="6.958" y1="5.5" x2="6.958" y2="328"
+                <line x1="6.958" y1="5.5" x2="6.958" y2="320"
                   stroke={inactiveColor} strokeWidth="2" />
 
                 {/* active progress line */}
                 <line
                   ref={progressLineRef}
-                  x1="6.958" y1="5.5" x2="6.958" y2="328"
+                  x1="6.958" y1="5.5" x2="6.958" y2="320"
                   stroke={activeColor} strokeWidth="2"
                   style={{ transformOrigin: "top center", scaleY: 0 }}
                 />

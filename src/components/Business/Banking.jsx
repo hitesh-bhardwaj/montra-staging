@@ -38,13 +38,13 @@ const Banking = () => {
             setup();
             window.addEventListener("resize", setup);
             gsap.from(`.${styles.wheel}`, {
-                rotate: () => -125,
+                rotate: () => -124,
                 ease: "none",
                 duration: images.length,
                 scrollTrigger: {
                     trigger: sliderContainer.current,
-                    start: "center center",
-                    end: "630% center",
+                    start: "top top",
+                    end: "500% bottom",
                     scrub: true,
                     invalidateOnRefresh: true,
                 },
@@ -57,12 +57,11 @@ const Banking = () => {
     }, []);
 
     return (
-        <section
-            id="products"
+        <div
             ref={sliderContainer}
-            className={`relative h-[100vh] ${styles.sliderContainer} mobile:h-full tablet:h-full pb-[5%] mobile:py-[15%]`}
+            className={`relative h-[100vh] w-[45%] mr-[-10%]`}
         >
-            <div className="flex flex-col w-[48vw] h-full items-center justify-end pb-[4%] -rotate-90 ">
+            <div className="flex flex-col w-[40vw] h-full items-center justify-end -rotate-90 ">
                 <div className={`${styles.sliderSection} `}>
                     <div className={styles.wheel} ref={wheelRef}>
                         {data.map((item, i) => (
@@ -89,7 +88,7 @@ const Banking = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

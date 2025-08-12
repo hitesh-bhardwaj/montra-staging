@@ -72,20 +72,16 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // 1) If the menu is open, do nothing
       if (openMenu) return;
-
       const currentY = window.pageYOffset;
-      // 2) Hide header when scrolling down
-      if (currentY > prevScrollY.current) {
+      const scrollDelta = currentY - prevScrollY.current;
+      if (scrollDelta > 0) {
         setHidden(true);
-      } else {
-        // 3) Show header when scrolling up
+      } else if (scrollDelta < -10 && currentY > 10) {
         setHidden(false);
       }
       prevScrollY.current = currentY;
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [openMenu]);

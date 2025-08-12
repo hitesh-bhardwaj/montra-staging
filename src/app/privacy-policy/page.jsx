@@ -1,5 +1,5 @@
-import Content from '@/components/Privacy Policy/Content'
-import Hero from '@/components/Privacy Policy/Hero'
+import Content from '@/components/PrivacyPolicyComps/Content';
+import Hero from '@/components/PrivacyPolicyComps/Hero';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import { getPageMetadata } from '@/lib/seo.config';
 import { homepage } from '@/lib/util';
