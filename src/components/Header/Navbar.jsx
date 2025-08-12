@@ -35,7 +35,7 @@ const navLinks = [
   { name: "Business", href: "/business" },
   {
     name: "Platform",
-    href: "#",
+    href: "https://www.monielink.io",
     svgWidth: "w-[0.7vw]",
   },
   { name: "Company", href: "/company" },
@@ -180,8 +180,8 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
               {link.icon || link.name}
               <div
                 className={`w-[1.2vw] h-[1.2vw] flex justify-center font-bold items-center rounded-full border text-[0.8vw] border-white bg-white absolute top-[20%] left-[76%] text-primary ${link.name === "Personal" || link.name === "Business"
-                    ? ""
-                    : "hidden"
+                  ? ""
+                  : "hidden"
                   }`}
               >
                 {link.name === "Personal" ? <p>5</p> : <p>7</p>}
@@ -208,11 +208,8 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
         onMouseLeave={() => {
           setOpenMenu(false);
           if (!navRef.current) return;
-
-
           const el = navRef.current.querySelector('a[data-active="true"]');
           movePill(el);
-
         }}
       >
         <div
@@ -281,9 +278,9 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
               </div>
               <div className="w-full flex gap-[0.5vw] items-center text-[1vw] fadeup-navpolicy ml-[-3vw]">
                 <Link href="/privacy-policy" className="link-line text-black-1" onClick={(e) => {
-                          e.preventDefault();
-                          navigateTo("/privacy-policy");
-                        }}>
+                  e.preventDefault();
+                  navigateTo("/privacy-policy");
+                }}>
                   <div>
                     Privacy Policy
 
@@ -297,11 +294,11 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
                   className="w-[0.4vw] h-[0.4vw] brightness-0"
                 />
                 <Link href="/terms-and-conditions" className="link-line text-black-1" onClick={(e) => {
-                          e.preventDefault();
-                          navigateTo("/terms-and-conditions");
-                        }}>
+                  e.preventDefault();
+                  navigateTo("/terms-and-conditions");
+                }}>
                   <div>
-                   Terms And Conditions
+                    Terms And Conditions
                   </div>
                 </Link>
               </div>
@@ -309,7 +306,7 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
             <div className="w-[45%] h-full flex flex-col py-[2vw] justify-between">
               <div className="w-[90%] h-[70%] rounded-[2vw] overflow-hidden fadeup-navimg">
                 <Image
-                  src={`${active==1?"/assets/images/header/personal-nav.png":"/assets/images/header/business-nav.png"}`}
+                  src={`${active == 1 ? "/assets/images/header/personal-nav.png" : "/assets/images/header/business-nav.png"}`}
                   alt="personal-nav"
                   width={300}
                   height={400}

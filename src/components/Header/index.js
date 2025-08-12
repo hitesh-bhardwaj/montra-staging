@@ -315,12 +315,9 @@ export default function Header() {
                 </div>
                 <span className="bg-black/25 h-[1px] w-full"></span>
                 <Link
-                  href={"#"}
+                  href="https://www.monielink.io"
+                  target="_blank"
                   className="link-text"
-                  onClick={() => {
-                    setOpenMobileMenu(false);
-                    setIsInverted(false);
-                  }}
                 >
                   Platform
                 </Link>

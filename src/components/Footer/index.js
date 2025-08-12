@@ -165,37 +165,18 @@ export default function Footer() {
                                 <div className="flex flex-col justify-between items-start">
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw] mb-[2vw]'>
                                         <Link
-                                            href="/terms-and-conditions"
+                                            href="https://www.monielink.io/"
                                             scroll={false}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                navigateTo("/terms-and-conditions");
-                                            }}
+                                            target='_blank'
                                             className="font-medium block w-fit link-line" >PLATFORM</Link>
                                         <Link
-                                            href="/privacy-policy"
+                                            href="/company"
                                             scroll={false}
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                navigateTo("/privacy-policy");
+                                                navigateTo("/company");
                                             }}
                                             className=" font-medium block w-fit link-line">COMPANY</Link>
-                                        {/* <Link
-                                            href="/terms-and-conditions"
-                                            scroll={false}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                navigateTo("/terms-and-conditions");
-                                            }}
-                                            className=" block w-fit link-line" >Terms & Conditions</Link>
-                                        <Link
-                                            href="/privacy-policy"
-                                            scroll={false}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                navigateTo("/privacy-policy");
-                                            }}
-                                            className=" block w-fit link-line">Privacy Policy</Link> */}
                                     </div>
 
                                     {/* Social Media Links */}
