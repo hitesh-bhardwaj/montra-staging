@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 import { useRef, useState, useEffect } from "react";
 import { Facebook, Instagram, Linkedin, Twitter } from "../Buttons/icons";
 
+gsap.config({nullTargetWarn: false})
+
 const navLinks = [
   {
     name: "Home",
@@ -147,12 +149,9 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
 
           return (
             <a
-              onClick={(e) => {
-                e.preventDefault();
-                navigateTo(link.href);
-              }}
               key={link.href}
               href={link.href}
+              target={link.name === "Platform" ? "_blank" : undefined}
               data-active={
                 isActive
                   ? "true"
@@ -163,7 +162,13 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
                       : undefined
               }
               aria-label={link.name}
-              className="relative z-10 flex text-[1.05vw] min-w-[5vw] h-full items-center px-[2vw] justify-center text-white whitespace-nowrap font-display gap-[0.5vw]"
+              className="relative z-10 flex group text-[1.05vw] min-w-[5vw] h-full items-center px-[2vw] justify-center text-white whitespace-nowrap font-display gap-[0.5vw]"
+              onClick={(e) => {
+                  if (link.name !== "Platform") {
+                    e.preventDefault();
+                    navigateTo(link.href);
+                  }
+                }}
               onMouseEnter={(e) => {
                 movePill(e.currentTarget);
                 if (link.name === "Personal") {
@@ -178,6 +183,24 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
               onMouseLeave={() => setOpenMenu(false)}
             >
               {link.icon || link.name}
+              {link.name === "Platform" && (
+                  <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block absolute right-[10%]">
+                    <Image
+                      src="/assets/icons/diagonal-arrow.svg"
+                      alt="diagonal-arrow"
+                      width={40}
+                      height={40}
+                      className="w-[0.7vw] h-[0.7vw] brightness-[10] scale-[1] group-hover:-translate-y-full group-hover:translate-x-full group-hover:scale-[0] transition-all duration-300 ease-in-out"
+                    />
+                    <Image
+                      src="/assets/icons/diagonal-arrow.svg"
+                      alt="diagonal-arrow"
+                      width={40}
+                      height={40}
+                      className="w-[0.7vw] h-[0.7vw] brightness-[10] scale-[0] -translate-x-full group-hover:-translate-y-full group-hover:translate-x-0 group-hover:scale-[1] transition-all duration-300 ease-in-out"
+                    />
+                  </div>
+                )}
               <div
                 className={`w-[1.2vw] h-[1.2vw] flex justify-center font-bold items-center rounded-full border text-[0.8vw] border-white bg-white absolute top-[20%] left-[76%] text-primary ${link.name === "Personal" || link.name === "Business"
                   ? ""
@@ -320,7 +343,7 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
                     className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden transition-all duration-300"
                   >
                     <a
-                      href="/"
+                      href="#"
                       aria-label="to the social links"
                       className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
                     >

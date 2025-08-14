@@ -164,11 +164,18 @@ export default function Footer() {
 
                                 <div className="flex flex-col justify-between items-start">
                                     <div className='space-y-[0.5vw] max-sm:space-y-[2vw] mb-[2vw]'>
-                                        <Link
+                                        <a
                                             href="https://www.monielink.io/"
-                                            scroll={false}
                                             target='_blank'
-                                            className="font-medium block w-fit link-line" >PLATFORM</Link>
+                                            className="font-medium block w-fit group relative">
+                                            <span className='link-line'>PLATFORM</span>
+                                            <div className='h-[0.8vw] absolute top-1/2 -translate-y-1/2 right-[-22%] -rotate-45 w-[1vw] overflow-hidden flex items-center justify-end  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw] '>
+                                                    <span className='inline-flex w-[200%] h-full duration-300 group-hover:translate-x-1/2'>
+                                                        <ArrowRight className='h-[0.8vw] w-[1vw] inline-block scale-0 group-hover:scale-100 duration-300 max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw]' />
+                                                        <ArrowRight className='h-[0.8vw] w-[1vw] inline-block group-hover:scale-0 duration-300  max-sm:!w-[3.5vw] max-sm:!h-[3.5vw] max-md:w-[2.2vw] max-md:h-[2.2vw]' />
+                                                    </span>
+                                            </div>
+                                        </a>
                                         <Link
                                             href="/company"
                                             scroll={false}
