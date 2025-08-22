@@ -31,7 +31,7 @@ export default function Home() {
       <PaymentSection />
       <SectionBreak />
       <VisionMission />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FAQs content={faqContent} />
     </>
   );

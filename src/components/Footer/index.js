@@ -154,6 +154,7 @@ export default function Footer() {
             <div className="w-fit space-y-[2.5vw] max-sm:w-full max-sm:text-center max-sm:mt-[10vw] max-sm:space-y-[7vw] max-md:w-full ">
               <div className="flex justify-start gap-[8vw] max-sm:flex-col max-sm:items-center max-sm:text-[4.5vw] max-md:text-[2.5vw] ">
                 {/* Personal Links */}
+                <div className="flex flex-col gap-[3vw]">
                 <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
                   {personalLinks.map((link, index) => (
                     <li
@@ -173,30 +174,7 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
-
-                {/* Business Links */}
-                <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
-                  {businessLinks.map((link, index) => (
-                    <li
-                      key={index}
-                      className="first:uppercase first:font-medium"
-                    >
-                      <a
-                        href={link.href}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          navigateTo(link.href);
-                        }}
-                        className="link-line"
-                      >
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex flex-col justify-between items-start">
-                  <div className="space-y-[0.5vw] max-sm:space-y-[2vw] mb-[2vw]">
+                <div className="space-y-[0.5vw] max-sm:space-y-[2vw] mb-[2vw]">
                     <a
                       href="https://www.monielink.io/"
                       target="_blank"
@@ -220,6 +198,57 @@ export default function Footer() {
                       className=" font-medium block w-fit link-line"
                     >
                       COMPANY
+                    </Link>
+                  </div>
+
+                </div>
+
+                {/* Business Links */}
+                <ul className="space-y-[0.5vw] max-sm:space-y-[2vw]">
+                  {businessLinks.map((link, index) => (
+                    <li
+                      key={index}
+                      className="first:uppercase first:font-medium"
+                    >
+                      <a
+                        href={link.href}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigateTo(link.href);
+                        }}
+                        className="link-line"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-col gap-[2.5vw] items-start max-sm:items-center">
+                  <div className="space-y-[0.5vw] max-sm:space-y-[2vw] mb-[2vw] max-sm:flex max-sm:flex-col max-sm:items-center">
+                    <Link
+                     href="/terms-and-conditions"
+                      scroll={false}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateTo("/terms-and-conditions");
+                      }}
+                     
+                      className=" block w-fit group relative"
+                    >
+                      <span className="link-line">Terms & Conditions</span>
+                      
+                    </Link>
+                    <Link
+                      href="/privacy-policy"
+                      scroll={false}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateTo("/privacy-policy");
+                      }}
+                      className=" block w-fit link-line"
+                    >
+                      Privacy Policy
                     </Link>
                   </div>
 
