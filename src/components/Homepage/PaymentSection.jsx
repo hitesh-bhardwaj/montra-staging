@@ -34,7 +34,7 @@ const PaymentSection = () => {
   const addNavCircle = el => el && navCircleRefs.current.push(el);
   const addNavLabel = el => el && navLabelRefs.current.push(el);
 
-  const [mode, setMode] = useState("business");
+  const [mode, setMode] = useState("personal");
   const inactiveColor = "#C2C2C2";
   const activeColor = "#215CFF";
 
