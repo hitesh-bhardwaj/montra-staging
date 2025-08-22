@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { useRef, useState, useEffect } from "react";
 import { Facebook, Instagram, Linkedin, Twitter } from "../Buttons/icons";
 
-gsap.config({nullTargetWarn: false})
+gsap.config({ nullTargetWarn: false });
 
 const navLinks = [
   {
@@ -87,7 +87,7 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
       gsap.fromTo(
         ".fadeup-navlink",
         { yPercent: 100 },
-        { yPercent: 0, delay: 0.3, }
+        { yPercent: 0, delay: 0.3 }
       );
       gsap.fromTo(
         ".fadeup-navimg",
@@ -122,7 +122,10 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
   }, [pathname]);
 
   return (
-    <nav className={`bg-black rounded-full h-[4.1vw] max-sm:hidden max-md:hidden relative z-[500]`} id="nav-container">
+    <nav
+      className={`bg-black rounded-full h-[4.1vw] max-sm:hidden max-md:hidden relative z-[500]`}
+      id="nav-container"
+    >
       <div
         ref={navRef}
         className="relative w-full inline-flex h-full items-center overflow-hidden z-[54] bg-black rounded-full px-[0.5vw]"
@@ -156,19 +159,19 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
                 isActive
                   ? "true"
                   : link.name === "Personal"
-                    ? "personal"
-                    : link.name === "Business"
-                      ? "business"
-                      : undefined
+                  ? "personal"
+                  : link.name === "Business"
+                  ? "business"
+                  : undefined
               }
               aria-label={link.name}
               className="relative z-10 flex group text-[1.05vw] min-w-[5vw] h-full items-center px-[2vw] justify-center text-white whitespace-nowrap font-display gap-[0.5vw]"
               onClick={(e) => {
-                  if (link.name !== "Platform") {
-                    e.preventDefault();
-                    navigateTo(link.href);
-                  }
-                }}
+                if (link.name !== "Platform") {
+                  e.preventDefault();
+                  navigateTo(link.href);
+                }
+              }}
               onMouseEnter={(e) => {
                 movePill(e.currentTarget);
                 if (link.name === "Personal") {
@@ -184,28 +187,29 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
             >
               {link.icon || link.name}
               {link.name === "Platform" && (
-                  <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block absolute right-[10%]">
-                    <Image
-                      src="/assets/icons/diagonal-arrow.svg"
-                      alt="diagonal-arrow"
-                      width={40}
-                      height={40}
-                      className="w-[0.7vw] h-[0.7vw] brightness-[10] scale-[1] group-hover:-translate-y-full group-hover:translate-x-full group-hover:scale-[0] transition-all duration-300 ease-in-out"
-                    />
-                    <Image
-                      src="/assets/icons/diagonal-arrow.svg"
-                      alt="diagonal-arrow"
-                      width={40}
-                      height={40}
-                      className="w-[0.7vw] h-[0.7vw] brightness-[10] scale-[0] -translate-x-full group-hover:-translate-y-full group-hover:translate-x-0 group-hover:scale-[1] transition-all duration-300 ease-in-out"
-                    />
-                  </div>
-                )}
+                <div className="overflow-hidden w-[0.7vw] h-[0.7vw] inline-block absolute right-[10%]">
+                  <Image
+                    src="/assets/icons/diagonal-arrow.svg"
+                    alt="diagonal-arrow"
+                    width={40}
+                    height={40}
+                    className="w-[0.7vw] h-[0.7vw] brightness-[10] scale-[1] group-hover:-translate-y-full group-hover:translate-x-full group-hover:scale-[0] transition-all duration-300 ease-in-out"
+                  />
+                  <Image
+                    src="/assets/icons/diagonal-arrow.svg"
+                    alt="diagonal-arrow"
+                    width={40}
+                    height={40}
+                    className="w-[0.7vw] h-[0.7vw] brightness-[10] scale-[0] -translate-x-full group-hover:-translate-y-full group-hover:translate-x-0 group-hover:scale-[1] transition-all duration-300 ease-in-out"
+                  />
+                </div>
+              )}
               <div
-                className={`w-[1.2vw] h-[1.2vw] flex justify-center font-bold items-center rounded-full border text-[0.8vw] border-white bg-white absolute top-[20%] left-[76%] text-primary ${link.name === "Personal" || link.name === "Business"
-                  ? ""
-                  : "hidden"
-                  }`}
+                className={`w-[1.2vw] h-[1.2vw] flex justify-center font-bold items-center rounded-full border text-[0.8vw] border-white bg-white absolute top-[20%] left-[76%] text-primary ${
+                  link.name === "Personal" || link.name === "Business"
+                    ? ""
+                    : "hidden"
+                }`}
               >
                 {link.name === "Personal" ? <p>5</p> : <p>7</p>}
               </div>
@@ -237,8 +241,9 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
       >
         <div
           aria-hidden={true}
-          className={`w-full rounded-[2vw] bg-[#FAFBFF] border border-black/10 flex justify-end overflow-hidden transition-all duration-300 ease-out ${openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
-            }`}
+          className={`w-full rounded-[2vw] bg-[#FAFBFF] border border-black/10 flex justify-end overflow-hidden transition-all duration-300 ease-out ${
+            openMenu ? "h-[28vw] pt-[4.2vw]" : "h-[3.5vw] pt-0"
+          }`}
         >
           <div className="w-[82.5%] flex gap-[1vw] h-full font-display text-primary">
             <div className="w-[60%] h-full py-[2vw] flex flex-col justify-between">
@@ -300,14 +305,15 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
                   ))}
               </div>
               <div className="w-full flex gap-[0.5vw] items-center text-[1vw] fadeup-navpolicy ml-[-3vw]">
-                <Link href="/privacy-policy" className="link-line text-black-1" onClick={(e) => {
-                  e.preventDefault();
-                  navigateTo("/privacy-policy");
-                }}>
-                  <div>
-                    Privacy Policy
-
-                  </div>
+                <Link
+                  href="/privacy-policy"
+                  className="link-line text-black-1"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo("/privacy-policy");
+                  }}
+                >
+                  <div>Privacy Policy</div>
                 </Link>
                 <Image
                   src="/assets/icons/circle.svg"
@@ -316,20 +322,26 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
                   height={40}
                   className="w-[0.4vw] h-[0.4vw] brightness-0"
                 />
-                <Link href="/terms-and-conditions" className="link-line text-black-1" onClick={(e) => {
-                  e.preventDefault();
-                  navigateTo("/terms-and-conditions");
-                }}>
-                  <div>
-                    Terms And Conditions
-                  </div>
+                <Link
+                  href="/terms-and-conditions"
+                  className="link-line text-black-1"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo("/terms-and-conditions");
+                  }}
+                >
+                  <div>Terms And Conditions</div>
                 </Link>
               </div>
             </div>
             <div className="w-[45%] h-full flex flex-col py-[2vw] justify-between">
               <div className="w-[90%] h-[70%] rounded-[2vw] overflow-hidden fadeup-navimg">
                 <Image
-                  src={`${active == 1 ? "/assets/images/header/personal-nav.png" : "/assets/images/header/business-nav.png"}`}
+                  src={`${
+                    active == 1
+                      ? "/assets/images/header/personal-nav.png"
+                      : "/assets/images/header/business-nav.png"
+                  }`}
                   alt="personal-nav"
                   width={300}
                   height={400}
@@ -337,13 +349,29 @@ export default function Navbar({ openMenu, setOpenMenu, navigateTo, hidden }) {
                 />
               </div>
               <div className="w-full flex gap-[0.5vw] fadeup-navicon">
-                {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
+                {[
+                  {
+                    Icon: Facebook,
+                    url: "https://www.facebook.com/profile.php?id=61553206088663",
+                  },
+                  {
+                    Icon: Linkedin,
+                    url: "https://www.linkedin.com/company/montra-inc/",
+                  },
+                  { Icon: Twitter, url: "https://x.com/MontraNige96058" },
+                  {
+                    Icon: Instagram,
+                    url: "https://www.instagram.com/montra.ng/",
+                  },
+                ].map(({ Icon, url }, i) => (
                   <div
                     key={i}
                     className="w-[2vw] h-[2vw] flex justify-center items-center rounded-full border border-black-1 group overflow-hidden transition-all duration-300"
                   >
                     <a
-                      href="#"
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="to the social links"
                       className="w-[2vw] h-[2vw] flex justify-center items-center group-hover:bg-black-1 transition-all duration-300"
                     >

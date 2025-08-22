@@ -99,7 +99,7 @@ const Hero = () => {
             });
           },
         },
-      })
+      });
     });
     return () => ctx.revert();
   });
@@ -111,7 +111,7 @@ const Hero = () => {
       lenis && lenis.start();
     }, 1500);
 
-    return () => clearTimeout(timeout)
+    return () => clearTimeout(timeout);
   }, [lenis]);
 
   useEffect(() => {
@@ -123,19 +123,18 @@ const Hero = () => {
             start: "top 80%",
             end: "70% 80%",
             scrub: 0.25,
-          }
+          },
         });
 
         tl.to(bgRef.current, {
-          clipPath: 'ellipse(70vw 90vh at 50% 80%)',
+          clipPath: "ellipse(70vw 90vh at 50% 80%)",
           duration: 2,
           ease: "none",
-        })
-          .to(bgRef.current, {
-            clipPath: 'ellipse(100vw 100vh at 50% 80%)',
-            duration: 1,
-            ease: "none",
-          })
+        }).to(bgRef.current, {
+          clipPath: "ellipse(100vw 100vh at 50% 80%)",
+          duration: 1,
+          ease: "none",
+        });
       }
     }, sectionRef);
 
@@ -147,11 +146,10 @@ const Hero = () => {
         y: 30,
         opacity: 0,
         delay: 1,
-      })
-
-    })
-    return () => ctx.revert()
-  }, [])
+      });
+    });
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section id="hero" className="w-screen overflow-hidden relative">
@@ -166,7 +164,7 @@ const Hero = () => {
           <Copy delay={1}>
             <p className="font-body w-[95%] mx-auto heroAnim max-sm:w-[95%] max-md:w-[70%]">
               Montra is reimagining how people and businesses in emerging
-              markets access, manage, and grow their money—without the
+              markets access, manage, and grow their money without the
               complexity of traditional banks. We make finance simple,
               inclusive, and built for real life.
             </p>
@@ -190,9 +188,15 @@ const Hero = () => {
           </Heading>
           <div className="w-1/2 max-sm:w-full max-md:w-[80%]">
             <Copy>
-              <p className="font-medium text-[120%] mb-4">We offer more than just payments.</p>
+              <p className="font-medium text-[120%] mb-4">
+                We offer more than just payments.
+              </p>
               <p className="">
-                At Montra, we provide a full suite of digital tools designed for both individuals and businesses. From easy-to-use apps for payments and account management to powerful features that give you access to credit, investments, and insurance, we help you make a smooth shift from cash to fast, secure digital payments.
+                At Montra, we provide a full suite of digital tools designed for
+                both individuals and businesses. From easy-to-use apps for
+                payments and account management to powerful features that give
+                you access to credit, investments, and insurance, we help you
+                make a smooth shift from cash to fast, secure digital payments.
               </p>
             </Copy>
           </div>
@@ -200,8 +204,9 @@ const Hero = () => {
       </div>
       <div
         ref={bgRef}
-        style={{ clipPath: 'ellipse(19vw 19vw at 50% 35%)' }}
-        className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden fadeup">
+        style={{ clipPath: "ellipse(19vw 19vw at 50% 35%)" }}
+        className="w-screen h-[120vh] absolute bottom-0 left-0  max-sm:hidden max-md:hidden fadeup"
+      >
         <video
           muted
           playsInline
@@ -214,10 +219,19 @@ const Hero = () => {
         />
       </div>
       <div className="w-screen h-[100vh] absolute bottom-0 left-0 hidden max-sm:block max-md:block">
-        <video src={videoSrc} muted playsInline loop autoPlay ref={imgRef} poster="/assets/images/company/company-video-poster.webp" className="w-full h-full object-cover absolute" />
+        <video
+          src={videoSrc}
+          muted
+          playsInline
+          loop
+          autoPlay
+          ref={imgRef}
+          poster="/assets/images/company/company-video-poster.webp"
+          className="w-full h-full object-cover absolute"
+        />
       </div>
     </section>
   );
-}
+};
 
 export default Hero;

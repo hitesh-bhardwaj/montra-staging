@@ -98,7 +98,7 @@ const overviewContent = {
   bgImg: "/assets/images/personal-payments/overview-bg-icon.svg",
   title: "Effortless Inventory Management for Modern Businesses",
   content: [
-    "Keep your business running smoothly with Montra’s easy-to-use inventory management system. Whether you’re managing a retail store, running a service business, or operating multiple outlets, Montra helps you stay organized and in control—right from your phone."
+    "Keep your business running smoothly with Montra’s easy-to-use inventory management system. Whether you’re managing a retail store, running a service business or operating multiple outlets, Montra helps you stay organized and in control, right from your phone."
   ],
   subcontent1: "Buy & Sell Inventory",
   subcontent2: "Track Inventory, Accurate Billing"

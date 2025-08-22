@@ -94,8 +94,8 @@ const benefitsData = {
   paraWidth: "w-full",
   cards: [
     { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Receive instant voice and text notifications when customers pay via your Montra QR code.", title: "Instant Voice & Text Notification ", z: "z-[5]", width: "w-[28vw]", height: "17vw" },
-    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Send payment links via email, or social media to receive instant payments from anyone—for any product or service.", title: "Get paid with Ease", z: "z-[4]", width: "w-[20vw]", height: "17vw" },
-    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Easily monitor your payment collections, view account statements, and stay in control of your cash flow.", title: "Track Every Transactions ", z: "z-[5]", width: "w-[24vw]", height: "17vw" },
+    { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Send <span class='font-semibold'>payment links</span> via email, or social media to receive instant payments from anyone for any product or service.", title: "Get paid with Ease", z: "z-[4]", width: "w-[20vw]", height: "17vw" },
+    { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Easily monitor your payment collections, view account statements, and stay in control of your cash flow.", title: "Track Every Transaction ", z: "z-[5]", width: "w-[24vw]", height: "17vw" },
     { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "Create and send professional invoices to other Montra users and enjoy quicker settlements for your business.", title: "Faster Invoicing, Faster Payments", z: "z-[4]", width: "w-[28vw]", height: "17vw" },
   ]
 }
@@ -197,7 +197,7 @@ const stepData = {
     {
       number: "02",
       title: "Create a Payment Link",
-      para: "Generate a Payment Link for the product or service you're offering—directly from the app.",
+      para: "Generate a Payment Link for the product or service you're offering directly from the app.",
       img: "/assets/images/business-payments/Create-Link.png",
       tag: "Create Link"
     },

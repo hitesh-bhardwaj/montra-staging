@@ -99,7 +99,7 @@ const overviewContent = {
   bgImg:"/assets/images/personal-payments/overview-bg-icon.svg",
   title:"Accept Payments Online, Seamlessly & Securely",
   content:[
-    "MontraPay makes it easy for businesses of all sizes to accept payments online—quickly, securely, and with no tech complexity. Whether you run an eCommerce store, mobile app, or offer services via social platforms, Montra helps you collect payments from customers using a wide range of payment methods."
+    "MontraPay makes it easy for businesses of all sizes to accept payments online quickly, securely, and with no tech complexity. Whether you run an eCommerce store, mobile app, or offer services via social platforms, Montra helps you collect payments from customers using a wide range of payment methods."
   ],
   subcontent1:"Secure Transactions",
   subcontent2:"Quick Integration"
@@ -110,7 +110,7 @@ const  benefitsData = {
     headingWidth:"w-[70%]",
     paraWidth:"w-[70%]",
     cards:[
-      { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Access detailed reports on payments, settlements, and refunds — giving you the insights you need to make smarter business decisions.", title: "Powerful Dashboard", z: "z-[5]", width:"w-[22vw]", height:"17vw" },
+      { classPrefix: "a", left: "!left-[5%]", top: "!top-[25%]", color: "bg-[#EAF1FF]", content: "Access detailed reports on payments, settlements, and refunds giving you the insights you need to make smarter business decisions.", title: "Powerful Dashboard", z: "z-[5]", width:"w-[22vw]", height:"17vw" },
       { classPrefix: "b", left: "!left-[27%]", top: "!top-[62.9%]", color: "bg-[#CAC5F7]", content: "Stay protected with PCI DSS compliance, regular third-party audits, and a dedicated internal security team keeping your data safe.", title: "Robust Security", z: "z-[4]", width:"w-[20vw]", height:"17vw" },
       { classPrefix: "c", left: "!left-[45%]", top: "!top-[15%]", color: "bg-[#FFEAEE]", content: "Let customers pay their way with flexible options like Pay on Delivery (POD), Pay Now, Escrow Pay, and even USSD.", title: "Multiple payment options", z: "z-[5]",  width:"w-[24vw]", height:"17vw" },
       { classPrefix: "d", left: "!left-[68%]", top: "!top-[45.9%]", color: "bg-[#D9F7C5]", content: "MontraPay helps your business grow confidently with a secure payment system that safeguards your money and customer data from fraud.", title: "Secure revenue growth", z: "z-[4]",  width:"w-[24vw]", height:"17vw" },
