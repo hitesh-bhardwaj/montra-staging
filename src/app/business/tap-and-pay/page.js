@@ -88,7 +88,7 @@ const overviewContent = {
   bgImg: "/assets/images/business-montra-store/overview-bg-icon.svg",
   title: "Tap & Pay makes everyday purchases quick, easy, and totally stress-free.",
   content: [
-    "Montra’s Agency Banking solution enables individuals and businesses to become local banking agents, extending essential financial services to underserved communities. With just a smartphone and the Montra App, agents can perform cash-in, cash-out, transfers, bill payments, and More, bringing modern banking to people where traditional banks can’t reach.",
+    "Give your customers the ability to accept contactless payments in person using your Montra App, directly on NFC enabled Android devices. With Tap to Pay solution, you can accept contactless payments from any physical cards.",
   ],
   subcontent1: "Make your phone a POS",
   subcontent2: "Accept Contactless Payments"
