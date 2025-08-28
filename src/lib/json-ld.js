@@ -187,18 +187,31 @@ export function WebpageJsonLd({ metadata = {} }) {
 }
 
 
-export function BreadcrumbsJSONLD({ pathname}) {
+function toTitleCase(str) {
+  return str
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+export function BreadcrumbsJSONLD({ pathname }) {
   const segments = pathname.split('/').filter(Boolean);
 
-  const itemListElements = segments.map((segment, index) => {
-    const url = '/' + segments.slice(0, index + 1).join('/');
-    return {
+  const itemListElements = [
+    {
       '@type': 'ListItem',
-      position: index + 1,
-      name: decodeURIComponent(segment.replace(/-/g, ' ')),
-      item: `${homepage}${url}`
-    };
-  });
+      position: 1,
+      name: 'Home',
+      item: homepage,
+    },
+    ...segments.map((segment, index) => {
+      const url = '/' + segments.slice(0, index + 1).join('/');
+      return {
+        '@type': 'ListItem',
+        position: index + 2, 
+        name: toTitleCase(decodeURIComponent(segment)),
+        item: `${homepage}${url}`,
+      };
+    }),
+  ];
 
   const breadcrumbsJSONLD = {
     '@context': 'https://schema.org',
