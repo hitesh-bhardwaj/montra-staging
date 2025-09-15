@@ -32,7 +32,7 @@ export default function Timeline() {
     setDirection(index > activeIndex ? 1 : -1);
     setActiveIndex(index);
   };
-  const useIsMobile = (breakpoint = 1024) => {
+  const useIsMobile = (breakpoint = 1025) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {

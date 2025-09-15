@@ -115,7 +115,7 @@ const Hero = () => {
 
           })
       }
-      if (globalThis.innerWidth > 541 && globalThis.innerWidth < 1024) {
+      if (globalThis.innerWidth > 541 && globalThis.innerWidth <= 1024) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: "#hero",
@@ -263,7 +263,7 @@ const Hero = () => {
   return (
     <section className="w-screen h-[270vh] max-sm:h-[560vw] overflow-hidden max-md:h-[215vh]" id="hero">
       <div className="w-full h-full flex flex-col gap-[2vw] max-sm:gap-[12vw]">
-        <div className="w-full mx-auto space-y-[1.2vw] pt-[14%] py-[5%] text-center px-[4vw] max-sm:pt-[35vw] max-sm:space-y-[7vw] max-md:pt-[30vw] max-md:space-y-[3vw]">
+        <div className="w-full mx-auto space-y-[1.2vw] pt-[14%] py-[5%] text-center px-[4vw] max-sm:pt-[35vw] max-sm:space-y-[7vw] max-md:pt-[25%] max-md:space-y-[3vw]">
           <Heading delay={0.5}>
             <h1 className="text-[5.7vw] font-display font-medium capitalize leading-[1.15] max-sm:text-[11.5vw] max-md:text-[8vw]">
               <span className="text-primary">Montra Personal Account:</span>{" "}

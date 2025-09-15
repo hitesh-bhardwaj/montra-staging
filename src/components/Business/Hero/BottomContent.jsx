@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const BottomContent = ({ img6, imgAmount }) => {
   return (
-    <div className=" w-screen p-[4vw] flex flex-col gap-[60vh] h-fit absolute bottom-0 text-white max-sm:p-[8vw] max-sm:gap-12 max-sm:static max-md:static max-md:gap-10 max-md:pb-[10vw] dark">
+    <div className=" w-screen p-[4vw] flex flex-col gap-[60vh] h-fit absolute bottom-0 text-white max-sm:p-[8vw] max-sm:gap-12 max-sm:static max-md:static max-md:gap-10 max-md:pb-[15%] dark">
       <div className="h-[65vw] hidden max-sm:block mt-12 max-md:block" />
       <div className="w-[42%] self-end text-left space-y-[2vw] max-sm:w-full max-sm:space-y-[6vw] max-md:w-full max-md:space-y-[4vw]">
         <Heading>
@@ -58,7 +58,7 @@ export const BottomContent = ({ img6, imgAmount }) => {
         </div>
       </div>
 
-      <div className="shadow-2xl fadeinanim relative z-10 w-full h-[70vw] rounded-[8vw] overflow-hidden border-[10px] border-black-1 bg-black-1 hidden flex-col justify-between max-sm:flex max-md:flex max-sm:mt-[5vw]">
+      <div className="shadow-2xl fadeinanim relative z-10 w-full h-[70vw] rounded-[8vw] overflow-hidden border-[10px] border-black-1 bg-black-1 hidden flex-col justify-between max-sm:flex max-md:flex max-sm:mt-[5vw] max-md:rounded-[6vw] max-md:mt-[10vw]">
         <Image
           placeholder="blur"
           src={img6}
@@ -66,13 +66,13 @@ export const BottomContent = ({ img6, imgAmount }) => {
           className="w-full h-full object-cover absolute top-0 left-0"
         />
         <div className="relative top-0 left-0 w-full h-full flex flex-col justify-between p-[3vw]">
-          <span className="bg-primary text-white px-2 py-1 rounded-full self-end">
+          <span className="bg-primary text-white px-2 py-1 rounded-full self-end max-md:px-[3vw] max-md:py-[1vw]">
             Business
           </span>
-          <h3 className="text-white text-4xl font-bold font-display self-center">
+          <h3 className="text-white text-4xl font-bold font-display self-center max-md:text-[7vw]">
             {imgAmount}
           </h3>
-          <div className="bg-white p-2 rounded-2xl flex items-center gap-2 w-full">
+          <div className="bg-white p-2 rounded-2xl flex items-center gap-2 w-full max-md:gap-[2.5vw] max-md:rounded-[3vw] max-md:p-[2vw]">
             <div className="w-[10vw] h-[10vw] rounded-full bg-primary p-[1vw]">
               <Image
                 src={"/assets/images/business/business-total-amount.svg"}
@@ -83,8 +83,8 @@ export const BottomContent = ({ img6, imgAmount }) => {
               />
             </div>
             <div className="text-black-1">
-              <div className="text-[14px]">Number of Payments Received</div>
-              <div className="text-sm font-display">10</div>
+              <div className="max-sm:text-[14px] max-md:text-[2.5vw]">Number of Payments Received</div>
+              <div className="max-sm:text-sm font-display max-md:text-[2vw]">10</div>
             </div>
           </div>
         </div>

@@ -111,7 +111,7 @@ export default function Header() {
                 isInverted ? "bg-white" : "bg-primary"
               } ${
                 openMobileMenu
-                  ? "rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[10px] !bg-primary"
+                  ? "rotate-45 max-sm:translate-y-[7px] max-md:translate-y-[1.2vw] !bg-primary"
                   : "bg-primary"
               }`}
             />
@@ -125,7 +125,7 @@ export default function Header() {
                 isInverted ? "bg-white" : "bg-primary"
               } ${
                 openMobileMenu
-                  ? "-rotate-45 max-sm:-translate-y-[6px] max-md:-translate-y-[10px] !bg-primary"
+                  ? "-rotate-45 max-sm:-translate-y-[6px] max-md:translate-y-[-1.3vw] max-md:translate-x-0 !bg-primary"
                   : "bg-primary"
               }`}
             />

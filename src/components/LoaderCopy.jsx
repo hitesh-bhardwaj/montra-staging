@@ -15,6 +15,9 @@ const LoaderCopy = () => {
     const ctx = gsap.context(() => {
       if (globalThis.innerWidth > 1024) {
         const tl = gsap.timeline();
+        gsap.set(".svg-arrow",{
+          opacity:1,
+        })
         tl.fromTo(
           ".svg-arrow",
           {
@@ -82,7 +85,7 @@ const LoaderCopy = () => {
             },
           });
       }
-      if (globalThis.innerWidth < 1024 && globalThis.innerWidth > 541) {
+      if (globalThis.innerWidth <= 1024 && globalThis.innerWidth > 541) {
         const tl = gsap.timeline();
         tl.fromTo(
           ".svg-arrow",
@@ -217,7 +220,7 @@ const LoaderCopy = () => {
         <svg
           width="2419"
           height="261"
-          className=" svg-arrow max-sm:scale-[2] max-md:scale-[1.4]"
+          className=" svg-arrow max-sm:scale-[2] max-md:scale-[1.4] opacity-0"
           viewBox="0 0 1919 161"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

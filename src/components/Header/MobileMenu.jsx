@@ -169,7 +169,7 @@ export default function MobileMenu({
                         className="link-text "
                     >
                         <span>Platform</span>
-                        <div className="overflow-hidden w-[3.5vw] h-[3.5vw] inline-block ml-3">
+                        <div className="overflow-hidden max-sm:w-[3.5vw] max-sm:h-[3.5vw] inline-block ml-3 max-md:w-[2vw] max-md:h-[2vw]">
                             <Image
                                 src="/assets/icons/diagonal-arrow.svg"
                                 alt="diagonal-arrow"

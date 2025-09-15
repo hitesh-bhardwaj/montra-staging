@@ -121,7 +121,7 @@ export default function Cards({ cardData }) {
             </section>
 
             <section className="max-md:py-[15%] bg-white" ref={container}>
-                <div className="cards h-screen w-screen flex items-center justify-center max-md:h-fit max-md:grid max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-y-[7vw]" style={{ perspective: '1500px' }}>
+                <div className="cards h-screen w-screen flex items-center justify-center max-md:h-fit max-md:grid max-md:grid-cols-2 max-sm:grid-cols-1 max-md:gap-y-[7vw] max-md:px-[5vw]" style={{ perspective: '1500px' }}>
                     {cardData.cards.map((item, index) => (
                         <Card
                             key={index}

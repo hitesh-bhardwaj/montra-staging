@@ -116,7 +116,7 @@ export default function InfoCarouselSwiper() {
         pagination={{ clickable: true }}
         breakpoints={{
           768: { slidesPerView: 2, spaceBetween: 30 },
-          1024: { slidesPerView: 3, spaceBetween: 30 }
+          1025: { slidesPerView: 3, spaceBetween: 30 }
         }}
         className="!px-[5vw] swipe !pb-16 !h-auto"
       >

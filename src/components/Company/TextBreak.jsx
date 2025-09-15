@@ -194,10 +194,11 @@ export default function TextBreak() {
         gsap
           .timeline({
             scrollTrigger: {
-              trigger: "#text-break",
+              trigger: textRef.current,
               start: "top 90%",
-              end: "bottom 50%",
+              end: "70% 60%",
               scrub: 0.25,
+              // markers:true,
             },
           })
           .to(t, {
