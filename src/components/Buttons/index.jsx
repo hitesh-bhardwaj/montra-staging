@@ -65,3 +65,4 @@ export const LinkButton = ({ text, href, className = "", ...props }) => {
     </Link>
   );
 };
+

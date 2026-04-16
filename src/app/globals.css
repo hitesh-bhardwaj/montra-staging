@@ -129,6 +129,20 @@ body {
   animation-delay: 6s;
 }
 
+.buttonTextShadow {
+  text-shadow: 0 1.5em white;
+}
+
+/* ===== Optimized Button (CSS-only, no GSAP) ===== */
+
+.primary-button:hover .button-text .letter {
+  transform: translateY(-100%);
+}
+
+.secondary-button:hover .button-text .letter {
+  transform: translateY(-100%);
+}
+
 /* Marquee */
 @keyframes marquee {
   from {
